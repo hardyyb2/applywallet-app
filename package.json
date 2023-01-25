@@ -11,6 +11,7 @@
     "format": "prettier --write 'src/**/*.{ts,tsx}'"
   },
   "dependencies": {
+    "husky": "^8.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.42.1",
@@ -38,5 +39,10 @@
     "vite": "^4.0.0",
     "vite-plugin-eslint": "^1.8.1",
     "vite-tsconfig-paths": "^4.0.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "eslint --ext .js,.jsx,.ts,.tsx src --fix"
+    }
   }
 }
