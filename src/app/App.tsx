@@ -1,11 +1,10 @@
 import { FC } from "react";
-
-import { Router } from "../routes";
+import { AppRouter } from "../routes";
 
 const App: FC = () => {
   return (
     <div className="text-white">
-      <Router />
+      <AppRouter />
     </div>
   );
 };

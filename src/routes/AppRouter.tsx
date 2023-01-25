@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Route, Routes } from "react-router-dom";
 
-const Router: FC = () => {
+const AppRouter: FC = () => {
   return (
     <Routes>
       <Route path="/" element={<div>Home</div>} />
@@ -14,4 +14,4 @@ const Router: FC = () => {
   );
 };
 
-export { Router };
+export { AppRouter };
