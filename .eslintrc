@@ -1,6 +1,7 @@
 {
   "parser": "@typescript-eslint/parser",
   "extends": ["airbnb", "plugin:@typescript-eslint/recommended", "plugin:react/recommended", "prettier"],
+  "ignore": ["./tailwind.config.cjs"],
   "parserOptions": {
     "ecmaVersion": 2020,
     "sourceType": "module",
