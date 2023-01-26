@@ -1,7 +1,7 @@
 {
   "parser": "@typescript-eslint/parser",
   "extends": ["airbnb", "plugin:@typescript-eslint/recommended", "plugin:react/recommended", "prettier"],
-  "ignore": ["./tailwind.config.cjs"],
+  "ignorePatterns": ["./tailwind.config.cjs"],
   "parserOptions": {
     "ecmaVersion": 2020,
     "sourceType": "module",
@@ -26,6 +26,9 @@
     "import/no-extraneous-dependencies": "off",
     "import/no-unresolved": "off",
     "arrow-body-style": "off",
+    "react/button-has-type": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/require-default-props": "off",
     "import/order": [
       "warn",
       {
