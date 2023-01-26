@@ -11,9 +11,7 @@
     "format": "prettier --write 'src/**/*.{ts,tsx}'",
     "clean": "vite clean",
     "test": "vitest",
-    "coverage": "vitest run --coverage",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "coverage": "vitest run --coverage"
   },
   "dependencies": {
     "clsx": "^1.2.1",
@@ -26,13 +24,6 @@
     "react-toastify": "^9.1.1"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "7.0.0-beta.34",
-    "@storybook/addon-interactions": "7.0.0-beta.34",
-    "@storybook/addon-links": "7.0.0-beta.34",
-    "@storybook/blocks": "7.0.0-beta.34",
-    "@storybook/react": "7.0.0-beta.34",
-    "@storybook/react-vite": "7.0.0-beta.34",
-    "@storybook/testing-library": "0.0.13",
     "@testing-library/react": "^13.4.0",
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.9",
