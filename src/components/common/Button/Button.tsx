@@ -16,7 +16,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     {
       variant = "default",
       size = "md",
-      shape = "",
+      shape = "default",
       animate = true,
       loading = false,
       type = "button",
