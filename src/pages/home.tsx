@@ -1,6 +1,7 @@
-import { Flex } from "@/components/common/Flex";
 import { FC } from "react";
 import { Button, Input } from "react-daisyui";
+
+import { Flex } from "@/components/common/Flex";
 
 const Home: FC = () => {
   return (
