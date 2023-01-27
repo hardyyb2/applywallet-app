@@ -28,6 +28,7 @@ specifiers:
   prettier: ^2.8.3
   prop-types: 15.8.1
   react: ^18.2.0
+  react-daisyui: ^3.0.2
   react-dom: ^18.2.0
   react-hook-form: ^7.42.1
   react-router-dom: ^6.7.0
@@ -45,6 +46,7 @@ dependencies:
   daisyui: 2.49.0_gbtt6ss3tbiz4yjtvdr6fbrj44
   husky: 8.0.3
   react: 18.2.0
+  react-daisyui: 3.0.2_tixzakcwseqdxx5sczov7rzzuq
   react-dom: 18.2.0_react@18.2.0
   react-hook-form: 7.42.1_react@18.2.0
   react-router-dom: 6.7.0_biqbaboplfbrettd7655fr4n2y
@@ -6664,6 +6666,20 @@ packages:
       iconv-lite: 0.4.24
       unpipe: 1.0.0
     dev: true
+
+  /react-daisyui/3.0.2_tixzakcwseqdxx5sczov7rzzuq:
+    resolution: {integrity: sha512-Zyhrdu4AkdqSPJ3OoeZLumDlMug/nvgQ2q20nkU7Yz96wjWXIS4795uWXM34bRZ//fYacrlmaH2lCPHWMNkXGg==}
+    peerDependencies:
+      daisyui: ^2.42.1
+      react: '>=16'
+      react-dom: '>=16'
+      tailwindcss: ^3.0.23
+    dependencies:
+      daisyui: 2.49.0_gbtt6ss3tbiz4yjtvdr6fbrj44
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      tailwindcss: 3.2.4_postcss@8.4.21
+    dev: false
 
   /react-dom/18.2.0_react@18.2.0:
     resolution: {integrity: sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==}
