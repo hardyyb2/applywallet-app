@@ -10,4 +10,7 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   plugins: [require("daisyui")],
+  daisyui: {
+    themes: ["light", "dark"],
+  },
 };
