@@ -3,7 +3,7 @@ import { forwardRef, PropsWithChildren } from "react";
 
 import { FlexAlignType, FlexDirectionType, FlexJustifyType, FlexWrapType } from "./flex.types";
 
-interface FlexProps {
+export interface FlexProps {
   direction?: FlexDirectionType;
   align?: FlexAlignType;
   justify?: FlexJustifyType;
