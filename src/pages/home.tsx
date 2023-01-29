@@ -3,8 +3,8 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { FC } from "react";
 
-import { Flex } from "@/components/common";
-import { Drawer, ScrollArea } from "@/components/wrapped";
+import { Flex } from "@/components/isolated/common";
+import { Drawer, ScrollArea } from "@/components/isolated/wrapped";
 
 const Home: FC = () => {
   return (
