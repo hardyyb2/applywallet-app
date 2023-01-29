@@ -12,10 +12,7 @@ export interface FlexProps {
 }
 
 const Flex = forwardRef<HTMLDivElement, PropsWithChildren<FlexProps>>(
-  (
-    { direction = "row", align = "stretch", justify = "flex-start", wrap = "nowrap", className = "", children = null },
-    ref,
-  ) => {
+  ({ direction, align = "stretch", justify, wrap, className = "", children = null }, ref) => {
     return (
       <div
         ref={ref}
