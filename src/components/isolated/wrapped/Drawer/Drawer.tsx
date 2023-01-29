@@ -1,37 +1,19 @@
 import clsx from "clsx";
-import { forwardRef, HTMLAttributes, ReactNode } from "react";
+import { forwardRef, HTMLAttributes } from "react";
+
+import { DrawerMain } from "./components/DrawerMain";
+import { DrawerSide } from "./components/DrawerSide";
 
 export type DrawerProps = HTMLAttributes<HTMLDivElement> & {
-  side: ReactNode;
   open?: boolean;
   mobile?: boolean;
   end?: boolean;
   className?: string;
   toggleClassName?: string;
-  contentClassName?: string;
-  sideClassName?: string;
-  overlayClassName?: string;
-  onClickOverlay?: () => void;
 };
 
 const Drawer = forwardRef<HTMLDivElement, DrawerProps>(
-  (
-    {
-      children,
-      side,
-      open,
-      mobile,
-      end,
-      className,
-      toggleClassName,
-      contentClassName,
-      sideClassName,
-      overlayClassName,
-      onClickOverlay,
-      ...props
-    },
-    ref,
-  ) => {
+  ({ children, open, mobile, end, className, toggleClassName, ...props }, ref) => {
     const classes = clsx(
       "drawer",
       {
@@ -40,12 +22,6 @@ const Drawer = forwardRef<HTMLDivElement, DrawerProps>(
       },
       className,
     );
-
-    const handleKeyDown = (event: React.KeyboardEvent): void => {
-      if (event.key === "Escape") {
-        onClickOverlay?.();
-      }
-    };
 
     return (
       <div aria-expanded={open} className={classes} ref={ref} {...props}>
@@ -57,18 +33,7 @@ const Drawer = forwardRef<HTMLDivElement, DrawerProps>(
           readOnly
           aria-label="Open/Close Drawer"
         />
-        <main className={clsx("drawer-content", contentClassName)}>{children}</main>
-        <aside className={clsx("drawer-side", sideClassName)}>
-          <div
-            role="button"
-            className={clsx("drawer-overlay", overlayClassName)}
-            tabIndex={0}
-            onClick={onClickOverlay}
-            onKeyDown={handleKeyDown}
-            aria-label="Close"
-          />
-          {side}
-        </aside>
+        {children}
       </div>
     );
   },
@@ -76,4 +41,9 @@ const Drawer = forwardRef<HTMLDivElement, DrawerProps>(
 
 Drawer.displayName = "Drawer";
 
-export default Drawer;
+const DrawerCompound = Object.assign(Drawer, {
+  Side: DrawerSide,
+  Main: DrawerMain,
+});
+
+export { DrawerCompound as Drawer };
