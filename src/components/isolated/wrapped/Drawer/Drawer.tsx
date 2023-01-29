@@ -57,8 +57,8 @@ const Drawer = forwardRef<HTMLDivElement, DrawerProps>(
           readOnly
           aria-label="Open/Close Drawer"
         />
-        <div className={clsx("drawer-content", contentClassName)}>{children}</div>
-        <div className={clsx("drawer-side", sideClassName)}>
+        <main className={clsx("drawer-content", contentClassName)}>{children}</main>
+        <aside className={clsx("drawer-side", sideClassName)}>
           <div
             role="button"
             className={clsx("drawer-overlay", overlayClassName)}
@@ -68,7 +68,7 @@ const Drawer = forwardRef<HTMLDivElement, DrawerProps>(
             aria-label="Close"
           />
           {side}
-        </div>
+        </aside>
       </div>
     );
   },

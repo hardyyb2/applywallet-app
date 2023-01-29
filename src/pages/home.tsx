@@ -1,26 +1,40 @@
+/* eslint-disable react/no-array-index-key */
 /* eslint-disable jsx-a11y/label-has-associated-control */
+import { Drawer, ScrollArea } from "@/components/isolated/wrapped";
 import { FC } from "react";
 
 const Home: FC = () => {
   return (
-    <div>
-      <div className="drawer drawer-mobile">
-        <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content flex flex-col items-center justify-center">
-          <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">
-            Open drawer
-          </label>
-        </div>
-        <div className="drawer-side">
-          <label htmlFor="my-drawer-2" className="drawer-overlay" />
-          <ul className="menu">
-            <li>yo</li>
-            <li>yo</li>
-            <li>yo</li>
-          </ul>
-        </div>
-      </div>
-    </div>
+    <Drawer
+      mobile
+      className="h-full"
+      side={
+        <ScrollArea.Root>
+          <ScrollArea.Viewport className="w-full h-full">
+            <ul className="menu w-40 p-4">
+              {Array(900)
+                .fill(undefined)
+                .map((_item, index) => (
+                  <li key={index} className="">
+                    <a href="#a">{index}</a>
+                  </li>
+                ))}
+            </ul>
+          </ScrollArea.Viewport>
+        </ScrollArea.Root>
+      }
+    >
+      <section>
+        {" "}
+        {Array(900)
+          .fill(undefined)
+          .map((_item, index) => (
+            <li key={index} className="">
+              <a href="#a">{index}</a>
+            </li>
+          ))}
+      </section>
+    </Drawer>
   );
 };
 

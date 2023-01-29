@@ -12,7 +12,7 @@ const AppRouter: FC = () => {
       <BaseLayout.Head>
         <Navbar className="bg-primary text-primary-content">Hi there</Navbar>
       </BaseLayout.Head>
-      <BaseLayout.Body>
+      <BaseLayout.Body className="overflow-hidden">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/books">
