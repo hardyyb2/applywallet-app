@@ -15,7 +15,7 @@ const Home: FC = () => {
             <ul className="menu p-4 w-80 bg-base-100 text-base-content">
               {Array(9000)
                 .fill(undefined)
-                .map((a, id) => (
+                .map((_a, id) => (
                   <li key={id}>
                     <a>Sidebar Item 1</a>
                   </li>

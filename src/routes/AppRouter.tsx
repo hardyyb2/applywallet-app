@@ -1,7 +1,7 @@
-import { FC } from "react";
+import { FC, lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 
-import { Home } from "@/pages/home";
+const Home = lazy(() => import("@/pages/home").then((module) => ({ default: module.Home })));
 
 const AppRouter: FC = () => {
   return (
