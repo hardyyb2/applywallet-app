@@ -4,11 +4,13 @@
 import { FC } from "react";
 
 import { Flex } from "@/components/isolated/common";
-import { Drawer, ScrollArea } from "@/components/isolated/wrapped";
+import { Drawer, Navbar, ScrollArea } from "@/components/isolated/wrapped";
 
 const Home: FC = () => {
   return (
     <Flex className="gap-2">
+      <Navbar className="bg-primary text-primary-content">Hi there</Navbar>
+
       <Drawer
         side={
           <ScrollArea.Root>
@@ -25,7 +27,7 @@ const Home: FC = () => {
         }
         mobile
       >
-        Hey there
+        main{" "}
       </Drawer>
     </Flex>
   );
