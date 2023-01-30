@@ -12,7 +12,7 @@ const AppRouter: FC = () => {
     <BaseLayout className="h-full">
       <BaseLayout.Head>
         <Navbar className="bg-primary text-primary-content">
-          <Navbar.Center>Applywallet</Navbar.Center>
+          <Navbar.Center>hardik badola</Navbar.Center>
         </Navbar>
       </BaseLayout.Head>
       <BaseLayout.Body className="overflow-hidden">
