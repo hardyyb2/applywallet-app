@@ -1,4 +1,4 @@
-export type TypographyVariant =
+export type TypographyVariantType =
   | "h1"
   | "h2"
   | "h3"
@@ -12,7 +12,6 @@ export type TypographyVariant =
   | "button"
   | "caption"
   | "overline"
-  | "srOnly"
-  | string;
+  | "srOnly";
 
 export type TypographyDisplayType = "inline" | "block";

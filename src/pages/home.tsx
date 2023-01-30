@@ -6,7 +6,7 @@ import { FC } from "react";
 const Home: FC = () => {
   return (
     <div>
-      <Typography variant="h1">hardik badola</Typography>
+      <Typography variant="h3">hardik badola</Typography>
     </div>
   );
 };

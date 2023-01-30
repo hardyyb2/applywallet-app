@@ -1,11 +1,11 @@
 import clsx from "clsx";
 import { ComponentType, forwardRef } from "react";
 
-import { TypographyDisplayType, TypographyVariant } from "./typography.types";
-import { TypographyVariantTagMap } from "./typography.utils";
+import { TypographyDisplayType, TypographyVariantType } from "./typography.types";
+import { TypographyVariantTypeTagMap } from "./typography.utils";
 
 type TypographyCustomProps = {
-  variant?: TypographyVariant;
+  variant?: TypographyVariantType;
   display?: TypographyDisplayType;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   component?: keyof JSX.IntrinsicElements | ComponentType<any>;
@@ -18,7 +18,7 @@ type ElementProps = JSX.IntrinsicElements[keyof JSX.IntrinsicElements];
 
 export type TypographyProps = TypographyCustomProps & ElementProps;
 
-const typographyVariantStyles: Record<TypographyVariant, string> = {
+const typographyVariantStyles: Record<TypographyVariantType, string> = {
   h1: "text-6xl leading-[1.167] tracking-[-0.01562em] font-light",
   h2: "text-5xl leading-[1.2] tracking-[-0.00833em] font-light",
   h3: "text-4xl leading-[1.167] tracking-none font-light",
@@ -37,15 +37,9 @@ const typographyVariantStyles: Record<TypographyVariant, string> = {
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Typography = forwardRef<keyof JSX.IntrinsicElements | ComponentType<any>, TypographyProps>(
-  ({
-    variant = "body",
-    align = "left",
-    display = "block",
-    component: Component = TypographyVariantTagMap?.[variant] || "p",
-    className,
-    children,
-    ...rest
-  }) => {
+  ({ variant = "body1", align = "left", display = "block", component, className, children, ...rest }) => {
+    const Component = component || TypographyVariantTypeTagMap?.[variant] || "p";
+
     return (
       <Component
         className={clsx(

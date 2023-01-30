@@ -1,8 +1,6 @@
-import { TypographyVariant } from "./typography.types";
+import { TypographyVariantType } from "./typography.types";
 
-export const TypographyVariantTagMap: {
-  [key in TypographyVariant]: keyof JSX.IntrinsicElements;
-} = {
+export const TypographyVariantTypeTagMap: Record<TypographyVariantType, keyof JSX.IntrinsicElements> = {
   h1: "h1",
   h2: "h2",
   h3: "h3",
