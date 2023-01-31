@@ -1,6 +1,6 @@
-import { BaseScrollbar } from "@/components/dependent/page_components/common";
-import { Typography } from "@/components/isolated/common";
-import { Button } from "@/components/isolated/wrapped";
+import { BaseScrollbar } from "@/app/Components/dependent/page_components/common";
+import { Typography } from "@/app/Components/isolated/common";
+import { Button } from "@/app/Components/isolated/wrapped";
 import { Inter } from "@next/font/google";
 import Image from "next/image";
 

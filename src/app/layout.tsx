@@ -1,8 +1,8 @@
 import {
   BaseLayout,
   BaseScrollbar,
-} from "@/components/dependent/page_components/common";
-import { Drawer, Navbar } from "@/components/isolated/wrapped";
+} from "@/app/Components/dependent/page_components/common";
+import { Drawer, Navbar } from "@/app/Components/isolated/wrapped";
 import "./globals.css";
 
 export default function RootLayout({

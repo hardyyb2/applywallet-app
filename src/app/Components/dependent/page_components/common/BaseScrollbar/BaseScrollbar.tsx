@@ -1,6 +1,6 @@
 "use client";
 
-import { ScrollArea } from "@/components/isolated/wrapped";
+import { ScrollArea } from "@/app/Components/isolated/wrapped";
 import { PropsWithChildren } from "react";
 
 const BaseScrollbar = ({ children }: PropsWithChildren) => {
