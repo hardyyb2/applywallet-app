@@ -41,20 +41,24 @@ const Typography = forwardRef<
   keyof JSX.IntrinsicElements | ComponentType<any>,
   TypographyProps
 >(
-  ({
-    variant = "body1",
-    align = "left",
-    display = "block",
-    component,
-    className,
-    children,
-    ...rest
-  }) => {
+  (
+    {
+      variant = "body1",
+      align = "left",
+      display = "block",
+      component,
+      className,
+      children,
+      ...rest
+    },
+    ref,
+  ) => {
     const Component =
       component || TypographyVariantTypeTagMap?.[variant] || "p";
 
     return (
       <Component
+        ref={ref}
         className={clsx(
           typographyVariantStyles[variant],
           {
