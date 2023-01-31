@@ -1,3 +1,4 @@
+import { BaseScrollbar } from "@/components/dependent/page_components/common";
 import { Typography } from "@/components/isolated/common";
 import { Button } from "@/components/isolated/wrapped";
 import { Inter } from "@next/font/google";
@@ -9,11 +10,13 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <main className="bg-slate-50">
-      <Typography>Hello</Typography>
-      <Button color="primary" variant="link">
-        hey there
-      </Button>
-    </main>
+    <section className="h-full">
+      <BaseScrollbar>
+        <Typography>Hello</Typography>
+        <Button color="primary" variant="link">
+          hey there
+        </Button>
+      </BaseScrollbar>
+    </section>
   );
 }
