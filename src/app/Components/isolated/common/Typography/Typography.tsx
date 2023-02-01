@@ -39,35 +39,37 @@ const Typography = forwardRef<
     const Component =
       component || TypographyVariantTypeTagMap?.[variant] || "p";
 
-    const classes = clsx(
-      {
-        "text-6xl font-bold leading-tight": variant === "h1",
-        "text-5xl font-bold leading-tight": variant === "h2",
-        "text-4xl font-bold leading-tight": variant === "h3",
-        "text-3xl font-bold leading-tight": variant === "h4",
-        "text-2xl font-bold leading-tight": variant === "h5",
-        "text-xl font-medium leading-tight": variant === "h6",
-        "text-lg font-medium leading-snug": variant === "subtitle1",
-        "text-base font-medium leading-snug": variant === "subtitle2",
-        "text-base leading-relaxed": variant === "body1",
-        "text-sm font-medium leading-relaxed": variant === "body2",
-        "text-sm font-medium leading-tight": variant === "caption",
-        "sr-only": variant === "srOnly",
-      },
-      {
-        inline: display === "inline",
-        block: display === "block",
-      },
-      {
-        "text-left": align === "left",
-        "text-center": align === "center",
-        "text-right": align === "right",
-      },
-      className,
-    );
-
     return (
-      <Component ref={ref} className={classes} {...rest}>
+      <Component
+        ref={ref}
+        className={clsx(
+          {
+            "text-6xl font-bold leading-tight": variant === "h1",
+            "text-5xl font-bold leading-tight": variant === "h2",
+            "text-4xl font-bold leading-tight": variant === "h3",
+            "text-3xl font-bold leading-tight": variant === "h4",
+            "text-2xl font-bold leading-tight": variant === "h5",
+            "text-xl font-medium leading-tight": variant === "h6",
+            "text-lg font-medium leading-snug": variant === "subtitle1",
+            "text-base font-medium leading-snug": variant === "subtitle2",
+            "text-base leading-relaxed": variant === "body1",
+            "text-sm font-medium leading-relaxed": variant === "body2",
+            "text-sm font-medium leading-tight": variant === "caption",
+            "sr-only": variant === "srOnly",
+          },
+          {
+            inline: display === "inline",
+            block: display === "block",
+          },
+          {
+            "text-left": align === "left",
+            "text-center": align === "center",
+            "text-right": align === "right",
+          },
+          className,
+        )}
+        {...rest}
+      >
         {children}
       </Component>
     );
