@@ -1,6 +1,9 @@
 import { TypographyVariantType } from "./typography.types";
 
-export const TypographyVariantTypeTagMap: Record<TypographyVariantType, keyof JSX.IntrinsicElements> = {
+export const TypographyVariantTypeTagMap: Record<
+  TypographyVariantType,
+  keyof JSX.IntrinsicElements
+> = {
   h1: "h1",
   h2: "h2",
   h3: "h3",
@@ -11,8 +14,6 @@ export const TypographyVariantTypeTagMap: Record<TypographyVariantType, keyof JS
   subtitle2: "h6",
   body1: "p",
   body2: "p",
-  button: "span",
   caption: "span",
-  overline: "span",
   srOnly: "span",
 };
