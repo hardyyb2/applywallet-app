@@ -1,6 +1,7 @@
 import {
   BaseLayout,
   BaseScrollbar,
+  SideNav,
 } from "@/app/Components/dependent/page_components/common";
 import { Drawer, Navbar } from "@/app/Components/isolated/wrapped";
 import "./globals.css";
@@ -16,26 +17,20 @@ export default function RootLayout({
       <body>
         <BaseLayout className="h-full">
           <BaseLayout.Head>
-            <Navbar className="bg-primary text-primary-content">
-              <Navbar.Center>hardik badola</Navbar.Center>
+            <Navbar className="bg-base-200 text-primary-content">
+              <Navbar.Start className="pl-4">hardik badola</Navbar.Start>
             </Navbar>
           </BaseLayout.Head>
           <BaseLayout.Body className="overflow-hidden">
             <Drawer mobile className="h-full">
               <Drawer.Side>
                 <BaseScrollbar>
-                  <ul className="menu w80 p-4">
-                    {Array(900)
-                      .fill(undefined)
-                      .map((_item, index) => (
-                        <li key={index} className="">
-                          <a href="#a">{index}</a>
-                        </li>
-                      ))}
-                  </ul>
+                  <SideNav />
                 </BaseScrollbar>
               </Drawer.Side>
-              <Drawer.Main>{children}</Drawer.Main>
+              <Drawer.Main className="p-4">
+                <BaseScrollbar>{children}</BaseScrollbar>
+              </Drawer.Main>
             </Drawer>
           </BaseLayout.Body>
         </BaseLayout>

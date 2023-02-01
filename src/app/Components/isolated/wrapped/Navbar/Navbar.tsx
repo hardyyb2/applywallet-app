@@ -7,15 +7,17 @@ import { NavbarStart } from "./components/NavbarStart";
 
 export type NavbarProps = HTMLAttributes<HTMLDivElement>;
 
-const Navbar = forwardRef<HTMLDivElement, NavbarProps>(({ children, className, ...props }, ref): JSX.Element => {
-  const classes = clsx("navbar", className);
+const Navbar = forwardRef<HTMLDivElement, NavbarProps>(
+  ({ children, className, ...props }, ref): JSX.Element => {
+    const classes = clsx("navbar", className);
 
-  return (
-    <div role="navigation" aria-label="Navbar" {...props} className={classes} ref={ref}>
-      {children}
-    </div>
-  );
-});
+    return (
+      <div {...props} className={classes} ref={ref}>
+        {children}
+      </div>
+    );
+  },
+);
 
 Navbar.displayName = "Navbar";
 

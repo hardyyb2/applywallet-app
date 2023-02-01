@@ -9,14 +9,5 @@ import styles from "./page.module.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  return (
-    <section className="h-full">
-      <BaseScrollbar>
-        <Typography>Hello</Typography>
-        <Button color="primary" variant="link">
-          hey there
-        </Button>
-      </BaseScrollbar>
-    </section>
-  );
+  return <section className="h-full">home</section>;
 }
