@@ -9,9 +9,7 @@ export type TypographyVariantType =
   | "subtitle2"
   | "body1"
   | "body2"
-  | "button"
   | "caption"
-  | "overline"
   | "srOnly";
 
 export type TypographyDisplayType = "inline" | "block";

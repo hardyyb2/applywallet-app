@@ -20,23 +20,6 @@ type ElementProps = JSX.IntrinsicElements[keyof JSX.IntrinsicElements];
 
 export type TypographyProps = TypographyCustomProps & ElementProps;
 
-const typographyVariantStyles: Record<TypographyVariantType, string> = {
-  h1: "text-6xl leading-[1.167] tracking-[-0.01562em] font-light",
-  h2: "text-5xl leading-[1.2] tracking-[-0.00833em] font-light",
-  h3: "text-4xl leading-[1.167] tracking-none font-light",
-  h4: "text-3xl leading-[1.235] tracking-[0.00735em] font-light",
-  h5: "text-2xl leading-[1.5] tracking-none font-light",
-  h6: "text-xl leading-[1.6] tracking-[0.00125em] font-light",
-  subtitle1: "text-lg leading-[1.75] tracking-[0em] font-light",
-  subtitle2: "text-base leading-[1.875] tracking-[0.00714em] font-light",
-  body1: "text-sm leading-[1.5] tracking-[0.00625em] font-light",
-  body2: "text-xs leading-[1.43] tracking-[0.0125em] font-light",
-  button: "text-sm font-medium uppercase tracking-wide",
-  caption: "text-sm leading-[1.375] tracking-[0.00937em] font-light",
-  overline: "text-xs uppercase tracking-wide",
-  srOnly: "sr-only",
-};
-
 const Typography = forwardRef<
   keyof JSX.IntrinsicElements | ComponentType<any>,
   TypographyProps
@@ -56,24 +39,35 @@ const Typography = forwardRef<
     const Component =
       component || TypographyVariantTypeTagMap?.[variant] || "p";
 
+    const classes = clsx(
+      {
+        "text-6xl font-bold leading-tight": variant === "h1",
+        "text-5xl font-bold leading-tight": variant === "h2",
+        "text-4xl font-bold leading-tight": variant === "h3",
+        "text-3xl font-bold leading-tight": variant === "h4",
+        "text-2xl font-bold leading-tight": variant === "h5",
+        "text-xl font-medium leading-tight": variant === "h6",
+        "text-lg font-medium leading-snug": variant === "subtitle1",
+        "text-base font-medium leading-snug": variant === "subtitle2",
+        "text-base leading-relaxed": variant === "body1",
+        "text-sm font-medium leading-relaxed": variant === "body2",
+        "text-sm font-medium leading-tight": variant === "caption",
+        "sr-only": variant === "srOnly",
+      },
+      {
+        inline: display === "inline",
+        block: display === "block",
+      },
+      {
+        "text-left": align === "left",
+        "text-center": align === "center",
+        "text-right": align === "right",
+      },
+      className,
+    );
+
     return (
-      <Component
-        ref={ref}
-        className={clsx(
-          typographyVariantStyles[variant],
-          {
-            inline: display === "inline",
-            block: display === "block",
-          },
-          {
-            "text-left": align === "left",
-            "text-center": align === "center",
-            "text-right": align === "right",
-          },
-          className,
-        )}
-        {...rest}
-      >
+      <Component ref={ref} className={classes} {...rest}>
         {children}
       </Component>
     );
