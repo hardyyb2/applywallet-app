@@ -17,13 +17,13 @@ export default function RootLayout({
       <body>
         <BaseLayout className="h-full">
           <BaseLayout.Head>
-            <Navbar className="bg-base-200 text-primary-content">
+            <Navbar className="text-primary-content">
               <Navbar.Start className="pl-4">hardik badola</Navbar.Start>
             </Navbar>
           </BaseLayout.Head>
           <BaseLayout.Body className="overflow-hidden">
             <Drawer mobile className="h-full">
-              <Drawer.Side>
+              <Drawer.Side className="bg-base-200">
                 <BaseScrollbar>
                   <SideNav />
                 </BaseScrollbar>
