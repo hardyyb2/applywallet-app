@@ -1,14 +1,14 @@
 export const sideNavItems: { label: string; link: string; key?: string }[] = [
   {
-    label: "Home",
+    label: "home",
     link: "/",
   },
   {
-    label: "About",
+    label: "about",
     link: "/about",
   },
   {
-    label: "Install",
+    label: "install",
     link: "/install",
   },
 ];

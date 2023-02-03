@@ -1,5 +1,6 @@
 "use client";
 
+import { Typography } from "@/app/Components/isolated/common";
 import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -10,8 +11,8 @@ const SideNav = () => {
   const pathname = usePathname();
 
   return (
-    <nav role="navigation" aria-label="Navbar" className="pt-4">
-      <ul className="menu / w-56 / p-2">
+    <nav role="navigation" aria-label="Navbar" className="w-80 pt-4">
+      <ul className="menu menu-compact / px-4">
         {sideNavItems.map((item, index) => (
           <li key={item.key ?? item.link}>
             <Link
@@ -34,7 +35,7 @@ const SideNav = () => {
                   d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
                 />
               </svg>
-              {item.label}
+              <Typography>{item.label}</Typography>
             </Link>
           </li>
         ))}
