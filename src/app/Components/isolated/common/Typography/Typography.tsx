@@ -7,18 +7,14 @@ import {
 } from "./typography.types";
 import { TypographyVariantTypeTagMap } from "./typography.utils";
 
-type TypographyCustomProps = {
+interface TypographyProps {
   variant?: TypographyVariantType;
   display?: TypographyDisplayType;
   component?: keyof JSX.IntrinsicElements | ComponentType<any>;
   children?: React.ReactNode;
   align?: "left" | "center" | "right";
   className?: string;
-};
-
-type ElementProps = JSX.IntrinsicElements[keyof JSX.IntrinsicElements];
-
-export type TypographyProps = TypographyCustomProps & ElementProps;
+}
 
 const Typography = forwardRef<
   keyof JSX.IntrinsicElements | ComponentType<any>,

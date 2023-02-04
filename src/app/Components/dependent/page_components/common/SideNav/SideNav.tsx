@@ -11,7 +11,7 @@ import { useState } from "react";
 import { sideNavItems } from "./sideNav.utils";
 
 const loadFeatures = () =>
-  import("@/app/Utils/framer.utils").then((res) => res.default);
+  import("@/app/utils/framer.utils").then((res) => res.default);
 
 const MotionTypography = m(Typography);
 
@@ -34,7 +34,7 @@ const SideNav = () => {
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
+                  className="h-5 w-5 "
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
