@@ -22,7 +22,7 @@ export default function RootLayout({
             </Navbar>
           </BaseLayout.Head>
           <BaseLayout.Body className="grid grid-cols-[max-content_auto] / overflow-hidden">
-            <aside className="overflow-y-auto">
+            <aside className="h-full overflow-hidden">
               <SideNav />
             </aside>
             <section className="overflow-y-auto">

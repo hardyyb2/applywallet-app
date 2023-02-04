@@ -22,12 +22,12 @@ const SideNav = () => {
 
   return (
     <LazyMotion features={loadFeatures} strict>
-      <nav role="navigation" aria-label="Navbar" className="">
+      <nav role="navigation" aria-label="Navbar" className="h-full">
         <BaseScrollbar>
           <ul
             className={clsx(
               "menu menu-compact rounded-box",
-              "gap-y-4 / ml-4 p-2 / bg-base-200",
+              "h-[96%] / flex-nowrap gap-y-4 / ml-4 p-2 / bg-base-200 / overflow-y-auto",
             )}
           >
             {sideNavItems.map((item) => {
