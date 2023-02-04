@@ -23,9 +23,7 @@ export default function RootLayout({
           </BaseLayout.Head>
           <BaseLayout.Body className="grid grid-cols-[max-content_auto] / overflow-hidden">
             <aside className="overflow-y-auto">
-              <BaseScrollbar>
-                <SideNav />
-              </BaseScrollbar>
+              <SideNav />
             </aside>
             <section className="overflow-y-auto">
               <BaseScrollbar>{children}</BaseScrollbar>
