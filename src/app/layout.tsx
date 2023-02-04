@@ -3,7 +3,7 @@ import {
   BaseScrollbar,
   SideNav,
 } from "@/app/Components/dependent/page_components/common";
-import { Drawer, Navbar } from "@/app/Components/isolated/wrapped";
+import { Navbar } from "@/app/Components/isolated/wrapped";
 import "./globals.css";
 
 export default function RootLayout({
@@ -21,17 +21,15 @@ export default function RootLayout({
               <Navbar.Start className="pl-4">hardik badola</Navbar.Start>
             </Navbar>
           </BaseLayout.Head>
-          <BaseLayout.Body className="overflow-hidden">
-            <Drawer mobile className="h-full">
-              <Drawer.Side className="bg-base-200">
-                <BaseScrollbar>
-                  <SideNav />
-                </BaseScrollbar>
-              </Drawer.Side>
-              <Drawer.Main className="p-4">
-                <BaseScrollbar>{children}</BaseScrollbar>
-              </Drawer.Main>
-            </Drawer>
+          <BaseLayout.Body className="grid grid-cols-[max-content_auto] / overflow-hidden">
+            <aside className="overflow-y-auto">
+              <BaseScrollbar>
+                <SideNav />
+              </BaseScrollbar>
+            </aside>
+            <section className="overflow-y-auto">
+              <BaseScrollbar>{children}</BaseScrollbar>
+            </section>
           </BaseLayout.Body>
         </BaseLayout>
       </body>

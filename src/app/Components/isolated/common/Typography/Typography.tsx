@@ -7,7 +7,7 @@ import {
 } from "./typography.types";
 import { TypographyVariantTypeTagMap } from "./typography.utils";
 
-interface TypographyProps {
+export interface TypographyProps {
   variant?: TypographyVariantType;
   display?: TypographyDisplayType;
   component?: keyof JSX.IntrinsicElements | ComponentType<any>;
