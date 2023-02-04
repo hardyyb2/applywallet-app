@@ -18,16 +18,16 @@ const MotionTypography = m(Typography);
 
 const SideNav = () => {
   const pathname = usePathname();
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   return (
     <LazyMotion features={loadFeatures} strict>
-      <nav role="navigation" aria-label="Navbar" className="h-full">
+      <nav role="navigation" aria-label="Navbar" className="py-4 h-full">
         <BaseScrollbar>
           <ul
             className={clsx(
               "menu menu-compact rounded-box",
-              "h-[96%] / flex-nowrap gap-y-4 / ml-4 p-2 / bg-base-200 / overflow-y-auto",
+              "h-full  / flex-nowrap gap-y-2 / ml-4 p-2 / bg-base-200 / overflow-y-auto",
             )}
           >
             {sideNavItems.map((item) => {
@@ -63,7 +63,7 @@ const SideNav = () => {
                           initial={{ width: 0 }}
                           animate={{ width: 160 }}
                           exit={{ width: 0, opacity: 0 }}
-                          className="w-40 overflow-ellipsis"
+                          className="overflow-ellipsis"
                         >
                           {item.label}
                         </MotionTypography>

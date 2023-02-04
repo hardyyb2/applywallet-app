@@ -17,9 +17,7 @@ export default function RootLayout({
       <body>
         <BaseLayout className="h-full">
           <BaseLayout.Head>
-            <Navbar className="text-primary-content">
-              <Navbar.Start className="pl-4">hardik badola</Navbar.Start>
-            </Navbar>
+            <div />
           </BaseLayout.Head>
           <BaseLayout.Body className="grid grid-cols-[max-content_auto] / overflow-hidden">
             <aside className="h-full overflow-hidden">
