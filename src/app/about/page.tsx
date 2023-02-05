@@ -1,6 +1,6 @@
-import { BaseScrollbar } from "../components/dependent/common";
-import { Typography } from "../components/isolated/common";
-import { Navbar } from "../components/isolated/wrapped";
+import { BaseScrollbar } from "@/components/dependent/common";
+import { Typography } from "@/components/isolated/common";
+import { Navbar } from "@/components/isolated/wrapped";
 
 const About = () => {
   return (

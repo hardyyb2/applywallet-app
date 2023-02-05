@@ -10,6 +10,7 @@ import { sideNavItems } from "./sideNav.utils";
 import { BaseScrollbar } from "../BaseScrollbar";
 
 import { Typography } from "@/components/isolated/common";
+import { Button } from "@/components/isolated/wrapped";
 
 const loadFeatures = () =>
   import("@/utils/framer.utils").then((res) => res.default);
@@ -22,12 +23,25 @@ const SideNav = () => {
 
   return (
     <LazyMotion features={loadFeatures} strict>
-      <nav role="navigation" aria-label="Navbar" className="py-4 h-full">
+      <div className="py-4 h-full grid grid-rows-[auto_1fr_auto]">
+        <div className="sticky top-0 items-center gap-2 px-4 py-2">
+          <Link
+            href="/"
+            aria-current="page"
+            aria-label="Homepage"
+            className="flex-0 btn btn-ghost px-2"
+          >
+            <div className="text-primary inline-flex text-lg ">
+              <span className="lowercase">hardik</span>
+              <span className="text-base-content">badola</span>
+            </div>
+          </Link>
+        </div>
         <BaseScrollbar>
           <ul
             className={clsx(
               "menu menu-compact rounded-box",
-              "h-full  / flex-nowrap gap-y-2 / ml-4 p-2 / bg-base-200 / overflow-y-auto",
+              "h-full / flex-nowrap gap-y-2 / ml-4 p-2 / bg-base-200 / overflow-y-auto",
             )}
           >
             {sideNavItems.map((item) => {
@@ -75,7 +89,8 @@ const SideNav = () => {
             })}
           </ul>
         </BaseScrollbar>
-      </nav>
+        <div className="px-4 pt-4">Footer</div>
+      </div>
     </LazyMotion>
   );
 };
