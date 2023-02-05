@@ -1,7 +1,5 @@
 "use client";
 
-import { Typography } from "@/app/components/isolated/common";
-import { Button } from "@/app/components/isolated/wrapped";
 import clsx from "clsx";
 import { AnimatePresence, LazyMotion, m } from "framer-motion";
 import Link from "next/link";
@@ -11,8 +9,10 @@ import { useState } from "react";
 import { sideNavItems } from "./sideNav.utils";
 import { BaseScrollbar } from "../BaseScrollbar";
 
+import { Typography } from "@/components/isolated/common";
+
 const loadFeatures = () =>
-  import("@/app/utils/framer.utils").then((res) => res.default);
+  import("@/utils/framer.utils").then((res) => res.default);
 
 const MotionTypography = m(Typography);
 

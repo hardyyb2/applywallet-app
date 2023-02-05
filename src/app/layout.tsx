@@ -1,9 +1,7 @@
 import {
   BaseLayout,
-  BaseScrollbar,
   SideNav,
-} from "@/app/components/dependent/page_components/common";
-import { Navbar } from "@/app/components/isolated/wrapped";
+} from "@/components/dependent/page_components/common";
 import "./globals.css";
 
 export default function RootLayout({

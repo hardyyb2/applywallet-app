@@ -1,8 +1,4 @@
-import { BaseScrollbar } from "@/app/components/dependent/page_components/common";
-import { Typography } from "@/app/components/isolated/common";
-import { Button } from "@/app/components/isolated/wrapped";
 import { Inter } from "@next/font/google";
-import Image from "next/image";
 
 const inter = Inter({ subsets: ["latin"] });
 
