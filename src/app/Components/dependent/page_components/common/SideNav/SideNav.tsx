@@ -1,15 +1,15 @@
 "use client";
 
-import { Typography } from "@/app/Components/isolated/common";
-import { Button } from "@/app/Components/isolated/wrapped";
+import { Typography } from "@/app/components/isolated/common";
+import { Button } from "@/app/components/isolated/wrapped";
 import clsx from "clsx";
 import { AnimatePresence, LazyMotion, m } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { BaseScrollbar } from "../BaseScrollbar";
 
 import { sideNavItems } from "./sideNav.utils";
+import { BaseScrollbar } from "../BaseScrollbar";
 
 const loadFeatures = () =>
   import("@/app/utils/framer.utils").then((res) => res.default);
