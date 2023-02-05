@@ -1,4 +1,4 @@
-import { BaseScrollbar } from "../components/dependent/page_components/common";
+import { BaseScrollbar } from "../components/dependent/common";
 import { Typography } from "../components/isolated/common";
 import { Navbar } from "../components/isolated/wrapped";
 

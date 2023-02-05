@@ -1,7 +1,4 @@
-import {
-  BaseLayout,
-  SideNav,
-} from "@/components/dependent/page_components/common";
+import { BaseLayout, SideNav } from "@/components/dependent/common";
 import "./globals.css";
 
 export default function RootLayout({
