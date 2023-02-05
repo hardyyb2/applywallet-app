@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { forwardRef, PropsWithChildren } from "react";
+import { ComponentType, forwardRef, PropsWithChildren } from "react";
 
 import {
   FlexAlignType,
@@ -13,23 +13,28 @@ export interface FlexProps {
   align?: FlexAlignType;
   justify?: FlexJustifyType;
   wrap?: FlexWrapType;
+  component?: keyof JSX.IntrinsicElements | ComponentType<any>;
   className?: string;
 }
 
-const Flex = forwardRef<HTMLDivElement, PropsWithChildren<FlexProps>>(
+const Flex = forwardRef<
+  keyof JSX.IntrinsicElements | ComponentType<any>,
+  PropsWithChildren<FlexProps>
+>(
   (
     {
       direction,
       align = "stretch",
       justify,
       wrap,
+      component: Component = "div",
       className = "",
       children = null,
     },
     ref,
   ) => {
     return (
-      <div
+      <Component
         ref={ref}
         className={clsx(
           "flex",
@@ -61,7 +66,7 @@ const Flex = forwardRef<HTMLDivElement, PropsWithChildren<FlexProps>>(
         )}
       >
         {children}
-      </div>
+      </Component>
     );
   },
 );

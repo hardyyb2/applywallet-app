@@ -1,6 +1,6 @@
 "use client";
 
-import { Typography } from "@/components/isolated/common";
+import { Flex, Typography } from "@/components/isolated/common";
 import { useBoolean } from "@/hooks/useBoolean";
 import clsx from "clsx";
 import { AnimatePresence, LazyMotion, m } from "framer-motion";
@@ -10,6 +10,7 @@ import { usePathname } from "next/navigation";
 import SideNavBrand from "./components/SideNavBrand";
 import { sideNavItems } from "./sideNav.utils";
 import { BaseScrollbar } from "../BaseScrollbar";
+import { Button } from "@/components/isolated/wrapped";
 
 const loadFeatures = () =>
   import("@/utils/framer.utils").then((res) => res.default);
@@ -25,13 +26,35 @@ const SideNav = () => {
 
   return (
     <LazyMotion features={loadFeatures} strict>
-      <div className="py-4 h-full grid grid-rows-[auto_1fr_auto]">
-        <SideNavBrand navOpen={sideNavOpen} onToggleClick={toggleSideNav} />
+      <div
+        className={clsx(
+          "h-[96%] / grid grid-rows-[auto_1fr_auto]",
+          "ml-4 my-auto / bg-base-200 / rounded-box ",
+        )}
+      >
+        <div className="p-2">
+          <SideNavBrand navOpen={sideNavOpen} onToggleClick={toggleSideNav} />
+          <Button color="ghost" onClick={toggleSideNav}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              className="h-4 w-4 stroke-current"
+            >
+              <path
+                d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                className="fill-current"
+              />
+            </svg>
+          </Button>
+        </div>
         <BaseScrollbar>
-          <ul
+          <Flex
+            component="ul"
+            wrap="nowrap"
             className={clsx(
-              "menu menu-compact rounded-box",
-              "h-full / flex-nowrap gap-y-2 / ml-4 p-2 / bg-base-200 / overflow-y-auto",
+              "menu menu-compact",
+              "h-full / gap-y-2 / p-2 / overflow-y-auto",
             )}
           >
             {sideNavItems.map((item) => {
@@ -64,7 +87,7 @@ const SideNav = () => {
                         <MotionTypography
                           key={item.key}
                           variant="caption"
-                          initial={{ width: 160 }}
+                          initial={{ width: 0 }}
                           animate={{ width: 160 }}
                           exit={{ width: 0, opacity: 0 }}
                           className="overflow-ellipsis"
@@ -77,7 +100,7 @@ const SideNav = () => {
                 </li>
               );
             })}
-          </ul>
+          </Flex>
         </BaseScrollbar>
       </div>
     </LazyMotion>

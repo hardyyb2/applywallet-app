@@ -1,7 +1,7 @@
 import { Flex, Typography } from "@/components/isolated/common";
 import { Button } from "@/components/isolated/wrapped";
 import clsx from "clsx";
-import { m } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import Link from "next/link";
 import React from "react";
 
@@ -22,7 +22,7 @@ const SideNavBrand = ({
     <Flex
       align="center"
       justify="space-between"
-      className={clsx("gap-2 / pl-4 py-2", className)}
+      className={clsx("gap-2 / py-2", className)}
     >
       <Link
         href={link}
@@ -30,14 +30,16 @@ const SideNavBrand = ({
         aria-label="Homepage"
         className="flex-0 / px-2 / btn btn-ghost"
       >
-        {navOpen ? (
-          <div className="inline-flex gap-1 / text-lg text-primary / lowercase">
-            <Typography>hardik</Typography>
-            <Typography className="text-base-content">badola</Typography>
-          </div>
-        ) : (
-          <div>h</div>
-        )}
+        <AnimatePresence>
+          {navOpen ? (
+            <div className="inline-flex gap-1 / text-lg text-primary / lowercase">
+              <Typography>hardik</Typography>
+              <Typography className="text-base-content">badola</Typography>
+            </div>
+          ) : (
+            <div>h</div>
+          )}
+        </AnimatePresence>
       </Link>
     </Flex>
   );
