@@ -1,16 +1,15 @@
 "use client";
 
+import { Typography } from "@/components/isolated/common";
+import { useBoolean } from "@/hooks/useBoolean";
 import clsx from "clsx";
 import { AnimatePresence, LazyMotion, m } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
 
+import SideNavBrand from "./components/SideNavBrand";
 import { sideNavItems } from "./sideNav.utils";
 import { BaseScrollbar } from "../BaseScrollbar";
-
-import { Typography } from "@/components/isolated/common";
-import { Button } from "@/components/isolated/wrapped";
 
 const loadFeatures = () =>
   import("@/utils/framer.utils").then((res) => res.default);
@@ -19,24 +18,15 @@ const MotionTypography = m(Typography);
 
 const SideNav = () => {
   const pathname = usePathname();
-  const [open, setOpen] = useState(true);
+
+  const [sideNavOpen, { toggle: toggleSideNav }] = useBoolean({
+    initialVal: false,
+  });
 
   return (
     <LazyMotion features={loadFeatures} strict>
       <div className="py-4 h-full grid grid-rows-[auto_1fr_auto]">
-        <div className="sticky top-0 items-center gap-2 px-4 py-2">
-          <Link
-            href="/"
-            aria-current="page"
-            aria-label="Homepage"
-            className="flex-0 btn btn-ghost px-2"
-          >
-            <div className="text-primary inline-flex text-lg ">
-              <span className="lowercase">hardik</span>
-              <span className="text-base-content">badola</span>
-            </div>
-          </Link>
-        </div>
+        <SideNavBrand navOpen={sideNavOpen} onToggleClick={toggleSideNav} />
         <BaseScrollbar>
           <ul
             className={clsx(
@@ -70,11 +60,11 @@ const SideNav = () => {
                       />
                     </svg>
                     <AnimatePresence>
-                      {open && (
+                      {sideNavOpen && (
                         <MotionTypography
                           key={item.key}
                           variant="caption"
-                          initial={{ width: 0 }}
+                          initial={{ width: 160 }}
                           animate={{ width: 160 }}
                           exit={{ width: 0, opacity: 0 }}
                           className="overflow-ellipsis"
@@ -89,7 +79,6 @@ const SideNav = () => {
             })}
           </ul>
         </BaseScrollbar>
-        <div className="px-4 pt-4">Footer</div>
       </div>
     </LazyMotion>
   );
