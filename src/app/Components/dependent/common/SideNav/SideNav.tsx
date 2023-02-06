@@ -1,6 +1,7 @@
 "use client";
 
 import { Flex, Typography } from "@/components/isolated/common";
+import { Button } from "@/components/isolated/wrapped";
 import { useBoolean } from "@/hooks/useBoolean";
 import clsx from "clsx";
 import { AnimatePresence, LazyMotion, m } from "framer-motion";
@@ -10,12 +11,9 @@ import { usePathname } from "next/navigation";
 import SideNavBrand from "./components/SideNavBrand";
 import { sideNavItems } from "./sideNav.utils";
 import { BaseScrollbar } from "../BaseScrollbar";
-import { Button } from "@/components/isolated/wrapped";
 
 const loadFeatures = () =>
   import("@/utils/framer.utils").then((res) => res.default);
-
-const MotionTypography = m(Typography);
 
 const SideNav = () => {
   const pathname = usePathname();
@@ -26,27 +24,19 @@ const SideNav = () => {
 
   return (
     <LazyMotion features={loadFeatures} strict>
-      <div
+      <m.div
+        animate={{
+          width: sideNavOpen ? 200 : 66,
+        }}
         className={clsx(
-          "h-[96%] / grid grid-rows-[auto_1fr_auto]",
+          "h-[96%]  / grid grid-rows-[auto_1fr_auto]",
           "ml-4 my-auto / bg-base-200 / rounded-box ",
         )}
       >
         <div className="p-2">
           <SideNavBrand navOpen={sideNavOpen} onToggleClick={toggleSideNav} />
-          <Button color="ghost" onClick={toggleSideNav}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              className="h-4 w-4 stroke-current"
-            >
-              <path
-                d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
-                className="fill-current"
-              />
-            </svg>
-          </Button>
+
+          <div className="divider m-0" />
         </div>
         <BaseScrollbar>
           <Flex
@@ -54,7 +44,7 @@ const SideNav = () => {
             wrap="nowrap"
             className={clsx(
               "menu menu-compact",
-              "h-full / gap-y-2 / p-2 / overflow-y-auto",
+              "h-full / gap-y-2 / px-2 / overflow-y-auto",
             )}
           >
             {sideNavItems.map((item) => {
@@ -83,18 +73,15 @@ const SideNav = () => {
                       />
                     </svg>
                     <AnimatePresence>
-                      {sideNavOpen && (
-                        <MotionTypography
+                      {sideNavOpen ? (
+                        <Typography
                           key={item.key}
                           variant="caption"
-                          initial={{ width: 0 }}
-                          animate={{ width: 160 }}
-                          exit={{ width: 0, opacity: 0 }}
                           className="overflow-ellipsis"
                         >
                           {item.label}
-                        </MotionTypography>
-                      )}
+                        </Typography>
+                      ) : null}
                     </AnimatePresence>
                   </Link>
                 </li>
@@ -102,7 +89,7 @@ const SideNav = () => {
             })}
           </Flex>
         </BaseScrollbar>
-      </div>
+      </m.div>
     </LazyMotion>
   );
 };
