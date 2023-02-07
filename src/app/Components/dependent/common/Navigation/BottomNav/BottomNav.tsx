@@ -1,9 +1,11 @@
 "use client";
 
 import { BottomNavigation, Button } from "@/components/isolated/wrapped";
+import { useBoolean } from "@/hooks/useBoolean";
 import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 import { navItems } from "../navigation.utils";
 
@@ -13,6 +15,11 @@ interface BottomNavProps {
 
 const BottomNav = ({ className = "" }: BottomNavProps) => {
   const pathName = usePathname();
+  const [showAllOptions, { toggle: toggleShowAllOptions }] = useBoolean({
+    initialVal: false,
+  });
+
+  const displayedMenuItems = showAllOptions ? navItems : navItems.slice(0, 3);
 
   return (
     <BottomNavigation
@@ -21,7 +28,7 @@ const BottomNav = ({ className = "" }: BottomNavProps) => {
         className,
       )}
     >
-      {navItems.map((item) => {
+      {displayedMenuItems.map((item) => {
         const active = pathName === item.link;
 
         return (
@@ -45,6 +52,24 @@ const BottomNav = ({ className = "" }: BottomNavProps) => {
           </Link>
         );
       })}
+
+      <Link href="">
+        <Button
+          color="ghost"
+          className="w-[90%]"
+          onClick={toggleShowAllOptions}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            className="h-5 w-5"
+          >
+            <rect x="0" y="16" fill="currentColor" width="24" height="2" />
+            <rect x="0" y="8" fill="currentColor" width="24" height="2" />
+            <rect x="0" y="0" fill="currentColor" width="24" height="2" />
+          </svg>
+        </Button>
+      </Link>
     </BottomNavigation>
   );
 };
