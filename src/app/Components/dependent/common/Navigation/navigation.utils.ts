@@ -1,4 +1,4 @@
-export const sideNavItems: { label: string; link: string; key?: string }[] = [
+export const navItems: { label: string; link: string; key?: string }[] = [
   {
     label: "home",
     link: "/",

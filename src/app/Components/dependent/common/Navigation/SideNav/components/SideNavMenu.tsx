@@ -3,8 +3,8 @@ import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { BaseScrollbar } from "../../BaseScrollbar";
-import { sideNavItems } from "../sideNav.utils";
+import { BaseScrollbar } from "../../../BaseScrollbar";
+import { navItems } from "../../navigation.utils";
 
 interface SideNavMenuProps {
   navOpen: boolean;
@@ -23,7 +23,7 @@ const SideNavMenu = ({ navOpen }: SideNavMenuProps) => {
           "h-full / gap-y-2 / px-2 / overflow-y-auto",
         )}
       >
-        {sideNavItems.map((item) => {
+        {navItems.map((item) => {
           const active = pathname === item.link;
 
           return (

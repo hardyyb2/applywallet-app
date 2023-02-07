@@ -1,3 +1,4 @@
 - Improve SidNav code
 - make mobile responsive first
 - Transform svg with SVGO
+- <meta name="viewport" content="viewport-fit=cover"> for responsive Bottom navigation in iOS

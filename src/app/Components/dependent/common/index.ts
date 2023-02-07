@@ -1,3 +1,4 @@
 export * from "./BaseLayout";
 export * from "./BaseScrollbar";
-export * from "./SideNav";
+export * from "./Navigation/SideNav";
+export * from "./Navigation/BottomNav";
