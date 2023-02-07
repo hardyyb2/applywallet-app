@@ -1,7 +1,6 @@
 import { Flex, Typography } from "@/components/isolated/common";
 import { Button } from "@/components/isolated/wrapped";
 import clsx from "clsx";
-import { AnimatePresence, m } from "framer-motion";
 import Link from "next/link";
 import React from "react";
 
@@ -40,7 +39,11 @@ const SideNavBrand = ({
           <div>h</div>
         )}
       </Link>
-      <Button color="ghost" onClick={onToggleClick}>
+      <Button
+        color="ghost"
+        onClick={onToggleClick}
+        className={clsx(navOpen && "p-2")}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

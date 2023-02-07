@@ -18,7 +18,7 @@ const loadFeatures = () =>
 const SideNav = () => {
   const pathname = usePathname();
 
-  const [sideNavOpen, { toggle: toggleSideNav }] = useBoolean({
+  const [navOpen, { toggle: toggleSideNav }] = useBoolean({
     initialVal: false,
   });
 
@@ -26,7 +26,7 @@ const SideNav = () => {
     <LazyMotion features={loadFeatures} strict>
       <m.div
         animate={{
-          width: sideNavOpen ? 200 : 66,
+          width: navOpen ? 200 : 66,
         }}
         className={clsx(
           "h-[96%]  / grid grid-rows-[auto_1fr_auto]",
@@ -34,10 +34,10 @@ const SideNav = () => {
         )}
       >
         <div className="p-2">
-          <SideNavBrand navOpen={sideNavOpen} onToggleClick={toggleSideNav} />
-
+          <SideNavBrand navOpen={navOpen} onToggleClick={toggleSideNav} />
           <div className="divider m-0" />
         </div>
+
         <BaseScrollbar>
           <Flex
             component="ul"
@@ -73,7 +73,7 @@ const SideNav = () => {
                       />
                     </svg>
                     <AnimatePresence>
-                      {sideNavOpen ? (
+                      {navOpen ? (
                         <Typography
                           key={item.key}
                           variant="caption"
