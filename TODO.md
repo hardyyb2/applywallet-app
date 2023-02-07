@@ -1,2 +1,3 @@
 - Improve SidNav code
 - make mobile responsive first
+- Transform svg with SVGO

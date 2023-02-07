@@ -36,7 +36,22 @@ const SideNavBrand = ({
             <Typography className="text-base-content">badola</Typography>
           </div>
         ) : (
-          <div>h</div>
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+              />
+            </svg>
+          </div>
         )}
       </Link>
       <Button
@@ -44,21 +59,39 @@ const SideNavBrand = ({
         onClick={onToggleClick}
         className={clsx(navOpen && "p-2")}
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          className="h-4 w-4 stroke-current"
-        >
-          <path
-            d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
-            className="fill-current"
-          />
-          <path
-            d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
-            className="fill-current"
-          />
-        </svg>
+        {navOpen ? (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            className="h-4 w-4 stroke-current rotate-180"
+          >
+            <path
+              d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+              className="fill-current"
+            />
+            <path
+              d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+              className="fill-current "
+            />
+          </svg>
+        ) : (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            className="h-4 w-4 stroke-current"
+          >
+            <path
+              d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+              className="fill-current"
+            />
+            <path
+              d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+              className="fill-current"
+            />
+          </svg>
+        )}
       </Button>
     </Flex>
   );
