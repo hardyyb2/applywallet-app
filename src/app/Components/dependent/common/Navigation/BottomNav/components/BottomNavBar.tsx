@@ -15,14 +15,14 @@ const BottomNavBar = ({
 }: BottomNavBarProps) => {
   return (
     <Fragment>
-      {navItems.map((item) => {
+      {navItems.slice(0, 3).map((item) => {
         const active = pathName === item.link;
 
         return (
           <Link href={item.link} key={item.key ?? item.link}>
             <Button
               color={active ? "primary" : "ghost"}
-              className=" w-[90%] h-16 / flex flex-col "
+              className=" w-[90%] / flex flex-col "
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

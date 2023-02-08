@@ -1,12 +1,16 @@
 "use client";
 
-import { BottomNavigation } from "@/components/isolated/wrapped";
-import { useBoolean } from "@/hooks/useBoolean";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
 
+import { BottomNavigation } from "@/components/isolated/wrapped";
+import { useBoolean } from "@/hooks/useBoolean";
+
+import SideNavMenu from "../SideNav/components/SideNavMenu";
+
 import { BottomNavBar } from "./components/BottomNavBar";
 import { BottomNavMenu } from "./components/BottomNavMenu";
+import { Fragment } from "react";
 
 interface BottomNavProps {
   className?: string;
@@ -19,22 +23,33 @@ const BottomNav = ({ className = "" }: BottomNavProps) => {
   });
 
   return (
-    <BottomNavigation
-      className={clsx(
-        "w-[96%] / mb-4 mx-auto px-2 / rounded-box overflow-hidden",
-        showFullBottomNav ? "h-2/3" : "h-20",
-        className,
-      )}
-    >
-      {showFullBottomNav ? (
-        <BottomNavMenu />
-      ) : (
-        <BottomNavBar
-          pathName={pathName}
-          toggleBottomNav={toggleShowFullBottomNav}
-        />
-      )}
-    </BottomNavigation>
+    <Fragment>
+      <div
+        className={clsx(
+          "fixed bg-gray-800 bg-opacity-50 backdrop-blur-[2px] inset-0 overflow-y-auto h-full w-full",
+          showFullBottomNav ? "block" : "hidden",
+        )}
+        role="dialog"
+        aria-hidden="true"
+        onClick={toggleShowFullBottomNav}
+      />
+      <BottomNavigation
+        className={clsx(
+          "w-[96%] / mb-4 mx-auto / rounded-box overflow-hidden",
+          showFullBottomNav ? "h-2/3 py-8" : "h-16 px-2 ",
+          className,
+        )}
+      >
+        {showFullBottomNav ? (
+          <BottomNavMenu />
+        ) : (
+          <BottomNavBar
+            pathName={pathName}
+            toggleBottomNav={toggleShowFullBottomNav}
+          />
+        )}
+      </BottomNavigation>
+    </Fragment>
   );
 };
 
