@@ -1,4 +1,4 @@
-export * from "./BaseLayout";
-export * from "./BaseScrollbar";
-export * from "./Navigation/SideNav";
-export * from "./Navigation/BottomNav";
+export { BaseLayout } from "./BaseLayout";
+export { BaseScrollbar } from "./BaseScrollbar";
+export { SideNav } from "./Navigation/SideNav";
+export { BottomNav } from "./Navigation/BottomNav";
