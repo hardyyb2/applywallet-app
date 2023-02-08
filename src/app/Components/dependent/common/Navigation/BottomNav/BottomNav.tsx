@@ -2,6 +2,7 @@
 
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
+import { Fragment } from "react";
 
 import { BottomNavigation } from "@/components/isolated/wrapped";
 import { useBoolean } from "@/hooks/useBoolean";
@@ -10,7 +11,6 @@ import SideNavMenu from "../SideNav/components/SideNavMenu";
 
 import { BottomNavBar } from "./components/BottomNavBar";
 import { BottomNavMenu } from "./components/BottomNavMenu";
-import { Fragment } from "react";
 
 interface BottomNavProps {
   className?: string;

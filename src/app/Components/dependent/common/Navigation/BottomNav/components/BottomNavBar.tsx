@@ -1,6 +1,7 @@
-import { BottomNavigation, Button } from "@/components/isolated/wrapped";
 import Link from "next/link";
 import { Fragment } from "react";
+
+import { BottomNavigation, Button } from "@/components/isolated/wrapped";
 
 import { navItems } from "../../navigation.utils";
 

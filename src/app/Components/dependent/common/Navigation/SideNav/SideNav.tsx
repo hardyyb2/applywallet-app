@@ -1,8 +1,9 @@
 "use client";
 
-import { useBoolean } from "@/hooks/useBoolean";
 import clsx from "clsx";
 import { LazyMotion, m } from "framer-motion";
+
+import { useBoolean } from "@/hooks/useBoolean";
 
 import SideNavBrand from "./components/SideNavBrand";
 import SideNavMenu from "./components/SideNavMenu";
