@@ -16,9 +16,16 @@ const BottomNavBar = ({
   pathName = "/",
   toggleBottomNav,
 }: BottomNavBarProps) => {
+  const mainMenuItems = navItems.slice(0, 3) ?? [];
+
+  // Only show indicator if the pathName lies inside the menu and not on the main navbar
+  const menuIconHasIndicator = !mainMenuItems.some(
+    (navItem) => navItem.link === pathName,
+  );
+
   return (
     <Fragment>
-      {navItems.slice(0, 3).map((item) => {
+      {mainMenuItems.slice(0, 3).map((item) => {
         const active = pathName === item.link;
 
         return (
@@ -53,8 +60,21 @@ const BottomNavBar = ({
         );
       })}
 
-      <Flex component="div">
-        <Button color="ghost" className="w-[90%]" onClick={toggleBottomNav}>
+      <Flex component="div" className="">
+        <Button
+          color="ghost"
+          className="w-[90%] indicator"
+          onClick={toggleBottomNav}
+        >
+          {menuIconHasIndicator ? (
+            <span
+              className={clsx(
+                "indicator-item badge badge-xs badge-secondary",
+                "left-1/2 top-[20%]",
+              )}
+            />
+          ) : null}
+
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
