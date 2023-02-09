@@ -3,7 +3,10 @@ import React, { forwardRef } from "react";
 
 import { InputColorsType, InputSizeTypes } from "./Input.types";
 
-export type InputProps = Omit<React.InputHTMLAttributes<HTMLInputElement>, "size" | "color"> & {
+export type InputProps = Omit<
+  React.InputHTMLAttributes<HTMLInputElement>,
+  "size" | "color"
+> & {
   bordered?: boolean;
   borderOffset?: boolean;
   size?: InputSizeTypes;
@@ -12,7 +15,18 @@ export type InputProps = Omit<React.InputHTMLAttributes<HTMLInputElement>, "size
 };
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ bordered = true, borderOffset = true, size, color, className, htmlSize, ...props }, ref): JSX.Element => {
+  (
+    {
+      bordered = true,
+      borderOffset = true,
+      size,
+      color,
+      className,
+      htmlSize,
+      ...props
+    },
+    ref,
+  ): JSX.Element => {
     const classes = clsx(
       "input",
       {
@@ -44,4 +58,4 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
 
 Input.displayName = "Input";
 
-export default Input;
+export { Input };

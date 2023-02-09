@@ -1,3 +1,4 @@
+/* eslint-disable import/no-default-export */
 import { BaseLayout, Navigation } from "@/components/dependent/common";
 
 import { Flex } from "./components/isolated/common";

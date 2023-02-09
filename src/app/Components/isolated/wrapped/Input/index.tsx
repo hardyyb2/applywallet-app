@@ -1,4 +1,2 @@
-import Input, { InputProps as TInputProps } from "./Input";
-
-export type InputProps = TInputProps;
-export { Input };
+export type { InputProps } from "./Input";
+export { Input } from "./Input";

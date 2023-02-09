@@ -3,14 +3,20 @@ import React from "react";
 
 import { TextareaColorsType } from "./Textarea.types";
 
-export type TextareaProps = Omit<React.TextareaHTMLAttributes<HTMLTextAreaElement>, "color"> & {
+export type TextareaProps = Omit<
+  React.TextareaHTMLAttributes<HTMLTextAreaElement>,
+  "color"
+> & {
   color?: TextareaColorsType;
   bordered?: boolean;
   borderOffset?: boolean;
 };
 
 const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
-  ({ bordered = true, borderOffset = true, color, className, ...props }, ref): JSX.Element => {
+  (
+    { bordered = true, borderOffset = true, color, className, ...props },
+    ref,
+  ): JSX.Element => {
     const classes = clsx(
       "textarea",
       {
@@ -36,4 +42,4 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
 
 Textarea.displayName = "Textarea";
 
-export default Textarea;
+export { Textarea };

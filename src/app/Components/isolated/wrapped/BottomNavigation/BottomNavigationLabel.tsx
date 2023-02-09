@@ -16,4 +16,4 @@ const BottomNavigationLabel = forwardRef<
 
 BottomNavigationLabel.displayName = "BottomNavigationLabel";
 
-export default BottomNavigationLabel;
+export { BottomNavigationLabel };

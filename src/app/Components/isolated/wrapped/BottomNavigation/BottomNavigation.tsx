@@ -2,7 +2,7 @@ import clsx from "clsx";
 import { forwardRef, HTMLAttributes } from "react";
 
 import { BottomNavigationSizeTypes } from "./bottomNavigation.types";
-import BottomNavigationLabel from "./BottomNavigationLabel";
+import { BottomNavigationLabel } from "./BottomNavigationLabel";
 
 export type BottomNavigationProps = HTMLAttributes<HTMLDivElement> & {
   size?: BottomNavigationSizeTypes;
@@ -33,6 +33,8 @@ const BottomNavigation = forwardRef<HTMLDivElement, BottomNavigationProps>(
 
 BottomNavigation.displayName = "BottomNavigation";
 
-export default Object.assign(BottomNavigation, {
+const BottomNavigationCompound = Object.assign(BottomNavigation, {
   Label: BottomNavigationLabel,
 });
+
+export { BottomNavigationCompound as BottomNavigation };

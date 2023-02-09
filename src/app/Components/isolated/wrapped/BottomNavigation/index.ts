@@ -1,5 +1,3 @@
-import BottomNavigation, {
-  BottomNavigationProps as TBottomNavigationProps,
-} from "./BottomNavigation";
-export type BottomNavigationProps = TBottomNavigationProps;
+import { BottomNavigation } from "./BottomNavigation";
+export type { BottomNavigationProps } from "./BottomNavigation";
 export { BottomNavigation };

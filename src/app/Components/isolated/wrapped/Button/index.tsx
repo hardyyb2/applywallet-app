@@ -1,4 +1,2 @@
-import Button, { ButtonProps as TButtonProps } from "./Button";
-
-export type ButtonProps = TButtonProps;
-export { Button };
+export type { ButtonProps } from "./Button";
+export { Button } from "./Button";

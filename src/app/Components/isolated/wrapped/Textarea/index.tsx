@@ -1,4 +1,2 @@
-import Textarea, { TextareaProps as TTextareaProps } from "./Textarea";
-
-export type TextareaProps = TTextareaProps;
-export { Textarea };
+export type { TextareaProps } from "./Textarea";
+export { Textarea } from "./Textarea";
