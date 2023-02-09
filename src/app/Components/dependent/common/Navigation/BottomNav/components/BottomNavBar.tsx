@@ -8,6 +8,7 @@ import { navItems } from "../../navigation.utils";
 interface BottomNavBarProps {
   pathName?: string | null;
   toggleBottomNav: () => void;
+  className?: string;
 }
 
 const BottomNavBar = ({

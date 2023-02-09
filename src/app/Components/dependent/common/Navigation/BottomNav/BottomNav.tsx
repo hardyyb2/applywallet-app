@@ -1,13 +1,11 @@
 "use client";
 
 import clsx from "clsx";
+import { AnimatePresence, LazyMotion, m } from "framer-motion";
 import { usePathname } from "next/navigation";
-import { Fragment } from "react";
 
 import { BottomNavigation } from "@/components/isolated/wrapped";
 import { useBoolean } from "@/hooks/useBoolean";
-
-import SideNavMenu from "../SideNav/components/SideNavMenu";
 
 import { BottomNavBar } from "./components/BottomNavBar";
 import { BottomNavMenu } from "./components/BottomNavMenu";
@@ -16,6 +14,11 @@ interface BottomNavProps {
   className?: string;
 }
 
+const loadFeatures = () =>
+  import("@/utils/framer.utils").then((res) => res.default);
+
+const MotionBottomNavigation = m(BottomNavigation);
+
 const BottomNav = ({ className = "" }: BottomNavProps) => {
   const pathName = usePathname();
   const [showFullBottomNav, { toggle: toggleShowFullBottomNav }] = useBoolean({
@@ -23,7 +26,7 @@ const BottomNav = ({ className = "" }: BottomNavProps) => {
   });
 
   return (
-    <Fragment>
+    <LazyMotion features={loadFeatures} strict>
       <div
         className={clsx(
           "fixed bg-gray-800 bg-opacity-50 backdrop-blur-[2px] inset-0 overflow-y-auto h-full w-full",
@@ -33,23 +36,27 @@ const BottomNav = ({ className = "" }: BottomNavProps) => {
         aria-hidden="true"
         onClick={toggleShowFullBottomNav}
       />
-      <BottomNavigation
+      <MotionBottomNavigation
+        animate={{
+          height: showFullBottomNav ? "66%" : "4rem",
+        }}
         className={clsx(
           "w-[96%] / mb-4 mx-auto / rounded-box overflow-hidden",
-          showFullBottomNav ? "h-2/3 py-8" : "h-16 px-2 ",
           className,
         )}
       >
-        {showFullBottomNav ? (
-          <BottomNavMenu />
-        ) : (
-          <BottomNavBar
-            pathName={pathName}
-            toggleBottomNav={toggleShowFullBottomNav}
-          />
-        )}
-      </BottomNavigation>
-    </Fragment>
+        <AnimatePresence>
+          {showFullBottomNav ? (
+            <BottomNavMenu />
+          ) : (
+            <BottomNavBar
+              pathName={pathName}
+              toggleBottomNav={toggleShowFullBottomNav}
+            />
+          )}
+        </AnimatePresence>
+      </MotionBottomNavigation>
+    </LazyMotion>
   );
 };
 
