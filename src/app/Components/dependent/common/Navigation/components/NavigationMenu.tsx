@@ -10,9 +10,10 @@ import { groupedNavItemsEntries } from "../navigation.utils";
 
 interface NavigationMenuProps {
   navOpen: boolean;
+  className?: string;
 }
 
-const NavigationMenu = ({ navOpen }: NavigationMenuProps) => {
+const NavigationMenu = ({ navOpen, className = "" }: NavigationMenuProps) => {
   const pathName = usePathname();
 
   return (
@@ -23,6 +24,7 @@ const NavigationMenu = ({ navOpen }: NavigationMenuProps) => {
         className={clsx(
           "menu menu-compact",
           "h-full / gap-y-2 / px-2 / overflow-y-auto",
+          className,
         )}
       >
         {groupedNavItemsEntries.map(([group, items]) => {

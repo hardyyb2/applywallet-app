@@ -1,6 +1,8 @@
+import clsx from "clsx";
 import Link from "next/link";
 import { Fragment } from "react";
 
+import { Flex } from "@/components/isolated/common";
 import { BottomNavigation, Button } from "@/components/isolated/wrapped";
 
 import { navItems } from "../../navigation.utils";
@@ -8,7 +10,6 @@ import { navItems } from "../../navigation.utils";
 interface BottomNavBarProps {
   pathName?: string | null;
   toggleBottomNav: () => void;
-  className?: string;
 }
 
 const BottomNavBar = ({
@@ -23,8 +24,12 @@ const BottomNavBar = ({
         return (
           <Link href={item.link} key={item.key ?? item.link}>
             <Button
-              color={active ? "primary" : "ghost"}
-              className=" w-[90%] / flex flex-col "
+              color="ghost"
+              className={clsx(
+                "w-[90%] / flex flex-col ",
+                active && "text-secondary active",
+                "hover:bg-transparent",
+              )}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -48,7 +53,7 @@ const BottomNavBar = ({
         );
       })}
 
-      <Link href="">
+      <Flex component="div">
         <Button color="ghost" className="w-[90%]" onClick={toggleBottomNav}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +65,7 @@ const BottomNavBar = ({
             <rect x="0" y="0" fill="currentColor" width="24" height="2" />
           </svg>
         </Button>
-      </Link>
+      </Flex>
     </Fragment>
   );
 };

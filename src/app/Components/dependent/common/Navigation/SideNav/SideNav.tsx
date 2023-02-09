@@ -10,7 +10,7 @@ import { NavigationMenu } from "../components/NavigationMenu";
 import { SideNavBrand } from "./components/SideNavBrand";
 
 const loadFeatures = () =>
-  import("@/utils/framer.utils").then((res) => res.default);
+  import("@/utils/framer.utils").then((module) => module.domAnimation);
 
 const SideNav = () => {
   const [navOpen, { toggle: toggleSideNav }] = useBoolean({
@@ -35,7 +35,7 @@ const SideNav = () => {
         </div>
 
         {/* Scrollable menu items */}
-        <NavigationMenu navOpen={navOpen} />
+        <NavigationMenu navOpen={navOpen} className="pt-2 pb-8" />
       </m.div>
     </LazyMotion>
   );

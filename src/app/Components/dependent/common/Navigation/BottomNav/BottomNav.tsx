@@ -9,16 +9,17 @@ import { useBoolean } from "@/hooks/useBoolean";
 
 import { NavigationMenu } from "../components/NavigationMenu";
 
+import { BottomNavBackdrop } from "./components/BottomNavBackdrop";
 import { BottomNavBar } from "./components/BottomNavBar";
+
+const loadFeatures = () =>
+  import("@/utils/framer.utils").then((module) => module.domAnimation);
+
+const MotionBottomNavigation = m(BottomNavigation);
 
 interface BottomNavProps {
   className?: string;
 }
-
-const loadFeatures = () =>
-  import("@/utils/framer.utils").then((res) => res.default);
-
-const MotionBottomNavigation = m(BottomNavigation);
 
 const BottomNav = ({ className = "" }: BottomNavProps) => {
   const pathName = usePathname();
@@ -28,27 +29,23 @@ const BottomNav = ({ className = "" }: BottomNavProps) => {
 
   return (
     <LazyMotion features={loadFeatures} strict>
-      <div
-        className={clsx(
-          "fixed bg-gray-800 bg-opacity-50 backdrop-blur-[2px] inset-0 overflow-y-auto h-full w-full",
-          showFullBottomNav ? "block" : "hidden",
-        )}
-        role="dialog"
-        aria-hidden="true"
-        onClick={toggleShowFullBottomNav}
+      <BottomNavBackdrop
+        visible={showFullBottomNav}
+        toggleVisible={toggleShowFullBottomNav}
+        className="z-[5]"
       />
       <MotionBottomNavigation
         animate={{
           height: showFullBottomNav ? "66%" : "4rem",
         }}
         className={clsx(
-          "w-[96%] / mb-4 mx-auto / rounded-box overflow-hidden",
+          "w-[96%] / mb-4 mx-auto / z-10 rounded-box overflow-hidden",
           className,
         )}
       >
         <AnimatePresence>
           {showFullBottomNav ? (
-            <NavigationMenu navOpen />
+            <NavigationMenu navOpen className="p-4" />
           ) : (
             <BottomNavBar
               pathName={pathName}
