@@ -7,8 +7,9 @@ import { usePathname } from "next/navigation";
 import { BottomNavigation } from "@/components/isolated/wrapped";
 import { useBoolean } from "@/hooks/useBoolean";
 
+import { NavigationMenu } from "../components/NavigationMenu";
+
 import { BottomNavBar } from "./components/BottomNavBar";
-import { BottomNavMenu } from "./components/BottomNavMenu";
 
 interface BottomNavProps {
   className?: string;
@@ -47,7 +48,7 @@ const BottomNav = ({ className = "" }: BottomNavProps) => {
       >
         <AnimatePresence>
           {showFullBottomNav ? (
-            <BottomNavMenu />
+            <NavigationMenu navOpen />
           ) : (
             <BottomNavBar
               pathName={pathName}

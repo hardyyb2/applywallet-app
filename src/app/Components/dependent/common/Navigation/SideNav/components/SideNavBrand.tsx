@@ -98,4 +98,4 @@ const SideNavBrand = ({
   );
 };
 
-export default SideNavBrand;
+export { SideNavBrand };

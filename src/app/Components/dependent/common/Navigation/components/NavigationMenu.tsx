@@ -5,14 +5,14 @@ import { Fragment } from "react";
 
 import { Flex, Typography } from "@/components/isolated/common";
 
-import { BaseScrollbar } from "../../../BaseScrollbar";
-import { groupedNavItemsEntries } from "../../navigation.utils";
+import { BaseScrollbar } from "../../BaseScrollbar";
+import { groupedNavItemsEntries } from "../navigation.utils";
 
-interface SideNavMenuProps {
+interface NavigationMenuProps {
   navOpen: boolean;
 }
 
-const SideNavMenu = ({ navOpen }: SideNavMenuProps) => {
+const NavigationMenu = ({ navOpen }: NavigationMenuProps) => {
   const pathName = usePathname();
 
   return (
@@ -80,4 +80,4 @@ const SideNavMenu = ({ navOpen }: SideNavMenuProps) => {
   );
 };
 
-export default SideNavMenu;
+export { NavigationMenu };

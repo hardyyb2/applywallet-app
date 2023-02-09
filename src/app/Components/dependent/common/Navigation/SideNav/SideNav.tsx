@@ -5,8 +5,9 @@ import { LazyMotion, m } from "framer-motion";
 
 import { useBoolean } from "@/hooks/useBoolean";
 
-import SideNavBrand from "./components/SideNavBrand";
-import SideNavMenu from "./components/SideNavMenu";
+import { NavigationMenu } from "../components/NavigationMenu";
+
+import { SideNavBrand } from "./components/SideNavBrand";
 
 const loadFeatures = () =>
   import("@/utils/framer.utils").then((res) => res.default);
@@ -34,7 +35,7 @@ const SideNav = () => {
         </div>
 
         {/* Scrollable menu items */}
-        <SideNavMenu navOpen={navOpen} />
+        <NavigationMenu navOpen={navOpen} />
       </m.div>
     </LazyMotion>
   );
