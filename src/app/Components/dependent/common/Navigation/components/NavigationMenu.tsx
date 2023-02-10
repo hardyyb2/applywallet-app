@@ -11,9 +11,14 @@ import { groupedNavItemsEntries } from "../navigation.utils";
 interface NavigationMenuProps {
   navOpen: boolean;
   className?: string;
+  onNavItemClick?: () => void;
 }
 
-const NavigationMenu = ({ navOpen, className = "" }: NavigationMenuProps) => {
+const NavigationMenu = ({
+  navOpen,
+  className = "",
+  onNavItemClick = () => null,
+}: NavigationMenuProps) => {
   const pathName = usePathname();
 
   return (
@@ -46,6 +51,7 @@ const NavigationMenu = ({ navOpen, className = "" }: NavigationMenuProps) => {
                       className={clsx("h-9 py-2", {
                         active,
                       })}
+                      onClick={onNavItemClick}
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"

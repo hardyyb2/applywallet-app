@@ -45,7 +45,11 @@ const BottomNav = ({ className = "" }: BottomNavProps) => {
       >
         <AnimatePresence>
           {showFullBottomNav ? (
-            <NavigationMenu navOpen className="p-4" />
+            <NavigationMenu
+              navOpen
+              onNavItemClick={toggleShowFullBottomNav}
+              className="p-4"
+            />
           ) : (
             <BottomNavBar
               pathName={pathName}

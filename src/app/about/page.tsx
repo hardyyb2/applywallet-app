@@ -12,7 +12,7 @@ const About = () => {
         About
       </Typography>
       <BaseScrollbar>
-        <div className="w-full grid grid-cols-[repeat(auto-fill,minmax(400px,1fr))] gap-8">
+        <div className="w-full grid grid-cols-[repeat(auto-fill,minmax(256px,1fr))] gap-8">
           {Array(20)
             .fill(undefined)
             .map((_item, index) => (
