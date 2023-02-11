@@ -18,7 +18,7 @@ export default function RootLayout({
             <Navigation />
 
             <BaseLayout.Body className="overflow-hidden">
-              <BaseLayout.Head className="h-20 w-full / fixed top-0 z-20 / bg-base-300 text-base-content / bg-opacity-90 backdrop-blur-md rounded-b-3xl">
+              <BaseLayout.Head className="h-20 w-full / fixed top-0 z-20 / bg-base-300 text-base-content / bg-opacity-50 backdrop-blur rounded-b-3xl">
                 <Header />
               </BaseLayout.Head>
               <section className="h-full / pt-20 / overflow-y-auto">

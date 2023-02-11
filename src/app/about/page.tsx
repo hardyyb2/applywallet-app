@@ -3,6 +3,7 @@
 import { BaseScrollbar } from "@/components/dependent/common";
 import { Typography } from "@/components/isolated/common";
 import { Navbar } from "@/components/isolated/wrapped";
+import clsx from "clsx";
 
 const About = () => {
   return (
@@ -12,11 +13,16 @@ const About = () => {
         About
       </Typography>
       <BaseScrollbar>
-        <div className="w-full grid grid-cols-[repeat(auto-fill,minmax(256px,1fr))] gap-8">
+        <div
+          className={clsx(
+            "w-full / grid gap-8",
+            "grid-cols-[repeat(auto-fill,minmax(256px,1fr))] lg:grid-cols-[repeat(auto-fill,minmax(320px,1fr))]",
+          )}
+        >
           {Array(20)
             .fill(undefined)
             .map((_item, index) => (
-              <div key={index} className="card bg-base-200 shadow-xl">
+              <div key={index} className=" card bg-base-200">
                 <div className="card-body">
                   <h2 className="card-title">Card title!</h2>
                   <p>If a dog chews shoes whose shoes does he choose?</p>
