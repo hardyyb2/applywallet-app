@@ -17,14 +17,13 @@ export default function RootLayout({
           <BaseLayout.Body className="flex lg:grid lg:grid-cols-[max-content_auto] / bg-base-300 / overflow-hidden">
             <Navigation />
 
-            <BaseLayout.Body>
-              <BaseLayout.Head
-                className="sticky top-0 z-30 flex h-16 w-full justify-center bg-opacity-5  transition-all duration-100
-  bg-base-100 text-base-content shadow-sm"
-              >
+            <BaseLayout.Body className="overflow-hidden">
+              <BaseLayout.Head className="h-20 w-full / fixed top-0 z-20 / bg-base-300 text-base-content / bg-opacity-90 backdrop-blur-md rounded-b-3xl">
                 <Header />
               </BaseLayout.Head>
-              <section className="h-full overflow-y-auto">{children}</section>
+              <section className="h-full / pt-20 / overflow-y-auto">
+                {children}
+              </section>
             </BaseLayout.Body>
           </BaseLayout.Body>
         </BaseLayout>
