@@ -17,7 +17,7 @@ export default function RootLayout({
         <BaseLayout className="h-full">
           <BaseLayout.Head
             className={clsx(
-              "fixed top-0 z-20 / h-20 w-full / bg-base-300 text-base-content",
+              "fixed top-0 z-20 / h-20 w-full / bg-base-300 text-base-content ",
               "bg-opacity-50 backdrop-blur",
             )}
           >

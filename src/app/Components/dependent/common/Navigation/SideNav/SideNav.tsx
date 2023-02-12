@@ -10,7 +10,7 @@ import { NavigationMenu } from "../components/NavigationMenu";
 import { SideNavBrand } from "./components/SideNavBrand";
 
 const loadFeatures = () =>
-  import("@/utils/framer.utils").then((module) => module.domAnimation);
+  import("@/utils/framer.utils").then((module) => module.default);
 
 const SideNav = () => {
   const [navOpen, { toggle: toggleSideNav }] = useBoolean({

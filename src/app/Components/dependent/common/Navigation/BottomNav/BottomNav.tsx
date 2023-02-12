@@ -13,7 +13,7 @@ import { BottomNavBackdrop } from "./components/BottomNavBackdrop";
 import { BottomNavBar } from "./components/BottomNavBar";
 
 const loadFeatures = () =>
-  import("@/utils/framer.utils").then((module) => module.domAnimation);
+  import("@/utils/framer.utils").then((module) => module.default);
 
 const MotionBottomNavigation = m(BottomNavigation);
 

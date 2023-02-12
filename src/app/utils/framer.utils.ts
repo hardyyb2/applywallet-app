@@ -1,2 +1,3 @@
 import { domAnimation } from "framer-motion";
-export { domAnimation };
+// eslint-disable-next-line import/no-default-export
+export default domAnimation;
