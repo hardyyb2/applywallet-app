@@ -18,7 +18,7 @@ export default function RootLayout({
           <BaseLayout.Head
             className={clsx(
               "fixed top-0 z-20 / h-20 w-full / bg-base-300 text-base-content",
-              "bg-opacity-50 backdrop-blur rounded-b-3xl",
+              "bg-opacity-50 backdrop-blur",
             )}
           >
             <Header />
@@ -30,6 +30,7 @@ export default function RootLayout({
             )}
           >
             <Navigation />
+            {/* Padding top same as height of the header */}
             <section className="h-full w-full / pt-20 / overflow-y-auto">
               {children}
             </section>
