@@ -1,6 +1,8 @@
 import React from "react";
 
 import { Button, Dropdown } from "@/components/isolated/wrapped";
+import { selectableThemes } from "./themesMenu.utils";
+import { ThemesMenuItemColors } from "./components/ThemesMenuItemColors";
 
 const ThemesMenu = () => {
   return (
@@ -35,9 +37,17 @@ const ThemesMenu = () => {
         </Button>
       </Dropdown.Toggle>
       <Dropdown.Menu role="listbox">
-        <Dropdown.Item data-set-theme="dark">dark</Dropdown.Item>
-        <Dropdown.Item data-set-theme="light">light</Dropdown.Item>
-        <Dropdown.Item data-set-theme="garden">cyberpunk</Dropdown.Item>
+        {selectableThemes.map(({ value }) => (
+          <Dropdown.Item
+            key={value}
+            data-set-theme={value}
+            className="flex justify-between / bg-base-100"
+            data-theme={value}
+          >
+            <span className="text-base-content">{value}</span>
+            <ThemesMenuItemColors />
+          </Dropdown.Item>
+        ))}
       </Dropdown.Menu>
     </Dropdown>
   );

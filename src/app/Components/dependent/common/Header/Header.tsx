@@ -6,7 +6,7 @@ import { useEffect, useMemo } from "react";
 import { themeChange } from "theme-change";
 
 import { Flex, Typography } from "@/components/isolated/common";
-import { ThemesMenu } from "./components/ThemesMenu";
+import { ThemesMenu } from "./components/ThemesMenu/ThemesMenu";
 import { Button, Dropdown } from "@/components/isolated/wrapped";
 
 const Header = () => {
