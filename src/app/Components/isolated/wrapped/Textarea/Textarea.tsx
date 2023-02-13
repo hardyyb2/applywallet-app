@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import React from "react";
+import { forwardRef } from "react";
 
 import { TextareaColorsType } from "./Textarea.types";
 
@@ -12,7 +12,7 @@ export type TextareaProps = Omit<
   borderOffset?: boolean;
 };
 
-const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
+const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
   (
     { bordered = true, borderOffset = true, color, className, ...props },
     ref,

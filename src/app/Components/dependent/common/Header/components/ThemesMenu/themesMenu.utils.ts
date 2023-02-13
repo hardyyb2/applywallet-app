@@ -12,3 +12,9 @@ export const selectableThemes: { label?: string; value: string }[] = [
     value: "emerald",
   },
 ];
+
+export const getActiveTheme = () => {
+  const activeTheme = document?.querySelector("html")?.dataset?.theme;
+
+  return activeTheme ?? "dark";
+};

@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import React from "react";
+import { forwardRef } from "react";
 
 import { NavbarProps } from "../Navbar";
 
@@ -7,7 +7,7 @@ export type NavbarSectionProps = NavbarProps & {
   section: "start" | "center" | "end";
 };
 
-const NavbarSection = React.forwardRef<HTMLDivElement, NavbarSectionProps>(
+const NavbarSection = forwardRef<HTMLDivElement, NavbarSectionProps>(
   ({ children, section, className, style }, ref): JSX.Element => {
     const classes = clsx(
       {

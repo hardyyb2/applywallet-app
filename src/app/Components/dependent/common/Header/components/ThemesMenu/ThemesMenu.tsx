@@ -1,8 +1,9 @@
-import React from "react";
+import clsx from "clsx";
 
 import { Button, Dropdown } from "@/components/isolated/wrapped";
-import { selectableThemes } from "./themesMenu.utils";
+
 import { ThemesMenuItemColors } from "./components/ThemesMenuItemColors";
+import { selectableThemes } from "./themesMenu.utils";
 
 const ThemesMenu = () => {
   return (
@@ -36,13 +37,20 @@ const ThemesMenu = () => {
           </svg>
         </Button>
       </Dropdown.Toggle>
-      <Dropdown.Menu role="listbox">
+      <Dropdown.Menu
+        role="listbox"
+        className="max-h-80 / flex-col flex-nowrap gap-3 / overflow-y-auto"
+      >
         {selectableThemes.map(({ value }) => (
           <Dropdown.Item
             key={value}
-            data-set-theme={value}
-            className="flex justify-between / bg-base-100"
+            className={clsx(
+              "flex justify-between / bg-base-100",
+              "outline-offset-2",
+            )}
             data-theme={value}
+            data-act-class="outline-base-content"
+            data-set-theme={value}
           >
             <span className="text-base-content">{value}</span>
             <ThemesMenuItemColors />

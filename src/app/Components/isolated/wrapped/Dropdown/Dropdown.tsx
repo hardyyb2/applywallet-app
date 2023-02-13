@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import React, { forwardRef, ReactNode } from "react";
+import { forwardRef } from "react";
 
 import { DropdownItem } from "./DropdownItem";
 import { DropdownMenu } from "./DropdownMenu";

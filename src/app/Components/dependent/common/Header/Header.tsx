@@ -1,24 +1,18 @@
 "use client";
 
 import clsx from "clsx";
-import { usePathname } from "next/navigation";
-import { useEffect, useMemo } from "react";
+import { useEffect } from "react";
 import { themeChange } from "theme-change";
 
 import { Flex, Typography } from "@/components/isolated/common";
+
 import { ThemesMenu } from "./components/ThemesMenu/ThemesMenu";
-import { Button, Dropdown } from "@/components/isolated/wrapped";
+import { getActiveTheme } from "./components/ThemesMenu/themesMenu.utils";
 
 const Header = () => {
-  const pathName = usePathname();
-
   useEffect(() => {
     themeChange(false);
   }, []);
-
-  const displayName = useMemo(() => {
-    return pathName?.split("/")?.[1];
-  }, [pathName]);
 
   return (
     <Flex
