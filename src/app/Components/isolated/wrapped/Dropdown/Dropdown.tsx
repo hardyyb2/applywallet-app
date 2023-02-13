@@ -3,9 +3,9 @@ import React, { forwardRef, ReactNode } from "react";
 
 import { DropdownItem } from "./DropdownItem";
 import { DropdownMenu } from "./DropdownMenu";
+import { DropdownToggle } from "./DropdownToggle";
 
 export type DropdownProps = React.HTMLAttributes<HTMLDivElement> & {
-  item?: ReactNode;
   horizontal?: "left" | "center" | "right";
   vertical?: "top" | "middle" | "end";
   hover?: boolean;
@@ -14,7 +14,7 @@ export type DropdownProps = React.HTMLAttributes<HTMLDivElement> & {
 
 const Dropdown = forwardRef<HTMLDivElement, DropdownProps>(
   (
-    { children, className, item, horizontal, vertical, hover, open, ...props },
+    { children, className, horizontal, vertical, hover, open, ...props },
     ref,
   ): JSX.Element => {
     return (
@@ -39,10 +39,7 @@ const Dropdown = forwardRef<HTMLDivElement, DropdownProps>(
           className,
         )}
       >
-        {item}
-        <div className="dropdown-content">
-          <ul tabIndex={0}>{children}</ul>
-        </div>
+        {children}
       </div>
     );
   },
@@ -53,6 +50,7 @@ Dropdown.displayName = "Dropdown";
 const DropdownCompound = Object.assign(Dropdown, {
   Menu: DropdownMenu,
   Item: DropdownItem,
+  Toggle: DropdownToggle,
 });
 
 export { DropdownCompound as Dropdown };
