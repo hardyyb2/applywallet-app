@@ -30,16 +30,7 @@ const Header = () => {
         <Typography>hardik</Typography>
         <Typography className="text-base-content">badola</Typography>
       </div>
-      <Dropdown vertical="end">
-        <Dropdown.Toggle>
-          <Button aria-haspopup>Click</Button>
-        </Dropdown.Toggle>
-        <Dropdown.Menu role="listbox">
-          <Dropdown.Item data-set-theme="dark">dark</Dropdown.Item>
-          <Dropdown.Item data-set-theme="light">light</Dropdown.Item>
-          <Dropdown.Item data-set-theme="garden">cyberpunk</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
+      <ThemesMenu />
     </Flex>
   );
 };

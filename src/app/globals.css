@@ -17,3 +17,8 @@ body {
   min-height: 100vh;
   height: 100%;
 }
+
+/* Over ride daisyui styles */
+.btn {
+  --btn-text-case: lowercase;
+}

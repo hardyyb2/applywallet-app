@@ -34,7 +34,7 @@ const BottomNavBar = ({
               color="ghost"
               className={clsx(
                 "w-[90%] / flex flex-col ",
-                active && "text-secondary active",
+                active && "text-primary active",
                 "hover:bg-transparent",
               )}
             >
