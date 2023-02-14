@@ -32,14 +32,14 @@ const BottomNav = ({ className = "" }: BottomNavProps) => {
       <BottomNavBackdrop
         visible={showFullBottomNav}
         toggleVisible={toggleShowFullBottomNav}
-        className="z-[5]"
+        className="z-10"
       />
       <MotionBottomNavigation
         animate={{
           height: showFullBottomNav ? "66%" : "4rem",
         }}
         className={clsx(
-          "w-[96%] / mb-4 mx-auto / z-10 rounded-box overflow-hidden",
+          "w-[96%] / mb-4 mx-auto / z-20 rounded-box overflow-hidden backdrop-blur bg-opacity-60",
           className,
         )}
       >
