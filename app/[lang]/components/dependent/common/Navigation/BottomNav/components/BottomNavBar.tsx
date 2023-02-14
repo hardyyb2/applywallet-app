@@ -1,11 +1,14 @@
 import clsx from "clsx";
 import Link from "next/link";
-import { Fragment } from "react";
+import { Fragment, useMemo } from "react";
 
-import { BottomNavigation, Button } from "@/components/isolated/wrapped";
 import { Flex } from "@/components/isolated/common";
+import { BottomNavigation, Button } from "@/components/isolated/wrapped";
 
-import { navItems } from "../../navigation.utils";
+import {
+  bottomNavDisplayOptions,
+  getLinkWithLocale,
+} from "../../navigation.utils";
 
 interface BottomNavBarProps {
   pathName?: string | null;
@@ -16,17 +19,29 @@ const BottomNavBar = ({
   pathName = "/",
   toggleBottomNav,
 }: BottomNavBarProps) => {
-  const mainMenuItems = navItems.slice(0, 3) ?? [];
-
   // Only show indicator if the pathName lies inside the menu and not on the main navbar
-  const menuIconHasIndicator = !mainMenuItems.some(
-    (navItem) => navItem.link === pathName,
+  const menuIconHasIndicator = useMemo(
+    () =>
+      !bottomNavDisplayOptions.some((navItem) => {
+        const itemLinkWithLocale = getLinkWithLocale({
+          link: navItem.link,
+          pathName,
+        });
+
+        return itemLinkWithLocale === pathName;
+      }),
+    [pathName],
   );
 
   return (
     <Fragment>
-      {mainMenuItems.slice(0, 3).map((item) => {
-        const active = pathName === item.link;
+      {bottomNavDisplayOptions.slice(0, 3).map((item) => {
+        const itemLinkWithLocale = getLinkWithLocale({
+          link: item.link,
+          pathName,
+        });
+
+        const active = itemLinkWithLocale === pathName;
 
         return (
           <Link href={item.link} key={item.key ?? item.link}>
@@ -69,7 +84,7 @@ const BottomNavBar = ({
           {menuIconHasIndicator ? (
             <span
               className={clsx(
-                "indicator-item badge badge-xs badge-secondary",
+                "indicator-item badge badge-xs badge-primary",
                 "left-1/2 top-[20%]",
               )}
             />

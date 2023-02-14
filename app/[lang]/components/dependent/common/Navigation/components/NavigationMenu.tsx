@@ -1,12 +1,13 @@
 import clsx from "clsx";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Fragment } from "react";
 
 import { Flex, Typography } from "@/components/isolated/common";
 
 import { BaseScrollbar } from "../../BaseScrollbar";
-import { groupedNavItemsEntries } from "../navigation.utils";
+import { getLinkWithLocale, groupedNavItemsEntries } from "../navigation.utils";
+import { i18n } from "@/utils/locale-utils/i18n-config";
 
 interface NavigationMenuProps {
   navOpen: boolean;
@@ -20,6 +21,7 @@ const NavigationMenu = ({
   onNavItemClick = () => null,
 }: NavigationMenuProps) => {
   const pathName = usePathname();
+  const routes = useRouter();
 
   return (
     <BaseScrollbar>
@@ -42,12 +44,17 @@ const NavigationMenu = ({
               )}
 
               {items.map((item) => {
-                const active = item.link === pathName;
+                const itemLinkWithLocale = getLinkWithLocale({
+                  link: item.link,
+                  pathName,
+                });
+
+                const active = itemLinkWithLocale === pathName;
 
                 return (
-                  <li key={item.key ?? item.link}>
+                  <li key={item.key ?? itemLinkWithLocale}>
                     <Link
-                      href={item.link}
+                      href={itemLinkWithLocale}
                       className={clsx("h-9 py-2", {
                         active,
                       })}

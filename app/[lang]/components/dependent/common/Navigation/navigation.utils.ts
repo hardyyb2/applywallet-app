@@ -1,9 +1,10 @@
+import { i18n } from "@/utils/locale-utils/i18n-config";
 import { NavigationCategories, NavItemType } from "./navigation.types";
 
 export const navItems: NavItemType[] = [
   {
     label: "home",
-    link: "/",
+    link: "",
     category: NavigationCategories.GENERAL,
   },
   {
@@ -68,6 +69,9 @@ export const navItems: NavItemType[] = [
   },
 ];
 
+/** Nav items that will be directly visible on bottom nav bar while rest will show in menu */
+export const bottomNavDisplayOptions = navItems.slice(0, 3) ?? [];
+
 const groupedNavItems: { [key in NavigationCategories]: NavItemType[] } =
   navItems.reduce((grouped, item) => {
     const category = item.category ?? NavigationCategories.GENERAL;
@@ -80,3 +84,16 @@ const groupedNavItems: { [key in NavigationCategories]: NavItemType[] } =
   }, {} as { [key in NavigationCategories]: NavItemType[] });
 
 export const groupedNavItemsEntries = Object.entries(groupedNavItems);
+
+export const getLinkWithLocale = ({
+  link,
+  pathName,
+}: {
+  link: string;
+  pathName: string | null;
+}) => {
+  const currentLocale = pathName?.split("/")?.[1] ?? i18n.defaultLocale;
+  const itemLinkWithLocale = `/${currentLocale}${link}`;
+
+  return itemLinkWithLocale;
+};
