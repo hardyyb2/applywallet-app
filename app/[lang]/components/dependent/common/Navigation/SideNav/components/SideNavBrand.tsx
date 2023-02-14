@@ -1,8 +1,8 @@
 import clsx from "clsx";
 import Link from "next/link";
 
-import { Flex, Typography } from "@//components/isolated/common";
-import { Button } from "@//components/isolated/wrapped";
+import { Flex, Typography } from "@/components/isolated/common";
+import { Button } from "@/components/isolated/wrapped";
 
 interface SideNavBrandProps {
   link?: string;

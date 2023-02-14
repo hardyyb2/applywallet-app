@@ -2,8 +2,8 @@ import clsx from "clsx";
 import Link from "next/link";
 import { Fragment } from "react";
 
+import { BottomNavigation, Button } from "@/components/isolated/wrapped";
 import { Flex } from "@/components/isolated/common";
-import { BottomNavigation, Button } from "@//components/isolated/wrapped";
 
 import { navItems } from "../../navigation.utils";
 

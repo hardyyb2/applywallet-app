@@ -1,3 +1,5 @@
+"server-only";
+
 import { Fragment } from "react";
 
 import { Flex } from "@/components/isolated/common";

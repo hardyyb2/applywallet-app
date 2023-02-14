@@ -14,8 +14,6 @@ export default async function Home({
 }) {
   const dict = await getDictionary(lang); // en
 
-  console.log({ lang }, dict);
-
   return (
     <section className="h-full">
       current {lang}

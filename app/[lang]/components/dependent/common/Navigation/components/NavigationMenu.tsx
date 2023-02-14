@@ -3,7 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Fragment } from "react";
 
-import { Flex, Typography } from "@//components/isolated/common";
+import { Flex, Typography } from "@/components/isolated/common";
 
 import { BaseScrollbar } from "../../BaseScrollbar";
 import { groupedNavItemsEntries } from "../navigation.utils";

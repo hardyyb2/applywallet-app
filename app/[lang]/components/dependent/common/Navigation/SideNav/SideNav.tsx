@@ -3,14 +3,14 @@
 import clsx from "clsx";
 import { LazyMotion, m } from "framer-motion";
 
-import { useBoolean } from "@//hooks/useBoolean";
+import { useBoolean } from "@/hooks/useBoolean";
 
 import { NavigationMenu } from "../components/NavigationMenu";
 
 import { SideNavBrand } from "./components/SideNavBrand";
 
 const loadFeatures = () =>
-  import("@//utils/framer.utils").then((module) => module.default);
+  import("@/utils/framer.utils").then((module) => module.default);
 
 const SideNav = () => {
   const [navOpen, { toggle: toggleSideNav }] = useBoolean({
