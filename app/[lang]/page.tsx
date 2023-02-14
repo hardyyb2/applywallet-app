@@ -1,8 +1,8 @@
 import { Inter } from "@next/font/google";
 
-import { Locale } from "i18n-config";
+import { Locale } from "@/utils/locale-utils/i18n-config";
 
-import { getDictionary } from "./dictionaries";
+import { getDictionary } from "./utils/locale-utils/dictionaries";
 
 const inter = Inter({ subsets: ["latin"] });
 

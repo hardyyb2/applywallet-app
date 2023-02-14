@@ -30,7 +30,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "middleware.tsx",
-    "./i18n-config.ts"
+    "./utils/locale-utils/i18n-config.ts"
   ],
   "exclude": ["node_modules"]
 }
