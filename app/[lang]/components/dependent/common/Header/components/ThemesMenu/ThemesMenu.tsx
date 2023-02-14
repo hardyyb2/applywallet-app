@@ -4,6 +4,7 @@ import { Button, Dropdown } from "@/components/isolated/wrapped";
 
 import { ThemesMenuItemColors } from "./components/ThemesMenuItemColors";
 import { selectableThemes } from "./themesMenu.utils";
+import { Flex } from "@/components/isolated/common";
 
 const ThemesMenu = () => {
   return (
@@ -45,15 +46,17 @@ const ThemesMenu = () => {
           <Dropdown.Item
             key={value}
             className={clsx(
-              "flex justify-between / bg-base-100",
-              "outline-offset-2",
+              "bg-base-100 / overflow-hidden / rounded-lg",
+              "outline-offset-2 outline-base-content",
             )}
             data-theme={value}
-            data-act-class="outline-base-content"
+            data-act-class="outline"
             data-set-theme={value}
           >
-            <span className="text-base-content">{value}</span>
-            <ThemesMenuItemColors />
+            <Flex align="center" justify="space-between">
+              <span className="text-base-content">{value}</span>
+              <ThemesMenuItemColors />
+            </Flex>
           </Dropdown.Item>
         ))}
       </Dropdown.Menu>

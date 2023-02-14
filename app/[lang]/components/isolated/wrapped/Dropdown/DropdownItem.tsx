@@ -1,16 +1,10 @@
-import { AnchorHTMLAttributes, forwardRef } from "react";
+import { forwardRef, HTMLAttributes } from "react";
 
-export type DropdownItemProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
-  containerClassName?: string;
-};
+export type DropdownItemProps = HTMLAttributes<HTMLLIElement>;
 
-const DropdownItem = forwardRef<HTMLAnchorElement, DropdownItemProps>(
-  ({ containerClassName, ...props }, ref) => {
-    return (
-      <li className={containerClassName}>
-        <a ref={ref} {...props}></a>
-      </li>
-    );
+const DropdownItem = forwardRef<HTMLLIElement, DropdownItemProps>(
+  ({ ...props }, ref) => {
+    return <li {...props} ref={ref} />;
   },
 );
 
