@@ -9,7 +9,7 @@
     "analyze": "ANALYZE=true next build",
     "lint": "next lint",
     "lint-fix": "next lint --fix",
-    "format": "prettier --write 'src/**/*.{ts,tsx}'",
+    "format": "prettier --write 'app/**/*.{ts,tsx}'",
     "clean": "vite clean",
     "test": "vitest",
     "coverage": "vitest run --coverage"
