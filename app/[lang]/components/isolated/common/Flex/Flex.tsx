@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { ComponentType, forwardRef, PropsWithChildren } from "react";
+import { ComponentType, forwardRef, PropsWithChildren, ReactNode } from "react";
 
 import {
   FlexAlignType,
@@ -15,6 +15,7 @@ export interface FlexProps {
   wrap?: FlexWrapType;
   component?: keyof JSX.IntrinsicElements | ComponentType<any>;
   className?: string;
+  children?: ReactNode | ReactNode[];
 }
 
 const Flex = forwardRef<
