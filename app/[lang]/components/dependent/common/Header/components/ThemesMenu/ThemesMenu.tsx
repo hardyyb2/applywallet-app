@@ -1,9 +1,9 @@
 import clsx from "clsx";
 
-import { Button, Dropdown } from "@/components/isolated/wrapped";
-
 import { ThemesMenuItemColors } from "./components/ThemesMenuItemColors";
 import { selectableThemes } from "./themesMenu.utils";
+
+import { Button, Dropdown } from "@/components/isolated/wrapped";
 
 const ThemesMenu = () => {
   return (

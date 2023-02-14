@@ -15,6 +15,7 @@
     "coverage": "vitest run --coverage"
   },
   "dependencies": {
+    "@formatjs/intl-localematcher": "^0.2.32",
     "@next/font": "13.1.6",
     "@radix-ui/react-scroll-area": "^1.0.2",
     "@types/node": "18.11.18",
@@ -23,9 +24,11 @@
     "clsx": "^1.2.1",
     "eslint": "8.33.0",
     "framer-motion": "^9.0.1",
+    "negotiator": "^0.6.3",
     "next": "13.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "server-only": "^0.0.1",
     "theme-change": "^2.3.0",
     "typescript": "4.9.5"
   },
@@ -34,6 +37,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.4.3",
+    "@types/negotiator": "^0.6.1",
     "@types/testing-library__jest-dom": "^5.14.5",
     "@vitejs/plugin-react": "^3.0.1",
     "autoprefixer": "^10.4.13",

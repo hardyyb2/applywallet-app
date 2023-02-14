@@ -21,9 +21,16 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/app/*"]
+      "@/*": ["app/[lang]/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "middleware.tsx",
+    "./i18n-config.ts"
+  ],
   "exclude": ["node_modules"]
 }

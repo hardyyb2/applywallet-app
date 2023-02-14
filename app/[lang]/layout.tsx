@@ -1,8 +1,8 @@
 /* eslint-disable import/no-default-export */
-import { BaseLayout, Header, Navigation } from "@/components/dependent/common";
 import clsx from "clsx";
 
-import { Flex } from "./components/isolated/common";
+import { BaseLayout, Header, Navigation } from "@/components/dependent/common";
+
 import "./globals.css";
 
 export default function RootLayout({

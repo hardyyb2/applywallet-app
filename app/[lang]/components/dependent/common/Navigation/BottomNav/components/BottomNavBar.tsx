@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Fragment } from "react";
 
 import { Flex } from "@/components/isolated/common";
-import { BottomNavigation, Button } from "@/components/isolated/wrapped";
+import { BottomNavigation, Button } from "@//components/isolated/wrapped";
 
 import { navItems } from "../../navigation.utils";
 

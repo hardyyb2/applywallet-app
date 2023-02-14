@@ -1,5 +1,3 @@
-/* eslint-disable import/no-default-export */
-
 import clsx from "clsx";
 
 import { BaseScrollbar } from "@/components/dependent/common";
@@ -39,4 +37,5 @@ const About = () => {
   );
 };
 
+// eslint-disable-next-line import/no-default-export
 export default About;

@@ -4,8 +4,8 @@ import clsx from "clsx";
 import { AnimatePresence, LazyMotion, m } from "framer-motion";
 import { usePathname } from "next/navigation";
 
-import { BottomNavigation } from "@/components/isolated/wrapped";
-import { useBoolean } from "@/hooks/useBoolean";
+import { BottomNavigation } from "@//components/isolated/wrapped";
+import { useBoolean } from "@//hooks/useBoolean";
 
 import { NavigationMenu } from "../components/NavigationMenu";
 
@@ -13,7 +13,7 @@ import { BottomNavBackdrop } from "./components/BottomNavBackdrop";
 import { BottomNavBar } from "./components/BottomNavBar";
 
 const loadFeatures = () =>
-  import("@/utils/framer.utils").then((module) => module.default);
+  import("@//utils/framer.utils").then((module) => module.default);
 
 const MotionBottomNavigation = m(BottomNavigation);
 
