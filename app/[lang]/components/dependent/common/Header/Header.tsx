@@ -6,8 +6,9 @@ import { themeChange } from "theme-change";
 
 import { Flex, Typography } from "@/components/isolated/common";
 
+import { LocaleSwitcher } from "../LocaleSwitcher";
+
 import { ThemesMenu } from "./components/ThemesMenu/ThemesMenu";
-import { getActiveTheme } from "./components/ThemesMenu/themesMenu.utils";
 
 const Header = () => {
   useEffect(() => {
@@ -24,7 +25,10 @@ const Header = () => {
         <Typography>hardik</Typography>
         <Typography className="text-base-content">badola</Typography>
       </div>
-      <ThemesMenu />
+      <Flex align="center" className="gap-2">
+        <ThemesMenu />
+        <LocaleSwitcher />
+      </Flex>
     </Flex>
   );
 };

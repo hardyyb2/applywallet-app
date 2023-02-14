@@ -1,11 +1,17 @@
+"use client";
+
 import clsx from "clsx";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import { Button, Dropdown } from "@/components/isolated/wrapped";
+import { i18n } from "@/utils/locale-utils/i18n-config";
 
-import { ThemesMenuItemColors } from "./components/ThemesMenuItemColors";
-import { selectableThemes } from "./themesMenu.utils";
+import { redirectedPathName } from "./localeSwitcher.utils";
 
-const ThemesMenu = () => {
+const LocaleSwitcher = () => {
+  const pathName = usePathname();
+
   return (
     <Dropdown vertical="end">
       <Dropdown.Toggle>
@@ -25,7 +31,7 @@ const ThemesMenu = () => {
               d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
             ></path>
           </svg>
-          <span className="hidden md:inline">theme</span>
+          <span className="hidden md:inline">lang</span>
           <svg
             width="12px"
             height="12px"
@@ -41,24 +47,28 @@ const ThemesMenu = () => {
         role="listbox"
         className="max-h-80 / flex-col flex-nowrap gap-3 / overflow-y-auto"
       >
-        {selectableThemes.map(({ value }) => (
-          <Dropdown.Item
-            key={value}
-            className={clsx(
-              "flex justify-between / bg-base-100",
-              "outline-offset-2",
-            )}
-            data-theme={value}
-            data-act-class="outline-base-content"
-            data-set-theme={value}
-          >
-            <span className="text-base-content">{value}</span>
-            <ThemesMenuItemColors />
-          </Dropdown.Item>
-        ))}
+        {i18n.locales.map((locale) => {
+          const { activeLocale, newRedirectPath } = redirectedPathName(
+            pathName,
+            locale,
+          );
+
+          return (
+            <Dropdown.Item
+              key={locale}
+              className={clsx(
+                "flex justify-between / bg-base-100",
+                "outline-offset-2",
+                activeLocale === locale && "outline-base-content",
+              )}
+            >
+              <Link href={newRedirectPath}>{locale}</Link>
+            </Dropdown.Item>
+          );
+        })}
       </Dropdown.Menu>
     </Dropdown>
   );
 };
 
-export { ThemesMenu };
+export { LocaleSwitcher };
