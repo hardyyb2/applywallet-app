@@ -28,7 +28,7 @@ const NavigationMenu = ({
         component="ul"
         wrap="nowrap"
         className={clsx(
-          "menu menu-compact prose prose-a:no-underline",
+          "menu menu-compact / prose prose-li:pl-0  prose-a:no-underline",
           "h-full / px-2 / overflow-y-auto",
           className,
         )}
