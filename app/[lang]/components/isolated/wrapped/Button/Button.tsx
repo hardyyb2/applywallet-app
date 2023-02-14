@@ -78,7 +78,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       // States
       {
         "btn-block": fullWidth,
-        "btn-xs md:btn-sm lg:btn-md xl:btn-lg": responsive,
+        "btn-sm lg:btn-md xl:btn-lg": responsive,
         "no-animation": !animation,
         "btn-active": active,
         "btn-disabled": disabled,

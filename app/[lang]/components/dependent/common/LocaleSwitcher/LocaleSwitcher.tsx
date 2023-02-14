@@ -17,7 +17,7 @@ const LocaleSwitcher = () => {
   return (
     <Dropdown vertical="end">
       <Dropdown.Toggle>
-        <Button color="ghost" className="gap-1" aria-haspopup>
+        <Button color="ghost" className="gap-1" aria-haspopup responsive>
           <svg
             className="inline-block h-4 w-4 fill-current md:h-5 md:w-5"
             xmlns="http://www.w3.org/2000/svg"

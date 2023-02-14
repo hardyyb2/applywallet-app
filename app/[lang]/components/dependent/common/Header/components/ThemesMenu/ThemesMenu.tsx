@@ -1,16 +1,16 @@
 import clsx from "clsx";
 
+import { Flex } from "@/components/isolated/common";
 import { Button, Dropdown } from "@/components/isolated/wrapped";
 
 import { ThemesMenuItemColors } from "./components/ThemesMenuItemColors";
 import { selectableThemes } from "./themesMenu.utils";
-import { Flex } from "@/components/isolated/common";
 
 const ThemesMenu = () => {
   return (
     <Dropdown vertical="end">
       <Dropdown.Toggle>
-        <Button color="ghost" className="gap-1" aria-haspopup>
+        <Button color="ghost" className="gap-1" responsive aria-haspopup>
           <svg
             width="20"
             height="20"

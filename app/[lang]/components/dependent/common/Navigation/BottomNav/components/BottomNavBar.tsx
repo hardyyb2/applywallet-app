@@ -44,7 +44,7 @@ const BottomNavBar = ({
         const active = itemLinkWithLocale === pathName;
 
         return (
-          <Link href={item.link} key={item.key ?? item.link}>
+          <Link href={itemLinkWithLocale} key={item.key ?? item.link}>
             <Button
               color="ghost"
               className={clsx(
