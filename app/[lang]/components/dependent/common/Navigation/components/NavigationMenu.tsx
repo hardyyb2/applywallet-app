@@ -7,7 +7,6 @@ import { Flex, Typography } from "@/components/isolated/common";
 
 import { BaseScrollbar } from "../../BaseScrollbar";
 import { getLinkWithLocale, groupedNavItemsEntries } from "../navigation.utils";
-import { i18n } from "@/utils/locale-utils/i18n-config";
 
 interface NavigationMenuProps {
   navOpen: boolean;
@@ -29,8 +28,8 @@ const NavigationMenu = ({
         component="ul"
         wrap="nowrap"
         className={clsx(
-          "menu menu-compact",
-          "h-full / gap-y-2 / px-2 / overflow-y-auto",
+          "menu menu-compact prose prose-a:no-underline",
+          "h-full / px-2 / overflow-y-auto",
           className,
         )}
       >
@@ -55,8 +54,8 @@ const NavigationMenu = ({
                   <li key={item.key ?? itemLinkWithLocale}>
                     <Link
                       href={itemLinkWithLocale}
-                      className={clsx("h-9 py-2", {
-                        active,
+                      className={clsx("h-9 py-2 ", {
+                        "active text-primary-content": active,
                       })}
                       onClick={onNavItemClick}
                     >
