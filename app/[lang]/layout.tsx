@@ -26,7 +26,7 @@ export default function RootLayout({
         <BaseLayout className="h-full">
           <BaseLayout.Head
             className={clsx(
-              "fixed top-0 z-[5] / h-16 w-full / bg-base-300 text-base-content ",
+              "fixed top-0 z-[5] / h-16 lg:h-20 w-full / text-base-content ",
               "bg-opacity-60 backdrop-blur",
             )}
           >
@@ -35,7 +35,7 @@ export default function RootLayout({
           <BaseLayout.Body
             className={clsx(
               "flex lg:grid lg:grid-cols-[max-content_auto]",
-              "bg-base-300 / overflow-hidden",
+              "bg-primary bg-opacity-20 / overflow-hidden",
             )}
           >
             <Navigation />
