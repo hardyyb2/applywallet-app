@@ -3,3 +3,5 @@
 - Transform svg with SVGO
 - <meta name="viewport" content="viewport-fit=cover"> for responsive Bottom navigation in iOS
 - Move SVGs to files
+- microanimations
+- Theme at one place

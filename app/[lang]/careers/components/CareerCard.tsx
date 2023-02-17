@@ -1,9 +1,7 @@
 import clsx from "clsx";
 
-import { Button } from "@/components/isolated/wrapped";
-
-import { CopyToClipboard } from "./CopyToClipboard";
 import { Flex } from "@/components/isolated/common";
+import { CopyButton } from "@/components/dependent/common";
 
 const CareerCard = ({ index }: { index: number }) => {
   return (
@@ -11,7 +9,10 @@ const CareerCard = ({ index }: { index: number }) => {
       <div className="card-body prose prose-headings:m-0 prose-p:mt-1 prose-h6:font-light prose-h6:underline">
         <h2 className="card-title">Yellow.ai</h2>
         <div>
-          <h6> company description</h6>
+          <Flex align="center" justify="space-between">
+            <h6>company description</h6>
+            <CopyButton text="Role asdkasdas" />
+          </Flex>
           <p>
             <em>
               Company - Lorem ipsum dolor, sit amet consectetur adipisicing
@@ -24,7 +25,10 @@ const CareerCard = ({ index }: { index: number }) => {
 
         <h3>SDE (UI)</h3>
         <div>
-          <h6>role description</h6>
+          <Flex align="center" justify="space-between">
+            <h6> role description</h6>
+            <CopyButton text="Role asdkasdas" />
+          </Flex>
           <p>
             Role - Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Quos itaque a sapiente eius nihil assumenda quaerat quis. Est
@@ -34,15 +38,18 @@ const CareerCard = ({ index }: { index: number }) => {
         </div>
 
         <div>
-          <CopyToClipboard>
-            <Flex align="center" justify="space-between">
-              <h6> job description</h6>
-              <Button data-copy-action="role">Copy</Button>
-            </Flex>
-            <strong>
-              <p data-copy-target="role">Role {index}</p>
-            </strong>
-          </CopyToClipboard>
+          <Flex align="center" justify="space-between">
+            <h6> job description</h6>
+            <CopyButton text="Role asdkasdas" />
+          </Flex>
+          <strong>
+            <p>
+              Role - Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Quos itaque a sapiente eius nihil assumenda quaerat quis. Est
+              veritatis, tempore ullam culpa aspernatur itaque et sequi
+              consequatur aliquam temporibus veniam.
+            </p>
+          </strong>
         </div>
       </div>
     </div>
