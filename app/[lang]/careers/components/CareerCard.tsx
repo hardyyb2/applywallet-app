@@ -1,6 +1,11 @@
 import clsx from "clsx";
 
-const CareerCard = () => {
+import { Button } from "@/components/isolated/wrapped";
+
+import { CopyToClipboard } from "./CopyToClipboard";
+import { Flex } from "@/components/isolated/common";
+
+const CareerCard = ({ index }: { index: number }) => {
   return (
     <div className={clsx("card / bg-base-200")}>
       <div className="card-body prose prose-headings:m-0 prose-p:mt-1 prose-h6:font-light prose-h6:underline">
@@ -29,29 +34,15 @@ const CareerCard = () => {
         </div>
 
         <div>
-          <h6> job description</h6>
-          <p>
+          <CopyToClipboard>
+            <Flex align="center" justify="space-between">
+              <h6> job description</h6>
+              <Button data-copy-action="role">Copy</Button>
+            </Flex>
             <strong>
-              <ul>
-                <li>
-                  this is the details this is the detailsthis is the detailsthis
-                  is the detailsthis is the detailsthis is the details
-                </li>
-                <li>
-                  this is the details this is the detailsthis is the detailsthis
-                  is the detailsthis is the detailsthis is the details
-                </li>{" "}
-                <li>
-                  this is the details this is the detailsthis is the detailsthis
-                  is the detailsthis is the detailsthis is the details
-                </li>{" "}
-                <li>
-                  this is the details this is the detailsthis is the detailsthis
-                  is the detailsthis is the detailsthis is the details
-                </li>
-              </ul>
+              <p data-copy-target="role">Role {index}</p>
             </strong>
-          </p>
+          </CopyToClipboard>
         </div>
       </div>
     </div>

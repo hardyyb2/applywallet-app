@@ -35,7 +35,7 @@ export default function RootLayout({
           <BaseLayout.Body
             className={clsx(
               "flex lg:grid lg:grid-cols-[max-content_auto]",
-              "bg-primary bg-opacity-20 / overflow-hidden",
+              "bg-gradient-to-br to-primary/30 via-primary/20 from-secondary/20 / overflow-hidden",
             )}
           >
             <Navigation />

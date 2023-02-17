@@ -15,7 +15,7 @@ const Careers = () => {
         {Array(5)
           .fill(undefined)
           .map((_item, key) => (
-            <CareerCard key={key} />
+            <CareerCard key={key} index={key} />
           ))}
       </div>
     </div>
