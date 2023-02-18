@@ -27,32 +27,37 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     },
     ref,
   ): JSX.Element => {
-    const classes = clsx(
-      "input",
-      {
-        "input-lg": size === "lg",
-        "input-md": size === "md",
-        "input-sm": size === "sm",
-        "input-xs": size === "xs",
-      },
-      {
-        "input-primary": color === "primary",
-        "input-secondary": color === "secondary",
-        "input-accent": color === "accent",
-        "input-info": color === "info",
-        "input-success": color === "success",
-        "input-warning": color === "warning",
-        "input-error": color === "error",
-        "input-ghost": color === "ghost",
-      },
-      {
-        "focus:outline-offset-0": !borderOffset,
-        "input-bordered": bordered,
-      },
-      className,
+    return (
+      <input
+        ref={ref}
+        size={htmlSize}
+        className={clsx(
+          "input",
+          {
+            "input-lg": size === "lg",
+            "input-md": size === "md",
+            "input-sm": size === "sm",
+            "input-xs": size === "xs",
+          },
+          {
+            "input-primary": color === "primary",
+            "input-secondary": color === "secondary",
+            "input-accent": color === "accent",
+            "input-info": color === "info",
+            "input-success": color === "success",
+            "input-warning": color === "warning",
+            "input-error": color === "error",
+            "input-ghost": color === "ghost",
+          },
+          {
+            "focus:outline-offset-0": !borderOffset,
+            "input-bordered": bordered,
+          },
+          className,
+        )}
+        {...props}
+      />
     );
-
-    return <input ref={ref} size={htmlSize} className={classes} {...props} />;
   },
 );
 

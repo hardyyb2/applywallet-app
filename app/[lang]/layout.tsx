@@ -40,7 +40,7 @@ export default function RootLayout({
           >
             <Navigation />
             {/* Padding top same as height of the header */}
-            <section className="h-full w-full / pt-20 / overflow-y-auto">
+            <section className="h-full w-full / py-20 / overflow-y-auto">
               {children}
             </section>
           </BaseLayout.Body>
