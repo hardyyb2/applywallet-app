@@ -24,7 +24,7 @@ const AddCareerForm = () => {
     <form
       className={clsx(
         "card / overflow-hidden",
-        "prose prose-h1:m-0 prose-h4:mb-0 prose-h4:underline prose-h4:font-light",
+        "prose prose-h1:m-0 prose-h4:mb-0 prose-h4:mt-8 prose-h4:underline prose-h4:font-light",
       )}
       onSubmit={handleSubmit(onSubmit)}
       noValidate
@@ -39,12 +39,13 @@ const AddCareerForm = () => {
               htmlFor="company.name"
               aria-label="company name"
             >
-              <span className="label-text-alt">name</span>
+              <span className="label-text-alt">company name</span>
             </label>
             <Input
               id="company.name"
               color={errors?.company?.name ? "error" : "primary"}
               aria-invalid={errors?.company?.name ? "true" : "false"}
+              placeholder="e.g. google"
               {...register("company.name")}
             />
             <label className="label" htmlFor="company.name">
@@ -56,12 +57,12 @@ const AddCareerForm = () => {
 
           <div className="form-control">
             <label className="label" htmlFor="company.description">
-              <span className="label-text-alt">description</span>
+              <span className="label-text-alt">company description</span>
             </label>
             <Textarea
-              rows={1}
               color="primary"
               id="company.description"
+              placeholder="e.g. google is a multinational technology company that specializes in internet-related services and products"
               {...register("company.description")}
             />
           </div>
@@ -70,19 +71,24 @@ const AddCareerForm = () => {
           <h4>role details</h4>
           <div className="form-control">
             <label className="label" htmlFor="role.name">
-              <span className="label-text-alt">name</span>
+              <span className="label-text-alt">designation</span>
             </label>
-            <Input color="primary" id="role.name" {...register("role.name")} />
+            <Input
+              color="primary"
+              id="role.name"
+              {...register("role.name")}
+              placeholder="e.g. SDE-1 (UI)"
+            />
           </div>
 
           <div className="form-control">
             <label className="label" htmlFor="role.description">
-              <span className="label-text-alt">description</span>
+              <span className="label-text-alt">role responsibilities</span>
             </label>
             <Textarea
-              rows={1}
               color="primary"
               id="role.description"
+              placeholder="e.g. responsible for developing and maintaining user interfaces for web and mobile applications.  ensuring that user interfaces are accessible, responsive, and performant across different devices and platforms."
               {...register("role.description")}
             />
           </div>
@@ -91,12 +97,12 @@ const AddCareerForm = () => {
           <h4>job details</h4>
           <div className="form-control">
             <label className="label" htmlFor="job.description">
-              <span className="label-text-alt">description</span>
+              <span className="label-text-alt">job achievements</span>
             </label>
             <Textarea
-              rows={1}
               color="primary"
               id="job.description"
+              placeholder={`e.g.\n 1. Successfully delivering high-quality user interfaces that meet design requirements and user needs.\n2. Developing and implementing new UI features that improve the user experience and increase user engagement with the application.\n3. Contributing to the development of a design system or UI framework that standardizes UI components and improves development efficiency.`}
               {...register("job.description")}
             />
           </div>
