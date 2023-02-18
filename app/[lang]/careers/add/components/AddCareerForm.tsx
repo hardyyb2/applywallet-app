@@ -2,13 +2,20 @@
 
 import clsx from "clsx";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 import { Button, Input, Textarea } from "@/components/isolated/wrapped";
 
-import { AddCareerFormType } from "./addCareerForm.utils";
+import { AddCareerFormType, addCareerFormSchema } from "./addCareerForm.utils";
 
 const AddCareerForm = () => {
-  const { register, handleSubmit, formState } = useForm<AddCareerFormType>();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<AddCareerFormType>({
+    resolver: zodResolver(addCareerFormSchema),
+  });
   const onSubmit: SubmitHandler<AddCareerFormType> = (data) => {
     console.log(data);
   };
@@ -20,16 +27,31 @@ const AddCareerForm = () => {
         "prose prose-h1:m-0 prose-h4:mb-0 prose-h4:underline prose-h4:font-light",
       )}
       onSubmit={handleSubmit(onSubmit)}
+      noValidate
     >
       <div className="card-body [&_.form-control]:mt-2 / bg-base-100">
         <h1>add career</h1>
         <div>
           <h4>company details</h4>
           <div className="form-control">
-            <label className="label" htmlFor="company.name">
+            <label
+              className="label"
+              htmlFor="company.name"
+              aria-label="company name"
+            >
               <span className="label-text-alt">name</span>
             </label>
-            <Input id="company.name" color="primary" />
+            <Input
+              id="company.name"
+              color={errors?.company?.name ? "error" : "primary"}
+              aria-invalid={errors?.company?.name ? "true" : "false"}
+              {...register("company.name")}
+            />
+            <label className="label" htmlFor="company.name">
+              <span className="label-text-alt / text-error">
+                {errors?.company?.name?.message}
+              </span>
+            </label>
           </div>
 
           <div className="form-control">
@@ -50,11 +72,7 @@ const AddCareerForm = () => {
             <label className="label" htmlFor="role.name">
               <span className="label-text-alt">name</span>
             </label>
-            <Input
-              color="primary"
-              id="role.name"
-              {...register("role.description")}
-            />
+            <Input color="primary" id="role.name" {...register("role.name")} />
           </div>
 
           <div className="form-control">
