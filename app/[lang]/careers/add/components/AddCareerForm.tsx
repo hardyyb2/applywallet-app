@@ -1,10 +1,11 @@
 "use client";
 
+import clsx from "clsx";
 import { SubmitHandler, useForm } from "react-hook-form";
+
 import { Button, Input, Textarea } from "@/components/isolated/wrapped";
 
 import { AddCareerFormType } from "./addCareerForm.utils";
-import clsx from "clsx";
 
 const AddCareerForm = () => {
   const { register, handleSubmit, formState } = useForm<AddCareerFormType>();

@@ -5,3 +5,4 @@
 - Move SVGs to files
 - microanimations
 - Theme at one place
+- Scroll bar same
