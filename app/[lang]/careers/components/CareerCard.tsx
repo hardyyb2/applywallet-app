@@ -1,7 +1,7 @@
 import clsx from "clsx";
 
-import { Flex } from "@/components/isolated/common";
 import { CopyButton } from "@/components/dependent/common";
+import { Flex } from "@/components/isolated/common";
 
 const CareerCard = ({ index }: { index: number }) => {
   return (

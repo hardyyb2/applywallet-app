@@ -59,10 +59,12 @@ const LocaleSwitcher = () => {
                 activeLocale === value && "bg-primary / text-primary-content",
               )}
             >
-              <Flex align="center" justify="space-between">
-                {icon}
-                <Link href={newRedirectPath}>{label}</Link>
-              </Flex>
+              <Link href={newRedirectPath}>
+                <Flex align="center" justify="space-between" className="gap-2">
+                  {icon}
+                  {label}
+                </Flex>
+              </Link>
             </Dropdown.Item>
           );
         })}

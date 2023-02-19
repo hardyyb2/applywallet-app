@@ -8,3 +8,5 @@
 - Scroll bar same
 - career form page fill
 - button as link component
+- haptics on copy
+- fallback navigator

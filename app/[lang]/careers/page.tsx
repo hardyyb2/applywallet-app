@@ -1,7 +1,9 @@
-import { Flex } from "@/components/isolated/common";
-import { Button } from "@/components/isolated/wrapped";
 import clsx from "clsx";
 import Link from "next/link";
+
+import { Flex } from "@/components/isolated/common";
+import { Button } from "@/components/isolated/wrapped";
+
 import { CareerCard } from "./components/CareerCard";
 
 const Careers = () => {
@@ -15,6 +17,7 @@ const Careers = () => {
 
         <Link href="/careers/add">
           <Button
+            color="primary"
             className="hidden lg:flex"
             startIcon={
               <svg
@@ -28,7 +31,7 @@ const Careers = () => {
               </svg>
             }
           >
-            add career
+            <span>add career</span>
           </Button>
         </Link>
       </Flex>
