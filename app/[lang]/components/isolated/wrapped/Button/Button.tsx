@@ -11,7 +11,6 @@ export type ButtonProps = Omit<
   ButtonHTMLAttributes<HTMLButtonElement>,
   "color"
 > & {
-  href?: string;
   shape?: ButtonShapeType;
   size?: ButtonSizeTypes;
   variant?: "outline" | "link";
@@ -29,7 +28,6 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
       children,
-      href,
       shape,
       size,
       variant,
@@ -86,16 +84,6 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       loading && "loading",
       className,
     );
-
-    if (href) {
-      return (
-        <a className={classes} style={style} href={href}>
-          {startIcon && startIcon}
-          {children}
-          {endIcon && endIcon}
-        </a>
-      );
-    }
 
     return (
       <button
