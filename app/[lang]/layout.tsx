@@ -1,7 +1,12 @@
 /* eslint-disable import/no-default-export */
 import clsx from "clsx";
 
-import { BaseLayout, Navigation } from "@/components/dependent/common";
+import {
+  BaseLayout,
+  LocaleSwitcher,
+  Navigation,
+  ThemesMenu,
+} from "@/components/dependent/common";
 
 import "./globals.css";
 import { Header } from "./Header";
@@ -31,7 +36,10 @@ export default function RootLayout({
               "bg-opacity-60 backdrop-blur",
             )}
           >
-            <Header />
+            <Header>
+              <ThemesMenu />
+              <LocaleSwitcher />
+            </Header>
           </BaseLayout.Head>
           <BaseLayout.Body
             className={clsx(

@@ -1,14 +1,12 @@
 "use client";
 
 import clsx from "clsx";
-import { useEffect } from "react";
+import { useEffect, ReactNode } from "react";
 import { themeChange } from "theme-change";
 
-import { LocaleSwitcher, ThemesMenu } from "@/components/dependent/common";
 import { Flex, Typography } from "@/components/isolated/common";
 
-console.log("header");
-const Header = () => {
+const Header = ({ children }: { children?: ReactNode }) => {
   useEffect(() => {
     themeChange(false);
   }, []);
@@ -24,8 +22,7 @@ const Header = () => {
         <Typography className="text-base-content">badola</Typography>
       </div>
       <Flex align="center" className="gap-1 lg:gap-2">
-        <ThemesMenu />
-        <LocaleSwitcher />
+        {children}
       </Flex>
     </Flex>
   );
