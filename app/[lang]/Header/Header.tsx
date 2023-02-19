@@ -4,12 +4,10 @@ import clsx from "clsx";
 import { useEffect } from "react";
 import { themeChange } from "theme-change";
 
+import { LocaleSwitcher, ThemesMenu } from "@/components/dependent/common";
 import { Flex, Typography } from "@/components/isolated/common";
 
-import { LocaleSwitcher } from "../LocaleSwitcher";
-
-import { ThemesMenu } from "./components/ThemesMenu/ThemesMenu";
-
+console.log("header");
 const Header = () => {
   useEffect(() => {
     themeChange(false);

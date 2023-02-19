@@ -1,9 +1,10 @@
 /* eslint-disable import/no-default-export */
 import clsx from "clsx";
 
-import { BaseLayout, Header, Navigation } from "@/components/dependent/common";
+import { BaseLayout, Navigation } from "@/components/dependent/common";
 
 import "./globals.css";
+import { Header } from "./Header";
 import { i18n, Locale } from "./utils/locale-utils/i18n-config";
 
 export async function generateStaticParams() {

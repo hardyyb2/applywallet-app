@@ -1,15 +1,12 @@
-"use client";
-
 import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { Flex } from "@/components/isolated/common";
 import { Button, Dropdown } from "@/components/isolated/wrapped";
-import { i18n } from "@/utils/locale-utils/i18n-config";
+import { languageOptions } from "@/utils/locale-utils/language-options";
 
 import { redirectedPathName } from "./localeSwitcher.utils";
-import { languageOptions } from "@/utils/locale-utils/language-options";
-import { Flex } from "@/components/isolated/common";
 
 const LocaleSwitcher = () => {
   const pathName = usePathname();
