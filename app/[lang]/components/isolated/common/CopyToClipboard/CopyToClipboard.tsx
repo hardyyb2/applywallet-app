@@ -18,13 +18,15 @@ function CopyToClipboard({
 }: CopyToClipboardProps) {
   const handleClick = async () => {
     try {
+      navigator?.vibrate([50]);
+
       if (navigator?.clipboard) {
         await navigator.clipboard.writeText(text);
       } else {
         await fallbackCopyToClipboard(text);
       }
       onSuccess();
-    } catch (err: any) {
+    } catch (err: unknown) {
       onFailure(err);
     }
   };
