@@ -5,6 +5,7 @@ import { Fragment, useMemo } from "react";
 import { Flex } from "@/components/isolated/common";
 import { BottomNavigation, Button } from "@/components/isolated/wrapped";
 
+import { NextLinkButton } from "../../../NextLinkButton";
 import {
   bottomNavDisplayOptions,
   getLinkWithLocale,
@@ -44,11 +45,12 @@ const BottomNavBar = ({
         const active = itemLinkWithLocale === pathName;
 
         return (
-          <Link href={itemLinkWithLocale} key={item.key ?? item.link}>
-            <Button
+          <div key={item.key ?? item.link}>
+            <NextLinkButton
+              href={itemLinkWithLocale}
               color="ghost"
               className={clsx(
-                "w-[90%] / flex flex-col ",
+                "flex flex-col ",
                 active && "text-primary active",
                 "hover:bg-transparent",
               )}
@@ -70,12 +72,12 @@ const BottomNavBar = ({
               <BottomNavigation.Label className="lowercase text-xs">
                 {item.label}
               </BottomNavigation.Label>
-            </Button>
-          </Link>
+            </NextLinkButton>
+          </div>
         );
       })}
 
-      <Flex component="div" className="">
+      <Flex component="div">
         <Button
           color="ghost"
           className="w-[90%] indicator"
