@@ -1,6 +1,7 @@
 "use client";
 
 import { cloneElement, ReactElement } from "react";
+import { fallbackCopyToClipboard } from "./copyToClipboard.utils";
 
 export interface CopyToClipboardProps {
   text: string;
@@ -17,7 +18,11 @@ function CopyToClipboard({
 }: CopyToClipboardProps) {
   const handleClick = async () => {
     try {
-      await navigator.clipboard.writeText(text);
+      if (navigator?.clipboard) {
+        await navigator.clipboard.writeText(text);
+      } else {
+        await fallbackCopyToClipboard(text);
+      }
       onSuccess();
     } catch (err: any) {
       onFailure(err);

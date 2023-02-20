@@ -2,7 +2,7 @@ import { AddCareerForm } from "./components/AddCareerForm";
 
 const AddCareer = () => {
   return (
-    <div className="p-4">
+    <div className="m-4">
       <AddCareerForm />
     </div>
   );

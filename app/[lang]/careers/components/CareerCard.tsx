@@ -6,12 +6,17 @@ import { Flex } from "@/components/isolated/common";
 const CareerCard = ({ index }: { index: number }) => {
   return (
     <div className={clsx("card / bg-base-200")}>
-      <div className="card-body prose prose-headings:m-0 prose-p:mt-1 prose-h6:font-light prose-h6:underline">
-        <h2 className="card-title">Yellow.ai</h2>
+      <div
+        className={clsx(
+          "card-body",
+          "prose prose-headings:m-0 prose-p:mt-1 prose-h6:font-light prose-h6:underline",
+        )}
+      >
+        <h2 className="card-title">yellow.ai</h2>
         <div>
           <Flex align="center" justify="space-between">
             <h6>company description</h6>
-            <CopyButton text="Role asdkasdas" />
+            <CopyButton text="Hola soy dora" />
           </Flex>
           <p>
             <em>
@@ -27,7 +32,7 @@ const CareerCard = ({ index }: { index: number }) => {
         <div>
           <Flex align="center" justify="space-between">
             <h6> role description</h6>
-            <CopyButton text="Role asdkasdas" />
+            <CopyButton text="Hola soy dora" />
           </Flex>
           <p>
             Role - Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -40,7 +45,7 @@ const CareerCard = ({ index }: { index: number }) => {
         <div>
           <Flex align="center" justify="space-between">
             <h6> job description</h6>
-            <CopyButton text="Role asdkasdas" />
+            <CopyButton text="hey there" />
           </Flex>
           <strong>
             <p>
