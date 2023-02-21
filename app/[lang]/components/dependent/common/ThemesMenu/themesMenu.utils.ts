@@ -1,14 +1,6 @@
-export const selectableThemes: { label?: string; value: string }[] = [
-  {
-    value: "dark",
-  },
-  {
-    value: "light",
-  },
-  {
-    value: "night",
-  },
-  {
-    value: "emerald",
-  },
-];
+import { appThemes } from "@/utils/theme.utils";
+
+export const selectableThemes: { label?: string; value: string }[] =
+  appThemes?.map((theme) => ({
+    value: theme,
+  }));
