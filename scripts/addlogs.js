@@ -15,14 +15,15 @@ const path = require("path");
 
 const addToExtensions = [".js", ".ts", ".jsx", ".tsx"];
 
-function addLogStatementToFile(file, fileName) {
+function addLogStatementToFile(file) {
   return new Promise((_resolve, reject) => {
     fs.readFile(file, "utf8", (err, data) => {
       if (err) {
         reject(`Error reading file ${file}: ${err}`);
         return;
       }
-      const newContent = data + '\nconsole.log("' + fileName + '");';
+      const newContent =
+        data + '\nconsole.log("' + file?.split("[lang]/")[1] + '");';
       fs.writeFile(file, newContent, (err) => {
         if (err) {
           reject(`Error writing file ${file}: ${err}`);
@@ -66,9 +67,9 @@ const processDirectory = (dir, fileHandler) => {
 };
 
 async function addLogStatementToDirectory(directory) {
-  processDirectory(directory, async (filePath, fileName) => {
+  processDirectory(directory, async (filePath) => {
     try {
-      const result = await addLogStatementToFile(filePath, fileName);
+      const result = await addLogStatementToFile(filePath);
       console.log(result);
     } catch (error) {
       console.log(error);
