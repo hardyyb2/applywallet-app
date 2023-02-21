@@ -27,5 +27,3 @@ const BaseLayoutCompound = Object.assign(BaseLayout, {
 });
 
 export { BaseLayoutCompound as BaseLayout };
-
-console.log("[RENDER] components/dependent/common/BaseLayout/BaseLayout.tsx");

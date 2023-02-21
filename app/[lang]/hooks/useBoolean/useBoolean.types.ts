@@ -8,5 +8,3 @@ export type UseBooleanHandlerType<T> = (props: T) => [
     setValue: Dispatch<SetStateAction<boolean>>;
   },
 ];
-
-console.log("[RENDER] hooks/useBoolean/useBoolean.types.ts");

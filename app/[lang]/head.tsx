@@ -9,5 +9,3 @@ export default function Head() {
     </>
   );
 }
-
-console.log("[RENDER] head.tsx");

@@ -10,5 +10,3 @@ const NavbarCenter = forwardRef<
 NavbarCenter.displayName = "NavbarCenter";
 
 export { NavbarCenter };
-
-console.log("[RENDER] components/isolated/wrapped/Navbar/components/NavbarCenter.tsx");

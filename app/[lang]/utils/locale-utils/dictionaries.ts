@@ -9,5 +9,3 @@ const dictionaries = {
 };
 
 export const getDictionary = async (locale: Locale) => dictionaries[locale]?.();
-
-console.log("[RENDER] utils/locale-utils/dictionaries.ts");

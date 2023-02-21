@@ -26,5 +26,3 @@ const BottomNavBackdrop = ({
 };
 
 export { BottomNavBackdrop };
-
-console.log("[RENDER] components/dependent/common/Navigation/BottomNav/components/BottomNavBackdrop.tsx");

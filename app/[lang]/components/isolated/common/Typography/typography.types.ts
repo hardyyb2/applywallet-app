@@ -13,5 +13,3 @@ export type TypographyVariantType =
   | "srOnly";
 
 export type TypographyDisplayType = "inline" | "block";
-
-console.log("[RENDER] components/isolated/common/Typography/typography.types.ts");

@@ -54,5 +54,3 @@ const DropdownCompound = Object.assign(Dropdown, {
 });
 
 export { DropdownCompound as Dropdown };
-
-console.log("[RENDER] components/isolated/wrapped/Dropdown/Dropdown.tsx");

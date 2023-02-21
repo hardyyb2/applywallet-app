@@ -38,5 +38,3 @@ const About = () => {
 
 // eslint-disable-next-line import/no-default-export
 export default About;
-
-console.log("[RENDER] about/page.tsx");

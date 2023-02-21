@@ -97,5 +97,3 @@ export const getLinkWithLocale = ({
 
   return itemLinkWithLocale;
 };
-
-console.log("[RENDER] components/dependent/common/Navigation/navigation.utils.ts");

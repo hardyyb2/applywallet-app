@@ -73,5 +73,3 @@ const LocaleSwitcher = () => {
 };
 
 export { LocaleSwitcher };
-
-console.log("[RENDER] components/dependent/common/LocaleSwitcher/LocaleSwitcher.tsx");

@@ -32,5 +32,3 @@ const NavbarSection = forwardRef<HTMLDivElement, NavbarSectionProps>(
 NavbarSection.displayName = "NavbarSection";
 
 export { NavbarSection };
-
-console.log("[RENDER] components/isolated/wrapped/Navbar/components/NavbarSection.tsx");

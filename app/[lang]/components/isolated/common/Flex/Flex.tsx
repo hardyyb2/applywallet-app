@@ -75,5 +75,3 @@ const Flex = forwardRef<
 Flex.displayName = "Flex";
 
 export { Flex };
-
-console.log("[RENDER] components/isolated/common/Flex/Flex.tsx");

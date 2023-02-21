@@ -35,5 +35,3 @@ function CopyToClipboard({
 }
 
 export { CopyToClipboard };
-
-console.log("[RENDER] components/isolated/common/CopyToClipboard/CopyToClipboard.tsx");

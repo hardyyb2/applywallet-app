@@ -64,5 +64,3 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
 Input.displayName = "Input";
 
 export { Input };
-
-console.log("[RENDER] components/isolated/wrapped/Input/Input.tsx");

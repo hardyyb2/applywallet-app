@@ -12,5 +12,3 @@ const ThemesMenuItemColors = () => {
 };
 
 export { ThemesMenuItemColors };
-
-console.log("[RENDER] components/dependent/common/ThemesMenu/components/ThemesMenuItemColors.tsx");

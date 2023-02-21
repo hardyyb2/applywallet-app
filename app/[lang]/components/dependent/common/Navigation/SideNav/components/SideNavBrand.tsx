@@ -98,5 +98,3 @@ const SideNavBrand = ({
 };
 
 export { SideNavBrand };
-
-console.log("[RENDER] components/dependent/common/Navigation/SideNav/components/SideNavBrand.tsx");

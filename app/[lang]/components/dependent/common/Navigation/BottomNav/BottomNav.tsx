@@ -63,5 +63,3 @@ const BottomNav = ({ className = "" }: BottomNavProps) => {
 };
 
 export { BottomNav };
-
-console.log("[RENDER] components/dependent/common/Navigation/BottomNav/BottomNav.tsx");

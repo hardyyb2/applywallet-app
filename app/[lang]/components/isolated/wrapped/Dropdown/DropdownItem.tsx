@@ -11,5 +11,3 @@ const DropdownItem = forwardRef<HTMLLIElement, DropdownItemProps>(
 DropdownItem.displayName = "DropdownItem";
 
 export { DropdownItem };
-
-console.log("[RENDER] components/isolated/wrapped/Dropdown/DropdownItem.tsx");

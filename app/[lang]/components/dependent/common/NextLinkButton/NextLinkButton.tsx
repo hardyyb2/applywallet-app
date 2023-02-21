@@ -95,5 +95,3 @@ const NextLinkButton = forwardRef<HTMLAnchorElement, NextLinkButtonProps>(
 NextLinkButton.displayName = "Button";
 
 export { NextLinkButton };
-
-console.log("[RENDER] components/dependent/common/NextLinkButton/NextLinkButton.tsx");

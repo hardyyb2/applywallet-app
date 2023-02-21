@@ -21,5 +21,3 @@ export const addCareerFormSchema = z.object({
 });
 
 export type AddCareerFormType = z.infer<typeof addCareerFormSchema>;
-
-console.log("[RENDER] careers/add/components/addCareerForm.utils.ts");

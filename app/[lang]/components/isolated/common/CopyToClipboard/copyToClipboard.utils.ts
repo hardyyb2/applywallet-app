@@ -16,5 +16,3 @@ export const fallbackCopyToClipboard = async (text: string) => {
     return document?.execCommand("copy");
   }
 };
-
-console.log("[RENDER] components/isolated/common/CopyToClipboard/copyToClipboard.utils.ts");

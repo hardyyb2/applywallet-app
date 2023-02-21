@@ -95,5 +95,3 @@ const NavigationMenu = ({
 };
 
 export { NavigationMenu };
-
-console.log("[RENDER] components/dependent/common/Navigation/components/NavigationMenu.tsx");

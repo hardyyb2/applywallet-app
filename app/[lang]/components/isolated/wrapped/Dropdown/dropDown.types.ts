@@ -8,5 +8,3 @@ export type DropdownColorsType =
   | "warning"
   | "error"
   | "ghost";
-
-console.log("[RENDER] components/isolated/wrapped/Dropdown/dropDown.types.ts");

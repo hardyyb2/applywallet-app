@@ -33,5 +33,3 @@ export const copyButtonIcons: { [key in CopyButtonStateTypes]: ReactElement } =
       </Fragment>
     ),
   };
-
-console.log("[RENDER] components/dependent/common/CopyButton/copyButton.utils.tsx");

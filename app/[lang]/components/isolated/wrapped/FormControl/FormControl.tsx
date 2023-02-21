@@ -42,5 +42,3 @@ const FormControlCompound = Object.assign(FormControl, {
 });
 
 export { FormControlCompound as FormControl };
-
-console.log("[RENDER] components/isolated/wrapped/FormControl/FormControl.tsx");

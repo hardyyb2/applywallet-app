@@ -26,5 +26,3 @@ const Navigation = () => {
 };
 
 export { Navigation };
-
-console.log("[RENDER] components/dependent/common/Navigation/Navigation.tsx");

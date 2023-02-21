@@ -24,5 +24,3 @@ const FormControlInput = forwardRef<HTMLInputElement, FormControlInputProps>(
 FormControlInput.displayName = "FormControlInput";
 
 export { FormControlInput };
-
-console.log("[RENDER] components/isolated/wrapped/FormControl/components/FormControlInput.tsx");

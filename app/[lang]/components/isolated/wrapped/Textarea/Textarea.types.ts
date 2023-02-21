@@ -8,5 +8,3 @@ export type TextareaColorsType =
   | "warning"
   | "error"
   | "ghost";
-
-console.log("[RENDER] components/isolated/wrapped/Textarea/Textarea.types.ts");

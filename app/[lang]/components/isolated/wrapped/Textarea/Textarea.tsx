@@ -43,5 +43,3 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
 Textarea.displayName = "Textarea";
 
 export { Textarea };
-
-console.log("[RENDER] components/isolated/wrapped/Textarea/Textarea.tsx");
