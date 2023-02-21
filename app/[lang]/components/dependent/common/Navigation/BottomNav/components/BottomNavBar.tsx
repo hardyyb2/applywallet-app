@@ -108,3 +108,5 @@ const BottomNavBar = ({
 };
 
 export { BottomNavBar };
+
+console.log("[RENDER] components/dependent/common/Navigation/BottomNav/components/BottomNavBar.tsx");

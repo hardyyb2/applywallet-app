@@ -12,3 +12,5 @@ export const selectableThemes: { label?: string; value: string }[] = [
     value: "emerald",
   },
 ];
+
+console.log("[RENDER] components/dependent/common/ThemesMenu/themesMenu.utils.ts");

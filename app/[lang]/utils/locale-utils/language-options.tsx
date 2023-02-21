@@ -50,3 +50,5 @@ export const languageOptions: {
     ),
   },
 ];
+
+console.log("[RENDER] utils/locale-utils/language-options.tsx");

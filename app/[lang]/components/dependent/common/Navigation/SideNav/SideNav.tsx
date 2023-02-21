@@ -42,3 +42,5 @@ const SideNav = () => {
 };
 
 export { SideNav };
+
+console.log("[RENDER] components/dependent/common/Navigation/SideNav/SideNav.tsx");

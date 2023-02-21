@@ -9,3 +9,5 @@ const NavbarStart = forwardRef<HTMLDivElement, Omit<NavbarSectionProps, "section
 NavbarStart.displayName = "NavbarStart";
 
 export { NavbarStart };
+
+console.log("[RENDER] components/isolated/wrapped/Navbar/components/NavbarStart.tsx");

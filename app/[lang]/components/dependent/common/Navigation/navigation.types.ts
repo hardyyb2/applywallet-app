@@ -12,3 +12,5 @@ export type NavItemType = {
   key?: string;
   category?: NavigationCategories;
 };
+
+console.log("[RENDER] components/dependent/common/Navigation/navigation.types.ts");

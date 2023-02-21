@@ -61,3 +61,5 @@ const CopyButton = (props: CopyButtonProps) => {
 };
 
 export { CopyButton };
+
+console.log("[RENDER] components/dependent/common/CopyButton/CopyButton.tsx");

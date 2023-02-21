@@ -9,3 +9,5 @@ const NavbarEnd = forwardRef<HTMLDivElement, Omit<NavbarSectionProps, "section">
 NavbarEnd.displayName = "NavbarEnd";
 
 export { NavbarEnd };
+
+console.log("[RENDER] components/isolated/wrapped/Navbar/components/NavbarEnd.tsx");

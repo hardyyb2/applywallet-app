@@ -21,3 +21,5 @@ describe("Textarea", () => {
     expect(screen.getByPlaceholderText("textarea placeholder")).toBeInTheDocument();
   });
 });
+
+console.log("[RENDER] components/isolated/wrapped/Textarea/Textarea.test.tsx");

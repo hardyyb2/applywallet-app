@@ -17,3 +17,5 @@ const BottomNavigationLabel = forwardRef<
 BottomNavigationLabel.displayName = "BottomNavigationLabel";
 
 export { BottomNavigationLabel };
+
+console.log("[RENDER] components/isolated/wrapped/BottomNavigation/BottomNavigationLabel.tsx");

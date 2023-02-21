@@ -101,3 +101,5 @@ const AddCareerForm = () => {
 };
 
 export { AddCareerForm };
+
+console.log("[RENDER] careers/add/components/AddCareerForm.tsx");

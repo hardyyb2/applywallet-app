@@ -28,3 +28,5 @@ const NavbarCompound = Object.assign(Navbar, {
 });
 
 export { NavbarCompound as Navbar };
+
+console.log("[RENDER] components/isolated/wrapped/Navbar/Navbar.tsx");

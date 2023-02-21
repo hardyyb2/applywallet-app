@@ -18,3 +18,5 @@ const DropdownToggle = ({
 };
 
 export { DropdownToggle };
+
+console.log("[RENDER] components/isolated/wrapped/Dropdown/DropdownToggle.tsx");

@@ -33,3 +33,5 @@ describe("Button", () => {
     expect(screen.getByRole("link")).toHaveAttribute("href", "/home");
   });
 });
+
+console.log("[RENDER] components/isolated/wrapped/Button/Button.test.tsx");

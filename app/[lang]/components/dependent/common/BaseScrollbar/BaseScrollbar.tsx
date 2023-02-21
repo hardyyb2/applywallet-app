@@ -15,3 +15,5 @@ const BaseScrollbar = ({ children }: PropsWithChildren) => {
 };
 
 export { BaseScrollbar };
+
+console.log("[RENDER] components/dependent/common/BaseScrollbar/BaseScrollbar.tsx");

@@ -62,3 +62,5 @@ const CareerCard = ({ index }: { index: number }) => {
 };
 
 export { CareerCard };
+
+console.log("[RENDER] careers/components/CareerCard.tsx");

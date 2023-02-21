@@ -9,3 +9,5 @@ export type NextLinkButtonColorsType =
   | "error"
   | "ghost";
 export type NextLinkButtonShapeType = "circle" | "square";
+
+console.log("[RENDER] components/dependent/common/NextLinkButton/NextLinkButton.types.ts");

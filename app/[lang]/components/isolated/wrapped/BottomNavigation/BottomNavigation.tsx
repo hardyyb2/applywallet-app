@@ -38,3 +38,5 @@ const BottomNavigationCompound = Object.assign(BottomNavigation, {
 });
 
 export { BottomNavigationCompound as BottomNavigation };
+
+console.log("[RENDER] components/isolated/wrapped/BottomNavigation/BottomNavigation.tsx");

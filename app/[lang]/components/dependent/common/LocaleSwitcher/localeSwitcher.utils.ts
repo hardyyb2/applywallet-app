@@ -23,3 +23,5 @@ const redirectedPathName = (
 };
 
 export { redirectedPathName };
+
+console.log("[RENDER] components/dependent/common/LocaleSwitcher/localeSwitcher.utils.ts");

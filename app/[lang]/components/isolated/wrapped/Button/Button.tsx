@@ -104,3 +104,5 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 Button.displayName = "Button";
 
 export { Button };
+
+console.log("[RENDER] components/isolated/wrapped/Button/Button.tsx");

@@ -4,3 +4,5 @@ const Loading = () => {
 
 // eslint-disable-next-line import/no-default-export
 export default Loading;
+
+console.log("[RENDER] loading.tsx");

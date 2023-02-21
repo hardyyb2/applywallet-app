@@ -75,3 +75,5 @@ const Typography = forwardRef<
 Typography.displayName = "Typography";
 
 export { Typography };
+
+console.log("[RENDER] components/isolated/common/Typography/Typography.tsx");

@@ -15,3 +15,5 @@ const BaseLayoutBody = forwardRef<HTMLDivElement, BaseLayoutBodyProps>(({ classN
 BaseLayoutBody.displayName = "BaseLayoutBody";
 
 export { BaseLayoutBody };
+
+console.log("[RENDER] components/dependent/common/BaseLayout/components/BaseLayoutBody.tsx");

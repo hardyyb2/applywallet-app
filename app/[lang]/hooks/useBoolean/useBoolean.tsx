@@ -23,3 +23,5 @@ const useBoolean: UseBooleanHandlerType<UseBooleanProps> = ({
 };
 
 export { useBoolean };
+
+console.log("[RENDER] hooks/useBoolean/useBoolean.tsx");

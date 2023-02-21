@@ -65,3 +65,5 @@ const ThemesMenu = () => {
 };
 
 export { ThemesMenu };
+
+console.log("[RENDER] components/dependent/common/ThemesMenu/ThemesMenu.tsx");

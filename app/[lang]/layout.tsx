@@ -58,3 +58,5 @@ export default function RootLayout({
     </html>
   );
 }
+
+console.log("[RENDER] layout.tsx");

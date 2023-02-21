@@ -10,3 +10,5 @@ const AddCareer = () => {
 
 // eslint-disable-next-line import/no-default-export
 export default AddCareer;
+
+console.log("[RENDER] careers/add/page.tsx");

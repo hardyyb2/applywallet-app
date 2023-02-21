@@ -16,3 +16,5 @@ const DropdownMenu = ({ className, ...props }: DropdownMenuProps) => {
 };
 
 export { DropdownMenu };
+
+console.log("[RENDER] components/isolated/wrapped/Dropdown/DropdownMenu.tsx");

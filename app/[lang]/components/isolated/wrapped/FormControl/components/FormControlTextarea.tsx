@@ -25,3 +25,5 @@ const FormControlTextarea = forwardRef<
 FormControlTextarea.displayName = "FormControlTextarea";
 
 export { FormControlTextarea };
+
+console.log("[RENDER] components/isolated/wrapped/FormControl/components/FormControlTextarea.tsx");

@@ -29,3 +29,5 @@ const Header = ({ children }: { children?: ReactNode }) => {
 };
 
 export { Header };
+
+console.log("[RENDER] Header/Header.tsx");

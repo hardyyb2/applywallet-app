@@ -17,3 +17,5 @@ export const TypographyVariantTypeTagMap: Record<
   caption: "span",
   srOnly: "span",
 };
+
+console.log("[RENDER] components/isolated/common/Typography/typography.utils.tsx");

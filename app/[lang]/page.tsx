@@ -25,3 +25,5 @@ export default async function Home({
 
 // eslint-disable-next-line import/no-default-export
 // export default Home;
+
+console.log("[RENDER] page.tsx");
