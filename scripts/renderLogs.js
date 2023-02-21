@@ -12,8 +12,11 @@
 
 const fs = require("fs");
 const path = require("path");
+const yargs = require("yargs");
 
 const addToExtensions = [".js", ".ts", ".jsx", ".tsx"];
+const identifier = "RENDER";
+const directory = "app";
 
 function addLogStatementToFile(file) {
   return new Promise((_resolve, reject) => {
@@ -23,7 +26,29 @@ function addLogStatementToFile(file) {
         return;
       }
       const newContent =
-        data + '\nconsole.log("' + file?.split("[lang]/")[1] + '");';
+        data + `\nconsole.log("[${identifier}] ${file?.split("[lang]/")[1]}");`;
+      fs.writeFile(file, newContent, (err) => {
+        if (err) {
+          reject(`Error writing file ${file}: ${err}`);
+          return;
+        }
+      });
+    });
+  });
+}
+
+function removeLogStatementFromFile(file) {
+  return new Promise((_resolve, reject) => {
+    fs.readFile(file, "utf8", (err, data) => {
+      if (err) {
+        reject(`Error reading file ${file}: ${err}`);
+        return;
+      }
+      const newContent = data.replace(
+        new RegExp(`\nconsole\\.log\\("\\[${identifier}\\] [^"]*"\\);?$`),
+        "",
+      );
+
       fs.writeFile(file, newContent, (err) => {
         if (err) {
           reject(`Error writing file ${file}: ${err}`);
@@ -77,4 +102,33 @@ async function addLogStatementToDirectory(directory) {
   });
 }
 
-addLogStatementToDirectory("app");
+async function removeLogStatementFromDirectory(directory) {
+  processDirectory(directory, async (filePath) => {
+    try {
+      const result = await removeLogStatementFromFile(filePath);
+      console.log(result);
+    } catch (error) {
+      console.log(error);
+    }
+  });
+}
+
+yargs
+  .command(
+    "add",
+    "Add console.log statements to files in a directory",
+    {},
+    () => {
+      addLogStatementToDirectory(directory);
+    },
+  )
+  .command(
+    "remove",
+    "Remove console.log statements from files in a directory",
+    {},
+    () => {
+      removeLogStatementFromDirectory(directory);
+    },
+  )
+  .demandCommand()
+  .help().argv;

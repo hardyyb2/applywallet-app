@@ -31,7 +31,7 @@
     ".next/types/**/*.ts",
     "middleware.tsx",
     "./utils/locale-utils/i18n-config.ts",
-    "scripts/addlogs.js"
+    "scripts/renderLogs.js"
   ],
   "exclude": ["node_modules"]
 }
