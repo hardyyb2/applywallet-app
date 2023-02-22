@@ -1,13 +1,13 @@
 import clsx from "clsx";
 import Link from "next/link";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { Fragment } from "react";
 
 import { Flex, Typography } from "@/components/isolated/common";
+import { getLinkWithLocale } from "@/utils/routes.utils";
 
 import { BaseScrollbar } from "../../BaseScrollbar";
 import { groupedNavItemsEntries } from "../navigation.utils";
-import { getLinkWithLocale } from "@/utils/routes.utils";
 
 interface NavigationMenuProps {
   navOpen: boolean;
@@ -21,7 +21,6 @@ const NavigationMenu = ({
   onNavItemClick = () => null,
 }: NavigationMenuProps) => {
   const pathName = usePathname();
-  const routes = useRouter();
 
   return (
     <BaseScrollbar>

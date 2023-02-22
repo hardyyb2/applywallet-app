@@ -4,8 +4,9 @@ import clsx from "clsx";
 import { AnimatePresence, LazyMotion, m } from "framer-motion";
 import { usePathname } from "next/navigation";
 
-import { BottomNavigation } from "@//components/isolated/wrapped";
-import { useBoolean } from "@//hooks/useBoolean";
+import { Flex } from "@/components/isolated/common";
+import { BottomNavigation } from "@/components/isolated/wrapped";
+import { useBoolean } from "@/hooks/useBoolean";
 
 import { NavigationMenu } from "../components/NavigationMenu";
 
@@ -45,11 +46,20 @@ const BottomNav = ({ className = "" }: BottomNavProps) => {
       >
         <AnimatePresence>
           {showFullBottomNav ? (
-            <NavigationMenu
-              navOpen
-              onNavItemClick={toggleShowFullBottomNav}
-              className="p-4"
-            />
+            <Flex>
+              <NavigationMenu
+                navOpen
+                onNavItemClick={toggleShowFullBottomNav}
+                className="p-4"
+              />
+              <button
+                onClick={toggleShowFullBottomNav}
+                aria-label="close"
+                className="py-3 / text-primary / border-t border-primary border-opacity-80"
+              >
+                close
+              </button>
+            </Flex>
           ) : (
             <BottomNavBar
               pathName={pathName}
