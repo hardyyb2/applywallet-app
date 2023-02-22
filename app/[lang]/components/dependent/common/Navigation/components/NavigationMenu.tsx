@@ -6,7 +6,8 @@ import { Fragment } from "react";
 import { Flex, Typography } from "@/components/isolated/common";
 
 import { BaseScrollbar } from "../../BaseScrollbar";
-import { getLinkWithLocale, groupedNavItemsEntries } from "../navigation.utils";
+import { groupedNavItemsEntries } from "../navigation.utils";
+import { getLinkWithLocale } from "@/utils/routes.utils";
 
 interface NavigationMenuProps {
   navOpen: boolean;

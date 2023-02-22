@@ -1,3 +1,5 @@
+import { AppRoutes } from "@/utils/routes.utils";
+
 export enum NavigationCategories {
   GENERAL = "general",
   FAVORITE = "favorite",
@@ -8,7 +10,7 @@ export enum NavigationCategories {
 
 export type NavItemType = {
   label: string;
-  link: string;
+  link: AppRoutes;
   key?: string;
   category?: NavigationCategories;
 };

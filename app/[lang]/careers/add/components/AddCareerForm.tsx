@@ -39,6 +39,7 @@ const AddCareerForm = () => {
             error={errors?.company?.name?.message}
           >
             <FormControl.Input
+              autoFocus
               placeholder="e.g. google"
               {...register("company.name")}
             />

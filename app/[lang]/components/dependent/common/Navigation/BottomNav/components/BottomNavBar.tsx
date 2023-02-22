@@ -6,10 +6,8 @@ import { Flex } from "@/components/isolated/common";
 import { BottomNavigation, Button } from "@/components/isolated/wrapped";
 
 import { NextLinkButton } from "../../../NextLinkButton";
-import {
-  bottomNavDisplayOptions,
-  getLinkWithLocale,
-} from "../../navigation.utils";
+import { bottomNavDisplayOptions } from "../../navigation.utils";
+import { getLinkWithLocale } from "@/utils/routes.utils";
 
 interface BottomNavBarProps {
   pathName?: string | null;

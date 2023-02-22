@@ -10,3 +10,5 @@
 - button as link component
 - haptics on copy
 - fallback navigator
+- JSON ld
+- head metadata
