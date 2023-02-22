@@ -10,8 +10,11 @@ const Careers = () => {
   return (
     <div className="px-6 lg:px-10 py-4">
       <Flex justify="space-between" align="center" className="mb-10">
-        <Flex direction="column" className="prose prose-h1:mb-0 prose-p:mt-0 ">
-          <h1 className="mb-8">careers</h1>
+        <Flex
+          direction="column"
+          className="prose prose-sm md:prose-base prose-h1:!mb-0 prose-p:!mt-0 "
+        >
+          <h1>careers</h1>
           <p>details of your previous jobs</p>
         </Flex>
 
