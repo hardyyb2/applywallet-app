@@ -23,3 +23,8 @@ body {
 .btn {
   --btn-text-case: lowercase;
 }
+
+input::placeholder,
+textarea::placeholder {
+  opacity: 0.4;
+}

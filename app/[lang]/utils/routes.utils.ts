@@ -3,7 +3,7 @@ import { i18n } from "./locale-utils/i18n-config";
 export enum AppRoutes {
   ABOUT = "/about",
   CAREERS = "/careers",
-  ADD_CAREER = "/career/add",
+  ADD_CAREER = "/careers/add",
   HOME = "",
 }
 

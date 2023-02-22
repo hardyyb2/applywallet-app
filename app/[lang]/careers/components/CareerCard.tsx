@@ -10,6 +10,7 @@ const CareerCard = ({ index }: { index: number }) => {
         className={clsx(
           "card-body",
           "prose prose-sm md:prose-base max-w-none prose-headings:!m-0 prose-p:!mt-1 prose-h6:!font-light prose-h6:!underline",
+          "[&_p]:line-clamp-2",
         )}
       >
         <h2 className="card-title">yellow.ai</h2>

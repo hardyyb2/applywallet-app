@@ -6,3 +6,4 @@ export * from "./Navbar";
 export * from "./BottomNavigation";
 export * from "./Dropdown";
 export * from "./FormControl";
+export * from "./Breadcrumbs";

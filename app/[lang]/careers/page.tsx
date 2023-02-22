@@ -20,8 +20,7 @@ const Careers = () => {
 
         <Link href="/careers/add">
           <Button
-            color="primary"
-            className="hidden lg:flex"
+            color="secondary"
             startIcon={
               <svg
                 width="24"
@@ -34,7 +33,7 @@ const Careers = () => {
               </svg>
             }
           >
-            <span>add career</span>
+            <span className="hidden lg:inline">add career</span>
           </Button>
         </Link>
       </Flex>

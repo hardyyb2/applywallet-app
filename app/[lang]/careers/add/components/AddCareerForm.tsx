@@ -24,12 +24,12 @@ const AddCareerForm = () => {
     <form
       className={clsx(
         "card / overflow-hidden",
-        "prose prose-h1:m-0 prose-h4:mb-0 prose-h4:mt-8 prose-h4:underline prose-h4:font-light",
+        "prose prose-sm md:prose-base prose-h1:!m-0 prose-h4:!mb-0 prose-h4:!mt-8 prose-h4:!underline prose-h4:!font-light",
       )}
       onSubmit={handleSubmit(onSubmit)}
       noValidate
     >
-      <div className="card-body [&_.form-control]:mt-2 / bg-base-100">
+      <div className="card-body [&_.form-control]:mt-2  / bg-base-100">
         <h1>add career</h1>
         <div>
           <h4>company details</h4>
