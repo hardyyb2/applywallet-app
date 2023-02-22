@@ -9,7 +9,7 @@ const CareerCard = ({ index }: { index: number }) => {
       <div
         className={clsx(
           "card-body",
-          "prose prose-sm md:prose-base prose-headings:!m-0 prose-p:!mt-1 prose-h6:!font-light prose-h6:!underline",
+          "prose prose-sm md:prose-base max-w-none prose-headings:!m-0 prose-p:!mt-1 prose-h6:!font-light prose-h6:!underline",
         )}
       >
         <h2 className="card-title">yellow.ai</h2>
