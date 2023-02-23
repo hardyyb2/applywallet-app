@@ -1,8 +1,10 @@
 import clsx from "clsx";
+import Image from "next/image";
 import Link from "next/link";
 
 import { Flex } from "@/components/isolated/common";
 import { Button } from "@/components/isolated/wrapped";
+import { AddIcon } from "public/images";
 
 import { CareerCard } from "./components/CareerCard";
 
@@ -19,20 +21,7 @@ const Careers = () => {
         </Flex>
 
         <Link href="/careers/add">
-          <Button
-            color="secondary"
-            startIcon={
-              <svg
-                width="24"
-                height="24"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                className="fill-current"
-              >
-                <path d="M19,11H13V5a1,1,0,0,0-2,0v6H5a1,1,0,0,0,0,2h6v6a1,1,0,0,0,2,0V13h6a1,1,0,0,0,0-2Z" />
-              </svg>
-            }
-          >
+          <Button color="secondary" startIcon={<AddIcon />}>
             <span className="hidden lg:inline">add career</span>
           </Button>
         </Link>
@@ -56,17 +45,7 @@ const Careers = () => {
           fullWidth
           size="lg"
           className="lg:hidden mt-10"
-          startIcon={
-            <svg
-              width="24"
-              height="24"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              className="fill-current"
-            >
-              <path d="M19,11H13V5a1,1,0,0,0-2,0v6H5a1,1,0,0,0,0,2h6v6a1,1,0,0,0,2,0V13h6a1,1,0,0,0,0-2Z" />
-            </svg>
-          }
+          startIcon={<AddIcon />}
         >
           add career
         </Button>
