@@ -17,7 +17,13 @@ const LocaleSwitcher = () => {
   return (
     <Dropdown vertical="end">
       <Dropdown.Toggle>
-        <Button color="ghost" className="gap-1" aria-haspopup responsive>
+        <Button
+          color="ghost"
+          className="gap-1"
+          aria-haspopup
+          aria-label="languages"
+          responsive
+        >
           <LanguageIcon className="h-4 w-4 md:h-5 md:w-5" />
           <CaretDown className="ml-1 hidden h-3 w-3 opacity-60 sm:inline-block" />
         </Button>
@@ -39,12 +45,15 @@ const LocaleSwitcher = () => {
                 "bg-base-100 / rounded-lg outline-offset-2",
                 activeLocale === value && "bg-primary / text-primary-content",
               )}
+              role="listitem"
+              aria-label={label}
             >
               <NextLinkButton
                 href={newRedirectPath}
                 startIcon={icon}
                 color="ghost"
                 className="flex flex-row flex-nowrap / px-6"
+                aria-label={label}
               >
                 <span>{label}</span>
               </NextLinkButton>

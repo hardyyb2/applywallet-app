@@ -6,6 +6,7 @@ import HomeIcon from "./home.svg";
 import LanguageIcon from "./language.svg";
 import ThemeIcon from "./theme.svg";
 import MenuIcon from "./menu.svg";
+import SettingsIcon from "./settings.svg";
 
 export {
   AddIcon,
@@ -16,4 +17,5 @@ export {
   HomeIcon,
   ThemeIcon,
   MenuIcon,
+  SettingsIcon,
 };

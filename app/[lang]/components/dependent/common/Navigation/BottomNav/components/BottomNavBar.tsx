@@ -67,6 +67,7 @@ const BottomNavBar = ({
           color="ghost"
           className="w-[90%] indicator"
           onClick={toggleBottomNav}
+          aria-label="menu-button"
         >
           {menuIconHasIndicator ? (
             <span
