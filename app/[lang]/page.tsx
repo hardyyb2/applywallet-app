@@ -1,4 +1,4 @@
-import { Inter } from "@next/font/google";
+import { Inter } from "next/font/google";
 
 import { Locale } from "@/utils/locale-utils/i18n-config";
 
