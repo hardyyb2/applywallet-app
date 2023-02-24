@@ -55,7 +55,7 @@ const BottomNav = ({ className = "" }: BottomNavProps) => {
               <button
                 onClick={toggleShowFullBottomNav}
                 aria-label="close"
-                className="py-3 / text-primary / border-t border-primary border-opacity-80"
+                className="py-4 / text-primary / border-t border-primary border-opacity-80"
               >
                 close
               </button>

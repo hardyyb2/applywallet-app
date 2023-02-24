@@ -7,7 +7,7 @@ import { getLinkWithLocale } from "@/utils/routes.utils";
 
 import { NextLinkButton } from "../../../NextLinkButton";
 import { bottomNavDisplayOptions } from "../../navigation.utils";
-import { HomeIcon } from "public/images";
+import { HomeIcon, MenuIcon } from "public/images";
 
 interface BottomNavBarProps {
   pathName?: string | null;
@@ -77,15 +77,7 @@ const BottomNavBar = ({
             />
           ) : null}
 
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            className="h-5 w-5"
-          >
-            <rect x="0" y="16" fill="currentColor" width="24" height="2" />
-            <rect x="0" y="8" fill="currentColor" width="24" height="2" />
-            <rect x="0" y="0" fill="currentColor" width="24" height="2" />
-          </svg>
+          <MenuIcon className="h-5 w-5" />
         </Button>
       </Flex>
     </Fragment>

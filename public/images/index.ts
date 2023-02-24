@@ -5,6 +5,7 @@ import CopyIcon from "./copy.svg";
 import HomeIcon from "./home.svg";
 import LanguageIcon from "./language.svg";
 import ThemeIcon from "./theme.svg";
+import MenuIcon from "./menu.svg";
 
 export {
   AddIcon,
@@ -14,4 +15,5 @@ export {
   CaretDown,
   HomeIcon,
   ThemeIcon,
+  MenuIcon,
 };
