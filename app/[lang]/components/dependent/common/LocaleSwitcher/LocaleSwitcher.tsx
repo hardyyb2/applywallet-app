@@ -1,15 +1,15 @@
 "use client";
 
 import clsx from "clsx";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { Flex } from "@/components/isolated/common";
 import { Button, Dropdown } from "@/components/isolated/wrapped";
 import { languageOptions } from "@/utils/locale-utils/language-options";
+import { CaretDown, LanguageIcon } from "public/images";
+
+import { NextLinkButton } from "../NextLinkButton";
 
 import { redirectedPathName } from "./localeSwitcher.utils";
-import { CaretDown, LanguageIcon } from "public/images";
 
 const LocaleSwitcher = () => {
   const pathName = usePathname();
@@ -24,7 +24,7 @@ const LocaleSwitcher = () => {
       </Dropdown.Toggle>
       <Dropdown.Menu
         role="listbox"
-        className="max-h-80 / flex-col flex-nowrap gap-3 / overflow-y-auto"
+        className="max-h-80 / flex-col flex-nowrap gap-2 / overflow-y-auto"
       >
         {languageOptions.map(({ label, value, icon }) => {
           const { activeLocale, newRedirectPath } = redirectedPathName(
@@ -36,17 +36,18 @@ const LocaleSwitcher = () => {
             <Dropdown.Item
               key={value}
               className={clsx(
-                "flex justify-between / bg-base-100 / rounded-lg",
-                "outline-offset-2",
+                "bg-base-100 / rounded-lg outline-offset-2",
                 activeLocale === value && "bg-primary / text-primary-content",
               )}
             >
-              <Link href={newRedirectPath}>
-                <Flex align="center" justify="space-between" className="gap-2">
-                  {icon}
-                  {label}
-                </Flex>
-              </Link>
+              <NextLinkButton
+                href={newRedirectPath}
+                startIcon={icon}
+                color="ghost"
+                className="flex flex-row flex-nowrap / px-6"
+              >
+                <span>{label}</span>
+              </NextLinkButton>
             </Dropdown.Item>
           );
         })}

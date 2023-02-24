@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -7,6 +8,10 @@ import { Button } from "@/components/isolated/wrapped";
 import { AddIcon } from "public/images";
 
 import { CareerCard } from "./components/CareerCard";
+
+export const metadata: Metadata = {
+  title: "careers",
+};
 
 const Careers = () => {
   return (
