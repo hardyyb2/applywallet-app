@@ -12,12 +12,13 @@ import { NavigationMenu } from "../components/NavigationMenu";
 
 import { BottomNavBackdrop } from "./components/BottomNavBackdrop";
 import { BottomNavBar } from "./components/BottomNavBar";
+import { ConditionalMatch } from "@dx-kit/react-conditional-match";
 
 const loadFeatures = () =>
   import("@/utils/framer.utils").then((module) => module.default);
 
 const MotionBottomNavigation = m(BottomNavigation);
-
+const { Render } = ConditionalMatch;
 interface BottomNavProps {
   className?: string;
 }
@@ -45,27 +46,30 @@ const BottomNav = ({ className = "" }: BottomNavProps) => {
         )}
       >
         <AnimatePresence>
-          {showFullBottomNav ? (
-            <Flex>
-              <NavigationMenu
-                navOpen
-                onNavItemClick={toggleShowFullBottomNav}
-                className="p-4"
+          <ConditionalMatch fallback={null}>
+            <Render when={showFullBottomNav}>
+              <Flex>
+                <NavigationMenu
+                  navOpen
+                  onNavItemClick={toggleShowFullBottomNav}
+                  className="p-4"
+                />
+                <button
+                  onClick={toggleShowFullBottomNav}
+                  aria-label="close"
+                  className="py-4 / text-primary / border-t border-primary border-opacity-80"
+                >
+                  close
+                </button>
+              </Flex>
+            </Render>
+            <Render when={!showFullBottomNav}>
+              <BottomNavBar
+                pathName={pathName}
+                toggleBottomNav={toggleShowFullBottomNav}
               />
-              <button
-                onClick={toggleShowFullBottomNav}
-                aria-label="close"
-                className="py-4 / text-primary / border-t border-primary border-opacity-80"
-              >
-                close
-              </button>
-            </Flex>
-          ) : (
-            <BottomNavBar
-              pathName={pathName}
-              toggleBottomNav={toggleShowFullBottomNav}
-            />
-          )}
+            </Render>
+          </ConditionalMatch>
         </AnimatePresence>
       </MotionBottomNavigation>
     </LazyMotion>
