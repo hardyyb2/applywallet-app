@@ -2,7 +2,7 @@ import { NextLinkButton } from "@/components/dependent/common";
 import { Flex } from "@/components/isolated/common";
 import { Button } from "@/components/isolated/wrapped";
 import { AddIcon, SettingsIcon } from "public/images";
-import { CareerSettings } from "./CareerSettings";
+import { CareerSettings } from "./CareerSettings/CareerSettings";
 
 const CareerActions = () => {
   return (
