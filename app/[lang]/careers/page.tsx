@@ -7,8 +7,8 @@ import { Flex } from "@/components/isolated/common";
 import { Button } from "@/components/isolated/wrapped";
 import { AddIcon } from "public/images";
 
-import { CareerCard } from "./components/CareerCard";
 import { CareerActions } from "./components/CareerActions";
+import { CareerCard } from "./components/CareerCard";
 
 export const metadata: Metadata = {
   title: "careers",
