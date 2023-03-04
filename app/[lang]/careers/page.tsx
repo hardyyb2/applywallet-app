@@ -1,6 +1,5 @@
 import clsx from "clsx";
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 
 import { Flex } from "@/components/isolated/common";
@@ -9,6 +8,7 @@ import { AddIcon } from "public/images";
 
 import { CareerActions } from "./components/CareerActions";
 import { CareerCard } from "./components/CareerCard";
+import { CareerSettings } from "./components/CareerSettings";
 
 export const metadata: Metadata = {
   title: "careers",

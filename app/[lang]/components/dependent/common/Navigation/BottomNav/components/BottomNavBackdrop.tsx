@@ -14,7 +14,7 @@ const BottomNavBackdrop = ({
   return (
     <div
       className={clsx(
-        "fixed bg-primary bg-opacity-80 backdrop-blur inset-0 overflow-y-auto h-full w-full",
+        "fixed inset-0 h-full w-full / bg-primary bg-opacity-80 backdrop-blur overflow-y-auto",
         visible ? "block" : "hidden",
         className,
       )}

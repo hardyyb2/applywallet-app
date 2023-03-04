@@ -1,7 +1,8 @@
-
 import { NextLinkButton } from "@/components/dependent/common";
 import { Flex } from "@/components/isolated/common";
+import { Button } from "@/components/isolated/wrapped";
 import { AddIcon, SettingsIcon } from "public/images";
+import { CareerSettings } from "./CareerSettings";
 
 const CareerActions = () => {
   return (
@@ -15,15 +16,7 @@ const CareerActions = () => {
         <span className="hidden md:inline">add career</span>
       </NextLinkButton>
 
-      <NextLinkButton
-        href="/careers/add"
-        variant="outline"
-        color="secondary"
-        responsive
-        startIcon={<SettingsIcon />}
-      >
-        <span className="hidden md:inline">settings</span>
-      </NextLinkButton>
+      <CareerSettings />
     </Flex>
   );
 };
