@@ -31,6 +31,7 @@
     "zod": "^3.20.6"
   },
   "devDependencies": {
+    "sass": "^1.58.3",
     "@next/bundle-analyzer": "^13.2.1",
     "@svgr/webpack": "^6.5.1",
     "@tailwindcss/line-clamp": "^0.4.2",
