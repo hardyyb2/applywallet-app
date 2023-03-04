@@ -1,9 +1,12 @@
 "use client";
 
-import { Button, Dialog } from "@/components/isolated/wrapped";
 import clsx from "clsx";
-import { SettingsIcon } from "public/images";
 import { useRef, useState } from "react";
+
+import { NextLinkButton } from "@/components/dependent/common";
+import { Button, Dialog } from "@/components/isolated/wrapped";
+import { SettingsIcon } from "public/images";
+
 import styles from "./careerSettings.module.scss";
 
 const CareerSettings = () => {
@@ -17,16 +20,31 @@ const CareerSettings = () => {
   return (
     <div>
       <Dialog.Root open={open} onOpenChange={handleOpenChange}>
+        {/* show dialog only on >md screens */}
         <Dialog.Trigger asChild>
           <Button
             variant="outline"
             color="secondary"
             responsive
             startIcon={<SettingsIcon />}
+            className="hidden md:flex"
           >
-            settings
+            <span className="hidden md:inline">settings</span>
           </Button>
         </Dialog.Trigger>
+
+        {/* open settings in a page for <md screens */}
+        <NextLinkButton
+          href="/careers/settings"
+          variant="outline"
+          color="secondary"
+          responsive
+          startIcon={<SettingsIcon />}
+          className="flex md:hidden"
+        >
+          <span className="hidden md:inline">settings</span>
+        </NextLinkButton>
+
         <Dialog.Portal>
           <Dialog.Overlay
             className={clsx(
