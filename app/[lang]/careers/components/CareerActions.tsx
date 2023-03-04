@@ -1,4 +1,3 @@
-import React from "react";
 
 import { NextLinkButton } from "@/components/dependent/common";
 import { Flex } from "@/components/isolated/common";

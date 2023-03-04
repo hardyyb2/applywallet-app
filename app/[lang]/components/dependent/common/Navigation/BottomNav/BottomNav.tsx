@@ -1,8 +1,10 @@
 "use client";
 
+import { ConditionalMatch } from "@dx-kit/react-conditional-match";
+import { useAutoAnimate } from "@formkit/auto-animate/react";
 import clsx from "clsx";
-import { AnimatePresence, LazyMotion, m } from "framer-motion";
 import { usePathname } from "next/navigation";
+import { Fragment } from "react";
 
 import { Flex } from "@/components/isolated/common";
 import { BottomNavigation } from "@/components/isolated/wrapped";
@@ -12,12 +14,7 @@ import { NavigationMenu } from "../components/NavigationMenu";
 
 import { BottomNavBackdrop } from "./components/BottomNavBackdrop";
 import { BottomNavBar } from "./components/BottomNavBar";
-import { ConditionalMatch } from "@dx-kit/react-conditional-match";
 
-const loadFeatures = () =>
-  import("@/utils/framer.utils").then((module) => module.default);
-
-const MotionBottomNavigation = m(BottomNavigation);
 const { Render } = ConditionalMatch;
 interface BottomNavProps {
   className?: string;
@@ -25,54 +22,55 @@ interface BottomNavProps {
 
 const BottomNav = ({ className = "" }: BottomNavProps) => {
   const pathName = usePathname();
+  const [parent] = useAutoAnimate();
   const [showFullBottomNav, { toggle: toggleShowFullBottomNav }] = useBoolean({
     initialVal: false,
   });
 
   return (
-    <LazyMotion features={loadFeatures} strict>
+    <Fragment>
       <BottomNavBackdrop
         visible={showFullBottomNav}
         toggleVisible={toggleShowFullBottomNav}
         className="z-10"
       />
-      <MotionBottomNavigation
-        animate={{
+      <BottomNavigation
+        ref={parent}
+        style={{
           height: showFullBottomNav ? "66%" : "4rem",
         }}
         className={clsx(
           "w-[96%] / mb-4 mx-auto / z-20 rounded-box overflow-hidden backdrop-blur bg-opacity-60",
+          "transition-all",
           className,
         )}
       >
-        <AnimatePresence>
-          <ConditionalMatch fallback={null}>
-            <Render when={showFullBottomNav}>
-              <Flex>
-                <NavigationMenu
-                  navOpen
-                  onNavItemClick={toggleShowFullBottomNav}
-                  className="p-4"
-                />
-                <button
-                  onClick={toggleShowFullBottomNav}
-                  aria-label="close"
-                  className="py-4 / text-primary / border-t border-primary border-opacity-80"
-                >
-                  close
-                </button>
-              </Flex>
-            </Render>
-            <Render when={!showFullBottomNav}>
-              <BottomNavBar
-                pathName={pathName}
-                toggleBottomNav={toggleShowFullBottomNav}
+        <ConditionalMatch fallback={null}>
+          <Render when={showFullBottomNav}>
+            <Flex>
+              <NavigationMenu
+                navOpen
+                onNavItemClick={toggleShowFullBottomNav}
+                className="p-4"
               />
-            </Render>
-          </ConditionalMatch>
-        </AnimatePresence>
-      </MotionBottomNavigation>
-    </LazyMotion>
+              <button
+                onClick={toggleShowFullBottomNav}
+                aria-label="close"
+                className="py-4 / text-primary / border-t border-primary border-opacity-80"
+              >
+                close
+              </button>
+            </Flex>
+          </Render>
+          <Render when={!showFullBottomNav}>
+            <BottomNavBar
+              pathName={pathName}
+              toggleBottomNav={toggleShowFullBottomNav}
+            />
+          </Render>
+        </ConditionalMatch>
+      </BottomNavigation>
+    </Fragment>
   );
 };
 
