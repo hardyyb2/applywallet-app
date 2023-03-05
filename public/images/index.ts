@@ -1,12 +1,14 @@
 import AddIcon from "./add.svg";
 import CaretDown from "./caret-down.svg";
+import CaretRightDouble from "./caret-right-double.svg";
 import CopiedIcon from "./copied.svg";
 import CopyIcon from "./copy.svg";
 import HomeIcon from "./home.svg";
 import LanguageIcon from "./language.svg";
-import ThemeIcon from "./theme.svg";
+import MaximizeLeft from "./maximize-left.svg";
 import MenuIcon from "./menu.svg";
 import SettingsIcon from "./settings.svg";
+import ThemeIcon from "./theme.svg";
 
 export {
   AddIcon,
@@ -18,4 +20,6 @@ export {
   ThemeIcon,
   MenuIcon,
   SettingsIcon,
+  CaretRightDouble,
+  MaximizeLeft,
 };

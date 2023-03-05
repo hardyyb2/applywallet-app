@@ -4,10 +4,12 @@ import clsx from "clsx";
 import { useRef, useState } from "react";
 
 import { NextLinkButton } from "@/components/dependent/common";
+import { Flex } from "@/components/isolated/common";
 import { Button, Dialog } from "@/components/isolated/wrapped";
-import { SettingsIcon } from "public/images";
+import { CaretRightDouble, MaximizeLeft, SettingsIcon } from "public/images";
 
 import styles from "./careerSettings.module.scss";
+import { CareerSettingsContent } from "./CareerSettingsContent";
 
 const CareerSettings = () => {
   const contentRef = useRef<HTMLDivElement | null>(null);
@@ -55,104 +57,35 @@ const CareerSettings = () => {
           <Dialog.Content
             ref={contentRef}
             className={clsx(
-              "fixed right-0 top-0 z-50 w-3/5 h-full / p-16 / bg-base-100 / overflow-y-auto",
+              "fixed right-0 top-0 z-50 w-3/5 h-full / bg-base-100 / overflow-y-auto",
               styles.dialog__content,
             )}
           >
-            <div className="sticky top-0 left-0">actions</div>
-            <Dialog.Title className="DialogTitle">Edit profile</Dialog.Title>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
-            facilis temporibus quia soluta dolores doloribus eaque qui, autem
-            laboriosam molestiae accusantium maiores laborum. Officia amet quam
-            est incidunt accusamus magni. Lorem ipsum dolor, sit amet
-            consectetur adipisicing elit. In ea exercitationem, quae sunt
-            eveniet consectetur similique molestias unde illum facere error
-            saepe, voluptas nemo. Saepe accusamus expedita rem impedit tenetur!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
-            possimus aperiam nulla. Possimus, omnis tenetur accusamus unde
-            tempora dolor provident ea nihil fuga eveniet veritatis, ullam iusto
-            odio deleniti commodi. Lorem ipsum dolor sit amet, consectetur
-            adipisicing elit. Debitis facilis temporibus quia soluta dolores
-            doloribus eaque qui, autem laboriosam molestiae accusantium maiores
-            laborum. Officia amet quam est incidunt accusamus magni. Lorem ipsum
-            dolor, sit amet consectetur adipisicing elit. In ea exercitationem,
-            quae sunt eveniet consectetur similique molestias unde illum facere
-            error saepe, voluptas nemo. Saepe accusamus expedita rem impedit
-            tenetur! Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Similique possimus aperiam nulla. Possimus, omnis tenetur accusamus
-            unde tempora dolor provident ea nihil fuga eveniet veritatis, ullam
-            iusto odio deleniti commodi. Lorem ipsum dolor sit amet, consectetur
-            adipisicing elit. Debitis facilis temporibus quia soluta dolores
-            doloribus eaque qui, autem laboriosam molestiae accusantium maiores
-            laborum. Officia amet quam est incidunt accusamus magni. Lorem ipsum
-            dolor, sit amet consectetur adipisicing elit. In ea exercitationem,
-            quae sunt eveniet consectetur similique molestias unde illum facere
-            error saepe, voluptas nemo. Saepe accusamus expedita rem impedit
-            tenetur! Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Similique possimus aperiam nulla. Possimus, omnis tenetur accusamus
-            unde tempora dolor provident ea nihil fuga eveniet veritatis, ullam
-            iusto odio deleniti commodi. Lorem ipsum dolor sit amet, consectetur
-            adipisicing elit. Debitis facilis temporibus quia soluta dolores
-            doloribus eaque qui, autem laboriosam molestiae accusantium maiores
-            laborum. Officia amet quam est incidunt accusamus magni. Lorem ipsum
-            dolor, sit amet consectetur adipisicing elit. In ea exercitationem,
-            quae sunt eveniet consectetur similique molestias unde illum facere
-            error saepe, voluptas nemo. Saepe accusamus expedita rem impedit
-            tenetur! Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Similique possimus aperiam nulla. Possimus, omnis tenetur accusamus
-            unde tempora dolor provident ea nihil fuga eveniet veritatis, ullam
-            iusto odio deleniti commodi. Lorem ipsum dolor sit amet, consectetur
-            adipisicing elit. Debitis facilis temporibus quia soluta dolores
-            doloribus eaque qui, autem laboriosam molestiae accusantium maiores
-            laborum. Officia amet quam est incidunt accusamus magni. Lorem ipsum
-            dolor, sit amet consectetur adipisicing elit. In ea exercitationem,
-            quae sunt eveniet consectetur similique molestias unde illum facere
-            error saepe, voluptas nemo. Saepe accusamus expedita rem impedit
-            tenetur! Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Similique possimus aperiam nulla. Possimus, omnis tenetur accusamus
-            unde tempora dolor provident ea nihil fuga eveniet veritatis, ullam
-            iusto odio deleniti commodi. Lorem ipsum dolor sit amet, consectetur
-            adipisicing elit. Debitis facilis temporibus quia soluta dolores
-            doloribus eaque qui, autem laboriosam molestiae accusantium maiores
-            laborum. Officia amet quam est incidunt accusamus magni. Lorem ipsum
-            dolor, sit amet consectetur adipisicing elit. In ea exercitationem,
-            quae sunt eveniet consectetur similique molestias unde illum facere
-            error saepe, voluptas nemo. Saepe accusamus expedita rem impedit
-            tenetur! Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Similique possimus aperiam nulla. Possimus, omnis tenetur accusamus
-            unde tempora dolor provident ea nihil fuga eveniet veritatis, ullam
-            iusto odio deleniti commodi. Lorem ipsum dolor sit amet, consectetur
-            adipisicing elit. Debitis facilis temporibus quia soluta dolores
-            doloribus eaque qui, autem laboriosam molestiae accusantium maiores
-            laborum. Officia amet quam est incidunt accusamus magni. Lorem ipsum
-            dolor, sit amet consectetur adipisicing elit. In ea exercitationem,
-            quae sunt eveniet consectetur similique molestias unde illum facere
-            error saepe, voluptas nemo. Saepe accusamus expedita rem impedit
-            tenetur! Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Similique possimus aperiam nulla. Possimus, omnis tenetur accusamus
-            unde tempora dolor provident ea nihil fuga eveniet veritatis, ullam
-            iusto odio deleniti commodi. Lorem ipsum dolor sit amet, consectetur
-            adipisicing elit. Debitis facilis temporibus quia soluta dolores
-            doloribus eaque qui, autem laboriosam molestiae accusantium maiores
-            laborum. Officia amet quam est incidunt accusamus magni. Lorem ipsum
-            dolor, sit amet consectetur adipisicing elit. In ea exercitationem,
-            quae sunt eveniet consectetur similique molestias unde illum facere
-            error saepe, voluptas nemo. Saepe accusamus expedita rem impedit
-            tenetur! Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Similique possimus aperiam nulla. Possimus, omnis tenetur accusamus
-            unde tempora dolor provident ea nihil fuga eveniet veritatis, ullam
-            iusto odio deleniti commodi. Lorem ipsum dolor sit amet, consectetur
-            adipisicing elit. Debitis facilis temporibus quia soluta dolores
-            doloribus eaque qui, autem laboriosam molestiae accusantium maiores
-            laborum. Officia amet quam est incidunt accusamus magni. Lorem ipsum
-            dolor, sit amet consectetur adipisicing elit. In ea exercitationem,
-            quae sunt eveniet consectetur similique molestias unde illum facere
-            error saepe, voluptas nemo. Saepe accusamus expedita rem impedit
-            tenetur! Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Similique possimus aperiam nulla. Possimus, omnis tenetur accusamus
-            unde tempora dolor provident ea nihil fuga eveniet veritatis, ullam
-            iusto odio deleniti commodi.
-            <Dialog.Close>close</Dialog.Close>
+            <Flex className="sticky top-0 left-0 / gap-4 / p-4 / bg-base-100">
+              <Dialog.Close>
+                <Button
+                  tabIndex={-1}
+                  variant="outline"
+                  startIcon={<CaretRightDouble />}
+                >
+                  close
+                </Button>
+              </Dialog.Close>
+
+              <NextLinkButton
+                href="/careers/settings"
+                color="ghost"
+                className="hidden md:flex"
+                startIcon={<MaximizeLeft />}
+              >
+                expand
+              </NextLinkButton>
+            </Flex>
+            <div className="p-16">
+              <Dialog.Title className="DialogTitle">Edit profile</Dialog.Title>
+              <CareerSettingsContent />
+              <Dialog.Close>close</Dialog.Close>
+            </div>
           </Dialog.Content>
         </Dialog.Portal>
       </Dialog.Root>

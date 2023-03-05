@@ -1,6 +1,12 @@
-import React from "react";
+import { CareerSettingsContent } from "../components/CareerSettings/CareerSettingsContent";
+
+const CareerSettingsPage = () => {
+  return (
+    <div>
+      <CareerSettingsContent />
+    </div>
+  );
+};
 
 // eslint-disable-next-line import/no-default-export
-export default function CareerSettingsPage() {
-  return <div>CareerSettings</div>;
-}
+export default CareerSettingsPage;
