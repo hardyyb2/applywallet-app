@@ -1,6 +1,7 @@
 "use client";
 
 import clsx from "clsx";
+import { m } from "framer-motion";
 
 import { useBoolean } from "@/hooks/useBoolean";
 
@@ -14,13 +15,13 @@ const SideNav = () => {
   });
 
   return (
-    <div
-      style={{
+    <m.div
+      animate={{
         width: navOpen ? 200 : 66,
       }}
       className={clsx(
         "h-[96%]  / grid grid-rows-[auto_1fr_auto]",
-        "ml-4 my-auto / bg-base-200 / rounded-box / transition-all ease-in-out",
+        "ml-4 my-auto / bg-base-200 / rounded-box",
       )}
     >
       {/* Top section */}
@@ -31,7 +32,7 @@ const SideNav = () => {
 
       {/* Scrollable menu items */}
       <NavigationMenu navOpen={navOpen} className="pt-2 pb-8" />
-    </div>
+    </m.div>
   );
 };
 

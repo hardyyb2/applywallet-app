@@ -10,6 +10,7 @@ import {
 
 import "./globals.css";
 import { Header } from "./Header";
+import { Providers } from "./providers";
 import { i18n, Locale } from "./utils/locale-utils/i18n-config";
 
 export async function generateStaticParams() {
@@ -41,18 +42,20 @@ export default function RootLayout({
               <LocaleSwitcher />
             </Header>
           </BaseLayout.Head>
-          <BaseLayout.Body
-            className={clsx(
-              "flex lg:grid lg:grid-cols-[max-content_auto]",
-              "bg-gradient-to-br to-secondary/40 from-primary/40 / overflow-hidden",
-            )}
-          >
-            <Navigation />
-            {/* Padding top same as height of the header */}
-            <section className="h-full w-full / py-20 / overflow-y-auto">
-              {children}
-            </section>
-          </BaseLayout.Body>
+          <Providers>
+            <BaseLayout.Body
+              className={clsx(
+                "flex lg:grid lg:grid-cols-[max-content_auto]",
+                "bg-gradient-to-br to-secondary/40 from-primary/40 / overflow-hidden",
+              )}
+            >
+              <Navigation />
+              {/* Padding top same as height of the header */}
+              <section className="h-full w-full / py-20 / overflow-y-auto">
+                {children}
+              </section>
+            </BaseLayout.Body>
+          </Providers>
         </BaseLayout>
       </body>
     </html>

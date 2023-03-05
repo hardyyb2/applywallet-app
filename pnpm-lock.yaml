@@ -3,7 +3,6 @@ lockfileVersion: 5.4
 specifiers:
   '@dx-kit/react-conditional-match': ^3.0.0
   '@formatjs/intl-localematcher': ^0.2.32
-  '@formkit/auto-animate': ^1.0.0-beta.6
   '@hookform/resolvers': ^2.9.11
   '@next/bundle-analyzer': ^13.2.1
   '@radix-ui/react-dialog': ^1.0.2
@@ -25,6 +24,7 @@ specifiers:
   eslint: 8.33.0
   eslint-config-next: 13.2.1
   eslint-config-prettier: ^8.6.0
+  framer-motion: ^10.0.1
   negotiator: ^0.6.3
   next: 13.2.1
   postcss: ^8.4.21
@@ -45,10 +45,10 @@ specifiers:
 dependencies:
   '@dx-kit/react-conditional-match': 3.0.0_react@18.2.0
   '@formatjs/intl-localematcher': 0.2.32
-  '@formkit/auto-animate': 1.0.0-beta.6
   '@hookform/resolvers': 2.9.11_react-hook-form@7.43.1
   '@radix-ui/react-dialog': 1.0.2_5ndqzdd6t4rivxsukjv3i3ak2q
   clsx: 1.2.1
+  framer-motion: 10.0.1_biqbaboplfbrettd7655fr4n2y
   negotiator: 0.6.3
   next: 13.2.1_wiv434v7erz4aedd5whhdwmpv4
   react: 18.2.0
@@ -1467,6 +1467,19 @@ packages:
       react-dom: 17.0.2_react@18.2.0
     dev: false
 
+  /@emotion/is-prop-valid/0.8.8:
+    resolution: {integrity: sha512-u5WtneEAr5IDG2Wv65yhunPSMLIpuKsbuOktRojfrEiEvRyC85LgPMZI63cr7NUqT8ZIGdSVg8ZKGxIug4lXcA==}
+    requiresBuild: true
+    dependencies:
+      '@emotion/memoize': 0.7.4
+    dev: false
+    optional: true
+
+  /@emotion/memoize/0.7.4:
+    resolution: {integrity: sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw==}
+    dev: false
+    optional: true
+
   /@esbuild/android-arm/0.16.17:
     resolution: {integrity: sha512-N9x1CMXVhtWEAMS7pNNONyA14f71VPQN9Cnavj1XQh6T7bskqiLLrSca4O0Vr8Wdcga943eThxnVp3JLnBMYtw==}
     engines: {node: '>=12'}
@@ -1686,10 +1699,6 @@ packages:
     resolution: {integrity: sha512-k/MEBstff4sttohyEpXxCmC3MqbUn9VvHGlZ8fauLzkbwXmVrEeyzS+4uhrvAk9DWU9/7otYWxyDox4nT/KVLQ==}
     dependencies:
       tslib: 2.5.0
-    dev: false
-
-  /@formkit/auto-animate/1.0.0-beta.6:
-    resolution: {integrity: sha512-PVDhLAlr+B4Xb7e+1wozBUWmXa6BFU8xUPR/W/E+TsQhPS1qkAdAsJ25keEnFrcePSnXHrOsh3tiFbEToOzV9w==}
     dev: false
 
   /@hookform/resolvers/2.9.11_react-hook-form@7.43.1:
@@ -3845,6 +3854,19 @@ packages:
   /fraction.js/4.2.0:
     resolution: {integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==}
     dev: true
+
+  /framer-motion/10.0.1_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-/N7gBA9gH8PkStyNQ67P/lx8UhL/7Y8z9Ku7FfgOF77sSG8wu8781kX7I5ZUgflRRtQXo8qH4Rev23004G1zcQ==}
+    peerDependencies:
+      react: ^18.0.0
+      react-dom: ^18.0.0
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      tslib: 2.5.0
+    optionalDependencies:
+      '@emotion/is-prop-valid': 0.8.8
+    dev: false
 
   /fs.realpath/1.0.0:
     resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}
