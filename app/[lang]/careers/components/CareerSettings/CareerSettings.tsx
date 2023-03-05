@@ -65,7 +65,7 @@ const CareerSettings = () => {
               <Dialog.Close>
                 <Button
                   tabIndex={-1}
-                  variant="outline"
+                  color="ghost"
                   startIcon={<CaretRightDouble />}
                 >
                   close
@@ -81,10 +81,10 @@ const CareerSettings = () => {
                 expand
               </NextLinkButton>
             </Flex>
-            <div className="p-16">
-              <Dialog.Title className="DialogTitle">Edit profile</Dialog.Title>
+            <div className="px-16 py-8">
+              {/* <Dialog.Title className="DialogTitle">Edit profile</Dialog.Title> */}
               <CareerSettingsContent />
-              <Dialog.Close>close</Dialog.Close>
+              {/* <Dialog.Close>close</Dialog.Close> */}
             </div>
           </Dialog.Content>
         </Dialog.Portal>

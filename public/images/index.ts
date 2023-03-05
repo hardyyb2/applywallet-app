@@ -3,6 +3,9 @@ import CaretDown from "./caret-down.svg";
 import CaretRightDouble from "./caret-right-double.svg";
 import CopiedIcon from "./copied.svg";
 import CopyIcon from "./copy.svg";
+import EyeSlashIcon from "./eye-slash.svg";
+import EyeIcon from "./eye.svg";
+import GripIcon from "./grip.svg";
 import HomeIcon from "./home.svg";
 import LanguageIcon from "./language.svg";
 import MaximizeLeft from "./maximize-left.svg";
@@ -22,4 +25,7 @@ export {
   SettingsIcon,
   CaretRightDouble,
   MaximizeLeft,
+  GripIcon,
+  EyeIcon,
+  EyeSlashIcon,
 };

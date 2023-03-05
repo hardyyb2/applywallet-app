@@ -2,20 +2,27 @@
 
 import { Reorder } from "framer-motion";
 import { useState } from "react";
+import { CareerInformationItem } from "../CareerInformationItem";
 
 const CareerSettingsContent = () => {
-  const [items, setItems] = useState([0, 1, 2, 3]);
+  const [items, setItems] = useState(["1", "2"]);
 
   return (
     <section className="prose">
-      <Reorder.Group axis="y" values={items} onReorder={setItems}>
+      <h2>information settings</h2>
+
+      <Reorder.Group
+        className="list-none pl-0"
+        axis="y"
+        values={items}
+        onReorder={setItems}
+      >
         {items.map((item) => (
           <Reorder.Item key={item} value={item}>
-            {item}
+            <CareerInformationItem />
           </Reorder.Item>
         ))}
       </Reorder.Group>
-      <h2>rearrange information order</h2>
     </section>
   );
 };
