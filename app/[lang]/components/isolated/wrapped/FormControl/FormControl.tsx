@@ -20,7 +20,7 @@ const FormControl = ({
   error = "",
 }: FormControlProps) => {
   return (
-    <div className="form-control">
+    <fieldset className="form-control">
       <label className="label" htmlFor={htmlFor} aria-label={label}>
         <span className="label-text-alt">{label}</span>
       </label>
@@ -32,7 +32,7 @@ const FormControl = ({
           <span className="label-text-alt / text-error">{error}</span>
         </label>
       )}
-    </div>
+    </fieldset>
   );
 };
 
