@@ -1,5 +1,6 @@
-import { CopiedIcon, CopyIcon } from "public/images";
 import { Fragment, ReactElement } from "react";
+
+import { CopiedIcon, CopyIcon } from "public/images";
 
 import { CopyButtonStateTypes } from "./copyButton.types";
 

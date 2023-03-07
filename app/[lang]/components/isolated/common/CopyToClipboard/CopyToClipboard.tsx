@@ -1,6 +1,7 @@
 "use client";
 
 import { cloneElement, ReactElement } from "react";
+
 import { fallbackCopyToClipboard } from "./copyToClipboard.utils";
 
 export interface CopyToClipboardProps {

@@ -4,10 +4,10 @@ import { Fragment, useMemo } from "react";
 import { Flex } from "@/components/isolated/common";
 import { BottomNavigation, Button } from "@/components/isolated/wrapped";
 import { getLinkWithLocale } from "@/utils/routes.utils";
+import { HomeIcon, MenuIcon } from "public/images";
 
 import { NextLinkButton } from "../../../NextLinkButton";
 import { bottomNavDisplayOptions } from "../../navigation.utils";
-import { HomeIcon, MenuIcon } from "public/images";
 
 interface BottomNavBarProps {
   pathName?: string | null;

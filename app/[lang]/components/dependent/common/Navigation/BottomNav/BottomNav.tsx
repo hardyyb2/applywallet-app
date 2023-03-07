@@ -2,6 +2,7 @@
 
 import { ConditionalMatch } from "@dx-kit/react-conditional-match";
 import clsx from "clsx";
+import { AnimatePresence, m } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { Fragment } from "react";
 
@@ -13,7 +14,6 @@ import { NavigationMenu } from "../components/NavigationMenu";
 
 import { BottomNavBackdrop } from "./components/BottomNavBackdrop";
 import { BottomNavBar } from "./components/BottomNavBar";
-import { AnimatePresence, m } from "framer-motion";
 
 const { Render } = ConditionalMatch;
 interface BottomNavProps {
