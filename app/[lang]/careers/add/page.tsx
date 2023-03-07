@@ -1,6 +1,7 @@
+import Link from "next/link";
+
 import { Breadcrumbs } from "@/components/isolated/wrapped";
 import { AppRoutes } from "@/utils/routes.utils";
-import Link from "next/link";
 
 import { AddCareerForm } from "./components/AddCareerForm";
 

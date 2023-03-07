@@ -1,13 +1,13 @@
 "use client";
 
 import { Reorder, useDragControls } from "framer-motion";
-import { isValidElement, MouseEvent, MouseEventHandler, useState } from "react";
+import { MouseEvent, useState } from "react";
 
 import { Flex } from "@/components/isolated/common";
 import { Button } from "@/components/isolated/wrapped";
 import { EyeIcon, EyeSlashIcon, GripIcon } from "public/images";
 
-import { CareerSettingsInfoType } from "../careerSettings.types";
+import { CareerSettingsInfoType } from "..";
 
 const CSInformationSettings = () => {
   const dragControls = useDragControls();

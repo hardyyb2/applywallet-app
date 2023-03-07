@@ -1,9 +1,9 @@
-import { CareerSettingsContent } from "../components/CareerSettings/CareerSettingsContent";
+import { CareerSettings } from "../components/CareerSettings";
 
 const CareerSettingsPage = () => {
   return (
     <div>
-      <CareerSettingsContent />
+      <CareerSettings />
     </div>
   );
 };
