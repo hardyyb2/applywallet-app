@@ -1,11 +1,8 @@
 import { Metadata } from "next";
-import { Inter } from "next/font/google";
 
 import { Locale } from "@/utils/locale-utils/i18n-config";
 
 import { getDictionary } from "./utils/locale-utils/dictionaries";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "home",
