@@ -1,9 +1,9 @@
 import clsx from "clsx";
 import { forwardRef } from "react";
 
-import { DropdownItem } from "./DropdownItem";
-import { DropdownMenu } from "./DropdownMenu";
-import { DropdownToggle } from "./DropdownToggle";
+import { DropdownItem } from "./components/DropdownItem";
+import { DropdownMenu } from "./components/DropdownMenu";
+import { DropdownToggle } from "./components/DropdownToggle";
 
 export type DropdownProps = React.HTMLAttributes<HTMLDivElement> & {
   horizontal?: "left" | "center" | "right";

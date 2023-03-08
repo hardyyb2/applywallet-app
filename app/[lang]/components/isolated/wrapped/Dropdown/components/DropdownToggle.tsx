@@ -11,7 +11,7 @@ const DropdownToggle = ({
   ...props
 }: DropdownToggleProps) => {
   return (
-    <label tabIndex={0} className={className} {...props}>
+    <label className={className} {...props}>
       {children}
     </label>
   );
