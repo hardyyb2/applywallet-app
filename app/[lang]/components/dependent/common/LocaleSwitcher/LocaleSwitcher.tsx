@@ -1,13 +1,12 @@
 "use client";
 
 import clsx from "clsx";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { Button, Dropdown } from "@/components/isolated/wrapped";
 import { languageOptions } from "@/utils/locale-utils/language-options";
 import { CaretDown, LanguageIcon } from "public/images";
-
-import { NextLinkButton } from "../NextLinkButton";
 
 import { redirectedPathName } from "./localeSwitcher.utils";
 
@@ -42,21 +41,22 @@ const LocaleSwitcher = () => {
             <Dropdown.Item
               key={value}
               className={clsx(
-                "bg-base-100 / rounded-lg outline-offset-2",
+                "bg-base-100 / rounded-lg outline-offset-2 / [&_a]:w-max [&_a]:p-0",
                 activeLocale === value && "bg-primary / text-primary-content",
               )}
               role="listitem"
               aria-label={label}
             >
-              <NextLinkButton
-                href={newRedirectPath}
-                startIcon={icon}
-                color="ghost"
-                className="flex flex-row flex-nowrap / px-6"
-                aria-label={label}
-              >
-                <span>{label}</span>
-              </NextLinkButton>
+              <Link href={newRedirectPath} tabIndex={-1}>
+                <Button
+                  startIcon={icon}
+                  color="ghost"
+                  className="flex flex-row flex-nowrap"
+                  aria-label={label}
+                >
+                  <span>{label}</span>
+                </Button>
+              </Link>
             </Dropdown.Item>
           );
         })}

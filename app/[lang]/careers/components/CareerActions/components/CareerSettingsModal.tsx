@@ -1,9 +1,9 @@
 "use client";
 
 import clsx from "clsx";
+import Link from "next/link";
 import { useRef, useState } from "react";
 
-import { NextLinkButton } from "@/components/dependent/common";
 import { Flex } from "@/components/isolated/common";
 import { Button, Dialog } from "@/components/isolated/wrapped";
 import { CaretRightDouble, MaximizeLeft, SettingsIcon } from "public/images";
@@ -37,16 +37,17 @@ const CareerSettingsModal = () => {
         </Dialog.Trigger>
 
         {/* open settings in a page for <md screens */}
-        <NextLinkButton
-          href="/careers/settings"
-          variant="outline"
-          color="secondary"
-          responsive
-          startIcon={<SettingsIcon />}
-          className="flex md:hidden"
-        >
-          <span className="hidden md:inline">settings</span>
-        </NextLinkButton>
+        <Link href="/careers/settings">
+          <Button
+            variant="outline"
+            color="secondary"
+            responsive
+            startIcon={<SettingsIcon />}
+            className="flex md:hidden"
+          >
+            <span className="hidden md:inline">settings</span>
+          </Button>
+        </Link>
 
         <Dialog.Portal>
           <Dialog.Overlay
@@ -73,14 +74,15 @@ const CareerSettingsModal = () => {
                 </Button>
               </Dialog.Close>
 
-              <NextLinkButton
-                href="/careers/settings"
-                color="ghost"
-                className="hidden md:flex"
-                startIcon={<MaximizeLeft />}
-              >
-                expand
-              </NextLinkButton>
+              <Link href="/careers/settings">
+                <Button
+                  color="ghost"
+                  className="hidden md:flex"
+                  startIcon={<MaximizeLeft />}
+                >
+                  expand
+                </Button>
+              </Link>
             </Flex>
             <div className="px-16 py-8">
               {/* <Dialog.Title className="DialogTitle">Edit profile</Dialog.Title> */}

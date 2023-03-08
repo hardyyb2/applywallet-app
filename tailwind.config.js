@@ -14,4 +14,7 @@ module.exports = {
   daisyui: {
     themes: ["night", "light"],
   },
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
 };

@@ -6,8 +6,8 @@ import { BottomNavigation, Button } from "@/components/isolated/wrapped";
 import { getLinkWithLocale } from "@/utils/routes.utils";
 import { HomeIcon, MenuIcon } from "public/images";
 
-import { NextLinkButton } from "../../../NextLinkButton";
 import { bottomNavDisplayOptions } from "../../navigation.utils";
+import Link from "next/link";
 
 interface BottomNavBarProps {
   pathName?: string | null;
@@ -43,22 +43,22 @@ const BottomNavBar = ({
         const active = itemLinkWithLocale === pathName;
 
         return (
-          <div key={item.key ?? item.link}>
-            <NextLinkButton
-              href={itemLinkWithLocale}
+          <Link href={itemLinkWithLocale} key={item.key ?? item.link}>
+            <Button
               color="ghost"
               className={clsx(
                 "flex flex-col ",
                 active && "text-primary active",
                 "hover:bg-transparent",
               )}
+              tabIndex={-1}
             >
               <HomeIcon />
               <BottomNavigation.Label className="lowercase text-xs">
                 {item.label}
               </BottomNavigation.Label>
-            </NextLinkButton>
-          </div>
+            </Button>
+          </Link>
         );
       })}
 
