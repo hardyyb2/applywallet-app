@@ -19,5 +19,3 @@ export const addCareerFormSchema = z.object({
     }),
   }),
 });
-
-export type AddCareerFormType = z.infer<typeof addCareerFormSchema>;

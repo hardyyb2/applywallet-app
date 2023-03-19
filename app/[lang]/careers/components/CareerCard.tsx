@@ -3,7 +3,13 @@ import clsx from "clsx";
 import { CopyButton } from "@/components/dependent/common";
 import { Flex } from "@/components/isolated/common";
 
-const CareerCard = ({ index }: { index: number }) => {
+import { CareerType } from "../career.types";
+
+interface CareerCardProps {
+  career: CareerType;
+}
+
+const CareerCard = ({ career }: CareerCardProps) => {
   return (
     <div className={clsx("card / bg-base-200")}>
       <div
@@ -13,48 +19,34 @@ const CareerCard = ({ index }: { index: number }) => {
           "[&_p]:line-clamp-2",
         )}
       >
-        <h2 className="card-title">yellow.ai</h2>
+        <h2 className="card-title">{career.company.name}</h2>
+
         <div>
           <Flex align="center" justify="space-between">
             <h6>company description</h6>
-            <CopyButton text="Hola soy dora" />
+            <CopyButton text={career.company.description ?? ""} />
           </Flex>
           <p>
-            <em>
-              Company - Lorem ipsum dolor, sit amet consectetur adipisicing
-              elit. Distinctio animi fuga rerum temporibus quasi, consequuntur
-              ipsam veritatis voluptas. Eum odit ab accusantium sapiente impedit
-              tenetur delectus vero quidem voluptatum perferendis.
-            </em>
+            <em>{career.company.description}</em>
           </p>
         </div>
 
-        <h3>SDE (UI)</h3>
+        <h3>{career.role.name}</h3>
         <div>
           <Flex align="center" justify="space-between">
-            <h6> role description</h6>
-            <CopyButton text="Hola soy dora" />
+            <h6>role description</h6>
+            <CopyButton text={career.role.description ?? ""} />
           </Flex>
-          <p>
-            Role - Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Quos itaque a sapiente eius nihil assumenda quaerat quis. Est
-            veritatis, tempore ullam culpa aspernatur itaque et sequi
-            consequatur aliquam temporibus veniam.
-          </p>
+          <p>{career.role.description}</p>
         </div>
 
         <div>
           <Flex align="center" justify="space-between">
-            <h6> job description</h6>
-            <CopyButton text="hey there" />
+            <h6>job description</h6>
+            <CopyButton text={career.job.description} />
           </Flex>
           <strong>
-            <p>
-              Role - Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Quos itaque a sapiente eius nihil assumenda quaerat quis. Est
-              veritatis, tempore ullam culpa aspernatur itaque et sequi
-              consequatur aliquam temporibus veniam.
-            </p>
+            <p>{career.job.description}</p>
           </strong>
         </div>
       </div>
