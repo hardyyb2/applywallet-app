@@ -12,7 +12,7 @@ export const careerDataMock: CareerType[] = [
     },
     job: {
       description:
-        "Develop and execute marketing campaigns to drive brand awareness and customer acquisition",
+        "1. Develop and execute marketing campaigns to drive brand awareness and customer acquisition \n 2. Hello HelloHe lloHelloHelloHelloHelloHe lloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHello HelloHelloHelloHelloHelloHelloHelloHello",
     },
   },
   {
