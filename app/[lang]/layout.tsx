@@ -1,4 +1,4 @@
-/* eslint-disable import/no-default-export */
+import "@total-typescript/ts-reset";
 import clsx from "clsx";
 
 import {
@@ -17,6 +17,7 @@ export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
 }
 
+// eslint-disable-next-line import/no-default-export
 export default function RootLayout({
   params: { lang = "en" },
   children,
