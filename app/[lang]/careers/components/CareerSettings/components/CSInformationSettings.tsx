@@ -3,8 +3,8 @@
 import { Reorder, useDragControls } from "framer-motion";
 import { MouseEvent, useState } from "react";
 
-import { Flex } from "@/components/isolated/common";
-import { Button } from "@/components/isolated/wrapped";
+import { Flex } from "@/components/ui/isolated/common";
+import { Button } from "@/components/ui/isolated/wrapped";
 import { EyeIcon, EyeSlashIcon, GripIcon } from "public/images/icons";
 
 import { CareerSettingsInfoType } from "..";

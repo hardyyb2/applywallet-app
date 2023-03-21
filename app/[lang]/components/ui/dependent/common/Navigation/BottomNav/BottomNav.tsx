@@ -6,8 +6,8 @@ import { AnimatePresence, m } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { Fragment } from "react";
 
-import { Flex } from "@/components/isolated/common";
-import { BottomNavigation } from "@/components/isolated/wrapped";
+import { Flex } from "@/components/ui/isolated/common";
+import { BottomNavigation } from "@/components/ui/isolated/wrapped";
 import { useBoolean } from "@/hooks/useBoolean";
 
 import { NavigationMenu } from "../components/NavigationMenu";

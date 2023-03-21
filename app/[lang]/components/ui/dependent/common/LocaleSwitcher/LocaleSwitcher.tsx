@@ -4,7 +4,7 @@ import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { Button, Dropdown } from "@/components/isolated/wrapped";
+import { Button, Dropdown } from "@/components/ui/isolated/wrapped";
 import { languageOptions } from "@/utils/locale-utils/language-options";
 import { CaretDown, LanguageIcon } from "public/images/icons";
 

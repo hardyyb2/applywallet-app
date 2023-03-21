@@ -5,8 +5,8 @@ import { useEffect, useMemo, useState } from "react";
 import {
   CopyToClipboard,
   CopyToClipboardProps,
-} from "@/components/isolated/common";
-import { Button, ButtonProps } from "@/components/isolated/wrapped";
+} from "@/components/ui/isolated/common";
+import { Button, ButtonProps } from "@/components/ui/isolated/wrapped";
 
 import { CopyButtonStateTypes } from "./copyButton.types";
 import { copyButtonIcons } from "./copyButton.utils";

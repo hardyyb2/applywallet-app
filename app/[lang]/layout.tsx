@@ -6,7 +6,7 @@ import {
   LocaleSwitcher,
   Navigation,
   ThemesMenu,
-} from "@/components/dependent/common";
+} from "@/components/ui/dependent/common";
 
 import "./globals.css";
 import { Header } from "./Header";

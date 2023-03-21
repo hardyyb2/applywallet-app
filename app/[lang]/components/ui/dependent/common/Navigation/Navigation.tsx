@@ -2,7 +2,7 @@
 
 import { Fragment } from "react";
 
-import { Flex } from "@/components/isolated/common";
+import { Flex } from "@/components/ui/isolated/common";
 
 import { BottomNav } from "./BottomNav";
 import { SideNav } from "./SideNav";

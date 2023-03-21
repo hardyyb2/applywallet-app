@@ -1,7 +1,7 @@
 import clsx from "clsx";
 
-import { Flex } from "@/components/isolated/common";
-import { Button, Dropdown } from "@/components/isolated/wrapped";
+import { Flex } from "@/components/ui/isolated/common";
+import { Button, Dropdown } from "@/components/ui/isolated/wrapped";
 import { CaretDown, ThemeIcon } from "public/images/icons";
 
 import { ThemesMenuItemColors } from "./components/ThemesMenuItemColors";

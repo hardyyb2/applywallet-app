@@ -2,8 +2,8 @@
 
 import clsx from "clsx";
 
-import { Flex } from "@/components/isolated/common";
-import { Button, Popover } from "@/components/isolated/wrapped";
+import { Flex } from "@/components/ui/isolated/common";
+import { Button, Popover } from "@/components/ui/isolated/wrapped";
 import { BinIcon, EllipsisVIcon, PenIcon } from "public/images/icons";
 
 const CareerCardActions = () => {

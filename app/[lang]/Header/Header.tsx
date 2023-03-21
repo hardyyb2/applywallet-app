@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { useEffect, ReactNode } from "react";
 import { themeChange } from "theme-change";
 
-import { Flex, Typography } from "@/components/isolated/common";
+import { Flex, Typography } from "@/components/ui/isolated/common";
 
 const Header = ({ children }: { children?: ReactNode }) => {
   useEffect(() => {

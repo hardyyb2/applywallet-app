@@ -1,7 +1,7 @@
 import Link from "next/link";
 
-import { Flex } from "@/components/isolated/common";
-import { Button } from "@/components/isolated/wrapped";
+import { Flex } from "@/components/ui/isolated/common";
+import { Button } from "@/components/ui/isolated/wrapped";
 import { AddIcon } from "public/images/icons";
 
 import { CareerSettingsModal } from "./components/CareerSettingsModal";

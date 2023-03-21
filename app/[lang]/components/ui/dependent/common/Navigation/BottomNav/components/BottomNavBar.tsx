@@ -1,8 +1,8 @@
 import clsx from "clsx";
 import { Fragment, useMemo } from "react";
 
-import { Flex } from "@/components/isolated/common";
-import { BottomNavigation, Button } from "@/components/isolated/wrapped";
+import { Flex } from "@/components/ui/isolated/common";
+import { BottomNavigation, Button } from "@/components/ui/isolated/wrapped";
 import { getLinkWithLocale } from "@/utils/routes.utils";
 import { HomeIcon, MenuIcon } from "public/images/icons";
 

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Fragment } from "react";
 
-import { Flex, Typography } from "@/components/isolated/common";
+import { Flex, Typography } from "@/components/ui/isolated/common";
 import { getLinkWithLocale } from "@/utils/routes.utils";
 
 import { groupedNavItemsEntries } from "../navigation.utils";
