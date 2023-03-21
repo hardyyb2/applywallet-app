@@ -8,7 +8,7 @@ import { AddIcon } from "public/images";
 
 import { CareerType } from "./career.types";
 import { CareerActions } from "./components/CareerActions/CareerActions";
-import { CareerCard } from "./components/CareerCard";
+import { CareerCard } from "./components/CareerCard/CareerCard";
 import { careerDataMock } from "./mock/careers";
 
 export const metadata: Metadata = {

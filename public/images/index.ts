@@ -3,6 +3,7 @@ import CaretDown from "./caret-down.svg";
 import CaretRightDouble from "./caret-right-double.svg";
 import CopiedIcon from "./copied.svg";
 import CopyIcon from "./copy.svg";
+import EllipsisVIcon from "./ellipsis-v.svg";
 import EyeSlashIcon from "./eye-slash.svg";
 import EyeIcon from "./eye.svg";
 import GripIcon from "./grip.svg";
@@ -28,4 +29,5 @@ export {
   GripIcon,
   EyeIcon,
   EyeSlashIcon,
+  EllipsisVIcon,
 };

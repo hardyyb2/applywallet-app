@@ -3,7 +3,9 @@ import clsx from "clsx";
 import { CopyButton } from "@/components/dependent/common";
 import { Flex } from "@/components/isolated/common";
 
-import { CareerType } from "../career.types";
+import { CareerType } from "../../career.types";
+
+import { CareerCardActions } from "./components/CareerCardActions";
 
 interface CareerCardProps {
   career: CareerType;
@@ -19,6 +21,9 @@ const CareerCard = ({ career }: CareerCardProps) => {
           "[&_p]:line-clamp-3 [&_p]:whitespace-pre-line",
         )}
       >
+        <div className="absolute right-4 top-4">
+          <CareerCardActions />
+        </div>
         <h2 className="card-title">{career.company.name}</h2>
 
         <div>

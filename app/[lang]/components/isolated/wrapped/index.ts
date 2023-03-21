@@ -8,3 +8,4 @@ export * from "./FormControl";
 export * from "./Breadcrumbs";
 export * from "./Drawer";
 export * from "./Dialog";
+export * from "./Popover";
