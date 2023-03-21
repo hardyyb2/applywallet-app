@@ -16,7 +16,7 @@ export const languageOptions: {
         width={20}
         height={20}
         alt="english"
-        src="/images/english-uk.svg"
+        src="/images/icons/english-uk.svg"
       />
     ),
   },
@@ -28,7 +28,7 @@ export const languageOptions: {
         width={20}
         height={20}
         alt="english"
-        src="/images/espanol-esp.svg"
+        src="/images/icons/espanol-esp.svg"
       />
     ),
   },

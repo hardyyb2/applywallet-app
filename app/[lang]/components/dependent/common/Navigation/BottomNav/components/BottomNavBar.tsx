@@ -4,7 +4,7 @@ import { Fragment, useMemo } from "react";
 import { Flex } from "@/components/isolated/common";
 import { BottomNavigation, Button } from "@/components/isolated/wrapped";
 import { getLinkWithLocale } from "@/utils/routes.utils";
-import { HomeIcon, MenuIcon } from "public/images";
+import { HomeIcon, MenuIcon } from "public/images/icons";
 
 import { bottomNavDisplayOptions } from "../../navigation.utils";
 import Link from "next/link";

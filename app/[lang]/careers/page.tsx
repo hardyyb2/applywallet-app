@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import { Flex } from "@/components/isolated/common";
 import { Button } from "@/components/isolated/wrapped";
-import { AddIcon } from "public/images";
+import { AddIcon } from "public/images/icons";
 
 import { CareerType } from "./career.types";
 import { CareerActions } from "./components/CareerActions/CareerActions";

@@ -6,7 +6,11 @@ import { useRef, useState } from "react";
 
 import { Flex } from "@/components/isolated/common";
 import { Button, Dialog } from "@/components/isolated/wrapped";
-import { CaretRightDouble, MaximizeLeft, SettingsIcon } from "public/images";
+import {
+  CaretRightDouble,
+  MaximizeLeft,
+  SettingsIcon,
+} from "public/images/icons";
 
 import { CareerSettings } from "../../CareerSettings";
 

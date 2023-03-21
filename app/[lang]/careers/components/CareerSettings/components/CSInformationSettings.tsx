@@ -5,7 +5,7 @@ import { MouseEvent, useState } from "react";
 
 import { Flex } from "@/components/isolated/common";
 import { Button } from "@/components/isolated/wrapped";
-import { EyeIcon, EyeSlashIcon, GripIcon } from "public/images";
+import { EyeIcon, EyeSlashIcon, GripIcon } from "public/images/icons";
 
 import { CareerSettingsInfoType } from "..";
 
