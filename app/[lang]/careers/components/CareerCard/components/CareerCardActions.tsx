@@ -1,8 +1,10 @@
 "use client";
 
-import { Button, Popover } from "@/components/isolated/wrapped";
 import clsx from "clsx";
-import { EllipsisVIcon } from "public/images";
+
+import { Button, Popover } from "@/components/isolated/wrapped";
+import { BinIcon, EllipsisVIcon, PenIcon } from "public/images";
+import { Flex } from "@/components/isolated/common";
 
 const CareerCardActions = () => {
   return (
@@ -15,16 +17,14 @@ const CareerCardActions = () => {
           className={clsx(
             "bg-base-200 / p-4 / rounded-lg border-2 border-primary",
           )}
-          sideOffset={5}
+          collisionPadding={8}
         >
-          <Popover.Arrow className="text-primary" />
-          <Button>edit</Button>
-          <Button>delete</Button>
+          <Flex direction="row" className="gap-2">
+            <Button color="primary" responsive startIcon={<PenIcon />} />
+            <Button color="error" responsive startIcon={<BinIcon />} />
+          </Flex>
 
-          <Popover.Close className="PopoverClose" aria-label="Close">
-            close
-          </Popover.Close>
-          <Popover.Arrow className="PopoverArrow" />
+          <Popover.Arrow className="fill-primary" />
         </Popover.Content>
       </Popover.Portal>
     </Popover.Root>

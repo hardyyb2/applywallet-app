@@ -13,6 +13,8 @@ import MaximizeLeft from "./maximize-left.svg";
 import MenuIcon from "./menu.svg";
 import SettingsIcon from "./settings.svg";
 import ThemeIcon from "./theme.svg";
+import PenIcon from "./pen.svg";
+import BinIcon from "./bin.svg";
 
 export {
   AddIcon,
@@ -30,4 +32,6 @@ export {
   EyeIcon,
   EyeSlashIcon,
   EllipsisVIcon,
+  PenIcon,
+  BinIcon,
 };
