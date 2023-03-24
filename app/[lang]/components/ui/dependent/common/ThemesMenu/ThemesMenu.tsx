@@ -23,6 +23,7 @@ const ThemesMenu = () => {
       >
         {selectableThemes.map(({ value }) => (
           <Dropdown.Item
+            tabIndex={0}
             key={value}
             className={clsx(
               "bg-base-100 / overflow-hidden / rounded-lg",

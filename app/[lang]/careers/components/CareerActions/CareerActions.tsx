@@ -10,7 +10,12 @@ const CareerActions = () => {
   return (
     <Flex className="gap-2 md:gap-4">
       <Link href="/careers/add">
-        <Button color="secondary" responsive startIcon={<AddIcon />}>
+        <Button
+          tabIndex={-1}
+          color="secondary"
+          responsive
+          startIcon={<AddIcon />}
+        >
           <span className="hidden md:inline">add career</span>
         </Button>
       </Link>

@@ -15,7 +15,7 @@ const CareerCardActions = () => {
       <Popover.Portal>
         <Popover.Content
           className={clsx(
-            "bg-base-200 / p-4 / rounded-lg border-2 border-primary",
+            "bg-base-200 / p-2 / rounded-lg border-2 border-primary",
           )}
           collisionPadding={8}
         >
