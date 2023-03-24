@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -6,26 +5,15 @@ import { Flex } from "@/components/ui/isolated/common";
 import { Button } from "@/components/ui/isolated/wrapped";
 import { AddIcon } from "public/images/icons";
 
-import { CareerType } from "./career.types";
 import { CareerActions } from "./components/CareerActions/CareerActions";
-import { CareerCard } from "./components/CareerCard/CareerCard";
-import { careerDataMock } from "./mock/careers";
+import { CareerList } from "./components/CareerList";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "careers",
 };
 
-const fetchCareers = (): Promise<CareerType[]> => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(careerDataMock);
-    }, 2000);
-  });
-};
-
 const Careers = async () => {
-  const careers = await fetchCareers();
-
   return (
     <div className="px-6 lg:px-10 py-4">
       <Flex justify="space-between" align="center" className="mb-10 gap-4">
@@ -39,16 +27,10 @@ const Careers = async () => {
 
         <CareerActions />
       </Flex>
-      <div
-        className={clsx(
-          "w-full / grid gap-8",
-          "grid-cols-[repeat(auto-fill,minmax(256px,1fr))] md:grid-cols-[repeat(auto-fill,minmax(400px,1fr))] lg:grid-cols-[repeat(auto-fill,minmax(480px,1fr))]",
-        )}
-      >
-        {careers.map((career) => (
-          <CareerCard key={career.company.name} career={career} />
-        ))}
-      </div>
+      <Suspense fallback="loading...">
+        {/* @ts-expect-error Async Server Component */}
+        <CareerList />
+      </Suspense>
 
       <Link href="/careers/add">
         <Button
