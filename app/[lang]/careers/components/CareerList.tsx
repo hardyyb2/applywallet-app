@@ -4,6 +4,7 @@ import { CareerType } from "../career.types";
 import { careerDataMock } from "../mock/careers";
 
 import { CareerCard } from "./CareerCard";
+import { CareerCardMini } from "./CareerCardMini";
 
 const fetchCareers = (): Promise<CareerType[]> => {
   return new Promise((resolve, reject) => {
@@ -24,7 +25,7 @@ const CareerList = async () => {
       )}
     >
       {careers.map((career) => (
-        <CareerCard key={career.company.name} career={career} />
+        <CareerCardMini key={career.company.name} />
       ))}
     </div>
   );
