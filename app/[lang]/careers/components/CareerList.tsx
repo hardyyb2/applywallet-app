@@ -4,7 +4,7 @@ import { CareerType } from "../career.types";
 import { careerDataMock } from "../mock/careers";
 
 import { CareerCard } from "./CareerCard";
-import { CareerCardMini } from "./CareerCardMini";
+import { CareerCardMini } from "./CareerCardMini/CareerCardMini";
 
 const fetchCareers = (): Promise<CareerType[]> => {
   return new Promise((resolve, reject) => {
