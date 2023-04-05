@@ -9,3 +9,4 @@ export * from "./Breadcrumbs";
 export * from "./Drawer";
 export * from "./Dialog";
 export * from "./Popover";
+export * from "./ButtonGroup";
