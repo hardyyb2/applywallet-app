@@ -1,12 +1,16 @@
 "use client";
 
 import clsx from "clsx";
+import { useSession } from "next-auth/react";
 import { useEffect, ReactNode } from "react";
 import { themeChange } from "theme-change";
 
 import { Flex, Typography } from "@/components/ui/isolated/common";
 
 const Header = ({ children }: { children?: ReactNode }) => {
+  const { data } = useSession();
+  console.log(data);
+
   useEffect(() => {
     themeChange(false);
   }, []);

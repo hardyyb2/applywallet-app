@@ -32,18 +32,18 @@ export default function RootLayout({
       <head />
       <body>
         <BaseLayout className="h-full">
-          <BaseLayout.Head
-            className={clsx(
-              "fixed top-0 z-[5] / h-16 lg:h-20 w-full / text-base-content ",
-              "bg-opacity-60 backdrop-blur",
-            )}
-          >
-            <Header>
-              <ThemesMenu />
-              <LocaleSwitcher />
-            </Header>
-          </BaseLayout.Head>
           <Providers>
+            <BaseLayout.Head
+              className={clsx(
+                "fixed top-0 z-[5] / h-16 lg:h-20 w-full / text-base-content ",
+                "bg-opacity-60 backdrop-blur",
+              )}
+            >
+              <Header>
+                <ThemesMenu />
+                <LocaleSwitcher />
+              </Header>
+            </BaseLayout.Head>
             <BaseLayout.Body
               className={clsx(
                 "flex lg:grid lg:grid-cols-[max-content_auto]",
