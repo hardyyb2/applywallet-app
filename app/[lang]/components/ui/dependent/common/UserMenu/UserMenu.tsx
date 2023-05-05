@@ -4,6 +4,7 @@ import clsx from "clsx";
 import { useSession, signOut } from "next-auth/react";
 import React from "react";
 
+import { Flex } from "@/components/ui/isolated/common";
 import { Avatar, Button, Popover } from "@/components/ui/isolated/wrapped";
 import { getInitials } from "@/utils/string.utils";
 
@@ -21,15 +22,19 @@ const UserMenu = () => {
   return (
     <Popover.Root>
       <Popover.Trigger asChild>
-        <Avatar.Root className="avatar ">
+        <Avatar.Root className="avatar">
           {userImage ? (
-            <div className="w-10 / mask mask-squircle">
+            <Flex
+              justify="center"
+              align="center"
+              className="w-10 / rounded-xl / bg-base-200 / ring ring-base-200 ring-offset-2"
+            >
               <Avatar.Image
                 className="btn btn-ghost / p-0 / border-none "
-                src={"https://picsum.photos/200/300"}
+                src={userImage}
                 alt={userName}
               />
-            </div>
+            </Flex>
           ) : null}
 
           <Avatar.Fallback delayMs={600}>
