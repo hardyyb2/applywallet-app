@@ -6,6 +6,7 @@ import {
   LocaleSwitcher,
   Navigation,
   ThemesMenu,
+  UserMenu,
 } from "@/components/ui/dependent/common";
 
 import "./globals.css";
@@ -42,6 +43,7 @@ export default function RootLayout({
               <Header>
                 <ThemesMenu />
                 <LocaleSwitcher />
+                <UserMenu />
               </Header>
             </BaseLayout.Head>
             <BaseLayout.Body
