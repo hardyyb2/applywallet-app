@@ -1,34 +1,29 @@
-"use client";
+import { ConditionalMatch } from "@dx-kit/react-conditional-match";
+import React from "react";
 
-import clsx from "clsx";
-import { useSession } from "next-auth/react";
-import { useEffect, ReactNode } from "react";
-import { themeChange } from "theme-change";
+import {
+  LocaleSwitcher,
+  ThemesMenu,
+  UserMenu,
+} from "@/components/ui/dependent/common";
+import { getCurrentUser } from "@/utils/session.utils";
 
-import { Flex, Typography } from "@/components/ui/isolated/common";
+import { HeaderClient } from "./components/HeaderClient";
+import { LoginButton } from "./components/LoginButton";
 
-const Header = ({ children }: { children?: ReactNode }) => {
-  const { data } = useSession();
-  console.log(data);
-
-  useEffect(() => {
-    themeChange(false);
-  }, []);
+const Header = async () => {
+  const user = await getCurrentUser();
 
   return (
-    <Flex
-      align="center"
-      justify="space-between"
-      className={clsx("h-full w-full / px-4 lg:px-10")}
-    >
-      <div className="inline-flex gap-1 / text-lg text-primary / lowercase">
-        <Typography>hardik</Typography>
-        <Typography className="text-base-content">badola</Typography>
-      </div>
-      <Flex align="center" className="gap-1 lg:gap-2">
-        {children}
-      </Flex>
-    </Flex>
+    <HeaderClient>
+      <ThemesMenu />
+      <LocaleSwitcher />
+      <ConditionalMatch fallback={<LoginButton />}>
+        <ConditionalMatch.Render when={user}>
+          <UserMenu />
+        </ConditionalMatch.Render>
+      </ConditionalMatch>
+    </HeaderClient>
   );
 };
 

@@ -5,6 +5,7 @@ import { useSession, signOut } from "next-auth/react";
 import React from "react";
 
 import { Avatar, Button, Popover } from "@/components/ui/isolated/wrapped";
+import { getInitials } from "@/utils/string.utils";
 
 const UserMenu = () => {
   const { data: session } = useSession();
@@ -22,10 +23,10 @@ const UserMenu = () => {
       <Popover.Trigger asChild>
         <Avatar.Root className="avatar ">
           {userImage ? (
-            <div className="w-12 / mask mask-squircle">
+            <div className="w-10 / mask mask-squircle">
               <Avatar.Image
-                className="btn btn-ghost / p-0 / border-none"
-                src={userImage}
+                className="btn btn-ghost / p-0 / border-none "
+                src={"https://picsum.photos/200/300"}
                 alt={userName}
               />
             </div>
@@ -36,7 +37,7 @@ const UserMenu = () => {
               color="ghost"
               className="mask mask-squircle / w-12 p-0 / bg-base-100"
             >
-              CT
+              {getInitials(userName).toLowerCase()}
             </Button>
           </Avatar.Fallback>
         </Avatar.Root>

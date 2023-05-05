@@ -1,13 +1,7 @@
 import "@total-typescript/ts-reset";
 import clsx from "clsx";
 
-import {
-  BaseLayout,
-  LocaleSwitcher,
-  Navigation,
-  ThemesMenu,
-  UserMenu,
-} from "@/components/ui/dependent/common";
+import { BaseLayout, Navigation } from "@/components/ui/dependent/common";
 
 import "./globals.css";
 import { Header } from "./Header";
@@ -19,7 +13,7 @@ export async function generateStaticParams() {
 }
 
 // eslint-disable-next-line import/no-default-export
-export default function RootLayout({
+export default async function RootLayout({
   params: { lang = "en" },
   children,
 }: {
@@ -29,7 +23,7 @@ export default function RootLayout({
   };
 }) {
   return (
-    <html lang={lang}>
+    <html lang={lang} suppressHydrationWarning>
       <head />
       <body>
         <BaseLayout className="h-full">
@@ -40,11 +34,8 @@ export default function RootLayout({
                 "bg-opacity-60 backdrop-blur",
               )}
             >
-              <Header>
-                <ThemesMenu />
-                <LocaleSwitcher />
-                <UserMenu />
-              </Header>
+              {/* @ts-expect-error Server Component */}
+              <Header />
             </BaseLayout.Head>
             <BaseLayout.Body
               className={clsx(
