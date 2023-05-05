@@ -32,7 +32,12 @@ const UserMenu = () => {
           ) : null}
 
           <Avatar.Fallback delayMs={600}>
-            <Button className="w-12 p-0 / mask mask-squircle">CT</Button>
+            <Button
+              color="ghost"
+              className="mask mask-squircle / w-12 p-0 / bg-base-100"
+            >
+              CT
+            </Button>
           </Avatar.Fallback>
         </Avatar.Root>
       </Popover.Trigger>
