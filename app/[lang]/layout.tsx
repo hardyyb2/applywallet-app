@@ -30,7 +30,7 @@ export default async function RootLayout({
           <Providers>
             <BaseLayout.Head
               className={clsx(
-                "fixed top-0 z-[5] / h-16 lg:h-20 w-full / text-base-content ",
+                "fixed top-0 z-[5] / h-16 lg:h-[--header-height] w-full / text-base-content ",
                 "bg-opacity-60 backdrop-blur",
               )}
             >
@@ -45,7 +45,7 @@ export default async function RootLayout({
             >
               <Navigation />
               {/* Padding top same as height of the header */}
-              <section className="h-full w-full / py-20 / overflow-y-auto">
+              <section className="h-full w-full / py-[--header-height]  / overflow-y-auto">
                 {children}
               </section>
             </BaseLayout.Body>
