@@ -1,6 +1,8 @@
-import { GoogleSpreadsheet } from "google-spreadsheet";
+import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
+
+import { prisma } from "app/lib/prisma";
 
 import { envVariables } from "./env-vars.utils";
 
@@ -16,25 +18,5 @@ export const authOptions: NextAuthOptions = {
       },
     }),
   ],
-
-  callbacks: {
-    async signIn(params) {
-      try {
-        const accessToken = params.account?.access_token;
-
-        if (!accessToken) return false;
-
-        const doc = new GoogleSpreadsheet();
-        doc.useRawAccessToken(accessToken);
-        await doc.createNewSpreadsheetDocument({ title: "hey brooo docs" });
-
-        return true;
-      } catch (e) {
-        return false;
-      }
-    },
-    async session({ session, user }) {
-      return session;
-    },
-  },
+  adapter: PrismaAdapter(prisma),
 };
