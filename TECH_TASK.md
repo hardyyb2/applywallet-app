@@ -12,3 +12,4 @@
 - fallback navigator
 - JSON ld
 - head metadata
+- move prisma files
