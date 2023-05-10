@@ -1,19 +1,58 @@
+import { User } from "@prisma/client";
+import { GoogleSpreadsheet } from "google-spreadsheet";
 import { CallbacksOptions } from "next-auth";
 
-const checkUserExists = () => {
-  return true;
+const getUserFromDB = async (userId: string): Promise<User | null> => {
+  try {
+    const user = await prisma.user.findUnique({ where: { id: userId } });
+    return user;
+  } catch (err) {
+    console.log("error finding user from db");
+    throw err;
+  }
 };
 
-const checkGoogleSheetValidity = () => {
-  return true;
+const getTokenFromAccount = async (userId: string) => {
+  try {
+    const account = await prisma.account.findFirst({
+      where: {
+        userId,
+      },
+    });
+
+    return account?.access_token ?? null;
+  } catch (err) {
+    console.log("error finding account for token");
+    throw err;
+  }
 };
 
-const createGoogleSheet = () => {
-  return;
+const checkGoogleSheetValidity = async (
+  accessToken: string,
+  sheetId: string,
+) => {
+  try {
+    const doc = new GoogleSpreadsheet();
+    doc.useRawAccessToken(accessToken);
+    await doc.loadInfo();
+
+    const sheet = doc.sheetsById[sheetId];
+    return !!sheet;
+  } catch (err) {
+    console.log("error checking sheet validity");
+    throw err;
+  }
 };
 
-const createNewUser = () => {
-  return;
+const createGoogleSheetDoc = async (accessToken: string) => {
+  try {
+    const doc = new GoogleSpreadsheet();
+    doc.useRawAccessToken(accessToken);
+    await doc.createNewSpreadsheetDocument({ title: "applywallet-database" });
+  } catch (err) {
+    console.log("error creating a new google sheet");
+    throw err;
+  }
 };
 
 /**
@@ -26,12 +65,25 @@ const createNewUser = () => {
  *    if user doesn't exist,
  *        create a new sheet for him, save his sheetId
  *  */
-export const nextAuthSignInCallback: CallbacksOptions["signIn"] = async () => {
+export const nextAuthSignInCallback: CallbacksOptions["signIn"] = async ({
+  user,
+  account,
+  profile,
+}) => {
   try {
-    const userExists = await checkUserExists();
+    const userDBData = await getUserFromDB(user.id);
+    const userExistsInDB = !!userDBData;
 
-    if (userExists) {
-      const isValidSheet = await checkGoogleSheetValidity();
+    const accessToken =
+      account?.access_token ?? (await getTokenFromAccount(user.id)) ?? null;
+
+    if (!accessToken) return false;
+
+    if (userExistsInDB) {
+      const isValidSheet = await checkGoogleSheetValidity(
+        accessToken,
+        userDBData.primarySheetId!,
+      );
 
       if (isValidSheet) {
         return true;
@@ -45,18 +97,18 @@ export const nextAuthSignInCallback: CallbacksOptions["signIn"] = async () => {
       return false;
     }
 
-    if (!userExists) {
-      const createdSheetId = await createGoogleSheet();
-      const createdUser = await createNewUser();
+    if (!userExistsInDB) {
+      const createdSheetId = await createGoogleSheetDoc(accessToken);
+      // add primarySheetId to profile data
+      // profile = { ...profile, primarySheetId: createdSheetId };
 
       return true;
     }
 
     return false;
   } catch (err) {
+    console.log("total error", err);
     // server error message
     return false;
   }
-
-  return true;
 };
