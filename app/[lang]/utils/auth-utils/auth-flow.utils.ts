@@ -4,7 +4,8 @@ import GoogleProvider from "next-auth/providers/google";
 
 import { prisma } from "app/lib/prisma";
 
-import { envVariables } from "./env-vars.utils";
+import { envVariables } from "../env-vars.utils";
+import { nextAuthSignInCallback } from "./sign-in.utils";
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -19,4 +20,7 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
   adapter: PrismaAdapter(prisma),
+  callbacks: {
+    signIn: nextAuthSignInCallback,
+  },
 };
