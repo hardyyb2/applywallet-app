@@ -27,24 +27,25 @@ const UserMenu = () => {
             <Flex
               justify="center"
               align="center"
-              className="w-10 / rounded-xl / bg-base-200 / ring ring-base-200 ring-offset-2"
+              className="w-10 / !flex / rounded-xl / bg-base-200 / ring ring-base-200 ring-offset-2"
             >
               <Avatar.Image
-                className="btn btn-ghost / p-0 / border-none "
+                className="btn btn-ghost / p-0 / border-none object-contain"
                 src={userImage}
                 alt={userName}
+                referrerPolicy="no-referrer"
               />
             </Flex>
-          ) : null}
-
-          <Avatar.Fallback delayMs={600}>
-            <Button
-              color="ghost"
-              className="mask mask-squircle / w-12 p-0 / bg-base-100"
-            >
-              {getInitials(userName).toLowerCase()}
-            </Button>
-          </Avatar.Fallback>
+          ) : (
+            <Avatar.Fallback delayMs={600}>
+              <Button
+                color="ghost"
+                className="mask mask-squircle / w-12 p-0 / bg-base-100"
+              >
+                {getInitials(userName).toLowerCase()}
+              </Button>
+            </Avatar.Fallback>
+          )}
         </Avatar.Root>
       </Popover.Trigger>
       <Popover.Content collisionPadding={8}>
