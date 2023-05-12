@@ -31,9 +31,16 @@ export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
   callbacks: {
     async session({ session, user }) {
+      const accessToken = await prisma.account.findFirst({
+        where: {
+          userId: user.id,
+        },
+      });
+
       if (session.user) {
         session.user.id = user.id;
         session.user.email = user.email;
+        session.user.token = accessToken?.access_token;
       }
 
       return session;
