@@ -9,8 +9,10 @@ interface NewSheetErrorProps {
 
 const NewSheetError = ({ error }: NewSheetErrorProps) => {
   useEffect(() => {
-    console.error(error);
+    console.log(error);
   }, [error]);
+
+  console.log("here", error);
 
   return <div>NewSheetError occurred</div>;
 };

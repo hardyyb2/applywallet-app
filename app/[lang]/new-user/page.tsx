@@ -6,6 +6,8 @@ import { checkUserSheet } from "./new-user.utils";
 const NewSheet = async () => {
   const checkResponse = await checkUserSheet();
 
+  console.log("checkResponse", checkResponse);
+
   if (checkResponse.type === "error") {
     throw new Error(checkResponse.message);
   }
@@ -14,7 +16,7 @@ const NewSheet = async () => {
     return redirect(checkResponse.path);
   }
 
-  return <div>You&apos;ll have to add name here</div>;
+  return <div>User to provide link to a sheet or create a new sheet</div>;
 };
 
 // eslint-disable-next-line import/no-default-export

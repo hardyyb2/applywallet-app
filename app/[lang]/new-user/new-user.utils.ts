@@ -9,25 +9,27 @@ const checkGoogleSheetValidity = async (
   sheetId: string | null | undefined,
 ) => {
   try {
+    console.log("accessToken", accessToken, sheetId);
     if (!sheetId) return false;
 
-    const doc = new GoogleSpreadsheet();
+    const doc = new GoogleSpreadsheet(sheetId);
     doc.useRawAccessToken(accessToken);
     await doc.loadInfo();
 
     const sheet = doc.sheetsById[sheetId];
     return !!sheet;
-  } catch (err) {
-    console.log("error checking sheet validity");
+  } catch (err: any) {
+    console.log("error checking sheet validity", err, err?.message);
     throw err;
   }
 };
 
-const createGoogleSheetDoc = async (accessToken: string) => {
+const createGoogleSheetDoc = async (accessToken: string): Promise<string> => {
   try {
     const doc = new GoogleSpreadsheet();
     doc.useRawAccessToken(accessToken);
     await doc.createNewSpreadsheetDocument({ title: "applywallet-database" });
+    return doc.spreadsheetId;
   } catch (err) {
     console.log("error creating a new google sheet", err);
     throw err;
@@ -63,7 +65,17 @@ export const checkUserSheet = async (): Promise<
 
     // if no sheet id, create one
     if (!user?.primarySheetId) {
-      await createGoogleSheetDoc(accessToken);
+      const sheetId = await createGoogleSheetDoc(accessToken);
+
+      await prisma.user.update({
+        where: {
+          id: userId,
+        },
+        data: {
+          primarySheetId: sheetId,
+        },
+      });
+
       return { type: "redirect", path: AppRoutes.CAREERS };
     }
 
