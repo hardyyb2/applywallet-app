@@ -4,11 +4,12 @@ import { signIn, useSession } from "next-auth/react";
 import React from "react";
 
 import { Button } from "@/components/ui/isolated/wrapped";
+import { AppRoutes } from "@/utils/routes.utils";
 
 const LoginButton = () => {
   const handleLoginClick = () => {
     signIn("google", {
-      callbackUrl: "/new-sheet",
+      callbackUrl: AppRoutes.NEW_USER,
     });
   };
 

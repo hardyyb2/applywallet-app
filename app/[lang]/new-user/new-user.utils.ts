@@ -1,10 +1,8 @@
 import { GoogleSpreadsheet } from "google-spreadsheet";
-import { redirect } from "next/navigation";
 import { getServerSession } from "next-auth";
-import React from "react";
 
 import { authOptions } from "@/utils/auth-utils/auth-flow.utils";
-import { prisma } from "app/lib/prisma";
+import { AppRoutes } from "@/utils/routes.utils";
 
 const checkGoogleSheetValidity = async (
   accessToken: string,
@@ -36,14 +34,16 @@ const createGoogleSheetDoc = async (accessToken: string) => {
   }
 };
 
-const check = async (): Promise<
-  | {
-      redirect: true;
-      path: string;
-    }
-  | {
-      redirect: false;
-    }
+/**
+ * check for validity of sheet after login,
+ *  if valid redirect,
+ *  if new user create new sheet for him,
+ *  if sheet invalid (deleted or lost), handle in page
+ */
+export const checkUserSheet = async (): Promise<
+  | { type: "redirect"; path: string }
+  | { type: "error"; message: string }
+  | { type: "no-action" }
 > => {
   try {
     const session = await getServerSession(authOptions);
@@ -52,10 +52,8 @@ const check = async (): Promise<
 
     // if not logged in
     if (!session || !userId || !accessToken) {
-      return { redirect: true, path: "/" };
+      return { type: "redirect", path: AppRoutes.HOME };
     }
-
-    console.log("access", accessToken);
 
     const user = await prisma.user.findFirst({
       where: {
@@ -63,10 +61,10 @@ const check = async (): Promise<
       },
     });
 
-    // if not sheet id, create one
+    // if no sheet id, create one
     if (!user?.primarySheetId) {
       await createGoogleSheetDoc(accessToken);
-      return { redirect: true, path: "/careers" };
+      return { type: "redirect", path: AppRoutes.CAREERS };
     }
 
     // if sheet id is present, check if its valid
@@ -76,27 +74,14 @@ const check = async (): Promise<
     );
 
     if (isValidSheet) {
-      return { redirect: true, path: "/" };
+      return { type: "redirect", path: AppRoutes.HOME };
     }
 
-    return { redirect: false };
-  } catch {
+    return { type: "no-action" };
+  } catch (err: any) {
     return {
-      redirect: true,
-      path: "/new-sheet/error",
+      type: "error",
+      message: typeof err?.message === "string" ? err?.message : "some error",
     };
   }
 };
-
-const NewSheet = async () => {
-  const checkResponse = await check();
-
-  if (checkResponse.redirect) {
-    return redirect(checkResponse.path);
-  }
-
-  return <div>You&apos;ll have to add name here</div>;
-};
-
-// eslint-disable-next-line import/no-default-export
-export default NewSheet;

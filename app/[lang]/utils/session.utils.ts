@@ -8,7 +8,7 @@ export const getCurrentUser = async () => {
   try {
     const session = await getServerSession(authOptions);
     return session?.user;
-  } catch {
-    throw new Error("failed to get user");
+  } catch (err: any) {
+    console.log();
   }
 };
