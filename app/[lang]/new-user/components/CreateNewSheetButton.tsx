@@ -3,7 +3,11 @@
 import { Button } from "@/components/ui/isolated/wrapped";
 
 const CreateNewSheetButton = () => {
-  return <Button>CreateNewSheetButton</Button>;
+  const handleCreateNewSheetClick = () => {};
+
+  return (
+    <Button onClick={handleCreateNewSheetClick}>CreateNewSheetButton</Button>
+  );
 };
 
 export { CreateNewSheetButton };

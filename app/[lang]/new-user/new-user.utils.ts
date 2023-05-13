@@ -3,13 +3,13 @@ import { getServerSession } from "next-auth";
 
 import { authOptions } from "@/utils/auth-utils/auth-flow.utils";
 import { AppRoutes } from "@/utils/routes.utils";
+import { createGoogleSheetDoc } from "@/utils/sheet.utils";
 
 const checkGoogleSheetValidity = async (
   accessToken: string,
   sheetId: string | null | undefined,
 ) => {
   try {
-    console.log("accessToken", accessToken, sheetId);
     if (!sheetId) return false;
 
     const doc = new GoogleSpreadsheet(sheetId);
@@ -21,19 +21,6 @@ const checkGoogleSheetValidity = async (
   } catch (err: any) {
     // we are assuming that its
     return false;
-  }
-};
-
-const createGoogleSheetDoc = async (accessToken: string): Promise<string> => {
-  try {
-    const doc = new GoogleSpreadsheet();
-    doc.useRawAccessToken(accessToken);
-
-    await doc.createNewSpreadsheetDocument({ title: "applywallet-database" });
-    return doc.spreadsheetId;
-  } catch (err) {
-    console.log("error creating a new google sheet", err);
-    throw err;
   }
 };
 
