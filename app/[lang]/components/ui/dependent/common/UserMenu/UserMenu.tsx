@@ -1,6 +1,7 @@
 "use client";
 
 import clsx from "clsx";
+import Image from "next/image";
 import { useSession, signOut } from "next-auth/react";
 import React from "react";
 
@@ -29,9 +30,11 @@ const UserMenu = () => {
               align="center"
               className="w-10 / !flex / rounded-xl / bg-base-200 / ring ring-base-200 ring-offset-2"
             >
-              <Avatar.Image
+              <Image
                 className="btn btn-ghost / p-0 / border-none object-contain"
                 src={userImage}
+                width={20}
+                height={20}
                 alt={userName}
                 referrerPolicy="no-referrer"
               />

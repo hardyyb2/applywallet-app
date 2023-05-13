@@ -1,9 +1,14 @@
+"server-only";
+
 import { getServerSession } from "next-auth/next";
 
 import { authOptions } from "@/utils/auth-utils/auth-flow.utils";
 
 export const getCurrentUser = async () => {
-  const session = await getServerSession(authOptions);
-
-  return session?.user;
+  try {
+    const session = await getServerSession(authOptions);
+    return session?.user;
+  } catch {
+    throw new Error("failed to get user");
+  }
 };
