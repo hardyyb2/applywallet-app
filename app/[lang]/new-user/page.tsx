@@ -1,12 +1,11 @@
 import { redirect } from "next/navigation";
 import React from "react";
 
+import { CreateNewSheetButton } from "./components/CreateNewSheetButton";
 import { checkUserSheet } from "./new-user.utils";
 
 const NewSheet = async () => {
   const checkResponse = await checkUserSheet();
-
-  console.log("checkResponse", checkResponse);
 
   if (checkResponse.type === "error") {
     throw new Error(checkResponse.message);
@@ -16,7 +15,16 @@ const NewSheet = async () => {
     return redirect(checkResponse.path);
   }
 
-  return <div>User to provide link to a sheet or create a new sheet</div>;
+  return (
+    <div>
+      <span>
+        Your sheet has either been deleted or lost, if you think this is a
+        mistake please provide a link to the your applywallet database sheet
+      </span>
+      <span>-OR-</span>
+      <CreateNewSheetButton />
+    </div>
+  );
 };
 
 // eslint-disable-next-line import/no-default-export

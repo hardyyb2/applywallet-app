@@ -19,8 +19,8 @@ const checkGoogleSheetValidity = async (
     const sheet = doc.sheetsById[sheetId];
     return !!sheet;
   } catch (err: any) {
-    console.log("error checking sheet validity", err, err?.message);
-    throw err;
+    // we are assuming that its
+    return false;
   }
 };
 
@@ -28,6 +28,7 @@ const createGoogleSheetDoc = async (accessToken: string): Promise<string> => {
   try {
     const doc = new GoogleSpreadsheet();
     doc.useRawAccessToken(accessToken);
+
     await doc.createNewSpreadsheetDocument({ title: "applywallet-database" });
     return doc.spreadsheetId;
   } catch (err) {
