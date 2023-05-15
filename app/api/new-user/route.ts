@@ -5,7 +5,7 @@ import { AppRoutes } from "@/utils/routes.utils";
 import { createGoogleSheetDoc } from "@/utils/sheet.utils";
 import { prisma } from "app/lib/prisma";
 
-export async function POST() {
+export async function POST(request: Request) {
   try {
     const session = await getServerSession(authOptions);
 
@@ -28,8 +28,9 @@ export async function POST() {
       },
     });
 
-    return Response.redirect(AppRoutes.CAREERS);
+    return Response.redirect(new URL(AppRoutes.CAREERS, request.url));
   } catch (err) {
+    console.log("error in creating sheet", err);
     return new Response("failed to create user sheet", {
       status: 500,
     });
