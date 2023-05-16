@@ -13,3 +13,4 @@
 - JSON ld
 - head metadata
 - move prisma files
+- Find a way for separated non nested layout

@@ -1,3 +1,4 @@
+import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 
 import { authOptions } from "@/utils/auth-utils/auth-flow.utils";
@@ -13,9 +14,14 @@ export async function POST(request: Request) {
     const accessToken = session?.user?.token;
 
     if (!user || !accessToken) {
-      return new Response("authentication failed, user or token invalid", {
-        status: 401,
-      });
+      return NextResponse.json(
+        {
+          message: "authentication failed, user or token invalid",
+        },
+        {
+          status: 401,
+        },
+      );
     }
 
     const sheetId = await createGoogleSheetDoc(accessToken);
@@ -28,11 +34,17 @@ export async function POST(request: Request) {
       },
     });
 
-    return Response.redirect(new URL(AppRoutes.CAREERS, request.url));
+    return NextResponse.redirect(new URL(AppRoutes.CAREERS, request.url));
   } catch (err) {
     console.log("error in creating sheet", err);
-    return new Response("failed to create user sheet", {
-      status: 500,
-    });
+
+    return NextResponse.json(
+      {
+        message: "failed to create user sheet",
+      },
+      {
+        status: 401,
+      },
+    );
   }
 }

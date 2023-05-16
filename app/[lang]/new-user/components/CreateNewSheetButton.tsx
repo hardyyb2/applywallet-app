@@ -7,8 +7,10 @@ import { AppRoutes } from "@/utils/routes.utils";
 
 const CreateNewSheetButton = () => {
   const handleCreateNewSheetClick = async () => {
-    axios.post(`/api/${AppRoutes.NEW_USER}`).catch((err) => {
-      console.log(err);
+    axios.post(`/api/${AppRoutes.NEW_USER}`).catch((error) => {
+      if (axios.isAxiosError(error)) {
+        console.log(error);
+      }
     });
   };
 

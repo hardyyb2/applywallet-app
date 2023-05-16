@@ -4,6 +4,8 @@ import React from "react";
 import { CreateNewSheetButton } from "./components/CreateNewSheetButton";
 import { checkUserSheet } from "./new-user.utils";
 
+export const dynamic = "force-dynamic";
+
 const NewSheet = async () => {
   const checkResponse = await checkUserSheet();
 
