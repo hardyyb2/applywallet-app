@@ -14,3 +14,5 @@
 - head metadata
 - move prisma files
 - Find a way for separated non nested layout
+- Common response data object
+- Remove tailwind colors
