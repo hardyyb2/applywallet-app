@@ -1,11 +1,10 @@
 import "@total-typescript/ts-reset";
 import clsx from "clsx";
 
-import { BaseLayout, Navigation } from "@/components/ui/dependent/common";
-
-import "../globals.css";
 import { Providers } from "./providers";
 
+import { BaseLayout, Navigation } from "@/components/ui/dependent/common";
+import "@/styles/globals.css";
 import { Header } from "@/components/ui/dependent/common/Header";
 import { i18n, Locale } from "@/utils/locale-utils";
 
