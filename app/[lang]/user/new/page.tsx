@@ -5,11 +5,13 @@ import { CreateNewSheetButton } from "./components/CreateNewSheetButton";
 import { LinkSheetInput } from "./components/LinkSheetInput";
 import { checkUserSheet } from "./new-user.utils";
 
-const NewSheet = async () => {
+const NewUser = async () => {
   const checkResponse = await checkUserSheet();
 
   if (checkResponse.type === "error") {
-    throw new Error(checkResponse.message);
+    console.log("error");
+    return null;
+    // throw new Error(checkResponse.message);
   }
 
   if (checkResponse.type === "redirect") {
@@ -30,4 +32,4 @@ const NewSheet = async () => {
 };
 
 // eslint-disable-next-line import/no-default-export
-export default NewSheet;
+export default NewUser;

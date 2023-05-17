@@ -21,7 +21,9 @@ const LinkSheetInput = () => {
 
   const onSubmit: SubmitHandler<LinkSheetType> = (data) => {
     axios
-      .post(`/api${ApiRoutes.LINK_USER}`)
+      .post(`/api${ApiRoutes.LINK_USER}`, {
+        link: data.link,
+      })
       .then((res) => {
         console.log(res);
       })
