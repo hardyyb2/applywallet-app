@@ -15,7 +15,7 @@ const CreateNewSheetButton = () => {
   };
 
   return (
-    <Button onClick={handleCreateNewSheetClick}>CreateNewSheetButton</Button>
+    <Button onClick={handleCreateNewSheetClick}>Create New Sheet Button</Button>
   );
 };
 
