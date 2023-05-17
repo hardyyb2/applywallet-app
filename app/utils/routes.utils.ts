@@ -1,4 +1,4 @@
-import { i18n } from "./locale-utils/i18n-config";
+import { i18n } from "./locale-utils";
 
 export enum AppRoutes {
   HOME = "",

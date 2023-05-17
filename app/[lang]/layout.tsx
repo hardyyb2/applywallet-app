@@ -7,7 +7,7 @@ import "../globals.css";
 import { Providers } from "./providers";
 
 import { Header } from "@/components/ui/dependent/common/Header";
-import { i18n, Locale } from "@/utils/locale-utils/i18n-config";
+import { i18n, Locale } from "@/utils/locale-utils";
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
