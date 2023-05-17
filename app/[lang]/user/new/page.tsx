@@ -5,8 +5,6 @@ import { CreateNewSheetButton } from "./components/CreateNewSheetButton";
 import { LinkSheetInput } from "./components/LinkSheetInput";
 import { checkUserSheet } from "./new-user.utils";
 
-export const dynamic = "force-dynamic";
-
 const NewSheet = async () => {
   const checkResponse = await checkUserSheet();
 

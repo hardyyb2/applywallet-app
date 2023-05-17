@@ -8,7 +8,12 @@ export enum AppRoutes {
   CAREERS = "/careers",
   ADD_CAREER = "/careers/add",
 
-  NEW_USER = "/new-user",
+  NEW_USER = "/user/new",
+}
+
+export enum ApiRoutes {
+  NEW_USER = "/user/new",
+  LINK_USER = "/user/link",
 }
 
 /** Get route name with locale */

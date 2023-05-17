@@ -7,6 +7,8 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { Button, FormControl } from "@/components/ui/isolated/wrapped";
 
 import { linkSheetFormSchema, LinkSheetType } from "./linkSheetInput.utils";
+import axios from "axios";
+import { ApiRoutes } from "@/utils/routes.utils";
 
 const LinkSheetInput = () => {
   const {
@@ -18,7 +20,16 @@ const LinkSheetInput = () => {
   });
 
   const onSubmit: SubmitHandler<LinkSheetType> = (data) => {
-    console.log(data);
+    axios
+      .post(`/api${ApiRoutes.LINK_USER}`)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((error) => {
+        if (axios.isAxiosError(error)) {
+          console.log(error);
+        }
+      });
   };
 
   return (
