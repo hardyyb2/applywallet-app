@@ -1,10 +1,10 @@
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 
-import { authOptions } from "app/utils/auth-utils/auth-flow.utils";
 import { AppRoutes } from "app/utils/routes.utils";
 import { createGoogleSheetDoc } from "app/utils/sheet.utils";
 import { prisma } from "app/lib/prisma";
+import { authOptions } from "@/utils/auth-utils";
 
 export async function POST(request: Request) {
   try {

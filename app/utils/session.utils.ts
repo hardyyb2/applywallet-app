@@ -1,8 +1,7 @@
 "server-only";
 
 import { getServerSession } from "next-auth/next";
-
-import { authOptions } from "app/utils/auth-utils/auth-flow.utils";
+import { authOptions } from "./auth-utils";
 
 export const getCurrentUser = async () => {
   try {
