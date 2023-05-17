@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const addCareerFormSchema = z.object({
+export const careerSchema = z.object({
   company: z.object({
     name: z.string().min(1, {
       message: "please enter company name",
@@ -19,3 +19,5 @@ export const addCareerFormSchema = z.object({
     }),
   }),
 });
+
+export type CareerType = z.infer<typeof careerSchema>;

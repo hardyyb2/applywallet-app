@@ -4,10 +4,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import clsx from "clsx";
 import { SubmitHandler, useForm } from "react-hook-form";
 
-import { CareerType } from "@/careers/career.types";
 import { Button, FormControl } from "app/components/ui/isolated/wrapped";
 
-import { addCareerFormSchema } from "./addCareerForm.utils";
+import { careerSchema, CareerType } from "@/utils/schema-utils";
 
 const AddCareerForm = () => {
   const {
@@ -15,7 +14,7 @@ const AddCareerForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<CareerType>({
-    resolver: zodResolver(addCareerFormSchema),
+    resolver: zodResolver(careerSchema),
   });
   const onSubmit: SubmitHandler<CareerType> = (data) => {
     console.log(data);
