@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import React from "react";
 
 import { CreateNewSheetButton } from "./components/CreateNewSheetButton";
+import { LinkSheetInput } from "./components/LinkSheetInput";
 import { checkUserSheet } from "./new-user.utils";
 
 export const dynamic = "force-dynamic";
@@ -23,6 +24,7 @@ const NewSheet = async () => {
         Your sheet has either been deleted or lost, if you think this is a
         mistake please provide a link to the your applywallet database sheet
       </span>
+      <LinkSheetInput />
       <span>-OR-</span>
       <CreateNewSheetButton />
     </div>
