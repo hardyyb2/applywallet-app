@@ -3,7 +3,7 @@ import Negotiator from "negotiator";
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-import { i18n } from "./app/[lang]/utils/locale-utils/i18n-config";
+import { i18n } from "./app/utils/locale-utils/i18n-config";
 
 const getNegotiatorHeaders = (request: NextRequest): Record<string, string> => {
   const headers: Record<string, string> = {};

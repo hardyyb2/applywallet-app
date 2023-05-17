@@ -1,8 +1,7 @@
 import { Metadata } from "next";
 
+import { getDictionary } from "@/utils/locale-utils/dictionaries";
 import { Locale } from "@/utils/locale-utils/i18n-config";
-
-import { getDictionary } from "./utils/locale-utils/dictionaries";
 
 export const metadata: Metadata = {
   title: "home",

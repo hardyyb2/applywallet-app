@@ -4,8 +4,8 @@ import clsx from "clsx";
 import Link from "next/link";
 import { useRef, useState } from "react";
 
-import { Flex } from "@/components/ui/isolated/common";
-import { Button, Dialog } from "@/components/ui/isolated/wrapped";
+import { Flex } from "app/components/ui/isolated/common";
+import { Button, Dialog } from "app/components/ui/isolated/wrapped";
 import {
   CaretRightDouble,
   MaximizeLeft,

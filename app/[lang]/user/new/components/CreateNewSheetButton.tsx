@@ -2,8 +2,8 @@
 
 import axios from "axios";
 
-import { Button } from "@/components/ui/isolated/wrapped";
-import { ApiRoutes } from "@/utils/routes.utils";
+import { Button } from "app/components/ui/isolated/wrapped";
+import { ApiRoutes } from "app/utils/routes.utils";
 
 const CreateNewSheetButton = () => {
   const handleCreateNewSheetClick = async () => {

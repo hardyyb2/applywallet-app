@@ -1,7 +1,7 @@
 import clsx from "clsx";
 
-import { CopyButton } from "@/components/ui/dependent/common";
-import { Flex } from "@/components/ui/isolated/common";
+import { CopyButton } from "app/components/ui/dependent/common";
+import { Flex } from "app/components/ui/isolated/common";
 
 import { CareerType } from "../../career.types";
 
