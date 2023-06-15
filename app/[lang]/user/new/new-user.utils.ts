@@ -1,9 +1,9 @@
 import { GoogleSpreadsheet } from "google-spreadsheet";
 import { getServerSession } from "next-auth";
 
+import { authOptions } from "@/utils/auth-utils";
 import { AppRoutes } from "app/utils/routes.utils";
 import { createGoogleSheetDoc } from "app/utils/sheet.utils";
-import { authOptions } from "@/utils/auth-utils";
 
 const checkGoogleSheetValidity = async (
   accessToken: string,

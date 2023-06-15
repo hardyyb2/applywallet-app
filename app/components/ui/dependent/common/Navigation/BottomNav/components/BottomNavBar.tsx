@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import Link from "next/link";
 import { Fragment, useMemo } from "react";
 
 import { Flex } from "app/components/ui/isolated/common";
@@ -7,7 +8,6 @@ import { getLinkWithLocale } from "app/utils/routes.utils";
 import { HomeIcon, MenuIcon } from "public/images/icons";
 
 import { bottomNavDisplayOptions } from "../../navigation.utils";
-import Link from "next/link";
 
 interface BottomNavBarProps {
   pathName?: string | null;

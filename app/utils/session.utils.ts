@@ -1,6 +1,7 @@
 "server-only";
 
 import { getServerSession } from "next-auth/next";
+
 import { authOptions } from "./auth-utils";
 
 export const getCurrentUser = async () => {

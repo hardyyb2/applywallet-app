@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 
-import { linkSheetFormSchema } from "@/utils/schema-utils";
 import { authOptions } from "@/utils/auth-utils";
+import { linkSheetFormSchema } from "@/utils/schema-utils";
 
 export async function POST(request: Request) {
   try {

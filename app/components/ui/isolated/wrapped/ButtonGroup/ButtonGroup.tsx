@@ -1,5 +1,6 @@
-import { forwardRef, HTMLAttributes, ReactElement } from "react";
 import clsx from "clsx";
+import { forwardRef, HTMLAttributes, ReactElement } from "react";
+
 import { ButtonProps } from "../Button/Button";
 
 export type ButtonGroupProps = HTMLAttributes<HTMLDivElement> & {

@@ -2,12 +2,10 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
-import React from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 
-import { Button, FormControl } from "app/components/ui/isolated/wrapped";
-import { ApiRoutes } from "app/utils/routes.utils";
-
+import { Button, FormControl } from "@/components/ui/isolated/wrapped";
+import { ApiRoutes } from "@/utils/routes.utils";
 import { linkSheetFormSchema, LinkSheetType } from "@/utils/schema-utils";
 
 const LinkSheetInput = () => {
