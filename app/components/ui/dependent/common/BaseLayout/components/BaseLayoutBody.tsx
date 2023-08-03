@@ -8,7 +8,7 @@ interface BaseLayoutBodyProps {
 
 const BaseLayoutBody = forwardRef<HTMLDivElement, BaseLayoutBodyProps>(
   ({ className, ...rest }, ref) => {
-    const classes = clsx("flex-1 h-full", className);
+    const classes = clsx("h-full flex-1", className);
 
     return <main {...rest} className={classes} ref={ref} />;
   },
