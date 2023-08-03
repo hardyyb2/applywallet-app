@@ -1,9 +1,8 @@
 import clsx from "clsx";
 
+import { CareerType } from "@/utils/schema-utils";
 import { CopyButton } from "app/components/ui/dependent/common";
 import { Flex } from "app/components/ui/isolated/common";
-
-import { CareerType } from "../../career.types";
 
 import { CareerCardActions } from "./components/CareerCardActions";
 

@@ -1,4 +1,4 @@
-import { CareerType } from "../career.types";
+import { CareerType } from "@/utils/schema-utils";
 
 export const careerDataMock: CareerType[] = [
   {
