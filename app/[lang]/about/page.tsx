@@ -8,7 +8,7 @@ const About = () => {
       </div>
       <div
         className={clsx(
-          "w-full / grid gap-8",
+          "grid w-full gap-8",
           "grid-cols-[repeat(auto-fill,minmax(256px,1fr))] lg:grid-cols-[repeat(auto-fill,minmax(320px,1fr))]",
         )}
       >
@@ -16,11 +16,11 @@ const About = () => {
           .fill(undefined)
           .map((_item, index) => (
             <div key={index} className="card bg-base-200">
-              <div className={clsx("card-body", "prose prose-h2:mb-0")}>
+              <div className={clsx("card-body prose prose-h2:mb-0")}>
                 <h2 className="card-title">Card title!</h2>
                 <p>If a dog chews shoes whose shoes does he choose?</p>
                 <div className="card-actions justify-end">
-                  <button className="btn btn-primary">Buy Now</button>
+                  <button className="btn-primary btn">Buy Now</button>
                 </div>
               </div>
             </div>

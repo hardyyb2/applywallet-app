@@ -15,9 +15,9 @@ const HeaderClient = ({ children }: { children?: ReactNode }) => {
     <Flex
       align="center"
       justify="space-between"
-      className={clsx("h-full w-full / px-4 lg:px-10")}
+      className={clsx("h-full w-full px-4 lg:px-10")}
     >
-      <div className="inline-flex gap-1 / text-lg text-primary / lowercase">
+      <div className="inline-flex gap-1 text-lg lowercase text-primary">
         <Typography>hardik</Typography>
         <Typography className="text-base-content">badola</Typography>
       </div>

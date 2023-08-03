@@ -3,8 +3,8 @@ import React, { ReactNode } from "react";
 const NewUserLayout = ({ children }: { children: ReactNode }) => {
   return (
     // inset-0 and fixed are workaround till we find a way for non nested layouts without composition of layout components
-    <div className="fixed inset-0 / w-screen h-screen / bg-primary / z-50">
-      <div className="w-full h-full / bg-gradient-to-br to-secondary/40 from-primary/40 ">
+    <div className="fixed inset-0 z-50 h-screen w-screen bg-primary">
+      <div className="h-full w-full bg-gradient-to-br from-primary/40 to-secondary/40 ">
         {children}
       </div>
     </div>

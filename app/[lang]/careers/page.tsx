@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 const Careers = async () => {
   return (
-    <div className="px-6 lg:px-10 py-4">
+    <div className="px-6 py-4 lg:px-10">
       <Flex justify="space-between" align="center" className="mb-10 gap-4">
         <Flex
           direction="column"
@@ -37,7 +37,7 @@ const Careers = async () => {
           color="secondary"
           fullWidth
           size="lg"
-          className="lg:hidden mt-10"
+          className="mt-10 lg:hidden"
           startIcon={<AddIcon />}
         >
           add career

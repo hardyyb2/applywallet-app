@@ -3,7 +3,7 @@ import "@testing-library/jest-dom/extend-expect";
 
 import { render, screen } from "@testing-library/react";
 
-import Textarea from "./Textarea";
+import { Textarea } from "./Textarea";
 
 describe("Textarea", () => {
   it("should render", () => {
@@ -18,6 +18,8 @@ describe("Textarea", () => {
 
   it("should have placeholder", () => {
     render(<Textarea placeholder="textarea placeholder" />);
-    expect(screen.getByPlaceholderText("textarea placeholder")).toBeInTheDocument();
+    expect(
+      screen.getByPlaceholderText("textarea placeholder"),
+    ).toBeInTheDocument();
   });
 });

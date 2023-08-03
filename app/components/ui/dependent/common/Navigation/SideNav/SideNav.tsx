@@ -20,8 +20,8 @@ const SideNav = () => {
         width: navOpen ? 200 : 66,
       }}
       className={clsx(
-        "h-[96%]  / grid grid-rows-[auto_1fr_auto]",
-        "ml-4 my-auto / bg-base-200 / rounded-box",
+        "grid h-[96%] grid-rows-[auto_1fr_auto]",
+        "rounded-box my-auto ml-4 bg-base-200",
       )}
     >
       {/* Top section */}
@@ -31,7 +31,7 @@ const SideNav = () => {
       </div>
 
       {/* Scrollable menu items */}
-      <NavigationMenu navOpen={navOpen} className="pt-2 pb-8" />
+      <NavigationMenu navOpen={navOpen} className="pb-8 pt-2" />
     </m.div>
   );
 };

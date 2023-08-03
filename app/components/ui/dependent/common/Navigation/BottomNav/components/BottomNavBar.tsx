@@ -48,13 +48,13 @@ const BottomNavBar = ({
               color="ghost"
               className={clsx(
                 "flex flex-col ",
-                active && "text-primary active",
+                active && "active text-primary",
                 "hover:bg-transparent",
               )}
               tabIndex={-1}
             >
               <HomeIcon />
-              <BottomNavigation.Label className="lowercase text-xs">
+              <BottomNavigation.Label className="text-xs lowercase">
                 {item.label}
               </BottomNavigation.Label>
             </Button>
@@ -65,14 +65,14 @@ const BottomNavBar = ({
       <Flex component="div">
         <Button
           color="ghost"
-          className="w-[90%] indicator"
+          className="indicator w-[90%]"
           onClick={toggleBottomNav}
           aria-label="menu-button"
         >
           {menuIconHasIndicator ? (
             <span
               className={clsx(
-                "indicator-item badge badge-xs badge-primary",
+                "badge-primary badge badge-xs indicator-item",
                 "left-1/2 top-[20%]",
               )}
             />

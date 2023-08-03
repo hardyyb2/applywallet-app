@@ -29,7 +29,7 @@ const FormControl = ({
       </FormControlContext.Provider>
       {error && (
         <label className="label" htmlFor={htmlFor}>
-          <span className="label-text-alt / text-error">{error}</span>
+          <span className="label-text-alt text-error">{error}</span>
         </label>
       )}
     </fieldset>

@@ -14,9 +14,7 @@ const CareerCardActions = () => {
       </Popover.Trigger>
       <Popover.Portal>
         <Popover.Content
-          className={clsx(
-            "bg-base-200 / p-2 / rounded-lg border-2 border-primary",
-          )}
+          className={clsx("rounded-lg border-2 border-primary bg-base-200 p-2")}
           collisionPadding={8}
         >
           <Flex direction="row" className="gap-2">

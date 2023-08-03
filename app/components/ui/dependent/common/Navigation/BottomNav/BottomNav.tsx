@@ -40,7 +40,7 @@ const BottomNav = ({ className = "" }: BottomNavProps) => {
           height: showFullBottomNav ? "66%" : "4rem",
         }}
         className={clsx(
-          "w-[96%] / mb-4 mx-auto / z-20 rounded-box overflow-hidden backdrop-blur bg-opacity-60",
+          "rounded-box z-20 mx-auto mb-4 w-[96%] overflow-hidden bg-opacity-60 backdrop-blur",
           className,
         )}
       >
@@ -56,7 +56,7 @@ const BottomNav = ({ className = "" }: BottomNavProps) => {
                 <button
                   onClick={toggleShowFullBottomNav}
                   aria-label="close"
-                  className="py-4 / text-primary / border-t border-primary border-opacity-80"
+                  className="border-t border-primary border-opacity-80 py-4 text-primary"
                 >
                   close
                 </button>

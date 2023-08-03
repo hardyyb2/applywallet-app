@@ -1,6 +1,7 @@
 import clsx from "clsx";
 
-import { CareerType } from "../career.types";
+import { CareerType } from "@/utils/schema-utils";
+
 import { careerDataMock } from "../mock/careers";
 
 import { CareerCard } from "./CareerCard";
@@ -20,7 +21,7 @@ const CareerList = async () => {
   return (
     <div
       className={clsx(
-        "w-full / grid gap-8",
+        "grid w-full gap-8",
         "grid-cols-[repeat(auto-fill,minmax(256px,1fr))] md:grid-cols-[repeat(auto-fill,minmax(400px,1fr))] lg:grid-cols-[repeat(auto-fill,minmax(480px,1fr))]",
       )}
     >

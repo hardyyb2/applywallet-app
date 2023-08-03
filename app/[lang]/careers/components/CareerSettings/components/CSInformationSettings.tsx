@@ -75,17 +75,17 @@ const CSInformationSettings = () => {
           <Flex
             align="center"
             direction="row"
-            className="gap-4 / m-0 px-4 py-2 / bg-accent/5  rounded-xl"
+            className="m-0 gap-4 rounded-xl bg-accent/5 px-4  py-2"
           >
             <GripIcon
-              className="flex-shrink-0 text-accent / cursor-grab active:cursor-grabbing"
+              className="flex-shrink-0 cursor-grab text-accent active:cursor-grabbing"
               onPointerDown={(event: PointerEvent) => dragControls.start(event)}
             />
             <span className="line-clamp-1">{item.title}</span>
             <Button
               data-action="hide"
               color="ghost"
-              className="ml-auto / hover:bg-accent/20 text-accent"
+              className="/ ml-auto text-accent hover:bg-accent/20"
               startIcon={
                 item.hidden ? (
                   <EyeSlashIcon className="pointer-events-none" />

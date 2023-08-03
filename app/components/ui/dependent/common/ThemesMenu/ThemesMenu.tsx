@@ -19,14 +19,14 @@ const ThemesMenu = () => {
       </Dropdown.Toggle>
       <Dropdown.Menu
         role="listbox"
-        className="max-h-80 / flex-col flex-nowrap gap-3 / overflow-y-auto"
+        className="max-h-80 flex-col flex-nowrap gap-3 overflow-y-auto"
       >
         {selectableThemes.map(({ value }) => (
           <Dropdown.Item
             tabIndex={0}
             key={value}
             className={clsx(
-              "bg-base-100 / overflow-hidden / rounded-lg",
+              "overflow-hidden rounded-lg bg-base-100",
               "outline-offset-2 outline-base-content",
             )}
             data-theme={value}

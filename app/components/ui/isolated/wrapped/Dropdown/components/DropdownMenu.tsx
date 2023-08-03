@@ -8,7 +8,7 @@ const DropdownMenu = ({ className, ...props }: DropdownMenuProps) => {
       {...props}
       tabIndex={0}
       className={clsx(
-        "dropdown-content menu p-2 shadow bg-base-100 rounded-box",
+        "dropdown-content menu rounded-box bg-base-100 p-2 shadow",
         className,
       )}
     />

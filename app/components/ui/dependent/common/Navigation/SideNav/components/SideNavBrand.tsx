@@ -22,16 +22,16 @@ const SideNavBrand = ({
       align="center"
       justify="space-between"
       direction={navOpen ? "row" : "column"}
-      className={clsx("gap-2 / py-2", className)}
+      className={clsx("gap-2 py-2", className)}
     >
       <Link
         href={link}
         aria-current="page"
         aria-label="Homepage"
-        className="flex-0 / px-2 / btn btn-ghost"
+        className="flex-0 btn-ghost btn px-2"
       >
         {navOpen ? (
-          <div className="inline-flex gap-1 / text-lg text-primary / lowercase">
+          <div className="inline-flex gap-1 text-lg lowercase text-primary">
             <Typography>hardik</Typography>
             <Typography className="text-base-content">badola</Typography>
           </div>
@@ -64,7 +64,7 @@ const SideNavBrand = ({
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            className="h-4 w-4 stroke-current rotate-180"
+            className="h-4 w-4 rotate-180 stroke-current"
           >
             <path
               d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"

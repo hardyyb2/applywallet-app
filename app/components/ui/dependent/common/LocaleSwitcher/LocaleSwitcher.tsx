@@ -28,10 +28,7 @@ const LocaleSwitcher = () => {
         </Button>
       </Popover.Trigger>
       <Popover.Content>
-        <ul
-          role="listbox"
-          className="menu / gap-2 p-2 / bg-base-100 / rounded-xl"
-        >
+        <ul role="listbox" className="menu gap-2 rounded-xl bg-base-100 p-2">
           {languageOptions.map(({ label, value, icon }) => {
             const { activeLocale, newRedirectPath } = redirectedPathName(
               pathName,
@@ -42,8 +39,8 @@ const LocaleSwitcher = () => {
               <li
                 key={value}
                 className={clsx(
-                  "bg-base-100 / rounded-lg outline-offset-2 / [&_a]:w-max [&_a]:p-0",
-                  activeLocale === value && "bg-primary / text-primary-content",
+                  "rounded-lg bg-base-100 outline-offset-2 [&_a]:w-max [&_a]:p-0",
+                  activeLocale === value && "/ bg-primary text-primary-content",
                 )}
                 role="listitem"
                 aria-label={label}

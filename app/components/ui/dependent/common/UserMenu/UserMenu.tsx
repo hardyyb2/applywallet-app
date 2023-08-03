@@ -28,10 +28,10 @@ const UserMenu = () => {
             <Flex
               justify="center"
               align="center"
-              className="w-10 / !flex / rounded-xl / bg-base-200 / ring ring-base-200 ring-offset-2"
+              className="!flex w-10 rounded-xl bg-base-200 ring ring-base-200 ring-offset-2"
             >
               <Image
-                className="btn btn-ghost / p-0 / border-none object-contain"
+                className="btn-ghost btn border-none object-contain p-0"
                 src={userImage}
                 width={20}
                 height={20}
@@ -43,7 +43,7 @@ const UserMenu = () => {
             <Avatar.Fallback delayMs={600}>
               <Button
                 color="ghost"
-                className="mask mask-squircle / w-12 p-0 / bg-base-100"
+                className="mask mask-squircle w-12 bg-base-100 p-0"
               >
                 {getInitials(userName).toLowerCase()}
               </Button>
@@ -52,13 +52,10 @@ const UserMenu = () => {
         </Avatar.Root>
       </Popover.Trigger>
       <Popover.Content collisionPadding={8}>
-        <ul
-          role="listbox"
-          className="menu / gap-2 p-2 / bg-base-100 / rounded-xl"
-        >
+        <ul role="listbox" className="menu gap-2 rounded-xl bg-base-100 p-2">
           <li
             className={clsx(
-              "rounded-lg outline-offset-2 / [&_a]:w-max [&_a]:p-0",
+              "rounded-lg outline-offset-2 [&_a]:w-max [&_a]:p-0",
             )}
             role="listitem"
           >

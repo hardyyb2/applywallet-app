@@ -16,7 +16,7 @@ export default async function Home({
   const dict = await getDictionary(lang); // en
 
   return (
-    <section className="h-full prose">
+    <section className="prose h-full">
       current {lang}
       lang is {dict["counter"].increment}
       hi

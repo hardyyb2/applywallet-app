@@ -13,7 +13,7 @@ const Navigation = () => {
       <Flex
         component="aside"
         justify="center"
-        className="hidden lg:flex pt-20 /  h-full overflow-hidden"
+        className="hidden h-full overflow-hidden  pt-20 lg:flex"
       >
         <SideNav />
       </Flex>

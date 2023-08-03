@@ -13,11 +13,11 @@ interface CareerCardProps {
 
 const CareerCard = ({ career }: CareerCardProps) => {
   return (
-    <div className={clsx("card / bg-base-200")}>
+    <div className={clsx("card bg-base-200")}>
       <div
         className={clsx(
           "card-body",
-          "prose prose-sm md:prose-base max-w-none prose-headings:!m-0 prose-p:!mt-1 prose-h6:!font-light prose-h6:!underline",
+          "prose prose-sm max-w-none md:prose-base prose-headings:!m-0 prose-h6:!font-light prose-h6:!underline prose-p:!mt-1",
           "[&_p]:line-clamp-3 [&_p]:whitespace-pre-line",
         )}
       >

@@ -6,11 +6,13 @@ interface BaseLayoutHeadProps {
   className?: string;
 }
 
-const BaseLayoutHead = forwardRef<HTMLDivElement, BaseLayoutHeadProps>(({ className, ...rest }, ref) => {
-  const classes = clsx(className);
+const BaseLayoutHead = forwardRef<HTMLDivElement, BaseLayoutHeadProps>(
+  ({ className, ...rest }, ref) => {
+    const classes = clsx(className);
 
-  return <header {...rest} className={classes} ref={ref} />;
-});
+    return <header {...rest} className={classes} ref={ref} />;
+  },
+);
 
 BaseLayoutHead.displayName = "BaseLayoutHead";
 

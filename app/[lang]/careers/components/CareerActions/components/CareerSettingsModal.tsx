@@ -56,18 +56,18 @@ const CareerSettingsModal = () => {
         <Dialog.Portal>
           <Dialog.Overlay
             className={clsx(
-              "fixed inset-0 h-full w-full / bg-primary bg-opacity-80 backdrop-blur overflow-y-hidden z-[40]",
+              "fixed inset-0 z-[40] h-full w-full overflow-y-hidden bg-primary bg-opacity-80 backdrop-blur",
               styles.dialog__overlay,
             )}
           />
           <Dialog.Content
             ref={contentRef}
             className={clsx(
-              "fixed right-0 top-0 z-50 w-3/5 h-full / bg-base-100 / overflow-y-auto",
+              "fixed right-0 top-0 z-50 h-full w-3/5 overflow-y-auto bg-base-100",
               styles.dialog__content,
             )}
           >
-            <Flex className="sticky top-0 left-0 / gap-4 / p-4 / bg-base-100">
+            <Flex className="sticky left-0 top-0 gap-4 bg-base-100 p-4">
               <Dialog.Close>
                 <Button
                   tabIndex={-1}

@@ -30,7 +30,7 @@ export default async function RootLayout({
           <Providers>
             <BaseLayout.Head
               className={clsx(
-                "fixed top-0 z-[5] / h-16 lg:h-[--header-height] w-full / text-base-content ",
+                "fixed top-0 z-[5] h-16 w-full text-base-content lg:h-[--header-height] ",
                 "bg-opacity-60 backdrop-blur",
               )}
             >
@@ -40,12 +40,12 @@ export default async function RootLayout({
             <BaseLayout.Body
               className={clsx(
                 "flex lg:grid lg:grid-cols-[max-content_auto]",
-                "bg-gradient-to-br to-secondary/40 from-primary/40 / overflow-hidden",
+                "/ overflow-hidden bg-gradient-to-br from-primary/40 to-secondary/40",
               )}
             >
               <Navigation />
               {/* Padding top same as height of the header */}
-              <section className="h-full w-full / py-[--header-height]  / overflow-y-auto">
+              <section className="/ / h-full w-full  overflow-y-auto py-[--header-height]">
                 {children}
               </section>
             </BaseLayout.Body>

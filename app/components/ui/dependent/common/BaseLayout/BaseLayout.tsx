@@ -9,15 +9,17 @@ export interface BaseLayoutProps {
   className?: string;
 }
 
-const BaseLayout = forwardRef<HTMLDivElement, BaseLayoutProps>(({ children, className = "", ...rest }, ref) => {
-  const classes = clsx("flex flex-col", className);
+const BaseLayout = forwardRef<HTMLDivElement, BaseLayoutProps>(
+  ({ children, className = "", ...rest }, ref) => {
+    const classes = clsx("flex flex-col", className);
 
-  return (
-    <div {...rest} className={classes} ref={ref}>
-      {children}
-    </div>
-  );
-});
+    return (
+      <div {...rest} className={classes} ref={ref}>
+        {children}
+      </div>
+    );
+  },
+);
 
 BaseLayout.displayName = "BaseLayout";
 
