@@ -1,11 +1,13 @@
 "use client";
 
-import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import clsx from "clsx";
+
 import { Button, Popover } from "app/components/ui/isolated/wrapped";
 import { languageOptions } from "app/utils/locale-utils/language-options";
+
 import { CaretDown, LanguageIcon } from "public/images/icons";
 
 import { redirectedPathName } from "./localeSwitcher.utils";

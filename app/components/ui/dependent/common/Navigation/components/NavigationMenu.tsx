@@ -1,7 +1,8 @@
-import clsx from "clsx";
+import { Fragment } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Fragment } from "react";
+
+import clsx from "clsx";
 
 import { Flex, Typography } from "app/components/ui/isolated/common";
 import { getLinkWithLocale } from "app/utils/routes.utils";

@@ -4,6 +4,7 @@ import clsx from "clsx";
 
 import { Flex } from "app/components/ui/isolated/common";
 import { Button, Popover } from "app/components/ui/isolated/wrapped";
+
 import { BinIcon, EllipsisVIcon, PenIcon } from "public/images/icons";
 
 const CareerCardActions = () => {

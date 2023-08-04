@@ -1,5 +1,6 @@
-import clsx from "clsx";
 import Link from "next/link";
+
+import clsx from "clsx";
 
 import { Flex, Typography } from "app/components/ui/isolated/common";
 import { Button } from "app/components/ui/isolated/wrapped";

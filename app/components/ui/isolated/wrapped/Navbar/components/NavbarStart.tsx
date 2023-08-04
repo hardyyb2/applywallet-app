@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 
-import { NavbarSectionProps, NavbarSection } from "./NavbarSection";
+import { NavbarSection, NavbarSectionProps } from "./NavbarSection";
 
 const NavbarStart = forwardRef<
   HTMLDivElement,

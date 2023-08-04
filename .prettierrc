@@ -4,6 +4,29 @@
   "singleQuote": false,
   "printWidth": 80,
   "tabWidth": 2,
-  "plugins": ["prettier-plugin-tailwindcss"],
-  "tailwindFunctions": ["clsx"]
+  "plugins": [
+    "prettier-plugin-tailwindcss",
+    "@ianvs/prettier-plugin-sort-imports"
+  ],
+  "tailwindFunctions": ["clsx"],
+  "importOrder": [
+    "^(react/(.*)$)|^(react$)",
+    "^(next/(.*)$)|^(next$)|^(next-auth/(.*)$)",
+    "",
+    "<THIRD_PARTY_MODULES>",
+    "",
+    "^app(/.*)?$",
+    "",
+    "^public(/.*)?$",
+    "",
+    "^types$",
+    "",
+    "^(@/api|@/components|@/assets|@/lib|@/utils)(/.*)$",
+    "",
+    "^[.]"
+  ],
+  "importOrderBuiltinModulesToTop": true,
+  "importOrderParserPlugins": ["typescript", "jsx", "decorators-legacy"],
+  "importOrderMergeDuplicateImports": true,
+  "importOrderCombineTypeAndValueImports": true
 }

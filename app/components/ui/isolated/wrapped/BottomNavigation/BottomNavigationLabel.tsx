@@ -1,5 +1,6 @@
-import clsx from "clsx";
 import { forwardRef, HTMLAttributes } from "react";
+
+import clsx from "clsx";
 
 export type BottomNavigationLabelProps = HTMLAttributes<HTMLSpanElement>;
 

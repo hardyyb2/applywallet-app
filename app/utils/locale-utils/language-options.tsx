@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { ReactElement } from "react";
+import Image from "next/image";
 
 import { Locale } from "./i18n-config";
 

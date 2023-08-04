@@ -1,7 +1,8 @@
 "use client";
 
-import clsx from "clsx";
 import { forwardRef, ReactNode } from "react";
+
+import clsx from "clsx";
 
 interface DrawerSideProps {
   children: ReactNode;

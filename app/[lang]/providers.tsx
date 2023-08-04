@@ -1,8 +1,9 @@
 "use client";
 
-import { LazyMotion, domAnimation, MotionConfig } from "framer-motion";
-import { SessionProvider } from "next-auth/react";
 import { ReactNode } from "react";
+import { SessionProvider } from "next-auth/react";
+
+import { domAnimation, LazyMotion, MotionConfig } from "framer-motion";
 
 const Providers = ({ children }: { children: ReactNode }) => {
   return (

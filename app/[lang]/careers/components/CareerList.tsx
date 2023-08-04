@@ -3,7 +3,6 @@ import clsx from "clsx";
 import { CareerType } from "@/utils/schema-utils";
 
 import { careerDataMock } from "../mock/careers";
-
 import { CareerCard } from "./CareerCard";
 import { CareerCardMini } from "./CareerCardMini/CareerCardMini";
 

@@ -1,9 +1,10 @@
 "use client";
 
-import clsx from "clsx";
-import Image from "next/image";
-import { useSession, signOut } from "next-auth/react";
 import React from "react";
+import { signOut, useSession } from "next-auth/react";
+import Image from "next/image";
+
+import clsx from "clsx";
 
 import { Flex } from "app/components/ui/isolated/common";
 import { Avatar, Button, Popover } from "app/components/ui/isolated/wrapped";

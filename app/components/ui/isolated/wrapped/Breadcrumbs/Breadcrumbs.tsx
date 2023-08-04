@@ -1,5 +1,6 @@
-import clsx from "clsx";
 import React, { forwardRef, ReactElement } from "react";
+
+import clsx from "clsx";
 
 import { BreadcrumbsItem, BreadcrumbsItemProps } from "./BreadcrumbsItem";
 

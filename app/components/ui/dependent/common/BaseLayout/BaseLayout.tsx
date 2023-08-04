@@ -1,5 +1,6 @@
-import clsx from "clsx";
 import { forwardRef, ReactNode } from "react";
+
+import clsx from "clsx";
 
 import { BaseLayoutBody } from "./components/BaseLayoutBody";
 import { BaseLayoutHead } from "./components/BaseLayoutHead";

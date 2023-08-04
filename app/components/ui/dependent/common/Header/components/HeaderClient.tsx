@@ -1,7 +1,8 @@
 "use client";
 
+import { ReactNode, useEffect } from "react";
+
 import clsx from "clsx";
-import { useEffect, ReactNode } from "react";
 import { themeChange } from "theme-change";
 
 import { Flex, Typography } from "app/components/ui/isolated/common";

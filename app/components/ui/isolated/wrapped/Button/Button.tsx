@@ -1,10 +1,11 @@
-import clsx from "clsx";
 import { ButtonHTMLAttributes, forwardRef, ReactNode } from "react";
+
+import clsx from "clsx";
 
 import {
   ButtonColorsType,
-  ButtonSizeTypes,
   ButtonShapeType,
+  ButtonSizeTypes,
 } from "./Button.types";
 
 export type ButtonProps = Omit<

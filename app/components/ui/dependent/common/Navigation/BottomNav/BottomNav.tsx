@@ -1,17 +1,17 @@
 "use client";
 
+import { Fragment } from "react";
+import { usePathname } from "next/navigation";
+
 import { ConditionalMatch } from "@dx-kit/react-conditional-match";
 import clsx from "clsx";
 import { AnimatePresence, m } from "framer-motion";
-import { usePathname } from "next/navigation";
-import { Fragment } from "react";
 
 import { Flex } from "app/components/ui/isolated/common";
 import { BottomNavigation } from "app/components/ui/isolated/wrapped";
 import { useBoolean } from "app/hooks/useBoolean";
 
 import { NavigationMenu } from "../components/NavigationMenu";
-
 import { BottomNavBackdrop } from "./components/BottomNavBackdrop";
 import { BottomNavBar } from "./components/BottomNavBar";
 

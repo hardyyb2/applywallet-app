@@ -1,5 +1,6 @@
-import clsx from "clsx";
 import { forwardRef } from "react";
+
+import clsx from "clsx";
 
 import { DropdownItem } from "./components/DropdownItem";
 import { DropdownMenu } from "./components/DropdownMenu";

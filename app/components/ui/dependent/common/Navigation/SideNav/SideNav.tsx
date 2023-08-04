@@ -6,7 +6,6 @@ import { m } from "framer-motion";
 import { useBoolean } from "app/hooks/useBoolean";
 
 import { NavigationMenu } from "../components/NavigationMenu";
-
 import { SideNavBrand } from "./components/SideNavBrand";
 
 const SideNav = () => {

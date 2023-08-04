@@ -1,11 +1,13 @@
 "use client";
 
-import clsx from "clsx";
-import Link from "next/link";
 import { useRef, useState } from "react";
+import Link from "next/link";
+
+import clsx from "clsx";
 
 import { Flex } from "app/components/ui/isolated/common";
 import { Button, Dialog } from "app/components/ui/isolated/wrapped";
+
 import {
   CaretRightDouble,
   MaximizeLeft,
@@ -13,7 +15,6 @@ import {
 } from "public/images/icons";
 
 import { CareerSettings } from "../../CareerSettings";
-
 import styles from "./careerSettingsModal.module.scss";
 
 const CareerSettingsModal = () => {

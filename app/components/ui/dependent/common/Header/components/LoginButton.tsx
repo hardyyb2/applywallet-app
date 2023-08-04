@@ -1,7 +1,7 @@
 "use client";
 
-import { signIn, useSession } from "next-auth/react";
 import React from "react";
+import { signIn, useSession } from "next-auth/react";
 
 import { Button } from "app/components/ui/isolated/wrapped";
 import { AppRoutes } from "app/utils/routes.utils";

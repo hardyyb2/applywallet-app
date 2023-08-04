@@ -1,10 +1,12 @@
-import clsx from "clsx";
-import Link from "next/link";
 import { Fragment, useMemo } from "react";
+import Link from "next/link";
+
+import clsx from "clsx";
 
 import { Flex } from "app/components/ui/isolated/common";
 import { BottomNavigation, Button } from "app/components/ui/isolated/wrapped";
 import { getLinkWithLocale } from "app/utils/routes.utils";
+
 import { HomeIcon, MenuIcon } from "public/images/icons";
 
 import { bottomNavDisplayOptions } from "../../navigation.utils";
