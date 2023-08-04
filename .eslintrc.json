@@ -1,5 +1,5 @@
 {
-  "extends": ["next/core-web-vitals", "next", "prettier"],
+  "extends": ["prettier", "next/core-web-vitals", "next"],
   "rules": {
     "import/no-default-export": "error",
     "import/order": [
@@ -11,11 +11,6 @@
             "pattern": "react",
             "group": "external",
             "position": "before"
-          },
-          {
-            "pattern": ".*\\.css$",
-            "group": "sibling",
-            "position": "after"
           }
         ],
         "newlines-between": "always",
