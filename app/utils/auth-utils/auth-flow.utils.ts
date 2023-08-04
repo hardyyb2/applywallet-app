@@ -3,7 +3,7 @@ import { NextAuthOptions } from "next-auth";
 import { OAuthProviderType } from "next-auth/providers";
 import GoogleProvider from "next-auth/providers/google";
 
-import { prisma } from "app/lib/prisma";
+import { prisma } from "@/lib/prisma";
 
 import { envVariables } from "../env-vars.utils";
 

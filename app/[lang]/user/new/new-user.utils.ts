@@ -1,6 +1,7 @@
 import { GoogleSpreadsheet } from "google-spreadsheet";
 import { getServerSession } from "next-auth";
 
+import { prisma } from "@/lib/prisma";
 import { authOptions } from "@/utils/auth-utils";
 import { AppRoutes } from "app/utils/routes.utils";
 import { createGoogleSheetDoc } from "app/utils/sheet.utils";

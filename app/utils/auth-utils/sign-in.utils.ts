@@ -2,6 +2,8 @@ import { User } from "@prisma/client";
 import { GoogleSpreadsheet } from "google-spreadsheet";
 import { CallbacksOptions } from "next-auth";
 
+import { prisma } from "@/lib/prisma";
+
 const getUserFromDB = async (userId: string): Promise<User | null> => {
   try {
     const user = await prisma.user.findUnique({ where: { id: userId } });
