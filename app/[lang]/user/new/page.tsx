@@ -14,6 +14,7 @@ const NewUser = async () => {
   }
 
   if (createSheetResponse.type === "error") {
+    // Show error
     signOut();
     return null;
   }
