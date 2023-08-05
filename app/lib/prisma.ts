@@ -13,4 +13,4 @@ if (envVariables.NODE_ENV === "production") {
   prisma = global.prisma;
 }
 
-export { prisma };
+export const db = prisma;

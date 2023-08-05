@@ -2,11 +2,11 @@ import { User } from "@prisma/client";
 import { GoogleSpreadsheet } from "google-spreadsheet";
 import { CallbacksOptions } from "next-auth";
 
-import { prisma } from "@/lib/prisma";
+import { db } from "@/lib/prisma";
 
 const getUserFromDB = async (userId: string): Promise<User | null> => {
   try {
-    const user = await prisma.user.findUnique({ where: { id: userId } });
+    const user = await db.user.findUnique({ where: { id: userId } });
     return user;
   } catch (err) {
     console.log("error finding user from db");
@@ -16,7 +16,7 @@ const getUserFromDB = async (userId: string): Promise<User | null> => {
 
 const getTokenFromAccount = async (userId: string) => {
   try {
-    const account = await prisma.account.findFirst({
+    const account = await db.account.findFirst({
       where: {
         userId,
       },

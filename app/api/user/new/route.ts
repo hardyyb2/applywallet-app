@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 import { getServerSession } from "next-auth";
 
-import { prisma } from "@/lib/prisma";
+import { db } from "@/lib/prisma";
 import { authOptions } from "@/utils/auth-utils";
 import { AppRoutes } from "@/utils/routes.utils";
 import { createGoogleSheetDoc } from "@/utils/sheet.utils";
@@ -26,7 +26,7 @@ export async function POST(request: Request) {
     }
 
     const sheetId = await createGoogleSheetDoc(accessToken);
-    await prisma.user.update({
+    await db.user.update({
       where: {
         id: user.id,
       },

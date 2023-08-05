@@ -4,7 +4,7 @@ import { getServerSession } from "next-auth";
 import { AppRoutes } from "app/utils/routes.utils";
 import { createGoogleSheetDoc } from "app/utils/sheet.utils";
 
-import { prisma } from "@/lib/prisma";
+import { db } from "@/lib/prisma";
 import { authOptions } from "@/utils/auth-utils";
 
 const checkGoogleSheetValidity = async (
@@ -47,7 +47,7 @@ export const checkUserSheet = async (): Promise<
       return { type: "redirect", path: AppRoutes.HOME };
     }
 
-    const user = await prisma.user.findFirst({
+    const user = await db.user.findFirst({
       where: {
         id: userId,
       },
@@ -57,7 +57,7 @@ export const checkUserSheet = async (): Promise<
     if (!user?.primarySheetId) {
       const sheetId = await createGoogleSheetDoc(accessToken);
 
-      await prisma.user.update({
+      await db.user.update({
         where: {
           id: userId,
         },

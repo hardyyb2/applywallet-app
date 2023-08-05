@@ -1,16 +1,14 @@
 "use client";
 
 import React from "react";
-import { signIn, useSession } from "next-auth/react";
+import { signIn } from "next-auth/react";
 
 import { Button } from "app/components/ui/isolated/wrapped";
 import { AppRoutes } from "app/utils/routes.utils";
 
 const LoginButton = () => {
   const handleLoginClick = () => {
-    signIn("google", {
-      callbackUrl: AppRoutes.NEW_USER,
-    });
+    signIn("google");
   };
 
   return (
