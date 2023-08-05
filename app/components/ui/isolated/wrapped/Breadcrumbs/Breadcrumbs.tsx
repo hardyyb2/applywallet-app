@@ -17,7 +17,7 @@ const Breadcrumbs = forwardRef<HTMLDivElement, BreadcrumbsProps>(
     { children, className, innerProps, innerRef, ...props },
     ref,
   ): JSX.Element => {
-    const classes = clsx("breadcrumbs", "text-sm", className);
+    const classes = clsx("breadcrumbs text-sm", className);
 
     return (
       <div
