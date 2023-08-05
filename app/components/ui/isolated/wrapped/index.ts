@@ -3,7 +3,6 @@ export * from "./Avatar";
 export * from "./BottomNavigation";
 export * from "./Breadcrumbs";
 export * from "./Button";
-export * from "./ButtonGroup";
 export * from "./Dialog";
 export * from "./Drawer";
 export * from "./Dropdown";
