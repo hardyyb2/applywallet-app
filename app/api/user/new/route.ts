@@ -12,7 +12,7 @@ export async function POST(request: Request) {
     const session = await getServerSession(authOptions);
 
     const user = session?.user;
-    const accessToken = session?.user?.token;
+    const accessToken = session?.accessToken;
 
     if (!user || !accessToken) {
       return NextResponse.json(
