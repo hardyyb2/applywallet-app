@@ -8,7 +8,9 @@ import { AppRoutes } from "app/utils/routes.utils";
 
 const LoginButton = () => {
   const handleLoginClick = () => {
-    signIn("google");
+    signIn("google", {
+      callbackUrl: AppRoutes.NEW_USER,
+    });
   };
 
   return (

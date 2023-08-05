@@ -35,30 +35,29 @@ export const authOptions: NextAuthOptions = {
   },
   callbacks: {
     async session({ token, session }) {
-      console.log("here we are", token, session);
-
       if (token) {
         session.user.id = token.id;
         session.user.name = token.name;
         session.user.email = token.email;
         session.user.image = token.picture;
+        session.accessToken = token.accessToken;
       }
 
       return session;
     },
-    async jwt({ token, user }) {
-      console.log("here we hwt", token, user);
-
+    async jwt({ token, user, account }) {
       const dbUser = await db.user.findFirst({
         where: {
           email: token.email,
         },
       });
+      const accessToken = token.accessToken ?? account?.access_token;
 
       if (!dbUser) {
         if (user) {
           token.id = user?.id;
         }
+        token.accessToken = accessToken;
         return token;
       }
 
@@ -67,6 +66,7 @@ export const authOptions: NextAuthOptions = {
         name: dbUser.name,
         email: dbUser.email,
         picture: dbUser.image,
+        accessToken,
       };
     },
   },

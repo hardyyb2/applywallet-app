@@ -1,65 +1,35 @@
-import { GoogleSpreadsheet } from "google-spreadsheet";
 import { getServerSession } from "next-auth";
-
-import { AppRoutes } from "app/utils/routes.utils";
-import { createGoogleSheetDoc } from "app/utils/sheet.utils";
 
 import { db } from "@/lib/prisma";
 import { authOptions } from "@/utils/auth-utils";
+import { CustomError } from "@/utils/error";
+import { AppRoutes } from "@/utils/routes.utils";
+import {
+  checkGoogleSheetValidity,
+  createGoogleSheetDoc,
+} from "@/utils/sheet.utils";
 
-const checkGoogleSheetValidity = async (
-  accessToken: string,
-  sheetId: string | null | undefined,
-) => {
-  try {
-    if (!sheetId) return false;
-
-    const doc = new GoogleSpreadsheet(sheetId);
-    doc.useRawAccessToken(accessToken);
-    await doc.loadInfo();
-
-    const sheet = doc.sheetsById[sheetId];
-    return !!sheet;
-  } catch (err: any) {
-    // we are assuming that its
-    return false;
-  }
-};
-
-/**
- * check for validity of sheet after login,
- *  if valid redirect,
- *  if new user create new sheet for him,
- *  if sheet invalid (deleted or lost), handle in page
- */
-export const checkUserSheet = async (): Promise<
+export const createUserSheet = async (): Promise<
   | { type: "redirect"; path: string }
   | { type: "error"; message: string }
   | { type: "no-action" }
 > => {
   try {
     const session = await getServerSession(authOptions);
-    const userId = session?.user?.id;
-    const accessToken = session?.user?.token;
 
-    // if not logged in
-    if (!session || !userId || !accessToken) {
+    if (!session || !session.accessToken) {
       return { type: "redirect", path: AppRoutes.HOME };
     }
 
-    const user = await db.user.findFirst({
-      where: {
-        id: userId,
-      },
-    });
+    const { user, accessToken } = session;
 
-    // if no sheet id, create one
+    // First time login, create new sheet and redirect
     if (!user?.primarySheetId) {
       const sheetId = await createGoogleSheetDoc(accessToken);
 
       await db.user.update({
         where: {
-          id: userId,
+          id: user.id,
         },
         data: {
           primarySheetId: sheetId,
@@ -69,21 +39,23 @@ export const checkUserSheet = async (): Promise<
       return { type: "redirect", path: AppRoutes.CAREERS };
     }
 
-    // if sheet id is present, check if its valid
+    // Old user, check if sheet is valid
     const isValidSheet = await checkGoogleSheetValidity(
       accessToken,
       user.primarySheetId,
     );
 
     if (isValidSheet) {
-      return { type: "redirect", path: AppRoutes.HOME };
+      return { type: "redirect", path: AppRoutes.CAREERS };
     }
 
     return { type: "no-action" };
-  } catch (err: any) {
+  } catch (err) {
+    const message = new CustomError(err).message;
+
     return {
       type: "error",
-      message: typeof err?.message === "string" ? err?.message : "some error",
+      message,
     };
   }
 };

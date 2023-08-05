@@ -1,21 +1,21 @@
 import React from "react";
+import { signOut } from "next-auth/react";
 import { redirect } from "next/navigation";
 
 import { CreateNewSheetButton } from "./components/CreateNewSheetButton";
 import { LinkSheetInput } from "./components/LinkSheetInput";
-import { checkUserSheet } from "./new-user.utils";
+import { createUserSheet } from "./new-user.utils";
 
 const NewUser = async () => {
-  const checkResponse = await checkUserSheet();
+  const createSheetResponse = await createUserSheet();
 
-  if (checkResponse.type === "error") {
-    console.log("error");
-    return null;
-    // throw new Error(checkResponse.message);
+  if (createSheetResponse.type === "redirect") {
+    return redirect(createSheetResponse.path);
   }
 
-  if (checkResponse.type === "redirect") {
-    return redirect(checkResponse.path);
+  if (createSheetResponse.type === "error") {
+    signOut();
+    return null;
   }
 
   return (
