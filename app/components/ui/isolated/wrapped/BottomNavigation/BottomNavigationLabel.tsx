@@ -9,7 +9,7 @@ const BottomNavigationLabel = forwardRef<
   BottomNavigationLabelProps
 >(({ children, className, ...props }, ref): JSX.Element => {
   return (
-    <span {...props} className={clsx("btm-nav-label", className)} ref={ref}>
+    <span {...props} className={clsx(className)} ref={ref}>
       {children}
     </span>
   );

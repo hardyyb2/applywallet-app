@@ -45,21 +45,15 @@ const BottomNavBar = ({
         const active = itemLinkWithLocale === pathName;
 
         return (
-          <Link href={itemLinkWithLocale} key={item.key ?? item.link}>
-            <Button
-              color="ghost"
-              className={clsx(
-                "flex flex-col ",
-                active && "active text-primary",
-                "hover:bg-transparent",
-              )}
-              tabIndex={-1}
-            >
-              <HomeIcon />
-              <BottomNavigation.Label className="text-xs lowercase">
-                {item.label}
-              </BottomNavigation.Label>
-            </Button>
+          <Link
+            href={itemLinkWithLocale}
+            key={item.key ?? item.link}
+            className={clsx(active && "active text-primary", "bg-transparent")}
+          >
+            <HomeIcon />
+            <BottomNavigation.Label className="text-xs lowercase">
+              {item.label}
+            </BottomNavigation.Label>
           </Link>
         );
       })}
