@@ -40,6 +40,8 @@ export const authOptions: NextAuthOptions = {
         session.user.name = token.name;
         session.user.email = token.email;
         session.user.image = token.picture;
+        session.user.primarySheetId = token.primarySheetId;
+
         session.accessToken = token.accessToken;
       }
 
@@ -52,12 +54,14 @@ export const authOptions: NextAuthOptions = {
         },
       });
       const accessToken = token.accessToken ?? account?.access_token;
+      const primarySheetId = dbUser?.primarySheetId;
 
       if (!dbUser) {
         if (user) {
           token.id = user?.id;
         }
         token.accessToken = accessToken;
+        token.primarySheetId = primarySheetId;
         return token;
       }
 
@@ -67,6 +71,7 @@ export const authOptions: NextAuthOptions = {
         email: dbUser.email,
         picture: dbUser.image,
         accessToken,
+        primarySheetId,
       };
     },
   },
