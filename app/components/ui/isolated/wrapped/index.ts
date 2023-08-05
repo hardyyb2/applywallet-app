@@ -7,6 +7,5 @@ export * from "./Dialog";
 export * from "./Dropdown";
 export * from "./FormControl";
 export * from "./Input";
-export * from "./Navbar";
 export * from "./Popover";
 export * from "./Textarea";

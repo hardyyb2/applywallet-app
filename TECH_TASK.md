@@ -16,3 +16,4 @@
 - Find a way for separated non nested layout
 - Common response data object
 - Remove tailwind colors
+- Replace themes menu dropdown with radix ui dropdown
