@@ -1,1 +1,1 @@
-export * from "./error-with-message";
+export * from "./custom-error";
