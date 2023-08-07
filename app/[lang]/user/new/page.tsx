@@ -1,6 +1,6 @@
 import React from "react";
 import { signOut } from "next-auth/react";
-import { redirect } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 
 import { CreateNewSheetButton } from "./components/CreateNewSheetButton";
 import { LinkSheetInput } from "./components/LinkSheetInput";
@@ -15,7 +15,6 @@ const NewUser = async () => {
 
   if (createSheetResponse.type === "error") {
     // Show error
-    signOut();
     return null;
   }
 
