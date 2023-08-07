@@ -1,9 +1,13 @@
 import { z } from "zod";
 
-const hasASheetId = (link: string): boolean => {
+export const getSheetIdFromLink = (link: string): string => {
   const match = link.match(/spreadsheets\/d\/(.+)\//);
   const sheetId = match?.[1] || "";
+  return sheetId;
+};
 
+const hasASheetId = (link: string): boolean => {
+  const sheetId = getSheetIdFromLink(link);
   return !!sheetId;
 };
 
