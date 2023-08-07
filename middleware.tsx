@@ -1,7 +1,8 @@
-import { match as matchLocale } from "@formatjs/intl-localematcher";
-import Negotiator from "negotiator";
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+
+import { match as matchLocale } from "@formatjs/intl-localematcher";
+import Negotiator from "negotiator";
 
 import { i18n } from "@/utils/locale-utils";
 
@@ -12,13 +13,11 @@ const getNegotiatorHeaders = (request: NextRequest): Record<string, string> => {
 };
 
 const getLocale = (request: NextRequest): string | undefined => {
-  /** Negotiator expects plain object so we need to transform headers */
   const negotiatorHeaders = getNegotiatorHeaders(request);
 
   /**  Use negotiator and intl-localematcher to get best locale */
   let languages = new Negotiator({ headers: negotiatorHeaders }).languages();
-  // @ts-ignore locales are readonly
-  const locales: string[] = i18n.locales;
+  const locales: string[] = i18n.locales.slice();
   return matchLocale(languages, locales, i18n.defaultLocale);
 };
 
@@ -27,7 +26,6 @@ export function middleware(request: NextRequest) {
 
   /**  Ignore public files manually
    *  `/_next/` and `/api/` are ignored by the watcher, but we need to ignore files in `public` manually. */
-
   if (pathname.startsWith("/images")) {
     return;
   }
