@@ -12,8 +12,8 @@ export enum AppRoutes {
 }
 
 export enum ApiRoutes {
-  NEW_USER = "/user/new",
-  LINK_USER = "/user/link",
+  NEW_USER = "/api/user/new",
+  LINK_USER = "/api/user/link",
 }
 
 /** Get route name with locale */

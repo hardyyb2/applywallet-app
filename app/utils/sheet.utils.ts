@@ -7,9 +7,13 @@ export const createGoogleSheetDoc = async (
     const doc = new GoogleSpreadsheet();
     doc.useRawAccessToken(accessToken);
 
+    console.log("doc", accessToken);
+
     await doc.createNewSpreadsheetDocument({ title: "applywallet-database" });
     return doc.spreadsheetId;
   } catch (err) {
+    console.log("err poppo", err);
+
     throw err;
   }
 };
@@ -25,9 +29,8 @@ export const checkGoogleSheetValidity = async (
     doc.useRawAccessToken(accessToken);
     await doc.loadInfo();
 
-    const sheet = doc.sheetsById[sheetId];
-    return !!sheet;
-  } catch (err: any) {
+    return true;
+  } catch (err) {
     return false;
   }
 };

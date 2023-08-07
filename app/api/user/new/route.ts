@@ -4,26 +4,28 @@ import { getServerSession } from "next-auth";
 
 import { db } from "@/lib/prisma";
 import { authOptions } from "@/utils/auth-utils";
-import { AppRoutes } from "@/utils/routes.utils";
+import { CustomError } from "@/utils/error";
 import { createGoogleSheetDoc } from "@/utils/sheet.utils";
 
-export async function POST(request: Request) {
+export async function POST() {
   try {
     const session = await getServerSession(authOptions);
 
-    const user = session?.user;
-    const accessToken = session?.accessToken;
-
-    if (!user || !accessToken) {
-      return NextResponse.json(
-        {
-          message: "authentication failed, user or token invalid",
-        },
-        {
-          status: 401,
-        },
-      );
+    if (!session) {
+      return NextResponse.json("unauthorized", {
+        status: 401,
+      });
     }
+
+    if (!session.accessToken) {
+      return NextResponse.json("forbidden", {
+        status: 403,
+      });
+    }
+
+    const { accessToken, user } = session;
+
+    console.log("request here");
 
     const sheetId = await createGoogleSheetDoc(accessToken);
     await db.user.update({
@@ -35,17 +37,14 @@ export async function POST(request: Request) {
       },
     });
 
-    return NextResponse.redirect(new URL(AppRoutes.CAREERS, request.url));
-  } catch (err) {
-    console.log("error in creating sheet", err);
+    return NextResponse.json("success", {
+      status: 201,
+    });
+  } catch (error) {
+    const message = new CustomError(error).message;
 
-    return NextResponse.json(
-      {
-        message: "failed to create user sheet",
-      },
-      {
-        status: 401,
-      },
-    );
+    return NextResponse.json(message, {
+      status: 500,
+    });
   }
 }
