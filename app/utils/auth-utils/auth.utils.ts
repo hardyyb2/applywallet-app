@@ -29,7 +29,7 @@ export const authOptions: NextAuthOptions = {
       },
     }),
   ],
-  adapter: PrismaAdapter(prisma),
+  adapter: PrismaAdapter(db),
   session: {
     strategy: "jwt",
   },
