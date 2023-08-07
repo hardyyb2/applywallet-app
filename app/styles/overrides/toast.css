@@ -1,0 +1,29 @@
+@import "react-toastify/dist/ReactToastify.min.css";
+
+.Toastify__toast {
+  @apply alert;
+}
+
+.Toastify__close-button {
+  @apply justify-self-end;
+}
+
+.Toastify__close-button > svg {
+  @apply text-base-content;
+}
+
+.Toastify__toast-theme--colored.Toastify__toast--info {
+  @apply alert-info;
+}
+
+.Toastify__toast-theme--colored.Toastify__toast--success {
+  @apply alert-success;
+}
+
+.Toastify__toast-theme--colored.Toastify__toast--warning {
+  @apply alert-warning;
+}
+
+.Toastify__toast-theme--colored.Toastify__toast--error {
+  @apply alert-error;
+}
