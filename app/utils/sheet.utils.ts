@@ -2,18 +2,20 @@ import { GoogleSpreadsheet } from "google-spreadsheet";
 
 export const createGoogleSheetDoc = async (
   accessToken: string,
+  docTitle?: string,
 ): Promise<string> => {
   try {
-    const doc = new GoogleSpreadsheet();
-    doc.useRawAccessToken(accessToken);
+    const doc = await GoogleSpreadsheet.createNewSpreadsheetDocument(
+      {
+        token: accessToken,
+      },
+      {
+        title: docTitle || "applywallet-database",
+      },
+    );
 
-    console.log("doc", accessToken);
-
-    await doc.createNewSpreadsheetDocument({ title: "applywallet-database" });
     return doc.spreadsheetId;
   } catch (err) {
-    console.log("err poppo", err);
-
     throw err;
   }
 };
@@ -25,8 +27,7 @@ export const checkGoogleSheetValidity = async (
   try {
     if (!sheetId) return false;
 
-    const doc = new GoogleSpreadsheet(sheetId);
-    doc.useRawAccessToken(accessToken);
+    const doc = new GoogleSpreadsheet(sheetId, { token: accessToken });
     await doc.loadInfo();
 
     return true;
