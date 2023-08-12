@@ -9,9 +9,7 @@ import { NavigationMenu } from "../components/NavigationMenu";
 import { SideNavBrand } from "./components/SideNavBrand";
 
 const SideNav = () => {
-  const [navOpen, { toggle: toggleSideNav }] = useBoolean({
-    initialVal: false,
-  });
+  const [navOpen, { toggle: toggleSideNav }] = useBoolean();
 
   return (
     <m.div

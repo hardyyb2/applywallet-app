@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
 
-export type UseBooleanHandlerType<T> = (props: T) => [
+export type UseBooleanHandlerType<T> = (props?: T) => [
   value: boolean,
   updaters: {
     toggle: () => void;

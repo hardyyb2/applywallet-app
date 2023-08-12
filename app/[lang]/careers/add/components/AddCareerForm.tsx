@@ -1,23 +1,45 @@
 "use client";
 
+import { useBoolean } from "@/hooks/useBoolean";
 import { zodResolver } from "@hookform/resolvers/zod";
+import axios from "axios";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 import { Button, FormControl } from "app/components/ui/isolated/wrapped";
 
 import { Typography } from "@/components/ui/isolated/common";
+import { ApiRoutes } from "@/utils/routes.utils";
 import { careerSchema, CareerType } from "@/utils/schema-utils";
 
 const AddCareerForm = () => {
+  // hooks
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<CareerType>({
     resolver: zodResolver(careerSchema),
   });
+
+  // states
+  const [loading, { setValue: setLoading }] = useBoolean();
+
+  // functions
   const onSubmit: SubmitHandler<CareerType> = (data) => {
-    console.log(data);
+    setLoading(true);
+
+    axios
+      .post(ApiRoutes.ADD_CAREER, data)
+      .then(() => {
+        toast.success("Save success");
+        reset();
+      })
+      .catch(() => {
+        toast.error("Failed to add career, please try again");
+      })
+      .finally(() => setLoading(false));
   };
 
   return (
@@ -96,8 +118,15 @@ const AddCareerForm = () => {
             />
           </FormControl>
         </div>
-        <Button type="submit" size="lg" color="primary" className="mt-4">
-          save
+        <Button
+          type="submit"
+          size="lg"
+          color="primary"
+          className="mt-4"
+          loading={loading}
+          disabled={loading}
+        >
+          {loading ? "Saving" : "Save"}
         </Button>
       </div>
     </form>

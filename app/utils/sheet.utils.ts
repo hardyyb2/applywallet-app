@@ -1,5 +1,9 @@
 import { GoogleSpreadsheet } from "google-spreadsheet";
 
+export enum SheetNames {
+  CAREERS = "careers",
+}
+
 export const createGoogleSheetDoc = async (
   accessToken: string,
   docTitle?: string,

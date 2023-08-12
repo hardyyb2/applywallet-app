@@ -82,7 +82,6 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         "btn-active": active,
         "btn-disabled": disabled,
       },
-      loading && "loading",
       className,
     );
 
@@ -94,7 +93,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         style={style}
         disabled={disabled}
       >
-        {startIcon && !loading && startIcon}
+        {loading ? <span className="loading" /> : startIcon}
         {children}
         {endIcon && endIcon}
       </button>

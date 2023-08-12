@@ -24,9 +24,7 @@ const MotionBottomNavigation = m(BottomNavigation);
 
 const BottomNav = ({ className = "" }: BottomNavProps) => {
   const pathName = usePathname();
-  const [showFullBottomNav, { toggle: toggleShowFullBottomNav }] = useBoolean({
-    initialVal: false,
-  });
+  const [showFullBottomNav, { toggle: toggleShowFullBottomNav }] = useBoolean();
 
   return (
     <Fragment>
