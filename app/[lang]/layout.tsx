@@ -8,8 +8,8 @@ import { i18n, Locale } from "@/utils/locale-utils";
 
 import { Providers } from "./providers";
 
-import "@/styles/globals.css";
-import "@/styles/overrides/toast.css";
+import "@/styles/globals.scss";
+import "@/styles/overrides/toast.scss";
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));

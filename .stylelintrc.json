@@ -1,6 +1,5 @@
 {
   "extends": ["stylelint-config-standard-scss", "stylelint-config-clean-order"],
-
   "rules": {
     "selector-class-pattern": [
       "^[a-zA-Z0-9]+([A-Z][a-zA-Z0-9]+)*$",
@@ -12,6 +11,12 @@
       "^[a-zA-Z0-9]+([A-Z][a-zA-Z0-9]+)*$",
       {
         "message": "Keyframes names should follow camelCase pattern"
+      }
+    ],
+    "scss/at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": ["tailwind"]
       }
     ]
   }
