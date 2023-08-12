@@ -3,17 +3,11 @@
 import clsx from "clsx";
 import { toast } from "react-toastify";
 
-import { Button } from "@/components/ui/isolated/wrapped";
-
 const About = () => {
   const notify = () => toast("GHello there");
 
   return (
     <div className="p-8">
-      <Button onClick={notify}>Hello</Button>
-      <div className="prose">
-        <h1 className="mb-8">About</h1>
-      </div>
       <div
         className={clsx(
           "grid w-full gap-8",

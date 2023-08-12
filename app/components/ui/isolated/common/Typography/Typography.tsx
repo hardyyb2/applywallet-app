@@ -2,6 +2,7 @@ import { ComponentType, forwardRef } from "react";
 
 import clsx from "clsx";
 
+import styles from "./typography.module.scss";
 import {
   TypographyDisplayType,
   TypographyVariantType,
@@ -40,20 +41,7 @@ const Typography = forwardRef<
       <Component
         ref={ref}
         className={clsx(
-          {
-            "text-6xl font-bold leading-tight": variant === "h1",
-            "text-5xl font-bold leading-tight": variant === "h2",
-            "text-4xl font-bold leading-tight": variant === "h3",
-            "text-3xl font-bold leading-tight": variant === "h4",
-            "text-2xl font-bold leading-tight": variant === "h5",
-            "text-xl font-medium leading-tight": variant === "h6",
-            "text-lg font-medium leading-snug": variant === "subtitle1",
-            "text-base font-medium leading-snug": variant === "subtitle2",
-            "text-base leading-relaxed": variant === "body1",
-            "text-sm font-medium leading-relaxed": variant === "body2",
-            "text-sm font-medium leading-tight": variant === "caption",
-            "sr-only": variant === "srOnly",
-          },
+          styles[variant],
           {
             inline: display === "inline",
             block: display === "block",
