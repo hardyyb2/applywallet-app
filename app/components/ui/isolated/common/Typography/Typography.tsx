@@ -26,7 +26,7 @@ const Typography = forwardRef<
     {
       variant = "body1",
       align = "left",
-      display = "block",
+      display,
       component,
       className,
       children,

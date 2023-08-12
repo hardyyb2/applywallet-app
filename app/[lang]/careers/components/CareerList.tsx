@@ -25,7 +25,7 @@ const CareerList = async () => {
       )}
     >
       {careers.map((career) => (
-        <CareerCardMini key={career.company.name} />
+        <CareerCard key={career.company.name} career={career} />
       ))}
     </div>
   );

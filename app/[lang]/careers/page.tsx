@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import { Flex } from "app/components/ui/isolated/common";
+import { Flex, Typography } from "app/components/ui/isolated/common";
 import { Button } from "app/components/ui/isolated/wrapped";
 
 import { AddIcon } from "public/images/icons";
@@ -18,12 +18,11 @@ const Careers = async () => {
   return (
     <div className="px-6 py-4 lg:px-10">
       <Flex justify="space-between" align="center" className="mb-10 gap-4">
-        <Flex
-          direction="column"
-          className="prose prose-sm md:prose-base prose-h1:!mb-0 prose-p:!mt-0 "
-        >
-          <h1>careers</h1>
-          <p>details of your previous jobs</p>
+        <Flex direction="column" className="">
+          <Typography variant="h2">careers</Typography>
+          <Typography variant="subtitle2">
+            details of your previous jobs
+          </Typography>
         </Flex>
 
         <CareerActions />

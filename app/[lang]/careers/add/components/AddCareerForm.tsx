@@ -1,11 +1,11 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import clsx from "clsx";
 import { SubmitHandler, useForm } from "react-hook-form";
 
 import { Button, FormControl } from "app/components/ui/isolated/wrapped";
 
+import { Typography } from "@/components/ui/isolated/common";
 import { careerSchema, CareerType } from "@/utils/schema-utils";
 
 const AddCareerForm = () => {
@@ -22,17 +22,16 @@ const AddCareerForm = () => {
 
   return (
     <form
-      className={clsx(
-        "card overflow-hidden",
-        "prose prose-sm md:prose-base prose-h1:!m-0 prose-h4:!mb-0 prose-h4:!mt-8 prose-h4:!font-light prose-h4:!underline",
-      )}
+      className="card m-auto max-w-[65ch] overflow-hidden"
       onSubmit={handleSubmit(onSubmit)}
       noValidate
     >
       <div className="card-body  bg-base-100 [&_.form-control]:mt-2">
-        <h1>add career</h1>
-        <div>
-          <h4>company details</h4>
+        <Typography variant="h2">add career</Typography>
+        <div className="mt-8">
+          <Typography variant="subtitle1" className="underline">
+            company details
+          </Typography>
           <FormControl
             label="company name"
             htmlFor="company.name"
@@ -56,8 +55,10 @@ const AddCareerForm = () => {
             />
           </FormControl>
         </div>
-        <div>
-          <h4>role details</h4>
+        <div className="mt-8">
+          <Typography variant="subtitle1" className="underline">
+            role details
+          </Typography>
           <FormControl
             label="designation"
             htmlFor="role.name"
@@ -80,8 +81,10 @@ const AddCareerForm = () => {
             />
           </FormControl>
         </div>
-        <div>
-          <h4>job details</h4>
+        <div className="mt-8">
+          <Typography variant="subtitle1" className="underline">
+            job details
+          </Typography>
           <FormControl
             htmlFor="job.description"
             label="job achievements"

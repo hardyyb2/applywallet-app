@@ -27,8 +27,8 @@ const NavigationMenu = ({
       component="ul"
       wrap="nowrap"
       className={clsx(
-        "menu menu-compact prose max-w-none prose-a:no-underline prose-li:pl-0",
-        "h-full overflow-y-auto px-2",
+        "menu-compact menu  max-w-none",
+        "h-full space-y-2 overflow-y-auto px-2",
         className,
       )}
     >
@@ -37,7 +37,7 @@ const NavigationMenu = ({
           <Fragment key={group}>
             {navOpen && (
               <li className="menu-title">
-                <span>{group}</span>
+                <Typography variant="subtitle2">{group}</Typography>
               </li>
             )}
 

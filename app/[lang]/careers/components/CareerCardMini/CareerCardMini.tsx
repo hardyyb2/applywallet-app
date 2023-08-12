@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-import { Flex } from "app/components/ui/isolated/common";
+import { Flex, Typography } from "app/components/ui/isolated/common";
 import { Button } from "app/components/ui/isolated/wrapped";
 
 import { CareerCardActions } from "../CareerCard/components/CareerCardActions";
@@ -9,17 +9,21 @@ const CareerCardMini = () => {
   return (
     <Flex
       direction="column"
-      className="card prose gap-[1px] overflow-hidden rounded-lg prose-h3:m-0"
+      className="card gap-[1px] overflow-hidden rounded-lg"
     >
-      <div className="grid  grid-cols-[90%,10%] rounded-none bg-base-100">
-        <h3 className="px-6 pt-2">yellow.ai</h3>
+      <div className="grid grid-cols-[90%,10%] rounded-none bg-base-100">
+        <Flex className="p-2 px-6" align="center">
+          <Typography variant="subtitle1" className="line-clamp-1">
+            This is a very big company name so that we can test line clamp
+          </Typography>
+        </Flex>
         <Flex justify="center" align="center">
           <CareerCardActions />
         </Flex>
       </div>
       <div
         className={clsx(
-          "/ grid grid-cols-[repeat(auto-fit,minmax(120px,1fr))] gap-[1px]",
+          "grid grid-cols-[repeat(auto-fit,minmax(120px,1fr))] gap-[1px]",
           "[&>button]:rounded-none [&>button]:bg-base-100",
         )}
       >

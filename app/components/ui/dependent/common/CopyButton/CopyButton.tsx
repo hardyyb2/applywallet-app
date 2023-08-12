@@ -50,7 +50,7 @@ const CopyButton = (props: CopyButtonProps) => {
       action={
         <Button
           size="sm"
-          className="tooltip prose flex gap-1 text-secondary-content"
+          className="tooltip flex gap-1 text-secondary-content"
           {...conditionalButtonProps}
         >
           {copyButtonIcons?.[buttonState]}
