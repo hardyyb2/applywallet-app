@@ -34,7 +34,7 @@ const CareerCard = ({ career }: CareerCardProps) => {
           </Typography>
         </div>
 
-        <h3>{career.role.name}</h3>
+        <Typography variant="subtitle1">{career.role.name}</Typography>
         <div>
           <Flex align="center" justify="space-between">
             <Typography variant="subtitle2" className="!font-light underline">
@@ -55,7 +55,7 @@ const CareerCard = ({ career }: CareerCardProps) => {
             <CopyButton text={career.job.description} />
           </Flex>
           <strong>
-            <Typography variant="body1" className="mb-5 mt-1">
+            <Typography variant="body1" className="mb-5 mt-1 !font-semibold">
               {career.job.description}
             </Typography>
           </strong>
