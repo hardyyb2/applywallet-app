@@ -58,14 +58,14 @@ const CareerSettingsModal = () => {
           <Dialog.Overlay
             className={clsx(
               "fixed inset-0 z-[40] h-full w-full overflow-y-hidden bg-primary bg-opacity-80 backdrop-blur",
-              styles.dialog__overlay,
+              styles.dialogOverlay,
             )}
           />
           <Dialog.Content
             ref={contentRef}
             className={clsx(
               "fixed right-0 top-0 z-50 h-full w-3/5 overflow-y-auto bg-base-100",
-              styles.dialog__content,
+              styles.dialogContent,
             )}
           >
             <Flex className="sticky left-0 top-0 gap-4 bg-base-100 p-4">
