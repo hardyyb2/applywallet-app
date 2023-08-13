@@ -57,23 +57,23 @@ const AddCareerForm = () => {
           <FormControl
             label="company name"
             htmlFor="company.name"
-            error={errors?.company?.name?.message}
+            error={errors?.company_name?.message}
           >
             <FormControl.Input
               autoFocus
               placeholder="e.g. google"
-              {...register("company.name")}
+              {...register("company_name")}
             />
           </FormControl>
 
           <FormControl
             label="company description"
             htmlFor="company.description"
-            error={errors?.company?.description?.message}
+            error={errors?.company_description?.message}
           >
             <FormControl.Textarea
               placeholder="e.g. google is a multinational technology company that specializes in internet-related services and products"
-              {...register("company.description")}
+              {...register("company_description")}
             />
           </FormControl>
         </div>
@@ -84,22 +84,22 @@ const AddCareerForm = () => {
           <FormControl
             label="designation"
             htmlFor="role.name"
-            error={errors?.role?.name?.message}
+            error={errors?.role_name?.message}
           >
             <FormControl.Input
               placeholder="e.g. sde-1 (ui)"
-              {...register("role.name")}
+              {...register("role_name")}
             />
           </FormControl>
 
           <FormControl
             label="role responsibilities"
-            error={errors?.role?.description?.message}
+            error={errors?.role_description?.message}
             htmlFor="role.description"
           >
             <FormControl.Textarea
               placeholder="e.g. responsible for developing and maintaining user interfaces for web and mobile applications."
-              {...register("role.description")}
+              {...register("role_description")}
             />
           </FormControl>
         </div>
@@ -110,11 +110,11 @@ const AddCareerForm = () => {
           <FormControl
             htmlFor="job.description"
             label="job achievements"
-            error={errors?.job?.description?.message}
+            error={errors?.job_description?.message}
           >
             <FormControl.Textarea
               placeholder="e.g. successfully delivering high-quality user interfaces that meet design requirements and user needs."
-              {...register("job.description")}
+              {...register("job_description")}
             />
           </FormControl>
         </div>

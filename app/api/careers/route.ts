@@ -34,15 +34,7 @@ export async function POST(request: Request) {
         headerValues: zodKeys(careerSchema),
       });
     }
-
-    // order should be same as headerValues
-    await careerSheet.addRow([
-      body.company.name,
-      body.company.description ?? "",
-      body.role.name,
-      body.role.description ?? "",
-      body.job.description,
-    ]);
+    await careerSheet.addRow(body);
 
     return NextResponse.json("Success", {
       status: 200,
