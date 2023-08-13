@@ -8,7 +8,7 @@ import { CareerType } from "@/utils/schema-utils";
 import { CareerCardActions } from "./components/CareerCardActions";
 
 interface CareerCardProps {
-  career: CareerType;
+  career: Partial<CareerType>;
 }
 
 const CareerCard = ({ career }: CareerCardProps) => {
@@ -19,7 +19,7 @@ const CareerCard = ({ career }: CareerCardProps) => {
           <CareerCardActions />
         </div>
         <Typography variant="h4" className="card-title">
-          {career.company.name}
+          {career.company_name}
         </Typography>
 
         <div>
@@ -27,23 +27,23 @@ const CareerCard = ({ career }: CareerCardProps) => {
             <Typography variant="subtitle2" className="!font-light underline">
               company description
             </Typography>
-            <CopyButton text={career.company.description ?? ""} />
+            <CopyButton text={career.company_description ?? ""} />
           </Flex>
           <Typography variant="body1" className="mb-5 mt-1">
-            <em>{career.company.description}</em>
+            <em>{career.company_description}</em>
           </Typography>
         </div>
 
-        <Typography variant="subtitle1">{career.role.name}</Typography>
+        <Typography variant="subtitle1">{career.role_name}</Typography>
         <div>
           <Flex align="center" justify="space-between">
             <Typography variant="subtitle2" className="!font-light underline">
               role description
             </Typography>
-            <CopyButton text={career.role.description ?? ""} />
+            <CopyButton text={career.role_description ?? ""} />
           </Flex>
           <Typography variant="body1" className="mb-5 mt-1">
-            {career.role.description}
+            {career.role_description}
           </Typography>
         </div>
 
@@ -52,11 +52,11 @@ const CareerCard = ({ career }: CareerCardProps) => {
             <Typography variant="subtitle2" className="!font-light underline">
               job description
             </Typography>
-            <CopyButton text={career.job.description} />
+            <CopyButton text={career.job_description} />
           </Flex>
           <strong>
             <Typography variant="body1" className="mb-5 mt-1 !font-semibold">
-              {career.job.description}
+              {career.job_description}
             </Typography>
           </strong>
         </div>

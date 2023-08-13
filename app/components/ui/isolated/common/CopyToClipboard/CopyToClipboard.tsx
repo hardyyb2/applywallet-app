@@ -5,14 +5,14 @@ import { cloneElement, ReactElement } from "react";
 import { fallbackCopyToClipboard } from "./copyToClipboard.utils";
 
 export interface CopyToClipboardProps {
-  text: string;
+  text?: string;
   action: ReactElement;
   onSuccess?: () => void;
   onFailure?: (err: any) => void;
 }
 
 function CopyToClipboard({
-  text,
+  text = "",
   action,
   onSuccess = () => null,
   onFailure = () => null,

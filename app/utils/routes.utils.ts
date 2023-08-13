@@ -15,6 +15,7 @@ export enum ApiRoutes {
   NEW_USER = "/api/user/new",
   LINK_USER = "/api/user/link",
   ADD_CAREER = "/api/careers",
+  GET_CAREERS = "/api/careers",
 }
 
 /** Get route name with locale */
