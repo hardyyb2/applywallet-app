@@ -1,5 +1,7 @@
 "use client";
 
+import { useRouter } from "next/navigation";
+
 import { useBoolean } from "@/hooks/useBoolean";
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
@@ -9,7 +11,7 @@ import { toast } from "react-toastify";
 import { Button, FormControl } from "app/components/ui/isolated/wrapped";
 
 import { Typography } from "@/components/ui/isolated/common";
-import { ApiRoutes } from "@/utils/routes.utils";
+import { ApiRoutes, AppRoutes } from "@/utils/routes.utils";
 import { careerSchema, CareerType } from "@/utils/schema-utils";
 
 const AddCareerForm = () => {
@@ -22,6 +24,7 @@ const AddCareerForm = () => {
   } = useForm<CareerType>({
     resolver: zodResolver(careerSchema),
   });
+  const router = useRouter();
 
   // states
   const [loading, { setValue: setLoading }] = useBoolean();
@@ -35,6 +38,8 @@ const AddCareerForm = () => {
       .then(() => {
         toast.success("Save success");
         reset();
+        router.refresh();
+        router.replace(AppRoutes.CAREERS);
       })
       .catch(() => {
         toast.error("Failed to add career, please try again");

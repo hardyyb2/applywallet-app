@@ -1,5 +1,6 @@
-import { notFound, redirect } from "next/navigation";
+import { redirect } from "next/navigation";
 
+import axios from "axios";
 import clsx from "clsx";
 import { GoogleSpreadsheet } from "google-spreadsheet";
 import { getServerSession } from "next-auth";
@@ -15,13 +16,13 @@ const fetchCareers = async (): Promise<Partial<CareerType>[]> => {
     const session = await getServerSession(authOptions);
 
     if (!session || !session?.accessToken) {
-      // Create a login page
+      // TODO - Create a login page
       redirect(authOptions.pages?.signIn ?? "/login");
     }
 
     const { primarySheetId } = session.user;
 
-    // redirect to sheet link or creation page
+    //  TODO - link sheet page
     if (!primarySheetId) {
       redirect("/link-sheet");
     }
@@ -33,7 +34,7 @@ const fetchCareers = async (): Promise<Partial<CareerType>[]> => {
     const allSheets = doc.sheetsByTitle;
     let careerSheet = allSheets[SheetNames.CAREERS];
 
-    // redirect to sheet link or creation page
+    //  TODO - link sheet page
     if (!careerSheet) {
       redirect("/link-sheet");
     }
@@ -44,7 +45,11 @@ const fetchCareers = async (): Promise<Partial<CareerType>[]> => {
 
     return careerRows;
   } catch (err) {
-    notFound();
+    // TODO - redirect to link page or login page
+    if (axios.isAxiosError(err)) {
+      const status = err.response?.status;
+    }
+    return [];
   }
 };
 

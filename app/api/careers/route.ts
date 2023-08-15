@@ -1,3 +1,4 @@
+import { revalidatePath } from "next/cache";
 import { NextResponse } from "next/server";
 
 import { GoogleSpreadsheet } from "google-spreadsheet";
@@ -6,6 +7,7 @@ import { z } from "zod";
 
 import { authOptions } from "@/utils/auth-utils";
 import { CustomError } from "@/utils/error";
+import { AppRoutes } from "@/utils/routes.utils";
 import { careerSchema } from "@/utils/schema-utils";
 import { SheetNames } from "@/utils/sheet.utils";
 import { zodKeys } from "@/utils/zod.utils";
