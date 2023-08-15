@@ -18,3 +18,4 @@
 - Remove tailwind colors
 - Replace themes menu dropdown with radix ui dropdown
 - ✅ Replace clsx with custom cn function
+- Separate side menu from root layout
