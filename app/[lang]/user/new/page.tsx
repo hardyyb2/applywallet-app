@@ -31,5 +31,4 @@ const NewUser = async () => {
   );
 };
 
-// eslint-disable-next-line import/no-default-export
 export default NewUser;

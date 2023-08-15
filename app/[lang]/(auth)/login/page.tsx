@@ -4,7 +4,7 @@ import { signIn } from "next-auth/react";
 
 import { Button } from "@/components/ui/isolated/wrapped";
 
-export default function LoginPage() {
+const LoginPage = () => {
   return (
     <Button
       onClick={() => {
@@ -14,4 +14,6 @@ export default function LoginPage() {
       Sign in
     </Button>
   );
-}
+};
+
+export default LoginPage;

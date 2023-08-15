@@ -7,12 +7,11 @@ export const metadata: Metadata = {
   title: "home",
 };
 
-// eslint-disable-next-line import/no-default-export
-export default async function Home({
+const Home = async ({
   params: { lang = "en" },
 }: {
   params: { lang: Locale };
-}) {
+}) => {
   const dict = await getDictionary(lang); // en
 
   return (
@@ -22,7 +21,6 @@ export default async function Home({
       hi
     </section>
   );
-}
+};
 
-// eslint-disable-next-line import/no-default-export
-// export default Home;
+export default Home;

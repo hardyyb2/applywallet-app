@@ -32,5 +32,4 @@ const NavLayout = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-// eslint-disable-next-line import/no-default-export
 export default NavLayout;

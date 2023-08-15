@@ -11,8 +11,7 @@ export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
 }
 
-// eslint-disable-next-line import/no-default-export
-export default async function RootLayout({
+const RootLayout = ({
   params: { lang = "en" },
   children,
 }: {
@@ -20,7 +19,7 @@ export default async function RootLayout({
   params: {
     lang: Locale;
   };
-}) {
+}) => {
   return (
     <html lang={lang} suppressHydrationWarning>
       <head />
@@ -29,4 +28,6 @@ export default async function RootLayout({
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;
