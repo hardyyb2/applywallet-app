@@ -1,6 +1,6 @@
 import { forwardRef, ReactNode } from "react";
 
-import clsx from "clsx";
+import { cn } from "@/utils/styles.utils";
 
 interface BaseLayoutHeadProps {
   children: ReactNode;
@@ -9,7 +9,7 @@ interface BaseLayoutHeadProps {
 
 const BaseLayoutHead = forwardRef<HTMLDivElement, BaseLayoutHeadProps>(
   ({ className, ...rest }, ref) => {
-    const classes = clsx(className);
+    const classes = cn(className);
 
     return <header {...rest} className={classes} ref={ref} />;
   },

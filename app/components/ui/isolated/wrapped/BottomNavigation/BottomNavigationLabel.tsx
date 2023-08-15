@@ -1,6 +1,6 @@
 import { forwardRef, HTMLAttributes } from "react";
 
-import clsx from "clsx";
+import { cn } from "@/utils/styles.utils";
 
 export type BottomNavigationLabelProps = HTMLAttributes<HTMLSpanElement>;
 
@@ -9,7 +9,7 @@ const BottomNavigationLabel = forwardRef<
   BottomNavigationLabelProps
 >(({ children, className, ...props }, ref): JSX.Element => {
   return (
-    <span {...props} className={clsx(className)} ref={ref}>
+    <span {...props} className={cn(className)} ref={ref}>
       {children}
     </span>
   );

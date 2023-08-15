@@ -1,10 +1,9 @@
 import "@total-typescript/ts-reset";
 
-import clsx from "clsx";
-
 import { BaseLayout, Navigation } from "@/components/ui/dependent/common";
 import { Header } from "@/components/ui/dependent/common/Header";
 import { i18n, Locale } from "@/utils/locale-utils";
+import { cn } from "@/utils/styles.utils";
 
 import { Providers } from "./providers";
 
@@ -32,7 +31,7 @@ export default async function RootLayout({
         <BaseLayout className="h-full">
           <Providers>
             <BaseLayout.Head
-              className={clsx(
+              className={cn(
                 "fixed top-0 z-[5] h-16 w-full text-base-content lg:h-[--header-height] ",
                 "bg-opacity-60 backdrop-blur",
               )}
@@ -41,7 +40,7 @@ export default async function RootLayout({
               <Header />
             </BaseLayout.Head>
             <BaseLayout.Body
-              className={clsx(
+              className={cn(
                 "flex lg:grid lg:grid-cols-[max-content_auto]",
                 "/ overflow-hidden bg-gradient-to-br from-primary/40 to-secondary/40",
               )}

@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import { cn } from "@/utils/styles.utils";
 
 interface BottomNavBackdropProps {
   visible: boolean;
@@ -13,7 +13,7 @@ const BottomNavBackdrop = ({
 }: BottomNavBackdropProps) => {
   return (
     <div
-      className={clsx(
+      className={cn(
         "fixed inset-0 h-full w-full overflow-y-auto bg-primary bg-opacity-80 backdrop-blur",
         visible ? "block" : "hidden",
         className,

@@ -1,13 +1,13 @@
 import { redirect } from "next/navigation";
 
 import axios from "axios";
-import clsx from "clsx";
 import { GoogleSpreadsheet } from "google-spreadsheet";
 import { getServerSession } from "next-auth";
 
 import { authOptions } from "@/utils/auth-utils";
 import { CareerType } from "@/utils/schema-utils";
 import { SheetNames } from "@/utils/sheet.utils";
+import { cn } from "@/utils/styles.utils";
 
 import { CareerCard } from "./CareerCard";
 
@@ -58,7 +58,7 @@ const CareerList = async () => {
 
   return (
     <div
-      className={clsx(
+      className={cn(
         "grid w-full gap-8",
         "grid-cols-[repeat(auto-fill,minmax(256px,1fr))] md:grid-cols-[repeat(auto-fill,minmax(400px,1fr))] lg:grid-cols-[repeat(auto-fill,minmax(480px,1fr))]",
       )}

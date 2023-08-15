@@ -4,12 +4,13 @@ import { Fragment } from "react";
 import { usePathname } from "next/navigation";
 
 import { ConditionalMatch } from "@dx-kit/react-conditional-match";
-import clsx from "clsx";
 import { AnimatePresence, m } from "framer-motion";
 
 import { Flex } from "app/components/ui/isolated/common";
 import { BottomNavigation } from "app/components/ui/isolated/wrapped";
 import { useBoolean } from "app/hooks/useBoolean";
+
+import { cn } from "@/utils/styles.utils";
 
 import { NavigationMenu } from "../components/NavigationMenu";
 import { BottomNavBackdrop } from "./components/BottomNavBackdrop";
@@ -37,7 +38,7 @@ const BottomNav = ({ className = "" }: BottomNavProps) => {
         animate={{
           height: showFullBottomNav ? "66%" : "4rem",
         }}
-        className={clsx(
+        className={cn(
           "rounded-box z-20 mx-auto mb-4 w-[96%] overflow-hidden bg-opacity-60 backdrop-blur",
           className,
         )}

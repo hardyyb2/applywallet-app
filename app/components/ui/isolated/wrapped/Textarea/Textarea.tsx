@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 
-import clsx from "clsx";
+import { cn } from "@/utils/styles.utils";
 
 import { TextareaColorsType } from "./Textarea.types";
 
@@ -18,7 +18,7 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
     { bordered = true, borderOffset = true, color, className, ...props },
     ref,
   ): JSX.Element => {
-    const classes = clsx(
+    const classes = cn(
       "textarea",
       {
         "textarea-primary": color === "primary",

@@ -1,6 +1,6 @@
 import React, { forwardRef, ReactElement } from "react";
 
-import clsx from "clsx";
+import { cn } from "@/utils/styles.utils";
 
 import { BreadcrumbsItem, BreadcrumbsItemProps } from "./BreadcrumbsItem";
 
@@ -17,7 +17,7 @@ const Breadcrumbs = forwardRef<HTMLDivElement, BreadcrumbsProps>(
     { children, className, innerProps, innerRef, ...props },
     ref,
   ): JSX.Element => {
-    const classes = clsx("breadcrumbs text-sm", className);
+    const classes = cn("breadcrumbs text-sm", className);
 
     return (
       <div

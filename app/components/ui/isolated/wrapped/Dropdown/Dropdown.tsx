@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 
-import clsx from "clsx";
+import { cn } from "@/utils/styles.utils";
 
 import { DropdownItem } from "./components/DropdownItem";
 import { DropdownMenu } from "./components/DropdownMenu";
@@ -23,7 +23,7 @@ const Dropdown = forwardRef<HTMLDivElement, DropdownProps>(
         role="listbox"
         {...props}
         ref={ref}
-        className={clsx(
+        className={cn(
           "dropdown",
           {
             "dropdown-left": horizontal === "left",

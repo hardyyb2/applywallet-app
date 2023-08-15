@@ -1,6 +1,6 @@
 import { forwardRef, ReactNode } from "react";
 
-import clsx from "clsx";
+import { cn } from "@/utils/styles.utils";
 
 import { BaseLayoutBody } from "./components/BaseLayoutBody";
 import { BaseLayoutHead } from "./components/BaseLayoutHead";
@@ -12,7 +12,7 @@ export interface BaseLayoutProps {
 
 const BaseLayout = forwardRef<HTMLDivElement, BaseLayoutProps>(
   ({ children, className = "", ...rest }, ref) => {
-    const classes = clsx("flex flex-col", className);
+    const classes = cn("flex flex-col", className);
 
     return (
       <div {...rest} className={classes} ref={ref}>

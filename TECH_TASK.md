@@ -17,3 +17,4 @@
 - Common response data object
 - Remove tailwind colors
 - Replace themes menu dropdown with radix ui dropdown
+- ✅ Replace clsx with custom cn function

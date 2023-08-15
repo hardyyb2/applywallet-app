@@ -1,6 +1,6 @@
 import { ComponentType, forwardRef, PropsWithChildren, ReactNode } from "react";
 
-import clsx from "clsx";
+import { cn } from "@/utils/styles.utils";
 
 import {
   FlexAlignType,
@@ -38,7 +38,7 @@ const Flex = forwardRef<
     return (
       <Component
         ref={ref}
-        className={clsx(
+        className={cn(
           "flex",
           {
             "flex-row": direction === "row",

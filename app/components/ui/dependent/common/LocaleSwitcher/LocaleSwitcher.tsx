@@ -3,12 +3,12 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import clsx from "clsx";
-
 import { Button, Popover } from "app/components/ui/isolated/wrapped";
 import { languageOptions } from "app/utils/locale-utils/language-options";
 
 import { CaretDown, LanguageIcon } from "public/images/icons";
+
+import { cn } from "@/utils/styles.utils";
 
 import { redirectedPathName } from "./localeSwitcher.utils";
 
@@ -40,7 +40,7 @@ const LocaleSwitcher = () => {
             return (
               <li
                 key={value}
-                className={clsx(
+                className={cn(
                   "rounded-lg bg-base-100 outline-offset-2 [&_a]:w-max [&_a]:p-0",
                   activeLocale === value && "/ bg-primary text-primary-content",
                 )}

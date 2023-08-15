@@ -1,11 +1,11 @@
 "use client";
 
-import clsx from "clsx";
-
 import { Flex } from "app/components/ui/isolated/common";
 import { Button, Popover } from "app/components/ui/isolated/wrapped";
 
 import { BinIcon, EllipsisVIcon, PenIcon } from "public/images/icons";
+
+import { cn } from "@/utils/styles.utils";
 
 const CareerCardActions = () => {
   return (

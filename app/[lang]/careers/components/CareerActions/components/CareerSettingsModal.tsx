@@ -3,8 +3,6 @@
 import { useRef, useState } from "react";
 import Link from "next/link";
 
-import clsx from "clsx";
-
 import { Flex } from "app/components/ui/isolated/common";
 import { Button, Dialog } from "app/components/ui/isolated/wrapped";
 
@@ -13,6 +11,8 @@ import {
   MaximizeLeft,
   SettingsIcon,
 } from "public/images/icons";
+
+import { cn } from "@/utils/styles.utils";
 
 import { CareerSettings } from "../../CareerSettings";
 import styles from "./careerSettingsModal.module.scss";
@@ -56,14 +56,14 @@ const CareerSettingsModal = () => {
 
         <Dialog.Portal>
           <Dialog.Overlay
-            className={clsx(
+            className={cn(
               "fixed inset-0 z-[40] h-full w-full overflow-y-hidden bg-primary bg-opacity-80 backdrop-blur",
               styles.dialogOverlay,
             )}
           />
           <Dialog.Content
             ref={contentRef}
-            className={clsx(
+            className={cn(
               "fixed right-0 top-0 z-50 h-full w-3/5 overflow-y-auto bg-base-100",
               styles.dialogContent,
             )}

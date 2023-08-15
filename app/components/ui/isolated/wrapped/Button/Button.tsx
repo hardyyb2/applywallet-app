@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes, forwardRef, ReactNode } from "react";
 
-import clsx from "clsx";
+import { cn } from "@/utils/styles.utils";
 
 import {
   ButtonColorsType,
@@ -47,7 +47,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     },
     ref,
   ): JSX.Element => {
-    const classes = clsx(
+    const classes = cn(
       "btn",
       ((startIcon && !loading) || endIcon) && "gap-2",
       {

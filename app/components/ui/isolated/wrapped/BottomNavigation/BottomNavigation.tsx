@@ -1,6 +1,6 @@
 import { forwardRef, HTMLAttributes } from "react";
 
-import clsx from "clsx";
+import { cn } from "@/utils/styles.utils";
 
 import { BottomNavigationSizeTypes } from "./bottomNavigation.types";
 import { BottomNavigationLabel } from "./BottomNavigationLabel";
@@ -14,7 +14,7 @@ const BottomNavigation = forwardRef<HTMLDivElement, BottomNavigationProps>(
     return (
       <div
         {...props}
-        className={clsx(
+        className={cn(
           "btm-nav",
           {
             "btm-nav-xs": size === "xs",

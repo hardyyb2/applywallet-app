@@ -1,7 +1,7 @@
-import clsx from "clsx";
-
 import { Flex, Typography } from "app/components/ui/isolated/common";
 import { Button } from "app/components/ui/isolated/wrapped";
+
+import { cn } from "@/utils/styles.utils";
 
 import { CareerCardActions } from "../CareerCard/components/CareerCardActions";
 
@@ -22,7 +22,7 @@ const CareerCardMini = () => {
         </Flex>
       </div>
       <div
-        className={clsx(
+        className={cn(
           "grid grid-cols-[repeat(auto-fit,minmax(120px,1fr))] gap-[1px]",
           "[&>button]:rounded-none [&>button]:bg-base-100",
         )}

@@ -1,9 +1,9 @@
-import clsx from "clsx";
-
 import { Flex } from "app/components/ui/isolated/common";
 import { Button, Dropdown } from "app/components/ui/isolated/wrapped";
 
 import { CaretDown, ThemeIcon } from "public/images/icons";
+
+import { cn } from "@/utils/styles.utils";
 
 import { ThemesMenuItemColors } from "./components/ThemesMenuItemColors";
 import { selectableThemes } from "./themesMenu.utils";
@@ -26,7 +26,7 @@ const ThemesMenu = () => {
           <Dropdown.Item
             tabIndex={0}
             key={value}
-            className={clsx(
+            className={cn(
               "overflow-hidden rounded-lg bg-base-100",
               "outline-offset-2 outline-base-content",
             )}

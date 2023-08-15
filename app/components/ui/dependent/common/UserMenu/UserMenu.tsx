@@ -4,11 +4,11 @@ import React from "react";
 import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 
-import clsx from "clsx";
-
 import { Flex } from "app/components/ui/isolated/common";
 import { Avatar, Button, Popover } from "app/components/ui/isolated/wrapped";
 import { getInitials } from "app/utils/string.utils";
+
+import { cn } from "@/utils/styles.utils";
 
 const UserMenu = () => {
   const { data: session } = useSession();
@@ -55,9 +55,7 @@ const UserMenu = () => {
       <Popover.Content collisionPadding={8}>
         <ul role="listbox" className="menu gap-2 rounded-xl bg-base-100 p-2">
           <li
-            className={clsx(
-              "rounded-lg outline-offset-2 [&_a]:w-max [&_a]:p-0",
-            )}
+            className={cn("rounded-lg outline-offset-2 [&_a]:w-max [&_a]:p-0")}
             role="listitem"
           >
             <Button

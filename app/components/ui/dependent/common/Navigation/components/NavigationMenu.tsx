@@ -2,10 +2,10 @@ import { Fragment } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import clsx from "clsx";
-
 import { Flex, Typography } from "app/components/ui/isolated/common";
 import { getLinkWithLocale } from "app/utils/routes.utils";
+
+import { cn } from "@/utils/styles.utils";
 
 import { groupedNavItemsEntries } from "../navigation.utils";
 
@@ -26,7 +26,7 @@ const NavigationMenu = ({
     <Flex
       component="ul"
       wrap="nowrap"
-      className={clsx(
+      className={cn(
         "menu-compact menu  max-w-none",
         "h-full space-y-2 overflow-y-auto px-2",
         className,
@@ -53,7 +53,7 @@ const NavigationMenu = ({
                 <li key={item.key ?? itemLinkWithLocale}>
                   <Link
                     href={itemLinkWithLocale}
-                    className={clsx("h-9 py-2 ", {
+                    className={cn("h-9 py-2 ", {
                       "active text-primary-content": active,
                     })}
                     onClick={onNavItemClick}

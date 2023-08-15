@@ -1,6 +1,6 @@
 import { ComponentType, forwardRef } from "react";
 
-import clsx from "clsx";
+import { cn } from "@/utils/styles.utils";
 
 import styles from "./typography.module.scss";
 import {
@@ -40,7 +40,7 @@ const Typography = forwardRef<
     return (
       <Component
         ref={ref}
-        className={clsx(
+        className={cn(
           styles[variant],
           {
             inline: display === "inline",

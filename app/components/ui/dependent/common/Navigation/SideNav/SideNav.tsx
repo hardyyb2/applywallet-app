@@ -1,9 +1,10 @@
 "use client";
 
-import clsx from "clsx";
 import { m } from "framer-motion";
 
 import { useBoolean } from "app/hooks/useBoolean";
+
+import { cn } from "@/utils/styles.utils";
 
 import { NavigationMenu } from "../components/NavigationMenu";
 import { SideNavBrand } from "./components/SideNavBrand";
@@ -16,7 +17,7 @@ const SideNav = () => {
       animate={{
         width: navOpen ? 200 : 66,
       }}
-      className={clsx(
+      className={cn(
         "grid h-[96%] grid-rows-[auto_1fr_auto]",
         "rounded-box my-auto ml-4 bg-base-200",
       )}

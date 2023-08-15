@@ -2,10 +2,11 @@
 
 import { ReactNode, useEffect } from "react";
 
-import clsx from "clsx";
 import { themeChange } from "theme-change";
 
 import { Flex, Typography } from "app/components/ui/isolated/common";
+
+import { cn } from "@/utils/styles.utils";
 
 const HeaderClient = ({ children }: { children?: ReactNode }) => {
   useEffect(() => {
@@ -16,7 +17,7 @@ const HeaderClient = ({ children }: { children?: ReactNode }) => {
     <Flex
       align="center"
       justify="space-between"
-      className={clsx("h-full w-full px-4 lg:px-10")}
+      className={cn("h-full w-full px-4 lg:px-10")}
     >
       <div className="inline-flex gap-1 text-lg lowercase text-primary">
         <Typography>hardik</Typography>

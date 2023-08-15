@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 
-import clsx from "clsx";
+import { cn } from "@/utils/styles.utils";
 
 import { InputColorsType, InputSizeTypes } from "./Input.types";
 
@@ -32,7 +32,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       <input
         ref={ref}
         size={htmlSize}
-        className={clsx(
+        className={cn(
           "input",
           {
             "input-lg": size === "lg",

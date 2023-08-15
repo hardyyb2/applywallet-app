@@ -1,13 +1,13 @@
 import { Fragment, useMemo } from "react";
 import Link from "next/link";
 
-import clsx from "clsx";
-
 import { Flex } from "app/components/ui/isolated/common";
 import { BottomNavigation, Button } from "app/components/ui/isolated/wrapped";
 import { getLinkWithLocale } from "app/utils/routes.utils";
 
 import { HomeIcon, MenuIcon } from "public/images/icons";
+
+import { cn } from "@/utils/styles.utils";
 
 import { bottomNavDisplayOptions } from "../../navigation.utils";
 
@@ -48,7 +48,7 @@ const BottomNavBar = ({
           <Link
             href={itemLinkWithLocale}
             key={item.key ?? item.link}
-            className={clsx(active && "active text-primary", "bg-transparent")}
+            className={cn(active && "active text-primary", "bg-transparent")}
           >
             <HomeIcon />
             <BottomNavigation.Label className="text-xs lowercase">
@@ -67,8 +67,8 @@ const BottomNavBar = ({
         >
           {menuIconHasIndicator ? (
             <span
-              className={clsx(
-                "badge-primary badge badge-xs indicator-item",
+              className={cn(
+                "badge badge-primary badge-xs indicator-item",
                 "left-1/2 top-[20%]",
               )}
             />

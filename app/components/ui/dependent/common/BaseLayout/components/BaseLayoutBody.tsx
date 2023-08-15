@@ -1,6 +1,6 @@
 import { forwardRef, ReactNode } from "react";
 
-import clsx from "clsx";
+import { cn } from "@/utils/styles.utils";
 
 interface BaseLayoutBodyProps {
   children: ReactNode;
@@ -9,7 +9,7 @@ interface BaseLayoutBodyProps {
 
 const BaseLayoutBody = forwardRef<HTMLDivElement, BaseLayoutBodyProps>(
   ({ className, ...rest }, ref) => {
-    const classes = clsx("h-full flex-1", className);
+    const classes = cn("h-full flex-1", className);
 
     return <main {...rest} className={classes} ref={ref} />;
   },

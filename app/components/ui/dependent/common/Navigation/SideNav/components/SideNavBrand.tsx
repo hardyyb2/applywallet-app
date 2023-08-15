@@ -1,9 +1,9 @@
 import Link from "next/link";
 
-import clsx from "clsx";
-
 import { Flex, Typography } from "app/components/ui/isolated/common";
 import { Button } from "app/components/ui/isolated/wrapped";
+
+import { cn } from "@/utils/styles.utils";
 
 interface SideNavBrandProps {
   link?: string;
@@ -23,7 +23,7 @@ const SideNavBrand = ({
       align="center"
       justify="space-between"
       direction={navOpen ? "row" : "column"}
-      className={clsx("gap-2 py-2", className)}
+      className={cn("gap-2 py-2", className)}
     >
       <Link
         href={link}
@@ -58,7 +58,7 @@ const SideNavBrand = ({
       <Button
         color="ghost"
         onClick={onToggleClick}
-        className={clsx(navOpen && "p-2")}
+        className={cn(navOpen && "p-2")}
       >
         {navOpen ? (
           <svg

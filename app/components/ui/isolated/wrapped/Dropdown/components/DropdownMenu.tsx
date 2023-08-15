@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import { cn } from "@/utils/styles.utils";
 
 export type DropdownMenuProps = React.HTMLAttributes<HTMLUListElement>;
 
@@ -7,7 +7,7 @@ const DropdownMenu = ({ className, ...props }: DropdownMenuProps) => {
     <ul
       {...props}
       tabIndex={0}
-      className={clsx(
+      className={cn(
         "dropdown-content menu rounded-box bg-base-100 p-2 shadow",
         className,
       )}
