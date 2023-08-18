@@ -1,4 +1,7 @@
 import { GoogleSpreadsheet } from "google-spreadsheet";
+import { getServerSession } from "next-auth";
+
+import { authOptions } from "./auth-utils";
 
 export enum SheetNames {
   CAREERS = "careers",
@@ -37,5 +40,43 @@ export const checkGoogleSheetValidity = async (
     return true;
   } catch (err) {
     return false;
+  }
+};
+
+export const validateUserSheet = async (): Promise<{
+  type:
+    | "session-expired"
+    | "no-sheet"
+    | "invalid-sheet"
+    | "valid-sheet"
+    | "error";
+}> => {
+  try {
+    const session = await getServerSession(authOptions);
+
+    if (!session || !session.accessToken) {
+      return { type: "session-expired" };
+    }
+
+    const { user, accessToken } = session;
+
+    if (!user?.primarySheetId) {
+      return { type: "no-sheet" };
+    }
+
+    const isValidSheet = await checkGoogleSheetValidity(
+      accessToken,
+      user.primarySheetId,
+    );
+
+    if (isValidSheet) {
+      return { type: "valid-sheet" };
+    }
+
+    return { type: "invalid-sheet" };
+  } catch (err) {
+    return {
+      type: "error",
+    };
   }
 };

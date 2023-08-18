@@ -3,17 +3,20 @@ import { i18n } from "./locale-utils";
 export enum AppRoutes {
   HOME = "",
 
+  LOGIN = "/login",
+  POST_LOGIN = "/post-login",
+
   ABOUT = "/about",
 
   CAREERS = "/careers",
   ADD_CAREER = "/careers/add",
 
-  NEW_USER = "/user/new",
+  LINK_SHEET = "/link-sheet",
 }
 
 export enum ApiRoutes {
-  NEW_USER = "/api/user/new",
-  LINK_USER = "/api/user/link",
+  CREATE_SHEET = "/api/sheet/new",
+  LINK_SHEET = "/api/sheet/link",
   ADD_CAREER = "/api/careers",
   GET_CAREERS = "/api/careers",
 }

@@ -15,7 +15,7 @@ const CreateNewSheetButton = () => {
 
   const handleCreateNewSheetClick = async () => {
     axios
-      .post(ApiRoutes.NEW_USER)
+      .post(ApiRoutes.CREATE_SHEET)
       .then(() => {
         router.replace(AppRoutes.CAREERS);
       })

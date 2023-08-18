@@ -26,7 +26,7 @@ const LinkSheetInput = () => {
   // functions
   const onSubmit: SubmitHandler<LinkSheetType> = (data) => {
     axios
-      .post(ApiRoutes.LINK_USER, data)
+      .post(ApiRoutes.LINK_SHEET, data)
       .then(() => {
         router.replace(AppRoutes.CAREERS);
       })
