@@ -6,8 +6,7 @@ import { usePathname } from "next/navigation";
 import { Button, Popover } from "app/components/ui/isolated/wrapped";
 import { languageOptions } from "app/utils/locale-utils/language-options";
 
-import { CaretDown, LanguageIcon } from "public/images/icons";
-
+import { Icons } from "@/components/ui/isolated/wrapped/Icons";
 import { cn } from "@/utils/styles.utils";
 
 import { redirectedPathName } from "./localeSwitcher.utils";
@@ -25,11 +24,11 @@ const LocaleSwitcher = () => {
           aria-label="languages"
           responsive
         >
-          <LanguageIcon className="h-4 w-4 md:h-5 md:w-5" />
-          <CaretDown className="ml-1 hidden h-3 w-3 opacity-60 sm:inline-block" />
+          <Icons.Languages className="h-4 w-4 md:h-5 md:w-5" />
+          <Icons.ChevronDown className="ml-1 hidden opacity-60 sm:inline-block" />
         </Button>
       </Popover.Trigger>
-      <Popover.Content>
+      <Popover.Content align="end">
         <ul role="listbox" className="menu gap-2 rounded-xl bg-base-100 p-2">
           {languageOptions.map(({ label, value, icon }) => {
             const { activeLocale, newRedirectPath } = redirectedPathName(

@@ -1,8 +1,7 @@
 import { Flex } from "app/components/ui/isolated/common";
 import { Button, Dropdown } from "app/components/ui/isolated/wrapped";
 
-import { CaretDown, ThemeIcon } from "public/images/icons";
-
+import { Icons } from "@/components/ui/isolated/wrapped/Icons";
 import { cn } from "@/utils/styles.utils";
 
 import { ThemesMenuItemColors } from "./components/ThemesMenuItemColors";
@@ -13,9 +12,9 @@ const ThemesMenu = () => {
     <Dropdown vertical="end">
       <Dropdown.Toggle>
         <Button color="ghost" className="gap-1" responsive aria-haspopup>
-          <ThemeIcon className="inline-block h-5 w-5 stroke-current md:h-6 md:w-6" />
+          <Icons.Palette className="inline-block h-5 w-5 stroke-current md:h-6 md:w-6" />
           <span className="hidden md:inline">theme</span>
-          <CaretDown className="ml-1 hidden h-3 w-3 fill-current opacity-60 sm:inline-block" />
+          <Icons.ChevronDown className="ml-1 hidden opacity-60 sm:inline-block" />
         </Button>
       </Dropdown.Toggle>
       <Dropdown.Menu

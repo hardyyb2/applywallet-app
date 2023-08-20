@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Flex, Typography } from "app/components/ui/isolated/common";
 import { Button } from "app/components/ui/isolated/wrapped";
 
-import { AddIcon } from "public/images/icons";
+import { Icons } from "@/components/ui/isolated/wrapped/Icons";
 
 import { CareerActions } from "./components/CareerActions/CareerActions";
 import { CareerList } from "./components/CareerList";
@@ -38,7 +38,7 @@ const Careers = async () => {
           fullWidth
           size="lg"
           className="mt-10 lg:hidden"
-          startIcon={<AddIcon />}
+          startIcon={<Icons.Plus />}
         >
           add career
         </Button>

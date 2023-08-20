@@ -1,6 +1,6 @@
 import { Fragment, ReactElement } from "react";
 
-import { CopiedIcon, CopyIcon } from "public/images/icons";
+import { Icons } from "@/components/ui/isolated/wrapped/Icons";
 
 import { CopyButtonStateTypes } from "./copyButton.types";
 
@@ -8,13 +8,13 @@ export const copyButtonIcons: { [key in CopyButtonStateTypes]: ReactElement } =
   {
     copy: (
       <Fragment>
-        <CopyIcon />
+        <Icons.Files />
         <span className="hidden lg:inline">copy</span>
       </Fragment>
     ),
     copied: (
       <Fragment>
-        <CopiedIcon />
+        <Icons.ClipboardCheck />
         <span className="hidden lg:inline">copied</span>
       </Fragment>
     ),

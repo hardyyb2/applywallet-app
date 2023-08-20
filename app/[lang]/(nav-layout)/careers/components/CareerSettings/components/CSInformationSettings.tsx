@@ -7,7 +7,7 @@ import { Reorder, useDragControls } from "framer-motion";
 import { Flex } from "app/components/ui/isolated/common";
 import { Button } from "app/components/ui/isolated/wrapped";
 
-import { EyeIcon, EyeSlashIcon, GripIcon } from "public/images/icons";
+import { Icons } from "@/components/ui/isolated/wrapped/Icons";
 
 import { CareerSettingsInfoType } from "..";
 
@@ -79,9 +79,9 @@ const CSInformationSettings = () => {
             direction="row"
             className="m-0 gap-4 rounded-xl bg-accent/5 px-4  py-2"
           >
-            <GripIcon
+            <Icons.GripHorizontal
               className="flex-shrink-0 cursor-grab text-accent active:cursor-grabbing"
-              onPointerDown={(event: PointerEvent) => dragControls.start(event)}
+              onPointerDown={(event) => dragControls.start(event)}
             />
             <span className="line-clamp-1">{item.title}</span>
             <Button
@@ -90,9 +90,9 @@ const CSInformationSettings = () => {
               className="/ ml-auto text-accent hover:bg-accent/20"
               startIcon={
                 item.hidden ? (
-                  <EyeSlashIcon className="pointer-events-none" />
+                  <Icons.EyeOff className="pointer-events-none" />
                 ) : (
-                  <EyeIcon className="pointer-events-none" />
+                  <Icons.Eye className="pointer-events-none" />
                 )
               }
             >

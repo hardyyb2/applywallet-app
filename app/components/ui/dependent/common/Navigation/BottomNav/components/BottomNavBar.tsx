@@ -5,8 +5,7 @@ import { Flex } from "app/components/ui/isolated/common";
 import { BottomNavigation, Button } from "app/components/ui/isolated/wrapped";
 import { getLinkWithLocale } from "app/utils/routes.utils";
 
-import { HomeIcon, MenuIcon } from "public/images/icons";
-
+import { Icons } from "@/components/ui/isolated/wrapped/Icons";
 import { cn } from "@/utils/styles.utils";
 
 import { bottomNavDisplayOptions } from "../../navigation.utils";
@@ -50,7 +49,7 @@ const BottomNavBar = ({
             key={item.key ?? item.link}
             className={cn(active && "active text-primary", "bg-transparent")}
           >
-            <HomeIcon />
+            <Icons.CustomHome />
             <BottomNavigation.Label className="text-xs lowercase">
               {item.label}
             </BottomNavigation.Label>
@@ -74,7 +73,7 @@ const BottomNavBar = ({
             />
           ) : null}
 
-          <MenuIcon className="h-5 w-5" />
+          <Icons.AlignJustify className="h-5 w-5" />
         </Button>
       </Flex>
     </Fragment>

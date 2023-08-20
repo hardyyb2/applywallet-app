@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Flex } from "app/components/ui/isolated/common";
 import { Button } from "app/components/ui/isolated/wrapped";
 
-import { AddIcon } from "public/images/icons";
+import { Icons } from "@/components/ui/isolated/wrapped/Icons";
 
 import { CareerSettingsModal } from "./components/CareerSettingsModal";
 
@@ -15,7 +15,7 @@ const CareerActions = () => {
           tabIndex={-1}
           color="secondary"
           responsive
-          startIcon={<AddIcon />}
+          startIcon={<Icons.Plus />}
         >
           <span className="hidden md:inline">add career</span>
         </Button>

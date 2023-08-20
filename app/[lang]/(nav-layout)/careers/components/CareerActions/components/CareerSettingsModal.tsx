@@ -6,12 +6,7 @@ import Link from "next/link";
 import { Flex } from "app/components/ui/isolated/common";
 import { Button, Dialog } from "app/components/ui/isolated/wrapped";
 
-import {
-  CaretRightDouble,
-  MaximizeLeft,
-  SettingsIcon,
-} from "public/images/icons";
-
+import { Icons } from "@/components/ui/isolated/wrapped/Icons";
 import { cn } from "@/utils/styles.utils";
 
 import { CareerSettings } from "../../CareerSettings";
@@ -34,7 +29,7 @@ const CareerSettingsModal = () => {
             variant="outline"
             color="secondary"
             responsive
-            startIcon={<SettingsIcon />}
+            startIcon={<Icons.Settings />}
             className="hidden md:flex"
           >
             <span className="hidden md:inline">settings</span>
@@ -47,7 +42,7 @@ const CareerSettingsModal = () => {
             variant="outline"
             color="secondary"
             responsive
-            startIcon={<SettingsIcon />}
+            startIcon={<Icons.Settings />}
             className="flex md:hidden"
           >
             <span className="hidden md:inline">settings</span>
@@ -73,7 +68,7 @@ const CareerSettingsModal = () => {
                 <Button
                   tabIndex={-1}
                   color="ghost"
-                  startIcon={<CaretRightDouble />}
+                  startIcon={<Icons.ChevronsRight />}
                 >
                   close
                 </Button>
@@ -83,7 +78,7 @@ const CareerSettingsModal = () => {
                 <Button
                   color="ghost"
                   className="hidden md:flex"
-                  startIcon={<MaximizeLeft />}
+                  startIcon={<Icons.Maximize />}
                 >
                   expand
                 </Button>
