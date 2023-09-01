@@ -2,8 +2,8 @@ import { NextResponse } from "next/server";
 
 import { getServerSession } from "next-auth";
 
+import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/prisma";
-import { authOptions } from "@/utils/auth-utils";
 import { CustomError } from "@/utils/error";
 import { createGoogleSheetDoc } from "@/utils/sheet.utils";
 

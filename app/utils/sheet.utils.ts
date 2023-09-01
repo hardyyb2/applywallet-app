@@ -1,7 +1,7 @@
 import { GoogleSpreadsheet } from "google-spreadsheet";
 import { getServerSession } from "next-auth";
 
-import { authOptions } from "./auth-utils";
+import { authOptions } from "@/lib/auth";
 
 export enum SheetNames {
   CAREERS = "careers",

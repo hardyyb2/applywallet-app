@@ -5,7 +5,7 @@ import { GoogleSpreadsheet } from "google-spreadsheet";
 import { getServerSession } from "next-auth";
 import { z } from "zod";
 
-import { authOptions } from "@/utils/auth-utils";
+import { authOptions } from "@/lib/auth";
 import { CustomError } from "@/utils/error";
 import { AppRoutes } from "@/utils/routes.utils";
 import { careerSchema } from "@/utils/schema-utils";

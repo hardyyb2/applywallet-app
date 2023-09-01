@@ -3,8 +3,8 @@ import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { z } from "zod";
 
+import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/prisma";
-import { authOptions } from "@/utils/auth-utils";
 import { CustomError } from "@/utils/error";
 import { getSheetIdFromLink, linkSheetFormSchema } from "@/utils/schema-utils";
 

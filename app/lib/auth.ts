@@ -5,8 +5,7 @@ import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { NextAuthOptions } from "next-auth";
 
 import { db } from "@/lib/prisma";
-
-import { envVariables } from "../env-vars.utils";
+import { envVariables } from "@/utils/env-vars.utils";
 
 const scopes: { [key in OAuthProviderType]?: string[] } = {
   google: [

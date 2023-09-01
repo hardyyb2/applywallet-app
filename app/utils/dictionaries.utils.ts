@@ -1,4 +1,4 @@
-import "server-only";
+"server-only";
 
 import type { Locale } from "./locale-utils/i18n-config";
 

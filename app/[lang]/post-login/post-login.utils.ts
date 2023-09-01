@@ -1,7 +1,7 @@
 import { getServerSession } from "next-auth";
 
+import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/prisma";
-import { authOptions } from "@/utils/auth-utils";
 import { createGoogleSheetDoc } from "@/utils/sheet.utils";
 
 export const createAndAddNewSheet = async (): Promise<{ success: boolean }> => {
