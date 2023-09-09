@@ -29,7 +29,7 @@ const NavigationMenu = ({
       wrap="nowrap"
       className={cn(
         "menu-compact menu  max-w-none",
-        "h-full space-y-2 overflow-y-auto px-2",
+        "h-full space-y-3 overflow-y-auto px-2",
         className,
       )}
     >

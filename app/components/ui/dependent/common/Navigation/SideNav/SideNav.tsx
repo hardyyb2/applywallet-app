@@ -15,7 +15,7 @@ const SideNav = () => {
   return (
     <m.div
       animate={{
-        width: navOpen ? 200 : 66,
+        width: navOpen ? 200 : 72,
       }}
       className={cn(
         "grid h-[96%] grid-rows-[auto_1fr_auto]",
