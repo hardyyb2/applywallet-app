@@ -54,7 +54,7 @@ const NavigationMenu = ({
                 <li key={item.key ?? itemLinkWithLocale}>
                   <Link
                     href={itemLinkWithLocale}
-                    className={cn("h-9 py-2 ", {
+                    className={cn("py-2 ", {
                       "active text-primary-content": active,
                     })}
                     onClick={onNavItemClick}
