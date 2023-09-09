@@ -2,12 +2,13 @@ import React from "react";
 
 import { ConditionalMatch } from "@dx-kit/react-conditional-match";
 
+import { getCurrentUser } from "app/utils/session.utils";
+
 import {
   LocaleSwitcher,
   ThemesMenu,
   UserMenu,
-} from "app/components/ui/dependent/common";
-import { getCurrentUser } from "app/utils/session.utils";
+} from "@/components/ui/dependent";
 
 import { HeaderClient } from "./components/HeaderClient";
 import { LoginButton } from "./components/LoginButton";

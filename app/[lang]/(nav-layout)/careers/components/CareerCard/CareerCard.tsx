@@ -1,6 +1,5 @@
-import { CopyButton } from "app/components/ui/dependent/common";
-import { Flex, Typography } from "app/components/ui/isolated/common";
-
+import { CopyButton } from "@/components/ui/dependent";
+import { Flex, Typography } from "@/components/ui/isolated/common";
 import { CareerType } from "@/utils/schema-utils";
 import { cn } from "@/utils/styles.utils";
 

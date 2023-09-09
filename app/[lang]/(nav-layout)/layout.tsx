@@ -1,7 +1,4 @@
-import React from "react";
-
-import { BaseLayout, Navigation } from "@/components/ui/dependent/common";
-import { Header } from "@/components/ui/dependent/common/Header";
+import { BaseLayout, Header, Navigation } from "@/components/ui/dependent";
 import { cn } from "@/utils/styles.utils";
 
 const NavLayout = ({ children }: { children: React.ReactNode }) => {
