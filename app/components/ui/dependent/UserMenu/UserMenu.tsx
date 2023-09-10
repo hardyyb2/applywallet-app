@@ -34,8 +34,8 @@ const UserMenu = () => {
               <Image
                 className="btn-ghost btn border-none object-contain p-0"
                 src={userImage}
-                width={20}
-                height={20}
+                width={80}
+                height={80}
                 alt={userName}
                 referrerPolicy="no-referrer"
               />
