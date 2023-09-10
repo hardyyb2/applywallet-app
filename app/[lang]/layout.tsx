@@ -6,6 +6,7 @@ import { Providers } from "./providers";
 
 import "@/styles/globals.scss";
 import "@/styles/overrides/toast.scss";
+import "@/styles/overrides/daisyui.scss";
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));

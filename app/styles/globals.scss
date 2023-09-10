@@ -23,13 +23,3 @@ body {
   min-height: 100svh;
   margin: 0;
 }
-
-/* Over ride daisyui styles */
-.btn {
-  --btn-text-case: lowercase;
-}
-
-input::placeholder,
-textarea::placeholder {
-  opacity: 0.4;
-}
