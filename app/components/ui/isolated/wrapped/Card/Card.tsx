@@ -5,13 +5,13 @@ import { cn } from "@/utils/styles.utils";
 import { CardSizeTypes } from "./card.types";
 import { CardActionsProps as ActionProps, CardActions } from "./CardActions";
 import { CardBodyProps as BodyProps, CardBody } from "./CardBody";
-import { CardImage, CardImageProps as ImageProps } from "./CardImage";
+import { CardFigure, CardFigureProps as FigureProps } from "./CardFigure";
 import { CardTitle, CardTitleProps as TitleProps } from "./CardTitle";
 
 export type CardActionsProps = ActionProps;
 export type CardBodyProps = BodyProps;
 export type CardTitleProps = TitleProps;
-export type CardImageProps = ImageProps;
+export type CardFigureProps = FigureProps;
 
 export type CardProps = HTMLAttributes<HTMLDivElement> & {
   bordered?: boolean;
@@ -73,7 +73,7 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
       }),
     );
 
-    return <div aria-label="Card" {...props} className={classes} ref={ref} />;
+    return <div aria-label="card" {...props} className={classes} ref={ref} />;
   },
 );
 
@@ -83,7 +83,7 @@ const CardCompound = Object.assign(Card, {
   Actions: CardActions,
   Body: CardBody,
   Title: CardTitle,
-  Image: CardImage,
+  Figure: CardFigure,
 });
 
 export { CardCompound as Card };

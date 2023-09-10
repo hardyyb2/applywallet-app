@@ -10,3 +10,4 @@ export * from "./FormControl";
 export * from "./Input";
 export * from "./Popover";
 export * from "./Textarea";
+export * from "./Divider";
