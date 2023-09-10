@@ -9,6 +9,7 @@ import {
   Files,
   GripHorizontal,
   Languages,
+  Lock,
   LucideProps,
   Maximize,
   MoreVertical,
@@ -41,6 +42,7 @@ const Icons = {
   Maximize,
   Equal,
   GripHorizontal,
+  Lock,
   CustomHome: ({ ...props }: LucideProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
