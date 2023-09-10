@@ -33,9 +33,8 @@ const Careers = async () => {
       </Suspense>
 
       <Card side="md" className="max-w-lg bg-base-200 text-base-content">
-        <Card.Image>hi</Card.Image>
         <Card.Body>
-          <Card.Title tag="h2">Shoes!</Card.Title>
+          <Card.Title>Shoes!</Card.Title>
           <p>If a dog chews shoes whose shoes does he choose?</p>
           <Card.Actions className="justify-end">
             <Button color="primary">Buy Now</Button>
