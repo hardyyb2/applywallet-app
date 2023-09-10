@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Flex, Typography } from "app/components/ui/isolated/common";
 import { Button, Card } from "app/components/ui/isolated/wrapped";
 
+import { LoginCard } from "@/components/ui/dependent/LoginCard";
 import { Icons } from "@/components/ui/isolated/wrapped/Icons";
 
 import { CareerActions } from "./components/CareerActions/CareerActions";
@@ -32,15 +33,10 @@ const Careers = async () => {
         <CareerList />
       </Suspense>
 
-      <Card side="md" className="max-w-lg bg-base-200 text-base-content">
-        <Card.Body>
-          <Card.Title>Shoes!</Card.Title>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
-          <Card.Actions className="justify-end">
-            <Button color="primary">Buy Now</Button>
-          </Card.Actions>
-        </Card.Body>
-      </Card>
+      <Flex justify="center">
+        <LoginCard />
+      </Flex>
+
       <Link href="/careers/add">
         <Button
           color="secondary"
