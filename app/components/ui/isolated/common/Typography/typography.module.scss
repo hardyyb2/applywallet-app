@@ -1,26 +1,26 @@
 .h1 {
-  font-size: clamp(2.5rem, 1.125rem + 3.5vw, 3.5em);
+  font-size: clamp(2.8rem, calc(2.44rem + 1.78vw), 4.58rem);
   font-weight: 600;
   line-height: 1.1143;
   letter-spacing: -0.2px;
 }
 
 .h2 {
-  font-size: clamp(1.5rem, 0.9643rem + 1.4286vw, 2.25rem);
+  font-size: clamp(2.33rem, calc(2.07rem + 1.33vw), 3.66rem);
   font-weight: 600;
   line-height: 1.2222;
   letter-spacing: -0.2px;
 }
 
 .h3 {
-  font-size: 2.25rem;
+  font-size: clamp(1.94rem, calc(1.75rem + 0.99vw), 2.93rem);
   font-weight: 400;
   line-height: 1.2222;
   letter-spacing: 0.2px;
 }
 
 .h4 {
-  font-size: 1.875rem;
+  font-size: clamp(1.62rem, calc(1.48rem + 0.72vw), 2.34rem);
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0.2px;

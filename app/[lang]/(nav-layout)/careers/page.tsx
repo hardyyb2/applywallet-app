@@ -20,7 +20,7 @@ const Careers = async () => {
     <div className="px-6 py-4 lg:px-10">
       <Flex justify="space-between" align="center" className="mb-10 gap-4">
         <Flex direction="column" className="">
-          <Typography variant="h2">careers</Typography>
+          <Typography variant="h3">careers</Typography>
           <Typography variant="subtitle2">
             details of your previous jobs
           </Typography>
