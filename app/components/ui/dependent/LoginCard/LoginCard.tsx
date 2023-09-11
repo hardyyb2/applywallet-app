@@ -9,7 +9,7 @@ const LoginCard = () => {
         <Card.Title variant="h4" align="center">
           Welcome to applywallet!
         </Card.Title>
-        <Typography variant="body1">
+        <Typography variant="body1" align="center">
           sign in to access your interview toolkit
         </Typography>
 
@@ -18,8 +18,8 @@ const LoginCard = () => {
         </Card.Actions>
         <Divider>or</Divider>
         <Typography variant="subtitle2" align="center">
-          not ready to log in yet? no worries! you can still browse our <br />
-          public pages.
+          not ready to log in yet? no worries! you can still browse our public
+          pages
         </Typography>
         <Card.Actions className="mt-4 w-full justify-center">
           <Button color="secondary" variant="outline" fullWidth>
