@@ -49,6 +49,7 @@ const NavigationMenu = ({
               });
 
               const active = itemLinkWithLocale === pathName;
+              const ItemIcon = item.icon;
 
               return (
                 <li key={item.key ?? itemLinkWithLocale}>
@@ -59,7 +60,7 @@ const NavigationMenu = ({
                     })}
                     onClick={onNavItemClick}
                   >
-                    <Icons.CustomHome />
+                    <ItemIcon />
                     {navOpen ? (
                       <Typography
                         key={item.key}

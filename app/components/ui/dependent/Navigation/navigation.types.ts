@@ -1,3 +1,5 @@
+import { LucideIcon } from "lucide-react";
+
 import { AppRoutes } from "app/utils/routes.utils";
 
 export enum NavigationCategories {
@@ -11,6 +13,7 @@ export enum NavigationCategories {
 export type NavItemType = {
   label: string;
   link: AppRoutes;
+  icon: LucideIcon;
   key?: string;
   category?: NavigationCategories;
 };

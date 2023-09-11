@@ -1,5 +1,6 @@
 import { AppRoutes } from "app/utils/routes.utils";
 
+import { Icons } from "../../isolated/wrapped/Icons";
 import { NavigationCategories, NavItemType } from "./navigation.types";
 
 export const navItems: NavItemType[] = [
@@ -7,16 +8,19 @@ export const navItems: NavItemType[] = [
     label: "home",
     link: AppRoutes.HOME,
     category: NavigationCategories.GENERAL,
+    icon: Icons.CustomHome,
   },
   {
     label: "careers",
     link: AppRoutes.CAREERS,
     category: NavigationCategories.GENERAL,
+    icon: Icons.Briefcase,
   },
   {
     label: "about",
     link: AppRoutes.ABOUT,
     category: NavigationCategories.GENERAL,
+    icon: Icons.CustomHome,
   },
 ];
 
