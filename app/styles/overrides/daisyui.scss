@@ -1,6 +1,11 @@
-/* Over ride daisyui styles */
+/* stylelint-disable selector-class-pattern */
+
 .btn {
   --btn-text-case: lowercase;
+}
+
+.card-body {
+  @apply p-s-m;
 }
 
 input::placeholder,
