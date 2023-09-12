@@ -1,74 +1,74 @@
 .h1 {
-  font-size: clamp(2.8rem, calc(2.44rem + 1.78vw), 4.58rem);
+  font-size: theme("fontSize.h1");
   font-weight: 600;
   line-height: 1.1143;
   letter-spacing: -0.2px;
 }
 
 .h2 {
-  font-size: clamp(2.33rem, calc(2.07rem + 1.33vw), 3.66rem);
+  font-size: theme("fontSize.h2");
   font-weight: 600;
   line-height: 1.2222;
   letter-spacing: -0.2px;
 }
 
 .h3 {
-  font-size: clamp(1.94rem, calc(1.75rem + 0.99vw), 2.93rem);
+  font-size: theme("fontSize.h3");
   font-weight: 400;
   line-height: 1.2222;
   letter-spacing: 0.2px;
 }
 
 .h4 {
-  font-size: clamp(1.62rem, calc(1.48rem + 0.72vw), 2.34rem);
+  font-size: theme("fontSize.h4");
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0.2px;
 }
 
 .h5 {
-  font-size: clamp(1.35rem, calc(1.25rem + 0.53vw), 1.88rem);
+  font-size: theme("fontSize.h5");
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0.1px;
 }
 
 .h6 {
-  font-size: 1.25rem;
+  font-size: theme("fontSize.h6");
   font-weight: 500;
   line-height: 1.5;
 }
 
 .subtitle1 {
-  font-size: 1.125rem;
+  font-size: theme("fontSize.subtitle1");
   font-weight: 500;
   line-height: 1.3333;
   letter-spacing: 0;
 }
 
 .subtitle2 {
-  font-size: 0.875rem;
+  font-size: theme("fontSize.subtitle2");
   font-weight: 500;
   line-height: 1.57;
   letter-spacing: 0;
 }
 
 .body1 {
-  font-size: clamp(1.13rem, calc(1.05rem + 0.38vw), 1.5rem);
+  font-size: theme("fontSize.body1");
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0;
 }
 
 .body2 {
-  font-size: clamp(0.94rem, calc(0.89rem + 0.26vw), 1.2rem);
+  font-size: theme("fontSize.body2");
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0;
 }
 
 .caption {
-  font-size: clamp(0.78rem, calc(0.75rem + 0.18vw), 0.96rem);
+  font-size: theme("fontSize.caption");
   font-weight: 700;
   line-height: 1.5;
   letter-spacing: 0;

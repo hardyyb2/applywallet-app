@@ -4,6 +4,20 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx}", // Note the addition of the `app` directory.
   ],
   theme: {
+    fontSize: {
+      h1: "clamp(2.8rem, calc(2.44rem + 1.78vw), 4.58rem)",
+      h2: "clamp(2.33rem, calc(2.07rem + 1.33vw), 3.66rem)",
+      h3: "clamp(1.94rem, calc(1.75rem + 0.99vw), 2.93rem)",
+      h4: "clamp(1.62rem, calc(1.48rem + 0.72vw), 2.34rem)",
+      h5: "clamp(1.35rem, calc(1.25rem + 0.53vw), 1.88rem)",
+      h6: "1.25rem",
+      body1: "clamp(1.13rem, calc(1.05rem + 0.38vw), 1.5rem)",
+      body2: "clamp(0.94rem, calc(0.89rem + 0.26vw), 1.2rem)",
+      subtitle1: "1.125rem",
+      subtitle2: "0.875rem",
+      caption: "clamp(0.78rem, calc(0.75rem + 0.18vw), 0.96rem)",
+    },
+
     extend: {
       spacing: {
         "3xs": "clamp(0.31rem, calc(0.30rem + 0.06vw), 0.38rem)",
