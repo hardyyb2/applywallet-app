@@ -7,8 +7,8 @@ import { AddCareerForm } from "./components/AddCareerForm";
 
 const AddCareer = () => {
   return (
-    <div className="m-4 mt-0">
-      <Breadcrumbs className="mb-2 pt-0 [&_a]:no-underline">
+    <div className="m-xs mt-0">
+      <Breadcrumbs className="mb-2xs pt-0 [&_a]:no-underline">
         <Breadcrumbs.Item>
           <Link href={AppRoutes.CAREERS}>careers</Link>
         </Breadcrumbs.Item>

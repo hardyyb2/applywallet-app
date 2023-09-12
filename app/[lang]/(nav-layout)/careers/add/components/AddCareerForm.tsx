@@ -54,8 +54,8 @@ const AddCareerForm = () => {
       noValidate
     >
       <div className="card-body  bg-base-100 [&_.form-control]:mt-2">
-        <Typography variant="h2">add career</Typography>
-        <div className="mt-8">
+        <Typography variant="h3">add career</Typography>
+        <div className="mt-s">
           <Typography variant="subtitle1" className="underline">
             company details
           </Typography>
@@ -82,7 +82,7 @@ const AddCareerForm = () => {
             />
           </FormControl>
         </div>
-        <div className="mt-8">
+        <div className="mt-s">
           <Typography variant="subtitle1" className="underline">
             role details
           </Typography>
@@ -108,7 +108,7 @@ const AddCareerForm = () => {
             />
           </FormControl>
         </div>
-        <div className="mt-8">
+        <div className="mt-s">
           <Typography variant="subtitle1" className="underline">
             job details
           </Typography>
@@ -127,7 +127,7 @@ const AddCareerForm = () => {
           type="submit"
           size="lg"
           color="primary"
-          className="mt-4"
+          className="mt-xs"
           loading={loading}
           disabled={loading}
         >

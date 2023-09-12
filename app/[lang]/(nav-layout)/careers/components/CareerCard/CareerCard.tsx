@@ -27,7 +27,7 @@ const CareerCard = ({ career }: CareerCardProps) => {
             </Typography>
             <CopyButton text={career.company_description ?? ""} />
           </Flex>
-          <Typography variant="body1" className="mb-5 mt-1">
+          <Typography variant="body1" className="mb-5 mt-3xs">
             <em>{career.company_description}</em>
           </Typography>
         </div>
@@ -40,7 +40,7 @@ const CareerCard = ({ career }: CareerCardProps) => {
             </Typography>
             <CopyButton text={career.role_description ?? ""} />
           </Flex>
-          <Typography variant="body1" className="mb-5 mt-1">
+          <Typography variant="body1" className="mb-5 mt-3xs">
             {career.role_description}
           </Typography>
         </div>
@@ -53,7 +53,7 @@ const CareerCard = ({ career }: CareerCardProps) => {
             <CopyButton text={career.job_description} />
           </Flex>
           <strong>
-            <Typography variant="body1" className="mb-5 mt-1 !font-semibold">
+            <Typography variant="body1" className="mb-5 mt-3xs !font-semibold">
               {career.job_description}
             </Typography>
           </strong>

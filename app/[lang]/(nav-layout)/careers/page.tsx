@@ -42,7 +42,7 @@ const Careers = async () => {
           color="secondary"
           fullWidth
           size="lg"
-          className="mt-10 lg:hidden"
+          className="mt-l lg:hidden"
           startIcon={<Icons.Plus />}
         >
           add career
