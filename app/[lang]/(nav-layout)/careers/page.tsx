@@ -25,9 +25,17 @@ const Careers = async () => {
   const session = await getServerSession(authOptions);
   const isLoggedIn = session && session.accessToken;
 
+  if (!isLoggedIn) {
+    return (
+      <Flex justify="center" className="p-s">
+        <LoginCard />
+      </Flex>
+    );
+  }
+
   return (
     <div className="px-6 py-4 lg:px-10">
-      <Flex justify="space-between" align="center" className="mb-10 gap-4">
+      <Flex justify="space-between" align="center" className="mb-m-l gap-4">
         <Flex direction="column">
           <Typography variant="h3">careers</Typography>
           <Typography variant="subtitle2">
@@ -35,26 +43,13 @@ const Careers = async () => {
           </Typography>
         </Flex>
 
-        <ConditionalMatch fallback={null}>
-          <Render when={isLoggedIn}>
-            <CareerActions />
-          </Render>
-        </ConditionalMatch>
+        <CareerActions />
       </Flex>
-      <ConditionalMatch
-        fallback={
-          <Flex justify="center">
-            <LoginCard />
-          </Flex>
-        }
-      >
-        <Render when={isLoggedIn}>
-          <Suspense fallback="loading...">
-            {/* @ts-expect-error Async Server Component */}
-            <CareerList />
-          </Suspense>
-        </Render>
-      </ConditionalMatch>
+
+      <Suspense fallback="loading...">
+        {/* @ts-expect-error Server Component */}
+        <CareerList />
+      </Suspense>
 
       <Link href="/careers/add">
         <Button
