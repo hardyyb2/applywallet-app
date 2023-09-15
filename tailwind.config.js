@@ -5,7 +5,7 @@ module.exports = {
   ],
   theme: {
     fontSize: {
-      h1: "clamp(2.8rem, calc(2.44rem + 1.78vw), 4.58rem)",
+      h1: "clamp(2.80rem, calc(2.44rem + 1.78vw), 4.58rem)",
       h2: "clamp(2.33rem, calc(2.07rem + 1.33vw), 3.66rem)",
       h3: "clamp(1.94rem, calc(1.75rem + 0.99vw), 2.93rem)",
       h4: "clamp(1.62rem, calc(1.48rem + 0.72vw), 2.34rem)",

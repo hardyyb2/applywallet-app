@@ -1,7 +1,7 @@
 import { Fragment, useMemo } from "react";
 import Link from "next/link";
 
-import { Flex } from "app/components/ui/isolated/common";
+import { Flex, Typography } from "app/components/ui/isolated/common";
 import { BottomNavigation, Button } from "app/components/ui/isolated/wrapped";
 import { getLinkWithLocale } from "app/utils/routes.utils";
 
@@ -50,8 +50,8 @@ const BottomNavBar = ({
             className={cn(active && "active text-primary", "bg-transparent")}
           >
             <Icons.CustomHome />
-            <BottomNavigation.Label className="text-xs lowercase">
-              {item.label}
+            <BottomNavigation.Label>
+              <Typography variant="caption">{item.label}</Typography>
             </BottomNavigation.Label>
           </Link>
         );

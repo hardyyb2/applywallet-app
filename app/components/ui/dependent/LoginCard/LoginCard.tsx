@@ -4,9 +4,9 @@ import { LCLoginButton } from "./components/LCLoginButton";
 
 const LoginCard = () => {
   return (
-    <Card side="lg" className="max-w-lg bg-base-200 text-base-content">
+    <Card side="lg" className="max-w-xl bg-base-200 text-base-content">
       <Card.Body className="items-center">
-        <Card.Title variant="h4" align="center">
+        <Card.Title variant="h3" align="center">
           Welcome to applywallet!
         </Card.Title>
         <Typography variant="body2" align="center">
