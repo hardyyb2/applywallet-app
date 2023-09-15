@@ -8,9 +8,8 @@ import axios from "axios";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 
-import { Button, FormControl } from "app/components/ui/isolated/wrapped";
-
 import { Typography } from "@/components/ui/isolated/common";
+import { Button, FormControl } from "@/components/ui/isolated/wrapped";
 import { ApiRoutes, AppRoutes } from "@/utils/routes.utils";
 import { careerSchema, CareerType } from "@/utils/schema-utils";
 

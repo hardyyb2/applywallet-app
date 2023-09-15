@@ -1,8 +1,7 @@
 import Link from "next/link";
 
-import { Flex, Typography } from "app/components/ui/isolated/common";
-import { Button } from "app/components/ui/isolated/wrapped";
-
+import { Flex, Typography } from "@/components/ui/isolated/common";
+import { Button } from "@/components/ui/isolated/wrapped";
 import { Icons } from "@/components/ui/isolated/wrapped/Icons";
 import { cn } from "@/utils/styles.utils";
 
@@ -33,7 +32,7 @@ const SideNavBrand = ({
         className="flex-0 btn-ghost btn px-2"
       >
         {navOpen ? (
-          <div className="inline-flex text-lg lowercase text-primary">
+          <div className="text-lg inline-flex lowercase text-primary">
             <Typography>apply</Typography>
             <Typography className="text-base-content  ">wallet</Typography>
           </div>
