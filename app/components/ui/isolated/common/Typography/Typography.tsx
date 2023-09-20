@@ -1,5 +1,6 @@
 import { ComponentType, forwardRef } from "react";
 
+import { fonts } from "@/lib/fonts";
 import { cn } from "@/utils/styles.utils";
 
 import styles from "./typography.module.scss";
@@ -36,12 +37,16 @@ const Typography = forwardRef<
   ) => {
     const Component =
       component || TypographyVariantTypeTagMap?.[variant] || "p";
+    const bodyVariants: TypographyVariantType[] = ["body1", "body2", "caption"];
 
     return (
       <Component
         ref={ref}
         className={cn(
           styles[variant],
+          bodyVariants.includes(variant)
+            ? fonts.secondary.className
+            : fonts.primary.className,
           {
             inline: display === "inline",
             block: display === "block",

@@ -22,7 +22,7 @@ const RootLayout = ({
   };
 }) => {
   return (
-    <html lang={lang} suppressHydrationWarning>
+    <html lang={lang}>
       <head />
       <body>
         <Providers>{children}</Providers>
