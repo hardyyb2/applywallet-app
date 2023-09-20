@@ -1,6 +1,6 @@
 /**
  * This script recursively iterates through all files in a directory and its subdirectories and adds a `console.log()`
- * statement to the end of each file that has on of the provided extenstion. The added
+ * statement to the end of each file that has on of the provided extension. The added
  * `console.log()` statement includes the name of the file being modified. This modification can be used to check whether
  * a component is being rendered on the server or the client. When a component is rendered on the server, the log output
  * will be logged to the server console, whereas when a component is rendered on the client, the log output will be logged
