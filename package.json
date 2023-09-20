@@ -13,7 +13,8 @@
     "format:css": "stylelint --fix '**/*.scss'",
     "clean": "vite clean",
     "test": "vitest",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "update-next": "pnpm i next@latest react@latest react-dom@latest eslint-config-next@latest @next/bundle-analyzer@latest"
   },
   "dependencies": {
     "@dx-kit/react-conditional-match": "^3.0.0",
