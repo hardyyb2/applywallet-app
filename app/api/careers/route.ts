@@ -16,7 +16,12 @@ export async function POST(request: Request) {
     const session = await getServerSession(authOptions);
 
     if (!session || !session?.user?.primarySheetId || !session?.accessToken) {
-      return NextResponse.json("Unauthorized", { status: 401 });
+      return NextResponse.json(
+        new ApiError({
+          code: ApiErrorCodes.UNAUTHORIZED,
+        }),
+        { status: 401 },
+      );
     }
 
     const json = await request.json();

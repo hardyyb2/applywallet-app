@@ -5,6 +5,7 @@ import { z } from "zod";
 
 import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/prisma";
+import { ApiError, ApiErrorCodes, ApiResponse } from "@/utils/api";
 import { CustomError } from "@/utils/error";
 import { getSheetIdFromLink, linkSheetFormSchema } from "@/utils/schema-utils";
 
@@ -13,7 +14,12 @@ export async function POST(request: Request) {
     const session = await getServerSession(authOptions);
 
     if (!session) {
-      return NextResponse.json("Unauthorized", { status: 401 });
+      return NextResponse.json(
+        new ApiError({
+          code: ApiErrorCodes.UNAUTHORIZED,
+        }),
+        { status: 401 },
+      );
     }
 
     const json = await request.json();
@@ -30,18 +36,30 @@ export async function POST(request: Request) {
       },
     });
 
-    return NextResponse.json("Success", {
+    return NextResponse.json(new ApiResponse(), {
       status: 200,
     });
   } catch (error) {
     if (error instanceof z.ZodError) {
-      return new Response(JSON.stringify(error.issues), { status: 422 });
+      return NextResponse.json(
+        new ApiError({
+          code: ApiErrorCodes.BAD_REQUEST,
+          data: error.issues,
+        }),
+        { status: 422 },
+      );
     }
 
     const message = new CustomError(error).message;
 
-    return NextResponse.json(message, {
-      status: 500,
-    });
+    return NextResponse.json(
+      new ApiError({
+        code: ApiErrorCodes.SERVER_ERROR,
+        message,
+      }),
+      {
+        status: 500,
+      },
+    );
   }
 }
