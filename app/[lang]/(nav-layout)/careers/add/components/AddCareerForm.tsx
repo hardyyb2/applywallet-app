@@ -35,13 +35,13 @@ const AddCareerForm = () => {
     axios
       .post(ApiRoutes.ADD_CAREER, data)
       .then(() => {
-        toast.success("Save success");
+        toast.success("career added");
         reset();
         router.refresh();
         router.replace(AppRoutes.CAREERS);
       })
       .catch(() => {
-        toast.error("Failed to add career, please try again");
+        toast.error("failed to add career, please try again");
       })
       .finally(() => setLoading(false));
   };

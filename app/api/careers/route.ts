@@ -1,4 +1,3 @@
-import { revalidatePath } from "next/cache";
 import { NextResponse } from "next/server";
 
 import { GoogleSpreadsheet } from "google-spreadsheet";
@@ -6,8 +5,8 @@ import { getServerSession } from "next-auth";
 import { z } from "zod";
 
 import { authOptions } from "@/lib/auth";
+import { ApiError, ApiErrorCodes, ApiResponse } from "@/utils/api";
 import { CustomError } from "@/utils/error";
-import { AppRoutes } from "@/utils/routes.utils";
 import { careerSchema } from "@/utils/schema-utils";
 import { SheetNames } from "@/utils/sheet.utils";
 import { zodKeys } from "@/utils/zod.utils";
@@ -38,17 +37,30 @@ export async function POST(request: Request) {
     }
     await careerSheet.addRow(body);
 
-    return NextResponse.json("Success", {
+    return NextResponse.json(new ApiResponse(), {
       status: 200,
     });
   } catch (error) {
     if (error instanceof z.ZodError) {
-      return new Response(JSON.stringify(error.issues), { status: 422 });
+      return NextResponse.json(
+        new ApiError({
+          code: ApiErrorCodes.BAD_REQUEST,
+          data: error.issues,
+        }),
+        { status: 422 },
+      );
     }
 
     const message = new CustomError(error).message;
-    return NextResponse.json(message, {
-      status: 500,
-    });
+
+    return NextResponse.json(
+      new ApiError({
+        code: ApiErrorCodes.SERVER_ERROR,
+        message,
+      }),
+      {
+        status: 500,
+      },
+    );
   }
 }

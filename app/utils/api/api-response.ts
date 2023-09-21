@@ -1,6 +1,7 @@
 export enum ApiErrorCodes {
-  NOT_FOUND = "NOT_FOUND",
-  BAD_REQUEST = "BAD_REQUEST",
+  NOT_FOUND = "ERR_NOT_FOUND",
+  BAD_REQUEST = "ERR_BAD_REQUEST",
+  SERVER_ERROR = "ERR_SERVER_ERROR",
 }
 
 export class ApiResponse<ResponseData> {
