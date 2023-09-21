@@ -11,7 +11,7 @@ import { toast } from "react-toastify";
 import { Typography } from "@/components/ui/isolated/common";
 import { Button, FormControl } from "@/components/ui/isolated/wrapped";
 import { ApiRoutes, AppRoutes } from "@/utils/routes.utils";
-import { careerSchema, CareerType } from "@/utils/schema-utils";
+import { careerInputSchema, CareerType } from "@/utils/schema-utils";
 
 const AddCareerForm = () => {
   // hooks
@@ -21,7 +21,7 @@ const AddCareerForm = () => {
     formState: { errors },
     reset,
   } = useForm<CareerType>({
-    resolver: zodResolver(careerSchema),
+    resolver: zodResolver(careerInputSchema),
   });
   const router = useRouter();
 

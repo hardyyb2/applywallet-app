@@ -5,13 +5,13 @@ import { GoogleSpreadsheet } from "google-spreadsheet";
 import { getServerSession } from "next-auth";
 
 import { authOptions } from "@/lib/auth";
-import { CareerType } from "@/utils/schema-utils";
+import { careerSchema, CareerType } from "@/utils/schema-utils";
 import { SheetNames } from "@/utils/sheet.utils";
 import { cn } from "@/utils/styles.utils";
 
 import { CareerCard } from "./CareerCard";
 
-const fetchCareers = async (): Promise<Partial<CareerType>[]> => {
+const fetchCareers = async (): Promise<CareerType[]> => {
   try {
     const session = await getServerSession(authOptions);
 
@@ -39,9 +39,19 @@ const fetchCareers = async (): Promise<Partial<CareerType>[]> => {
       redirect("/link-sheet");
     }
 
-    const careerRows = (await careerSheet.getRows<CareerType>()).map((career) =>
-      career.toObject(),
-    );
+    // TODO - return damaged rows as well
+    const careerRows = (await careerSheet.getRows())
+      .map((cr) => {
+        const career = cr.toObject();
+        const parsedCareer = careerSchema.safeParse(career);
+
+        if (parsedCareer.success) {
+          return parsedCareer.data;
+        }
+
+        return null;
+      })
+      .filter(Boolean);
 
     return careerRows;
   } catch (err) {
@@ -64,7 +74,7 @@ const CareerList = async () => {
       )}
     >
       {careers.map((career) => (
-        <CareerCard key={career.company_name} career={career} />
+        <CareerCard key={career.id} career={career} />
       ))}
     </div>
   );

@@ -2,7 +2,6 @@ import { Suspense } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import { ConditionalMatch } from "@dx-kit/react-conditional-match";
 import { getServerSession } from "next-auth";
 
 import { LoginCard } from "@/components/ui/dependent/LoginCard";
@@ -17,8 +16,6 @@ import { CareerList } from "./components/CareerList";
 export const metadata: Metadata = {
   title: "careers",
 };
-
-const { Render } = ConditionalMatch;
 
 const Careers = async () => {
   // constants
