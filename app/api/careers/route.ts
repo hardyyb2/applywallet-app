@@ -7,7 +7,7 @@ import { z } from "zod";
 import { authOptions } from "@/lib/auth";
 import { ApiError, ApiErrorCodes, ApiResponse } from "@/utils/api";
 import { CustomError } from "@/utils/error";
-import { careerSchema } from "@/utils/schema-utils";
+import { careerInputSchema, careerSchema } from "@/utils/schema-utils";
 import { SheetNames } from "@/utils/sheet.utils";
 import { zodKeys } from "@/utils/zod.utils";
 
@@ -25,7 +25,7 @@ export async function POST(request: Request) {
     }
 
     const json = await request.json();
-    const body = careerSchema.parse(json);
+    const body = careerInputSchema.parse(json);
 
     const doc = new GoogleSpreadsheet(session.user.primarySheetId, {
       token: session.accessToken,
@@ -37,7 +37,7 @@ export async function POST(request: Request) {
     if (!careerSheet) {
       careerSheet = await doc.addSheet({
         title: SheetNames.CAREERS,
-        headerValues: zodKeys(careerSchema),
+        headerValues: zodKeys(careerInputSchema),
       });
     }
     await careerSheet.addRow(body);

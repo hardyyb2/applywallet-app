@@ -11,7 +11,7 @@ import { toast } from "react-toastify";
 import { Typography } from "@/components/ui/isolated/common";
 import { Button, FormControl } from "@/components/ui/isolated/wrapped";
 import { ApiRoutes, AppRoutes } from "@/utils/routes.utils";
-import { careerInputSchema, CareerType } from "@/utils/schema-utils";
+import { careerInputSchema, CareerInputType } from "@/utils/schema-utils";
 
 const AddCareerForm = () => {
   // hooks
@@ -20,7 +20,7 @@ const AddCareerForm = () => {
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm<CareerType>({
+  } = useForm<CareerInputType>({
     resolver: zodResolver(careerInputSchema),
   });
   const router = useRouter();
@@ -29,7 +29,7 @@ const AddCareerForm = () => {
   const [loading, { setValue: setLoading }] = useBoolean();
 
   // functions
-  const onSubmit: SubmitHandler<CareerType> = (data) => {
+  const onSubmit: SubmitHandler<CareerInputType> = (data) => {
     setLoading(true);
 
     axios

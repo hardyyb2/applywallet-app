@@ -15,6 +15,7 @@ export const careerSchema = z.object({
   }),
 });
 
+/** does not include id */
 export const careerInputSchema = careerSchema.omit({ id: true });
 
 export type CareerType = z.infer<typeof careerSchema>;
