@@ -37,6 +37,7 @@ const AddCareerForm = () => {
       .then(() => {
         toast.success("career added");
         reset();
+        // TODO - replace with revalidatePath when it works
         router.refresh();
         router.replace(AppRoutes.CAREERS);
       })

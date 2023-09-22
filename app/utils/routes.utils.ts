@@ -17,8 +17,14 @@ export enum AppRoutes {
 export enum ApiRoutes {
   CREATE_SHEET = "/api/sheet/new",
   LINK_SHEET = "/api/sheet/link",
+
   ADD_CAREER = "/api/careers",
   GET_CAREERS = "/api/careers",
+  DELETE_CAREER = "/api/careers",
+}
+
+export enum SearchParams {
+  PATH = "path",
 }
 
 /** Get route name with locale */
