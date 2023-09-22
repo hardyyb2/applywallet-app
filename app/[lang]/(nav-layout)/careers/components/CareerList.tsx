@@ -42,7 +42,7 @@ const fetchCareers = async (): Promise<CareerType[]> => {
     // TODO - return damaged rows as well
     const careerRows = (await careerSheet.getRows())
       .map((cr) => {
-        const career = cr.toObject();
+        const career = { ...cr.toObject(), id: cr.rowNumber };
         const parsedCareer = careerSchema.safeParse(career);
 
         if (parsedCareer.success) {

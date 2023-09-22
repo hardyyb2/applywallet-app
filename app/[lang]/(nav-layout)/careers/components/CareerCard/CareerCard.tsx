@@ -6,7 +6,7 @@ import { cn } from "@/utils/styles.utils";
 import { CareerCardActions } from "./components/CareerCardActions";
 
 interface CareerCardProps {
-  career: Partial<CareerType>;
+  career: CareerType;
 }
 
 const CareerCard = ({ career }: CareerCardProps) => {
@@ -14,7 +14,7 @@ const CareerCard = ({ career }: CareerCardProps) => {
     <div className={cn("card bg-base-200")}>
       <div className="card-body max-w-none [&_p]:line-clamp-3 [&_p]:whitespace-pre-line">
         <div className="absolute right-4 top-4">
-          <CareerCardActions />
+          <CareerCardActions id={career.id} />
         </div>
         <Typography variant="h4" className="card-title">
           {career.company_name}
