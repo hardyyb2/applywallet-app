@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/isolated/wrapped";
 import { AppRoutes } from "@/utils/routes.utils";
 
-import { AddCareerForm } from "./components/AddCareerForm";
+import { AddEditCareerForm } from "../components/AddEditCareerForm";
 
 const AddCareer = () => {
   return (
@@ -16,7 +16,7 @@ const AddCareer = () => {
           <Link href={AppRoutes.ADD_CAREER}>add</Link>
         </Breadcrumbs.Item>
       </Breadcrumbs>
-      <AddCareerForm />
+      <AddEditCareerForm />
     </div>
   );
 };

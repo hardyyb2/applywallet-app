@@ -10,6 +10,7 @@ export enum AppRoutes {
 
   CAREERS = "/careers",
   ADD_CAREER = "/careers/add",
+  EDIT_CAREER = "/careers/edit",
 
   LINK_SHEET = "/link-sheet",
 }
@@ -25,6 +26,10 @@ export enum ApiRoutes {
 
 export enum SearchParams {
   PATH = "path",
+}
+
+export enum UrlParams {
+  CAREER_ID = "careerId",
 }
 
 /** Get route name with locale */

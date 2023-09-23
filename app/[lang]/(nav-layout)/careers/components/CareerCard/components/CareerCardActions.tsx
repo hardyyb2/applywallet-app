@@ -21,6 +21,10 @@ const CareerCardActions = ({ id }: CareerCardActionsProps) => {
   const router = useRouter();
 
   // functions
+  const handleEditClick = () => {
+    router.push(`${AppRoutes.EDIT_CAREER}/${id}`);
+  };
+
   const handleDeleteClick = () => {
     axios
       .delete(`${ApiRoutes.DELETE_CAREER}/${id}`)
@@ -49,7 +53,12 @@ const CareerCardActions = ({ id }: CareerCardActionsProps) => {
           collisionPadding={8}
         >
           <Flex direction="row" className="gap-2">
-            <Button color="primary" responsive startIcon={<Icons.Pencil />} />
+            <Button
+              color="primary"
+              responsive
+              startIcon={<Icons.Pencil />}
+              onClick={handleEditClick}
+            />
             <Button
               color="error"
               responsive

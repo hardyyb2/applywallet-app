@@ -2,7 +2,6 @@
 
 import { useRouter } from "next/navigation";
 
-import { useBoolean } from "@/hooks/useBoolean";
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
 import { SubmitHandler, useForm } from "react-hook-form";
@@ -10,10 +9,21 @@ import { toast } from "react-toastify";
 
 import { Typography } from "@/components/ui/isolated/common";
 import { Button, FormControl } from "@/components/ui/isolated/wrapped";
+import { useBoolean } from "@/hooks/useBoolean";
 import { ApiRoutes, AppRoutes } from "@/utils/routes.utils";
 import { careerInputSchema, CareerInputType } from "@/utils/schema-utils";
 
-const AddCareerForm = () => {
+type AddEditCareerFormProps =
+  | {
+      type?: "add";
+      career?: never;
+    }
+  | {
+      type?: "edit";
+      career?: CareerInputType;
+    };
+
+const AddEditCareerForm = ({ type, career }: AddEditCareerFormProps) => {
   // hooks
   const {
     register,
@@ -22,6 +32,7 @@ const AddCareerForm = () => {
     reset,
   } = useForm<CareerInputType>({
     resolver: zodResolver(careerInputSchema),
+    defaultValues: career ?? {},
   });
   const router = useRouter();
 
@@ -32,20 +43,33 @@ const AddCareerForm = () => {
   const onSubmit: SubmitHandler<CareerInputType> = (data) => {
     setLoading(true);
 
-    axios
-      .post(ApiRoutes.ADD_CAREER, data)
-      .then(() => {
-        toast.success("career added");
-        reset();
-        // TODO - replace with revalidatePath when it works
-        router.refresh();
-        router.replace(AppRoutes.CAREERS);
-      })
-      .catch(() => {
-        toast.error("failed to add career, please try again");
-      })
-      .finally(() => setLoading(false));
+    if (type === "add") {
+      return axios
+        .post(ApiRoutes.ADD_CAREER, data)
+        .then(() => {
+          toast.success("career added");
+          reset();
+          // TODO - replace with revalidatePath when it works
+          router.refresh();
+          router.replace(AppRoutes.CAREERS);
+        })
+        .catch(() => {
+          toast.error("failed to add career, please try again");
+        })
+        .finally(() => setLoading(false));
+    }
+
+    if (type === "edit") {
+      // TODO - Edit api
+      setLoading(false);
+    }
   };
+
+  // constants
+  const [buttonText, buttonSavingText, titleText] =
+    type === "edit"
+      ? ["update", "updating", "edit career"]
+      : ["save", "saving", "add career"];
 
   return (
     <form
@@ -54,7 +78,7 @@ const AddCareerForm = () => {
       noValidate
     >
       <div className="card-body  bg-base-100 [&_.form-control]:mt-2">
-        <Typography variant="h3">add career</Typography>
+        <Typography variant="h3">{titleText}</Typography>
         <div className="mt-s">
           <Typography variant="subtitle1" className="underline">
             company details
@@ -131,11 +155,11 @@ const AddCareerForm = () => {
           loading={loading}
           disabled={loading}
         >
-          {loading ? "Saving" : "Save"}
+          {loading ? buttonSavingText : buttonText}
         </Button>
       </div>
     </form>
   );
 };
 
-export { AddCareerForm };
+export { AddEditCareerForm };
