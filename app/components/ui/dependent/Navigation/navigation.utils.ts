@@ -17,10 +17,10 @@ export const navItems: NavItemType[] = [
     icon: Icons.Briefcase,
   },
   {
-    label: "about",
-    link: AppRoutes.ABOUT,
+    label: "interviews",
+    link: AppRoutes.INTERVIEWS,
     category: NavigationCategories.GENERAL,
-    icon: Icons.CustomHome,
+    icon: Icons.Clapperboard,
   },
 ];
 

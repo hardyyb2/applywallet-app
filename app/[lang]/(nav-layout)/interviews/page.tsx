@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 
 import { cn } from "@/utils/styles.utils";
 
-const About = () => {
+const Interviews = () => {
   const notify = () => toast("GHello there");
 
   return (
@@ -33,4 +33,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Interviews;
