@@ -12,7 +12,7 @@ export enum NavigationCategories {
 
 export type NavItemType = {
   label: string;
-  link: AppRoutes;
+  link: (typeof AppRoutes)[keyof typeof AppRoutes];
   icon: LucideIcon;
   key?: string;
   category?: NavigationCategories;

@@ -7,7 +7,7 @@ export const AppRoutes = {
   LOGIN: "/login",
   POST_LOGIN: "/post-login",
 
-  ABOUT: "/about",
+  INTERVIEWS: "/interviews",
 
   EXPERIENCES: "/experiences",
   ADD_EXPERIENCE: "/experiences/add",
@@ -15,7 +15,7 @@ export const AppRoutes = {
     `/experiences/edit/${experienceId}`,
 
   LINK_SHEET: "/link-sheet",
-};
+} as const;
 
 export const ApiRoutes = {
   CREATE_SHEET: "/api/sheet/new",
@@ -27,7 +27,7 @@ export const ApiRoutes = {
     `/api/experiences/${experienceId}`,
   editExperience: (experienceId: ExperienceType["id"]) =>
     `/api/experiences/${experienceId}`,
-};
+} as const;
 
 export enum SearchParams {
   PATH = "path",
