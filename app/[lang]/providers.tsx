@@ -2,13 +2,23 @@
 
 import { ReactNode } from "react";
 import { SessionProvider } from "next-auth/react";
+import dynamic from "next/dynamic";
 
 import { domAnimation, LazyMotion, MotionConfig } from "framer-motion";
 import { ToastContainer } from "react-toastify";
 
+const TopLoader = dynamic(
+  () =>
+    import("@/components/ui/dependent/TopLoader").then((module) => ({
+      default: module.TopLoader,
+    })),
+  { ssr: false },
+);
+
 const Providers = ({ children }: { children: ReactNode }) => {
   return (
     <SessionProvider>
+      <TopLoader />
       <LazyMotion features={domAnimation}>
         <MotionConfig
           transition={{ type: "spring", stiffness: 400, damping: 24 }}
