@@ -1,28 +1,30 @@
 import { i18n } from "./locale-utils";
+import { CareerType } from "./schema-utils";
 
-export enum AppRoutes {
-  HOME = "",
+export const AppRoutes = {
+  HOME: "",
 
-  LOGIN = "/login",
-  POST_LOGIN = "/post-login",
+  LOGIN: "/login",
+  POST_LOGIN: "/post-login",
 
-  ABOUT = "/about",
+  ABOUT: "/about",
 
-  CAREERS = "/careers",
-  ADD_CAREER = "/careers/add",
-  EDIT_CAREER = "/careers/edit",
+  CAREERS: "/careers",
+  ADD_CAREER: "/careers/add",
+  EDIT_CAREER: "/careers/edit",
 
-  LINK_SHEET = "/link-sheet",
-}
+  LINK_SHEET: "/link-sheet",
+};
 
-export enum ApiRoutes {
-  CREATE_SHEET = "/api/sheet/new",
-  LINK_SHEET = "/api/sheet/link",
+export const ApiRoutes = {
+  CREATE_SHEET: "/api/sheet/new",
+  LINK_SHEET: "/api/sheet/link",
 
-  ADD_CAREER = "/api/careers",
-  GET_CAREERS = "/api/careers",
-  DELETE_CAREER = "/api/careers",
-}
+  ADD_CAREER: "/api/careers",
+  GET_CAREERS: "/api/careers",
+  DELETE_CAREER: (careerId: CareerType["id"]) => `/api/careers/${careerId}`,
+  EDIT_CAREER: (careerId: CareerType["id"]) => `/api/careers/${careerId}`,
+};
 
 export enum SearchParams {
   PATH = "path",

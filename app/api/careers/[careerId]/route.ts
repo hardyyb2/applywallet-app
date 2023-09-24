@@ -9,6 +9,7 @@ import { z } from "zod";
 import { authOptions } from "@/lib/auth";
 import { ApiError, ApiErrorCodes, ApiResponse } from "@/utils/api";
 import { CustomError } from "@/utils/error";
+import { careerInputSchema } from "@/utils/schema-utils";
 import { SheetNames } from "@/utils/sheet.utils";
 
 const paramSchema = z.object({
@@ -67,7 +68,83 @@ export async function DELETE(
   } catch (err) {
     const message = new CustomError(error).message;
 
-    console.log(",message", message);
+    return NextResponse.json(
+      new ApiError({
+        code: ApiErrorCodes.SERVER_ERROR,
+        message,
+      }),
+      {
+        status: 500,
+      },
+    );
+  }
+}
+
+export async function PUT(
+  request: NextRequest,
+  context: ApiRequestContextType,
+) {
+  try {
+    const session = await getServerSession(authOptions);
+
+    if (!session || !session.accessToken || !session.user?.primarySheetId) {
+      return NextResponse.json(
+        new ApiError({
+          code: ApiErrorCodes.UNAUTHORIZED,
+        }),
+        { status: 401 },
+      );
+    }
+
+    const parsedParams = paramSchema.safeParse(context.params);
+
+    if (!parsedParams.success) {
+      return NextResponse.json(
+        new ApiError({
+          code: ApiErrorCodes.BAD_REQUEST,
+          data: parsedParams.error.issues,
+        }),
+        { status: 400 },
+      );
+    }
+
+    const careerId = parsedParams.data.careerId;
+    const doc = new GoogleSpreadsheet(session.user.primarySheetId, {
+      token: session.accessToken,
+    });
+    await doc.loadInfo();
+
+    const allSheets = doc.sheetsByTitle;
+    const careerSheet = allSheets[SheetNames.CAREERS];
+
+    const requiredRow = (
+      await careerSheet.getRows({
+        offset: careerId - 1 - 1, // extra 1 for header row
+        limit: 1,
+      })
+    )[0];
+
+    const json = await request.json();
+    const body = careerInputSchema.parse(json);
+
+    requiredRow.assign(body);
+    await requiredRow.save();
+
+    return NextResponse.json(new ApiResponse(), {
+      status: 200,
+    });
+  } catch (err) {
+    if (error instanceof z.ZodError) {
+      return NextResponse.json(
+        new ApiError({
+          code: ApiErrorCodes.BAD_REQUEST,
+          data: error.issues,
+        }),
+        { status: 422 },
+      );
+    }
+
+    const message = new CustomError(error).message;
 
     return NextResponse.json(
       new ApiError({

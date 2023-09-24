@@ -18,7 +18,7 @@ const CareerCardMini = () => {
           </Typography>
         </Flex>
         <Flex justify="center" align="center">
-          <CareerCardActions />
+          {/* <CareerCardActions /> */}
         </Flex>
       </div>
       <div

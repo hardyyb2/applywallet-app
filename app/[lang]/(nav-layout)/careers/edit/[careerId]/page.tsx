@@ -22,7 +22,7 @@ const careerIdSchema = z.coerce.number().nonnegative();
 
 const fetchCareer = async (
   careerId: CareerType["id"],
-): Promise<CareerInputType | undefined> => {
+): Promise<CareerType | undefined> => {
   try {
     const session = await getServerSession(authOptions);
 

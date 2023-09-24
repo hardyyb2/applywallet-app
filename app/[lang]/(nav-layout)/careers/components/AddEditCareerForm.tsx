@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
@@ -10,7 +10,7 @@ import { toast } from "react-toastify";
 import { Typography } from "@/components/ui/isolated/common";
 import { Button, FormControl } from "@/components/ui/isolated/wrapped";
 import { useBoolean } from "@/hooks/useBoolean";
-import { ApiRoutes, AppRoutes } from "@/utils/routes.utils";
+import { ApiRoutes, AppRoutes, UrlParams } from "@/utils/routes.utils";
 import { careerInputSchema, CareerInputType } from "@/utils/schema-utils";
 
 type AddEditCareerFormProps =
@@ -23,7 +23,10 @@ type AddEditCareerFormProps =
       career?: CareerInputType;
     };
 
-const AddEditCareerForm = ({ type, career }: AddEditCareerFormProps) => {
+const AddEditCareerForm = ({
+  type = "add",
+  career,
+}: AddEditCareerFormProps) => {
   // hooks
   const {
     register,
@@ -35,6 +38,7 @@ const AddEditCareerForm = ({ type, career }: AddEditCareerFormProps) => {
     defaultValues: career ?? {},
   });
   const router = useRouter();
+  const params = useParams();
 
   // states
   const [loading, { setValue: setLoading }] = useBoolean();
@@ -43,26 +47,44 @@ const AddEditCareerForm = ({ type, career }: AddEditCareerFormProps) => {
   const onSubmit: SubmitHandler<CareerInputType> = (data) => {
     setLoading(true);
 
-    if (type === "add") {
+    if (type === "edit") {
+      const careerId = params[UrlParams.CAREER_ID];
+      const cId = typeof careerId === "string" ? careerId : careerId[0];
+
+      if (!cId) {
+        toast.error("no career id present to update");
+        setLoading(false);
+        return;
+      }
+
       return axios
-        .post(ApiRoutes.ADD_CAREER, data)
+        .put(ApiRoutes.EDIT_CAREER(cId), data)
         .then(() => {
-          toast.success("career added");
+          toast.success("career updated");
           reset();
           // TODO - replace with revalidatePath when it works
           router.refresh();
           router.replace(AppRoutes.CAREERS);
         })
         .catch(() => {
-          toast.error("failed to add career, please try again");
+          toast.error("failed to update career, please try again");
         })
         .finally(() => setLoading(false));
     }
 
-    if (type === "edit") {
-      // TODO - Edit api
-      setLoading(false);
-    }
+    return axios
+      .post(ApiRoutes.ADD_CAREER, data)
+      .then(() => {
+        toast.success("career added");
+        reset();
+        // TODO - replace with revalidatePath when it works
+        router.refresh();
+        router.replace(AppRoutes.CAREERS);
+      })
+      .catch(() => {
+        toast.error("failed to add career, please try again");
+      })
+      .finally(() => setLoading(false));
   };
 
   // constants
