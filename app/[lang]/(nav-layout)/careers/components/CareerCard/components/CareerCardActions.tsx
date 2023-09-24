@@ -22,12 +22,12 @@ const CareerCardActions = ({ id }: CareerCardActionsProps) => {
 
   // functions
   const handleEditClick = () => {
-    router.push(`${AppRoutes.EDIT_CAREER}/${id}`);
+    router.push(AppRoutes.editCareer(id));
   };
 
   const handleDeleteClick = () => {
     axios
-      .delete(`${ApiRoutes.DELETE_CAREER}/${id}`)
+      .delete(ApiRoutes.deleteCareer(id))
       .then(() => {
         // TODO - replace with revalidatePath when it works
         toast.success("career deleted");

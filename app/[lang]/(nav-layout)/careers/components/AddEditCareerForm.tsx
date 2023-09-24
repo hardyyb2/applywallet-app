@@ -58,7 +58,7 @@ const AddEditCareerForm = ({
       }
 
       return axios
-        .put(ApiRoutes.EDIT_CAREER(cId), data)
+        .put(ApiRoutes.editCareer(cId), data)
         .then(() => {
           toast.success("career updated");
           reset();

@@ -11,7 +11,7 @@ export const AppRoutes = {
 
   CAREERS: "/careers",
   ADD_CAREER: "/careers/add",
-  EDIT_CAREER: "/careers/edit",
+  editCareer: (careerId: CareerType["id"]) => `/careers/edit/${careerId}`,
 
   LINK_SHEET: "/link-sheet",
 };
@@ -22,8 +22,8 @@ export const ApiRoutes = {
 
   ADD_CAREER: "/api/careers",
   GET_CAREERS: "/api/careers",
-  DELETE_CAREER: (careerId: CareerType["id"]) => `/api/careers/${careerId}`,
-  EDIT_CAREER: (careerId: CareerType["id"]) => `/api/careers/${careerId}`,
+  deleteCareer: (careerId: CareerType["id"]) => `/api/careers/${careerId}`,
+  editCareer: (careerId: CareerType["id"]) => `/api/careers/${careerId}`,
 };
 
 export enum SearchParams {
