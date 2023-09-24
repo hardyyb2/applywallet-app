@@ -11,7 +11,7 @@ import { Icons } from "@/components/ui/isolated/wrapped/Icons";
 
 import { ExperienceSettingsInfoType } from "..";
 
-const CSInformationSettings = () => {
+const ESInformationSettings = () => {
   const dragControls = useDragControls();
   const [experienceSettingItems, setExperienceSettingItems] = useState<
     ExperienceSettingsInfoType[]
@@ -105,4 +105,4 @@ const CSInformationSettings = () => {
   );
 };
 
-export { CSInformationSettings };
+export { ESInformationSettings };
