@@ -21,9 +21,13 @@ import { AddEditCareerForm } from "../../components/AddEditCareerForm";
 const careerIdSchema = z.coerce.number().nonnegative();
 
 const fetchCareer = async (
-  careerId: CareerType["id"],
+  careerId?: CareerType["id"],
 ): Promise<CareerType | undefined> => {
   try {
+    if (!careerId) {
+      return;
+    }
+
     const session = await getServerSession(authOptions);
 
     if (!session || !session?.accessToken) {
@@ -79,12 +83,11 @@ type EditCareerProps = {
 
 const EditCareer = async ({ params }: EditCareerProps) => {
   const careerId = params[UrlParams.CAREER_ID];
+  const career = await fetchCareer(careerId);
 
-  if (!careerId) {
+  if (!career) {
     notFound();
   }
-
-  const career = await fetchCareer(careerId);
 
   return (
     <div className="m-xs mt-0">

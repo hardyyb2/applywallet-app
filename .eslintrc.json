@@ -10,6 +10,7 @@
         "page.tsx",
         "error.tsx",
         "loading.tsx",
+        "not-found.tsx",
         "vitest.config.ts"
       ],
       "rules": {
