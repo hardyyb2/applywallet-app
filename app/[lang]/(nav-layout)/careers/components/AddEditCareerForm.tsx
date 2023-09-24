@@ -1,6 +1,6 @@
 "use client";
 
-import { useParams, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
@@ -10,23 +10,28 @@ import { toast } from "react-toastify";
 import { Typography } from "@/components/ui/isolated/common";
 import { Button, FormControl } from "@/components/ui/isolated/wrapped";
 import { useBoolean } from "@/hooks/useBoolean";
-import { ApiRoutes, AppRoutes, UrlParams } from "@/utils/routes.utils";
-import { careerInputSchema, CareerInputType } from "@/utils/schema-utils";
+import { ApiRoutes, AppRoutes } from "@/utils/routes.utils";
+import {
+  careerInputSchema,
+  CareerInputType,
+  CareerType,
+} from "@/utils/schema-utils";
 
-type AddEditCareerFormProps =
+import { getAddEditCareerFormCopy } from "../career.utils";
+
+export type AddEditCareerFormProps =
   | {
       type?: "add";
-      career?: never;
     }
   | {
       type?: "edit";
-      career?: CareerInputType;
+      career: CareerType;
     };
 
-const AddEditCareerForm = ({
-  type = "add",
-  career,
-}: AddEditCareerFormProps) => {
+const AddEditCareerForm = (props: AddEditCareerFormProps) => {
+  const isEdit = props.type === "edit";
+  const defaultFormValues = isEdit ? props.career : {};
+
   // hooks
   const {
     register,
@@ -35,10 +40,9 @@ const AddEditCareerForm = ({
     reset,
   } = useForm<CareerInputType>({
     resolver: zodResolver(careerInputSchema),
-    defaultValues: career ?? {},
+    defaultValues: defaultFormValues,
   });
   const router = useRouter();
-  const params = useParams();
 
   // states
   const [loading, { setValue: setLoading }] = useBoolean();
@@ -47,18 +51,9 @@ const AddEditCareerForm = ({
   const onSubmit: SubmitHandler<CareerInputType> = (data) => {
     setLoading(true);
 
-    if (type === "edit") {
-      const careerId = params[UrlParams.CAREER_ID];
-      const cId = typeof careerId === "string" ? careerId : careerId[0];
-
-      if (!cId) {
-        toast.error("no career id present to update");
-        setLoading(false);
-        return;
-      }
-
+    if (isEdit) {
       return axios
-        .put(ApiRoutes.editCareer(cId), data)
+        .put(ApiRoutes.editCareer(props.career.id), data)
         .then(() => {
           toast.success("career updated");
           reset();
@@ -88,10 +83,10 @@ const AddEditCareerForm = ({
   };
 
   // constants
-  const [buttonText, buttonSavingText, titleText] =
-    type === "edit"
-      ? ["update", "updating", "edit career"]
-      : ["save", "saving", "add career"];
+  const { buttonText, titleText } = getAddEditCareerFormCopy(
+    props.type,
+    loading,
+  );
 
   return (
     <form
@@ -177,7 +172,7 @@ const AddEditCareerForm = ({
           loading={loading}
           disabled={loading}
         >
-          {loading ? buttonSavingText : buttonText}
+          {buttonText}
         </Button>
       </div>
     </form>
