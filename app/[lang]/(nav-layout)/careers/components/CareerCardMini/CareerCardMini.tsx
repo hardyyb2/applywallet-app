@@ -3,9 +3,9 @@ import { Button } from "app/components/ui/isolated/wrapped";
 
 import { cn } from "@/utils/styles.utils";
 
-import { CareerCardActions } from "../CareerCard/components/CareerCardActions";
+import { ExperienceCardActions } from "../ExperienceCard/components/ExperienceCardActions";
 
-const CareerCardMini = () => {
+const ExperienceCardMini = () => {
   return (
     <Flex
       direction="column"
@@ -18,7 +18,7 @@ const CareerCardMini = () => {
           </Typography>
         </Flex>
         <Flex justify="center" align="center">
-          {/* <CareerCardActions /> */}
+          {/* <ExperienceCardActions /> */}
         </Flex>
       </div>
       <div
@@ -44,4 +44,4 @@ const CareerCardMini = () => {
   );
 };
 
-export { CareerCardMini };
+export { ExperienceCardMini };

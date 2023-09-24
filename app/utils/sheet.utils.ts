@@ -4,7 +4,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 
 export enum SheetNames {
-  CAREERS = "careers",
+  EXPERIENCES = "experiences",
 }
 
 export const createGoogleSheetDoc = async (

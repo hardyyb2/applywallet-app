@@ -10,14 +10,14 @@ import { Button } from "@/components/ui/isolated/wrapped";
 import { Icons } from "@/components/ui/isolated/wrapped/Icons";
 import { authOptions } from "@/lib/auth";
 
-import { CareerActions } from "./components/CareerActions/CareerActions";
-import { CareerList } from "./components/CareerList";
+import { ExperienceActions } from "./components/ExperienceActions/ExperienceActions";
+import { ExperienceList } from "./components/ExperienceList";
 
 export const metadata: Metadata = {
-  title: "careers",
+  title: "experiences",
 };
 
-const Careers = async () => {
+const Experiences = async () => {
   // constants
   const session = await getServerSession(authOptions);
   const isLoggedIn = session && session.accessToken;
@@ -34,21 +34,21 @@ const Careers = async () => {
     <div className="px-6 py-4 lg:px-10">
       <Flex justify="space-between" align="center" className="mb-m-l gap-4">
         <Flex direction="column">
-          <Typography variant="h3">careers</Typography>
+          <Typography variant="h3">experiences</Typography>
           <Typography variant="subtitle2">
             details of your previous jobs
           </Typography>
         </Flex>
 
-        <CareerActions />
+        <ExperienceActions />
       </Flex>
 
       <Suspense fallback="loading...">
         {/* @ts-expect-error Server Component */}
-        <CareerList />
+        <ExperienceList />
       </Suspense>
 
-      <Link href="/careers/add">
+      <Link href="/experiences/add">
         <Button
           color="secondary"
           fullWidth
@@ -56,11 +56,11 @@ const Careers = async () => {
           className="mt-l lg:hidden"
           startIcon={<Icons.Plus />}
         >
-          add career
+          add experience
         </Button>
       </Link>
     </div>
   );
 };
 
-export default Careers;
+export default Experiences;

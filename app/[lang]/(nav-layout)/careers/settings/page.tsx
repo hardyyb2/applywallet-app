@@ -1,11 +1,11 @@
-import { CareerSettings } from "../components/CareerSettings";
+import { ExperienceSettings } from "../components/ExperienceSettings";
 
-const CareerSettingsPage = () => {
+const ExperienceSettingsPage = () => {
   return (
     <div>
-      <CareerSettings />
+      <ExperienceSettings />
     </div>
   );
 };
 
-export default CareerSettingsPage;
+export default ExperienceSettingsPage;

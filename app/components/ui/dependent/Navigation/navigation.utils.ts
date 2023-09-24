@@ -11,8 +11,8 @@ export const navItems: NavItemType[] = [
     icon: Icons.CustomHome,
   },
   {
-    label: "careers",
-    link: AppRoutes.CAREERS,
+    label: "experiences",
+    link: AppRoutes.EXPERIENCES,
     category: NavigationCategories.GENERAL,
     icon: Icons.Briefcase,
   },

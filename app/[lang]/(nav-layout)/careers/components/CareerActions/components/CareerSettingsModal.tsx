@@ -9,10 +9,10 @@ import { Button, Dialog } from "app/components/ui/isolated/wrapped";
 import { Icons } from "@/components/ui/isolated/wrapped/Icons";
 import { cn } from "@/utils/styles.utils";
 
-import { CareerSettings } from "../../CareerSettings";
-import styles from "./careerSettingsModal.module.scss";
+import { ExperienceSettings } from "../../ExperienceSettings";
+import styles from "./experienceSettingsModal.module.scss";
 
-const CareerSettingsModal = () => {
+const ExperienceSettingsModal = () => {
   const contentRef = useRef<HTMLDivElement | null>(null);
   const [open, setOpen] = useState(false);
 
@@ -37,7 +37,7 @@ const CareerSettingsModal = () => {
         </Dialog.Trigger>
 
         {/* open settings in a page for <md screens */}
-        <Link href="/careers/settings">
+        <Link href="/experiences/settings">
           <Button
             variant="outline"
             color="secondary"
@@ -74,7 +74,7 @@ const CareerSettingsModal = () => {
                 </Button>
               </Dialog.Close>
 
-              <Link href="/careers/settings">
+              <Link href="/experiences/settings">
                 <Button
                   color="ghost"
                   className="hidden md:flex"
@@ -86,7 +86,7 @@ const CareerSettingsModal = () => {
             </Flex>
             <div className="px-16 py-8">
               {/* <Dialog.Title className="DialogTitle">Edit profile</Dialog.Title> */}
-              <CareerSettings />
+              <ExperienceSettings />
               {/* <Dialog.Close>close</Dialog.Close> */}
             </div>
           </Dialog.Content>
@@ -96,4 +96,4 @@ const CareerSettingsModal = () => {
   );
 };
 
-export { CareerSettingsModal };
+export { ExperienceSettingsModal };

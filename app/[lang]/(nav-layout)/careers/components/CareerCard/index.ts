@@ -1,1 +1,1 @@
-export { CareerCard } from "./CareerCard";
+export { ExperienceCard } from "./ExperienceCard";

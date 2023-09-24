@@ -5,13 +5,13 @@ import { GoogleSpreadsheet } from "google-spreadsheet";
 import { getServerSession } from "next-auth";
 
 import { authOptions } from "@/lib/auth";
-import { careerSchema, CareerType } from "@/utils/schema-utils";
+import { experienceSchema, ExperienceType } from "@/utils/schema-utils";
 import { SheetNames } from "@/utils/sheet.utils";
 import { cn } from "@/utils/styles.utils";
 
-import { CareerCard } from "./CareerCard";
+import { ExperienceCard } from "./ExperienceCard";
 
-const fetchCareers = async (): Promise<CareerType[]> => {
+const fetchExperiences = async (): Promise<ExperienceType[]> => {
   try {
     const session = await getServerSession(authOptions);
 
@@ -32,28 +32,28 @@ const fetchCareers = async (): Promise<CareerType[]> => {
     });
     await doc.loadInfo();
     const allSheets = doc.sheetsByTitle;
-    let careerSheet = allSheets[SheetNames.CAREERS];
+    let experienceSheet = allSheets[SheetNames.EXPERIENCES];
 
     //  TODO - link sheet page
-    if (!careerSheet) {
+    if (!experienceSheet) {
       redirect("/link-sheet");
     }
 
     // TODO - return damaged rows as well
-    const careerRows = (await careerSheet.getRows())
+    const experienceRows = (await experienceSheet.getRows())
       .map((cr) => {
-        const career = { ...cr.toObject(), id: cr.rowNumber };
-        const parsedCareer = careerSchema.safeParse(career);
+        const experience = { ...cr.toObject(), id: cr.rowNumber };
+        const parsedExperience = experienceSchema.safeParse(experience);
 
-        if (parsedCareer.success) {
-          return parsedCareer.data;
+        if (parsedExperience.success) {
+          return parsedExperience.data;
         }
 
         return null;
       })
       .filter(Boolean);
 
-    return careerRows;
+    return experienceRows;
   } catch (err) {
     // TODO - redirect to link page or login page
     if (axios.isAxiosError(err)) {
@@ -63,8 +63,8 @@ const fetchCareers = async (): Promise<CareerType[]> => {
   }
 };
 
-const CareerList = async () => {
-  const careers = await fetchCareers();
+const ExperienceList = async () => {
+  const experiences = await fetchExperiences();
 
   return (
     <div
@@ -73,11 +73,11 @@ const CareerList = async () => {
         "grid-cols-[repeat(auto-fill,minmax(256px,1fr))] md:grid-cols-[repeat(auto-fill,minmax(400px,1fr))] lg:grid-cols-[repeat(auto-fill,minmax(480px,1fr))]",
       )}
     >
-      {careers.map((career) => (
-        <CareerCard key={career.id} career={career} />
+      {experiences.map((experience) => (
+        <ExperienceCard key={experience.id} experience={experience} />
       ))}
     </div>
   );
 };
 
-export { CareerList };
+export { ExperienceList };

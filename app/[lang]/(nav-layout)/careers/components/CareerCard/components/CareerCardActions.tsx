@@ -10,31 +10,31 @@ import { Button, Popover } from "app/components/ui/isolated/wrapped";
 
 import { Icons } from "@/components/ui/isolated/wrapped/Icons";
 import { ApiRoutes, AppRoutes, SearchParams } from "@/utils/routes.utils";
-import { CareerType } from "@/utils/schema-utils";
+import { ExperienceType } from "@/utils/schema-utils";
 
-type CareerCardActionsProps = {
-  id: CareerType["id"];
+type ExperienceCardActionsProps = {
+  id: ExperienceType["id"];
 };
 
-const CareerCardActions = ({ id }: CareerCardActionsProps) => {
+const ExperienceCardActions = ({ id }: ExperienceCardActionsProps) => {
   // hooks
   const router = useRouter();
 
   // functions
   const handleEditClick = () => {
-    router.push(AppRoutes.editCareer(id));
+    router.push(AppRoutes.editExperience(id));
   };
 
   const handleDeleteClick = () => {
     axios
-      .delete(ApiRoutes.deleteCareer(id))
+      .delete(ApiRoutes.deleteExperience(id))
       .then(() => {
         // TODO - replace with revalidatePath when it works
-        toast.success("career deleted");
+        toast.success("experience deleted");
         router.refresh();
       })
       .catch(() => {
-        toast.error("failed to delete career, please try again");
+        toast.error("failed to delete experience, please try again");
       });
   };
 
@@ -74,4 +74,4 @@ const CareerCardActions = ({ id }: CareerCardActionsProps) => {
   );
 };
 
-export { CareerCardActions };
+export { ExperienceCardActions };

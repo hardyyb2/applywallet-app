@@ -12,25 +12,25 @@ import { Button, FormControl } from "@/components/ui/isolated/wrapped";
 import { useBoolean } from "@/hooks/useBoolean";
 import { ApiRoutes, AppRoutes } from "@/utils/routes.utils";
 import {
-  careerInputSchema,
-  CareerInputType,
-  CareerType,
+  experienceInputSchema,
+  ExperienceInputType,
+  ExperienceType,
 } from "@/utils/schema-utils";
 
-import { getAddEditCareerFormCopy } from "../career.utils";
+import { getAddEditExperienceFormCopy } from "../experience.utils";
 
-export type AddEditCareerFormProps =
+export type AddEditExperienceFormProps =
   | {
       type?: "add";
     }
   | {
       type?: "edit";
-      career: CareerType;
+      experience: ExperienceType;
     };
 
-const AddEditCareerForm = (props: AddEditCareerFormProps) => {
+const AddEditExperienceForm = (props: AddEditExperienceFormProps) => {
   const isEdit = props.type === "edit";
-  const defaultFormValues = isEdit ? props.career : {};
+  const defaultFormValues = isEdit ? props.experience : {};
 
   // hooks
   const {
@@ -38,8 +38,8 @@ const AddEditCareerForm = (props: AddEditCareerFormProps) => {
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm<CareerInputType>({
-    resolver: zodResolver(careerInputSchema),
+  } = useForm<ExperienceInputType>({
+    resolver: zodResolver(experienceInputSchema),
     defaultValues: defaultFormValues,
   });
   const router = useRouter();
@@ -48,42 +48,42 @@ const AddEditCareerForm = (props: AddEditCareerFormProps) => {
   const [loading, { setValue: setLoading }] = useBoolean();
 
   // functions
-  const onSubmit: SubmitHandler<CareerInputType> = (data) => {
+  const onSubmit: SubmitHandler<ExperienceInputType> = (data) => {
     setLoading(true);
 
     if (isEdit) {
       return axios
-        .put(ApiRoutes.editCareer(props.career.id), data)
+        .put(ApiRoutes.editExperience(props.experience.id), data)
         .then(() => {
-          toast.success("career updated");
+          toast.success("experience updated");
           reset();
           // TODO - replace with revalidatePath when it works
           router.refresh();
-          router.replace(AppRoutes.CAREERS);
+          router.replace(AppRoutes.EXPERIENCES);
         })
         .catch(() => {
-          toast.error("failed to update career, please try again");
+          toast.error("failed to update experience, please try again");
         })
         .finally(() => setLoading(false));
     }
 
     return axios
-      .post(ApiRoutes.ADD_CAREER, data)
+      .post(ApiRoutes.ADD_EXPERIENCE, data)
       .then(() => {
-        toast.success("career added");
+        toast.success("experience added");
         reset();
         // TODO - replace with revalidatePath when it works
         router.refresh();
-        router.replace(AppRoutes.CAREERS);
+        router.replace(AppRoutes.EXPERIENCES);
       })
       .catch(() => {
-        toast.error("failed to add career, please try again");
+        toast.error("failed to add experience, please try again");
       })
       .finally(() => setLoading(false));
   };
 
   // constants
-  const { buttonText, titleText } = getAddEditCareerFormCopy(
+  const { buttonText, titleText } = getAddEditExperienceFormCopy(
     props.type,
     loading,
   );
@@ -179,4 +179,4 @@ const AddEditCareerForm = (props: AddEditCareerFormProps) => {
   );
 };
 
-export { AddEditCareerForm };
+export { AddEditExperienceForm };

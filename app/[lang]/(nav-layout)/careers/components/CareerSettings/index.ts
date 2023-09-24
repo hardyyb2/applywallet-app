@@ -1,2 +1,2 @@
-export { CareerSettings } from "./CareerSettings";
-export type { CareerSettingsInfoType } from "./careerSettings.types";
+export { ExperienceSettings } from "./ExperienceSettings";
+export type { ExperienceSettingsInfoType } from "./experienceSettings.types";

@@ -9,12 +9,12 @@ import { Button } from "app/components/ui/isolated/wrapped";
 
 import { Icons } from "@/components/ui/isolated/wrapped/Icons";
 
-import { CareerSettingsInfoType } from "..";
+import { ExperienceSettingsInfoType } from "..";
 
 const CSInformationSettings = () => {
   const dragControls = useDragControls();
-  const [careerSettingItems, setCareerSettingItems] = useState<
-    CareerSettingsInfoType[]
+  const [experienceSettingItems, setExperienceSettingItems] = useState<
+    ExperienceSettingsInfoType[]
   >([
     {
       title: "job",
@@ -28,13 +28,13 @@ const CSInformationSettings = () => {
     },
   ]);
 
-  const handleReorder = (newOrder: CareerSettingsInfoType[]) => {
+  const handleReorder = (newOrder: ExperienceSettingsInfoType[]) => {
     const updatedOrder = newOrder.map((item, index) => {
       item.order = index;
       return item;
     });
 
-    setCareerSettingItems(updatedOrder);
+    setExperienceSettingItems(updatedOrder);
   };
 
   const handleListItemClick = (
@@ -51,11 +51,11 @@ const CSInformationSettings = () => {
     }
 
     if (dataAction === "hide") {
-      const clonedCareerSettingsItems = [...careerSettingItems];
-      clonedCareerSettingsItems[itemIndex].hidden =
-        !clonedCareerSettingsItems[itemIndex].hidden;
+      const clonedExperienceSettingsItems = [...experienceSettingItems];
+      clonedExperienceSettingsItems[itemIndex].hidden =
+        !clonedExperienceSettingsItems[itemIndex].hidden;
 
-      setCareerSettingItems(clonedCareerSettingsItems);
+      setExperienceSettingItems(clonedExperienceSettingsItems);
     }
   };
 
@@ -63,10 +63,10 @@ const CSInformationSettings = () => {
     <Reorder.Group
       className="list-none pl-0"
       axis="y"
-      values={careerSettingItems}
+      values={experienceSettingItems}
       onReorder={handleReorder}
     >
-      {careerSettingItems.map((item, index) => (
+      {experienceSettingItems.map((item, index) => (
         <Reorder.Item
           tabIndex={0}
           key={item.title}

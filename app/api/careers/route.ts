@@ -7,7 +7,7 @@ import { z } from "zod";
 import { authOptions } from "@/lib/auth";
 import { ApiError, ApiErrorCodes, ApiResponse } from "@/utils/api";
 import { CustomError } from "@/utils/error";
-import { careerInputSchema, careerSchema } from "@/utils/schema-utils";
+import { experienceInputSchema, experienceSchema } from "@/utils/schema-utils";
 import { SheetNames } from "@/utils/sheet.utils";
 import { zodKeys } from "@/utils/zod.utils";
 
@@ -25,7 +25,7 @@ export async function POST(request: Request) {
     }
 
     const json = await request.json();
-    const body = careerInputSchema.parse(json);
+    const body = experienceInputSchema.parse(json);
 
     const doc = new GoogleSpreadsheet(session.user.primarySheetId, {
       token: session.accessToken,
@@ -33,14 +33,14 @@ export async function POST(request: Request) {
     await doc.loadInfo();
 
     const allSheets = doc.sheetsByTitle;
-    let careerSheet = allSheets[SheetNames.CAREERS];
-    if (!careerSheet) {
-      careerSheet = await doc.addSheet({
-        title: SheetNames.CAREERS,
-        headerValues: zodKeys(careerInputSchema),
+    let experienceSheet = allSheets[SheetNames.EXPERIENCES];
+    if (!experienceSheet) {
+      experienceSheet = await doc.addSheet({
+        title: SheetNames.EXPERIENCES,
+        headerValues: zodKeys(experienceInputSchema),
       });
     }
-    await careerSheet.addRow(body);
+    await experienceSheet.addRow(body);
 
     return NextResponse.json(new ApiResponse(), {
       status: 200,

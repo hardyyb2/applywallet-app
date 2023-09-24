@@ -4,25 +4,25 @@ import { Flex } from "@/components/ui/isolated/common";
 import { Button } from "@/components/ui/isolated/wrapped";
 import { Icons } from "@/components/ui/isolated/wrapped/Icons";
 
-import { CareerSettingsModal } from "./components/CareerSettingsModal";
+import { ExperienceSettingsModal } from "./components/ExperienceSettingsModal";
 
-const CareerActions = () => {
+const ExperienceActions = () => {
   return (
     <Flex className="gap-2 md:gap-4">
-      <Link href="/careers/add">
+      <Link href="/experiences/add">
         <Button
           tabIndex={-1}
           color="secondary"
           responsive
           startIcon={<Icons.Plus />}
         >
-          <span className="hidden md:inline">add career</span>
+          <span className="hidden md:inline">add experience</span>
         </Button>
       </Link>
 
-      <CareerSettingsModal />
+      <ExperienceSettingsModal />
     </Flex>
   );
 };
 
-export { CareerActions };
+export { ExperienceActions };

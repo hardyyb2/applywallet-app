@@ -10,21 +10,21 @@ import { authOptions } from "@/lib/auth";
 import { CustomError } from "@/utils/error";
 import { AppRoutes, UrlParams } from "@/utils/routes.utils";
 import {
-  CareerInputType,
-  careerSchema,
-  CareerType,
+  ExperienceInputType,
+  experienceSchema,
+  ExperienceType,
 } from "@/utils/schema-utils";
 import { SheetNames } from "@/utils/sheet.utils";
 
-import { AddEditCareerForm } from "../../components/AddEditCareerForm";
+import { AddEditExperienceForm } from "../../components/AddEditExperienceForm";
 
-const careerIdSchema = z.coerce.number().nonnegative();
+const experienceIdSchema = z.coerce.number().nonnegative();
 
-const fetchCareer = async (
-  careerId?: CareerType["id"],
-): Promise<CareerType | undefined> => {
+const fetchExperience = async (
+  experienceId?: ExperienceType["id"],
+): Promise<ExperienceType | undefined> => {
   try {
-    if (!careerId) {
+    if (!experienceId) {
       return;
     }
 
@@ -47,45 +47,45 @@ const fetchCareer = async (
     });
     await doc.loadInfo();
     const allSheets = doc.sheetsByTitle;
-    let careerSheet = allSheets[SheetNames.CAREERS];
+    let experienceSheet = allSheets[SheetNames.EXPERIENCES];
 
     //  TODO - link sheet page
-    if (!careerSheet) {
+    if (!experienceSheet) {
       redirect("/link-sheet");
     }
 
-    const careerIdNum = careerIdSchema.parse(careerId);
-    const requiredCareerRow = (
-      await careerSheet.getRows({
-        offset: careerIdNum - 1 - 1, // extra 1 for header row
+    const experienceIdNum = experienceIdSchema.parse(experienceId);
+    const requiredExperienceRow = (
+      await experienceSheet.getRows({
+        offset: experienceIdNum - 1 - 1, // extra 1 for header row
         limit: 1,
       })
     )[0];
 
-    const careerData = {
-      ...requiredCareerRow.toObject(),
-      id: careerId,
+    const experienceData = {
+      ...requiredExperienceRow.toObject(),
+      id: experienceId,
     };
-    const career = careerSchema.parse(careerData);
+    const experience = experienceSchema.parse(experienceData);
 
-    return career;
+    return experience;
   } catch (err) {
     const message = new CustomError(err).message;
 
-    console.log("fetchCareer error", message);
+    console.log("fetchExperience error", message);
     // TODO - error response
   }
 };
 
-type EditCareerProps = {
+type EditExperienceProps = {
   params: Record<string, string>;
 };
 
-const EditCareer = async ({ params }: EditCareerProps) => {
-  const careerId = params[UrlParams.CAREER_ID];
-  const career = await fetchCareer(careerId);
+const EditExperience = async ({ params }: EditExperienceProps) => {
+  const experienceId = params[UrlParams.EXPERIENCE_ID];
+  const experience = await fetchExperience(experienceId);
 
-  if (!career) {
+  if (!experience) {
     notFound();
   }
 
@@ -93,13 +93,13 @@ const EditCareer = async ({ params }: EditCareerProps) => {
     <div className="m-xs mt-0">
       <Breadcrumbs className="mb-2xs pt-0 [&_a]:no-underline">
         <Breadcrumbs.Item>
-          <Link href={AppRoutes.CAREERS}>careers</Link>
+          <Link href={AppRoutes.EXPERIENCES}>experiences</Link>
         </Breadcrumbs.Item>
         <Breadcrumbs.Item>edit</Breadcrumbs.Item>
       </Breadcrumbs>
-      <AddEditCareerForm type="edit" career={career} />
+      <AddEditExperienceForm type="edit" experience={experience} />
     </div>
   );
 };
 
-export default EditCareer;
+export default EditExperience;

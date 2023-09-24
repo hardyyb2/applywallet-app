@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const careerSchema = z.object({
+export const experienceSchema = z.object({
   id: z.union([z.string(), z.number()]),
   company_name: z.string().min(1, {
     message: "please enter company name",
@@ -16,7 +16,7 @@ export const careerSchema = z.object({
 });
 
 /** does not include id */
-export const careerInputSchema = careerSchema.omit({ id: true });
+export const experienceInputSchema = experienceSchema.omit({ id: true });
 
-export type CareerType = z.infer<typeof careerSchema>;
-export type CareerInputType = z.infer<typeof careerInputSchema>;
+export type ExperienceType = z.infer<typeof experienceSchema>;
+export type ExperienceInputType = z.infer<typeof experienceInputSchema>;

@@ -3,22 +3,22 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/isolated/wrapped";
 import { AppRoutes } from "@/utils/routes.utils";
 
-import { AddEditCareerForm } from "../components/AddEditCareerForm";
+import { AddEditExperienceForm } from "../components/AddEditExperienceForm";
 
-const AddCareer = () => {
+const AddExperience = () => {
   return (
     <div className="m-xs mt-0">
       <Breadcrumbs className="mb-2xs pt-0 [&_a]:no-underline">
         <Breadcrumbs.Item>
-          <Link href={AppRoutes.CAREERS}>careers</Link>
+          <Link href={AppRoutes.EXPERIENCES}>experiences</Link>
         </Breadcrumbs.Item>
         <Breadcrumbs.Item>
-          <Link href={AppRoutes.ADD_CAREER}>add</Link>
+          <Link href={AppRoutes.ADD_EXPERIENCE}>add</Link>
         </Breadcrumbs.Item>
       </Breadcrumbs>
-      <AddEditCareerForm />
+      <AddEditExperienceForm />
     </div>
   );
 };
 
-export default AddCareer;
+export default AddExperience;

@@ -28,7 +28,7 @@ const LinkSheetInput = () => {
     axios
       .post(ApiRoutes.LINK_SHEET, data)
       .then(() => {
-        router.replace(AppRoutes.CAREERS);
+        router.replace(AppRoutes.EXPERIENCES);
       })
       .catch((error) => {
         const message = new CustomError(error).message;

@@ -1,5 +1,5 @@
 import { i18n } from "./locale-utils";
-import { CareerType } from "./schema-utils";
+import { ExperienceType } from "./schema-utils";
 
 export const AppRoutes = {
   HOME: "",
@@ -9,9 +9,10 @@ export const AppRoutes = {
 
   ABOUT: "/about",
 
-  CAREERS: "/careers",
-  ADD_CAREER: "/careers/add",
-  editCareer: (careerId: CareerType["id"]) => `/careers/edit/${careerId}`,
+  EXPERIENCES: "/experiences",
+  ADD_EXPERIENCE: "/experiences/add",
+  editExperience: (experienceId: ExperienceType["id"]) =>
+    `/experiences/edit/${experienceId}`,
 
   LINK_SHEET: "/link-sheet",
 };
@@ -20,10 +21,12 @@ export const ApiRoutes = {
   CREATE_SHEET: "/api/sheet/new",
   LINK_SHEET: "/api/sheet/link",
 
-  ADD_CAREER: "/api/careers",
-  GET_CAREERS: "/api/careers",
-  deleteCareer: (careerId: CareerType["id"]) => `/api/careers/${careerId}`,
-  editCareer: (careerId: CareerType["id"]) => `/api/careers/${careerId}`,
+  ADD_EXPERIENCE: "/api/experiences",
+  GET_EXPERIENCES: "/api/experiences",
+  deleteExperience: (experienceId: ExperienceType["id"]) =>
+    `/api/experiences/${experienceId}`,
+  editExperience: (experienceId: ExperienceType["id"]) =>
+    `/api/experiences/${experienceId}`,
 };
 
 export enum SearchParams {
@@ -31,7 +34,7 @@ export enum SearchParams {
 }
 
 export enum UrlParams {
-  CAREER_ID = "careerId",
+  EXPERIENCE_ID = "experienceId",
 }
 
 /** Get route name with locale */

@@ -17,7 +17,7 @@ const CreateNewSheetButton = () => {
     axios
       .post(ApiRoutes.CREATE_SHEET)
       .then(() => {
-        router.replace(AppRoutes.CAREERS);
+        router.replace(AppRoutes.EXPERIENCES);
       })
       .catch((error) => {
         const message = new CustomError(error).message;

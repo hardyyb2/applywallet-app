@@ -20,7 +20,7 @@ const PostLoginPage = async () => {
       const { success } = await createAndAddNewSheet();
 
       if (success) {
-        redirect(AppRoutes.CAREERS);
+        redirect(AppRoutes.EXPERIENCES);
       }
       break;
     }
@@ -29,7 +29,7 @@ const PostLoginPage = async () => {
       redirect(AppRoutes.LINK_SHEET);
 
     case "valid-sheet":
-      redirect(AppRoutes.CAREERS);
+      redirect(AppRoutes.EXPERIENCES);
 
     case "error":
     default:

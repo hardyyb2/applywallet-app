@@ -6,7 +6,7 @@
 - microanimations
 - Theme at one place
 - Scroll bar same
-- career form page fill
+- experience form page fill
 - button as link component
 - haptics on copy
 - fallback navigator
