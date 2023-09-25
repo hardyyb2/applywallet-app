@@ -7,7 +7,7 @@ import { z } from "zod";
 import { authOptions } from "@/lib/auth";
 import { ApiError, ApiErrorCodes, ApiResponse } from "@/utils/api";
 import { CustomError } from "@/utils/error";
-import { experienceInputSchema, experienceSchema } from "@/utils/schema-utils";
+import { experienceInputSchema } from "@/utils/schema-utils";
 import { SheetNames } from "@/utils/sheet.utils";
 import { zodKeys } from "@/utils/zod.utils";
 
