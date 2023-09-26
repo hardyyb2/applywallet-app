@@ -1,5 +1,5 @@
 import { i18n } from "./locale-utils";
-import { ExperienceType } from "./schema-utils";
+import { ExperienceType, InterviewType } from "./schema-utils";
 
 export const AppRoutes = {
   HOME: "",
@@ -28,6 +28,13 @@ export const ApiRoutes = {
     `/api/experiences/${experienceId}`,
   editExperience: (experienceId: ExperienceType["id"]) =>
     `/api/experiences/${experienceId}`,
+
+  ADD_INTERVIEW: "/api/interviews",
+  GET_INTERVIEWS: "/api/interviews",
+  deleteInterview: (interviewId: InterviewType["id"]) =>
+    `/api/interviews/${interviewId}`,
+  editInterview: (interviewId: InterviewType["id"]) =>
+    `/api/interviews/${interviewId}`,
 } as const;
 
 export enum SearchParams {

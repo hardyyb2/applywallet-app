@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/isolated/wrapped";
 import { AppRoutes } from "@/utils/routes.utils";
 
-// import { AddEditExperienceForm } from "../components/AddEditExperienceForm";
+import { AddEditInterviewForm } from "../components/AddEditInterviewForm";
 
 const AddInterview = () => {
   return (
@@ -16,7 +16,7 @@ const AddInterview = () => {
           <Link href={AppRoutes.ADD_INTERVIEW}>add</Link>
         </Breadcrumbs.Item>
       </Breadcrumbs>
-      {/* <AddEditExperienceForm /> */}
+      <AddEditInterviewForm />
     </div>
   );
 };
