@@ -9,6 +9,7 @@ import { Flex, Typography } from "@/components/ui/isolated/common";
 import { Button } from "@/components/ui/isolated/wrapped";
 import { Icons } from "@/components/ui/isolated/wrapped/Icons";
 import { authOptions } from "@/lib/auth";
+import { AppRoutes } from "@/utils/routes.utils";
 
 import { ExperienceActions } from "./components/ExperienceActions/ExperienceActions";
 import { ExperienceList } from "./components/ExperienceList";
@@ -48,7 +49,7 @@ const Experiences = async () => {
         <ExperienceList />
       </Suspense>
 
-      <Link href="/experiences/add">
+      <Link href={AppRoutes.ADD_EXPERIENCE}>
         <Button
           color="secondary"
           fullWidth
