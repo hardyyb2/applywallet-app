@@ -2,15 +2,12 @@
 
 import React from "react";
 
-import useSWR from "swr";
+import { useInterviews } from "queries/interviews.queries";
 
 import { cn } from "@/utils/styles.utils";
 
 const InterviewsList = () => {
-  const { data, isLoading } = useSWR("todos", async (...args) => {
-    const res = await fetch("https://jsonplaceholder.typicode.com/todos");
-    return (await res.json()) as any[];
-  });
+  const { data, isLoading } = useInterviews();
 
   if (isLoading) {
     return <div>loading</div>;

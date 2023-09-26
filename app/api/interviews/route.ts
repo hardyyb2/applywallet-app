@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 
+import axios from "axios";
 import { GoogleSpreadsheet } from "google-spreadsheet";
 import { getServerSession } from "next-auth";
 import { z } from "zod";
@@ -7,7 +8,7 @@ import { z } from "zod";
 import { authOptions } from "@/lib/auth";
 import { ApiError, ApiErrorCodes, ApiResponse } from "@/utils/api";
 import { CustomError } from "@/utils/error";
-import { interviewSchema } from "@/utils/schema-utils";
+import { interviewInputSchema, interviewSchema } from "@/utils/schema-utils";
 import { SheetNames } from "@/utils/sheet.utils";
 import { zodKeys } from "@/utils/zod.utils";
 
@@ -25,7 +26,7 @@ export async function POST(request: Request) {
     }
 
     const json = await request.json();
-    const body = interviewSchema.parse(json);
+    const body = interviewInputSchema.parse(json);
 
     const doc = new GoogleSpreadsheet(session.user.primarySheetId, {
       token: session.accessToken,
@@ -37,7 +38,7 @@ export async function POST(request: Request) {
     if (!interviewSheet) {
       interviewSheet = await doc.addSheet({
         title: SheetNames.INTERVIEWS,
-        headerValues: zodKeys(interviewSchema),
+        headerValues: zodKeys(interviewInputSchema),
       });
     }
     await interviewSheet.addRow(body);
@@ -67,5 +68,61 @@ export async function POST(request: Request) {
         status: 500,
       },
     );
+  }
+}
+
+export async function GET() {
+  try {
+    const session = await getServerSession(authOptions);
+
+    if (!session || !session.accessToken || !session.user?.primarySheetId) {
+      return NextResponse.json(
+        new ApiError({
+          code: ApiErrorCodes.UNAUTHORIZED,
+        }),
+        { status: 401 },
+      );
+    }
+
+    const { primarySheetId } = session.user;
+
+    const doc = new GoogleSpreadsheet(primarySheetId, {
+      token: session.accessToken,
+    });
+    await doc.loadInfo();
+    const allSheets = doc.sheetsByTitle;
+    let interviewSheet = allSheets[SheetNames.INTERVIEWS];
+
+    //  TODO - figure out what to do no sheet is present
+    if (!interviewSheet) {
+      return NextResponse.json(new ApiResponse([]), {
+        status: 200,
+      });
+    }
+
+    // TODO - return damaged rows as well
+    const interviewRows = (await interviewSheet.getRows())
+      .map((ir) => {
+        const interview = { ...ir.toObject(), id: ir.rowNumber };
+        const parsedInterview = interviewSchema.safeParse(interview);
+
+        if (parsedInterview.success) {
+          return parsedInterview.data;
+        }
+
+        return null;
+      })
+      .filter(Boolean);
+
+    return NextResponse.json(new ApiResponse(interviewRows), {
+      status: 200,
+    });
+  } catch (err) {
+    console.log("err", err);
+    // TODO - redirect to link page or login page
+    if (axios.isAxiosError(err)) {
+      const status = err.response?.status;
+    }
+    return [];
   }
 }

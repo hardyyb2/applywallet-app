@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
+import { useAddInterview } from "queries/interviews.queries";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 
@@ -33,6 +34,7 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
   const defaultFormValues = isEdit ? props.interview : {};
 
   // hooks
+  const { trigger: triggerAddInterview } = useAddInterview();
   const {
     register,
     handleSubmit,
@@ -67,19 +69,15 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
         .finally(() => setLoading(false));
     }
 
-    return axios
-      .post(ApiRoutes.ADD_INTERVIEW, data)
-      .then(() => {
+    return triggerAddInterview(data, {
+      onSuccess: () => {
         toast.success("interview added");
-        reset();
-        // TODO - replace with revalidatePath when it works
-        router.refresh();
         router.replace(AppRoutes.INTERVIEWS);
-      })
-      .catch(() => {
-        toast.error("failed to add interview, please try again");
-      })
-      .finally(() => setLoading(false));
+      },
+      onError: () => {
+        toast.error("failed to update interview, please try again");
+      },
+    });
   };
 
   // constants
