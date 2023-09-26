@@ -5,6 +5,7 @@ import { authOptions } from "@/lib/auth";
 
 export enum SheetNames {
   EXPERIENCES = "experiences",
+  INTERVIEWS = "interviews",
 }
 
 export const createGoogleSheetDoc = async (
