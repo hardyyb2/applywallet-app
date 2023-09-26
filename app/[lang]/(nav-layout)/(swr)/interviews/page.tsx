@@ -8,8 +8,10 @@ import { Flex, Typography } from "@/components/ui/isolated/common";
 import { Button } from "@/components/ui/isolated/wrapped";
 import { Icons } from "@/components/ui/isolated/wrapped/Icons";
 import { authOptions } from "@/lib/auth";
+import { AppRoutes } from "@/utils/routes.utils";
 
-import { InterviewsList } from "./InterviewsList";
+import { InterviewActions } from "./components/InterviewActions";
+import { InterviewsList } from "./components/InterviewsList";
 
 export const metadata: Metadata = {
   title: "interviews",
@@ -38,12 +40,12 @@ const Interviews = async () => {
           </Typography>
         </Flex>
 
-        {/* <ExperienceActions /> */}
+        <InterviewActions />
       </Flex>
 
       <InterviewsList />
 
-      <Link href="/interviews/add">
+      <Link href={AppRoutes.ADD_INTERVIEW}>
         <Button
           color="secondary"
           fullWidth

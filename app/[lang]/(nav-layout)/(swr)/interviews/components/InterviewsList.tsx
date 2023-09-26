@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Fragment } from "react";
+import React from "react";
 
 import useSWR from "swr";
 
@@ -17,7 +17,12 @@ const InterviewsList = () => {
   }
 
   return (
-    <Fragment>
+    <div
+      className={cn(
+        "grid w-full gap-8",
+        "grid-cols-[repeat(auto-fill,minmax(256px,1fr))] md:grid-cols-[repeat(auto-fill,minmax(400px,1fr))] lg:grid-cols-[repeat(auto-fill,minmax(480px,1fr))]",
+      )}
+    >
       {data?.map((_item, index) => (
         <div key={index} className="card bg-base-200">
           <div className={cn("card-body")}>
@@ -29,7 +34,7 @@ const InterviewsList = () => {
           </div>
         </div>
       ))}
-    </Fragment>
+    </div>
   );
 };
 

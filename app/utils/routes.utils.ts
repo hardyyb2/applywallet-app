@@ -8,6 +8,7 @@ export const AppRoutes = {
   POST_LOGIN: "/post-login",
 
   INTERVIEWS: "/interviews",
+  ADD_INTERVIEW: "/interviews/add",
 
   EXPERIENCES: "/experiences",
   ADD_EXPERIENCE: "/experiences/add",
