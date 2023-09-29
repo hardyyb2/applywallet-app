@@ -21,7 +21,9 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["app/*"]
+      "@/*": ["app/*"],
+      "@/queries/*": ["queries/*"],
+      "@/types/*": ["types/*"]
     }
   },
   "include": [
