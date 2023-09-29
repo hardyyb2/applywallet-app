@@ -16,7 +16,7 @@ const fetchInterviews = async () => {
   });
 };
 
-export const useInterviews = () => {
+const useInterviews = () => {
   return useSWR(QueryKeys.INTERVIEWS, fetchInterviews);
 };
 
@@ -31,7 +31,7 @@ const fetchInterview = async (interviewId: InterviewType["id"]) => {
   });
 };
 
-export const useInterview = (interviewId: string) => {
+const useInterview = (interviewId: string) => {
   return useSWR(QueryKeys.interview(interviewId), () =>
     fetchInterview(interviewId),
   );
@@ -44,7 +44,7 @@ const addInterview = async (
   return axios.post(ApiRoutes.ADD_INTERVIEW, data.arg);
 };
 
-export const useAddInterview = () => {
+const useAddInterview = () => {
   // TODO - replace this any
   return useSWRMutation<any, any, Key, InterviewInputType>(
     QueryKeys.INTERVIEWS,
@@ -56,10 +56,12 @@ const updateInterview = async (_key: string, data: { arg: InterviewType }) => {
   return axios.put(ApiRoutes.editInterview(data.arg.id), data.arg);
 };
 
-export const useUpdateInterview = () => {
+const useUpdateInterview = () => {
   // TODO - replace this any
   return useSWRMutation<any, any, Key, InterviewType>(
     QueryKeys.INTERVIEWS,
     updateInterview,
   );
 };
+
+export { useInterviews, useInterview, useAddInterview, useUpdateInterview };
