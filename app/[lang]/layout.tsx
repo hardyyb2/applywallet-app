@@ -1,5 +1,3 @@
-import "@total-typescript/ts-reset";
-
 import { i18n, Locale } from "@/utils/locale-utils";
 
 import { Providers } from "./providers";
