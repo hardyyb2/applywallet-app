@@ -3,8 +3,10 @@
 import { useRouter } from "next/navigation";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import axios from "axios";
-import { useAddInterview } from "queries/interviews.queries";
+import {
+  useAddInterview,
+  useUpdateInterview,
+} from "queries/interviews.queries";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 
@@ -35,11 +37,11 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
 
   // hooks
   const { trigger: triggerAddInterview } = useAddInterview();
+  const { trigger: triggerUpdateInterview } = useUpdateInterview();
   const {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
   } = useForm<InterviewInputType>({
     resolver: zodResolver(interviewInputSchema),
     defaultValues: defaultFormValues,
@@ -54,19 +56,19 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
     setLoading(true);
 
     if (isEdit) {
-      return axios
-        .put(ApiRoutes.editInterview(props.interview.id), data)
-        .then(() => {
-          toast.success("interview updated");
-          reset();
-          // TODO - replace with revalidatePath when it works
-          router.refresh();
-          router.replace(AppRoutes.INTERVIEWS);
-        })
-        .catch(() => {
-          toast.error("failed to update interview, please try again");
-        })
-        .finally(() => setLoading(false));
+      return triggerUpdateInterview(
+        { ...data, id: props.interview.id },
+        {
+          onSuccess: () => {
+            toast.success("interview updated");
+            router.replace(AppRoutes.INTERVIEWS);
+          },
+          onError: () => {
+            // TODO - show valid error
+            toast.error("failed to update interview, please try again");
+          },
+        },
+      );
     }
 
     return triggerAddInterview(data, {
@@ -75,6 +77,7 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
         router.replace(AppRoutes.INTERVIEWS);
       },
       onError: () => {
+        // TODO - show valid error
         toast.error("failed to update interview, please try again");
       },
     });
