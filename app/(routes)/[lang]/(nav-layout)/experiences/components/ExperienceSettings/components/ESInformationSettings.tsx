@@ -2,10 +2,9 @@
 
 import { MouseEvent, useState } from "react";
 
+import { Flex } from "@/_components/ui/isolated/common";
+import { Button } from "@/_components/ui/isolated/wrapped";
 import { Reorder, useDragControls } from "framer-motion";
-
-import { Flex } from "app/components/ui/isolated/common";
-import { Button } from "app/components/ui/isolated/wrapped";
 
 import { Icons } from "@/components/ui/isolated/wrapped/Icons";
 

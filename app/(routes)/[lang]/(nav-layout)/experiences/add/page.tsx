@@ -1,7 +1,8 @@
 import Link from "next/link";
 
+import { AppRoutes } from "@/_utils/routes.utils";
+
 import { Breadcrumbs } from "@/components/ui/isolated/wrapped";
-import { AppRoutes } from "@/utils/routes.utils";
 
 import { AddEditExperienceForm } from "../components/AddEditExperienceForm";
 

@@ -1,4 +1,4 @@
-import { i18n, Locale } from "@/utils/locale-utils";
+import { i18n, Locale } from "@/_utils/locale-utils";
 
 import { Providers } from "./providers";
 

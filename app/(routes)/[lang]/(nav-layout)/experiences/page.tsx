@@ -2,14 +2,14 @@ import { Suspense } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { authOptions } from "@/_lib/auth";
+import { AppRoutes } from "@/_utils/routes.utils";
 import { getServerSession } from "next-auth";
 
 import { LoginCard } from "@/components/ui/dependent/LoginCard";
 import { Flex, Typography } from "@/components/ui/isolated/common";
 import { Button } from "@/components/ui/isolated/wrapped";
 import { Icons } from "@/components/ui/isolated/wrapped/Icons";
-import { authOptions } from "@/lib/auth";
-import { AppRoutes } from "@/utils/routes.utils";
 
 import { ExperienceActions } from "./components/ExperienceActions/ExperienceActions";
 import { ExperienceList } from "./components/ExperienceList";

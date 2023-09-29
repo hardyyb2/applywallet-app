@@ -22,8 +22,13 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["app/*"],
-      "@/queries/*": ["queries/*"],
-      "@/types/*": ["types/*"]
+      "@/styles/*": ["app/_styles/*"],
+      "@/components/*": ["app/_components/*"],
+      "@/hooks/*": ["app/_hooks/*"],
+      "@/lib/*": ["app/_lib/*"],
+      "@/utils/*": ["app/_utils/*"],
+      "@/queries/*": ["app/_queries/*"],
+      "@/types/*": ["app/_types/*"]
     }
   },
   "include": [

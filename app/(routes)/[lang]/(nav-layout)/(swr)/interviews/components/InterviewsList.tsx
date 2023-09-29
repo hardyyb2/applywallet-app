@@ -2,8 +2,9 @@
 
 import React from "react";
 
+import { cn } from "@/_utils/styles.utils";
+
 import { useInterviews } from "@/queries/interviews.queries";
-import { cn } from "@/utils/styles.utils";
 
 const InterviewsList = () => {
   const { data, isLoading } = useInterviews();

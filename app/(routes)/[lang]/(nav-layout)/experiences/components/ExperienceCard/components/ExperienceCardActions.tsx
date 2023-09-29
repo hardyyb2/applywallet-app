@@ -2,15 +2,14 @@
 
 import { useRouter } from "next/navigation";
 
+import { Flex } from "@/_components/ui/isolated/common";
+import { Button, Popover } from "@/_components/ui/isolated/wrapped";
+import { ApiRoutes, AppRoutes, SearchParams } from "@/_utils/routes.utils";
+import { ExperienceType } from "@/_utils/schema-utils";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-import { Flex } from "app/components/ui/isolated/common";
-import { Button, Popover } from "app/components/ui/isolated/wrapped";
-
 import { Icons } from "@/components/ui/isolated/wrapped/Icons";
-import { ApiRoutes, AppRoutes, SearchParams } from "@/utils/routes.utils";
-import { ExperienceType } from "@/utils/schema-utils";
 
 type ExperienceCardActionsProps = {
   id: ExperienceType["id"];
