@@ -31,6 +31,8 @@ export const ApiRoutes = {
 
   ADD_INTERVIEW: "/api/interviews",
   GET_INTERVIEWS: "/api/interviews",
+  getInterview: (interviewId: InterviewType["id"]) =>
+    `/api/interviews/${interviewId}`,
   deleteInterview: (interviewId: InterviewType["id"]) =>
     `/api/interviews/${interviewId}`,
   editInterview: (interviewId: InterviewType["id"]) =>
@@ -43,6 +45,7 @@ export enum SearchParams {
 
 export enum UrlParams {
   EXPERIENCE_ID = "experienceId",
+  INTERVIEW_ID = "interviewId",
 }
 
 /** Get route name with locale */
