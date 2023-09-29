@@ -19,7 +19,7 @@ const HeaderClient = ({ children }: { children?: ReactNode }) => {
       justify="space-between"
       className={cn("h-full w-full px-4 lg:px-10")}
     >
-      <div className="inline-flex text-lg lowercase text-primary">
+      <div className="text-lg inline-flex lowercase text-primary">
         <Typography>apply</Typography>
         <Typography className="text-base-content">wallet</Typography>
       </div>

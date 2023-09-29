@@ -3,9 +3,9 @@
 import Link from "next/link";
 
 import { ConditionalMatch } from "@dx-kit/react-conditional-match";
-import { useInterview } from "queries/interviews.queries";
 
 import { Breadcrumbs } from "@/components/ui/isolated/wrapped";
+import { useInterview } from "@/queries/interviews.queries";
 import { AppRoutes, UrlParams } from "@/utils/routes.utils";
 
 import { AddEditInterviewForm } from "../../components/AddEditInterviewForm";

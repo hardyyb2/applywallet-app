@@ -3,16 +3,16 @@
 import { useRouter } from "next/navigation";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import {
-  useAddInterview,
-  useUpdateInterview,
-} from "queries/interviews.queries";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 
 import { Typography } from "@/components/ui/isolated/common";
 import { Button, FormControl } from "@/components/ui/isolated/wrapped";
 import { useBoolean } from "@/hooks/useBoolean";
+import {
+  useAddInterview,
+  useUpdateInterview,
+} from "@/queries/interviews.queries";
 import { ApiRoutes, AppRoutes } from "@/utils/routes.utils";
 import {
   interviewInputSchema,

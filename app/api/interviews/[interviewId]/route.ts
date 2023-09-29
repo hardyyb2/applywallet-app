@@ -3,7 +3,6 @@ import { NextRequest, NextResponse } from "next/server";
 
 import { GoogleSpreadsheet } from "google-spreadsheet";
 import { getServerSession } from "next-auth";
-import { ApiRequestContextType } from "types/api";
 import { z } from "zod";
 
 import { authOptions } from "@/lib/auth";
@@ -11,6 +10,8 @@ import { ApiError, ApiErrorCodes, ApiResponse } from "@/utils/api";
 import { CustomError } from "@/utils/error";
 import { interviewInputSchema, interviewSchema } from "@/utils/schema-utils";
 import { SheetNames } from "@/utils/sheet.utils";
+
+import { ApiRequestContextType } from "@/types/api";
 
 const paramSchema = z.object({
   interviewId: z.coerce.number().nonnegative(),
