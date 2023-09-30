@@ -31,6 +31,7 @@
     "@types/mdx": "^2.0.8",
     "axios": "^1.4.0",
     "clsx": "^1.2.1",
+    "cva": "npm:class-variance-authority@^0.7.0",
     "framer-motion": "^10.0.1",
     "google-spreadsheet": "^4.0.2",
     "lucide-react": "^0.268.0",
