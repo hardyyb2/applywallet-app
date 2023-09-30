@@ -1,21 +1,13 @@
 import { ButtonHTMLAttributes, forwardRef, ReactNode } from "react";
 
 import { cn } from "@/_utils/styles.utils";
+import { type VariantProps } from "cva";
 
-import {
-  ButtonColorsType,
-  ButtonShapeType,
-  ButtonSizeTypes,
-} from "./Button.types";
+import { buttonVariants } from "./button.utils";
 
-export type ButtonProps = Omit<
-  ButtonHTMLAttributes<HTMLButtonElement>,
-  "color"
-> & {
-  shape?: ButtonShapeType;
-  size?: ButtonSizeTypes;
-  variant?: "outline" | "link";
-  color?: ButtonColorsType;
+export interface ButtonProps
+  extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, "color">,
+    VariantProps<typeof buttonVariants> {
   fullWidth?: boolean;
   responsive?: boolean;
   animation?: boolean;
@@ -23,7 +15,7 @@ export type ButtonProps = Omit<
   active?: boolean;
   startIcon?: ReactNode;
   endIcon?: ReactNode;
-};
+}
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
@@ -42,55 +34,34 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       active,
       disabled,
       className,
-      style,
       ...rest
     },
     ref,
   ): JSX.Element => {
-    const classes = cn(
-      "btn",
-      ((startIcon && !loading) || endIcon) && "gap-2",
-      {
-        "btn-lg": size === "lg",
-        "btn-md": size === "md",
-        "btn-sm": size === "sm",
-        "btn-xs": size === "xs",
-      },
-      {
-        "btn-primary": color === "primary",
-        "btn-secondary": color === "secondary",
-        "btn-accent": color === "accent",
-        "btn-info": color === "info",
-        "btn-success": color === "success",
-        "btn-warning": color === "warning",
-        "btn-error": color === "error",
-        "btn-ghost": color === "ghost",
-      },
-      {
-        "btn-circle": shape === "circle",
-        "btn-square": shape === "square",
-      },
-      {
-        "btn-outline": variant === "outline",
-        "btn-link": variant === "link",
-      },
-      // States
-      {
-        "btn-block": fullWidth,
-        "btn-sm lg:btn-md ": responsive,
-        "no-animation": !animation,
-        "btn-active": active,
-        "btn-disabled": disabled,
-      },
-      className,
-    );
-
     return (
       <button
         {...rest}
         ref={ref}
-        className={classes}
-        style={style}
+        className={cn(
+          buttonVariants({
+            color,
+            shape,
+            size,
+            variant,
+            className: cn(
+              ((startIcon && !loading) || endIcon) && "gap-2",
+              // states
+              {
+                "btn-block": fullWidth,
+                "btn-sm lg:btn-md ": responsive,
+                "no-animation": !animation,
+                "btn-active": active,
+                "btn-disabled": disabled,
+              },
+              className,
+            ),
+          }),
+        )}
         disabled={disabled}
       >
         {loading ? <span className="loading" /> : startIcon}
