@@ -1,5 +1,6 @@
 import { ComponentType, forwardRef } from "react";
 
+import { cn } from "@/_utils/styles.utils";
 import { type VariantProps } from "cva";
 
 import {
@@ -35,12 +36,14 @@ const Typography = forwardRef<
     return (
       <Component
         ref={ref}
-        className={typographyVariants({
-          variant,
-          display,
-          align,
-          className,
-        })}
+        className={cn(
+          typographyVariants({
+            variant,
+            display,
+            align,
+            className,
+          }),
+        )}
         {...rest}
       />
     );

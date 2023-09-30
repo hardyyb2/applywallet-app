@@ -1,3 +1,5 @@
+const { fontFamily } = require("tailwindcss/defaultTheme");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -6,6 +8,10 @@ module.exports = {
     // Note the addition of the `app` directory.
   ],
   theme: {
+    fontFamily: {
+      primary: ["var(--font-primary)", ...fontFamily.sans],
+      secondary: ["var(--font-secondary)", ...fontFamily.sans],
+    },
     fontSize: {
       h1: "clamp(2.80rem, calc(2.44rem + 1.78vw), 4.58rem)",
       h2: "clamp(2.33rem, calc(2.07rem + 1.33vw), 3.66rem)",
