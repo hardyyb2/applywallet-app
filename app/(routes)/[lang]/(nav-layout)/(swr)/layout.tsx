@@ -1,13 +1,7 @@
-import Hello from "./hello.mdx";
 import { SWRProviders } from "./providers";
 
 const SWRLayout = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <SWRProviders>
-      <Hello />
-      {children}
-    </SWRProviders>
-  );
+  return <SWRProviders>{children}</SWRProviders>;
 };
 
 export default SWRLayout;

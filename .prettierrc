@@ -21,7 +21,7 @@
     "",
     "^types$",
     "",
-    "^(@/api|@/queries|@/hooks|@/lib|@/components|@/utils|@/assets)(/.*)$",
+    "^(@/api|@/queries|@/hooks|@/lib|@/components|@/utils|@/assets|@/content)(/.*)$",
     "",
     "^(@/types)(/.*)$",
     "",
