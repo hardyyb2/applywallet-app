@@ -20,7 +20,7 @@ const InterviewsList = () => {
         "grid-cols-[repeat(auto-fill,minmax(256px,1fr))] md:grid-cols-[repeat(auto-fill,minmax(400px,1fr))] lg:grid-cols-[repeat(auto-fill,minmax(480px,1fr))]",
       )}
     >
-      {data?.map((_item, index) => (
+      {data?.map((_item: any, index: number) => (
         <div key={index} className="card bg-base-200">
           <div className={cn("card-body")}>
             <h2 className="card-title">Card title!</h2>

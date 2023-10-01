@@ -122,6 +122,17 @@ export async function GET() {
     if (axios.isAxiosError(err)) {
       const status = err.response?.status;
     }
-    return [];
+
+    const message = new CustomError(err).message;
+
+    return NextResponse.json(
+      new ApiError({
+        code: ApiErrorCodes.SERVER_ERROR,
+        message,
+      }),
+      {
+        status: 500,
+      },
+    );
   }
 }

@@ -1,6 +1,8 @@
 import { i18n } from "./locale-utils";
 import { ExperienceType, InterviewType } from "./schema-utils";
 
+export type AppRouteLinkType = (typeof AppRoutes)[keyof typeof AppRoutes];
+
 export const AppRoutes = {
   HOME: "",
 
@@ -14,7 +16,6 @@ export const AppRoutes = {
   ADD_EXPERIENCE: "/experiences/add",
   editExperience: (experienceId: ExperienceType["id"]) =>
     `/experiences/edit/${experienceId}`,
-
   LINK_SHEET: "/link-sheet",
 } as const;
 
@@ -53,11 +54,15 @@ export const getLinkWithLocale = ({
   link,
   pathName,
 }: {
-  link: string;
+  link: Extract<AppRouteLinkType, string>;
   pathName: string | null;
 }) => {
   const currentLocale = pathName?.split("/")?.[1] ?? i18n.defaultLocale;
-  const itemLinkWithLocale = `/${currentLocale}${link}`;
+  let itemLinkWithLocale = `/${currentLocale}`;
+
+  if (typeof link === "string") {
+    itemLinkWithLocale += link;
+  }
 
   return itemLinkWithLocale;
 };
