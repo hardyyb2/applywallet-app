@@ -21,6 +21,7 @@
     ],
     "baseUrl": ".",
     "paths": {
+      "contentlayer/generated": ["./.contentlayer/generated"],
       "@/*": ["app/*"],
       "@/styles/*": ["app/_styles/*"],
       "@/components/*": ["app/_components/*"],
@@ -39,7 +40,8 @@
     ".next/types/**/*.ts",
     "middleware.tsx",
     "./utils/locale-utils/i18n-config.ts",
-    "scripts/renderLogs.js"
+    "scripts/renderLogs.js",
+    ".contentlayer/generated"
   ],
   "exclude": ["node_modules"]
 }
