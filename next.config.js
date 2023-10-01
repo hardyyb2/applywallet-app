@@ -7,7 +7,7 @@ const { withContentlayer } = require("next-contentlayer");
 const nextConfig = {
   swcMinify: true,
   images: {
-    domains: ["lh3.googleusercontent.com"],
+    domains: ["lh3.googleusercontent.com", "picsum.photos"],
   },
   webpack(config) {
     config.module.rules.push({

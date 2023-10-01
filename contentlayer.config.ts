@@ -9,6 +9,10 @@ export const Blog = defineDocumentType(() => ({
       type: "string",
       required: true,
     },
+    topic: {
+      type: "string",
+      required: true,
+    },
     description: {
       type: "string",
     },

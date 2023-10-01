@@ -1,11 +1,13 @@
 import { forwardRef, HTMLAttributes, PropsWithChildren } from "react";
 
+import { cn } from "@/_utils/styles.utils";
+
 export type CardFigureProps = PropsWithChildren & HTMLAttributes<HTMLElement>;
 
 const CardFigure = forwardRef<HTMLElement, CardFigureProps>(
-  ({ children, ...props }, ref) => {
+  ({ children, className, ...props }, ref) => {
     return (
-      <figure ref={ref} {...props}>
+      <figure ref={ref} className={cn("relative", className)} {...props}>
         {children}
       </figure>
     );
