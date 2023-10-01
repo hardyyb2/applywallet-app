@@ -1,4 +1,6 @@
-const BlogsLayout = ({ children }: { children: React.ReactNode }) => {
+import { ReactNode } from "react";
+
+const BlogsLayout = ({ children }: { children: ReactNode }) => {
   return <article className="prose">{children}</article>;
 };
 

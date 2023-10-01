@@ -1,6 +1,8 @@
+import { HTMLAttributes } from "react";
+
 import { cn } from "@/_utils/styles.utils";
 
-export type DropdownMenuProps = React.HTMLAttributes<HTMLUListElement>;
+export type DropdownMenuProps = HTMLAttributes<HTMLUListElement>;
 
 const DropdownMenu = ({ className, ...props }: DropdownMenuProps) => {
   return (

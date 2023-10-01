@@ -1,7 +1,5 @@
 "use client";
 
-import React from "react";
-
 import { cn } from "@/_utils/styles.utils";
 
 import { useInterviews } from "@/queries/interviews.queries";

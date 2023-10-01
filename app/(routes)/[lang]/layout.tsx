@@ -6,6 +6,8 @@ import "@/styles/globals.scss";
 import "@/styles/overrides/toast.scss";
 import "@/styles/overrides/daisyui.scss";
 
+import { ReactNode } from "react";
+
 import { fonts } from "@/_lib/fonts";
 import { cn } from "@/_utils/styles.utils";
 
@@ -17,7 +19,7 @@ const RootLayout = ({
   params: { lang = "en" },
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
   params: {
     lang: Locale;
   };

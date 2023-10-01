@@ -1,5 +1,3 @@
-import React from "react";
-
 import { CreateNewSheetButton } from "./components/CreateNewSheetButton";
 import { LinkSheetInput } from "./components/LinkSheetInput";
 

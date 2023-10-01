@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import { forwardRef, HTMLAttributes } from "react";
 
 import { cn } from "@/_utils/styles.utils";
 
@@ -6,7 +6,7 @@ import { DropdownItem } from "./components/DropdownItem";
 import { DropdownMenu } from "./components/DropdownMenu";
 import { DropdownToggle } from "./components/DropdownToggle";
 
-export type DropdownProps = React.HTMLAttributes<HTMLDivElement> & {
+export type DropdownProps = HTMLAttributes<HTMLDivElement> & {
   horizontal?: "left" | "center" | "right";
   vertical?: "top" | "middle" | "end";
   hover?: boolean;

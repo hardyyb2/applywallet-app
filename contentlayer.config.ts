@@ -29,7 +29,6 @@ export const Blog = defineDocumentType(() => ({
   },
 }));
 
-// eslint-disable-next-line import/no-default-export
 export default makeSource({
   contentDirPath: "./app/_content",
   documentTypes: [Blog],

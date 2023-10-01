@@ -1,11 +1,11 @@
-import { forwardRef } from "react";
+import { forwardRef, InputHTMLAttributes } from "react";
 
 import { cn } from "@/_utils/styles.utils";
 
 import { InputColorsType, InputSizeTypes } from "./Input.types";
 
 export type InputProps = Omit<
-  React.InputHTMLAttributes<HTMLInputElement>,
+  InputHTMLAttributes<HTMLInputElement>,
   "size" | "color"
 > & {
   bordered?: boolean;

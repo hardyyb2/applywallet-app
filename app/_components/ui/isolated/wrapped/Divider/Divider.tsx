@@ -1,6 +1,8 @@
+import { HTMLAttributes } from "react";
+
 import { cn } from "@/_utils/styles.utils";
 
-export type DividerProps = React.HTMLAttributes<HTMLDivElement> & {
+export type DividerProps = HTMLAttributes<HTMLDivElement> & {
   vertical?: boolean;
   horizontal?: boolean;
   responsive?: boolean;

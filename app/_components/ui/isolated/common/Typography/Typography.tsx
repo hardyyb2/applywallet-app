@@ -1,4 +1,4 @@
-import { ComponentType, forwardRef } from "react";
+import { ComponentType, forwardRef, ReactNode } from "react";
 
 import { cn } from "@/_utils/styles.utils";
 import { type VariantProps } from "cva";
@@ -11,7 +11,7 @@ import {
 export interface TypographyProps
   extends VariantProps<typeof typographyVariants> {
   component?: keyof JSX.IntrinsicElements | ComponentType<any>;
-  children?: React.ReactNode;
+  children?: ReactNode;
   className?: string;
 }
 

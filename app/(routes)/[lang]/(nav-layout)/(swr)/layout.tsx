@@ -1,6 +1,8 @@
+import { ReactNode } from "react";
+
 import { SWRProviders } from "./providers";
 
-const SWRLayout = ({ children }: { children: React.ReactNode }) => {
+const SWRLayout = ({ children }: { children: ReactNode }) => {
   return <SWRProviders>{children}</SWRProviders>;
 };
 

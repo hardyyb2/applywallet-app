@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { signIn } from "next-auth/react";
 
 import { Button } from "@/_components/ui/isolated/wrapped";

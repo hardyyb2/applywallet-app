@@ -1,10 +1,10 @@
-import React from "react";
+import { forwardRef, LiHTMLAttributes } from "react";
 
-export type BreadcrumbsItemProps = React.LiHTMLAttributes<HTMLLIElement> & {
+export type BreadcrumbsItemProps = LiHTMLAttributes<HTMLLIElement> & {
   href?: string;
 };
 
-const BreadcrumbsItem = React.forwardRef<HTMLLIElement, BreadcrumbsItemProps>(
+const BreadcrumbsItem = forwardRef<HTMLLIElement, BreadcrumbsItemProps>(
   ({ children, href, ...props }, ref): JSX.Element => {
     return (
       <li role="link" {...props} ref={ref}>
