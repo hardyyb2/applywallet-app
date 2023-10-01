@@ -35,8 +35,6 @@ async function getBlogFromParams(params: BlogPageProps["params"]) {
 const BlogPage = async ({ params }: BlogPageProps) => {
   const blog = await getBlogFromParams(params);
 
-  console.log("blog", blog);
-
   if (!blog) {
     notFound();
   }

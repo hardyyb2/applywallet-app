@@ -42,6 +42,7 @@ const BottomNavBar = ({
         });
 
         const active = itemLinkWithLocale === pathName;
+        const Icon = item.icon;
 
         return (
           <Link
@@ -49,7 +50,7 @@ const BottomNavBar = ({
             key={item.key ?? item.link}
             className={cn(active && "active text-primary", "bg-transparent")}
           >
-            <Icons.CustomHome />
+            <Icon />
             <BottomNavigation.Label>
               <Typography variant="caption">{item.label}</Typography>
             </BottomNavigation.Label>
