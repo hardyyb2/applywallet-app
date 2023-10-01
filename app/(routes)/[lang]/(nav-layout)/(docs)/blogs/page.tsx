@@ -7,7 +7,7 @@ const BlogsPage = () => {
     <div
       className={cn(
         "grid w-full gap-8",
-        "grid-cols-[repeat(auto-fill,minmax(256px,1fr))] md:grid-cols-[repeat(auto-fill,minmax(400px,1fr))] lg:grid-cols-[repeat(auto-fill,minmax(480px,1fr))]",
+        "grid-cols-[repeat(auto-fill,minmax(800px,1fr))] md:grid-cols-[repeat(auto-fill,minmax(400px,1fr))] lg:grid-cols-[repeat(auto-fill,minmax(480px,1fr))]",
         "grid-flow-[row_dense]",
       )}
     >
