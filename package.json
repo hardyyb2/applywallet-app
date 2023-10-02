@@ -30,6 +30,7 @@
     "clsx": "^1.2.1",
     "contentlayer": "^0.3.4",
     "cva": "npm:class-variance-authority@^0.7.0",
+    "dayjs": "^1.11.10",
     "framer-motion": "^10.0.1",
     "google-spreadsheet": "^4.0.2",
     "lucide-react": "^0.268.0",
