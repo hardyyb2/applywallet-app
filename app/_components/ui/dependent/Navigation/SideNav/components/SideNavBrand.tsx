@@ -3,7 +3,14 @@ import Link from "next/link";
 import { cn } from "@/_utils/styles.utils";
 
 import { Flex, Typography } from "@/components/ui/isolated/common";
-import { Button } from "@/components/ui/isolated/wrapped";
+import {
+  Button,
+  Tooltip,
+  TooltipArrow,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/isolated/wrapped";
 import { Icons } from "@/components/ui/isolated/wrapped/Icons";
 
 interface SideNavBrandProps {
@@ -43,13 +50,23 @@ const SideNavBrand = ({
           </div>
         )}
       </Link>
-      <Button
-        color="ghost"
-        onClick={onToggleClick}
-        className={cn(navOpen && "p-2")}
-      >
-        {navOpen ? <Icons.PanelLeftClose /> : <Icons.PanelLeftOpen />}
-      </Button>
+      <TooltipProvider delayDuration={200}>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Button
+              color="ghost"
+              onClick={onToggleClick}
+              className={cn(navOpen && "p-2")}
+            >
+              {navOpen ? <Icons.PanelLeftClose /> : <Icons.PanelLeftOpen />}
+            </Button>
+          </TooltipTrigger>
+          <TooltipContent className="bg-primary">
+            {navOpen ? "close nav" : "open nav"}
+            <TooltipArrow className="fill-primary" />
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
     </Flex>
   );
 };

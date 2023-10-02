@@ -3,10 +3,15 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { Flex, Typography } from "@/_components/ui/isolated/common";
+import {
+  Tooltip,
+  TooltipArrow,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/_components/ui/isolated/wrapped";
 import { getLinkWithLocale } from "@/_utils/routes.utils";
 import { cn } from "@/_utils/styles.utils";
-
-import { Icons } from "@/components/ui/isolated/wrapped/Icons";
 
 import { groupedNavItemsEntries } from "../navigation.utils";
 
@@ -51,8 +56,8 @@ const NavigationMenu = ({
               const active = itemLinkWithLocale === pathName;
               const ItemIcon = item.icon;
 
-              return (
-                <li key={item.key ?? itemLinkWithLocale}>
+              const listItem = (
+                <li>
                   <Link
                     href={itemLinkWithLocale}
                     className={cn("py-2 ", {
@@ -72,6 +77,25 @@ const NavigationMenu = ({
                     ) : null}
                   </Link>
                 </li>
+              );
+
+              if (navOpen) {
+                return listItem;
+              }
+
+              return (
+                <TooltipProvider
+                  key={item.key ?? itemLinkWithLocale}
+                  delayDuration={200}
+                >
+                  <Tooltip>
+                    <TooltipTrigger asChild>{listItem}</TooltipTrigger>
+                    <TooltipContent sideOffset={12} className="bg-primary">
+                      {item.label}
+                      <TooltipArrow className="fill-primary" />
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
               );
             })}
           </Fragment>
