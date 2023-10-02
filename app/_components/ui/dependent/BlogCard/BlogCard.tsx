@@ -8,12 +8,18 @@ import { Typography } from "../../isolated/common";
 import { Card } from "../../isolated/wrapped";
 import styles from "./blogCard.module.scss";
 
-type BlogCardProps = Blog;
+type BlogCardProps = Blog & { index: number };
 
-const BlogCard = ({ title, description, topic, slug }: BlogCardProps) => {
+const BlogCard = ({
+  title,
+  description,
+  topic,
+  slug,
+  index,
+}: BlogCardProps) => {
   return (
-    <Link href={slug}>
-      <Card className="prose max-w-none bg-base-200 prose-headings:mt-0 prose-figure:mb-0">
+    <Card className="prose max-w-none bg-base-200 prose-headings:mt-0 prose-figure:mb-0">
+      {index % 2 === 0 && (
         <Card.Figure className={cn("m-5 h-80")}>
           <div className={styles.imageMask} />
           <Image
@@ -23,17 +29,17 @@ const BlogCard = ({ title, description, topic, slug }: BlogCardProps) => {
             fill
           />
         </Card.Figure>
-        <Card.Body>
-          <Typography variant="caption" className="text-secondary">
-            {topic}
-          </Typography>
-          <Card.Title variant="h4" className="not-prose">
-            {title}
-          </Card.Title>
-          <p className="line-clamp-3">{description}</p>
-        </Card.Body>
-      </Card>
-    </Link>
+      )}
+      <Card.Body>
+        <Typography variant="caption" className="text-secondary">
+          {topic}
+        </Typography>
+        <Card.Title variant="h4" className="not-prose">
+          {title}
+        </Card.Title>
+        <p className="line-clamp-3">{description}</p>
+      </Card.Body>
+    </Card>
   );
 };
 

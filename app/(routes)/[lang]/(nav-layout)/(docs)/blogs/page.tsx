@@ -1,16 +1,13 @@
+import Link from "next/link";
+
 import { BlogCard } from "@/_components/ui/dependent";
-import { cn } from "@/_utils/styles.utils";
 import { allBlogs } from "contentlayer/generated";
+
+import { BlogCardsWrapper } from "./BlogCardsWrapper";
 
 const BlogsPage = () => {
   return (
-    <div
-      className={cn(
-        "grid w-full gap-8",
-        "grid-cols-[repeat(auto-fill,minmax(800px,1fr))] md:grid-cols-[repeat(auto-fill,minmax(400px,1fr))] lg:grid-cols-[repeat(auto-fill,minmax(480px,1fr))]",
-        "grid-flow-[row_dense]",
-      )}
-    >
+    <BlogCardsWrapper>
       {allBlogs
         .concat(allBlogs)
         .concat(allBlogs)
@@ -19,10 +16,12 @@ const BlogsPage = () => {
         .concat(allBlogs)
         .concat(allBlogs)
         .concat(allBlogs)
-        .map((blog) => (
-          <BlogCard {...blog} key={blog._id} />
+        .map((blog, index) => (
+          <Link href={blog.slug} key={blog._id}>
+            <BlogCard {...blog} index={index} />
+          </Link>
         ))}
-    </div>
+    </BlogCardsWrapper>
   );
 };
 
