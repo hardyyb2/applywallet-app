@@ -22,28 +22,31 @@ Separate the parts of the component code for improved clarity and navigation int
 - Constants
 - JSX (return statements)
 
-```
-  const Component = () => {
+```ts
+const Component = () => {
   // hooks
-  const myContext = useContext()
-  const isNew = useCustomHook()
-  const user = useSelector(state => state.user)
+  const myContext = useContext();
+  const isNew = useCustomHook();
+  const user = useSelector((state) => state.user);
 
   // states
-  const [showDetails, setShowDetails] = useState(false)
-  const [data, setData] = useState<string[]>(['hello'])
+  const [showDetails, setShowDetails] = useState(false);
+  const [data, setData] = useState<string[]>(["hello"]);
 
   // functions
-  useEffect(() => {
-  }, [])
+  useEffect(() => {}, []);
 
-  const myFunc = () => {}
+  const myFunc = () => {};
 
   // constants
-  const subTitle = user.name + "welcome"
+  const subTitle = user.name + "welcome";
 
-  return (<div>Hello component <span>{subTitle}</span></div>)
-  }
+  return (
+    <div>
+      Hello component <span>{subTitle}</span>
+    </div>
+  );
+};
 ```
 
 ## Write more PURE functions
@@ -51,43 +54,47 @@ Separate the parts of the component code for improved clarity and navigation int
 - Writing code in multiple smaller functions helps make code more readable and intuitive.
   For example, consider the below component with a large function that performs multiple tasks simultaneously, making it challenging to understand its purpose without thoroughly reading the code.
 
-```
-  const PriceCalculator = () => {
-    const calculateTotalPrice = (cart, discountRate, taxRate) => {
-      let totalPrice = 0;
+```ts
+const PriceCalculator = () => {
+  const calculateTotalPrice = (cart, discountRate, taxRate) => {
+    let totalPrice = 0;
 
-      for (const item of cart) {
-        const itemPrice = item.price * item.quantity;
-        totalPrice += itemPrice;
+    for (const item of cart) {
+      const itemPrice = item.price * item.quantity;
+      totalPrice += itemPrice;
 
-        if (itemPrice > 100) {
-          const additionalDiscount = itemPrice * 0.1;
-          totalPrice += itemPrice - additionalDiscount;
-        } else {
-          totalPrice += itemPrice;
-        }
-      }
-
-      if (cart.length > 10) {
-        const discount = totalPrice * discountRate;
-        const additionalDiscount = discount * 0.2;
-        totalPrice -= additionalDiscount;
+      if (itemPrice > 100) {
+        const additionalDiscount = itemPrice * 0.1;
+        totalPrice += itemPrice - additionalDiscount;
       } else {
-        totalPrice -= totalPrice * discountRate;
+        totalPrice += itemPrice;
       }
+    }
 
-      for (const item of cart) {
-        if (item.category === 'electronics') {
-          const additionalTax = item.price * taxRate * 0.1;
-          totalPrice += additionalTax;
-        } else {
-          totalPrice += item.price * taxRate;
-        }
+    if (cart.length > 10) {
+      const discount = totalPrice * discountRate;
+      const additionalDiscount = discount * 0.2;
+      totalPrice -= additionalDiscount;
+    } else {
+      totalPrice -= totalPrice * discountRate;
+    }
+
+    for (const item of cart) {
+      if (item.category === "electronics") {
+        const additionalTax = item.price * taxRate * 0.1;
+        totalPrice += additionalTax;
+      } else {
+        totalPrice += item.price * taxRate;
       }
+    }
 
-      return totalPrice;
-    };
-
-    return <button onClick={() => calculateTotalPrice(20, 20, 20)}>Calculate tax</button>;
+    return totalPrice;
   };
+
+  return (
+    <button onClick={() => calculateTotalPrice(20, 20, 20)}>
+      Calculate tax
+    </button>
+  );
+};
 ```

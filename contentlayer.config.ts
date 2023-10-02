@@ -1,4 +1,5 @@
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
+import rehypePrettyCode from "rehype-pretty-code";
 
 export const Blog = defineDocumentType(() => ({
   name: "Blog",
@@ -39,4 +40,14 @@ export const Blog = defineDocumentType(() => ({
 export default makeSource({
   contentDirPath: "./app/_content",
   documentTypes: [Blog],
+  mdx: {
+    rehypePlugins: [
+      [
+        rehypePrettyCode,
+        {
+          theme: "monokai",
+        },
+      ],
+    ],
+  },
 });
