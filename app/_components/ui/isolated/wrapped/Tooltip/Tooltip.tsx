@@ -16,10 +16,11 @@ const TooltipArrow = TooltipPrimitive.Arrow;
 const TooltipContent = forwardRef<
   ElementRef<typeof TooltipPrimitive.Content>,
   ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>
->(({ className, sideOffset = 4, ...props }, ref) => (
+>(({ className, sideOffset = 4, collisionPadding = 8, ...props }, ref) => (
   <TooltipPrimitive.Content
     ref={ref}
     sideOffset={sideOffset}
+    collisionPadding={collisionPadding}
     className={cn("z-50 overflow-hidden rounded-md px-3 py-1.5", className)}
     {...props}
   />

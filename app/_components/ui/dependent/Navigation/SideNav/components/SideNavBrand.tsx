@@ -50,7 +50,7 @@ const SideNavBrand = ({
           </div>
         )}
       </Link>
-      <TooltipProvider delayDuration={200}>
+      <TooltipProvider delayDuration={600}>
         <Tooltip>
           <TooltipTrigger asChild>
             <Button
@@ -61,8 +61,10 @@ const SideNavBrand = ({
               {navOpen ? <Icons.PanelLeftClose /> : <Icons.PanelLeftOpen />}
             </Button>
           </TooltipTrigger>
-          <TooltipContent className="bg-primary">
-            {navOpen ? "close nav" : "open nav"}
+          <TooltipContent className="bg-primary text-primary-content">
+            <Typography variant="h6">
+              {navOpen ? "close nav" : "open nav"}
+            </Typography>
             <TooltipArrow className="fill-primary" />
           </TooltipContent>
         </Tooltip>

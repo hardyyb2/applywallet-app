@@ -1,5 +1,9 @@
+import Link from "next/link";
+
+import { AppRoutes } from "@/_utils/routes.utils";
+
 import { Typography } from "../../isolated/common";
-import { Button, Card, Divider } from "../../isolated/wrapped";
+import { Button, buttonVariants, Card, Divider } from "../../isolated/wrapped";
 import { LCLoginButton } from "./components/LCLoginButton";
 
 const LoginCard = () => {
@@ -22,9 +26,16 @@ const LoginCard = () => {
           pages
         </Typography>
         <Card.Actions className="mt-4 w-full justify-center">
-          <Button color="secondary" variant="outline" fullWidth>
+          <Link
+            className={buttonVariants({
+              variant: "outline",
+              color: "secondary",
+              className: "w-full",
+            })}
+            href={AppRoutes.BLOGS}
+          >
             Blogs
-          </Button>
+          </Link>
         </Card.Actions>
       </Card.Body>
     </Card>
