@@ -54,6 +54,14 @@ module.exports = {
         "xl-2xl": "clamp(3.38rem, calc(2.85rem + 2.63vw), 6.00rem)",
         "2xl-3xl": "clamp(4.50rem, calc(3.60rem + 4.50vw), 9.00rem)",
       },
+
+      typography: {
+        DEFAULT: {
+          css: {
+            maxWidth: "80ch",
+          },
+        },
+      },
     },
   },
   plugins: [require("daisyui"), require("@tailwindcss/typography")],
