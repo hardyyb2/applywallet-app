@@ -25,9 +25,15 @@ const RootLayout = ({
   };
 }) => {
   return (
-    <html lang={lang} className={fonts.secondary.className}>
+    <html lang={lang} className={cn(fonts.secondary.className, "bg-base-200")}>
       <head />
-      <body className={cn(fonts.primary.variable, fonts.secondary.variable)}>
+      <body
+        className={cn(
+          fonts.primary.variable,
+          fonts.secondary.variable,
+          "mx-auto max-w-screen-4xl",
+        )}
+      >
         <Providers>{children}</Providers>
       </body>
     </html>

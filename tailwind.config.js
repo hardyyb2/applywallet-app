@@ -27,6 +27,12 @@ module.exports = {
     },
 
     extend: {
+      screens: {
+        "3xl": "1920px",
+        "4xl": "2560px",
+        "5xl": "3840px",
+      },
+
       spacing: {
         "3xs": "clamp(0.31rem, calc(0.30rem + 0.06vw), 0.38rem)",
         "2xs": "clamp(0.56rem, calc(0.53rem + 0.19vw), 0.75rem)",

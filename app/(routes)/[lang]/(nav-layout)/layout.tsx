@@ -9,7 +9,7 @@ const NavLayout = ({ children }: { children: ReactNode }) => {
     <BaseLayout className="h-full">
       <BaseLayout.Head
         className={cn(
-          "fixed top-0 z-[5] h-16 w-full text-base-content lg:h-[--header-height] ",
+          "fixed left-0 top-0 z-[5] h-16 w-full text-base-content lg:h-[--header-height] ",
           "bg-opacity-60 backdrop-blur",
         )}
       >
