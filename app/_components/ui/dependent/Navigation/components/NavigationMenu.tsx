@@ -53,7 +53,10 @@ const NavigationMenu = ({
                 pathName,
               });
 
-              const active = itemLinkWithLocale === pathName;
+              const active =
+                itemLinkWithLocale === pathName ||
+                (item.link && pathName.includes(item.link));
+
               const ItemIcon = item.icon;
 
               const listItem = (
