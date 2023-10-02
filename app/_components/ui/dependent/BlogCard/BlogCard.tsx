@@ -17,7 +17,7 @@ const BlogCard = ({ title, description, topic, image }: BlogCardProps) => {
       )}
     >
       {image ? (
-        <Card.Figure className={cn("m-5 h-80")}>
+        <Card.Figure className={cn("m-1 h-80")}>
           <div className={styles.imageMask} />
           <Image
             className="transition-all duration-500 group-hover:scale-110"
