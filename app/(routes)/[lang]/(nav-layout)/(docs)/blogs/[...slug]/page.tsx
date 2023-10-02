@@ -63,7 +63,7 @@ const BlogPage = async ({ params }: BlogPageProps) => {
               })}
               component="h6"
             >
-              {dayjs(blog.publishedAt).format("MMM DD, YYYY")}
+              {dayjs(blog.publishedAt).format("MMM DD, YYYY").toLowerCase()}
               <Divider horizontal />
               {blog.topic}
             </Flex>
