@@ -8,9 +8,13 @@ import { BlogCardsWrapper } from "./BlogCardsWrapper";
 const BlogsPage = () => {
   return (
     <BlogCardsWrapper>
-      {allBlogs.map((blog, index) => (
-        <Link href={blog.slug} key={blog._id}>
-          <BlogCard {...blog} index={index} />
+      {allBlogs.map((blog) => (
+        <Link
+          href={blog.slug}
+          key={blog._id}
+          className="rounded-2xl outline-4 outline-base-content hover:outline-dashed focus-visible:outline-dashed"
+        >
+          <BlogCard {...blog} />
         </Link>
       ))}
     </BlogCardsWrapper>

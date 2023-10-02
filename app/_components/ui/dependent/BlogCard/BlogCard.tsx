@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 import { cn } from "@/_utils/styles.utils";
 import { Blog } from "contentlayer/generated";
@@ -8,21 +7,25 @@ import { Typography } from "../../isolated/common";
 import { Card } from "../../isolated/wrapped";
 import styles from "./blogCard.module.scss";
 
-type BlogCardProps = Blog & { index: number };
+type BlogCardProps = Blog;
 
-const BlogCard = ({
-  title,
-  description,
-  topic,
-  image,
-  index,
-}: BlogCardProps) => {
+const BlogCard = ({ title, description, topic, image }: BlogCardProps) => {
   return (
-    <Card className="prose max-w-none bg-base-200 prose-headings:mt-0 prose-figure:mb-0">
+    <Card
+      className={cn(
+        "group prose max-w-none bg-base-200 prose-headings:mt-0 prose-figure:mb-0",
+      )}
+    >
       {image ? (
         <Card.Figure className={cn("m-5 h-80")}>
           <div className={styles.imageMask} />
-          <Image objectFit="cover" src={image} alt={image} fill />
+          <Image
+            className="transition-all duration-300 group-hover:scale-110"
+            objectFit="cover"
+            src={image}
+            alt={image}
+            fill
+          />
         </Card.Figure>
       ) : null}
       <Card.Body>
