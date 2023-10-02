@@ -20,6 +20,9 @@ export const Blog = defineDocumentType(() => ({
       type: "boolean",
       default: true,
     },
+    image: {
+      type: "string",
+    },
   },
   computedFields: {
     slug: {

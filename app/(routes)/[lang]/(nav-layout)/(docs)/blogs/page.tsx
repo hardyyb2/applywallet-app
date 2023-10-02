@@ -8,19 +8,11 @@ import { BlogCardsWrapper } from "./BlogCardsWrapper";
 const BlogsPage = () => {
   return (
     <BlogCardsWrapper>
-      {allBlogs
-        .concat(allBlogs)
-        .concat(allBlogs)
-        .concat(allBlogs)
-        .concat(allBlogs)
-        .concat(allBlogs)
-        .concat(allBlogs)
-        .concat(allBlogs)
-        .map((blog, index) => (
-          <Link href={blog.slug} key={blog._id}>
-            <BlogCard {...blog} index={index} />
-          </Link>
-        ))}
+      {allBlogs.map((blog, index) => (
+        <Link href={blog.slug} key={blog._id}>
+          <BlogCard {...blog} index={index} />
+        </Link>
+      ))}
     </BlogCardsWrapper>
   );
 };

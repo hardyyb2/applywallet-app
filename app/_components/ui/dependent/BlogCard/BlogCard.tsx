@@ -14,22 +14,17 @@ const BlogCard = ({
   title,
   description,
   topic,
-  slug,
+  image,
   index,
 }: BlogCardProps) => {
   return (
     <Card className="prose max-w-none bg-base-200 prose-headings:mt-0 prose-figure:mb-0">
-      {index % 2 === 0 && (
+      {image ? (
         <Card.Figure className={cn("m-5 h-80")}>
           <div className={styles.imageMask} />
-          <Image
-            objectFit="cover"
-            src="https://picsum.photos/600/500"
-            alt="image"
-            fill
-          />
+          <Image objectFit="cover" src={image} alt={image} fill />
         </Card.Figure>
-      )}
+      ) : null}
       <Card.Body>
         <Typography variant="caption" className="text-secondary">
           {topic}
