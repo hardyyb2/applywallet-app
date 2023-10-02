@@ -1,5 +1,8 @@
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrettyCode from "rehype-pretty-code";
+import rehypeSlug from "rehype-slug";
+import remarkGfm from "remark-gfm";
 
 export const Blog = defineDocumentType(() => ({
   name: "Blog",
@@ -41,7 +44,18 @@ export default makeSource({
   contentDirPath: "./app/_content",
   documentTypes: [Blog],
   mdx: {
+    remarkPlugins: [remarkGfm],
     rehypePlugins: [
+      rehypeSlug,
+      [
+        rehypeAutolinkHeadings,
+        {
+          behavior: "append",
+          properties: {
+            className: ["rehypeHeadAnchor"],
+          },
+        },
+      ],
       [
         rehypePrettyCode,
         {
