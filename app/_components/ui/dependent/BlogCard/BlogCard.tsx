@@ -3,13 +3,19 @@ import Image from "next/image";
 import { cn } from "@/_utils/styles.utils";
 import { Blog } from "contentlayer/generated";
 
-import { Typography } from "../../isolated/common";
-import { Card } from "../../isolated/wrapped";
+import { Flex, Typography } from "../../isolated/common";
+import { Badge, Card } from "../../isolated/wrapped";
 import styles from "./blogCard.module.scss";
 
 type BlogCardProps = Blog;
 
-const BlogCard = ({ title, description, topic, image }: BlogCardProps) => {
+const BlogCard = ({
+  title,
+  description,
+  topic,
+  image,
+  tags,
+}: BlogCardProps) => {
   return (
     <Card
       className={cn(
@@ -35,7 +41,18 @@ const BlogCard = ({ title, description, topic, image }: BlogCardProps) => {
         <Card.Title variant="h4" className="not-prose line-clamp-4">
           {title}
         </Card.Title>
+
         <p className="line-clamp-3">{description}</p>
+
+        {tags?.length ? (
+          <Flex className="gap-2">
+            {tags.map((tag) => (
+              <Badge variant="outline" size="lg" key={tag}>
+                {tag}
+              </Badge>
+            ))}
+          </Flex>
+        ) : null}
       </Card.Body>
     </Card>
   );

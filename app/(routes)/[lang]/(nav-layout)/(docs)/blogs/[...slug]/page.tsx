@@ -1,7 +1,14 @@
+import Image from "next/image";
 import { notFound } from "next/navigation";
 
-import { Flex, Mdx } from "@/_components/ui/isolated/common";
+import {
+  Flex,
+  Mdx,
+  typographyVariants,
+} from "@/_components/ui/isolated/common";
+import { Divider } from "@/_components/ui/isolated/wrapped";
 import { allBlogs } from "contentlayer/generated";
+import dayjs from "dayjs";
 
 type BlogPageProps = {
   params: { slug: string[] };
@@ -49,6 +56,28 @@ const BlogPage = async ({ params }: BlogPageProps) => {
         <Mdx className="prose prose-sm w-full  md:prose-base lg:prose-lg xl:prose-xl">
           <Mdx.Header>
             <h1>{blog.title}</h1>
+            <Flex
+              className={typographyVariants({
+                variant: "caption",
+                className: "font-light",
+              })}
+              component="h6"
+            >
+              {dayjs(blog.publishedAt).format("MMM DD, YYYY")}
+              <Divider horizontal />
+              {blog.topic}
+            </Flex>
+            {blog.image ? (
+              <figure className="relative aspect-video overflow-hidden rounded-2xl">
+                <Image
+                  src={blog.image}
+                  fill
+                  alt={blog.title}
+                  objectFit="cover"
+                  className="h-full w-full"
+                />
+              </figure>
+            ) : null}
           </Mdx.Header>
           <Mdx.Content code={blog.body.code} />
         </Mdx>

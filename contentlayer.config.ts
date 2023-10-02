@@ -26,8 +26,15 @@ export const Blog = defineDocumentType(() => ({
       type: "boolean",
       default: true,
     },
+    publishedAt: {
+      type: "date",
+    },
     image: {
       type: "string",
+    },
+    tags: {
+      type: "list",
+      of: { type: "enum", options: ["react", "frontend", "backend"] },
     },
   },
   computedFields: {
