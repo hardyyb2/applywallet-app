@@ -20,7 +20,7 @@ const BlogCard = ({ title, description, topic, image }: BlogCardProps) => {
         <Card.Figure className={cn("m-5 h-80")}>
           <div className={styles.imageMask} />
           <Image
-            className="transition-all duration-300 group-hover:scale-110"
+            className="transition-all duration-500 group-hover:scale-110"
             objectFit="cover"
             src={image}
             alt={image}
@@ -29,10 +29,10 @@ const BlogCard = ({ title, description, topic, image }: BlogCardProps) => {
         </Card.Figure>
       ) : null}
       <Card.Body>
-        <Typography variant="caption" className="text-secondary">
+        <Typography variant="caption" className="line-clamp-1 text-secondary">
           {topic}
         </Typography>
-        <Card.Title variant="h4" className="not-prose">
+        <Card.Title variant="h4" className="not-prose line-clamp-4">
           {title}
         </Card.Title>
         <p className="line-clamp-3">{description}</p>

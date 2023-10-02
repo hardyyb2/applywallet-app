@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 
+import { Flex, Mdx } from "@/_components/ui/isolated/common";
 import { allBlogs } from "contentlayer/generated";
 
 type BlogPageProps = {
@@ -38,7 +39,22 @@ const BlogPage = async ({ params }: BlogPageProps) => {
     notFound();
   }
 
-  return <div>{blog.title}</div>;
+  return (
+    <main className="w-full rounded-2xl">
+      <Flex
+        direction="column"
+        align="center"
+        className="mx-auto rounded-2xl bg-base-100 p-m-l"
+      >
+        <Mdx className="prose prose-sm w-full md:prose-base lg:prose-lg xl:prose-xl">
+          <Mdx.Header>
+            <h1>{blog.title}</h1>
+          </Mdx.Header>
+          <Mdx.Content code={blog.body.code} />
+        </Mdx>
+      </Flex>
+    </main>
+  );
 };
 
 export default BlogPage;
