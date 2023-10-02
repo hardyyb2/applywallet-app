@@ -8,6 +8,7 @@ export const AppRoutes = {
 
   LOGIN: "/login",
   POST_LOGIN: "/post-login",
+  LINK_SHEET: "/link-sheet",
 
   INTERVIEWS: "/interviews",
   ADD_INTERVIEW: "/interviews/add",
@@ -16,7 +17,8 @@ export const AppRoutes = {
   ADD_EXPERIENCE: "/experiences/add",
   editExperience: (experienceId: ExperienceType["id"]) =>
     `/experiences/edit/${experienceId}`,
-  LINK_SHEET: "/link-sheet",
+
+  BLOGS: "/blogs",
 } as const;
 
 export const ApiRoutes = {

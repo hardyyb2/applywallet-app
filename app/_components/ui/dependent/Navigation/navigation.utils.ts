@@ -22,6 +22,12 @@ export const navItems: NavItemType[] = [
     category: NavigationCategories.GENERAL,
     icon: Icons.Clapperboard,
   },
+  {
+    label: "blogs",
+    link: AppRoutes.BLOGS,
+    category: NavigationCategories.READ,
+    icon: Icons.BookOpen,
+  },
 ];
 
 /** Nav items that will be directly visible on bottom nav bar while rest will show in menu */

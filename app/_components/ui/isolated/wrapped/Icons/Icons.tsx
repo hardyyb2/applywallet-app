@@ -2,6 +2,7 @@ import { forwardRef } from "react";
 
 import {
   AlignJustify,
+  BookOpen,
   Briefcase,
   ChevronDown,
   ChevronsRight,
@@ -28,6 +29,7 @@ import {
 
 const Icons = {
   AlignJustify,
+  BookOpen,
   Briefcase,
   ChevronDown,
   ChevronsRight,

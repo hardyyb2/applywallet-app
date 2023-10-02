@@ -3,10 +3,7 @@ import { LucideIcon } from "lucide-react";
 
 export enum NavigationCategories {
   GENERAL = "general",
-  FAVORITE = "favorite",
-  LEGAL = "legal",
-  INFORMATIONAL = "informational",
-  SUPPORT = "support",
+  READ = "read",
 }
 
 export type NavItemType = {
