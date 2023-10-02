@@ -22,7 +22,7 @@ Separate the parts of the component code for improved clarity and navigation int
 - Constants
 - JSX (return statements)
 
-```ts
+```tsx showLineNumbers
 const Component = () => {
   // hooks
   const myContext = useContext();
@@ -54,7 +54,7 @@ const Component = () => {
 - Writing code in multiple smaller functions helps make code more readable and intuitive.
   For example, consider the below component with a large function that performs multiple tasks simultaneously, making it challenging to understand its purpose without thoroughly reading the code.
 
-```ts
+```tsx showLineNumbers
 const PriceCalculator = () => {
   const calculateTotalPrice = (cart, discountRate, taxRate) => {
     let totalPrice = 0;

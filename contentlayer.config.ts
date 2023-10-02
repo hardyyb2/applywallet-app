@@ -4,6 +4,8 @@ import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 
+import Cobalt2Theme from "./public/editor-themes/cobalt2.json";
+
 export const Blog = defineDocumentType(() => ({
   name: "Blog",
   contentType: "mdx",
@@ -59,7 +61,7 @@ export default makeSource({
       [
         rehypePrettyCode,
         {
-          theme: "monokai",
+          theme: Cobalt2Theme,
         },
       ],
     ],

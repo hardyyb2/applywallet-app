@@ -1,5 +1,6 @@
+/* stylelint-disable selector-class-pattern */
+
 .rehypeHeadAnchor {
-  /* stylelint-disable selector-class-pattern */
   .icon.icon-link {
     @apply ml-xs inline-block h-6 w-6 bg-base-content;
 
@@ -7,4 +8,23 @@
 
     mask-size: cover;
   }
+}
+
+[data-rehype-pretty-code-fragment] pre {
+  counter-reset: line;
+  box-decoration-break: clone;
+}
+
+[data-rehype-pretty-code-fragment] [data-line] {
+  @apply px-4 py-1;
+}
+
+[data-rehype-pretty-code-fragment] [data-line-numbers] > [data-line]::before {
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  width: 1rem;
+  margin-right: 1rem;
+  text-align: right;
+  color: gray;
 }
