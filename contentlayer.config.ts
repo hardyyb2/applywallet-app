@@ -66,6 +66,8 @@ export default makeSource({
         },
       ],
       [
+        // TODO - check a permafix for this
+        //@ts-ignore
         rehypePrettyCode,
         {
           theme: Cobalt2Theme,
