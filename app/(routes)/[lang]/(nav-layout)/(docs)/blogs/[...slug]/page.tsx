@@ -10,6 +10,8 @@ import { Divider } from "@/_components/ui/isolated/wrapped";
 import { allBlogs } from "contentlayer/generated";
 import dayjs from "dayjs";
 
+import { BlogScrollWrapper } from "./BlogScrollWrapper";
+
 type BlogPageProps = {
   params: { slug: string[] };
 };
@@ -47,11 +49,11 @@ const BlogPage = async ({ params }: BlogPageProps) => {
   }
 
   return (
-    <main className="w-full rounded-2xl">
+    <BlogScrollWrapper>
       <Flex
         direction="column"
         align="center"
-        className="mx-auto rounded-2xl bg-base-100 p-m-l"
+        className="absolute top-0 mx-auto w-full  rounded-2xl bg-base-100 p-m-l"
       >
         <Mdx className="prose prose-sm w-full  md:prose-base lg:prose-lg xl:prose-xl">
           <Mdx.Header>
@@ -82,7 +84,7 @@ const BlogPage = async ({ params }: BlogPageProps) => {
           <Mdx.Content code={blog.body.code} />
         </Mdx>
       </Flex>
-    </main>
+    </BlogScrollWrapper>
   );
 };
 
