@@ -62,6 +62,10 @@ module.exports = {
           },
         },
       },
+
+      flex: {
+        0: "0 0 auto",
+      },
     },
   },
   plugins: [require("daisyui"), require("@tailwindcss/typography")],
