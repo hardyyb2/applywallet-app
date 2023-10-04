@@ -8,3 +8,4 @@ export { UserMenu } from "./UserMenu";
 export { Header } from "./Header";
 export { TopLoader } from "./TopLoader";
 export { BlogCard } from "./BlogCard";
+export { IconLink } from "./IconLink";

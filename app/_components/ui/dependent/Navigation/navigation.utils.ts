@@ -30,6 +30,14 @@ export const navItems: NavItemType[] = [
   },
 ];
 
+export const navItemToIconsMapping = navItems.reduce((acc, item) => {
+  if (item.link) {
+    acc[item.link] = { icon: item.icon, label: item.label };
+  }
+
+  return acc;
+}, {} as { [key in NavItemType["link"]]?: Pick<NavItemType, "icon" | "label"> });
+
 /** Nav items that will be directly visible on bottom nav bar while rest will show in menu */
 export const bottomNavDisplayOptions = navItems.slice(0, 3) ?? [];
 

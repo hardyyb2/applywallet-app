@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 
+import { IconLink } from "@/_components/ui/dependent";
 import { AppRoutes, UrlParams } from "@/_utils/routes.utils";
 import { ConditionalMatch } from "@dx-kit/react-conditional-match";
 
@@ -28,7 +29,7 @@ const EditInterview = ({ params }: EditInterviewProps) => {
     <div className="m-xs mt-0">
       <Breadcrumbs className="mb-2xs pt-0 [&_a]:no-underline">
         <Breadcrumbs.Item>
-          <Link href={AppRoutes.INTERVIEWS}>interviews</Link>
+          <IconLink href={AppRoutes.INTERVIEWS} />
         </Breadcrumbs.Item>
         <Breadcrumbs.Item>edit</Breadcrumbs.Item>
       </Breadcrumbs>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 
+import { IconLink } from "@/_components/ui/dependent";
 import { authOptions } from "@/_lib/auth";
 import { CustomError } from "@/_utils/error";
 import { AppRoutes, UrlParams } from "@/_utils/routes.utils";
@@ -93,7 +94,7 @@ const EditExperience = async ({ params }: EditExperienceProps) => {
     <div className="m-xs mt-0">
       <Breadcrumbs className="mb-2xs pt-0 [&_a]:no-underline">
         <Breadcrumbs.Item>
-          <Link href={AppRoutes.EXPERIENCES}>experiences</Link>
+          <IconLink href={AppRoutes.EXPERIENCES} />
         </Breadcrumbs.Item>
         <Breadcrumbs.Item>edit</Breadcrumbs.Item>
       </Breadcrumbs>

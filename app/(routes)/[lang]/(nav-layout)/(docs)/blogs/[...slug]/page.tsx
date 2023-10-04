@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import { IconLink } from "@/_components/ui/dependent";
 import {
   Flex,
   Mdx,
@@ -55,7 +55,7 @@ const BlogPage = async ({ params }: BlogPageProps) => {
       <Flex direction="column" className="h-full">
         <Breadcrumbs className="mb-2xs flex-0 pt-0 [&_a]:no-underline">
           <Breadcrumbs.Item>
-            <Link href={AppRoutes.BLOGS}>blogs</Link>
+            <IconLink href={AppRoutes.BLOGS} />
           </Breadcrumbs.Item>
           <Breadcrumbs.Item>{blog.title}</Breadcrumbs.Item>
         </Breadcrumbs>
