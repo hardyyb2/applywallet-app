@@ -14,7 +14,7 @@ const IconLink = ({
   ...linkProps
 }: PropsWithChildren<IconLinkProps>) => {
   const Icon = navItemToIconsMapping[href]?.icon;
-  const title = navItemToIconsMapping[href]?.label;
+  const title = navItemToIconsMapping[href]?.label ?? href;
 
   return (
     <Fragment>

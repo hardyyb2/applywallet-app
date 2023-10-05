@@ -13,7 +13,7 @@ type BlogCardProps = Blog;
 const BlogCard = ({
   title,
   description,
-  topic,
+  category,
   image,
   tags,
 }: BlogCardProps) => {
@@ -37,7 +37,7 @@ const BlogCard = ({
       ) : null}
       <Card.Body>
         <Typography variant="caption" className="line-clamp-1 text-secondary">
-          {topic}
+          {category}
         </Typography>
         <Card.Title variant="h4" className="not-prose line-clamp-4">
           {title}
