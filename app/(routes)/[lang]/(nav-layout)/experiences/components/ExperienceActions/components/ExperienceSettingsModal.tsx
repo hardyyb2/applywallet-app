@@ -3,11 +3,10 @@
 import { useRef, useState } from "react";
 import Link from "next/link";
 
-import { Flex } from "@/_components/ui/isolated/common";
-import { Button, Dialog } from "@/_components/ui/isolated/wrapped";
-import { cn } from "@/_utils/styles.utils";
-
+import { Flex } from "@/components/ui/isolated/common";
+import { Button, Dialog } from "@/components/ui/isolated/wrapped";
 import { Icons } from "@/components/ui/isolated/wrapped/Icons";
+import { cn } from "@/utils/styles.utils";
 
 import { ExperienceSettings } from "../../ExperienceSettings";
 import styles from "./experienceSettingsModal.module.scss";

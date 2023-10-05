@@ -3,10 +3,10 @@
 import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 
-import { Flex } from "@/_components/ui/isolated/common";
-import { Avatar, Button, Popover } from "@/_components/ui/isolated/wrapped";
-import { getInitials } from "@/_utils/string.utils";
-import { cn } from "@/_utils/styles.utils";
+import { Flex } from "@/components/ui/isolated/common";
+import { Avatar, Button, Popover } from "@/components/ui/isolated/wrapped";
+import { getInitials } from "@/utils/string.utils";
+import { cn } from "@/utils/styles.utils";
 
 const UserMenu = () => {
   const { data: session } = useSession();

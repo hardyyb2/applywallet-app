@@ -1,12 +1,13 @@
 import { NextResponse } from "next/server";
 
-import { authOptions } from "@/_lib/auth";
-import { db } from "@/_lib/prisma";
-import { ApiError, ApiErrorCodes, ApiResponse } from "@/_utils/api";
-import { CustomError } from "@/_utils/error";
-import { getSheetIdFromLink, linkSheetFormSchema } from "@/_utils/schema-utils";
 import { getServerSession } from "next-auth";
 import { z } from "zod";
+
+import { authOptions } from "@/lib/auth";
+import { db } from "@/lib/prisma";
+import { ApiError, ApiErrorCodes, ApiResponse } from "@/utils/api";
+import { CustomError } from "@/utils/error";
+import { getSheetIdFromLink, linkSheetFormSchema } from "@/utils/schema-utils";
 
 export async function POST(request: Request) {
   try {

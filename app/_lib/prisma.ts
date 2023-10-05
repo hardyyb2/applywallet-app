@@ -1,5 +1,6 @@
-import { envVariables } from "@/_utils/env-vars.utils";
 import { PrismaClient } from "@prisma/client";
+
+import { envVariables } from "@/utils/env-vars.utils";
 
 let prisma: PrismaClient;
 

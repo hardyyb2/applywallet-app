@@ -2,10 +2,10 @@
 
 import { MouseEvent, useState } from "react";
 
-import { Flex } from "@/_components/ui/isolated/common";
-import { Button } from "@/_components/ui/isolated/wrapped";
 import { Reorder, useDragControls } from "framer-motion";
 
+import { Flex } from "@/components/ui/isolated/common";
+import { Button } from "@/components/ui/isolated/wrapped";
 import { Icons } from "@/components/ui/isolated/wrapped/Icons";
 
 import { ExperienceSettingsInfoType } from "..";

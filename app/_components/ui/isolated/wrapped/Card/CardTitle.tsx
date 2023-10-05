@@ -1,6 +1,6 @@
 import React, { ElementType, forwardRef, HTMLAttributes } from "react";
 
-import { cn } from "@/_utils/styles.utils";
+import { cn } from "@/utils/styles.utils";
 
 import { Typography, TypographyProps } from "../../common";
 

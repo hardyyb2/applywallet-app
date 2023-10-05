@@ -1,7 +1,5 @@
 import Link from "next/link";
 
-import { cn } from "@/_utils/styles.utils";
-
 import { Flex, Typography } from "@/components/ui/isolated/common";
 import {
   Button,
@@ -12,6 +10,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/isolated/wrapped";
 import { Icons } from "@/components/ui/isolated/wrapped/Icons";
+import { cn } from "@/utils/styles.utils";
 
 interface SideNavBrandProps {
   link?: string;
@@ -37,7 +36,7 @@ const SideNavBrand = ({
         href={link}
         aria-current="page"
         aria-label="Homepage"
-        className="flex-0 btn-ghost btn px-2"
+        className="btn-ghost btn flex-0 px-2"
       >
         {navOpen ? (
           <div className="text-lg inline-flex lowercase text-primary">

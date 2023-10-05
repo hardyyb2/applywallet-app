@@ -1,8 +1,9 @@
 import { Metadata } from "next";
 
-import { getDictionary } from "@/_utils/dictionaries.utils";
-import { Locale } from "@/_utils/locale-utils";
 import { allBlogs } from "contentlayer/generated";
+
+import { getDictionary } from "@/utils/dictionaries.utils";
+import { Locale } from "@/utils/locale-utils";
 
 export const metadata: Metadata = {
   title: "home",

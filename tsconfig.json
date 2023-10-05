@@ -22,7 +22,6 @@
     "baseUrl": ".",
     "paths": {
       "contentlayer/generated": ["./.contentlayer/generated"],
-      "@/*": ["app/*"],
       "@/styles/*": ["app/_styles/*"],
       "@/components/*": ["app/_components/*"],
       "@/hooks/*": ["app/_hooks/*"],

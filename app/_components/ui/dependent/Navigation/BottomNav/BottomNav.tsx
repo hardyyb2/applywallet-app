@@ -3,12 +3,13 @@
 import { Fragment } from "react";
 import { usePathname } from "next/navigation";
 
-import { Flex } from "@/_components/ui/isolated/common";
-import { BottomNavigation } from "@/_components/ui/isolated/wrapped";
-import { useBoolean } from "@/_hooks/useBoolean";
-import { cn } from "@/_utils/styles.utils";
 import { ConditionalMatch } from "@dx-kit/react-conditional-match";
 import { AnimatePresence, m } from "framer-motion";
+
+import { Flex } from "@/components/ui/isolated/common";
+import { BottomNavigation } from "@/components/ui/isolated/wrapped";
+import { useBoolean } from "@/hooks/useBoolean";
+import { cn } from "@/utils/styles.utils";
 
 import { NavigationMenu } from "../components/NavigationMenu";
 import { BottomNavBackdrop } from "./components/BottomNavBackdrop";

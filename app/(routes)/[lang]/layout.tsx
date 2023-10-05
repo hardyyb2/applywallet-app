@@ -1,4 +1,4 @@
-import { i18n, Locale } from "@/_utils/locale-utils";
+import { i18n, Locale } from "@/utils/locale-utils";
 
 import { Providers } from "./providers";
 
@@ -9,8 +9,8 @@ import "@/styles/mdx.scss";
 
 import { ReactNode } from "react";
 
-import { fonts } from "@/_lib/fonts";
-import { cn } from "@/_utils/styles.utils";
+import { fonts } from "@/lib/fonts";
+import { cn } from "@/utils/styles.utils";
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));

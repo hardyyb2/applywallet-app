@@ -1,6 +1,6 @@
 import { forwardRef, ReactNode } from "react";
 
-import { cn } from "@/_utils/styles.utils";
+import { cn } from "@/utils/styles.utils";
 
 import { BaseLayoutBody } from "./components/BaseLayoutBody";
 import { BaseLayoutHead } from "./components/BaseLayoutHead";

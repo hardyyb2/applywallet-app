@@ -1,8 +1,9 @@
 import Link from "next/link";
 
-import { BlogCard } from "@/_components/ui/dependent";
-import { Flex, Typography } from "@/_components/ui/isolated/common";
 import { allBlogs } from "contentlayer/generated";
+
+import { BlogCard } from "@/components/ui/dependent";
+import { Flex, Typography } from "@/components/ui/isolated/common";
 
 import { BlogCardsWrapper } from "./BlogCardsWrapper";
 

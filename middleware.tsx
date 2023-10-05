@@ -1,9 +1,10 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-import { i18n } from "@/_utils/locale-utils";
 import { match as matchLocale } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
+
+import { i18n } from "@/utils/locale-utils";
 
 const getNegotiatorHeaders = (request: NextRequest): Record<string, string> => {
   const headers: Record<string, string> = {};

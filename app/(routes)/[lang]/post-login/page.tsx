@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 
-import { AppRoutes } from "@/_utils/routes.utils";
-import { validateUserSheet } from "@/_utils/sheet.utils";
+import { AppRoutes } from "@/utils/routes.utils";
+import { validateUserSheet } from "@/utils/sheet.utils";
 
 import { createAndAddNewSheet } from "./post-login.utils";
 

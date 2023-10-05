@@ -1,8 +1,7 @@
-import { Flex } from "@/_components/ui/isolated/common";
-import { Button, Dropdown } from "@/_components/ui/isolated/wrapped";
-import { cn } from "@/_utils/styles.utils";
-
+import { Flex } from "@/components/ui/isolated/common";
+import { Button, Dropdown } from "@/components/ui/isolated/wrapped";
 import { Icons } from "@/components/ui/isolated/wrapped/Icons";
+import { cn } from "@/utils/styles.utils";
 
 import { ThemesMenuItemColors } from "./components/ThemesMenuItemColors";
 import { selectableThemes } from "./themesMenu.utils";

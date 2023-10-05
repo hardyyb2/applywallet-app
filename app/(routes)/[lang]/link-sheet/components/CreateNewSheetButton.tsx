@@ -2,11 +2,12 @@
 
 import { useRouter } from "next/navigation";
 
-import { Button } from "@/_components/ui/isolated/wrapped";
-import { CustomError } from "@/_utils/error";
-import { ApiRoutes, AppRoutes } from "@/_utils/routes.utils";
 import axios from "axios";
 import { toast } from "react-toastify";
+
+import { Button } from "@/components/ui/isolated/wrapped";
+import { CustomError } from "@/utils/error";
+import { ApiRoutes, AppRoutes } from "@/utils/routes.utils";
 
 const CreateNewSheetButton = () => {
   const router = useRouter();

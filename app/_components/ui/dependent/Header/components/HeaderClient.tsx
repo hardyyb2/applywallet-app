@@ -2,9 +2,10 @@
 
 import { ReactNode, useEffect } from "react";
 
-import { Flex, Typography } from "@/_components/ui/isolated/common";
-import { cn } from "@/_utils/styles.utils";
 import { themeChange } from "theme-change";
+
+import { Flex, Typography } from "@/components/ui/isolated/common";
+import { cn } from "@/utils/styles.utils";
 
 const HeaderClient = ({ children }: { children?: ReactNode }) => {
   useEffect(() => {

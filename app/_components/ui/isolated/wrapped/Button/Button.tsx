@@ -1,7 +1,8 @@
 import { ButtonHTMLAttributes, forwardRef, ReactNode } from "react";
 
-import { cn } from "@/_utils/styles.utils";
 import { type VariantProps } from "cva";
+
+import { cn } from "@/utils/styles.utils";
 
 import { buttonVariants } from "./button.utils";
 

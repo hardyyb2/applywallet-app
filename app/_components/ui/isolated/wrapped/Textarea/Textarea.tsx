@@ -1,6 +1,6 @@
 import { forwardRef, TextareaHTMLAttributes } from "react";
 
-import { cn } from "@/_utils/styles.utils";
+import { cn } from "@/utils/styles.utils";
 
 import { TextareaColorsType } from "./Textarea.types";
 

@@ -1,8 +1,9 @@
 import { Fragment, HTMLAttributes, PropsWithChildren } from "react";
 import Image from "next/image";
 
-import { cn } from "@/_utils/styles.utils";
 import { useMDXComponent } from "next-contentlayer/hooks";
+
+import { cn } from "@/utils/styles.utils";
 
 const components = {
   Image,

@@ -1,8 +1,9 @@
 "use client";
 
-import { useBoolean } from "@/_hooks/useBoolean";
-import { cn } from "@/_utils/styles.utils";
 import { m } from "framer-motion";
+
+import { useBoolean } from "@/hooks/useBoolean";
+import { cn } from "@/utils/styles.utils";
 
 import { NavigationMenu } from "../components/NavigationMenu";
 import { SideNavBrand } from "./components/SideNavBrand";

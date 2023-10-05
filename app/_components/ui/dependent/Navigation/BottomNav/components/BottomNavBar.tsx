@@ -1,12 +1,11 @@
 import { Fragment, useMemo } from "react";
 import Link from "next/link";
 
-import { Flex, Typography } from "@/_components/ui/isolated/common";
-import { BottomNavigation, Button } from "@/_components/ui/isolated/wrapped";
-import { getLinkWithLocale } from "@/_utils/routes.utils";
-import { cn } from "@/_utils/styles.utils";
-
+import { Flex, Typography } from "@/components/ui/isolated/common";
+import { BottomNavigation, Button } from "@/components/ui/isolated/wrapped";
 import { Icons } from "@/components/ui/isolated/wrapped/Icons";
+import { getLinkWithLocale } from "@/utils/routes.utils";
+import { cn } from "@/utils/styles.utils";
 
 import { bottomNavDisplayOptions } from "../../navigation.utils";
 

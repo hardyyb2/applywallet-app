@@ -1,6 +1,6 @@
 import { forwardRef, HTMLAttributes, PropsWithChildren } from "react";
 
-import { cn } from "@/_utils/styles.utils";
+import { cn } from "@/utils/styles.utils";
 
 export type CardFigureProps = PropsWithChildren & HTMLAttributes<HTMLElement>;
 

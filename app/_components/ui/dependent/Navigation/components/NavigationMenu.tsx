@@ -2,16 +2,16 @@ import { Fragment } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { Flex, Typography } from "@/_components/ui/isolated/common";
+import { Flex, Typography } from "@/components/ui/isolated/common";
 import {
   Tooltip,
   TooltipArrow,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/_components/ui/isolated/wrapped";
-import { getLinkWithLocale } from "@/_utils/routes.utils";
-import { cn } from "@/_utils/styles.utils";
+} from "@/components/ui/isolated/wrapped";
+import { getLinkWithLocale } from "@/utils/routes.utils";
+import { cn } from "@/utils/styles.utils";
 
 import { groupedNavItemsEntries } from "../navigation.utils";
 

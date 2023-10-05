@@ -1,4 +1,3 @@
-import { getCurrentUser } from "@/_utils/session.utils";
 import { ConditionalMatch } from "@dx-kit/react-conditional-match";
 
 import {
@@ -6,6 +5,7 @@ import {
   ThemesMenu,
   UserMenu,
 } from "@/components/ui/dependent";
+import { getCurrentUser } from "@/utils/session.utils";
 
 import { HeaderClient } from "./components/HeaderClient";
 import { LoginButton } from "./components/LoginButton";

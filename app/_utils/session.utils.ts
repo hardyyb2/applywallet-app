@@ -2,7 +2,7 @@
 
 import { getServerSession } from "next-auth/next";
 
-import { authOptions } from "@/_lib/auth";
+import { authOptions } from "@/lib/auth";
 
 export const getCurrentUser = async () => {
   try {

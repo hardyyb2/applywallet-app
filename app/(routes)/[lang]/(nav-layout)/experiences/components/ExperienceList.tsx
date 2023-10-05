@@ -1,12 +1,13 @@
 import { redirect } from "next/navigation";
 
-import { authOptions } from "@/_lib/auth";
-import { experienceSchema, ExperienceType } from "@/_utils/schema-utils";
-import { SheetNames } from "@/_utils/sheet.utils";
-import { cn } from "@/_utils/styles.utils";
 import axios from "axios";
 import { GoogleSpreadsheet } from "google-spreadsheet";
 import { getServerSession } from "next-auth";
+
+import { authOptions } from "@/lib/auth";
+import { experienceSchema, ExperienceType } from "@/utils/schema-utils";
+import { SheetNames } from "@/utils/sheet.utils";
+import { cn } from "@/utils/styles.utils";
 
 import { ExperienceCard } from "./ExperienceCard";
 

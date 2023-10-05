@@ -1,8 +1,7 @@
-import { ExperienceType } from "@/_utils/schema-utils";
-import { cn } from "@/_utils/styles.utils";
-
 import { CopyButton } from "@/components/ui/dependent";
 import { Flex, Typography } from "@/components/ui/isolated/common";
+import { ExperienceType } from "@/utils/schema-utils";
+import { cn } from "@/utils/styles.utils";
 
 import { ExperienceCardActions } from "./components/ExperienceCardActions";
 

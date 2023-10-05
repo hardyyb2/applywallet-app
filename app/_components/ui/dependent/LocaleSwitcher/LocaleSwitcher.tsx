@@ -3,11 +3,10 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { Button, Popover } from "@/_components/ui/isolated/wrapped";
-import { languageOptions } from "@/_utils/locale-utils/language-options";
-import { cn } from "@/_utils/styles.utils";
-
+import { Button, Popover } from "@/components/ui/isolated/wrapped";
 import { Icons } from "@/components/ui/isolated/wrapped/Icons";
+import { languageOptions } from "@/utils/locale-utils/language-options";
+import { cn } from "@/utils/styles.utils";
 
 import { redirectedPathName } from "./localeSwitcher.utils";
 

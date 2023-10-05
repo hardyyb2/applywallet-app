@@ -1,7 +1,8 @@
 import Image from "next/image";
 
-import { cn } from "@/_utils/styles.utils";
 import { Blog } from "contentlayer/generated";
+
+import { cn } from "@/utils/styles.utils";
 
 import { Flex, Typography } from "../../isolated/common";
 import { Badge, Card } from "../../isolated/wrapped";

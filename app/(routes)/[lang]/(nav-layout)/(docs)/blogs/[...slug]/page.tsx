@@ -1,16 +1,13 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-import { IconLink } from "@/_components/ui/dependent";
-import {
-  Flex,
-  Mdx,
-  typographyVariants,
-} from "@/_components/ui/isolated/common";
-import { Breadcrumbs, Divider } from "@/_components/ui/isolated/wrapped";
-import { AppRoutes } from "@/_utils/routes.utils";
 import { allBlogs } from "contentlayer/generated";
 import dayjs from "dayjs";
+
+import { IconLink } from "@/components/ui/dependent";
+import { Flex, Mdx, typographyVariants } from "@/components/ui/isolated/common";
+import { Breadcrumbs, Divider } from "@/components/ui/isolated/wrapped";
+import { AppRoutes } from "@/utils/routes.utils";
 
 import { BlogScrollWrapper } from "./BlogScrollWrapper";
 

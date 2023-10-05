@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { AppRoutes } from "@/_utils/routes.utils";
+import { AppRoutes } from "@/utils/routes.utils";
 
 import { Typography } from "../../isolated/common";
 import { Button, buttonVariants, Card, Divider } from "../../isolated/wrapped";

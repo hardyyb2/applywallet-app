@@ -2,8 +2,9 @@
 
 import { memo } from "react";
 
-import { extractThemeColorsFromDOM } from "@/_utils/theme.utils";
 import NextTopLoader from "nextjs-toploader";
+
+import { extractThemeColorsFromDOM } from "@/utils/theme.utils";
 
 const TopLoader = memo(() => {
   const themeColors = extractThemeColorsFromDOM();

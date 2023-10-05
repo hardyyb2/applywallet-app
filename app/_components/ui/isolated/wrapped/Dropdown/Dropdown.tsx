@@ -1,6 +1,6 @@
 import { forwardRef, HTMLAttributes } from "react";
 
-import { cn } from "@/_utils/styles.utils";
+import { cn } from "@/utils/styles.utils";
 
 import { DropdownItem } from "./components/DropdownItem";
 import { DropdownMenu } from "./components/DropdownMenu";
