@@ -21,6 +21,25 @@ const defaultComputedFields: ComputedFields = {
   },
 };
 
+export const Author = defineDocumentType(() => ({
+  name: "Author",
+  contentType: "mdx",
+  filePathPattern: `authors/**/*.mdx`,
+  fields: {
+    name: {
+      type: "string",
+      required: true,
+    },
+    description: {
+      type: "string",
+    },
+    image: {
+      type: "string",
+    },
+  },
+  computedFields: defaultComputedFields,
+}));
+
 export const BlogCategory = defineDocumentType(() => ({
   name: "BlogCategory",
   contentType: "mdx",
@@ -60,6 +79,12 @@ export const Blog = defineDocumentType(() => ({
       embedDocument: true,
       required: true,
     },
+    author: {
+      type: "reference",
+      of: Author,
+      required: true,
+      embedDocument: true,
+    },
     description: {
       type: "string",
     },
@@ -83,7 +108,7 @@ export const Blog = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: "./app/_content",
-  documentTypes: [Blog, BlogCategory],
+  documentTypes: [Blog, BlogCategory, Author],
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [
