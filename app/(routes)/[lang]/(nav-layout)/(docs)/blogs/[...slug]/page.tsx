@@ -2,13 +2,13 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 
 import { allBlogs } from "contentlayer/generated";
-import dayjs from "dayjs";
 
 import { IconLink } from "@/components/ui/dependent";
-import { Flex, Mdx, typographyVariants } from "@/components/ui/isolated/common";
-import { Breadcrumbs, Divider } from "@/components/ui/isolated/wrapped";
+import { Flex, Mdx } from "@/components/ui/isolated/common";
+import { Breadcrumbs } from "@/components/ui/isolated/wrapped";
 import { AppRoutes } from "@/utils/routes.utils";
 
+import { BlogMetaInfo } from "./BlogMetaInfo";
 import { BlogScrollWrapper } from "./BlogScrollWrapper";
 
 type BlogPageProps = {
@@ -62,20 +62,10 @@ const BlogPage = async ({ params }: BlogPageProps) => {
             align="center"
             className="absolute top-0 mx-auto w-full flex-1 rounded-2xl bg-base-100 p-m-l"
           >
-            <Mdx className="prose prose-sm w-full  md:prose-base lg:prose-lg xl:prose-xl">
+            <Mdx className="prose prose-sm w-full md:prose-base lg:prose-lg xl:prose-xl">
               <Mdx.Header>
                 <h1>{blog.title}</h1>
-                <Flex
-                  className={typographyVariants({
-                    variant: "caption",
-                    className: "font-light",
-                  })}
-                  component="h6"
-                >
-                  {dayjs(blog.date).format("MMM DD, YYYY").toLowerCase()}
-                  <Divider horizontal />
-                  {blog.category.name}
-                </Flex>
+                <BlogMetaInfo blog={blog} />
                 {blog.image ? (
                   <figure className="relative aspect-video overflow-hidden rounded-2xl">
                     <Image
