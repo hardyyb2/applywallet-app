@@ -37,7 +37,7 @@ const BlogCard = ({
       ) : null}
       <Card.Body>
         <Typography variant="caption" className="line-clamp-1 text-secondary">
-          {category}
+          {category.name}
         </Typography>
         <Card.Title variant="h4" className="not-prose line-clamp-4">
           {title}

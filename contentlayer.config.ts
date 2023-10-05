@@ -57,6 +57,8 @@ export const Blog = defineDocumentType(() => ({
       type: "reference",
       of: BlogCategory,
       description: "what category does this blog fall under",
+      embedDocument: true,
+      required: true,
     },
     description: {
       type: "string",

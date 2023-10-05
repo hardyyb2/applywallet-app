@@ -72,9 +72,9 @@ const BlogPage = async ({ params }: BlogPageProps) => {
                   })}
                   component="h6"
                 >
-                  {dayjs(blog.publishedAt).format("MMM DD, YYYY").toLowerCase()}
+                  {dayjs(blog.date).format("MMM DD, YYYY").toLowerCase()}
                   <Divider horizontal />
-                  {blog.topic}
+                  {blog.category.name}
                 </Flex>
                 {blog.image ? (
                   <figure className="relative aspect-video overflow-hidden rounded-2xl">
