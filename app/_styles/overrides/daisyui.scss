@@ -8,6 +8,10 @@
   @apply p-s-m;
 }
 
+.divider-horizontal {
+  @apply mx-3xs;
+}
+
 input::placeholder,
 textarea::placeholder {
   opacity: 0.4;
