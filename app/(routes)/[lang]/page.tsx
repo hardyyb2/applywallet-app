@@ -14,7 +14,7 @@ const Home = async ({
 }: {
   params: { lang: Locale };
 }) => {
-  const dict = await getDictionary(lang); // en
+  const dict = await getDictionary(lang);
 
   return (
     <section className="h-full">

@@ -1,4 +1,4 @@
-"server-only";
+import "server-only";
 
 import type { Locale } from "./locale-utils/i18n-config";
 
@@ -11,4 +11,4 @@ const dictionaries: Record<Locale, () => any> = {
     import("public/dictionaries/es.json").then((module) => module.default),
 };
 
-export const getDictionary = async (locale: Locale) => dictionaries[locale]?.();
+export const getDictionary = async (locale: Locale) => dictionaries[locale]();
