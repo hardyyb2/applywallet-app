@@ -1,9 +1,9 @@
 .container {
   display: grid;
-  align-items: center;
   grid-auto-flow: row dense;
   grid-template: "image details" 1fr / max-content 1fr;
   gap: theme("spacing.xs");
+  align-items: center;
 }
 
 .details {
