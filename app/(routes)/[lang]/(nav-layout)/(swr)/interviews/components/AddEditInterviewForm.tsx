@@ -6,6 +6,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 
+import { useI18n } from "app/_locales/client";
+
 import { Typography } from "@/components/ui/isolated/common";
 import { Button, FormControl } from "@/components/ui/isolated/wrapped";
 import { useBoolean } from "@/hooks/useBoolean";
@@ -13,7 +15,7 @@ import {
   useAddInterview,
   useUpdateInterview,
 } from "@/queries/interviews.queries";
-import { ApiRoutes, AppRoutes } from "@/utils/routes.utils";
+import { AppRoutes } from "@/utils/routes.utils";
 import {
   interviewInputSchema,
   InterviewInputType,
@@ -36,6 +38,7 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
   const defaultFormValues = isEdit ? props.interview : {};
 
   // hooks
+  const t = useI18n();
   const { trigger: triggerAddInterview } = useAddInterview();
   const { trigger: triggerUpdateInterview } = useUpdateInterview();
   const {
@@ -95,6 +98,7 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
       onSubmit={handleSubmit(onSubmit)}
       noValidate
     >
+      {t("hello")}
       <div className="card-body  bg-base-100 [&_.form-control]:mt-2">
         <Typography variant="h3">{titleText}</Typography>
         <div className="mt-s">
