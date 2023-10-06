@@ -7,8 +7,8 @@
 }
 
 .details {
-  display: grid;
   grid-area: details;
+  display: grid;
   grid-template: "name" 1fr "meta" 1fr / 1fr;
   gap: 0 0;
 }

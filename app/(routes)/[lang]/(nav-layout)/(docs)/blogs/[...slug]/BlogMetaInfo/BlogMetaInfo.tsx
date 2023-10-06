@@ -19,8 +19,6 @@ type BlogMetaInfo = {
 };
 
 const BlogMetaInfo = ({ blog }: BlogMetaInfo) => {
-  console.log("blog", blog.author);
-
   return (
     <div className={styles.container}>
       <div className={styles.image}>
