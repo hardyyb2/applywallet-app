@@ -4,7 +4,12 @@ import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 
 import { Flex } from "@/components/ui/isolated/common";
-import { Avatar, Button, Popover } from "@/components/ui/isolated/wrapped";
+import {
+  Avatar,
+  AvatarFallback,
+  Button,
+  Popover,
+} from "@/components/ui/isolated/wrapped";
 import { getInitials } from "@/utils/string.utils";
 import { cn } from "@/utils/styles.utils";
 
@@ -22,7 +27,7 @@ const UserMenu = () => {
   return (
     <Popover.Root>
       <Popover.Trigger asChild>
-        <Avatar.Root className="avatar">
+        <Avatar>
           {userImage ? (
             <Flex
               justify="center"
@@ -39,16 +44,16 @@ const UserMenu = () => {
               />
             </Flex>
           ) : (
-            <Avatar.Fallback delayMs={600}>
+            <AvatarFallback delayMs={600}>
               <Button
                 color="ghost"
                 className="mask mask-squircle w-12 bg-base-100 p-0"
               >
                 {getInitials(userName).toLowerCase()}
               </Button>
-            </Avatar.Fallback>
+            </AvatarFallback>
           )}
-        </Avatar.Root>
+        </Avatar>
       </Popover.Trigger>
       <Popover.Content collisionPadding={8}>
         <ul role="listbox" className="menu gap-2 rounded-xl bg-base-100 p-2">
