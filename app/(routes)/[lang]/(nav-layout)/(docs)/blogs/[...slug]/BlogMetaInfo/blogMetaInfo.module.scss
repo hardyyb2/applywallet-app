@@ -1,0 +1,26 @@
+.container {
+  display: grid;
+  align-items: center;
+  grid-auto-flow: row dense;
+  grid-template: "image details" 1fr / max-content 1fr;
+  gap: theme("spacing.xs");
+}
+
+.details {
+  display: grid;
+  grid-area: details;
+  grid-template: "name" 1fr "meta" 1fr / 1fr;
+  gap: 0 0;
+}
+
+.name {
+  grid-area: name;
+}
+
+.meta {
+  grid-area: meta;
+}
+
+.image {
+  grid-area: image;
+}

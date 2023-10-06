@@ -8,7 +8,7 @@ import { Flex, Mdx } from "@/components/ui/isolated/common";
 import { Breadcrumbs } from "@/components/ui/isolated/wrapped";
 import { AppRoutes } from "@/utils/routes.utils";
 
-import { BlogMetaInfo } from "./BlogMetaInfo";
+import { BlogMetaInfo } from "./BlogMetaInfo/BlogMetaInfo";
 import { BlogScrollWrapper } from "./BlogScrollWrapper";
 
 type BlogPageProps = {
