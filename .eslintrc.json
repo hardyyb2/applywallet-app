@@ -11,7 +11,8 @@
         "error.tsx",
         "loading.tsx",
         "not-found.tsx",
-        "*.config.ts"
+        "*.config.ts",
+        "./app/_locales/langs/*"
       ],
       "rules": {
         "import/no-default-export": "off",

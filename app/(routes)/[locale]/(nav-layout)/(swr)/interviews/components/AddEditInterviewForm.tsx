@@ -13,7 +13,7 @@ import {
   useAddInterview,
   useUpdateInterview,
 } from "@/queries/interviews.queries";
-import { ApiRoutes, AppRoutes } from "@/utils/routes.utils";
+import { AppRoutes } from "@/utils/routes.utils";
 import {
   interviewInputSchema,
   InterviewInputType,

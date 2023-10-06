@@ -6,6 +6,7 @@ import { cn } from "@/utils/styles.utils";
 import { ThemesMenuItemColors } from "./components/ThemesMenuItemColors";
 import { selectableThemes } from "./themesMenu.utils";
 
+// TODO - replace this with Popover
 const ThemesMenu = () => {
   return (
     <Dropdown vertical="end">

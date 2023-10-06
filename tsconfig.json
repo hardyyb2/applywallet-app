@@ -29,7 +29,8 @@
       "@/utils/*": ["app/_utils/*"],
       "@/queries/*": ["app/_queries/*"],
       "@/types/*": ["app/_types/*"],
-      "@/content/*": ["app/_content/*"]
+      "@/content/*": ["app/_content/*"],
+      "@/locales/*": ["app/_locales/*"]
     }
   },
   "include": [

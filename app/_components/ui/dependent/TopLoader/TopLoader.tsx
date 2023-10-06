@@ -11,7 +11,7 @@ const TopLoader = memo(() => {
 
   return (
     <NextTopLoader
-      height={4}
+      height={8}
       color={themeColors.secondary}
       shadow={`0 0 8px ${themeColors.secondary},0 0 4px ${themeColors.secondary}`}
     />

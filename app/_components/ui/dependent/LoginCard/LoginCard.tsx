@@ -1,29 +1,35 @@
 import Link from "next/link";
 
+import { getI18n } from "@/locales/server";
 import { AppRoutes } from "@/utils/routes.utils";
 
 import { Typography } from "../../isolated/common";
-import { Button, buttonVariants, Card, Divider } from "../../isolated/wrapped";
+import { buttonVariants, Card, Divider } from "../../isolated/wrapped";
 import { LCLoginButton } from "./components/LCLoginButton";
 
-const LoginCard = () => {
+const LoginCard = async () => {
+  const t = await getI18n();
+
   return (
     <Card side="lg" className="max-w-xl bg-base-200 text-base-content">
       <Card.Body className="items-center">
-        <Card.Title variant="h3" align="center">
-          Welcome to applywallet!
+        <Card.Title
+          variant="h3"
+          align="center"
+          className="inline-block first-letter:capitalize"
+        >
+          {t("loginCard.title")}
         </Card.Title>
         <Typography variant="body2" align="center">
-          sign in to access your interview toolkit
+          {t("loginCard.subtitle")}
         </Typography>
 
         <Card.Actions className="mt-4 w-full justify-center">
           <LCLoginButton />
         </Card.Actions>
-        <Divider>or</Divider>
+        <Divider>{t("common.or")}</Divider>
         <Typography variant="subtitle2" align="center">
-          not ready to log in yet? no worries! you can still browse our public
-          pages
+          {t("loginCard.alt_subtitle")}
         </Typography>
         <Card.Actions className="mt-4 w-full justify-center">
           <Link
@@ -34,7 +40,7 @@ const LoginCard = () => {
             })}
             href={AppRoutes.BLOGS}
           >
-            Blogs
+            {t("routes.blogs")}
           </Link>
         </Card.Actions>
       </Card.Body>

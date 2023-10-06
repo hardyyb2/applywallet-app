@@ -4,16 +4,19 @@ import { allBlogs } from "contentlayer/generated";
 
 import { BlogCard } from "@/components/ui/dependent";
 import { Flex, Typography } from "@/components/ui/isolated/common";
+import { getI18n } from "@/locales/server";
 
 import { BlogCardsWrapper } from "./BlogCardsWrapper";
 
-const BlogsPage = () => {
+const BlogsPage = async () => {
+  const t = await getI18n();
+
   return (
     <div className="px-6 py-4 lg:px-10">
       <Flex justify="space-between" align="center" className="mb-m-l gap-4">
         <Flex direction="column">
-          <Typography variant="h3">blogs</Typography>
-          <Typography variant="subtitle2">explore ideas and stories</Typography>
+          <Typography variant="h3">{t("blogs.title")}</Typography>
+          <Typography variant="subtitle2">{t("blogs.subtitle")}</Typography>
         </Flex>
       </Flex>
 
