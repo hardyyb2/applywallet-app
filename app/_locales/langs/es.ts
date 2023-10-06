@@ -1,6 +1,6 @@
-// eslint-disable-next-line import/no-default-export
 export default {
-  hello: "Hola",
-  "hello.world": "Hola mundo!",
-  welcome: "Hola {name}!",
+  blogs: {
+    title: "blogs",
+    subtitle: "explorar ideas y relatos",
+  },
 } as const;
