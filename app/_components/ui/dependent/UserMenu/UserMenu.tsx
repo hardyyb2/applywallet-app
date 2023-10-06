@@ -68,7 +68,7 @@ const UserMenu = () => {
             </Button>
           </li>
         </ul>
-        <PopoverArrow className="fill-primary" />
+        <PopoverArrow className="fill-base-200" />
       </PopoverContent>
     </Popover>
   );

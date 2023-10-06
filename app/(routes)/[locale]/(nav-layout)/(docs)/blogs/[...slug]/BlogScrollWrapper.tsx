@@ -21,7 +21,7 @@ const BlogScrollWrapper = ({ children }: PropsWithChildren) => {
       className="relative h-full w-full overflow-y-auto rounded-2xl"
     >
       <m.div
-        className="sticky inset-0 z-[2] h-3xs-2xs origin-[0%] transform rounded-full bg-accent"
+        className="fixed inset-0 z-40 h-3xs-2xs origin-[0%] transform rounded-full bg-accent"
         style={{
           scaleX,
         }}

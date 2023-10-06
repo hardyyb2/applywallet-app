@@ -60,7 +60,7 @@ const BlogPage = async ({ params }: BlogPageProps) => {
           <Flex
             direction="column"
             align="center"
-            className="absolute top-0 mx-auto w-full flex-1 rounded-2xl bg-base-100 p-m-l"
+            className="mx-auto w-full flex-1 rounded-2xl bg-base-100 p-m-l"
           >
             <Mdx className="prose prose-sm w-full md:prose-base lg:prose-lg xl:prose-xl">
               <Mdx.Header>

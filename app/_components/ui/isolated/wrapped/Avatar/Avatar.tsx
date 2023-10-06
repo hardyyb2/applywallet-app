@@ -13,7 +13,7 @@ const Avatar = forwardRef<
   // TODO - add various sizes
   <AvatarPrimitive.Root
     ref={ref}
-    className={cnMerge("avatar rounded-xl", className)}
+    className={cnMerge("avatar aspect-square rounded-xl", className)}
     {...props}
   />
 ));
