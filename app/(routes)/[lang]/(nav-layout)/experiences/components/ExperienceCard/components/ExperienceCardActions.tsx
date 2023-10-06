@@ -6,7 +6,14 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 import { Flex } from "@/components/ui/isolated/common";
-import { Button, Popover } from "@/components/ui/isolated/wrapped";
+import {
+  Button,
+  Popover,
+  PopoverArrow,
+  PopoverContent,
+  PopoverPortal,
+  PopoverTrigger,
+} from "@/components/ui/isolated/wrapped";
 import { Icons } from "@/components/ui/isolated/wrapped/Icons";
 import { ApiRoutes, AppRoutes, SearchParams } from "@/utils/routes.utils";
 import { ExperienceType } from "@/utils/schema-utils";
@@ -38,16 +45,16 @@ const ExperienceCardActions = ({ id }: ExperienceCardActionsProps) => {
   };
 
   return (
-    <Popover.Root>
-      <Popover.Trigger asChild>
+    <Popover>
+      <PopoverTrigger asChild>
         <Button
           color="ghost"
           startIcon={<Icons.MoreVertical />}
           className="p-0"
         />
-      </Popover.Trigger>
-      <Popover.Portal>
-        <Popover.Content
+      </PopoverTrigger>
+      <PopoverPortal>
+        <PopoverContent
           className="rounded-lg border-2 border-primary bg-base-200 p-2"
           collisionPadding={8}
         >
@@ -66,10 +73,10 @@ const ExperienceCardActions = ({ id }: ExperienceCardActionsProps) => {
             />
           </Flex>
 
-          <Popover.Arrow className="fill-primary" />
-        </Popover.Content>
-      </Popover.Portal>
-    </Popover.Root>
+          <PopoverArrow className="fill-primary" />
+        </PopoverContent>
+      </PopoverPortal>
+    </Popover>
   );
 };
 

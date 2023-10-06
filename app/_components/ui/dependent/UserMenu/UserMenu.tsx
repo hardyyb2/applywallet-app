@@ -9,6 +9,9 @@ import {
   AvatarFallback,
   Button,
   Popover,
+  PopoverArrow,
+  PopoverContent,
+  PopoverTrigger,
 } from "@/components/ui/isolated/wrapped";
 import { getInitials } from "@/utils/string.utils";
 import { cn } from "@/utils/styles.utils";
@@ -25,8 +28,8 @@ const UserMenu = () => {
   };
 
   return (
-    <Popover.Root>
-      <Popover.Trigger asChild>
+    <Popover>
+      <PopoverTrigger asChild>
         <Avatar>
           {userImage ? (
             <Flex
@@ -54,8 +57,8 @@ const UserMenu = () => {
             </AvatarFallback>
           )}
         </Avatar>
-      </Popover.Trigger>
-      <Popover.Content collisionPadding={8}>
+      </PopoverTrigger>
+      <PopoverContent collisionPadding={8}>
         <ul role="listbox" className="menu gap-2 rounded-xl bg-base-100 p-2">
           <li
             className={cn("rounded-lg outline-offset-2 [&_a]:w-max [&_a]:p-0")}
@@ -70,9 +73,9 @@ const UserMenu = () => {
             </Button>
           </li>
         </ul>
-        <Popover.Arrow className="fill-primary" />
-      </Popover.Content>
-    </Popover.Root>
+        <PopoverArrow className="fill-primary" />
+      </PopoverContent>
+    </Popover>
   );
 };
 
