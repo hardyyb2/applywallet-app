@@ -7,52 +7,49 @@ import { Flex } from "@/components/ui/isolated/common";
 import {
   Avatar,
   AvatarFallback,
+  AvatarImage,
   Button,
   Popover,
 } from "@/components/ui/isolated/wrapped";
 import { getInitials } from "@/utils/string.utils";
 import { cn } from "@/utils/styles.utils";
 
+import { LoginButton } from "../Header/components/LoginButton";
+
 const UserMenu = () => {
   const { data: session } = useSession();
 
   const user = session?.user ?? null;
-  const userImage = user?.image ?? undefined;
-  const userName = user?.name ?? "user";
+  const [userImage, userName] = [
+    user?.image ?? undefined,
+    user?.name ?? "user",
+  ];
 
   const handleLogout = () => {
     signOut();
   };
 
+  if (!user) {
+    return <LoginButton />;
+  }
+
   return (
     <Popover.Root>
       <Popover.Trigger asChild>
-        <Avatar>
-          {userImage ? (
-            <Flex
-              justify="center"
-              align="center"
-              className="!flex w-10 rounded-xl bg-base-200 ring ring-base-200 ring-offset-2"
+        <Avatar className="w-10 overflow-hidden rounded-xl bg-base-200 ring ring-base-200 ring-offset-2">
+          <AvatarImage
+            src={userImage}
+            alt={userName}
+            referrerPolicy="no-referrer"
+          />
+          <AvatarFallback delayMs={600}>
+            <Button
+              color="ghost"
+              className="mask mask-squircle w-12 bg-base-100 p-0"
             >
-              <Image
-                className="btn-ghost btn border-none object-contain p-0"
-                src={userImage}
-                width={80}
-                height={80}
-                alt={userName}
-                referrerPolicy="no-referrer"
-              />
-            </Flex>
-          ) : (
-            <AvatarFallback delayMs={600}>
-              <Button
-                color="ghost"
-                className="mask mask-squircle w-12 bg-base-100 p-0"
-              >
-                {getInitials(userName).toLowerCase()}
-              </Button>
-            </AvatarFallback>
-          )}
+              {getInitials(userName).toLowerCase()}
+            </Button>
+          </AvatarFallback>
         </Avatar>
       </Popover.Trigger>
       <Popover.Content collisionPadding={8}>

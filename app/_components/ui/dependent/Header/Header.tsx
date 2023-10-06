@@ -5,23 +5,15 @@ import {
   ThemesMenu,
   UserMenu,
 } from "@/components/ui/dependent";
-import { getCurrentUser } from "@/utils/session.utils";
 
 import { HeaderClient } from "./components/HeaderClient";
-import { LoginButton } from "./components/LoginButton";
 
 const Header = async () => {
-  const user = await getCurrentUser();
-
   return (
     <HeaderClient>
       <ThemesMenu />
       <LocaleSwitcher />
-      <ConditionalMatch fallback={<LoginButton />}>
-        <ConditionalMatch.Render when={user}>
-          <UserMenu />
-        </ConditionalMatch.Render>
-      </ConditionalMatch>
+      <UserMenu />
     </HeaderClient>
   );
 };

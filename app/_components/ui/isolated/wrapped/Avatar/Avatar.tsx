@@ -38,6 +38,7 @@ const AvatarFallback = forwardRef<
   ElementRef<typeof AvatarPrimitive.Fallback>,
   ComponentPropsWithoutRef<typeof AvatarPrimitive.Fallback>
 >(({ className, ...props }, ref) => (
+  // TODO - update this
   <AvatarPrimitive.Fallback
     ref={ref}
     className={cnMerge(
