@@ -29,19 +29,10 @@ const I18nMiddleware = createI18nMiddleware({
 });
 
 export function middleware(request: NextRequest) {
-  const pathname = request.nextUrl.pathname;
-
-  // TODO - check how to do in config
-  /**  Ignore public files manually
-   *  `/_next/` and `/api/` are ignored by the watcher, but we need to ignore files in `public` manually. */
-  if (pathname.startsWith("/images")) {
-    return;
-  }
-
   return I18nMiddleware(request);
 }
 
 export const config = {
-  // Matcher ignoring `/_next/` and `/api/`
-  matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
+  // Matcher ignoring these paths for middleware
+  matcher: ["/((?!api|_next/static|_next/image|favicon.ico|images).*)"],
 };

@@ -1,9 +1,0 @@
-{
-  "server-component": {
-    "welcome": "Bienvenido"
-  },
-  "counter": {
-    "increment": "incremento",
-    "decrement": "decremento"
-  }
-}
