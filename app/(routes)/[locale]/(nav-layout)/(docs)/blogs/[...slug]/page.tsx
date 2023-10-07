@@ -5,7 +5,13 @@ import { allBlogs } from "contentlayer/generated";
 
 import { IconLink } from "@/components/ui/dependent";
 import { Flex, Mdx } from "@/components/ui/isolated/common";
-import { Breadcrumbs } from "@/components/ui/isolated/wrapped";
+import {
+  Breadcrumbs,
+  ScrollArea,
+  ScrollAreaCorner,
+  ScrollAreaViewport,
+  ScrollBar,
+} from "@/components/ui/isolated/wrapped";
 import { AppRoutes } from "@/utils/routes.utils";
 
 import { BlogMetaInfo } from "./BlogMetaInfo/BlogMetaInfo";
@@ -50,12 +56,17 @@ const BlogPage = async ({ params }: BlogPageProps) => {
   return (
     <div className="h-full overflow-hidden px-s-m pb-s">
       <Flex direction="column" className="h-full">
-        <Breadcrumbs className="mb-2xs flex-0 pt-0 [&_a]:no-underline">
-          <Breadcrumbs.Item>
-            <IconLink href={AppRoutes.BLOGS} />
-          </Breadcrumbs.Item>
-          <Breadcrumbs.Item>{blog.title}</Breadcrumbs.Item>
-        </Breadcrumbs>
+        <ScrollArea>
+          <ScrollAreaViewport>
+            <Breadcrumbs className="mb-2xs flex-0 pt-0 [&_a]:no-underline">
+              <Breadcrumbs.Item>
+                <IconLink href={AppRoutes.BLOGS} />
+              </Breadcrumbs.Item>
+              <Breadcrumbs.Item>{blog.title}</Breadcrumbs.Item>
+            </Breadcrumbs>
+          </ScrollAreaViewport>
+          <ScrollBar orientation="horizontal" className="h-0" />
+        </ScrollArea>
         <BlogScrollWrapper>
           <Flex
             direction="column"

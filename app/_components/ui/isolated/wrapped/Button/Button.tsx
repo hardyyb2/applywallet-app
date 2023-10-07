@@ -49,6 +49,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             shape,
             size,
             variant,
+            // TODO - move these inside variant
             className: cn(
               ((startIcon && !loading) || endIcon) && "gap-2",
               // states

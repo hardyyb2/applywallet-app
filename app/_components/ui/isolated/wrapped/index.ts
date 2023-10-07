@@ -13,3 +13,4 @@ export * from "./Textarea";
 export * from "./Divider";
 export * from "./Tooltip";
 export * from "./Badge";
+export * from "./ScrollArea";

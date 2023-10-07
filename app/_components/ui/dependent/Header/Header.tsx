@@ -1,5 +1,3 @@
-import { ConditionalMatch } from "@dx-kit/react-conditional-match";
-
 import {
   LocaleSwitcher,
   ThemesMenu,
