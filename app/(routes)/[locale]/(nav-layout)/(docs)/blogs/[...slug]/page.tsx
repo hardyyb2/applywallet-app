@@ -68,11 +68,7 @@ const BlogPage = async ({ params }: BlogPageProps) => {
           <ScrollBar orientation="horizontal" className="h-0" />
         </ScrollArea>
         <BlogScrollWrapper>
-          <Flex
-            direction="column"
-            align="center"
-            className="mx-auto w-full flex-1 rounded-2xl bg-base-100 p-m-l"
-          >
+          <Flex justify="center">
             <Mdx className="prose prose-sm w-full md:prose-base lg:prose-lg xl:prose-xl">
               <Mdx.Header>
                 <h1>{blog.title}</h1>

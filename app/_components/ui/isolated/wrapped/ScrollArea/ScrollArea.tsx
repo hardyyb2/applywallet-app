@@ -16,7 +16,8 @@ const ScrollBar = forwardRef<
     ref={ref}
     orientation={orientation}
     className={cnMerge(
-      "flex bg-transparent",
+      // TODO - add variants
+      "flex bg-base-100",
       orientation === "vertical" && "h-full w-2xs-xs p-[1px]",
       orientation === "horizontal" && "h-2xs-xs p-[1px]",
       className,
@@ -25,7 +26,7 @@ const ScrollBar = forwardRef<
   >
     <ScrollAreaPrimitive.ScrollAreaThumb
       className={cnMerge(
-        "relative rounded-full bg-base-100",
+        "relative rounded-full bg-base-content",
         orientation === "vertical" && "flex-1",
       )}
     />
@@ -41,7 +42,7 @@ const ScrollAreaViewport = forwardRef<
   return (
     <ScrollAreaPrimitive.Viewport
       ref={ref}
-      className={cnMerge("h-full w-full rounded-[inherit]", className)}
+      className={cnMerge(" h-full w-full rounded-[inherit]", className)}
       {...props}
     />
   );
