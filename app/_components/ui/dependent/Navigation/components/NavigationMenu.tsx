@@ -93,12 +93,9 @@ const NavigationMenu = ({
                 >
                   <Tooltip>
                     <TooltipTrigger asChild>{listItem}</TooltipTrigger>
-                    <TooltipContent
-                      sideOffset={12}
-                      className="bg-primary text-primary-content"
-                    >
+                    <TooltipContent sideOffset={12}>
                       <Typography variant="h6">{item.label}</Typography>
-                      <TooltipArrow className="fill-primary" />
+                      <TooltipArrow />
                     </TooltipContent>
                   </Tooltip>
                 </TooltipProvider>

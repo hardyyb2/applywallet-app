@@ -60,11 +60,11 @@ const SideNavBrand = ({
               {navOpen ? <Icons.PanelLeftClose /> : <Icons.PanelLeftOpen />}
             </Button>
           </TooltipTrigger>
-          <TooltipContent className="bg-primary text-primary-content">
+          <TooltipContent>
             <Typography variant="h6">
               {navOpen ? "close nav" : "open nav"}
             </Typography>
-            <TooltipArrow className="fill-primary" />
+            <TooltipArrow />
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>
