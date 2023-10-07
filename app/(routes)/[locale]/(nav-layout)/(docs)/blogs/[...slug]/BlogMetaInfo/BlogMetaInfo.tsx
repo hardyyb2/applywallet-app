@@ -22,7 +22,7 @@ const BlogMetaInfo = ({ blog }: BlogMetaInfo) => {
   return (
     <div className={styles.container}>
       <div className={styles.image}>
-        <Avatar className="not-prose w-l overflow-hidden border-2 border-accent">
+        <Avatar className="not-prose" color="secondary">
           <AvatarImage src={blog.author.image} />
           <AvatarFallback>{getInitials(blog.author.name)}</AvatarFallback>
         </Avatar>

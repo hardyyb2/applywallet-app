@@ -37,7 +37,7 @@ const UserMenu = () => {
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <Avatar className="w-10 overflow-hidden rounded-xl bg-base-200 ring ring-base-200 ring-offset-2">
+        <Avatar className="cursor-pointer">
           <AvatarImage
             src={userImage}
             alt={userName}
