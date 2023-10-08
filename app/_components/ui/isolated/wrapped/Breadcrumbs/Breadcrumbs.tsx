@@ -2,6 +2,7 @@ import { forwardRef, HTMLAttributes, ReactElement, Ref } from "react";
 
 import { cn } from "@/utils/styles.utils";
 
+import { typographyVariants } from "../../common";
 import { BreadcrumbsItem, BreadcrumbsItemProps } from "./BreadcrumbsItem";
 
 export type BreadcrumbsProps = HTMLAttributes<HTMLDivElement> & {
@@ -17,14 +18,15 @@ const Breadcrumbs = forwardRef<HTMLDivElement, BreadcrumbsProps>(
     { children, className, innerProps, innerRef, ...props },
     ref,
   ): JSX.Element => {
-    const classes = cn("breadcrumbs text-sm", className);
-
     return (
       <div
         role="navigation"
         aria-label="Breadcrumbs"
         {...props}
-        className={classes}
+        className={typographyVariants({
+          variant: "caption",
+          className: cn("breadcrumbs", className),
+        })}
         ref={ref}
       >
         <ul {...innerProps} ref={innerRef}>

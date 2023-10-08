@@ -6,6 +6,7 @@ import { m, useScroll, useSpring } from "framer-motion";
 
 import {
   ScrollArea,
+  ScrollAreaCorner,
   ScrollAreaViewport,
   ScrollBar,
 } from "@/components/ui/isolated/wrapped";
@@ -22,10 +23,10 @@ const BlogScrollWrapper = ({ children }: PropsWithChildren) => {
   });
 
   return (
-    <ScrollArea className="h-full w-full rounded-xl">
+    <ScrollArea type="always" className="h-full w-full rounded-2xl bg-base-100">
       <ScrollAreaViewport
         ref={containerRef}
-        className="mx-auto flex rounded-2xl bg-base-100 p-m-l [&>div]:!block"
+        className="mx-auto flex p-m-l [&>div]:!block"
       >
         <m.div
           className="fixed inset-0 z-40 h-3xs-2xs origin-[0%] transform rounded-full bg-accent"
@@ -35,7 +36,8 @@ const BlogScrollWrapper = ({ children }: PropsWithChildren) => {
         />
         {children}
       </ScrollAreaViewport>
-      <ScrollBar />
+      <ScrollBar className="rounded-xl" />
+      <ScrollAreaCorner />
     </ScrollArea>
   );
 };

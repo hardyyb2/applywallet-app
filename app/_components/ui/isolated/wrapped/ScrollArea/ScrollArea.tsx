@@ -18,8 +18,8 @@ const ScrollBar = forwardRef<
     className={cnMerge(
       // TODO - add variants
       "flex bg-base-100",
-      orientation === "vertical" && "h-full w-2xs-xs p-[1px]",
-      orientation === "horizontal" && "h-2xs-xs p-[1px]",
+      orientation === "vertical" && "h-full w-2xs-xs p-0.5",
+      orientation === "horizontal" && "h-2xs-xs p-0.5",
       className,
     )}
     {...props}

@@ -19,7 +19,7 @@ const IconLink = ({
   return (
     <Fragment>
       <Link href={href} {...linkProps}>
-        {Icon ? <Icon className="mr-2" /> : null}
+        {Icon ? <Icon className="mr-2 h-s-m" /> : null}
         {children ?? title}
       </Link>
     </Fragment>

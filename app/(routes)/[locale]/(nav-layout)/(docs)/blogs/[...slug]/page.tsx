@@ -65,7 +65,7 @@ const BlogPage = async ({ params }: BlogPageProps) => {
               <Breadcrumbs.Item>{blog.title}</Breadcrumbs.Item>
             </Breadcrumbs>
           </ScrollAreaViewport>
-          <ScrollBar orientation="horizontal" className="h-0" />
+          <ScrollBar orientation="horizontal" className="hidden h-0" />
         </ScrollArea>
         <BlogScrollWrapper>
           <Flex justify="center">
