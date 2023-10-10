@@ -8,7 +8,6 @@ import { Flex, Mdx } from "@/components/ui/isolated/common";
 import {
   Breadcrumbs,
   ScrollArea,
-  ScrollAreaCorner,
   ScrollAreaViewport,
   ScrollBar,
 } from "@/components/ui/isolated/wrapped";
@@ -68,26 +67,24 @@ const BlogPage = async ({ params }: BlogPageProps) => {
           <ScrollBar orientation="horizontal" className="hidden h-0" />
         </ScrollArea>
         <BlogScrollWrapper>
-          <Flex justify="center">
-            <Mdx className="prose prose-sm w-full md:prose-base lg:prose-lg xl:prose-xl">
-              <Mdx.Header>
-                <h1>{blog.title}</h1>
-                <BlogMetaInfo blog={blog} />
-                {blog.image ? (
-                  <figure className="relative aspect-video overflow-hidden rounded-2xl">
-                    <Image
-                      src={blog.image}
-                      fill
-                      alt={blog.title}
-                      objectFit="cover"
-                      className="h-full w-full"
-                    />
-                  </figure>
-                ) : null}
-              </Mdx.Header>
-              <Mdx.Content code={blog.body.code} />
-            </Mdx>
-          </Flex>
+          <Mdx className="prose prose-sm w-full md:prose-base lg:prose-lg xl:prose-xl">
+            <Mdx.Header>
+              <h1>{blog.title}</h1>
+              <BlogMetaInfo blog={blog} />
+              {blog.image ? (
+                <figure className="relative aspect-video overflow-hidden rounded-2xl">
+                  <Image
+                    src={blog.image}
+                    fill
+                    alt={blog.title}
+                    objectFit="cover"
+                    className="h-full w-full"
+                  />
+                </figure>
+              ) : null}
+            </Mdx.Header>
+            <Mdx.Content code={blog.body.code} />
+          </Mdx>
         </BlogScrollWrapper>
       </Flex>
     </div>
