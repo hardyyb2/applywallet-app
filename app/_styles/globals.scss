@@ -16,6 +16,8 @@
 
 html,
 body {
+  scroll-behavior: smooth;
+
   overflow-x: hidden;
 
   min-width: 320px;
@@ -24,6 +26,4 @@ body {
   min-height: 100vh;
   min-height: 100svh;
   margin: 0;
-
-  scroll-behavior: smooth;
 }
