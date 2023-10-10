@@ -21,8 +21,6 @@ import { Icons } from "@/components/ui/isolated/wrapped/Icons";
 import { SearchParams } from "@/utils/routes.utils";
 import { cnMerge } from "@/utils/styles.utils";
 
-import styles from "./blogScrollWrapper.module.scss";
-
 const BlogScrollWrapper = ({ children }: PropsWithChildren) => {
   // hooks
   const searchParams = useSearchParams();
@@ -58,7 +56,7 @@ const BlogScrollWrapper = ({ children }: PropsWithChildren) => {
       type="always"
       className={cnMerge(
         "relative h-full w-full rounded-2xl bg-base-100",
-        isFullScreen && styles.container,
+        isFullScreen && "!fixed inset-0 z-50 rounded-none",
       )}
     >
       <ScrollAreaViewport
