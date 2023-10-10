@@ -1,6 +1,7 @@
 "use client";
 
 import { ElementRef, PropsWithChildren, useRef } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 import { m, useScroll, useSpring } from "framer-motion";
 
@@ -17,13 +18,17 @@ import {
   TooltipTrigger,
 } from "@/components/ui/isolated/wrapped";
 import { Icons } from "@/components/ui/isolated/wrapped/Icons";
+import { SearchParams } from "@/utils/routes.utils";
+import { cnMerge } from "@/utils/styles.utils";
 
 import styles from "./blogScrollWrapper.module.scss";
 
 const BlogScrollWrapper = ({ children }: PropsWithChildren) => {
   // hooks
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathName = usePathname();
   const viewportRef = useRef<ElementRef<typeof ScrollAreaViewport>>(null);
-  const containerRef = useRef<ElementRef<typeof ScrollArea>>(null);
   const { scrollYProgress } = useScroll({
     container: viewportRef,
   });
@@ -33,23 +38,28 @@ const BlogScrollWrapper = ({ children }: PropsWithChildren) => {
     stiffness: 400,
     damping: 24,
   });
+  const isFullScreen = searchParams.has(SearchParams.FULL_SCREEN);
 
   // functions
   const handleFullScreenToggle = () => {
-    const container = containerRef.current;
+    const params = new URLSearchParams(searchParams);
 
-    if (!container) {
-      return;
+    if (isFullScreen) {
+      params.delete(SearchParams.FULL_SCREEN);
+      router.replace(pathName + "?" + params.toString());
+    } else {
+      params.set(SearchParams.FULL_SCREEN, "true");
+      router.push(pathName + "?" + params.toString());
     }
-
-    container.classList.toggle(styles.container);
   };
 
   return (
     <ScrollArea
-      ref={containerRef}
       type="always"
-      className="relative h-full w-full rounded-2xl bg-base-100"
+      className={cnMerge(
+        "relative h-full w-full rounded-2xl bg-base-100",
+        isFullScreen && styles.container,
+      )}
     >
       <ScrollAreaViewport
         ref={viewportRef}

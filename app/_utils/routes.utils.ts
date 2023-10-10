@@ -44,6 +44,7 @@ export const ApiRoutes = {
 
 export enum SearchParams {
   PATH = "path",
+  FULL_SCREEN = "fullScreen",
 }
 
 export enum UrlParams {
