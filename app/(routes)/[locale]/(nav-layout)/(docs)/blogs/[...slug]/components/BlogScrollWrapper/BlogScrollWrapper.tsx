@@ -83,7 +83,7 @@ const BlogScrollWrapper = ({ children }: PropsWithChildren) => {
                 />
               </TooltipTrigger>
               <TooltipContent sideOffset={12}>
-                toggle full screen
+                {isFullScreen ? "exit full screen" : "toggle full screen"}
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>
