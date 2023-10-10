@@ -17,6 +17,7 @@ import {
   Lock,
   LucideProps,
   Maximize,
+  Minimize,
   MoreVertical,
   Palette,
   PanelLeftClose,
@@ -51,6 +52,7 @@ const Icons = {
   Plus,
   Settings,
   Trash2,
+  Minimize,
   CustomHome: forwardRef<SVGSVGElement, LucideProps>(function CustomHome(
     { ...props },
     ref,

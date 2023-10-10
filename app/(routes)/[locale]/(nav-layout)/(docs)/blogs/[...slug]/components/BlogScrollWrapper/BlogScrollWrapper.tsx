@@ -78,7 +78,13 @@ const BlogScrollWrapper = ({ children }: PropsWithChildren) => {
                   aria-label="toggle full screen"
                   color="ghost"
                   className="absolute right-xs top-0 z-40 p-0 lg:top-2xs"
-                  startIcon={<Icons.Maximize className="lg:h-l lg:w-l" />}
+                  startIcon={
+                    isFullScreen ? (
+                      <Icons.Minimize className="lg:h-l lg:w-l" />
+                    ) : (
+                      <Icons.Maximize className="lg:h-l lg:w-l" />
+                    )
+                  }
                   onClick={handleFullScreenToggle}
                 />
               </TooltipTrigger>
