@@ -1,9 +1,9 @@
 "use client";
 
 import { ElementRef, PropsWithChildren, useRef } from "react";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 import { m, useScroll, useSpring } from "framer-motion";
+import { useBoolean, useFullscreen } from "react-use";
 
 import { Flex } from "@/components/ui/isolated/common";
 import {
@@ -18,46 +18,30 @@ import {
   TooltipTrigger,
 } from "@/components/ui/isolated/wrapped";
 import { Icons } from "@/components/ui/isolated/wrapped/Icons";
-import { SearchParams } from "@/utils/routes.utils";
 import { cnMerge } from "@/utils/styles.utils";
 
 const BlogScrollWrapper = ({ children }: PropsWithChildren) => {
   // hooks
-  const searchParams = useSearchParams();
-  const router = useRouter();
-  const pathName = usePathname();
+  const containerRef = useRef<ElementRef<typeof ScrollArea>>(null);
   const viewportRef = useRef<ElementRef<typeof ScrollAreaViewport>>(null);
+
+  const [show, toggleFullScreen] = useBoolean(false);
+  const isFullScreen = useFullscreen(containerRef, show, {
+    onClose: () => toggleFullScreen(false),
+  });
   const { scrollYProgress } = useScroll({
     container: viewportRef,
   });
-
-  // constants
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 400,
     damping: 24,
   });
-  const isFullScreen = searchParams.has(SearchParams.FULL_SCREEN);
-
-  // functions
-  const handleFullScreenToggle = () => {
-    const params = new URLSearchParams(searchParams);
-
-    if (isFullScreen) {
-      params.delete(SearchParams.FULL_SCREEN);
-      router.replace(pathName + "?" + params.toString());
-    } else {
-      params.set(SearchParams.FULL_SCREEN, "true");
-      router.push(pathName + "?" + params.toString());
-    }
-  };
 
   return (
     <ScrollArea
       type="always"
-      className={cnMerge(
-        "relative h-full w-full rounded-2xl bg-base-100",
-        isFullScreen && "!fixed inset-0 z-50 rounded-none",
-      )}
+      ref={containerRef}
+      className={cnMerge("relative h-full w-full rounded-2xl bg-base-100")}
     >
       <ScrollAreaViewport
         ref={viewportRef}
@@ -85,7 +69,7 @@ const BlogScrollWrapper = ({ children }: PropsWithChildren) => {
                       <Icons.Maximize className="lg:h-l lg:w-l" />
                     )
                   }
-                  onClick={handleFullScreenToggle}
+                  onClick={toggleFullScreen}
                 />
               </TooltipTrigger>
               <TooltipContent sideOffset={12}>
