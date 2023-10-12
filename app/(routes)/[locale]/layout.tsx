@@ -1,4 +1,4 @@
-import { i18n, Locale } from "@/utils/locale-utils";
+import { Locale } from "@/utils/locale-utils";
 
 import { Providers } from "./providers";
 
@@ -12,21 +12,20 @@ import { ReactNode } from "react";
 import { fonts } from "@/lib/fonts";
 import { cn } from "@/utils/styles.utils";
 
-export async function generateStaticParams() {
-  return i18n.locales.map((locale) => ({ lang: locale }));
-}
+type RootLayoutProps = {
+  params: { locale: Locale };
+  children: ReactNode;
+};
 
 const RootLayout = ({
-  params: { lang = "en" },
+  params: { locale = "en" },
   children,
-}: {
-  children: ReactNode;
-  params: {
-    lang: Locale;
-  };
-}) => {
+}: RootLayoutProps) => {
   return (
-    <html lang={lang} className={cn(fonts.secondary.className, "bg-base-200")}>
+    <html
+      lang={locale}
+      className={cn(fonts.secondary.className, "bg-base-200")}
+    >
       <head />
       <body
         className={cn(
