@@ -14,7 +14,8 @@
     "clean": "vite clean",
     "test": "vitest",
     "coverage": "vitest run --coverage",
-    "update-next": "pnpm i next@latest react@latest react-dom@latest eslint-config-next@latest @next/bundle-analyzer@latest @types/react @types/react-dom"
+    "update-next": "pnpm i next@latest react@latest react-dom@latest eslint-config-next@latest @next/bundle-analyzer@latest @types/react @types/react-dom",
+    "cdt": "tsx ./scripts/createDirectoryTree.ts"
   },
   "dependencies": {
     "@dx-kit/react-conditional-match": "^3.0.0",
@@ -95,6 +96,7 @@
     "stylelint-config-standard-scss": "^10.0.0",
     "stylelint-order": "^6.0.3",
     "tailwindcss": "^3.3.2",
+    "tsx": "^3.13.0",
     "typescript": "5.1.6",
     "vite": "^4.1.4",
     "vitest": "^0.28.3",
