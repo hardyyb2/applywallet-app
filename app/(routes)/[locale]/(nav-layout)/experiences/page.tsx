@@ -45,7 +45,6 @@ const Experiences = async () => {
       </Flex>
 
       <Suspense fallback="loading...">
-        {/* @ts-expect-error Server Component */}
         <ExperienceList />
       </Suspense>
 

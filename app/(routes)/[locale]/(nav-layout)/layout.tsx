@@ -12,7 +12,6 @@ const NavLayout = ({ children }: { children: ReactNode }) => {
           "bg-opacity-60 backdrop-blur",
         )}
       >
-        {/* @ts-expect-error Server Component */}
         <Header />
       </BaseLayout.Head>
       <BaseLayout.Body
