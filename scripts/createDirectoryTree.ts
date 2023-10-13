@@ -19,7 +19,7 @@ const scanFolder = ({
     const itemPath = `${parentFolder}/${item}`;
     const isDirectory = fs.statSync(itemPath).isDirectory();
 
-    const [nodeId, edgeId] = [itemPath, `e${parentId}-${itemPath}`];
+    const [nodeId, edgeId] = [itemPath, `e:${parentId}->${itemPath}`];
 
     // we will use "dagre" to position nodes
     const nodePosition = {
@@ -34,7 +34,12 @@ const scanFolder = ({
       type: "custom",
     });
 
-    edges.push({ id: edgeId, source: parentId, target: nodeId });
+    edges.push({
+      id: edgeId,
+      source: parentId,
+      target: nodeId,
+      type: "smoothstep",
+    });
 
     if (isDirectory) {
       // Recursively scan all folders

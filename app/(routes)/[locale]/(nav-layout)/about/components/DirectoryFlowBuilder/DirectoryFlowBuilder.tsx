@@ -6,8 +6,10 @@ import {
   Background,
   NodeTypes,
   ReactFlow,
+  ReactFlowProvider,
   useEdgesState,
   useNodesState,
+  useReactFlow,
 } from "reactflow";
 
 import {
@@ -15,15 +17,15 @@ import {
   nodes as initialNodes,
 } from "@/bin/folderStructure";
 
-import { CustomNode } from "../CustomNode";
+import { DrNodeType } from "@/types/flowbuilder";
+
+import { CustomNode } from "../nodes/CustomNode";
 import {
   collapseChildNodes,
   getLayoutedElements,
 } from "./directoryFlowBuilder.utils";
 
 import "reactflow/dist/style.css";
-
-import { DrNodeType } from "@/types/flowbuilder";
 
 const nodeTypes: NodeTypes = {
   custom: CustomNode,
@@ -34,7 +36,8 @@ const { nodes: layoutedNodes, edges: layoutedEdges } = getLayoutedElements(
   initialEdges,
 );
 
-const DirectoryFlowBuilder = () => {
+const FlowBuilder = () => {
+  const { setCenter } = useReactFlow();
   const [nodes, setNodes, onNodesChange] = useNodesState(layoutedNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(layoutedEdges);
 
@@ -47,6 +50,15 @@ const DirectoryFlowBuilder = () => {
 
     setNodes(updatedNodes);
     setEdges(updatedEdges);
+  };
+
+  const onInit = () => {
+    // TODO - find with layouted function
+    const appNode = nodes.find((node) => node.data.name === "app");
+
+    setCenter(appNode?.position.x ?? 0, appNode?.position.y ?? 0, {
+      zoom: 1,
+    });
   };
 
   return (
@@ -62,10 +74,21 @@ const DirectoryFlowBuilder = () => {
       zoomOnPinch
       zoomOnDoubleClick
       maxZoom={4}
+      minZoom={0.1}
       onNodeClick={handleNodeClick}
+      nodesConnectable={false}
+      onInit={onInit}
     >
       <Background gap={16} />
     </ReactFlow>
+  );
+};
+
+const DirectoryFlowBuilder = () => {
+  return (
+    <ReactFlowProvider>
+      <FlowBuilder />
+    </ReactFlowProvider>
   );
 };
 
