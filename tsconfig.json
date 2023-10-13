@@ -30,7 +30,8 @@
       "@/queries/*": ["app/_queries/*"],
       "@/types/*": ["app/_types/*"],
       "@/content/*": ["app/_content/*"],
-      "@/locales/*": ["app/_locales/*"]
+      "@/locales/*": ["app/_locales/*"],
+      "@/bin/*": ["app/_bin/*"]
     }
   },
   "include": [
