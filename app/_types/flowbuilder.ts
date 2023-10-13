@@ -2,6 +2,7 @@ import { Edge, Node } from "reactflow";
 
 export type DrNodeDataType = {
   name: string;
+  collapsed?: boolean;
 };
 
 export type DrNodeType = Node<DrNodeDataType>;
