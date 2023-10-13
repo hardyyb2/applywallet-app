@@ -42,7 +42,7 @@ const DirectoryFlowBuilder = () => {
   const hideNodes =
     (hidden: boolean, childEdgesID: string[], childNodesID: string[]) =>
     (node: Node) => {
-      if (childNodesID.includes(node.id)) {
+      if (childEdgesID.includes(node.id) || childNodesID.includes(node.id)) {
         node.hidden = hidden;
       }
 
