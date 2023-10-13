@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:w-cdt": "pnpm cdt && pnpm dev",
     "build": "next build",
+    "build:w-cdt": "pnpm cdt && pnpm build",
     "start": "next start",
     "analyze": "ANALYZE=true next build",
     "lint": "next lint",
