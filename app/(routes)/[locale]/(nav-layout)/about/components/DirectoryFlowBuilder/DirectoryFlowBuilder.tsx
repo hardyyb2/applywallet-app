@@ -44,6 +44,9 @@ const DirectoryFlowBuilder = () => {
       attributionPosition="top-right"
       nodeTypes={nodeTypes}
       nodesDraggable
+      zoomOnPinch
+      zoomOnDoubleClick
+      maxZoom={4}
     >
       <Background gap={16} />
     </ReactFlow>
