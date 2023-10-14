@@ -1,4 +1,10 @@
-import { ComponentType, forwardRef, PropsWithChildren, ReactNode } from "react";
+import {
+  ComponentType,
+  forwardRef,
+  HTMLAttributes,
+  PropsWithChildren,
+  ReactNode,
+} from "react";
 
 import { cn } from "@/utils/styles.utils";
 
@@ -9,7 +15,7 @@ import {
   FlexWrapType,
 } from "./flex.types";
 
-export interface FlexProps {
+export interface FlexProps extends HTMLAttributes<HTMLDivElement> {
   direction?: FlexDirectionType;
   align?: FlexAlignType;
   justify?: FlexJustifyType;
