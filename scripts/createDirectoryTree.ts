@@ -1,6 +1,29 @@
 import fs from "fs";
 
-import { DrEdgeType, DrNodeType } from "@/types/flowbuilder";
+import {
+  DrEdgeType,
+  DrFileType,
+  DrFolderType,
+  DrNodeType,
+} from "@/types/flowbuilder";
+
+const getNodeSubType = (
+  type: DrNodeType["data"]["type"],
+  fileOrFolderName: string,
+) => {
+  if (type === "file") {
+    const fileRegex = new RegExp(/(?:^|\.)?(page|layout|utils|types)(?:\.|$)/);
+    let subType: DrFileType["subType"] = "page";
+
+    if (fileRegex.test(fileOrFolderName)) {
+      subType = "page";
+    }
+
+    return { type, subType } as DrFileType;
+  }
+
+  return { type: "folder", subType: "route-group" } as DrFolderType;
+};
 
 const scanFolder = ({
   parentFolder,
@@ -27,9 +50,13 @@ const scanFolder = ({
       y: 0,
     };
 
+    const fileOrFolderType = isDirectory ? "folder" : "file";
     nodes.push({
       id: nodeId,
-      data: { name: item },
+      data: {
+        name: item,
+        ...getNodeSubType(fileOrFolderType, item),
+      },
       position: nodePosition,
       type: "custom",
     });
@@ -62,7 +89,7 @@ const generateGraph = (rootFolder: string) => {
 
   nodes.push({
     id: rootId,
-    data: { name: rootFolder, root: true },
+    data: { name: rootFolder, root: true, type: "folder", subType: "root" },
     position: { x: 0, y: 0 },
     type: "custom",
   });

@@ -12,6 +12,8 @@ import {
   Eye,
   EyeOff,
   Files,
+  FileText,
+  FolderOpen,
   GripHorizontal,
   Languages,
   Lock,
@@ -53,6 +55,8 @@ const Icons = {
   Settings,
   Trash2,
   Minimize,
+  FolderOpen,
+  FileText,
   CustomHome: forwardRef<SVGSVGElement, LucideProps>(function CustomHome(
     { ...props },
     ref,

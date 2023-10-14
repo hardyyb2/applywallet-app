@@ -6,6 +6,8 @@ export const nodes: DrNodeType[] = [
     data: {
       name: "app",
       root: true,
+      type: "folder",
+      subType: "root",
     },
     position: {
       x: 0,
@@ -17,6 +19,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)",
     data: {
       name: "(routes)",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -28,6 +32,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]",
     data: {
       name: "[locale]",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -39,6 +45,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(auth)",
     data: {
       name: "(auth)",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -50,6 +58,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(auth)/login",
     data: {
       name: "login",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -61,6 +71,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(auth)/login/page.tsx",
     data: {
       name: "page.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -72,6 +84,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)",
     data: {
       name: "(nav-layout)",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -83,6 +97,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/(docs)",
     data: {
       name: "(docs)",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -94,6 +110,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs",
     data: {
       name: "blogs",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -105,6 +123,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]",
     data: {
       name: "[...slug]",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -116,6 +136,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/components",
     data: {
       name: "components",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -127,6 +149,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/components/BlogMetaInfo",
     data: {
       name: "BlogMetaInfo",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -138,6 +162,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/components/BlogMetaInfo/BlogMetaInfo.tsx",
     data: {
       name: "BlogMetaInfo.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -149,6 +175,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/components/BlogMetaInfo/blogMetaInfo.module.scss",
     data: {
       name: "blogMetaInfo.module.scss",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -160,6 +188,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/components/BlogScrollWrapper",
     data: {
       name: "BlogScrollWrapper",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -171,6 +201,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/components/BlogScrollWrapper/BlogScrollWrapper.tsx",
     data: {
       name: "BlogScrollWrapper.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -182,6 +214,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/page.tsx",
     data: {
       name: "page.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -193,6 +227,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/components",
     data: {
       name: "components",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -204,6 +240,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/components/BlogCardsWrapper.tsx",
     data: {
       name: "BlogCardsWrapper.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -215,6 +253,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/not-found.tsx",
     data: {
       name: "not-found.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -226,6 +266,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/page.tsx",
     data: {
       name: "page.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -237,6 +279,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/(swr)",
     data: {
       name: "(swr)",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -248,6 +292,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/(swr)/interviews",
     data: {
       name: "interviews",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -259,6 +305,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/add",
     data: {
       name: "add",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -270,6 +318,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/add/page.tsx",
     data: {
       name: "page.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -281,6 +331,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/components",
     data: {
       name: "components",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -292,6 +344,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/components/AddEditInterviewForm.tsx",
     data: {
       name: "AddEditInterviewForm.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -303,6 +357,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/components/InterviewActions",
     data: {
       name: "InterviewActions",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -314,6 +370,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/components/InterviewActions/InterviewActions.tsx",
     data: {
       name: "InterviewActions.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -325,6 +383,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/components/InterviewActions/index.ts",
     data: {
       name: "index.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -336,6 +396,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/components/InterviewsList.tsx",
     data: {
       name: "InterviewsList.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -347,6 +409,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/edit",
     data: {
       name: "edit",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -358,6 +422,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/edit/[interviewId]",
     data: {
       name: "[interviewId]",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -369,6 +435,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/edit/[interviewId]/error.tsx",
     data: {
       name: "error.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -380,6 +448,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/edit/[interviewId]/page.tsx",
     data: {
       name: "page.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -391,6 +461,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/interview.utils.ts",
     data: {
       name: "interview.utils.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -402,6 +474,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/page.tsx",
     data: {
       name: "page.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -413,6 +487,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/(swr)/layout.tsx",
     data: {
       name: "layout.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -424,6 +500,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/(swr)/providers.tsx",
     data: {
       name: "providers.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -435,6 +513,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/about",
     data: {
       name: "about",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -446,6 +526,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/about/components",
     data: {
       name: "components",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -457,6 +539,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/about/components/DirectoryFlowBuilder",
     data: {
       name: "DirectoryFlowBuilder",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -468,6 +552,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/about/components/DirectoryFlowBuilder/DirectoryFlowBuilder.tsx",
     data: {
       name: "DirectoryFlowBuilder.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -479,6 +565,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/about/components/DirectoryFlowBuilder/directoryFlowBuilder.utils.ts",
     data: {
       name: "directoryFlowBuilder.utils.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -490,6 +578,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/about/components/nodes",
     data: {
       name: "nodes",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -501,6 +591,21 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/about/components/nodes/CustomNode.tsx",
     data: {
       name: "CustomNode.tsx",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/(routes)/[locale]/(nav-layout)/about/components/nodes/customNode.utils.ts",
+    data: {
+      name: "customNode.utils.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -512,6 +617,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/about/page.tsx",
     data: {
       name: "page.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -523,6 +630,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/experiences",
     data: {
       name: "experiences",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -534,6 +643,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/experiences/add",
     data: {
       name: "add",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -545,6 +656,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/experiences/add/page.tsx",
     data: {
       name: "page.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -556,6 +669,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/experiences/components",
     data: {
       name: "components",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -567,6 +682,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/experiences/components/AddEditExperienceForm.tsx",
     data: {
       name: "AddEditExperienceForm.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -578,6 +695,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceActions",
     data: {
       name: "ExperienceActions",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -589,6 +708,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceActions/ExperienceActions.tsx",
     data: {
       name: "ExperienceActions.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -600,6 +721,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceActions/components",
     data: {
       name: "components",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -611,6 +734,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceActions/components/ExperienceSettingsModal.tsx",
     data: {
       name: "ExperienceSettingsModal.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -622,6 +747,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceActions/components/experienceSettingsModal.module.scss",
     data: {
       name: "experienceSettingsModal.module.scss",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -633,6 +760,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceActions/index.ts",
     data: {
       name: "index.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -644,6 +773,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceCard",
     data: {
       name: "ExperienceCard",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -655,6 +786,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceCard/ExperienceCard.tsx",
     data: {
       name: "ExperienceCard.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -666,6 +799,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceCard/components",
     data: {
       name: "components",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -677,6 +812,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceCard/components/ExperienceCardActions.tsx",
     data: {
       name: "ExperienceCardActions.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -688,6 +825,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceCard/index.ts",
     data: {
       name: "index.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -699,6 +838,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceCardMini",
     data: {
       name: "ExperienceCardMini",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -710,6 +851,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceCardMini/ExperienceCardMini.tsx",
     data: {
       name: "ExperienceCardMini.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -721,6 +864,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceList.tsx",
     data: {
       name: "ExperienceList.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -732,6 +877,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceSettings",
     data: {
       name: "ExperienceSettings",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -743,6 +890,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceSettings/ExperienceSettings.tsx",
     data: {
       name: "ExperienceSettings.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -754,6 +903,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceSettings/components",
     data: {
       name: "components",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -765,6 +916,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceSettings/components/ESInformationSettings.tsx",
     data: {
       name: "ESInformationSettings.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -776,6 +929,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceSettings/experienceSettings.types.ts",
     data: {
       name: "experienceSettings.types.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -787,6 +942,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceSettings/index.ts",
     data: {
       name: "index.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -798,6 +955,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/experiences/edit",
     data: {
       name: "edit",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -809,6 +968,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/experiences/edit/[experienceId]",
     data: {
       name: "[experienceId]",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -820,6 +981,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/experiences/edit/[experienceId]/page.tsx",
     data: {
       name: "page.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -831,6 +994,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/experiences/experience.utils.ts",
     data: {
       name: "experience.utils.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -842,6 +1007,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/experiences/not-found.tsx",
     data: {
       name: "not-found.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -853,6 +1020,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/experiences/page.tsx",
     data: {
       name: "page.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -864,6 +1033,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/experiences/settings",
     data: {
       name: "settings",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -875,6 +1046,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/experiences/settings/page.tsx",
     data: {
       name: "page.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -886,6 +1059,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/layout.tsx",
     data: {
       name: "layout.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -897,6 +1072,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/layout.tsx",
     data: {
       name: "layout.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -908,6 +1085,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/link-sheet",
     data: {
       name: "link-sheet",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -919,6 +1098,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/link-sheet/components",
     data: {
       name: "components",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -930,6 +1111,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/link-sheet/components/CreateNewSheetButton.tsx",
     data: {
       name: "CreateNewSheetButton.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -941,6 +1124,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/link-sheet/components/LinkSheetInput.tsx",
     data: {
       name: "LinkSheetInput.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -952,6 +1137,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/link-sheet/page.tsx",
     data: {
       name: "page.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -963,6 +1150,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/loading.tsx",
     data: {
       name: "loading.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -974,6 +1163,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/page.tsx",
     data: {
       name: "page.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -985,6 +1176,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/post-login",
     data: {
       name: "post-login",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -996,6 +1189,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/post-login/loading.tsx",
     data: {
       name: "loading.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1007,6 +1202,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/post-login/page.tsx",
     data: {
       name: "page.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1018,6 +1215,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/post-login/post-login.utils.ts",
     data: {
       name: "post-login.utils.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1029,6 +1228,8 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/providers.tsx",
     data: {
       name: "providers.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1040,6 +1241,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_bin",
     data: {
       name: "_bin",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -1051,6 +1254,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_bin/folderStructure.ts",
     data: {
       name: "folderStructure.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1062,6 +1267,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components",
     data: {
       name: "_components",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -1073,6 +1280,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui",
     data: {
       name: "ui",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -1084,6 +1293,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/.DS_Store",
     data: {
       name: ".DS_Store",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1095,6 +1306,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent",
     data: {
       name: "dependent",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -1106,6 +1319,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/BaseLayout",
     data: {
       name: "BaseLayout",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -1117,6 +1332,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/BaseLayout/BaseLayout.tsx",
     data: {
       name: "BaseLayout.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1128,6 +1345,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/BaseLayout/components",
     data: {
       name: "components",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -1139,6 +1358,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/BaseLayout/components/BaseLayoutBody.tsx",
     data: {
       name: "BaseLayoutBody.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1150,6 +1371,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/BaseLayout/components/BaseLayoutHead.tsx",
     data: {
       name: "BaseLayoutHead.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1161,6 +1384,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/BaseLayout/index.ts",
     data: {
       name: "index.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1172,6 +1397,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/BlogCard",
     data: {
       name: "BlogCard",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -1183,6 +1410,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/BlogCard/BlogCard.tsx",
     data: {
       name: "BlogCard.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1194,6 +1423,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/BlogCard/blogCard.module.scss",
     data: {
       name: "blogCard.module.scss",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1205,6 +1436,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/BlogCard/index.ts",
     data: {
       name: "index.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1216,6 +1449,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/CopyButton",
     data: {
       name: "CopyButton",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -1227,6 +1462,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/CopyButton/CopyButton.tsx",
     data: {
       name: "CopyButton.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1238,6 +1475,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/CopyButton/copyButton.types.ts",
     data: {
       name: "copyButton.types.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1249,6 +1488,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/CopyButton/copyButton.utils.tsx",
     data: {
       name: "copyButton.utils.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1260,6 +1501,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/CopyButton/index.ts",
     data: {
       name: "index.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1271,6 +1514,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/Header",
     data: {
       name: "Header",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -1282,6 +1527,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/Header/Header.tsx",
     data: {
       name: "Header.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1293,6 +1540,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/Header/components",
     data: {
       name: "components",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -1304,6 +1553,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/Header/components/HeaderClient.tsx",
     data: {
       name: "HeaderClient.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1315,6 +1566,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/Header/components/LoginButton.tsx",
     data: {
       name: "LoginButton.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1326,6 +1579,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/Header/index.ts",
     data: {
       name: "index.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1337,6 +1592,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/IconLink",
     data: {
       name: "IconLink",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -1348,6 +1605,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/IconLink/IconLink.tsx",
     data: {
       name: "IconLink.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1359,6 +1618,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/IconLink/index.ts",
     data: {
       name: "index.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1370,6 +1631,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/LocaleSwitcher",
     data: {
       name: "LocaleSwitcher",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -1381,6 +1644,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/LocaleSwitcher/LocaleSwitcher.tsx",
     data: {
       name: "LocaleSwitcher.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1392,6 +1657,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/LocaleSwitcher/index.ts",
     data: {
       name: "index.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1403,6 +1670,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/LocaleSwitcher/localeSwitcher.utils.ts",
     data: {
       name: "localeSwitcher.utils.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1414,6 +1683,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/LoginCard",
     data: {
       name: "LoginCard",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -1425,6 +1696,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/LoginCard/LoginCard.tsx",
     data: {
       name: "LoginCard.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1436,6 +1709,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/LoginCard/components",
     data: {
       name: "components",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -1447,6 +1722,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/LoginCard/components/LCLoginButton.tsx",
     data: {
       name: "LCLoginButton.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1458,6 +1735,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/LoginCard/index.ts",
     data: {
       name: "index.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1469,6 +1748,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/Navigation",
     data: {
       name: "Navigation",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -1480,6 +1761,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/Navigation/BottomNav",
     data: {
       name: "BottomNav",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -1491,6 +1774,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/Navigation/BottomNav/BottomNav.tsx",
     data: {
       name: "BottomNav.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1502,6 +1787,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/Navigation/BottomNav/components",
     data: {
       name: "components",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -1513,6 +1800,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/Navigation/BottomNav/components/BottomNavBackdrop.tsx",
     data: {
       name: "BottomNavBackdrop.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1524,6 +1813,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/Navigation/BottomNav/components/BottomNavBar.tsx",
     data: {
       name: "BottomNavBar.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1535,6 +1826,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/Navigation/BottomNav/index.ts",
     data: {
       name: "index.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1546,6 +1839,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/Navigation/Navigation.tsx",
     data: {
       name: "Navigation.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1557,6 +1852,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/Navigation/SideNav",
     data: {
       name: "SideNav",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -1568,6 +1865,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/Navigation/SideNav/SideNav.tsx",
     data: {
       name: "SideNav.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1579,6 +1878,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/Navigation/SideNav/components",
     data: {
       name: "components",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -1590,6 +1891,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/Navigation/SideNav/components/SideNavBrand.tsx",
     data: {
       name: "SideNavBrand.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1601,6 +1904,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/Navigation/SideNav/index.ts",
     data: {
       name: "index.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1612,6 +1917,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/Navigation/components",
     data: {
       name: "components",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -1623,6 +1930,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/Navigation/components/NavigationMenu.tsx",
     data: {
       name: "NavigationMenu.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1634,6 +1943,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/Navigation/index.tsx",
     data: {
       name: "index.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1645,6 +1956,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/Navigation/navigation.types.ts",
     data: {
       name: "navigation.types.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1656,6 +1969,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/Navigation/navigation.utils.ts",
     data: {
       name: "navigation.utils.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1667,6 +1982,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/README.md",
     data: {
       name: "README.md",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1678,6 +1995,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/ThemesMenu",
     data: {
       name: "ThemesMenu",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -1689,6 +2008,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/ThemesMenu/ThemesMenu.tsx",
     data: {
       name: "ThemesMenu.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1700,6 +2021,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/ThemesMenu/components",
     data: {
       name: "components",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -1711,6 +2034,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/ThemesMenu/components/ThemesMenuItemColors.tsx",
     data: {
       name: "ThemesMenuItemColors.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1722,6 +2047,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/ThemesMenu/index.ts",
     data: {
       name: "index.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1733,6 +2060,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/ThemesMenu/themesMenu.utils.ts",
     data: {
       name: "themesMenu.utils.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1744,6 +2073,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/TopLoader",
     data: {
       name: "TopLoader",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -1755,6 +2086,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/TopLoader/TopLoader.tsx",
     data: {
       name: "TopLoader.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1766,6 +2099,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/TopLoader/index.ts",
     data: {
       name: "index.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1777,6 +2112,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/UserMenu",
     data: {
       name: "UserMenu",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -1788,6 +2125,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/UserMenu/UserMenu.tsx",
     data: {
       name: "UserMenu.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1799,6 +2138,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/UserMenu/index.ts",
     data: {
       name: "index.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1810,6 +2151,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/dependent/index.ts",
     data: {
       name: "index.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1821,6 +2164,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated",
     data: {
       name: "isolated",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -1832,6 +2177,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/README.md",
     data: {
       name: "README.md",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1843,6 +2190,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/common",
     data: {
       name: "common",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -1854,6 +2203,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/common/CopyToClipboard",
     data: {
       name: "CopyToClipboard",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -1865,6 +2216,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/common/CopyToClipboard/CopyToClipboard.tsx",
     data: {
       name: "CopyToClipboard.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1876,6 +2229,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/common/CopyToClipboard/copyToClipboard.utils.ts",
     data: {
       name: "copyToClipboard.utils.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1887,6 +2242,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/common/CopyToClipboard/index.ts",
     data: {
       name: "index.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1898,6 +2255,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/common/Flex",
     data: {
       name: "Flex",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -1909,6 +2268,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/common/Flex/Flex.tsx",
     data: {
       name: "Flex.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1920,6 +2281,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/common/Flex/flex.types.ts",
     data: {
       name: "flex.types.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1931,6 +2294,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/common/Flex/index.ts",
     data: {
       name: "index.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1942,6 +2307,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/common/Mdx",
     data: {
       name: "Mdx",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -1953,6 +2320,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/common/Mdx/Mdx.tsx",
     data: {
       name: "Mdx.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1964,6 +2333,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/common/Mdx/index.ts",
     data: {
       name: "index.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1975,6 +2346,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/common/Typography",
     data: {
       name: "Typography",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -1986,6 +2359,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/common/Typography/Typography.tsx",
     data: {
       name: "Typography.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -1997,6 +2372,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/common/Typography/index.ts",
     data: {
       name: "index.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2008,6 +2385,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/common/Typography/typography.utils.tsx",
     data: {
       name: "typography.utils.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2019,6 +2398,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/common/index.ts",
     data: {
       name: "index.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2030,6 +2411,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped",
     data: {
       name: "wrapped",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -2041,6 +2424,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Avatar",
     data: {
       name: "Avatar",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -2052,6 +2437,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Avatar/Avatar.tsx",
     data: {
       name: "Avatar.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2063,6 +2450,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Avatar/avatar.utils.ts",
     data: {
       name: "avatar.utils.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2074,6 +2463,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Avatar/index.ts",
     data: {
       name: "index.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2085,6 +2476,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Badge",
     data: {
       name: "Badge",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -2096,6 +2489,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Badge/Badge.tsx",
     data: {
       name: "Badge.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2107,6 +2502,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Badge/badge.utils.ts",
     data: {
       name: "badge.utils.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2118,6 +2515,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Badge/index.ts",
     data: {
       name: "index.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2129,6 +2528,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/BottomNavigation",
     data: {
       name: "BottomNavigation",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -2140,6 +2541,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/BottomNavigation/BottomNavigation.tsx",
     data: {
       name: "BottomNavigation.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2151,6 +2554,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/BottomNavigation/BottomNavigationLabel.tsx",
     data: {
       name: "BottomNavigationLabel.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2162,6 +2567,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/BottomNavigation/bottomNavigation.types.ts",
     data: {
       name: "bottomNavigation.types.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2173,6 +2580,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/BottomNavigation/index.ts",
     data: {
       name: "index.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2184,6 +2593,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Breadcrumbs",
     data: {
       name: "Breadcrumbs",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -2195,6 +2606,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Breadcrumbs/Breadcrumbs.tsx",
     data: {
       name: "Breadcrumbs.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2206,6 +2619,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Breadcrumbs/BreadcrumbsItem.tsx",
     data: {
       name: "BreadcrumbsItem.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2217,6 +2632,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Breadcrumbs/index.tsx",
     data: {
       name: "index.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2228,6 +2645,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Button",
     data: {
       name: "Button",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -2239,6 +2658,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Button/Button.tsx",
     data: {
       name: "Button.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2250,6 +2671,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Button/button.utils.ts",
     data: {
       name: "button.utils.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2261,6 +2684,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Button/index.tsx",
     data: {
       name: "index.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2272,6 +2697,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Card",
     data: {
       name: "Card",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -2283,6 +2710,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Card/Card.tsx",
     data: {
       name: "Card.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2294,6 +2723,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Card/CardActions.tsx",
     data: {
       name: "CardActions.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2305,6 +2736,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Card/CardBody.tsx",
     data: {
       name: "CardBody.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2316,6 +2749,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Card/CardFigure.tsx",
     data: {
       name: "CardFigure.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2327,6 +2762,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Card/CardTitle.tsx",
     data: {
       name: "CardTitle.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2338,6 +2775,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Card/card.types.ts",
     data: {
       name: "card.types.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2349,6 +2788,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Card/index.tsx",
     data: {
       name: "index.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2360,6 +2801,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Dialog",
     data: {
       name: "Dialog",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -2371,6 +2814,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Dialog/Dialog.tsx",
     data: {
       name: "Dialog.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2382,6 +2827,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Dialog/index.ts",
     data: {
       name: "index.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2393,6 +2840,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Divider",
     data: {
       name: "Divider",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -2404,6 +2853,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Divider/Divider.tsx",
     data: {
       name: "Divider.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2415,6 +2866,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Divider/index.ts",
     data: {
       name: "index.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2426,6 +2879,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Dropdown",
     data: {
       name: "Dropdown",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -2437,6 +2892,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Dropdown/Dropdown.tsx",
     data: {
       name: "Dropdown.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2448,6 +2905,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Dropdown/components",
     data: {
       name: "components",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -2459,6 +2918,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Dropdown/components/DropdownItem.tsx",
     data: {
       name: "DropdownItem.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2470,6 +2931,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Dropdown/components/DropdownMenu.tsx",
     data: {
       name: "DropdownMenu.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2481,6 +2944,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Dropdown/components/DropdownToggle.tsx",
     data: {
       name: "DropdownToggle.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2492,6 +2957,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Dropdown/dropDown.types.ts",
     data: {
       name: "dropDown.types.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2503,6 +2970,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Dropdown/index.tsx",
     data: {
       name: "index.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2514,6 +2983,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/FormControl",
     data: {
       name: "FormControl",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -2525,6 +2996,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/FormControl/FormControl.tsx",
     data: {
       name: "FormControl.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2536,6 +3009,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/FormControl/components",
     data: {
       name: "components",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -2547,6 +3022,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/FormControl/components/FormControlInput.tsx",
     data: {
       name: "FormControlInput.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2558,6 +3035,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/FormControl/components/FormControlTextarea.tsx",
     data: {
       name: "FormControlTextarea.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2569,6 +3048,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/FormControl/formControl.utils.tsx",
     data: {
       name: "formControl.utils.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2580,6 +3061,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/FormControl/index.ts",
     data: {
       name: "index.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2591,6 +3074,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Icons",
     data: {
       name: "Icons",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -2602,6 +3087,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Icons/Icons.tsx",
     data: {
       name: "Icons.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2613,6 +3100,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Icons/index.tsx",
     data: {
       name: "index.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2624,6 +3113,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Input",
     data: {
       name: "Input",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -2635,6 +3126,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Input/Input.tsx",
     data: {
       name: "Input.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2646,6 +3139,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Input/Input.types.ts",
     data: {
       name: "Input.types.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2657,6 +3152,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Input/index.tsx",
     data: {
       name: "index.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2668,6 +3165,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Popover",
     data: {
       name: "Popover",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -2679,6 +3178,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Popover/Popover.tsx",
     data: {
       name: "Popover.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2690,6 +3191,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Popover/index.ts",
     data: {
       name: "index.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2701,6 +3204,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/README.md",
     data: {
       name: "README.md",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2712,6 +3217,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/ScrollArea",
     data: {
       name: "ScrollArea",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -2723,6 +3230,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/ScrollArea/ScrollArea.tsx",
     data: {
       name: "ScrollArea.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2734,6 +3243,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/ScrollArea/index.ts",
     data: {
       name: "index.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2745,6 +3256,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Textarea",
     data: {
       name: "Textarea",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -2756,6 +3269,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Textarea/Textarea.tsx",
     data: {
       name: "Textarea.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2767,6 +3282,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Textarea/Textarea.types.ts",
     data: {
       name: "Textarea.types.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2778,6 +3295,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Textarea/index.tsx",
     data: {
       name: "index.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2789,6 +3308,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Tooltip",
     data: {
       name: "Tooltip",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -2800,6 +3321,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Tooltip/Tooltip.tsx",
     data: {
       name: "Tooltip.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2811,6 +3334,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Tooltip/index.ts",
     data: {
       name: "index.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2822,6 +3347,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/Tooltip/tooltip.utils.ts",
     data: {
       name: "tooltip.utils.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2833,6 +3360,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/ui/isolated/wrapped/index.ts",
     data: {
       name: "index.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2844,6 +3373,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_content",
     data: {
       name: "_content",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -2855,6 +3386,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_content/authors",
     data: {
       name: "authors",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -2866,6 +3399,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_content/authors/hardik_badola.mdx",
     data: {
       name: "hardik_badola.mdx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2877,6 +3412,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_content/blogs",
     data: {
       name: "blogs",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -2888,6 +3425,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_content/blogs/scalable-react.mdx",
     data: {
       name: "scalable-react.mdx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2899,6 +3438,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_content/blogs_categories",
     data: {
       name: "blogs_categories",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -2910,6 +3451,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_content/blogs_categories/engineering.mdx",
     data: {
       name: "engineering.mdx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2921,6 +3464,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_hooks",
     data: {
       name: "_hooks",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -2932,6 +3477,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_hooks/useBoolean",
     data: {
       name: "useBoolean",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -2943,6 +3490,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_hooks/useBoolean/index.ts",
     data: {
       name: "index.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2954,6 +3503,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_hooks/useBoolean/useBoolean.tsx",
     data: {
       name: "useBoolean.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2965,6 +3516,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_hooks/useBoolean/useBoolean.types.ts",
     data: {
       name: "useBoolean.types.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2976,6 +3529,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_hooks/useThemeColors.ts",
     data: {
       name: "useThemeColors.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -2987,6 +3542,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_hooks/useWindowSize",
     data: {
       name: "useWindowSize",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -2998,6 +3555,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_hooks/useWindowSize/index.ts",
     data: {
       name: "index.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3009,6 +3568,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_hooks/useWindowSize/useWindowSize.tsx",
     data: {
       name: "useWindowSize.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3020,6 +3581,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_hooks/useWindowSize/useWindowSize.types.ts",
     data: {
       name: "useWindowSize.types.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3031,6 +3594,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_lib",
     data: {
       name: "_lib",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -3042,6 +3607,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_lib/auth.ts",
     data: {
       name: "auth.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3053,6 +3620,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_lib/fonts.ts",
     data: {
       name: "fonts.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3064,6 +3633,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_lib/prisma.ts",
     data: {
       name: "prisma.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3075,6 +3646,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_locales",
     data: {
       name: "_locales",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -3086,6 +3659,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_locales/client.ts",
     data: {
       name: "client.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3097,6 +3672,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_locales/langs",
     data: {
       name: "langs",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -3108,6 +3685,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_locales/langs/en.ts",
     data: {
       name: "en.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3119,6 +3698,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_locales/langs/es.ts",
     data: {
       name: "es.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3130,6 +3711,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_locales/server.ts",
     data: {
       name: "server.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3141,6 +3724,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_queries",
     data: {
       name: "_queries",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -3152,6 +3737,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_queries/interviews.queries.ts",
     data: {
       name: "interviews.queries.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3163,6 +3750,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_styles",
     data: {
       name: "_styles",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -3174,6 +3763,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_styles/globals.scss",
     data: {
       name: "globals.scss",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3185,6 +3776,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_styles/mdx.scss",
     data: {
       name: "mdx.scss",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3196,6 +3789,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_styles/overrides",
     data: {
       name: "overrides",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -3207,6 +3802,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_styles/overrides/daisyui.scss",
     data: {
       name: "daisyui.scss",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3218,6 +3815,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_styles/overrides/reactflow.scss",
     data: {
       name: "reactflow.scss",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3229,6 +3828,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_styles/overrides/toast.scss",
     data: {
       name: "toast.scss",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3240,6 +3841,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_types",
     data: {
       name: "_types",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -3251,6 +3854,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_types/api.ts",
     data: {
       name: "api.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3262,6 +3867,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_types/flowbuilder.ts",
     data: {
       name: "flowbuilder.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3273,6 +3880,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_types/globals.d.ts",
     data: {
       name: "globals.d.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3284,6 +3893,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_types/next-auth.d.ts",
     data: {
       name: "next-auth.d.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3295,6 +3906,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_types/reset.d.ts",
     data: {
       name: "reset.d.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3306,6 +3919,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_utils",
     data: {
       name: "_utils",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -3317,6 +3932,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_utils/__tests__",
     data: {
       name: "__tests__",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -3328,6 +3945,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_utils/__tests__/styles.test.ts",
     data: {
       name: "styles.test.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3339,6 +3958,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_utils/api",
     data: {
       name: "api",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -3350,6 +3971,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_utils/api/api-response.test.ts",
     data: {
       name: "api-response.test.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3361,6 +3984,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_utils/api/api-response.ts",
     data: {
       name: "api-response.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3372,6 +3997,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_utils/api/index.ts",
     data: {
       name: "index.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3383,6 +4010,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_utils/auth.utils.ts",
     data: {
       name: "auth.utils.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3394,6 +4023,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_utils/env-vars.utils.ts",
     data: {
       name: "env-vars.utils.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3405,6 +4036,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_utils/error",
     data: {
       name: "error",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -3416,6 +4049,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_utils/error/custom-error.test.ts",
     data: {
       name: "custom-error.test.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3427,6 +4062,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_utils/error/custom-error.ts",
     data: {
       name: "custom-error.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3438,6 +4075,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_utils/error/index.ts",
     data: {
       name: "index.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3449,6 +4088,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_utils/locale-utils",
     data: {
       name: "locale-utils",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -3460,6 +4101,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_utils/locale-utils/i18n-config.ts",
     data: {
       name: "i18n-config.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3471,6 +4114,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_utils/locale-utils/index.ts",
     data: {
       name: "index.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3482,6 +4127,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_utils/locale-utils/language-options.tsx",
     data: {
       name: "language-options.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3493,6 +4140,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_utils/queries.utils.ts",
     data: {
       name: "queries.utils.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3504,6 +4153,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_utils/routes.utils.ts",
     data: {
       name: "routes.utils.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3515,6 +4166,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_utils/schema-utils",
     data: {
       name: "schema-utils",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -3526,6 +4179,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_utils/schema-utils/experience.utils.ts",
     data: {
       name: "experience.utils.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3537,6 +4192,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_utils/schema-utils/index.ts",
     data: {
       name: "index.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3548,6 +4205,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_utils/schema-utils/interviews-schema.utils.ts",
     data: {
       name: "interviews-schema.utils.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3559,6 +4218,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_utils/schema-utils/link-sheet.utils.ts",
     data: {
       name: "link-sheet.utils.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3570,6 +4231,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_utils/session.utils.ts",
     data: {
       name: "session.utils.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3581,6 +4244,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_utils/sheet.utils.ts",
     data: {
       name: "sheet.utils.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3592,6 +4257,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_utils/string.utils.ts",
     data: {
       name: "string.utils.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3603,6 +4270,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_utils/styles.utils.ts",
     data: {
       name: "styles.utils.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3614,6 +4283,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_utils/tailwind.utils.ts",
     data: {
       name: "tailwind.utils.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3625,6 +4296,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_utils/theme.utils.ts",
     data: {
       name: "theme.utils.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3636,6 +4309,8 @@ export const nodes: DrNodeType[] = [
     id: "app/_utils/zod.utils.ts",
     data: {
       name: "zod.utils.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3647,6 +4322,8 @@ export const nodes: DrNodeType[] = [
     id: "app/api",
     data: {
       name: "api",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -3658,6 +4335,8 @@ export const nodes: DrNodeType[] = [
     id: "app/api/auth",
     data: {
       name: "auth",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -3669,6 +4348,8 @@ export const nodes: DrNodeType[] = [
     id: "app/api/auth/[...nextauth]",
     data: {
       name: "[...nextauth]",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -3680,6 +4361,8 @@ export const nodes: DrNodeType[] = [
     id: "app/api/auth/[...nextauth]/route.ts",
     data: {
       name: "route.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3691,6 +4374,8 @@ export const nodes: DrNodeType[] = [
     id: "app/api/experiences",
     data: {
       name: "experiences",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -3702,6 +4387,8 @@ export const nodes: DrNodeType[] = [
     id: "app/api/experiences/[experienceId]",
     data: {
       name: "[experienceId]",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -3713,6 +4400,8 @@ export const nodes: DrNodeType[] = [
     id: "app/api/experiences/[experienceId]/route.ts",
     data: {
       name: "route.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3724,6 +4413,8 @@ export const nodes: DrNodeType[] = [
     id: "app/api/experiences/route.ts",
     data: {
       name: "route.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3735,6 +4426,8 @@ export const nodes: DrNodeType[] = [
     id: "app/api/interviews",
     data: {
       name: "interviews",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -3746,6 +4439,8 @@ export const nodes: DrNodeType[] = [
     id: "app/api/interviews/[interviewId]",
     data: {
       name: "[interviewId]",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -3757,6 +4452,8 @@ export const nodes: DrNodeType[] = [
     id: "app/api/interviews/[interviewId]/route.ts",
     data: {
       name: "route.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3768,6 +4465,8 @@ export const nodes: DrNodeType[] = [
     id: "app/api/interviews/route.ts",
     data: {
       name: "route.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3779,6 +4478,8 @@ export const nodes: DrNodeType[] = [
     id: "app/api/sheet",
     data: {
       name: "sheet",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -3790,6 +4491,8 @@ export const nodes: DrNodeType[] = [
     id: "app/api/sheet/link",
     data: {
       name: "link",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -3801,6 +4504,8 @@ export const nodes: DrNodeType[] = [
     id: "app/api/sheet/link/route.ts",
     data: {
       name: "route.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3812,6 +4517,8 @@ export const nodes: DrNodeType[] = [
     id: "app/api/sheet/new",
     data: {
       name: "new",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -3823,6 +4530,8 @@ export const nodes: DrNodeType[] = [
     id: "app/api/sheet/new/route.ts",
     data: {
       name: "route.ts",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -4132,6 +4841,13 @@ export const edges: DrEdgeType[] = [
     source: "app/(routes)/[locale]/(nav-layout)/about/components/nodes",
     target:
       "app/(routes)/[locale]/(nav-layout)/about/components/nodes/CustomNode.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/about/components/nodes->app/(routes)/[locale]/(nav-layout)/about/components/nodes/customNode.utils.ts",
+    source: "app/(routes)/[locale]/(nav-layout)/about/components/nodes",
+    target:
+      "app/(routes)/[locale]/(nav-layout)/about/components/nodes/customNode.utils.ts",
     type: "smoothstep",
   },
   {
