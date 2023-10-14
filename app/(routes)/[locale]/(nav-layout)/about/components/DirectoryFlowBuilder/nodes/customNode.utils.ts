@@ -32,3 +32,5 @@ export const customNodeIcon: Record<CombinedType, LucideIcon> = {
   "folder:route-group": Icons.FolderOpen,
   "folder:no-route-group": Icons.FolderOpen,
 };
+
+export const DRT_POPOVER_TRIGGER = "drt-popover-trigger";

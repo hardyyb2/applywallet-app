@@ -12,7 +12,7 @@ import {
 
 import { DrEdgeType, DrNodeDataType, DrNodeType } from "@/types/flowbuilder";
 
-import { CustomNode } from "../nodes/CustomNode";
+import { CustomNode } from "./nodes/CustomNode";
 
 export enum DrNodes {
   CUSTOM = "custom",
