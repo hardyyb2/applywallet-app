@@ -1,8 +1,7 @@
 {
   "extends": ["prettier", "next/core-web-vitals", "next"],
   "rules": {
-    "import/no-default-export": "error",
-    "no-unused-vars": "warn"
+    "import/no-default-export": "error"
   },
   "overrides": [
     {
