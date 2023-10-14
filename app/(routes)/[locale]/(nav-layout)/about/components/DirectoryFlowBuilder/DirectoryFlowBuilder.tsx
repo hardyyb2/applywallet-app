@@ -19,17 +19,13 @@ import {
 
 import { DrEdgeType, DrNodeType } from "@/types/flowbuilder";
 
-import { CustomNode } from "../nodes/CustomNode";
 import {
   collapseChildNodes,
+  drReactFlowNodeTypes,
   getLayoutedElements,
 } from "./directoryFlowBuilder.utils";
 
 import "@/styles/overrides/reactflow.scss";
-
-const nodeTypes: NodeTypes = {
-  custom: CustomNode,
-};
 
 const {
   nodes: layoutedNodes,
@@ -75,8 +71,8 @@ const FlowBuilder = () => {
       onNodesChange={onNodesChange}
       onEdgesChange={onEdgesChange}
       fitView
-      attributionPosition="top-right"
-      nodeTypes={nodeTypes}
+      attributionPosition="bottom-right"
+      nodeTypes={drReactFlowNodeTypes}
       nodesDraggable
       zoomOnPinch
       zoomOnDoubleClick

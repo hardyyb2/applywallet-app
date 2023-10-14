@@ -1,13 +1,28 @@
+import { ComponentType } from "react";
+
 import dagre from "dagre";
 import {
   Edge,
   getConnectedEdges,
   getOutgoers,
   Node,
+  NodeProps,
   Position,
 } from "reactflow";
 
-import { DrEdgeType, DrNodeType } from "@/types/flowbuilder";
+import { DrEdgeType, DrNodeDataType, DrNodeType } from "@/types/flowbuilder";
+
+import { CustomNode } from "../nodes/CustomNode";
+
+export enum DrNodes {
+  CUSTOM = "custom",
+}
+
+export const drReactFlowNodeTypes: {
+  [key in DrNodes]: ComponentType<NodeProps<DrNodeDataType>>;
+} = {
+  [DrNodes.CUSTOM]: CustomNode,
+};
 
 const dagreGraph = new dagre.graphlib.Graph();
 dagreGraph.setDefaultEdgeLabel(() => ({}));
