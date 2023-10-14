@@ -1,23 +1,13 @@
-import { Flex, Typography } from "@/components/ui/isolated/common";
+import Link from "next/link";
 
-import { DirectoryFlowBuilder } from "./components/DirectoryFlowBuilder/DirectoryFlowBuilder";
+import { AppRoutes } from "@/utils/routes.utils";
 
-const About = () => {
+const AboutPage = () => {
   return (
-    <Flex direction="column" className="h-full w-full px-xs py-s lg:px-s">
-      <Flex justify="space-between" className="mb-xs flex-0 gap-4">
-        <Flex direction="column">
-          <Typography variant="h3">project structure</Typography>
-          <Typography variant="subtitle2">
-            see the entire app directory structure
-          </Typography>
-        </Flex>
-      </Flex>
-      <div className="flex-1 rounded-2xl bg-base-content/20">
-        <DirectoryFlowBuilder />
-      </div>
-    </Flex>
+    <div>
+      <Link href={AppRoutes.PROJECT_STRUCTURE}>project structure</Link>
+    </div>
   );
 };
 
-export default About;
+export default AboutPage;

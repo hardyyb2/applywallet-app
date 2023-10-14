@@ -28,6 +28,12 @@ export const navItems: NavItemType[] = [
     category: NavigationCategories.READ,
     icon: Icons.BookOpen,
   },
+  {
+    label: "about",
+    link: AppRoutes.ABOUT,
+    category: NavigationCategories.OTHERS,
+    icon: Icons.Info,
+  },
 ];
 
 export const navItemToIconsMapping = navItems.reduce((acc, item) => {

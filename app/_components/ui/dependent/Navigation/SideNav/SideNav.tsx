@@ -18,7 +18,7 @@ const SideNav = () => {
       }}
       className={cn(
         "grid h-[96%] grid-rows-[auto_1fr_auto]",
-        "rounded-box my-auto ml-4 bg-base-200",
+        "rounded-box my-auto ml-xs bg-base-200",
       )}
     >
       {/* Top section */}

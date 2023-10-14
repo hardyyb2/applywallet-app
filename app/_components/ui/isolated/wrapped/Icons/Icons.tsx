@@ -16,6 +16,7 @@ import {
   FileText,
   FolderOpen,
   GripHorizontal,
+  Hash,
   Info,
   Languages,
   Lock,
@@ -61,6 +62,7 @@ const Icons = {
   FileText,
   ChevronUp,
   Info,
+  Hash,
   CustomHome: forwardRef<SVGSVGElement, LucideProps>(function CustomHome(
     { ...props },
     ref,

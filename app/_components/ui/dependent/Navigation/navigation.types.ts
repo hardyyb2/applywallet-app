@@ -5,6 +5,7 @@ import { AppRouteLinkType } from "@/utils/routes.utils";
 export enum NavigationCategories {
   GENERAL = "general",
   READ = "read",
+  OTHERS = "others",
 }
 
 export type NavItemType = {

@@ -19,6 +19,9 @@ export const AppRoutes = {
     `/experiences/edit/${experienceId}`,
 
   BLOGS: "/blogs",
+
+  ABOUT: "/about",
+  PROJECT_STRUCTURE: "/about/project-structure",
 } as const;
 
 export const ApiRoutes = {
