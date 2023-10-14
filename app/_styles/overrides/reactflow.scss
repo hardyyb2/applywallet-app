@@ -18,3 +18,7 @@
 .react-flow__edge-path {
   @apply stroke-2;
 }
+
+.react-flow__attribution {
+  @apply w-full rounded-b-xl bg-base-100 text-center text-body2 lowercase;
+}
