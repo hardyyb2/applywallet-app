@@ -17,6 +17,7 @@ export const buttonVariants = cva("btn font-secondary", {
       warning: "btn-warning",
       error: "btn-error",
       ghost: "btn-ghost",
+      neutral: "btn-neutral",
     },
     shape: {
       circle: "btn-circle",
@@ -26,5 +27,23 @@ export const buttonVariants = cva("btn font-secondary", {
       outline: "btn-outline",
       link: "btn-link",
     },
+    fullWidth: {
+      true: "btn-block",
+    },
+    responsive: {
+      true: "btn-sm lg:btn-md",
+    },
+    animation: {
+      false: "no-animation",
+    },
+    active: {
+      true: "btn-active",
+    },
+    disabled: {
+      true: "btn-disabled",
+    },
+  },
+  defaultVariants: {
+    disabled: false,
   },
 });

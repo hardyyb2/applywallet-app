@@ -7,13 +7,9 @@ import { cn } from "@/utils/styles.utils";
 import { buttonVariants } from "./button.utils";
 
 export interface ButtonProps
-  extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, "color">,
+  extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, "color" | "disabled">,
     VariantProps<typeof buttonVariants> {
-  fullWidth?: boolean;
-  responsive?: boolean;
-  animation?: boolean;
   loading?: boolean;
-  active?: boolean;
   startIcon?: ReactNode;
   endIcon?: ReactNode;
 }
@@ -49,22 +45,18 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             shape,
             size,
             variant,
-            // TODO - move these inside variant
+            fullWidth,
+            responsive,
+            animation,
+            active,
+            disabled,
             className: cn(
               ((startIcon && !loading) || endIcon) && "gap-2",
-              // states
-              {
-                "btn-block": fullWidth,
-                "btn-sm lg:btn-md ": responsive,
-                "no-animation": !animation,
-                "btn-active": active,
-                "btn-disabled": disabled,
-              },
               className,
             ),
           }),
         )}
-        disabled={disabled}
+        disabled={disabled ?? false}
       >
         {loading ? <span className="loading" /> : startIcon}
         {children}
