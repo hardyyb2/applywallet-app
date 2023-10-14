@@ -15,11 +15,8 @@ const CustomNode = memo(
           position={Position.Top}
           isConnectable={isConnectable}
         />
-        <Flex className="glass rounded-xl bg-primary px-m py-xs outline outline-2 outline-base-content">
-          <Typography
-            variant="body2"
-            className="!font-bold text-primary-content"
-          >
+        <Flex className="glass rounded-xl bg-base-100 px-m py-xs outline outline-2 outline-primary">
+          <Typography variant="body2" className="!font-bold text-base-content">
             {data.name}
           </Typography>
         </Flex>

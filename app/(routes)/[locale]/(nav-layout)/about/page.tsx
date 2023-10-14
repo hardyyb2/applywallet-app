@@ -13,7 +13,7 @@ const About = () => {
           </Typography>
         </Flex>
       </Flex>
-      <div className="flex-1 rounded-2xl bg-base-100">
+      <div className="flex-1 rounded-2xl bg-base-content/20">
         <DirectoryFlowBuilder />
       </div>
     </Flex>

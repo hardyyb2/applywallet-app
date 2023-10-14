@@ -16,14 +16,5 @@
 }
 
 .react-flow__edge-path {
-  @apply stroke-base-content stroke-2;
-}
-
-.react-flow__edge {
-  &.selected {
-    .react-flow__edge-path {
-      // TODO - set this
-      @apply stroke-base-content;
-    }
-  }
+  @apply stroke-2;
 }
