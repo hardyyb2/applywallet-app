@@ -6,6 +6,7 @@ import {
   Briefcase,
   ChevronDown,
   ChevronsRight,
+  ChevronUp,
   Clapperboard,
   ClipboardCheck,
   Equal,
@@ -57,6 +58,7 @@ const Icons = {
   Minimize,
   FolderOpen,
   FileText,
+  ChevronUp,
   CustomHome: forwardRef<SVGSVGElement, LucideProps>(function CustomHome(
     { ...props },
     ref,
