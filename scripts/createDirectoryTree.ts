@@ -62,7 +62,7 @@ const generateGraph = (rootFolder: string) => {
 
   nodes.push({
     id: rootId,
-    data: { name: rootFolder },
+    data: { name: rootFolder, root: true },
     position: { x: 0, y: 0 },
     type: "custom",
   });

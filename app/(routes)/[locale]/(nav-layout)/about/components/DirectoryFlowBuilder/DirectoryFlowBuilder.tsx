@@ -31,10 +31,11 @@ const nodeTypes: NodeTypes = {
   custom: CustomNode,
 };
 
-const { nodes: layoutedNodes, edges: layoutedEdges } = getLayoutedElements(
-  initialNodes,
-  initialEdges,
-);
+const {
+  nodes: layoutedNodes,
+  edges: layoutedEdges,
+  rootNode,
+} = getLayoutedElements(initialNodes, initialEdges);
 
 const FlowBuilder = () => {
   const { setCenter } = useReactFlow();
@@ -42,10 +43,7 @@ const FlowBuilder = () => {
   const [edges, setEdges, onEdgesChange] = useEdgesState(layoutedEdges);
 
   const onInit = () => {
-    // TODO - find with layouted function
-    const appNode = nodes.find((node) => node.data.name === "app");
-
-    setCenter(appNode?.position.x ?? 0, appNode?.position.y ?? 0, {
+    setCenter(rootNode?.position.x ?? 0, rootNode?.position.y ?? 0, {
       zoom: 1,
     });
   };

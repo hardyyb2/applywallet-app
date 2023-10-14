@@ -16,8 +16,13 @@ dagreGraph.setDefaultEdgeLabel(() => ({}));
 export const getLayoutedElements = (
   nodes: DrNodeType[],
   edges: DrEdgeType[],
-) => {
+): {
+  nodes: DrNodeType[];
+  edges: DrEdgeType[];
+  rootNode: null | DrNodeType;
+} => {
   const [NODE_WIDTH, NODE_HEIGHT] = [250, 100];
+  let rootNode: DrNodeType | null = null;
 
   dagreGraph.setGraph({ rankdir: "TB" });
 
@@ -44,10 +49,14 @@ export const getLayoutedElements = (
       y: nodeWithPosition.y - (node.height || NODE_HEIGHT) / 2,
     };
 
+    if (node.data.root) {
+      rootNode = node;
+    }
+
     return node;
   });
 
-  return { nodes, edges };
+  return { nodes, edges, rootNode };
 };
 
 const hideNodes =

@@ -5,6 +5,7 @@ export const nodes: DrNodeType[] = [
     id: "app",
     data: {
       name: "app",
+      root: true,
     },
     position: {
       x: 0,
@@ -3214,6 +3215,17 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
+    id: "app/_styles/overrides/reactflow.scss",
+    data: {
+      name: "reactflow.scss",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
     id: "app/_styles/overrides/toast.scss",
     data: {
       name: "toast.scss",
@@ -5659,6 +5671,12 @@ export const edges: DrEdgeType[] = [
     id: "e:app/_styles/overrides->app/_styles/overrides/daisyui.scss",
     source: "app/_styles/overrides",
     target: "app/_styles/overrides/daisyui.scss",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_styles/overrides->app/_styles/overrides/reactflow.scss",
+    source: "app/_styles/overrides",
+    target: "app/_styles/overrides/reactflow.scss",
     type: "smoothstep",
   },
   {
