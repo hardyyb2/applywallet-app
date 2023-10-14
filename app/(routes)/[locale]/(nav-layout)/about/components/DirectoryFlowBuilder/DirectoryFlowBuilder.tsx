@@ -26,15 +26,6 @@ import {
 
 import "@/styles/overrides/reactflow.scss";
 
-import {
-  Popover,
-  PopoverContent,
-  PopoverPortal,
-} from "@/components/ui/isolated/wrapped";
-import { DataAttrs } from "@/utils/dom.utils";
-
-import { DRT_POPOVER_TRIGGER } from "./nodes/customNode.utils";
-
 const {
   nodes: layoutedNodes,
   edges: layoutedEdges,
@@ -58,17 +49,6 @@ const FlowBuilder = () => {
   };
 
   const handleNodeClick = (event: MouseEvent, currentNode: DrNodeType) => {
-    const clickedElement = event.target as HTMLElement;
-    const infoButtonClicked = clickedElement.closest(
-      `[${[DataAttrs.DRT_TRIGGER]}="${DRT_POPOVER_TRIGGER}"]`,
-    );
-
-    /**  if info button is clicked, do not collapse the nodes
-         open the information popover with node details  **/
-    if (infoButtonClicked) {
-      return;
-    }
-
     const { edges: updatedEdges, nodes: updatedNodes } = collapseChildNodes(
       currentNode,
       nodes,
@@ -90,34 +70,28 @@ const FlowBuilder = () => {
 
   return (
     <Fragment>
-      <Popover modal>
-        <ReactFlow
-          ref={ref}
-          nodes={nodes}
-          edges={edges}
-          onNodesChange={onNodesChange}
-          onEdgesChange={onEdgesChange}
-          fitView
-          attributionPosition="bottom-right"
-          nodeTypes={drReactFlowNodeTypes}
-          nodesDraggable
-          zoomOnPinch
-          zoomOnDoubleClick
-          maxZoom={4}
-          minZoom={0.1}
-          onNodeClick={handleNodeClick}
-          nodesConnectable={false}
-          onInit={onInit}
-          elevateEdgesOnSelect
-          onEdgeClick={handleEdgeClick}
-        >
-          <Background gap={16} />
-        </ReactFlow>
-
-        <PopoverPortal>
-          <PopoverContent>Hello there</PopoverContent>
-        </PopoverPortal>
-      </Popover>
+      <ReactFlow
+        ref={ref}
+        nodes={nodes}
+        edges={edges}
+        onNodesChange={onNodesChange}
+        onEdgesChange={onEdgesChange}
+        fitView
+        attributionPosition="bottom-right"
+        nodeTypes={drReactFlowNodeTypes}
+        nodesDraggable
+        zoomOnPinch
+        zoomOnDoubleClick
+        maxZoom={4}
+        minZoom={0.1}
+        onNodeClick={handleNodeClick}
+        nodesConnectable={false}
+        onInit={onInit}
+        elevateEdgesOnSelect
+        onEdgeClick={handleEdgeClick}
+      >
+        <Background gap={16} />
+      </ReactFlow>
     </Fragment>
   );
 };
