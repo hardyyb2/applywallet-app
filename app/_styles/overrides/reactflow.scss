@@ -1,0 +1,29 @@
+/* stylelint-disable selector-class-pattern */
+// TODO - disable for all overrides folder
+
+@import "reactflow/dist/style.css";
+
+.react-flow__handle {
+  opacity: 0;
+}
+
+.react-flow__handle-top {
+  top: 0;
+}
+
+.react-flow__handle-bottom {
+  bottom: 0;
+}
+
+.react-flow__edge-path {
+  @apply stroke-base-content stroke-2;
+}
+
+.react-flow__edge {
+  &.selected {
+    .react-flow__edge-path {
+      // TODO - set this
+      @apply stroke-base-content;
+    }
+  }
+}

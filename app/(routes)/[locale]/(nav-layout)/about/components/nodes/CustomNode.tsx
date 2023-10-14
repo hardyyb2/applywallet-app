@@ -1,31 +1,38 @@
 import { Fragment, memo } from "react";
 
-import { Handle, Position } from "reactflow";
+import { Handle, NodeProps, Position } from "reactflow";
 
 import { Flex, Typography } from "@/components/ui/isolated/common";
 
-const CustomNode = memo(({ data, isConnectable }: any) => {
-  return (
-    <Fragment>
-      <Handle
-        type="target"
-        position={Position.Top}
-        isConnectable={isConnectable}
-      />
-      <Flex className=" rounded-xl bg-primary px-m py-xs">
-        <Typography variant="body2" className="!font-bold text-base-100">
-          {data.name}
-        </Typography>
-      </Flex>
+import { DrNodeDataType } from "@/types/flowbuilder";
 
-      <Handle
-        type="source"
-        position={Position.Bottom}
-        isConnectable={isConnectable}
-      />
-    </Fragment>
-  );
-});
+const CustomNode = memo(
+  ({ data, isConnectable }: NodeProps<DrNodeDataType>) => {
+    return (
+      <Fragment>
+        <Handle
+          type="target"
+          position={Position.Top}
+          isConnectable={isConnectable}
+        />
+        <Flex className="glass rounded-xl bg-primary px-m py-xs outline outline-2 outline-base-content">
+          <Typography
+            variant="body2"
+            className="!font-bold text-primary-content"
+          >
+            {data.name}
+          </Typography>
+        </Flex>
+
+        <Handle
+          type="source"
+          position={Position.Bottom}
+          isConnectable={isConnectable}
+        />
+      </Fragment>
+    );
+  },
+);
 
 CustomNode.displayName = "CustomNode";
 

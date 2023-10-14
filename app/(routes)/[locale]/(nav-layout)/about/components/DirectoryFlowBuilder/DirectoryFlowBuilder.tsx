@@ -17,7 +17,7 @@ import {
   nodes as initialNodes,
 } from "@/bin/folderStructure";
 
-import { DrNodeType } from "@/types/flowbuilder";
+import { DrEdgeType, DrNodeType } from "@/types/flowbuilder";
 
 import { CustomNode } from "../nodes/CustomNode";
 import {
@@ -25,7 +25,7 @@ import {
   getLayoutedElements,
 } from "./directoryFlowBuilder.utils";
 
-import "reactflow/dist/style.css";
+import "@/styles/overrides/reactflow.scss";
 
 const nodeTypes: NodeTypes = {
   custom: CustomNode,
@@ -41,9 +41,18 @@ const FlowBuilder = () => {
   const [nodes, setNodes, onNodesChange] = useNodesState(layoutedNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(layoutedEdges);
 
-  const handleNodeClick = (_event: MouseEvent, node: DrNodeType) => {
+  const onInit = () => {
+    // TODO - find with layouted function
+    const appNode = nodes.find((node) => node.data.name === "app");
+
+    setCenter(appNode?.position.x ?? 0, appNode?.position.y ?? 0, {
+      zoom: 1,
+    });
+  };
+
+  const handleNodeClick = (_event: MouseEvent, currentNode: DrNodeType) => {
     const { edges: updatedEdges, nodes: updatedNodes } = collapseChildNodes(
-      node,
+      currentNode,
       nodes,
       edges,
     );
@@ -52,13 +61,13 @@ const FlowBuilder = () => {
     setEdges(updatedEdges);
   };
 
-  const onInit = () => {
-    // TODO - find with layouted function
-    const appNode = nodes.find((node) => node.data.name === "app");
-
-    setCenter(appNode?.position.x ?? 0, appNode?.position.y ?? 0, {
-      zoom: 1,
+  const handleEdgeClick = (_event: MouseEvent, currentEdge: DrEdgeType) => {
+    const updatedEdges = edges.map((edge) => {
+      edge.animated = edge.id === currentEdge.id;
+      return edge;
     });
+
+    setEdges(updatedEdges);
   };
 
   return (
@@ -78,6 +87,8 @@ const FlowBuilder = () => {
       onNodeClick={handleNodeClick}
       nodesConnectable={false}
       onInit={onInit}
+      elevateEdgesOnSelect
+      onEdgeClick={handleEdgeClick}
     >
       <Background gap={16} />
     </ReactFlow>
