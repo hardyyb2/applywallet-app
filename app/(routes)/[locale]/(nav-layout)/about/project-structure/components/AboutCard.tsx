@@ -1,8 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-import { Typography } from "@/components/ui/isolated/common";
-import { Card } from "@/components/ui/isolated/wrapped";
+import { Card, Typography } from "@/components/isolated";
 import { cn } from "@/utils/styles.utils";
 
 const AboutCard = () => {

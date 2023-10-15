@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { Flex, Typography } from "@/components/ui/isolated/common";
+import { Flex, Typography } from "@/components/isolated";
 import { AppRoutes } from "@/utils/routes.utils";
 
 import { AboutCard } from "./project-structure/components/AboutCard";

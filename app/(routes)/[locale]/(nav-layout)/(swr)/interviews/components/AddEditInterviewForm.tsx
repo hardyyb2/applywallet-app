@@ -6,8 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 
-import { Typography } from "@/components/ui/isolated/common";
-import { Button, FormControl } from "@/components/ui/isolated/wrapped";
+import { Button, FormControl, Typography } from "@/components/isolated";
 import { useBoolean } from "@/hooks/useBoolean";
 import {
   useAddInterview,

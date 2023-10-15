@@ -2,8 +2,8 @@ import Link from "next/link";
 
 import { allBlogs } from "contentlayer/generated";
 
-import { BlogCard } from "@/components/ui/dependent";
-import { Flex, Typography } from "@/components/ui/isolated/common";
+import { BlogCard } from "@/components/dependent";
+import { Flex, Typography } from "@/components/isolated";
 import { getI18n } from "@/locales/server";
 
 import { BlogCardsWrapper } from "./components/BlogCardsWrapper";

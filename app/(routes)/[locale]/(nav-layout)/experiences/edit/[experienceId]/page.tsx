@@ -5,8 +5,8 @@ import { GoogleSpreadsheet } from "google-spreadsheet";
 import { getServerSession } from "next-auth";
 import { z } from "zod";
 
-import { IconLink } from "@/components/ui/dependent";
-import { Breadcrumbs } from "@/components/ui/isolated/wrapped";
+import { IconLink } from "@/components/dependent";
+import { Breadcrumbs } from "@/components/isolated";
 import { authOptions } from "@/lib/auth";
 import { CustomError } from "@/utils/error";
 import { AppRoutes, UrlParams } from "@/utils/routes.utils";

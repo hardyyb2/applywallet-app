@@ -1,6 +1,6 @@
 import { LucideIcon } from "lucide-react";
 
-import { Icons } from "@/components/ui/isolated/wrapped/Icons";
+import { Icons } from "@/components/isolated/Icons";
 
 import { DrNodeDataType } from "@/types/flowbuilder";
 

@@ -4,8 +4,8 @@ import Link from "next/link";
 
 import { ConditionalMatch } from "@dx-kit/react-conditional-match";
 
-import { IconLink } from "@/components/ui/dependent";
-import { Breadcrumbs } from "@/components/ui/isolated/wrapped";
+import { IconLink } from "@/components/dependent";
+import { Breadcrumbs } from "@/components/isolated";
 import { useInterview } from "@/queries/interviews.queries";
 import { AppRoutes, UrlParams } from "@/utils/routes.utils";
 

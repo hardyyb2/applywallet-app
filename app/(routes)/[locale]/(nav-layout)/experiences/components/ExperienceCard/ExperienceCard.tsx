@@ -1,5 +1,5 @@
-import { CopyButton } from "@/components/ui/dependent";
-import { Flex, Typography } from "@/components/ui/isolated/common";
+import { CopyButton } from "@/components/dependent";
+import { Flex, Typography } from "@/components/isolated";
 import { ExperienceType } from "@/utils/schema-utils";
 import { cn } from "@/utils/styles.utils";
 

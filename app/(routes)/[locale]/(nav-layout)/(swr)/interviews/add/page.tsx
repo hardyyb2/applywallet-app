@@ -1,7 +1,7 @@
 import Link from "next/link";
 
-import { IconLink } from "@/components/ui/dependent";
-import { Breadcrumbs } from "@/components/ui/isolated/wrapped";
+import { IconLink } from "@/components/dependent";
+import { Breadcrumbs } from "@/components/isolated";
 import { AppRoutes } from "@/utils/routes.utils";
 
 import { AddEditInterviewForm } from "../components/AddEditInterviewForm";

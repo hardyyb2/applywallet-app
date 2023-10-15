@@ -5,16 +5,16 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-import { Flex } from "@/components/ui/isolated/common";
 import {
   Button,
+  Flex,
   Popover,
   PopoverArrow,
   PopoverContent,
   PopoverPortal,
   PopoverTrigger,
-} from "@/components/ui/isolated/wrapped";
-import { Icons } from "@/components/ui/isolated/wrapped/Icons";
+} from "@/components/isolated";
+import { Icons } from "@/components/isolated/Icons";
 import { ApiRoutes, AppRoutes, SearchParams } from "@/utils/routes.utils";
 import { ExperienceType } from "@/utils/schema-utils";
 

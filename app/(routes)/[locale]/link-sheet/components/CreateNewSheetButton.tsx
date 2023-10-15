@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-import { Button } from "@/components/ui/isolated/wrapped";
+import { Button } from "@/components/isolated";
 import { CustomError } from "@/utils/error";
 import { ApiRoutes, AppRoutes } from "@/utils/routes.utils";
 

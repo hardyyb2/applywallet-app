@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-import { BaseLayout, Header, Navigation } from "@/components/ui/dependent";
+import { BaseLayout, Header, Navigation } from "@/components/dependent";
 import { cn } from "@/utils/styles.utils";
 
 const NavLayout = ({ children }: { children: ReactNode }) => {

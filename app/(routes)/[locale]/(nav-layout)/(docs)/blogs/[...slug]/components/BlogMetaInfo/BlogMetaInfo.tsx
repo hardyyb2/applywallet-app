@@ -3,13 +3,14 @@ import React from "react";
 import { Blog } from "contentlayer/generated";
 import dayjs from "dayjs";
 
-import { Flex, typographyVariants } from "@/components/ui/isolated/common";
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
   Divider,
-} from "@/components/ui/isolated/wrapped";
+  Flex,
+  typographyVariants,
+} from "@/components/isolated";
 import { getInitials } from "@/utils/string.utils";
 
 import styles from "./blogMetaInfo.module.scss";

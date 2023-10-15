@@ -3,9 +3,8 @@
 import { useRef, useState } from "react";
 import Link from "next/link";
 
-import { Flex } from "@/components/ui/isolated/common";
-import { Button, Dialog } from "@/components/ui/isolated/wrapped";
-import { Icons } from "@/components/ui/isolated/wrapped/Icons";
+import { Button, Dialog, Flex } from "@/components/isolated";
+import { Icons } from "@/components/isolated/Icons";
 import { cn } from "@/utils/styles.utils";
 
 import { ExperienceSettings } from "../../ExperienceSettings";

@@ -1,8 +1,7 @@
 import Link from "next/link";
 
-import { Flex } from "@/components/ui/isolated/common";
-import { Button } from "@/components/ui/isolated/wrapped";
-import { Icons } from "@/components/ui/isolated/wrapped/Icons";
+import { Button, Flex } from "@/components/isolated";
+import { Icons } from "@/components/isolated/Icons";
 import { AppRoutes } from "@/utils/routes.utils";
 
 const InterviewActions = () => {

@@ -11,7 +11,7 @@ import { I18nProviderClient } from "@/locales/client";
 
 const TopLoader = dynamic(
   () =>
-    import("@/components/ui/dependent/TopLoader").then((module) => ({
+    import("@/components/dependent/TopLoader").then((module) => ({
       default: module.TopLoader,
     })),
   { ssr: false },

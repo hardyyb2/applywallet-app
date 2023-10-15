@@ -5,9 +5,9 @@ import { ElementRef, PropsWithChildren, useRef } from "react";
 import { m, useScroll, useSpring } from "framer-motion";
 import { useBoolean, useFullscreen } from "react-use";
 
-import { Flex } from "@/components/ui/isolated/common";
 import {
   Button,
+  Flex,
   ScrollArea,
   ScrollAreaCorner,
   ScrollAreaViewport,
@@ -16,8 +16,8 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/isolated/wrapped";
-import { Icons } from "@/components/ui/isolated/wrapped/Icons";
+} from "@/components/isolated";
+import { Icons } from "@/components/isolated/Icons";
 import { cnMerge } from "@/utils/styles.utils";
 
 const BlogScrollWrapper = ({ children }: PropsWithChildren) => {

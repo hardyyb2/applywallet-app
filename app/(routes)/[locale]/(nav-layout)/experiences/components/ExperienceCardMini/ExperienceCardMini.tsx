@@ -1,5 +1,4 @@
-import { Flex, Typography } from "@/components/ui/isolated/common";
-import { Button } from "@/components/ui/isolated/wrapped";
+import { Button, Flex, Typography } from "@/components/isolated";
 import { cn } from "@/utils/styles.utils";
 
 import { ExperienceCardActions } from "../ExperienceCard/components/ExperienceCardActions";

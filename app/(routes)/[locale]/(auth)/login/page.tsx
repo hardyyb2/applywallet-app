@@ -2,7 +2,7 @@
 
 import { signIn } from "next-auth/react";
 
-import { Button } from "@/components/ui/isolated/wrapped";
+import { Button } from "@/components/isolated";
 
 const LoginPage = () => {
   return (

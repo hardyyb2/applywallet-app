@@ -3,14 +3,15 @@ import { notFound } from "next/navigation";
 
 import { allBlogs } from "contentlayer/generated";
 
-import { IconLink } from "@/components/ui/dependent";
-import { Flex, Mdx } from "@/components/ui/isolated/common";
+import { IconLink } from "@/components/dependent";
 import {
   Breadcrumbs,
+  Flex,
+  Mdx,
   ScrollArea,
   ScrollAreaViewport,
   ScrollBar,
-} from "@/components/ui/isolated/wrapped";
+} from "@/components/isolated";
 import { AppRoutes } from "@/utils/routes.utils";
 
 import { BlogMetaInfo } from "./components/BlogMetaInfo/BlogMetaInfo";

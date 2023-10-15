@@ -1,4 +1,4 @@
-import { Flex, Typography } from "@/components/ui/isolated/common";
+import { Flex, Typography } from "@/components/isolated";
 
 import { DirectoryFlowBuilder } from "./components/DirectoryFlowBuilder/DirectoryFlowBuilder";
 
