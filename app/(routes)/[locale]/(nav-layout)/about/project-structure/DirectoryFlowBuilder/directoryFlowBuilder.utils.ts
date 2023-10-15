@@ -43,7 +43,8 @@ export const getLayoutedElements = (
 
   nodes.forEach((node) => {
     dagreGraph.setNode(node.id, {
-      width: node.width ?? NODE_WIDTH,
+      //* added 120 to prevent node collisions
+      width: (node.width ?? NODE_WIDTH) + 120,
       height: node.height ?? NODE_HEIGHT,
     });
   });
