@@ -62,7 +62,8 @@
     "swr": "^2.2.4",
     "tailwind-merge": "^1.14.0",
     "theme-change": "^2.3.0",
-    "zod": "^3.20.6"
+    "zod": "^3.20.6",
+    "zustand": "^4.4.3"
   },
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^4.1.0",
