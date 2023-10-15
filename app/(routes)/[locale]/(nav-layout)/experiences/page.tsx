@@ -10,8 +10,8 @@ import { Icons } from "@/components/isolated/Icons";
 import { authOptions } from "@/lib/auth";
 import { AppRoutes } from "@/utils/routes.utils";
 
-import { ExperienceActions } from "./components/ExperienceActions/ExperienceActions";
-import { ExperienceList } from "./components/ExperienceList";
+import { ExperienceActions } from "./ExperienceActions/ExperienceActions";
+import { ExperienceList } from "./ExperienceList";
 
 export const metadata: Metadata = {
   title: "experiences",

@@ -1,6 +1,6 @@
 import { LocaleSwitcher, ThemesMenu, UserMenu } from "@/components/dependent";
 
-import { HeaderClient } from "./components/HeaderClient";
+import { HeaderClient } from "./HeaderClient";
 
 const Header = async () => {
   return (

@@ -11,7 +11,7 @@ import { Icons } from "@/components/isolated/Icons";
 import { getLinkWithLocale } from "@/utils/routes.utils";
 import { cn } from "@/utils/styles.utils";
 
-import { bottomNavDisplayOptions } from "../../navigation.utils";
+import { bottomNavDisplayOptions } from "../navigation.utils";
 
 interface BottomNavBarProps {
   pathName?: string | null;

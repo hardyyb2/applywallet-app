@@ -5,8 +5,8 @@ import { m } from "framer-motion";
 import { useBoolean } from "@/hooks/useBoolean";
 import { cn } from "@/utils/styles.utils";
 
-import { NavigationMenu } from "../components/NavigationMenu";
-import { SideNavBrand } from "./components/SideNavBrand";
+import { NavigationMenu } from "../NavigationMenu";
+import { SideNavBrand } from "./SideNavBrand";
 
 const SideNav = () => {
   const [navOpen, { toggle: toggleSideNav }] = useBoolean();

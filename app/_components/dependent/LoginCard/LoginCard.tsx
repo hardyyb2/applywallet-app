@@ -9,7 +9,7 @@ import {
 import { getI18n } from "@/locales/server";
 import { AppRoutes } from "@/utils/routes.utils";
 
-import { LCLoginButton } from "./components/LCLoginButton";
+import { LCLoginButton } from "./LCLoginButton";
 
 const LoginCard = async () => {
   const t = await getI18n();

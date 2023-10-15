@@ -6,7 +6,7 @@ import { BlogCard } from "@/components/dependent";
 import { Flex, Typography } from "@/components/isolated";
 import { getI18n } from "@/locales/server";
 
-import { BlogCardsWrapper } from "./components/BlogCardsWrapper";
+import { BlogCardsWrapper } from "./[...slug]/BlogCardsWrapper";
 
 const BlogsPage = async () => {
   const t = await getI18n();

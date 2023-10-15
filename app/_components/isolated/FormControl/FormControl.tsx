@@ -2,9 +2,9 @@
 
 import { ReactNode } from "react";
 
-import { FormControlInput } from "./components/FormControlInput";
-import { FormControlTextarea } from "./components/FormControlTextarea";
 import { FormControlContext } from "./formControl.utils";
+import { FormControlInput } from "./FormControlInput";
+import { FormControlTextarea } from "./FormControlTextarea";
 
 interface FormControlProps {
   children: ReactNode;

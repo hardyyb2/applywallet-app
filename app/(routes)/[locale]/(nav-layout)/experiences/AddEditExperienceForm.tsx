@@ -16,7 +16,7 @@ import {
   ExperienceType,
 } from "@/utils/schema-utils";
 
-import { getAddEditExperienceFormCopy } from "../experience.utils";
+import { getAddEditExperienceFormCopy } from "./experience.utils";
 
 export type AddEditExperienceFormProps =
   | {

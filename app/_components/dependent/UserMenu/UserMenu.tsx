@@ -15,7 +15,7 @@ import {
 import { getInitials } from "@/utils/string.utils";
 import { cn } from "@/utils/styles.utils";
 
-import { LoginButton } from "../Header/components/LoginButton";
+import { LoginButton } from "../Header/LoginButton";
 
 const UserMenu = () => {
   const { data: session } = useSession();

@@ -14,7 +14,7 @@ import {
 import { getLinkWithLocale } from "@/utils/routes.utils";
 import { cn } from "@/utils/styles.utils";
 
-import { groupedNavItemsEntries } from "../navigation.utils";
+import { groupedNavItemsEntries } from "./navigation.utils";
 
 interface NavigationMenuProps {
   navOpen: boolean;

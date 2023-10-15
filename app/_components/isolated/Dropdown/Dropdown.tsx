@@ -2,9 +2,9 @@ import { forwardRef, HTMLAttributes } from "react";
 
 import { cn } from "@/utils/styles.utils";
 
-import { DropdownItem } from "./components/DropdownItem";
-import { DropdownMenu } from "./components/DropdownMenu";
-import { DropdownToggle } from "./components/DropdownToggle";
+import { DropdownItem } from "./DropdownItem";
+import { DropdownMenu } from "./DropdownMenu";
+import { DropdownToggle } from "./DropdownToggle";
 
 export type DropdownProps = HTMLAttributes<HTMLDivElement> & {
   horizontal?: "left" | "center" | "right";

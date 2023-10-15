@@ -2,8 +2,8 @@ import { forwardRef, ReactNode } from "react";
 
 import { cn } from "@/utils/styles.utils";
 
-import { BaseLayoutBody } from "./components/BaseLayoutBody";
-import { BaseLayoutHead } from "./components/BaseLayoutHead";
+import { BaseLayoutBody } from "./BaseLayoutBody";
+import { BaseLayoutHead } from "./BaseLayoutHead";
 
 export interface BaseLayoutProps {
   children: ReactNode;

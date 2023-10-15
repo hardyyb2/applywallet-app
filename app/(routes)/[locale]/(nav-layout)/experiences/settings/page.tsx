@@ -1,4 +1,4 @@
-import { ExperienceSettings } from "../components/ExperienceSettings";
+import { ExperienceSettings } from "../ExperienceSettings";
 
 const ExperienceSettingsPage = () => {
   return (

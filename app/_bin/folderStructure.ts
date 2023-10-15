@@ -133,11 +133,11 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/components",
+    id: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogCardsWrapper.tsx",
     data: {
-      name: "components",
-      type: "folder",
-      subType: "route-group",
+      name: "BlogCardsWrapper.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -146,7 +146,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/components/BlogMetaInfo",
+    id: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogMetaInfo",
     data: {
       name: "BlogMetaInfo",
       type: "folder",
@@ -159,7 +159,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/components/BlogMetaInfo/BlogMetaInfo.tsx",
+    id: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogMetaInfo/BlogMetaInfo.tsx",
     data: {
       name: "BlogMetaInfo.tsx",
       type: "file",
@@ -172,7 +172,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/components/BlogMetaInfo/blogMetaInfo.module.scss",
+    id: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogMetaInfo/blogMetaInfo.module.scss",
     data: {
       name: "blogMetaInfo.module.scss",
       type: "file",
@@ -185,7 +185,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/components/BlogScrollWrapper",
+    id: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogScrollWrapper",
     data: {
       name: "BlogScrollWrapper",
       type: "folder",
@@ -198,7 +198,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/components/BlogScrollWrapper/BlogScrollWrapper.tsx",
+    id: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogScrollWrapper/BlogScrollWrapper.tsx",
     data: {
       name: "BlogScrollWrapper.tsx",
       type: "file",
@@ -214,32 +214,6 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/page.tsx",
     data: {
       name: "page.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/components",
-    data: {
-      name: "components",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/components/BlogCardsWrapper.tsx",
-    data: {
-      name: "BlogCardsWrapper.tsx",
       type: "file",
       subType: "page",
     },
@@ -549,20 +523,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/(routes)/[locale]/(nav-layout)/about/project-structure/components",
-    data: {
-      name: "components",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/AboutCard.tsx",
+    id: "app/(routes)/[locale]/(nav-layout)/about/project-structure/AboutCard.tsx",
     data: {
       name: "AboutCard.tsx",
       type: "file",
@@ -575,7 +536,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder",
+    id: "app/(routes)/[locale]/(nav-layout)/about/project-structure/DirectoryFlowBuilder",
     data: {
       name: "DirectoryFlowBuilder",
       type: "folder",
@@ -588,7 +549,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/DirectoryFlowBuilder.tsx",
+    id: "app/(routes)/[locale]/(nav-layout)/about/project-structure/DirectoryFlowBuilder/DirectoryFlowBuilder.tsx",
     data: {
       name: "DirectoryFlowBuilder.tsx",
       type: "file",
@@ -601,33 +562,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/components",
-    data: {
-      name: "components",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/components/nodes",
-    data: {
-      name: "nodes",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/directoryFlowBuilder.utils.ts",
+    id: "app/(routes)/[locale]/(nav-layout)/about/project-structure/DirectoryFlowBuilder/directoryFlowBuilder.utils.ts",
     data: {
       name: "directoryFlowBuilder.utils.ts",
       type: "file",
@@ -640,7 +575,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/nodes",
+    id: "app/(routes)/[locale]/(nav-layout)/about/project-structure/DirectoryFlowBuilder/nodes",
     data: {
       name: "nodes",
       type: "folder",
@@ -653,7 +588,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/nodes/CustomNode.tsx",
+    id: "app/(routes)/[locale]/(nav-layout)/about/project-structure/DirectoryFlowBuilder/nodes/CustomNode.tsx",
     data: {
       name: "CustomNode.tsx",
       type: "file",
@@ -666,7 +601,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/nodes/customNode.utils.ts",
+    id: "app/(routes)/[locale]/(nav-layout)/about/project-structure/DirectoryFlowBuilder/nodes/customNode.utils.ts",
     data: {
       name: "customNode.utils.ts",
       type: "file",
@@ -705,6 +640,279 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
+    id: "app/(routes)/[locale]/(nav-layout)/experiences/AddEditExperienceForm.tsx",
+    data: {
+      name: "AddEditExperienceForm.tsx",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions",
+    data: {
+      name: "ExperienceActions",
+      type: "folder",
+      subType: "route-group",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/ExperienceActions.tsx",
+    data: {
+      name: "ExperienceActions.tsx",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/components",
+    data: {
+      name: "components",
+      type: "folder",
+      subType: "route-group",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/components/ExperienceSettingsModal.tsx",
+    data: {
+      name: "ExperienceSettingsModal.tsx",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/components/experienceSettingsModal.module.scss",
+    data: {
+      name: "experienceSettingsModal.module.scss",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/index.ts",
+    data: {
+      name: "index.ts",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCard",
+    data: {
+      name: "ExperienceCard",
+      type: "folder",
+      subType: "route-group",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCard/ExperienceCard.tsx",
+    data: {
+      name: "ExperienceCard.tsx",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCard/components",
+    data: {
+      name: "components",
+      type: "folder",
+      subType: "route-group",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCard/components/ExperienceCardActions.tsx",
+    data: {
+      name: "ExperienceCardActions.tsx",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCard/index.ts",
+    data: {
+      name: "index.ts",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCardMini",
+    data: {
+      name: "ExperienceCardMini",
+      type: "folder",
+      subType: "route-group",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCardMini/ExperienceCardMini.tsx",
+    data: {
+      name: "ExperienceCardMini.tsx",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceList.tsx",
+    data: {
+      name: "ExperienceList.tsx",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings",
+    data: {
+      name: "ExperienceSettings",
+      type: "folder",
+      subType: "route-group",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings/ExperienceSettings.tsx",
+    data: {
+      name: "ExperienceSettings.tsx",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings/components",
+    data: {
+      name: "components",
+      type: "folder",
+      subType: "route-group",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings/components/ESInformationSettings.tsx",
+    data: {
+      name: "ESInformationSettings.tsx",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings/experienceSettings.types.ts",
+    data: {
+      name: "experienceSettings.types.ts",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings/index.ts",
+    data: {
+      name: "index.ts",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
     id: "app/(routes)/[locale]/(nav-layout)/experiences/add",
     data: {
       name: "add",
@@ -721,292 +929,6 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/experiences/add/page.tsx",
     data: {
       name: "page.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/(routes)/[locale]/(nav-layout)/experiences/components",
-    data: {
-      name: "components",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/(routes)/[locale]/(nav-layout)/experiences/components/AddEditExperienceForm.tsx",
-    data: {
-      name: "AddEditExperienceForm.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceActions",
-    data: {
-      name: "ExperienceActions",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceActions/ExperienceActions.tsx",
-    data: {
-      name: "ExperienceActions.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceActions/components",
-    data: {
-      name: "components",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceActions/components/ExperienceSettingsModal.tsx",
-    data: {
-      name: "ExperienceSettingsModal.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceActions/components/experienceSettingsModal.module.scss",
-    data: {
-      name: "experienceSettingsModal.module.scss",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceActions/index.ts",
-    data: {
-      name: "index.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceCard",
-    data: {
-      name: "ExperienceCard",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceCard/ExperienceCard.tsx",
-    data: {
-      name: "ExperienceCard.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceCard/components",
-    data: {
-      name: "components",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceCard/components/ExperienceCardActions.tsx",
-    data: {
-      name: "ExperienceCardActions.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceCard/index.ts",
-    data: {
-      name: "index.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceCardMini",
-    data: {
-      name: "ExperienceCardMini",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceCardMini/ExperienceCardMini.tsx",
-    data: {
-      name: "ExperienceCardMini.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceList.tsx",
-    data: {
-      name: "ExperienceList.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceSettings",
-    data: {
-      name: "ExperienceSettings",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceSettings/ExperienceSettings.tsx",
-    data: {
-      name: "ExperienceSettings.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceSettings/components",
-    data: {
-      name: "components",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceSettings/components/ESInformationSettings.tsx",
-    data: {
-      name: "ESInformationSettings.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceSettings/experienceSettings.types.ts",
-    data: {
-      name: "experienceSettings.types.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceSettings/index.ts",
-    data: {
-      name: "index.ts",
       type: "file",
       subType: "page",
     },
@@ -1160,20 +1082,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/(routes)/[locale]/link-sheet/components",
-    data: {
-      name: "components",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/(routes)/[locale]/link-sheet/components/CreateNewSheetButton.tsx",
+    id: "app/(routes)/[locale]/link-sheet/CreateNewSheetButton.tsx",
     data: {
       name: "CreateNewSheetButton.tsx",
       type: "file",
@@ -1186,7 +1095,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/(routes)/[locale]/link-sheet/components/LinkSheetInput.tsx",
+    id: "app/(routes)/[locale]/link-sheet/LinkSheetInput.tsx",
     data: {
       name: "LinkSheetInput.tsx",
       type: "file",
@@ -1381,20 +1290,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/dependent/BaseLayout/components",
-    data: {
-      name: "components",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/dependent/BaseLayout/components/BaseLayoutBody.tsx",
+    id: "app/_components/dependent/BaseLayout/BaseLayoutBody.tsx",
     data: {
       name: "BaseLayoutBody.tsx",
       type: "file",
@@ -1407,7 +1303,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/dependent/BaseLayout/components/BaseLayoutHead.tsx",
+    id: "app/_components/dependent/BaseLayout/BaseLayoutHead.tsx",
     data: {
       name: "BaseLayoutHead.tsx",
       type: "file",
@@ -1576,20 +1472,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/dependent/Header/components",
-    data: {
-      name: "components",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/dependent/Header/components/HeaderClient.tsx",
+    id: "app/_components/dependent/Header/HeaderClient.tsx",
     data: {
       name: "HeaderClient.tsx",
       type: "file",
@@ -1602,7 +1485,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/dependent/Header/components/LoginButton.tsx",
+    id: "app/_components/dependent/Header/LoginButton.tsx",
     data: {
       name: "LoginButton.tsx",
       type: "file",
@@ -1732,9 +1615,9 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/dependent/LoginCard/LoginCard.tsx",
+    id: "app/_components/dependent/LoginCard/LCLoginButton.tsx",
     data: {
-      name: "LoginCard.tsx",
+      name: "LCLoginButton.tsx",
       type: "file",
       subType: "page",
     },
@@ -1745,22 +1628,9 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/dependent/LoginCard/components",
+    id: "app/_components/dependent/LoginCard/LoginCard.tsx",
     data: {
-      name: "components",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/dependent/LoginCard/components/LCLoginButton.tsx",
-    data: {
-      name: "LCLoginButton.tsx",
+      name: "LoginCard.tsx",
       type: "file",
       subType: "page",
     },
@@ -1823,20 +1693,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/dependent/Navigation/BottomNav/components",
-    data: {
-      name: "components",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/dependent/Navigation/BottomNav/components/BottomNavBackdrop.tsx",
+    id: "app/_components/dependent/Navigation/BottomNav/BottomNavBackdrop.tsx",
     data: {
       name: "BottomNavBackdrop.tsx",
       type: "file",
@@ -1849,7 +1706,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/dependent/Navigation/BottomNav/components/BottomNavBar.tsx",
+    id: "app/_components/dependent/Navigation/BottomNav/BottomNavBar.tsx",
     data: {
       name: "BottomNavBar.tsx",
       type: "file",
@@ -1888,6 +1745,19 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
+    id: "app/_components/dependent/Navigation/NavigationMenu.tsx",
+    data: {
+      name: "NavigationMenu.tsx",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
     id: "app/_components/dependent/Navigation/SideNav",
     data: {
       name: "SideNav",
@@ -1914,20 +1784,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/dependent/Navigation/SideNav/components",
-    data: {
-      name: "components",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/dependent/Navigation/SideNav/components/SideNavBrand.tsx",
+    id: "app/_components/dependent/Navigation/SideNav/SideNavBrand.tsx",
     data: {
       name: "SideNavBrand.tsx",
       type: "file",
@@ -1943,32 +1800,6 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/dependent/Navigation/SideNav/index.ts",
     data: {
       name: "index.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/dependent/Navigation/components",
-    data: {
-      name: "components",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/dependent/Navigation/components/NavigationMenu.tsx",
-    data: {
-      name: "NavigationMenu.tsx",
       type: "file",
       subType: "page",
     },
@@ -2057,20 +1888,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/dependent/ThemesMenu/components",
-    data: {
-      name: "components",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/dependent/ThemesMenu/components/ThemesMenuItemColors.tsx",
+    id: "app/_components/dependent/ThemesMenu/ThemesMenuItemColors.tsx",
     data: {
       name: "ThemesMenuItemColors.tsx",
       type: "file",
@@ -2746,20 +2564,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/isolated/Dropdown/components",
-    data: {
-      name: "components",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Dropdown/components/DropdownItem.tsx",
+    id: "app/_components/isolated/Dropdown/DropdownItem.tsx",
     data: {
       name: "DropdownItem.tsx",
       type: "file",
@@ -2772,7 +2577,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/isolated/Dropdown/components/DropdownMenu.tsx",
+    id: "app/_components/isolated/Dropdown/DropdownMenu.tsx",
     data: {
       name: "DropdownMenu.tsx",
       type: "file",
@@ -2785,7 +2590,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/isolated/Dropdown/components/DropdownToggle.tsx",
+    id: "app/_components/isolated/Dropdown/DropdownToggle.tsx",
     data: {
       name: "DropdownToggle.tsx",
       type: "file",
@@ -2902,20 +2707,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/isolated/FormControl/components",
-    data: {
-      name: "components",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/FormControl/components/FormControlInput.tsx",
+    id: "app/_components/isolated/FormControl/FormControlInput.tsx",
     data: {
       name: "FormControlInput.tsx",
       type: "file",
@@ -2928,7 +2720,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/isolated/FormControl/components/FormControlTextarea.tsx",
+    id: "app/_components/isolated/FormControl/FormControlTextarea.tsx",
     data: {
       name: "FormControlTextarea.tsx",
       type: "file",
@@ -4596,50 +4388,48 @@ export const edges: DrEdgeType[] = [
     type: "smoothstep",
   },
   {
-    id: "e:app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]->app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/components",
+    id: "e:app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]->app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogCardsWrapper.tsx",
     source: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]",
     target:
-      "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/components",
+      "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogCardsWrapper.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/components->app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/components/BlogMetaInfo",
-    source:
-      "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/components",
+    id: "e:app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]->app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogMetaInfo",
+    source: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]",
     target:
-      "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/components/BlogMetaInfo",
+      "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogMetaInfo",
     type: "smoothstep",
   },
   {
-    id: "e:app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/components/BlogMetaInfo->app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/components/BlogMetaInfo/BlogMetaInfo.tsx",
+    id: "e:app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogMetaInfo->app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogMetaInfo/BlogMetaInfo.tsx",
     source:
-      "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/components/BlogMetaInfo",
+      "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogMetaInfo",
     target:
-      "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/components/BlogMetaInfo/BlogMetaInfo.tsx",
+      "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogMetaInfo/BlogMetaInfo.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/components/BlogMetaInfo->app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/components/BlogMetaInfo/blogMetaInfo.module.scss",
+    id: "e:app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogMetaInfo->app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogMetaInfo/blogMetaInfo.module.scss",
     source:
-      "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/components/BlogMetaInfo",
+      "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogMetaInfo",
     target:
-      "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/components/BlogMetaInfo/blogMetaInfo.module.scss",
+      "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogMetaInfo/blogMetaInfo.module.scss",
     type: "smoothstep",
   },
   {
-    id: "e:app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/components->app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/components/BlogScrollWrapper",
-    source:
-      "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/components",
+    id: "e:app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]->app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogScrollWrapper",
+    source: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]",
     target:
-      "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/components/BlogScrollWrapper",
+      "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogScrollWrapper",
     type: "smoothstep",
   },
   {
-    id: "e:app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/components/BlogScrollWrapper->app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/components/BlogScrollWrapper/BlogScrollWrapper.tsx",
+    id: "e:app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogScrollWrapper->app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogScrollWrapper/BlogScrollWrapper.tsx",
     source:
-      "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/components/BlogScrollWrapper",
+      "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogScrollWrapper",
     target:
-      "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/components/BlogScrollWrapper/BlogScrollWrapper.tsx",
+      "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogScrollWrapper/BlogScrollWrapper.tsx",
     type: "smoothstep",
   },
   {
@@ -4647,19 +4437,6 @@ export const edges: DrEdgeType[] = [
     source: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]",
     target:
       "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/page.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/(routes)/[locale]/(nav-layout)/(docs)/blogs->app/(routes)/[locale]/(nav-layout)/(docs)/blogs/components",
-    source: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs",
-    target: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/components",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/(routes)/[locale]/(nav-layout)/(docs)/blogs/components->app/(routes)/[locale]/(nav-layout)/(docs)/blogs/components/BlogCardsWrapper.tsx",
-    source: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/components",
-    target:
-      "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/components/BlogCardsWrapper.tsx",
     type: "smoothstep",
   },
   {
@@ -4814,82 +4591,57 @@ export const edges: DrEdgeType[] = [
     type: "smoothstep",
   },
   {
-    id: "e:app/(routes)/[locale]/(nav-layout)/about/project-structure->app/(routes)/[locale]/(nav-layout)/about/project-structure/components",
+    id: "e:app/(routes)/[locale]/(nav-layout)/about/project-structure->app/(routes)/[locale]/(nav-layout)/about/project-structure/AboutCard.tsx",
     source: "app/(routes)/[locale]/(nav-layout)/about/project-structure",
     target:
-      "app/(routes)/[locale]/(nav-layout)/about/project-structure/components",
+      "app/(routes)/[locale]/(nav-layout)/about/project-structure/AboutCard.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/(routes)/[locale]/(nav-layout)/about/project-structure/components->app/(routes)/[locale]/(nav-layout)/about/project-structure/components/AboutCard.tsx",
-    source:
-      "app/(routes)/[locale]/(nav-layout)/about/project-structure/components",
+    id: "e:app/(routes)/[locale]/(nav-layout)/about/project-structure->app/(routes)/[locale]/(nav-layout)/about/project-structure/DirectoryFlowBuilder",
+    source: "app/(routes)/[locale]/(nav-layout)/about/project-structure",
     target:
-      "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/AboutCard.tsx",
+      "app/(routes)/[locale]/(nav-layout)/about/project-structure/DirectoryFlowBuilder",
     type: "smoothstep",
   },
   {
-    id: "e:app/(routes)/[locale]/(nav-layout)/about/project-structure/components->app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder",
+    id: "e:app/(routes)/[locale]/(nav-layout)/about/project-structure/DirectoryFlowBuilder->app/(routes)/[locale]/(nav-layout)/about/project-structure/DirectoryFlowBuilder/DirectoryFlowBuilder.tsx",
     source:
-      "app/(routes)/[locale]/(nav-layout)/about/project-structure/components",
+      "app/(routes)/[locale]/(nav-layout)/about/project-structure/DirectoryFlowBuilder",
     target:
-      "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder",
+      "app/(routes)/[locale]/(nav-layout)/about/project-structure/DirectoryFlowBuilder/DirectoryFlowBuilder.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder->app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/DirectoryFlowBuilder.tsx",
+    id: "e:app/(routes)/[locale]/(nav-layout)/about/project-structure/DirectoryFlowBuilder->app/(routes)/[locale]/(nav-layout)/about/project-structure/DirectoryFlowBuilder/directoryFlowBuilder.utils.ts",
     source:
-      "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder",
+      "app/(routes)/[locale]/(nav-layout)/about/project-structure/DirectoryFlowBuilder",
     target:
-      "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/DirectoryFlowBuilder.tsx",
+      "app/(routes)/[locale]/(nav-layout)/about/project-structure/DirectoryFlowBuilder/directoryFlowBuilder.utils.ts",
     type: "smoothstep",
   },
   {
-    id: "e:app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder->app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/components",
+    id: "e:app/(routes)/[locale]/(nav-layout)/about/project-structure/DirectoryFlowBuilder->app/(routes)/[locale]/(nav-layout)/about/project-structure/DirectoryFlowBuilder/nodes",
     source:
-      "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder",
+      "app/(routes)/[locale]/(nav-layout)/about/project-structure/DirectoryFlowBuilder",
     target:
-      "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/components",
+      "app/(routes)/[locale]/(nav-layout)/about/project-structure/DirectoryFlowBuilder/nodes",
     type: "smoothstep",
   },
   {
-    id: "e:app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/components->app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/components/nodes",
+    id: "e:app/(routes)/[locale]/(nav-layout)/about/project-structure/DirectoryFlowBuilder/nodes->app/(routes)/[locale]/(nav-layout)/about/project-structure/DirectoryFlowBuilder/nodes/CustomNode.tsx",
     source:
-      "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/components",
+      "app/(routes)/[locale]/(nav-layout)/about/project-structure/DirectoryFlowBuilder/nodes",
     target:
-      "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/components/nodes",
+      "app/(routes)/[locale]/(nav-layout)/about/project-structure/DirectoryFlowBuilder/nodes/CustomNode.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder->app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/directoryFlowBuilder.utils.ts",
+    id: "e:app/(routes)/[locale]/(nav-layout)/about/project-structure/DirectoryFlowBuilder/nodes->app/(routes)/[locale]/(nav-layout)/about/project-structure/DirectoryFlowBuilder/nodes/customNode.utils.ts",
     source:
-      "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder",
+      "app/(routes)/[locale]/(nav-layout)/about/project-structure/DirectoryFlowBuilder/nodes",
     target:
-      "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/directoryFlowBuilder.utils.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder->app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/nodes",
-    source:
-      "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder",
-    target:
-      "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/nodes",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/nodes->app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/nodes/CustomNode.tsx",
-    source:
-      "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/nodes",
-    target:
-      "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/nodes/CustomNode.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/nodes->app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/nodes/customNode.utils.ts",
-    source:
-      "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/nodes",
-    target:
-      "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/nodes/customNode.utils.ts",
+      "app/(routes)/[locale]/(nav-layout)/about/project-structure/DirectoryFlowBuilder/nodes/customNode.utils.ts",
     type: "smoothstep",
   },
   {
@@ -4906,6 +4658,152 @@ export const edges: DrEdgeType[] = [
     type: "smoothstep",
   },
   {
+    id: "e:app/(routes)/[locale]/(nav-layout)/experiences->app/(routes)/[locale]/(nav-layout)/experiences/AddEditExperienceForm.tsx",
+    source: "app/(routes)/[locale]/(nav-layout)/experiences",
+    target:
+      "app/(routes)/[locale]/(nav-layout)/experiences/AddEditExperienceForm.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/experiences->app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions",
+    source: "app/(routes)/[locale]/(nav-layout)/experiences",
+    target: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions->app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/ExperienceActions.tsx",
+    source: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions",
+    target:
+      "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/ExperienceActions.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions->app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/components",
+    source: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions",
+    target:
+      "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/components",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/components->app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/components/ExperienceSettingsModal.tsx",
+    source:
+      "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/components",
+    target:
+      "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/components/ExperienceSettingsModal.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/components->app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/components/experienceSettingsModal.module.scss",
+    source:
+      "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/components",
+    target:
+      "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/components/experienceSettingsModal.module.scss",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions->app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/index.ts",
+    source: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions",
+    target:
+      "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/index.ts",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/experiences->app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCard",
+    source: "app/(routes)/[locale]/(nav-layout)/experiences",
+    target: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCard",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCard->app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCard/ExperienceCard.tsx",
+    source: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCard",
+    target:
+      "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCard/ExperienceCard.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCard->app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCard/components",
+    source: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCard",
+    target:
+      "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCard/components",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCard/components->app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCard/components/ExperienceCardActions.tsx",
+    source:
+      "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCard/components",
+    target:
+      "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCard/components/ExperienceCardActions.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCard->app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCard/index.ts",
+    source: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCard",
+    target:
+      "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCard/index.ts",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/experiences->app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCardMini",
+    source: "app/(routes)/[locale]/(nav-layout)/experiences",
+    target: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCardMini",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCardMini->app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCardMini/ExperienceCardMini.tsx",
+    source: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCardMini",
+    target:
+      "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCardMini/ExperienceCardMini.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/experiences->app/(routes)/[locale]/(nav-layout)/experiences/ExperienceList.tsx",
+    source: "app/(routes)/[locale]/(nav-layout)/experiences",
+    target: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceList.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/experiences->app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings",
+    source: "app/(routes)/[locale]/(nav-layout)/experiences",
+    target: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings->app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings/ExperienceSettings.tsx",
+    source: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings",
+    target:
+      "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings/ExperienceSettings.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings->app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings/components",
+    source: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings",
+    target:
+      "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings/components",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings/components->app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings/components/ESInformationSettings.tsx",
+    source:
+      "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings/components",
+    target:
+      "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings/components/ESInformationSettings.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings->app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings/experienceSettings.types.ts",
+    source: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings",
+    target:
+      "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings/experienceSettings.types.ts",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings->app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings/index.ts",
+    source: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings",
+    target:
+      "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings/index.ts",
+    type: "smoothstep",
+  },
+  {
     id: "e:app/(routes)/[locale]/(nav-layout)/experiences->app/(routes)/[locale]/(nav-layout)/experiences/add",
     source: "app/(routes)/[locale]/(nav-layout)/experiences",
     target: "app/(routes)/[locale]/(nav-layout)/experiences/add",
@@ -4915,174 +4813,6 @@ export const edges: DrEdgeType[] = [
     id: "e:app/(routes)/[locale]/(nav-layout)/experiences/add->app/(routes)/[locale]/(nav-layout)/experiences/add/page.tsx",
     source: "app/(routes)/[locale]/(nav-layout)/experiences/add",
     target: "app/(routes)/[locale]/(nav-layout)/experiences/add/page.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/(routes)/[locale]/(nav-layout)/experiences->app/(routes)/[locale]/(nav-layout)/experiences/components",
-    source: "app/(routes)/[locale]/(nav-layout)/experiences",
-    target: "app/(routes)/[locale]/(nav-layout)/experiences/components",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/components->app/(routes)/[locale]/(nav-layout)/experiences/components/AddEditExperienceForm.tsx",
-    source: "app/(routes)/[locale]/(nav-layout)/experiences/components",
-    target:
-      "app/(routes)/[locale]/(nav-layout)/experiences/components/AddEditExperienceForm.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/components->app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceActions",
-    source: "app/(routes)/[locale]/(nav-layout)/experiences/components",
-    target:
-      "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceActions",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceActions->app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceActions/ExperienceActions.tsx",
-    source:
-      "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceActions",
-    target:
-      "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceActions/ExperienceActions.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceActions->app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceActions/components",
-    source:
-      "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceActions",
-    target:
-      "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceActions/components",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceActions/components->app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceActions/components/ExperienceSettingsModal.tsx",
-    source:
-      "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceActions/components",
-    target:
-      "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceActions/components/ExperienceSettingsModal.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceActions/components->app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceActions/components/experienceSettingsModal.module.scss",
-    source:
-      "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceActions/components",
-    target:
-      "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceActions/components/experienceSettingsModal.module.scss",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceActions->app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceActions/index.ts",
-    source:
-      "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceActions",
-    target:
-      "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceActions/index.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/components->app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceCard",
-    source: "app/(routes)/[locale]/(nav-layout)/experiences/components",
-    target:
-      "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceCard",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceCard->app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceCard/ExperienceCard.tsx",
-    source:
-      "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceCard",
-    target:
-      "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceCard/ExperienceCard.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceCard->app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceCard/components",
-    source:
-      "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceCard",
-    target:
-      "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceCard/components",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceCard/components->app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceCard/components/ExperienceCardActions.tsx",
-    source:
-      "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceCard/components",
-    target:
-      "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceCard/components/ExperienceCardActions.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceCard->app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceCard/index.ts",
-    source:
-      "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceCard",
-    target:
-      "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceCard/index.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/components->app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceCardMini",
-    source: "app/(routes)/[locale]/(nav-layout)/experiences/components",
-    target:
-      "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceCardMini",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceCardMini->app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceCardMini/ExperienceCardMini.tsx",
-    source:
-      "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceCardMini",
-    target:
-      "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceCardMini/ExperienceCardMini.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/components->app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceList.tsx",
-    source: "app/(routes)/[locale]/(nav-layout)/experiences/components",
-    target:
-      "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceList.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/components->app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceSettings",
-    source: "app/(routes)/[locale]/(nav-layout)/experiences/components",
-    target:
-      "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceSettings",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceSettings->app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceSettings/ExperienceSettings.tsx",
-    source:
-      "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceSettings",
-    target:
-      "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceSettings/ExperienceSettings.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceSettings->app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceSettings/components",
-    source:
-      "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceSettings",
-    target:
-      "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceSettings/components",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceSettings/components->app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceSettings/components/ESInformationSettings.tsx",
-    source:
-      "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceSettings/components",
-    target:
-      "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceSettings/components/ESInformationSettings.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceSettings->app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceSettings/experienceSettings.types.ts",
-    source:
-      "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceSettings",
-    target:
-      "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceSettings/experienceSettings.types.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceSettings->app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceSettings/index.ts",
-    source:
-      "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceSettings",
-    target:
-      "app/(routes)/[locale]/(nav-layout)/experiences/components/ExperienceSettings/index.ts",
     type: "smoothstep",
   },
   {
@@ -5156,22 +4886,15 @@ export const edges: DrEdgeType[] = [
     type: "smoothstep",
   },
   {
-    id: "e:app/(routes)/[locale]/link-sheet->app/(routes)/[locale]/link-sheet/components",
+    id: "e:app/(routes)/[locale]/link-sheet->app/(routes)/[locale]/link-sheet/CreateNewSheetButton.tsx",
     source: "app/(routes)/[locale]/link-sheet",
-    target: "app/(routes)/[locale]/link-sheet/components",
+    target: "app/(routes)/[locale]/link-sheet/CreateNewSheetButton.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/(routes)/[locale]/link-sheet/components->app/(routes)/[locale]/link-sheet/components/CreateNewSheetButton.tsx",
-    source: "app/(routes)/[locale]/link-sheet/components",
-    target:
-      "app/(routes)/[locale]/link-sheet/components/CreateNewSheetButton.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/(routes)/[locale]/link-sheet/components->app/(routes)/[locale]/link-sheet/components/LinkSheetInput.tsx",
-    source: "app/(routes)/[locale]/link-sheet/components",
-    target: "app/(routes)/[locale]/link-sheet/components/LinkSheetInput.tsx",
+    id: "e:app/(routes)/[locale]/link-sheet->app/(routes)/[locale]/link-sheet/LinkSheetInput.tsx",
+    source: "app/(routes)/[locale]/link-sheet",
+    target: "app/(routes)/[locale]/link-sheet/LinkSheetInput.tsx",
     type: "smoothstep",
   },
   {
@@ -5259,23 +4982,15 @@ export const edges: DrEdgeType[] = [
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/dependent/BaseLayout->app/_components/dependent/BaseLayout/components",
+    id: "e:app/_components/dependent/BaseLayout->app/_components/dependent/BaseLayout/BaseLayoutBody.tsx",
     source: "app/_components/dependent/BaseLayout",
-    target: "app/_components/dependent/BaseLayout/components",
+    target: "app/_components/dependent/BaseLayout/BaseLayoutBody.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/dependent/BaseLayout/components->app/_components/dependent/BaseLayout/components/BaseLayoutBody.tsx",
-    source: "app/_components/dependent/BaseLayout/components",
-    target:
-      "app/_components/dependent/BaseLayout/components/BaseLayoutBody.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/dependent/BaseLayout/components->app/_components/dependent/BaseLayout/components/BaseLayoutHead.tsx",
-    source: "app/_components/dependent/BaseLayout/components",
-    target:
-      "app/_components/dependent/BaseLayout/components/BaseLayoutHead.tsx",
+    id: "e:app/_components/dependent/BaseLayout->app/_components/dependent/BaseLayout/BaseLayoutHead.tsx",
+    source: "app/_components/dependent/BaseLayout",
+    target: "app/_components/dependent/BaseLayout/BaseLayoutHead.tsx",
     type: "smoothstep",
   },
   {
@@ -5351,21 +5066,15 @@ export const edges: DrEdgeType[] = [
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/dependent/Header->app/_components/dependent/Header/components",
+    id: "e:app/_components/dependent/Header->app/_components/dependent/Header/HeaderClient.tsx",
     source: "app/_components/dependent/Header",
-    target: "app/_components/dependent/Header/components",
+    target: "app/_components/dependent/Header/HeaderClient.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/dependent/Header/components->app/_components/dependent/Header/components/HeaderClient.tsx",
-    source: "app/_components/dependent/Header/components",
-    target: "app/_components/dependent/Header/components/HeaderClient.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/dependent/Header/components->app/_components/dependent/Header/components/LoginButton.tsx",
-    source: "app/_components/dependent/Header/components",
-    target: "app/_components/dependent/Header/components/LoginButton.tsx",
+    id: "e:app/_components/dependent/Header->app/_components/dependent/Header/LoginButton.tsx",
+    source: "app/_components/dependent/Header",
+    target: "app/_components/dependent/Header/LoginButton.tsx",
     type: "smoothstep",
   },
   {
@@ -5423,21 +5132,15 @@ export const edges: DrEdgeType[] = [
     type: "smoothstep",
   },
   {
+    id: "e:app/_components/dependent/LoginCard->app/_components/dependent/LoginCard/LCLoginButton.tsx",
+    source: "app/_components/dependent/LoginCard",
+    target: "app/_components/dependent/LoginCard/LCLoginButton.tsx",
+    type: "smoothstep",
+  },
+  {
     id: "e:app/_components/dependent/LoginCard->app/_components/dependent/LoginCard/LoginCard.tsx",
     source: "app/_components/dependent/LoginCard",
     target: "app/_components/dependent/LoginCard/LoginCard.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/dependent/LoginCard->app/_components/dependent/LoginCard/components",
-    source: "app/_components/dependent/LoginCard",
-    target: "app/_components/dependent/LoginCard/components",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/dependent/LoginCard/components->app/_components/dependent/LoginCard/components/LCLoginButton.tsx",
-    source: "app/_components/dependent/LoginCard/components",
-    target: "app/_components/dependent/LoginCard/components/LCLoginButton.tsx",
     type: "smoothstep",
   },
   {
@@ -5465,23 +5168,16 @@ export const edges: DrEdgeType[] = [
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/dependent/Navigation/BottomNav->app/_components/dependent/Navigation/BottomNav/components",
+    id: "e:app/_components/dependent/Navigation/BottomNav->app/_components/dependent/Navigation/BottomNav/BottomNavBackdrop.tsx",
     source: "app/_components/dependent/Navigation/BottomNav",
-    target: "app/_components/dependent/Navigation/BottomNav/components",
+    target:
+      "app/_components/dependent/Navigation/BottomNav/BottomNavBackdrop.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/dependent/Navigation/BottomNav/components->app/_components/dependent/Navigation/BottomNav/components/BottomNavBackdrop.tsx",
-    source: "app/_components/dependent/Navigation/BottomNav/components",
-    target:
-      "app/_components/dependent/Navigation/BottomNav/components/BottomNavBackdrop.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/dependent/Navigation/BottomNav/components->app/_components/dependent/Navigation/BottomNav/components/BottomNavBar.tsx",
-    source: "app/_components/dependent/Navigation/BottomNav/components",
-    target:
-      "app/_components/dependent/Navigation/BottomNav/components/BottomNavBar.tsx",
+    id: "e:app/_components/dependent/Navigation/BottomNav->app/_components/dependent/Navigation/BottomNav/BottomNavBar.tsx",
+    source: "app/_components/dependent/Navigation/BottomNav",
+    target: "app/_components/dependent/Navigation/BottomNav/BottomNavBar.tsx",
     type: "smoothstep",
   },
   {
@@ -5497,6 +5193,12 @@ export const edges: DrEdgeType[] = [
     type: "smoothstep",
   },
   {
+    id: "e:app/_components/dependent/Navigation->app/_components/dependent/Navigation/NavigationMenu.tsx",
+    source: "app/_components/dependent/Navigation",
+    target: "app/_components/dependent/Navigation/NavigationMenu.tsx",
+    type: "smoothstep",
+  },
+  {
     id: "e:app/_components/dependent/Navigation->app/_components/dependent/Navigation/SideNav",
     source: "app/_components/dependent/Navigation",
     target: "app/_components/dependent/Navigation/SideNav",
@@ -5509,35 +5211,15 @@ export const edges: DrEdgeType[] = [
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/dependent/Navigation/SideNav->app/_components/dependent/Navigation/SideNav/components",
+    id: "e:app/_components/dependent/Navigation/SideNav->app/_components/dependent/Navigation/SideNav/SideNavBrand.tsx",
     source: "app/_components/dependent/Navigation/SideNav",
-    target: "app/_components/dependent/Navigation/SideNav/components",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/dependent/Navigation/SideNav/components->app/_components/dependent/Navigation/SideNav/components/SideNavBrand.tsx",
-    source: "app/_components/dependent/Navigation/SideNav/components",
-    target:
-      "app/_components/dependent/Navigation/SideNav/components/SideNavBrand.tsx",
+    target: "app/_components/dependent/Navigation/SideNav/SideNavBrand.tsx",
     type: "smoothstep",
   },
   {
     id: "e:app/_components/dependent/Navigation/SideNav->app/_components/dependent/Navigation/SideNav/index.ts",
     source: "app/_components/dependent/Navigation/SideNav",
     target: "app/_components/dependent/Navigation/SideNav/index.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/dependent/Navigation->app/_components/dependent/Navigation/components",
-    source: "app/_components/dependent/Navigation",
-    target: "app/_components/dependent/Navigation/components",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/dependent/Navigation/components->app/_components/dependent/Navigation/components/NavigationMenu.tsx",
-    source: "app/_components/dependent/Navigation/components",
-    target:
-      "app/_components/dependent/Navigation/components/NavigationMenu.tsx",
     type: "smoothstep",
   },
   {
@@ -5577,16 +5259,9 @@ export const edges: DrEdgeType[] = [
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/dependent/ThemesMenu->app/_components/dependent/ThemesMenu/components",
+    id: "e:app/_components/dependent/ThemesMenu->app/_components/dependent/ThemesMenu/ThemesMenuItemColors.tsx",
     source: "app/_components/dependent/ThemesMenu",
-    target: "app/_components/dependent/ThemesMenu/components",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/dependent/ThemesMenu/components->app/_components/dependent/ThemesMenu/components/ThemesMenuItemColors.tsx",
-    source: "app/_components/dependent/ThemesMenu/components",
-    target:
-      "app/_components/dependent/ThemesMenu/components/ThemesMenuItemColors.tsx",
+    target: "app/_components/dependent/ThemesMenu/ThemesMenuItemColors.tsx",
     type: "smoothstep",
   },
   {
@@ -5898,27 +5573,21 @@ export const edges: DrEdgeType[] = [
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/isolated/Dropdown->app/_components/isolated/Dropdown/components",
+    id: "e:app/_components/isolated/Dropdown->app/_components/isolated/Dropdown/DropdownItem.tsx",
     source: "app/_components/isolated/Dropdown",
-    target: "app/_components/isolated/Dropdown/components",
+    target: "app/_components/isolated/Dropdown/DropdownItem.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/isolated/Dropdown/components->app/_components/isolated/Dropdown/components/DropdownItem.tsx",
-    source: "app/_components/isolated/Dropdown/components",
-    target: "app/_components/isolated/Dropdown/components/DropdownItem.tsx",
+    id: "e:app/_components/isolated/Dropdown->app/_components/isolated/Dropdown/DropdownMenu.tsx",
+    source: "app/_components/isolated/Dropdown",
+    target: "app/_components/isolated/Dropdown/DropdownMenu.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/isolated/Dropdown/components->app/_components/isolated/Dropdown/components/DropdownMenu.tsx",
-    source: "app/_components/isolated/Dropdown/components",
-    target: "app/_components/isolated/Dropdown/components/DropdownMenu.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Dropdown/components->app/_components/isolated/Dropdown/components/DropdownToggle.tsx",
-    source: "app/_components/isolated/Dropdown/components",
-    target: "app/_components/isolated/Dropdown/components/DropdownToggle.tsx",
+    id: "e:app/_components/isolated/Dropdown->app/_components/isolated/Dropdown/DropdownToggle.tsx",
+    source: "app/_components/isolated/Dropdown",
+    target: "app/_components/isolated/Dropdown/DropdownToggle.tsx",
     type: "smoothstep",
   },
   {
@@ -5970,23 +5639,15 @@ export const edges: DrEdgeType[] = [
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/isolated/FormControl->app/_components/isolated/FormControl/components",
+    id: "e:app/_components/isolated/FormControl->app/_components/isolated/FormControl/FormControlInput.tsx",
     source: "app/_components/isolated/FormControl",
-    target: "app/_components/isolated/FormControl/components",
+    target: "app/_components/isolated/FormControl/FormControlInput.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/isolated/FormControl/components->app/_components/isolated/FormControl/components/FormControlInput.tsx",
-    source: "app/_components/isolated/FormControl/components",
-    target:
-      "app/_components/isolated/FormControl/components/FormControlInput.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/FormControl/components->app/_components/isolated/FormControl/components/FormControlTextarea.tsx",
-    source: "app/_components/isolated/FormControl/components",
-    target:
-      "app/_components/isolated/FormControl/components/FormControlTextarea.tsx",
+    id: "e:app/_components/isolated/FormControl->app/_components/isolated/FormControl/FormControlTextarea.tsx",
+    source: "app/_components/isolated/FormControl",
+    target: "app/_components/isolated/FormControl/FormControlTextarea.tsx",
     type: "smoothstep",
   },
   {

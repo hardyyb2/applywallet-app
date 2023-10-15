@@ -10,9 +10,9 @@ import { BottomNavigation, Flex } from "@/components/isolated";
 import { useBoolean } from "@/hooks/useBoolean";
 import { cn } from "@/utils/styles.utils";
 
-import { NavigationMenu } from "../components/NavigationMenu";
-import { BottomNavBackdrop } from "./components/BottomNavBackdrop";
-import { BottomNavBar } from "./components/BottomNavBar";
+import { NavigationMenu } from "../NavigationMenu";
+import { BottomNavBackdrop } from "./BottomNavBackdrop";
+import { BottomNavBar } from "./BottomNavBar";
 
 const { Render } = ConditionalMatch;
 interface BottomNavProps {

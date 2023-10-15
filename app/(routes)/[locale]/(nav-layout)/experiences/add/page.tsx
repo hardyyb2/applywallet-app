@@ -4,7 +4,7 @@ import { IconLink } from "@/components/dependent";
 import { Breadcrumbs } from "@/components/isolated";
 import { AppRoutes } from "@/utils/routes.utils";
 
-import { AddEditExperienceForm } from "../components/AddEditExperienceForm";
+import { AddEditExperienceForm } from "../AddEditExperienceForm";
 
 const AddExperience = () => {
   return (

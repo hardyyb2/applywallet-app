@@ -14,8 +14,8 @@ import {
 } from "@/components/isolated";
 import { AppRoutes } from "@/utils/routes.utils";
 
-import { BlogMetaInfo } from "./components/BlogMetaInfo/BlogMetaInfo";
-import { BlogScrollWrapper } from "./components/BlogScrollWrapper/BlogScrollWrapper";
+import { BlogMetaInfo } from "./BlogMetaInfo/BlogMetaInfo";
+import { BlogScrollWrapper } from "./BlogScrollWrapper/BlogScrollWrapper";
 
 type BlogPageProps = {
   params: { slug: string[] };

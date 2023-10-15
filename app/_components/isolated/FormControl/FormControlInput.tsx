@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 
-import { Input, InputProps } from "../../Input";
-import { useFormControlContext } from "../formControl.utils";
+import { Input, InputProps } from "../Input";
+import { useFormControlContext } from "./formControl.utils";
 
 type FormControlInputProps = InputProps;
 

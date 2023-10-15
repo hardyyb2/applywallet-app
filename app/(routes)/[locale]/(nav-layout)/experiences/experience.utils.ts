@@ -1,4 +1,4 @@
-import { AddEditExperienceFormProps } from "./components/AddEditExperienceForm";
+import { AddEditExperienceFormProps } from "./AddEditExperienceForm";
 
 export const getAddEditExperienceFormCopy = (
   operationType: AddEditExperienceFormProps["type"],

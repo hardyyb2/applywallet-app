@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 
-import { Textarea, TextareaProps } from "../../Textarea";
-import { useFormControlContext } from "../formControl.utils";
+import { Textarea, TextareaProps } from "../Textarea";
+import { useFormControlContext } from "./formControl.utils";
 
 type FormControlTextareaProps = TextareaProps;
 

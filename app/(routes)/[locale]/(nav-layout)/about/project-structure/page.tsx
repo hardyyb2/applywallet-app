@@ -1,6 +1,6 @@
 import { Flex, Typography } from "@/components/isolated";
 
-import { DirectoryFlowBuilder } from "./components/DirectoryFlowBuilder/DirectoryFlowBuilder";
+import { DirectoryFlowBuilder } from "./DirectoryFlowBuilder/DirectoryFlowBuilder";
 
 const ProjectStructure = () => {
   return (

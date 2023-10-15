@@ -17,7 +17,7 @@ import {
 } from "@/utils/schema-utils";
 import { SheetNames } from "@/utils/sheet.utils";
 
-import { AddEditExperienceForm } from "../../components/AddEditExperienceForm";
+import { AddEditExperienceForm } from "../../AddEditExperienceForm";
 
 const experienceIdSchema = z.coerce.number().nonnegative();
 

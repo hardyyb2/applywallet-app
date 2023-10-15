@@ -1,5 +1,5 @@
-import { CreateNewSheetButton } from "./components/CreateNewSheetButton";
-import { LinkSheetInput } from "./components/LinkSheetInput";
+import { CreateNewSheetButton } from "./CreateNewSheetButton";
+import { LinkSheetInput } from "./LinkSheetInput";
 
 const NewUser = async () => {
   // TODO - check validations before sheet creation

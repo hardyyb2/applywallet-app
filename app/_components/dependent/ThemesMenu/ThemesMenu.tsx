@@ -2,8 +2,8 @@ import { Button, Dropdown, Flex } from "@/components/isolated";
 import { Icons } from "@/components/isolated/Icons";
 import { cn } from "@/utils/styles.utils";
 
-import { ThemesMenuItemColors } from "./components/ThemesMenuItemColors";
 import { selectableThemes } from "./themesMenu.utils";
+import { ThemesMenuItemColors } from "./ThemesMenuItemColors";
 
 // TODO - replace this with Popover
 const ThemesMenu = () => {
