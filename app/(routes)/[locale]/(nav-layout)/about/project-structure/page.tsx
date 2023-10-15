@@ -1,5 +1,6 @@
 import { Flex, Typography } from "@/components/isolated";
 
+import { DFBWrapper } from "./DFBWrapper";
 import { DirectoryFlowBuilder } from "./DirectoryFlowBuilder/DirectoryFlowBuilder";
 
 const ProjectStructure = () => {
@@ -13,9 +14,9 @@ const ProjectStructure = () => {
           </Typography>
         </Flex>
       </Flex>
-      <div className="flex-1 rounded-2xl bg-base-content/20">
+      <DFBWrapper>
         <DirectoryFlowBuilder />
-      </div>
+      </DFBWrapper>
     </Flex>
   );
 };
