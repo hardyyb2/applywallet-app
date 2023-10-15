@@ -523,7 +523,33 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/(routes)/[locale]/(nav-layout)/about/components",
+    id: "app/(routes)/[locale]/(nav-layout)/about/page.tsx",
+    data: {
+      name: "page.tsx",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/(routes)/[locale]/(nav-layout)/about/project-structure",
+    data: {
+      name: "project-structure",
+      type: "folder",
+      subType: "route-group",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/(routes)/[locale]/(nav-layout)/about/project-structure/components",
     data: {
       name: "components",
       type: "folder",
@@ -536,7 +562,20 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/(routes)/[locale]/(nav-layout)/about/components/DirectoryFlowBuilder",
+    id: "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/AboutCard.tsx",
+    data: {
+      name: "AboutCard.tsx",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder",
     data: {
       name: "DirectoryFlowBuilder",
       type: "folder",
@@ -549,7 +588,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/(routes)/[locale]/(nav-layout)/about/components/DirectoryFlowBuilder/DirectoryFlowBuilder.tsx",
+    id: "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/DirectoryFlowBuilder.tsx",
     data: {
       name: "DirectoryFlowBuilder.tsx",
       type: "file",
@@ -562,11 +601,11 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/(routes)/[locale]/(nav-layout)/about/components/DirectoryFlowBuilder/directoryFlowBuilder.utils.ts",
+    id: "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/components",
     data: {
-      name: "directoryFlowBuilder.utils.ts",
-      type: "file",
-      subType: "page",
+      name: "components",
+      type: "folder",
+      subType: "route-group",
     },
     position: {
       x: 0,
@@ -575,7 +614,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/(routes)/[locale]/(nav-layout)/about/components/nodes",
+    id: "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/components/nodes",
     data: {
       name: "nodes",
       type: "folder",
@@ -588,7 +627,33 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/(routes)/[locale]/(nav-layout)/about/components/nodes/CustomNode.tsx",
+    id: "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/directoryFlowBuilder.utils.ts",
+    data: {
+      name: "directoryFlowBuilder.utils.ts",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/nodes",
+    data: {
+      name: "nodes",
+      type: "folder",
+      subType: "route-group",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/nodes/CustomNode.tsx",
     data: {
       name: "CustomNode.tsx",
       type: "file",
@@ -601,7 +666,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/(routes)/[locale]/(nav-layout)/about/components/nodes/customNode.utils.ts",
+    id: "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/nodes/customNode.utils.ts",
     data: {
       name: "customNode.utils.ts",
       type: "file",
@@ -614,7 +679,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/(routes)/[locale]/(nav-layout)/about/page.tsx",
+    id: "app/(routes)/[locale]/(nav-layout)/about/project-structure/page.tsx",
     data: {
       name: "page.tsx",
       type: "file",
@@ -1277,33 +1342,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui",
-    data: {
-      name: "ui",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/ui/.DS_Store",
-    data: {
-      name: ".DS_Store",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/ui/dependent",
+    id: "app/_components/dependent",
     data: {
       name: "dependent",
       type: "folder",
@@ -1316,7 +1355,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/BaseLayout",
+    id: "app/_components/dependent/BaseLayout",
     data: {
       name: "BaseLayout",
       type: "folder",
@@ -1329,7 +1368,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/BaseLayout/BaseLayout.tsx",
+    id: "app/_components/dependent/BaseLayout/BaseLayout.tsx",
     data: {
       name: "BaseLayout.tsx",
       type: "file",
@@ -1342,7 +1381,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/BaseLayout/components",
+    id: "app/_components/dependent/BaseLayout/components",
     data: {
       name: "components",
       type: "folder",
@@ -1355,7 +1394,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/BaseLayout/components/BaseLayoutBody.tsx",
+    id: "app/_components/dependent/BaseLayout/components/BaseLayoutBody.tsx",
     data: {
       name: "BaseLayoutBody.tsx",
       type: "file",
@@ -1368,7 +1407,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/BaseLayout/components/BaseLayoutHead.tsx",
+    id: "app/_components/dependent/BaseLayout/components/BaseLayoutHead.tsx",
     data: {
       name: "BaseLayoutHead.tsx",
       type: "file",
@@ -1381,7 +1420,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/BaseLayout/index.ts",
+    id: "app/_components/dependent/BaseLayout/index.ts",
     data: {
       name: "index.ts",
       type: "file",
@@ -1394,7 +1433,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/BlogCard",
+    id: "app/_components/dependent/BlogCard",
     data: {
       name: "BlogCard",
       type: "folder",
@@ -1407,7 +1446,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/BlogCard/BlogCard.tsx",
+    id: "app/_components/dependent/BlogCard/BlogCard.tsx",
     data: {
       name: "BlogCard.tsx",
       type: "file",
@@ -1420,7 +1459,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/BlogCard/blogCard.module.scss",
+    id: "app/_components/dependent/BlogCard/blogCard.module.scss",
     data: {
       name: "blogCard.module.scss",
       type: "file",
@@ -1433,7 +1472,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/BlogCard/index.ts",
+    id: "app/_components/dependent/BlogCard/index.ts",
     data: {
       name: "index.ts",
       type: "file",
@@ -1446,7 +1485,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/CopyButton",
+    id: "app/_components/dependent/CopyButton",
     data: {
       name: "CopyButton",
       type: "folder",
@@ -1459,7 +1498,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/CopyButton/CopyButton.tsx",
+    id: "app/_components/dependent/CopyButton/CopyButton.tsx",
     data: {
       name: "CopyButton.tsx",
       type: "file",
@@ -1472,7 +1511,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/CopyButton/copyButton.types.ts",
+    id: "app/_components/dependent/CopyButton/copyButton.types.ts",
     data: {
       name: "copyButton.types.ts",
       type: "file",
@@ -1485,7 +1524,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/CopyButton/copyButton.utils.tsx",
+    id: "app/_components/dependent/CopyButton/copyButton.utils.tsx",
     data: {
       name: "copyButton.utils.tsx",
       type: "file",
@@ -1498,7 +1537,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/CopyButton/index.ts",
+    id: "app/_components/dependent/CopyButton/index.ts",
     data: {
       name: "index.ts",
       type: "file",
@@ -1511,7 +1550,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/Header",
+    id: "app/_components/dependent/Header",
     data: {
       name: "Header",
       type: "folder",
@@ -1524,7 +1563,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/Header/Header.tsx",
+    id: "app/_components/dependent/Header/Header.tsx",
     data: {
       name: "Header.tsx",
       type: "file",
@@ -1537,7 +1576,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/Header/components",
+    id: "app/_components/dependent/Header/components",
     data: {
       name: "components",
       type: "folder",
@@ -1550,7 +1589,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/Header/components/HeaderClient.tsx",
+    id: "app/_components/dependent/Header/components/HeaderClient.tsx",
     data: {
       name: "HeaderClient.tsx",
       type: "file",
@@ -1563,7 +1602,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/Header/components/LoginButton.tsx",
+    id: "app/_components/dependent/Header/components/LoginButton.tsx",
     data: {
       name: "LoginButton.tsx",
       type: "file",
@@ -1576,7 +1615,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/Header/index.ts",
+    id: "app/_components/dependent/Header/index.ts",
     data: {
       name: "index.ts",
       type: "file",
@@ -1589,7 +1628,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/IconLink",
+    id: "app/_components/dependent/IconLink",
     data: {
       name: "IconLink",
       type: "folder",
@@ -1602,7 +1641,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/IconLink/IconLink.tsx",
+    id: "app/_components/dependent/IconLink/IconLink.tsx",
     data: {
       name: "IconLink.tsx",
       type: "file",
@@ -1615,7 +1654,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/IconLink/index.ts",
+    id: "app/_components/dependent/IconLink/index.ts",
     data: {
       name: "index.ts",
       type: "file",
@@ -1628,7 +1667,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/LocaleSwitcher",
+    id: "app/_components/dependent/LocaleSwitcher",
     data: {
       name: "LocaleSwitcher",
       type: "folder",
@@ -1641,7 +1680,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/LocaleSwitcher/LocaleSwitcher.tsx",
+    id: "app/_components/dependent/LocaleSwitcher/LocaleSwitcher.tsx",
     data: {
       name: "LocaleSwitcher.tsx",
       type: "file",
@@ -1654,7 +1693,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/LocaleSwitcher/index.ts",
+    id: "app/_components/dependent/LocaleSwitcher/index.ts",
     data: {
       name: "index.ts",
       type: "file",
@@ -1667,7 +1706,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/LocaleSwitcher/localeSwitcher.utils.ts",
+    id: "app/_components/dependent/LocaleSwitcher/localeSwitcher.utils.ts",
     data: {
       name: "localeSwitcher.utils.ts",
       type: "file",
@@ -1680,7 +1719,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/LoginCard",
+    id: "app/_components/dependent/LoginCard",
     data: {
       name: "LoginCard",
       type: "folder",
@@ -1693,7 +1732,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/LoginCard/LoginCard.tsx",
+    id: "app/_components/dependent/LoginCard/LoginCard.tsx",
     data: {
       name: "LoginCard.tsx",
       type: "file",
@@ -1706,7 +1745,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/LoginCard/components",
+    id: "app/_components/dependent/LoginCard/components",
     data: {
       name: "components",
       type: "folder",
@@ -1719,7 +1758,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/LoginCard/components/LCLoginButton.tsx",
+    id: "app/_components/dependent/LoginCard/components/LCLoginButton.tsx",
     data: {
       name: "LCLoginButton.tsx",
       type: "file",
@@ -1732,7 +1771,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/LoginCard/index.ts",
+    id: "app/_components/dependent/LoginCard/index.ts",
     data: {
       name: "index.ts",
       type: "file",
@@ -1745,7 +1784,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/Navigation",
+    id: "app/_components/dependent/Navigation",
     data: {
       name: "Navigation",
       type: "folder",
@@ -1758,7 +1797,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/Navigation/BottomNav",
+    id: "app/_components/dependent/Navigation/BottomNav",
     data: {
       name: "BottomNav",
       type: "folder",
@@ -1771,7 +1810,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/Navigation/BottomNav/BottomNav.tsx",
+    id: "app/_components/dependent/Navigation/BottomNav/BottomNav.tsx",
     data: {
       name: "BottomNav.tsx",
       type: "file",
@@ -1784,7 +1823,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/Navigation/BottomNav/components",
+    id: "app/_components/dependent/Navigation/BottomNav/components",
     data: {
       name: "components",
       type: "folder",
@@ -1797,7 +1836,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/Navigation/BottomNav/components/BottomNavBackdrop.tsx",
+    id: "app/_components/dependent/Navigation/BottomNav/components/BottomNavBackdrop.tsx",
     data: {
       name: "BottomNavBackdrop.tsx",
       type: "file",
@@ -1810,7 +1849,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/Navigation/BottomNav/components/BottomNavBar.tsx",
+    id: "app/_components/dependent/Navigation/BottomNav/components/BottomNavBar.tsx",
     data: {
       name: "BottomNavBar.tsx",
       type: "file",
@@ -1823,7 +1862,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/Navigation/BottomNav/index.ts",
+    id: "app/_components/dependent/Navigation/BottomNav/index.ts",
     data: {
       name: "index.ts",
       type: "file",
@@ -1836,7 +1875,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/Navigation/Navigation.tsx",
+    id: "app/_components/dependent/Navigation/Navigation.tsx",
     data: {
       name: "Navigation.tsx",
       type: "file",
@@ -1849,7 +1888,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/Navigation/SideNav",
+    id: "app/_components/dependent/Navigation/SideNav",
     data: {
       name: "SideNav",
       type: "folder",
@@ -1862,7 +1901,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/Navigation/SideNav/SideNav.tsx",
+    id: "app/_components/dependent/Navigation/SideNav/SideNav.tsx",
     data: {
       name: "SideNav.tsx",
       type: "file",
@@ -1875,7 +1914,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/Navigation/SideNav/components",
+    id: "app/_components/dependent/Navigation/SideNav/components",
     data: {
       name: "components",
       type: "folder",
@@ -1888,7 +1927,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/Navigation/SideNav/components/SideNavBrand.tsx",
+    id: "app/_components/dependent/Navigation/SideNav/components/SideNavBrand.tsx",
     data: {
       name: "SideNavBrand.tsx",
       type: "file",
@@ -1901,7 +1940,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/Navigation/SideNav/index.ts",
+    id: "app/_components/dependent/Navigation/SideNav/index.ts",
     data: {
       name: "index.ts",
       type: "file",
@@ -1914,7 +1953,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/Navigation/components",
+    id: "app/_components/dependent/Navigation/components",
     data: {
       name: "components",
       type: "folder",
@@ -1927,7 +1966,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/Navigation/components/NavigationMenu.tsx",
+    id: "app/_components/dependent/Navigation/components/NavigationMenu.tsx",
     data: {
       name: "NavigationMenu.tsx",
       type: "file",
@@ -1940,7 +1979,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/Navigation/index.tsx",
+    id: "app/_components/dependent/Navigation/index.tsx",
     data: {
       name: "index.tsx",
       type: "file",
@@ -1953,7 +1992,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/Navigation/navigation.types.ts",
+    id: "app/_components/dependent/Navigation/navigation.types.ts",
     data: {
       name: "navigation.types.ts",
       type: "file",
@@ -1966,7 +2005,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/Navigation/navigation.utils.ts",
+    id: "app/_components/dependent/Navigation/navigation.utils.ts",
     data: {
       name: "navigation.utils.ts",
       type: "file",
@@ -1979,7 +2018,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/README.md",
+    id: "app/_components/dependent/README.md",
     data: {
       name: "README.md",
       type: "file",
@@ -1992,7 +2031,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/ThemesMenu",
+    id: "app/_components/dependent/ThemesMenu",
     data: {
       name: "ThemesMenu",
       type: "folder",
@@ -2005,7 +2044,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/ThemesMenu/ThemesMenu.tsx",
+    id: "app/_components/dependent/ThemesMenu/ThemesMenu.tsx",
     data: {
       name: "ThemesMenu.tsx",
       type: "file",
@@ -2018,7 +2057,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/ThemesMenu/components",
+    id: "app/_components/dependent/ThemesMenu/components",
     data: {
       name: "components",
       type: "folder",
@@ -2031,7 +2070,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/ThemesMenu/components/ThemesMenuItemColors.tsx",
+    id: "app/_components/dependent/ThemesMenu/components/ThemesMenuItemColors.tsx",
     data: {
       name: "ThemesMenuItemColors.tsx",
       type: "file",
@@ -2044,7 +2083,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/ThemesMenu/index.ts",
+    id: "app/_components/dependent/ThemesMenu/index.ts",
     data: {
       name: "index.ts",
       type: "file",
@@ -2057,7 +2096,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/ThemesMenu/themesMenu.utils.ts",
+    id: "app/_components/dependent/ThemesMenu/themesMenu.utils.ts",
     data: {
       name: "themesMenu.utils.ts",
       type: "file",
@@ -2070,7 +2109,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/TopLoader",
+    id: "app/_components/dependent/TopLoader",
     data: {
       name: "TopLoader",
       type: "folder",
@@ -2083,7 +2122,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/TopLoader/TopLoader.tsx",
+    id: "app/_components/dependent/TopLoader/TopLoader.tsx",
     data: {
       name: "TopLoader.tsx",
       type: "file",
@@ -2096,7 +2135,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/TopLoader/index.ts",
+    id: "app/_components/dependent/TopLoader/index.ts",
     data: {
       name: "index.ts",
       type: "file",
@@ -2109,7 +2148,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/UserMenu",
+    id: "app/_components/dependent/UserMenu",
     data: {
       name: "UserMenu",
       type: "folder",
@@ -2122,7 +2161,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/UserMenu/UserMenu.tsx",
+    id: "app/_components/dependent/UserMenu/UserMenu.tsx",
     data: {
       name: "UserMenu.tsx",
       type: "file",
@@ -2135,7 +2174,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/UserMenu/index.ts",
+    id: "app/_components/dependent/UserMenu/index.ts",
     data: {
       name: "index.ts",
       type: "file",
@@ -2148,7 +2187,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/dependent/index.ts",
+    id: "app/_components/dependent/index.ts",
     data: {
       name: "index.ts",
       type: "file",
@@ -2161,7 +2200,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated",
+    id: "app/_components/isolated",
     data: {
       name: "isolated",
       type: "folder",
@@ -2174,254 +2213,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/README.md",
-    data: {
-      name: "README.md",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/ui/isolated/common",
-    data: {
-      name: "common",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/ui/isolated/common/CopyToClipboard",
-    data: {
-      name: "CopyToClipboard",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/ui/isolated/common/CopyToClipboard/CopyToClipboard.tsx",
-    data: {
-      name: "CopyToClipboard.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/ui/isolated/common/CopyToClipboard/copyToClipboard.utils.ts",
-    data: {
-      name: "copyToClipboard.utils.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/ui/isolated/common/CopyToClipboard/index.ts",
-    data: {
-      name: "index.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/ui/isolated/common/Flex",
-    data: {
-      name: "Flex",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/ui/isolated/common/Flex/Flex.tsx",
-    data: {
-      name: "Flex.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/ui/isolated/common/Flex/flex.types.ts",
-    data: {
-      name: "flex.types.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/ui/isolated/common/Flex/index.ts",
-    data: {
-      name: "index.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/ui/isolated/common/Mdx",
-    data: {
-      name: "Mdx",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/ui/isolated/common/Mdx/Mdx.tsx",
-    data: {
-      name: "Mdx.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/ui/isolated/common/Mdx/index.ts",
-    data: {
-      name: "index.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/ui/isolated/common/Typography",
-    data: {
-      name: "Typography",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/ui/isolated/common/Typography/Typography.tsx",
-    data: {
-      name: "Typography.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/ui/isolated/common/Typography/index.ts",
-    data: {
-      name: "index.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/ui/isolated/common/Typography/typography.utils.tsx",
-    data: {
-      name: "typography.utils.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/ui/isolated/common/index.ts",
-    data: {
-      name: "index.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/ui/isolated/wrapped",
-    data: {
-      name: "wrapped",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/ui/isolated/wrapped/Avatar",
+    id: "app/_components/isolated/Avatar",
     data: {
       name: "Avatar",
       type: "folder",
@@ -2434,7 +2226,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Avatar/Avatar.tsx",
+    id: "app/_components/isolated/Avatar/Avatar.tsx",
     data: {
       name: "Avatar.tsx",
       type: "file",
@@ -2447,7 +2239,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Avatar/avatar.utils.ts",
+    id: "app/_components/isolated/Avatar/avatar.utils.ts",
     data: {
       name: "avatar.utils.ts",
       type: "file",
@@ -2460,7 +2252,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Avatar/index.ts",
+    id: "app/_components/isolated/Avatar/index.ts",
     data: {
       name: "index.ts",
       type: "file",
@@ -2473,7 +2265,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Badge",
+    id: "app/_components/isolated/Badge",
     data: {
       name: "Badge",
       type: "folder",
@@ -2486,7 +2278,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Badge/Badge.tsx",
+    id: "app/_components/isolated/Badge/Badge.tsx",
     data: {
       name: "Badge.tsx",
       type: "file",
@@ -2499,7 +2291,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Badge/badge.utils.ts",
+    id: "app/_components/isolated/Badge/badge.utils.ts",
     data: {
       name: "badge.utils.ts",
       type: "file",
@@ -2512,7 +2304,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Badge/index.ts",
+    id: "app/_components/isolated/Badge/index.ts",
     data: {
       name: "index.ts",
       type: "file",
@@ -2525,7 +2317,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/BottomNavigation",
+    id: "app/_components/isolated/BottomNavigation",
     data: {
       name: "BottomNavigation",
       type: "folder",
@@ -2538,7 +2330,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/BottomNavigation/BottomNavigation.tsx",
+    id: "app/_components/isolated/BottomNavigation/BottomNavigation.tsx",
     data: {
       name: "BottomNavigation.tsx",
       type: "file",
@@ -2551,7 +2343,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/BottomNavigation/BottomNavigationLabel.tsx",
+    id: "app/_components/isolated/BottomNavigation/BottomNavigationLabel.tsx",
     data: {
       name: "BottomNavigationLabel.tsx",
       type: "file",
@@ -2564,7 +2356,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/BottomNavigation/bottomNavigation.types.ts",
+    id: "app/_components/isolated/BottomNavigation/bottomNavigation.types.ts",
     data: {
       name: "bottomNavigation.types.ts",
       type: "file",
@@ -2577,7 +2369,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/BottomNavigation/index.ts",
+    id: "app/_components/isolated/BottomNavigation/index.ts",
     data: {
       name: "index.ts",
       type: "file",
@@ -2590,7 +2382,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Breadcrumbs",
+    id: "app/_components/isolated/Breadcrumbs",
     data: {
       name: "Breadcrumbs",
       type: "folder",
@@ -2603,7 +2395,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Breadcrumbs/Breadcrumbs.tsx",
+    id: "app/_components/isolated/Breadcrumbs/Breadcrumbs.tsx",
     data: {
       name: "Breadcrumbs.tsx",
       type: "file",
@@ -2616,7 +2408,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Breadcrumbs/BreadcrumbsItem.tsx",
+    id: "app/_components/isolated/Breadcrumbs/BreadcrumbsItem.tsx",
     data: {
       name: "BreadcrumbsItem.tsx",
       type: "file",
@@ -2629,7 +2421,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Breadcrumbs/index.tsx",
+    id: "app/_components/isolated/Breadcrumbs/index.tsx",
     data: {
       name: "index.tsx",
       type: "file",
@@ -2642,7 +2434,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Button",
+    id: "app/_components/isolated/Button",
     data: {
       name: "Button",
       type: "folder",
@@ -2655,7 +2447,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Button/Button.tsx",
+    id: "app/_components/isolated/Button/Button.tsx",
     data: {
       name: "Button.tsx",
       type: "file",
@@ -2668,7 +2460,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Button/button.utils.ts",
+    id: "app/_components/isolated/Button/button.utils.ts",
     data: {
       name: "button.utils.ts",
       type: "file",
@@ -2681,7 +2473,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Button/index.tsx",
+    id: "app/_components/isolated/Button/index.tsx",
     data: {
       name: "index.tsx",
       type: "file",
@@ -2694,7 +2486,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Card",
+    id: "app/_components/isolated/Card",
     data: {
       name: "Card",
       type: "folder",
@@ -2707,7 +2499,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Card/Card.tsx",
+    id: "app/_components/isolated/Card/Card.tsx",
     data: {
       name: "Card.tsx",
       type: "file",
@@ -2720,7 +2512,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Card/CardActions.tsx",
+    id: "app/_components/isolated/Card/CardActions.tsx",
     data: {
       name: "CardActions.tsx",
       type: "file",
@@ -2733,7 +2525,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Card/CardBody.tsx",
+    id: "app/_components/isolated/Card/CardBody.tsx",
     data: {
       name: "CardBody.tsx",
       type: "file",
@@ -2746,7 +2538,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Card/CardFigure.tsx",
+    id: "app/_components/isolated/Card/CardFigure.tsx",
     data: {
       name: "CardFigure.tsx",
       type: "file",
@@ -2759,7 +2551,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Card/CardTitle.tsx",
+    id: "app/_components/isolated/Card/CardTitle.tsx",
     data: {
       name: "CardTitle.tsx",
       type: "file",
@@ -2772,7 +2564,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Card/card.types.ts",
+    id: "app/_components/isolated/Card/card.types.ts",
     data: {
       name: "card.types.ts",
       type: "file",
@@ -2785,7 +2577,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Card/index.tsx",
+    id: "app/_components/isolated/Card/index.tsx",
     data: {
       name: "index.tsx",
       type: "file",
@@ -2798,7 +2590,59 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Dialog",
+    id: "app/_components/isolated/CopyToClipboard",
+    data: {
+      name: "CopyToClipboard",
+      type: "folder",
+      subType: "route-group",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/_components/isolated/CopyToClipboard/CopyToClipboard.tsx",
+    data: {
+      name: "CopyToClipboard.tsx",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/_components/isolated/CopyToClipboard/copyToClipboard.utils.ts",
+    data: {
+      name: "copyToClipboard.utils.ts",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/_components/isolated/CopyToClipboard/index.ts",
+    data: {
+      name: "index.ts",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/_components/isolated/Dialog",
     data: {
       name: "Dialog",
       type: "folder",
@@ -2811,7 +2655,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Dialog/Dialog.tsx",
+    id: "app/_components/isolated/Dialog/Dialog.tsx",
     data: {
       name: "Dialog.tsx",
       type: "file",
@@ -2824,7 +2668,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Dialog/index.ts",
+    id: "app/_components/isolated/Dialog/index.ts",
     data: {
       name: "index.ts",
       type: "file",
@@ -2837,7 +2681,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Divider",
+    id: "app/_components/isolated/Divider",
     data: {
       name: "Divider",
       type: "folder",
@@ -2850,7 +2694,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Divider/Divider.tsx",
+    id: "app/_components/isolated/Divider/Divider.tsx",
     data: {
       name: "Divider.tsx",
       type: "file",
@@ -2863,7 +2707,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Divider/index.ts",
+    id: "app/_components/isolated/Divider/index.ts",
     data: {
       name: "index.ts",
       type: "file",
@@ -2876,7 +2720,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Dropdown",
+    id: "app/_components/isolated/Dropdown",
     data: {
       name: "Dropdown",
       type: "folder",
@@ -2889,7 +2733,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Dropdown/Dropdown.tsx",
+    id: "app/_components/isolated/Dropdown/Dropdown.tsx",
     data: {
       name: "Dropdown.tsx",
       type: "file",
@@ -2902,7 +2746,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Dropdown/components",
+    id: "app/_components/isolated/Dropdown/components",
     data: {
       name: "components",
       type: "folder",
@@ -2915,7 +2759,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Dropdown/components/DropdownItem.tsx",
+    id: "app/_components/isolated/Dropdown/components/DropdownItem.tsx",
     data: {
       name: "DropdownItem.tsx",
       type: "file",
@@ -2928,7 +2772,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Dropdown/components/DropdownMenu.tsx",
+    id: "app/_components/isolated/Dropdown/components/DropdownMenu.tsx",
     data: {
       name: "DropdownMenu.tsx",
       type: "file",
@@ -2941,7 +2785,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Dropdown/components/DropdownToggle.tsx",
+    id: "app/_components/isolated/Dropdown/components/DropdownToggle.tsx",
     data: {
       name: "DropdownToggle.tsx",
       type: "file",
@@ -2954,7 +2798,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Dropdown/dropDown.types.ts",
+    id: "app/_components/isolated/Dropdown/dropDown.types.ts",
     data: {
       name: "dropDown.types.ts",
       type: "file",
@@ -2967,7 +2811,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Dropdown/index.tsx",
+    id: "app/_components/isolated/Dropdown/index.tsx",
     data: {
       name: "index.tsx",
       type: "file",
@@ -2980,7 +2824,59 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/FormControl",
+    id: "app/_components/isolated/Flex",
+    data: {
+      name: "Flex",
+      type: "folder",
+      subType: "route-group",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/_components/isolated/Flex/Flex.tsx",
+    data: {
+      name: "Flex.tsx",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/_components/isolated/Flex/flex.types.ts",
+    data: {
+      name: "flex.types.ts",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/_components/isolated/Flex/index.ts",
+    data: {
+      name: "index.ts",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/_components/isolated/FormControl",
     data: {
       name: "FormControl",
       type: "folder",
@@ -2993,7 +2889,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/FormControl/FormControl.tsx",
+    id: "app/_components/isolated/FormControl/FormControl.tsx",
     data: {
       name: "FormControl.tsx",
       type: "file",
@@ -3006,7 +2902,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/FormControl/components",
+    id: "app/_components/isolated/FormControl/components",
     data: {
       name: "components",
       type: "folder",
@@ -3019,7 +2915,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/FormControl/components/FormControlInput.tsx",
+    id: "app/_components/isolated/FormControl/components/FormControlInput.tsx",
     data: {
       name: "FormControlInput.tsx",
       type: "file",
@@ -3032,7 +2928,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/FormControl/components/FormControlTextarea.tsx",
+    id: "app/_components/isolated/FormControl/components/FormControlTextarea.tsx",
     data: {
       name: "FormControlTextarea.tsx",
       type: "file",
@@ -3045,7 +2941,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/FormControl/formControl.utils.tsx",
+    id: "app/_components/isolated/FormControl/formControl.utils.tsx",
     data: {
       name: "formControl.utils.tsx",
       type: "file",
@@ -3058,7 +2954,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/FormControl/index.ts",
+    id: "app/_components/isolated/FormControl/index.ts",
     data: {
       name: "index.ts",
       type: "file",
@@ -3071,7 +2967,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Icons",
+    id: "app/_components/isolated/Icons",
     data: {
       name: "Icons",
       type: "folder",
@@ -3084,7 +2980,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Icons/Icons.tsx",
+    id: "app/_components/isolated/Icons/Icons.tsx",
     data: {
       name: "Icons.tsx",
       type: "file",
@@ -3097,7 +2993,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Icons/index.tsx",
+    id: "app/_components/isolated/Icons/index.tsx",
     data: {
       name: "index.tsx",
       type: "file",
@@ -3110,7 +3006,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Input",
+    id: "app/_components/isolated/Input",
     data: {
       name: "Input",
       type: "folder",
@@ -3123,7 +3019,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Input/Input.tsx",
+    id: "app/_components/isolated/Input/Input.tsx",
     data: {
       name: "Input.tsx",
       type: "file",
@@ -3136,7 +3032,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Input/Input.types.ts",
+    id: "app/_components/isolated/Input/Input.types.ts",
     data: {
       name: "Input.types.ts",
       type: "file",
@@ -3149,7 +3045,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Input/index.tsx",
+    id: "app/_components/isolated/Input/index.tsx",
     data: {
       name: "index.tsx",
       type: "file",
@@ -3162,7 +3058,46 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Popover",
+    id: "app/_components/isolated/Mdx",
+    data: {
+      name: "Mdx",
+      type: "folder",
+      subType: "route-group",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/_components/isolated/Mdx/Mdx.tsx",
+    data: {
+      name: "Mdx.tsx",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/_components/isolated/Mdx/index.ts",
+    data: {
+      name: "index.ts",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/_components/isolated/Popover",
     data: {
       name: "Popover",
       type: "folder",
@@ -3175,7 +3110,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Popover/Popover.tsx",
+    id: "app/_components/isolated/Popover/Popover.tsx",
     data: {
       name: "Popover.tsx",
       type: "file",
@@ -3188,7 +3123,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Popover/index.ts",
+    id: "app/_components/isolated/Popover/index.ts",
     data: {
       name: "index.ts",
       type: "file",
@@ -3201,7 +3136,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/README.md",
+    id: "app/_components/isolated/README.md",
     data: {
       name: "README.md",
       type: "file",
@@ -3214,7 +3149,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/ScrollArea",
+    id: "app/_components/isolated/ScrollArea",
     data: {
       name: "ScrollArea",
       type: "folder",
@@ -3227,7 +3162,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/ScrollArea/ScrollArea.tsx",
+    id: "app/_components/isolated/ScrollArea/ScrollArea.tsx",
     data: {
       name: "ScrollArea.tsx",
       type: "file",
@@ -3240,7 +3175,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/ScrollArea/index.ts",
+    id: "app/_components/isolated/ScrollArea/index.ts",
     data: {
       name: "index.ts",
       type: "file",
@@ -3253,7 +3188,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Textarea",
+    id: "app/_components/isolated/Textarea",
     data: {
       name: "Textarea",
       type: "folder",
@@ -3266,7 +3201,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Textarea/Textarea.tsx",
+    id: "app/_components/isolated/Textarea/Textarea.tsx",
     data: {
       name: "Textarea.tsx",
       type: "file",
@@ -3279,7 +3214,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Textarea/Textarea.types.ts",
+    id: "app/_components/isolated/Textarea/Textarea.types.ts",
     data: {
       name: "Textarea.types.ts",
       type: "file",
@@ -3292,7 +3227,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Textarea/index.tsx",
+    id: "app/_components/isolated/Textarea/index.tsx",
     data: {
       name: "index.tsx",
       type: "file",
@@ -3305,7 +3240,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Tooltip",
+    id: "app/_components/isolated/Tooltip",
     data: {
       name: "Tooltip",
       type: "folder",
@@ -3318,7 +3253,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Tooltip/Tooltip.tsx",
+    id: "app/_components/isolated/Tooltip/Tooltip.tsx",
     data: {
       name: "Tooltip.tsx",
       type: "file",
@@ -3331,7 +3266,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Tooltip/index.ts",
+    id: "app/_components/isolated/Tooltip/index.ts",
     data: {
       name: "index.ts",
       type: "file",
@@ -3344,7 +3279,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/Tooltip/tooltip.utils.ts",
+    id: "app/_components/isolated/Tooltip/tooltip.utils.ts",
     data: {
       name: "tooltip.utils.ts",
       type: "file",
@@ -3357,7 +3292,59 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/ui/isolated/wrapped/index.ts",
+    id: "app/_components/isolated/Typography",
+    data: {
+      name: "Typography",
+      type: "folder",
+      subType: "route-group",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/_components/isolated/Typography/Typography.tsx",
+    data: {
+      name: "Typography.tsx",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/_components/isolated/Typography/index.ts",
+    data: {
+      name: "index.ts",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/_components/isolated/Typography/typography.utils.tsx",
+    data: {
+      name: "typography.utils.tsx",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/_components/isolated/index.ts",
     data: {
       name: "index.ts",
       type: "file",
@@ -4010,6 +3997,19 @@ export const nodes: DrNodeType[] = [
     id: "app/_utils/auth.utils.ts",
     data: {
       name: "auth.utils.ts",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/_utils/dom.utils.ts",
+    data: {
+      name: "dom.utils.ts",
       type: "file",
       subType: "page",
     },
@@ -4802,58 +4802,101 @@ export const edges: DrEdgeType[] = [
     type: "smoothstep",
   },
   {
-    id: "e:app/(routes)/[locale]/(nav-layout)/about->app/(routes)/[locale]/(nav-layout)/about/components",
-    source: "app/(routes)/[locale]/(nav-layout)/about",
-    target: "app/(routes)/[locale]/(nav-layout)/about/components",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/(routes)/[locale]/(nav-layout)/about/components->app/(routes)/[locale]/(nav-layout)/about/components/DirectoryFlowBuilder",
-    source: "app/(routes)/[locale]/(nav-layout)/about/components",
-    target:
-      "app/(routes)/[locale]/(nav-layout)/about/components/DirectoryFlowBuilder",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/(routes)/[locale]/(nav-layout)/about/components/DirectoryFlowBuilder->app/(routes)/[locale]/(nav-layout)/about/components/DirectoryFlowBuilder/DirectoryFlowBuilder.tsx",
-    source:
-      "app/(routes)/[locale]/(nav-layout)/about/components/DirectoryFlowBuilder",
-    target:
-      "app/(routes)/[locale]/(nav-layout)/about/components/DirectoryFlowBuilder/DirectoryFlowBuilder.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/(routes)/[locale]/(nav-layout)/about/components/DirectoryFlowBuilder->app/(routes)/[locale]/(nav-layout)/about/components/DirectoryFlowBuilder/directoryFlowBuilder.utils.ts",
-    source:
-      "app/(routes)/[locale]/(nav-layout)/about/components/DirectoryFlowBuilder",
-    target:
-      "app/(routes)/[locale]/(nav-layout)/about/components/DirectoryFlowBuilder/directoryFlowBuilder.utils.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/(routes)/[locale]/(nav-layout)/about/components->app/(routes)/[locale]/(nav-layout)/about/components/nodes",
-    source: "app/(routes)/[locale]/(nav-layout)/about/components",
-    target: "app/(routes)/[locale]/(nav-layout)/about/components/nodes",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/(routes)/[locale]/(nav-layout)/about/components/nodes->app/(routes)/[locale]/(nav-layout)/about/components/nodes/CustomNode.tsx",
-    source: "app/(routes)/[locale]/(nav-layout)/about/components/nodes",
-    target:
-      "app/(routes)/[locale]/(nav-layout)/about/components/nodes/CustomNode.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/(routes)/[locale]/(nav-layout)/about/components/nodes->app/(routes)/[locale]/(nav-layout)/about/components/nodes/customNode.utils.ts",
-    source: "app/(routes)/[locale]/(nav-layout)/about/components/nodes",
-    target:
-      "app/(routes)/[locale]/(nav-layout)/about/components/nodes/customNode.utils.ts",
-    type: "smoothstep",
-  },
-  {
     id: "e:app/(routes)/[locale]/(nav-layout)/about->app/(routes)/[locale]/(nav-layout)/about/page.tsx",
     source: "app/(routes)/[locale]/(nav-layout)/about",
     target: "app/(routes)/[locale]/(nav-layout)/about/page.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/about->app/(routes)/[locale]/(nav-layout)/about/project-structure",
+    source: "app/(routes)/[locale]/(nav-layout)/about",
+    target: "app/(routes)/[locale]/(nav-layout)/about/project-structure",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/about/project-structure->app/(routes)/[locale]/(nav-layout)/about/project-structure/components",
+    source: "app/(routes)/[locale]/(nav-layout)/about/project-structure",
+    target:
+      "app/(routes)/[locale]/(nav-layout)/about/project-structure/components",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/about/project-structure/components->app/(routes)/[locale]/(nav-layout)/about/project-structure/components/AboutCard.tsx",
+    source:
+      "app/(routes)/[locale]/(nav-layout)/about/project-structure/components",
+    target:
+      "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/AboutCard.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/about/project-structure/components->app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder",
+    source:
+      "app/(routes)/[locale]/(nav-layout)/about/project-structure/components",
+    target:
+      "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder->app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/DirectoryFlowBuilder.tsx",
+    source:
+      "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder",
+    target:
+      "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/DirectoryFlowBuilder.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder->app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/components",
+    source:
+      "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder",
+    target:
+      "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/components",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/components->app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/components/nodes",
+    source:
+      "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/components",
+    target:
+      "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/components/nodes",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder->app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/directoryFlowBuilder.utils.ts",
+    source:
+      "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder",
+    target:
+      "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/directoryFlowBuilder.utils.ts",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder->app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/nodes",
+    source:
+      "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder",
+    target:
+      "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/nodes",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/nodes->app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/nodes/CustomNode.tsx",
+    source:
+      "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/nodes",
+    target:
+      "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/nodes/CustomNode.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/nodes->app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/nodes/customNode.utils.ts",
+    source:
+      "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/nodes",
+    target:
+      "app/(routes)/[locale]/(nav-layout)/about/project-structure/components/DirectoryFlowBuilder/nodes/customNode.utils.ts",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/about/project-structure->app/(routes)/[locale]/(nav-layout)/about/project-structure/page.tsx",
+    source: "app/(routes)/[locale]/(nav-layout)/about/project-structure",
+    target:
+      "app/(routes)/[locale]/(nav-layout)/about/project-structure/page.tsx",
     type: "smoothstep",
   },
   {
@@ -5198,991 +5241,944 @@ export const edges: DrEdgeType[] = [
     type: "smoothstep",
   },
   {
-    id: "e:app/_components->app/_components/ui",
+    id: "e:app/_components->app/_components/dependent",
     source: "app/_components",
-    target: "app/_components/ui",
+    target: "app/_components/dependent",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui->app/_components/ui/.DS_Store",
-    source: "app/_components/ui",
-    target: "app/_components/ui/.DS_Store",
+    id: "e:app/_components/dependent->app/_components/dependent/BaseLayout",
+    source: "app/_components/dependent",
+    target: "app/_components/dependent/BaseLayout",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui->app/_components/ui/dependent",
-    source: "app/_components/ui",
-    target: "app/_components/ui/dependent",
+    id: "e:app/_components/dependent/BaseLayout->app/_components/dependent/BaseLayout/BaseLayout.tsx",
+    source: "app/_components/dependent/BaseLayout",
+    target: "app/_components/dependent/BaseLayout/BaseLayout.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent->app/_components/ui/dependent/BaseLayout",
-    source: "app/_components/ui/dependent",
-    target: "app/_components/ui/dependent/BaseLayout",
+    id: "e:app/_components/dependent/BaseLayout->app/_components/dependent/BaseLayout/components",
+    source: "app/_components/dependent/BaseLayout",
+    target: "app/_components/dependent/BaseLayout/components",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent/BaseLayout->app/_components/ui/dependent/BaseLayout/BaseLayout.tsx",
-    source: "app/_components/ui/dependent/BaseLayout",
-    target: "app/_components/ui/dependent/BaseLayout/BaseLayout.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/dependent/BaseLayout->app/_components/ui/dependent/BaseLayout/components",
-    source: "app/_components/ui/dependent/BaseLayout",
-    target: "app/_components/ui/dependent/BaseLayout/components",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/dependent/BaseLayout/components->app/_components/ui/dependent/BaseLayout/components/BaseLayoutBody.tsx",
-    source: "app/_components/ui/dependent/BaseLayout/components",
+    id: "e:app/_components/dependent/BaseLayout/components->app/_components/dependent/BaseLayout/components/BaseLayoutBody.tsx",
+    source: "app/_components/dependent/BaseLayout/components",
     target:
-      "app/_components/ui/dependent/BaseLayout/components/BaseLayoutBody.tsx",
+      "app/_components/dependent/BaseLayout/components/BaseLayoutBody.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent/BaseLayout/components->app/_components/ui/dependent/BaseLayout/components/BaseLayoutHead.tsx",
-    source: "app/_components/ui/dependent/BaseLayout/components",
+    id: "e:app/_components/dependent/BaseLayout/components->app/_components/dependent/BaseLayout/components/BaseLayoutHead.tsx",
+    source: "app/_components/dependent/BaseLayout/components",
     target:
-      "app/_components/ui/dependent/BaseLayout/components/BaseLayoutHead.tsx",
+      "app/_components/dependent/BaseLayout/components/BaseLayoutHead.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent/BaseLayout->app/_components/ui/dependent/BaseLayout/index.ts",
-    source: "app/_components/ui/dependent/BaseLayout",
-    target: "app/_components/ui/dependent/BaseLayout/index.ts",
+    id: "e:app/_components/dependent/BaseLayout->app/_components/dependent/BaseLayout/index.ts",
+    source: "app/_components/dependent/BaseLayout",
+    target: "app/_components/dependent/BaseLayout/index.ts",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent->app/_components/ui/dependent/BlogCard",
-    source: "app/_components/ui/dependent",
-    target: "app/_components/ui/dependent/BlogCard",
+    id: "e:app/_components/dependent->app/_components/dependent/BlogCard",
+    source: "app/_components/dependent",
+    target: "app/_components/dependent/BlogCard",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent/BlogCard->app/_components/ui/dependent/BlogCard/BlogCard.tsx",
-    source: "app/_components/ui/dependent/BlogCard",
-    target: "app/_components/ui/dependent/BlogCard/BlogCard.tsx",
+    id: "e:app/_components/dependent/BlogCard->app/_components/dependent/BlogCard/BlogCard.tsx",
+    source: "app/_components/dependent/BlogCard",
+    target: "app/_components/dependent/BlogCard/BlogCard.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent/BlogCard->app/_components/ui/dependent/BlogCard/blogCard.module.scss",
-    source: "app/_components/ui/dependent/BlogCard",
-    target: "app/_components/ui/dependent/BlogCard/blogCard.module.scss",
+    id: "e:app/_components/dependent/BlogCard->app/_components/dependent/BlogCard/blogCard.module.scss",
+    source: "app/_components/dependent/BlogCard",
+    target: "app/_components/dependent/BlogCard/blogCard.module.scss",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent/BlogCard->app/_components/ui/dependent/BlogCard/index.ts",
-    source: "app/_components/ui/dependent/BlogCard",
-    target: "app/_components/ui/dependent/BlogCard/index.ts",
+    id: "e:app/_components/dependent/BlogCard->app/_components/dependent/BlogCard/index.ts",
+    source: "app/_components/dependent/BlogCard",
+    target: "app/_components/dependent/BlogCard/index.ts",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent->app/_components/ui/dependent/CopyButton",
-    source: "app/_components/ui/dependent",
-    target: "app/_components/ui/dependent/CopyButton",
+    id: "e:app/_components/dependent->app/_components/dependent/CopyButton",
+    source: "app/_components/dependent",
+    target: "app/_components/dependent/CopyButton",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent/CopyButton->app/_components/ui/dependent/CopyButton/CopyButton.tsx",
-    source: "app/_components/ui/dependent/CopyButton",
-    target: "app/_components/ui/dependent/CopyButton/CopyButton.tsx",
+    id: "e:app/_components/dependent/CopyButton->app/_components/dependent/CopyButton/CopyButton.tsx",
+    source: "app/_components/dependent/CopyButton",
+    target: "app/_components/dependent/CopyButton/CopyButton.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent/CopyButton->app/_components/ui/dependent/CopyButton/copyButton.types.ts",
-    source: "app/_components/ui/dependent/CopyButton",
-    target: "app/_components/ui/dependent/CopyButton/copyButton.types.ts",
+    id: "e:app/_components/dependent/CopyButton->app/_components/dependent/CopyButton/copyButton.types.ts",
+    source: "app/_components/dependent/CopyButton",
+    target: "app/_components/dependent/CopyButton/copyButton.types.ts",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent/CopyButton->app/_components/ui/dependent/CopyButton/copyButton.utils.tsx",
-    source: "app/_components/ui/dependent/CopyButton",
-    target: "app/_components/ui/dependent/CopyButton/copyButton.utils.tsx",
+    id: "e:app/_components/dependent/CopyButton->app/_components/dependent/CopyButton/copyButton.utils.tsx",
+    source: "app/_components/dependent/CopyButton",
+    target: "app/_components/dependent/CopyButton/copyButton.utils.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent/CopyButton->app/_components/ui/dependent/CopyButton/index.ts",
-    source: "app/_components/ui/dependent/CopyButton",
-    target: "app/_components/ui/dependent/CopyButton/index.ts",
+    id: "e:app/_components/dependent/CopyButton->app/_components/dependent/CopyButton/index.ts",
+    source: "app/_components/dependent/CopyButton",
+    target: "app/_components/dependent/CopyButton/index.ts",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent->app/_components/ui/dependent/Header",
-    source: "app/_components/ui/dependent",
-    target: "app/_components/ui/dependent/Header",
+    id: "e:app/_components/dependent->app/_components/dependent/Header",
+    source: "app/_components/dependent",
+    target: "app/_components/dependent/Header",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent/Header->app/_components/ui/dependent/Header/Header.tsx",
-    source: "app/_components/ui/dependent/Header",
-    target: "app/_components/ui/dependent/Header/Header.tsx",
+    id: "e:app/_components/dependent/Header->app/_components/dependent/Header/Header.tsx",
+    source: "app/_components/dependent/Header",
+    target: "app/_components/dependent/Header/Header.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent/Header->app/_components/ui/dependent/Header/components",
-    source: "app/_components/ui/dependent/Header",
-    target: "app/_components/ui/dependent/Header/components",
+    id: "e:app/_components/dependent/Header->app/_components/dependent/Header/components",
+    source: "app/_components/dependent/Header",
+    target: "app/_components/dependent/Header/components",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent/Header/components->app/_components/ui/dependent/Header/components/HeaderClient.tsx",
-    source: "app/_components/ui/dependent/Header/components",
-    target: "app/_components/ui/dependent/Header/components/HeaderClient.tsx",
+    id: "e:app/_components/dependent/Header/components->app/_components/dependent/Header/components/HeaderClient.tsx",
+    source: "app/_components/dependent/Header/components",
+    target: "app/_components/dependent/Header/components/HeaderClient.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent/Header/components->app/_components/ui/dependent/Header/components/LoginButton.tsx",
-    source: "app/_components/ui/dependent/Header/components",
-    target: "app/_components/ui/dependent/Header/components/LoginButton.tsx",
+    id: "e:app/_components/dependent/Header/components->app/_components/dependent/Header/components/LoginButton.tsx",
+    source: "app/_components/dependent/Header/components",
+    target: "app/_components/dependent/Header/components/LoginButton.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent/Header->app/_components/ui/dependent/Header/index.ts",
-    source: "app/_components/ui/dependent/Header",
-    target: "app/_components/ui/dependent/Header/index.ts",
+    id: "e:app/_components/dependent/Header->app/_components/dependent/Header/index.ts",
+    source: "app/_components/dependent/Header",
+    target: "app/_components/dependent/Header/index.ts",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent->app/_components/ui/dependent/IconLink",
-    source: "app/_components/ui/dependent",
-    target: "app/_components/ui/dependent/IconLink",
+    id: "e:app/_components/dependent->app/_components/dependent/IconLink",
+    source: "app/_components/dependent",
+    target: "app/_components/dependent/IconLink",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent/IconLink->app/_components/ui/dependent/IconLink/IconLink.tsx",
-    source: "app/_components/ui/dependent/IconLink",
-    target: "app/_components/ui/dependent/IconLink/IconLink.tsx",
+    id: "e:app/_components/dependent/IconLink->app/_components/dependent/IconLink/IconLink.tsx",
+    source: "app/_components/dependent/IconLink",
+    target: "app/_components/dependent/IconLink/IconLink.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent/IconLink->app/_components/ui/dependent/IconLink/index.ts",
-    source: "app/_components/ui/dependent/IconLink",
-    target: "app/_components/ui/dependent/IconLink/index.ts",
+    id: "e:app/_components/dependent/IconLink->app/_components/dependent/IconLink/index.ts",
+    source: "app/_components/dependent/IconLink",
+    target: "app/_components/dependent/IconLink/index.ts",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent->app/_components/ui/dependent/LocaleSwitcher",
-    source: "app/_components/ui/dependent",
-    target: "app/_components/ui/dependent/LocaleSwitcher",
+    id: "e:app/_components/dependent->app/_components/dependent/LocaleSwitcher",
+    source: "app/_components/dependent",
+    target: "app/_components/dependent/LocaleSwitcher",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent/LocaleSwitcher->app/_components/ui/dependent/LocaleSwitcher/LocaleSwitcher.tsx",
-    source: "app/_components/ui/dependent/LocaleSwitcher",
-    target: "app/_components/ui/dependent/LocaleSwitcher/LocaleSwitcher.tsx",
+    id: "e:app/_components/dependent/LocaleSwitcher->app/_components/dependent/LocaleSwitcher/LocaleSwitcher.tsx",
+    source: "app/_components/dependent/LocaleSwitcher",
+    target: "app/_components/dependent/LocaleSwitcher/LocaleSwitcher.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent/LocaleSwitcher->app/_components/ui/dependent/LocaleSwitcher/index.ts",
-    source: "app/_components/ui/dependent/LocaleSwitcher",
-    target: "app/_components/ui/dependent/LocaleSwitcher/index.ts",
+    id: "e:app/_components/dependent/LocaleSwitcher->app/_components/dependent/LocaleSwitcher/index.ts",
+    source: "app/_components/dependent/LocaleSwitcher",
+    target: "app/_components/dependent/LocaleSwitcher/index.ts",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent/LocaleSwitcher->app/_components/ui/dependent/LocaleSwitcher/localeSwitcher.utils.ts",
-    source: "app/_components/ui/dependent/LocaleSwitcher",
+    id: "e:app/_components/dependent/LocaleSwitcher->app/_components/dependent/LocaleSwitcher/localeSwitcher.utils.ts",
+    source: "app/_components/dependent/LocaleSwitcher",
+    target: "app/_components/dependent/LocaleSwitcher/localeSwitcher.utils.ts",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/dependent->app/_components/dependent/LoginCard",
+    source: "app/_components/dependent",
+    target: "app/_components/dependent/LoginCard",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/dependent/LoginCard->app/_components/dependent/LoginCard/LoginCard.tsx",
+    source: "app/_components/dependent/LoginCard",
+    target: "app/_components/dependent/LoginCard/LoginCard.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/dependent/LoginCard->app/_components/dependent/LoginCard/components",
+    source: "app/_components/dependent/LoginCard",
+    target: "app/_components/dependent/LoginCard/components",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/dependent/LoginCard/components->app/_components/dependent/LoginCard/components/LCLoginButton.tsx",
+    source: "app/_components/dependent/LoginCard/components",
+    target: "app/_components/dependent/LoginCard/components/LCLoginButton.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/dependent/LoginCard->app/_components/dependent/LoginCard/index.ts",
+    source: "app/_components/dependent/LoginCard",
+    target: "app/_components/dependent/LoginCard/index.ts",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/dependent->app/_components/dependent/Navigation",
+    source: "app/_components/dependent",
+    target: "app/_components/dependent/Navigation",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/dependent/Navigation->app/_components/dependent/Navigation/BottomNav",
+    source: "app/_components/dependent/Navigation",
+    target: "app/_components/dependent/Navigation/BottomNav",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/dependent/Navigation/BottomNav->app/_components/dependent/Navigation/BottomNav/BottomNav.tsx",
+    source: "app/_components/dependent/Navigation/BottomNav",
+    target: "app/_components/dependent/Navigation/BottomNav/BottomNav.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/dependent/Navigation/BottomNav->app/_components/dependent/Navigation/BottomNav/components",
+    source: "app/_components/dependent/Navigation/BottomNav",
+    target: "app/_components/dependent/Navigation/BottomNav/components",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/dependent/Navigation/BottomNav/components->app/_components/dependent/Navigation/BottomNav/components/BottomNavBackdrop.tsx",
+    source: "app/_components/dependent/Navigation/BottomNav/components",
     target:
-      "app/_components/ui/dependent/LocaleSwitcher/localeSwitcher.utils.ts",
+      "app/_components/dependent/Navigation/BottomNav/components/BottomNavBackdrop.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent->app/_components/ui/dependent/LoginCard",
-    source: "app/_components/ui/dependent",
-    target: "app/_components/ui/dependent/LoginCard",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/dependent/LoginCard->app/_components/ui/dependent/LoginCard/LoginCard.tsx",
-    source: "app/_components/ui/dependent/LoginCard",
-    target: "app/_components/ui/dependent/LoginCard/LoginCard.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/dependent/LoginCard->app/_components/ui/dependent/LoginCard/components",
-    source: "app/_components/ui/dependent/LoginCard",
-    target: "app/_components/ui/dependent/LoginCard/components",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/dependent/LoginCard/components->app/_components/ui/dependent/LoginCard/components/LCLoginButton.tsx",
-    source: "app/_components/ui/dependent/LoginCard/components",
+    id: "e:app/_components/dependent/Navigation/BottomNav/components->app/_components/dependent/Navigation/BottomNav/components/BottomNavBar.tsx",
+    source: "app/_components/dependent/Navigation/BottomNav/components",
     target:
-      "app/_components/ui/dependent/LoginCard/components/LCLoginButton.tsx",
+      "app/_components/dependent/Navigation/BottomNav/components/BottomNavBar.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent/LoginCard->app/_components/ui/dependent/LoginCard/index.ts",
-    source: "app/_components/ui/dependent/LoginCard",
-    target: "app/_components/ui/dependent/LoginCard/index.ts",
+    id: "e:app/_components/dependent/Navigation/BottomNav->app/_components/dependent/Navigation/BottomNav/index.ts",
+    source: "app/_components/dependent/Navigation/BottomNav",
+    target: "app/_components/dependent/Navigation/BottomNav/index.ts",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent->app/_components/ui/dependent/Navigation",
-    source: "app/_components/ui/dependent",
-    target: "app/_components/ui/dependent/Navigation",
+    id: "e:app/_components/dependent/Navigation->app/_components/dependent/Navigation/Navigation.tsx",
+    source: "app/_components/dependent/Navigation",
+    target: "app/_components/dependent/Navigation/Navigation.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent/Navigation->app/_components/ui/dependent/Navigation/BottomNav",
-    source: "app/_components/ui/dependent/Navigation",
-    target: "app/_components/ui/dependent/Navigation/BottomNav",
+    id: "e:app/_components/dependent/Navigation->app/_components/dependent/Navigation/SideNav",
+    source: "app/_components/dependent/Navigation",
+    target: "app/_components/dependent/Navigation/SideNav",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent/Navigation/BottomNav->app/_components/ui/dependent/Navigation/BottomNav/BottomNav.tsx",
-    source: "app/_components/ui/dependent/Navigation/BottomNav",
-    target: "app/_components/ui/dependent/Navigation/BottomNav/BottomNav.tsx",
+    id: "e:app/_components/dependent/Navigation/SideNav->app/_components/dependent/Navigation/SideNav/SideNav.tsx",
+    source: "app/_components/dependent/Navigation/SideNav",
+    target: "app/_components/dependent/Navigation/SideNav/SideNav.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent/Navigation/BottomNav->app/_components/ui/dependent/Navigation/BottomNav/components",
-    source: "app/_components/ui/dependent/Navigation/BottomNav",
-    target: "app/_components/ui/dependent/Navigation/BottomNav/components",
+    id: "e:app/_components/dependent/Navigation/SideNav->app/_components/dependent/Navigation/SideNav/components",
+    source: "app/_components/dependent/Navigation/SideNav",
+    target: "app/_components/dependent/Navigation/SideNav/components",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent/Navigation/BottomNav/components->app/_components/ui/dependent/Navigation/BottomNav/components/BottomNavBackdrop.tsx",
-    source: "app/_components/ui/dependent/Navigation/BottomNav/components",
+    id: "e:app/_components/dependent/Navigation/SideNav/components->app/_components/dependent/Navigation/SideNav/components/SideNavBrand.tsx",
+    source: "app/_components/dependent/Navigation/SideNav/components",
     target:
-      "app/_components/ui/dependent/Navigation/BottomNav/components/BottomNavBackdrop.tsx",
+      "app/_components/dependent/Navigation/SideNav/components/SideNavBrand.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent/Navigation/BottomNav/components->app/_components/ui/dependent/Navigation/BottomNav/components/BottomNavBar.tsx",
-    source: "app/_components/ui/dependent/Navigation/BottomNav/components",
+    id: "e:app/_components/dependent/Navigation/SideNav->app/_components/dependent/Navigation/SideNav/index.ts",
+    source: "app/_components/dependent/Navigation/SideNav",
+    target: "app/_components/dependent/Navigation/SideNav/index.ts",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/dependent/Navigation->app/_components/dependent/Navigation/components",
+    source: "app/_components/dependent/Navigation",
+    target: "app/_components/dependent/Navigation/components",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/dependent/Navigation/components->app/_components/dependent/Navigation/components/NavigationMenu.tsx",
+    source: "app/_components/dependent/Navigation/components",
     target:
-      "app/_components/ui/dependent/Navigation/BottomNav/components/BottomNavBar.tsx",
+      "app/_components/dependent/Navigation/components/NavigationMenu.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent/Navigation/BottomNav->app/_components/ui/dependent/Navigation/BottomNav/index.ts",
-    source: "app/_components/ui/dependent/Navigation/BottomNav",
-    target: "app/_components/ui/dependent/Navigation/BottomNav/index.ts",
+    id: "e:app/_components/dependent/Navigation->app/_components/dependent/Navigation/index.tsx",
+    source: "app/_components/dependent/Navigation",
+    target: "app/_components/dependent/Navigation/index.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent/Navigation->app/_components/ui/dependent/Navigation/Navigation.tsx",
-    source: "app/_components/ui/dependent/Navigation",
-    target: "app/_components/ui/dependent/Navigation/Navigation.tsx",
+    id: "e:app/_components/dependent/Navigation->app/_components/dependent/Navigation/navigation.types.ts",
+    source: "app/_components/dependent/Navigation",
+    target: "app/_components/dependent/Navigation/navigation.types.ts",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent/Navigation->app/_components/ui/dependent/Navigation/SideNav",
-    source: "app/_components/ui/dependent/Navigation",
-    target: "app/_components/ui/dependent/Navigation/SideNav",
+    id: "e:app/_components/dependent/Navigation->app/_components/dependent/Navigation/navigation.utils.ts",
+    source: "app/_components/dependent/Navigation",
+    target: "app/_components/dependent/Navigation/navigation.utils.ts",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent/Navigation/SideNav->app/_components/ui/dependent/Navigation/SideNav/SideNav.tsx",
-    source: "app/_components/ui/dependent/Navigation/SideNav",
-    target: "app/_components/ui/dependent/Navigation/SideNav/SideNav.tsx",
+    id: "e:app/_components/dependent->app/_components/dependent/README.md",
+    source: "app/_components/dependent",
+    target: "app/_components/dependent/README.md",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent/Navigation/SideNav->app/_components/ui/dependent/Navigation/SideNav/components",
-    source: "app/_components/ui/dependent/Navigation/SideNav",
-    target: "app/_components/ui/dependent/Navigation/SideNav/components",
+    id: "e:app/_components/dependent->app/_components/dependent/ThemesMenu",
+    source: "app/_components/dependent",
+    target: "app/_components/dependent/ThemesMenu",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent/Navigation/SideNav/components->app/_components/ui/dependent/Navigation/SideNav/components/SideNavBrand.tsx",
-    source: "app/_components/ui/dependent/Navigation/SideNav/components",
+    id: "e:app/_components/dependent/ThemesMenu->app/_components/dependent/ThemesMenu/ThemesMenu.tsx",
+    source: "app/_components/dependent/ThemesMenu",
+    target: "app/_components/dependent/ThemesMenu/ThemesMenu.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/dependent/ThemesMenu->app/_components/dependent/ThemesMenu/components",
+    source: "app/_components/dependent/ThemesMenu",
+    target: "app/_components/dependent/ThemesMenu/components",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/dependent/ThemesMenu/components->app/_components/dependent/ThemesMenu/components/ThemesMenuItemColors.tsx",
+    source: "app/_components/dependent/ThemesMenu/components",
     target:
-      "app/_components/ui/dependent/Navigation/SideNav/components/SideNavBrand.tsx",
+      "app/_components/dependent/ThemesMenu/components/ThemesMenuItemColors.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent/Navigation/SideNav->app/_components/ui/dependent/Navigation/SideNav/index.ts",
-    source: "app/_components/ui/dependent/Navigation/SideNav",
-    target: "app/_components/ui/dependent/Navigation/SideNav/index.ts",
+    id: "e:app/_components/dependent/ThemesMenu->app/_components/dependent/ThemesMenu/index.ts",
+    source: "app/_components/dependent/ThemesMenu",
+    target: "app/_components/dependent/ThemesMenu/index.ts",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent/Navigation->app/_components/ui/dependent/Navigation/components",
-    source: "app/_components/ui/dependent/Navigation",
-    target: "app/_components/ui/dependent/Navigation/components",
+    id: "e:app/_components/dependent/ThemesMenu->app/_components/dependent/ThemesMenu/themesMenu.utils.ts",
+    source: "app/_components/dependent/ThemesMenu",
+    target: "app/_components/dependent/ThemesMenu/themesMenu.utils.ts",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent/Navigation/components->app/_components/ui/dependent/Navigation/components/NavigationMenu.tsx",
-    source: "app/_components/ui/dependent/Navigation/components",
+    id: "e:app/_components/dependent->app/_components/dependent/TopLoader",
+    source: "app/_components/dependent",
+    target: "app/_components/dependent/TopLoader",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/dependent/TopLoader->app/_components/dependent/TopLoader/TopLoader.tsx",
+    source: "app/_components/dependent/TopLoader",
+    target: "app/_components/dependent/TopLoader/TopLoader.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/dependent/TopLoader->app/_components/dependent/TopLoader/index.ts",
+    source: "app/_components/dependent/TopLoader",
+    target: "app/_components/dependent/TopLoader/index.ts",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/dependent->app/_components/dependent/UserMenu",
+    source: "app/_components/dependent",
+    target: "app/_components/dependent/UserMenu",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/dependent/UserMenu->app/_components/dependent/UserMenu/UserMenu.tsx",
+    source: "app/_components/dependent/UserMenu",
+    target: "app/_components/dependent/UserMenu/UserMenu.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/dependent/UserMenu->app/_components/dependent/UserMenu/index.ts",
+    source: "app/_components/dependent/UserMenu",
+    target: "app/_components/dependent/UserMenu/index.ts",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/dependent->app/_components/dependent/index.ts",
+    source: "app/_components/dependent",
+    target: "app/_components/dependent/index.ts",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components->app/_components/isolated",
+    source: "app/_components",
+    target: "app/_components/isolated",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/isolated->app/_components/isolated/Avatar",
+    source: "app/_components/isolated",
+    target: "app/_components/isolated/Avatar",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/isolated/Avatar->app/_components/isolated/Avatar/Avatar.tsx",
+    source: "app/_components/isolated/Avatar",
+    target: "app/_components/isolated/Avatar/Avatar.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/isolated/Avatar->app/_components/isolated/Avatar/avatar.utils.ts",
+    source: "app/_components/isolated/Avatar",
+    target: "app/_components/isolated/Avatar/avatar.utils.ts",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/isolated/Avatar->app/_components/isolated/Avatar/index.ts",
+    source: "app/_components/isolated/Avatar",
+    target: "app/_components/isolated/Avatar/index.ts",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/isolated->app/_components/isolated/Badge",
+    source: "app/_components/isolated",
+    target: "app/_components/isolated/Badge",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/isolated/Badge->app/_components/isolated/Badge/Badge.tsx",
+    source: "app/_components/isolated/Badge",
+    target: "app/_components/isolated/Badge/Badge.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/isolated/Badge->app/_components/isolated/Badge/badge.utils.ts",
+    source: "app/_components/isolated/Badge",
+    target: "app/_components/isolated/Badge/badge.utils.ts",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/isolated/Badge->app/_components/isolated/Badge/index.ts",
+    source: "app/_components/isolated/Badge",
+    target: "app/_components/isolated/Badge/index.ts",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/isolated->app/_components/isolated/BottomNavigation",
+    source: "app/_components/isolated",
+    target: "app/_components/isolated/BottomNavigation",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/isolated/BottomNavigation->app/_components/isolated/BottomNavigation/BottomNavigation.tsx",
+    source: "app/_components/isolated/BottomNavigation",
+    target: "app/_components/isolated/BottomNavigation/BottomNavigation.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/isolated/BottomNavigation->app/_components/isolated/BottomNavigation/BottomNavigationLabel.tsx",
+    source: "app/_components/isolated/BottomNavigation",
     target:
-      "app/_components/ui/dependent/Navigation/components/NavigationMenu.tsx",
+      "app/_components/isolated/BottomNavigation/BottomNavigationLabel.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent/Navigation->app/_components/ui/dependent/Navigation/index.tsx",
-    source: "app/_components/ui/dependent/Navigation",
-    target: "app/_components/ui/dependent/Navigation/index.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/dependent/Navigation->app/_components/ui/dependent/Navigation/navigation.types.ts",
-    source: "app/_components/ui/dependent/Navigation",
-    target: "app/_components/ui/dependent/Navigation/navigation.types.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/dependent/Navigation->app/_components/ui/dependent/Navigation/navigation.utils.ts",
-    source: "app/_components/ui/dependent/Navigation",
-    target: "app/_components/ui/dependent/Navigation/navigation.utils.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/dependent->app/_components/ui/dependent/README.md",
-    source: "app/_components/ui/dependent",
-    target: "app/_components/ui/dependent/README.md",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/dependent->app/_components/ui/dependent/ThemesMenu",
-    source: "app/_components/ui/dependent",
-    target: "app/_components/ui/dependent/ThemesMenu",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/dependent/ThemesMenu->app/_components/ui/dependent/ThemesMenu/ThemesMenu.tsx",
-    source: "app/_components/ui/dependent/ThemesMenu",
-    target: "app/_components/ui/dependent/ThemesMenu/ThemesMenu.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/dependent/ThemesMenu->app/_components/ui/dependent/ThemesMenu/components",
-    source: "app/_components/ui/dependent/ThemesMenu",
-    target: "app/_components/ui/dependent/ThemesMenu/components",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/dependent/ThemesMenu/components->app/_components/ui/dependent/ThemesMenu/components/ThemesMenuItemColors.tsx",
-    source: "app/_components/ui/dependent/ThemesMenu/components",
+    id: "e:app/_components/isolated/BottomNavigation->app/_components/isolated/BottomNavigation/bottomNavigation.types.ts",
+    source: "app/_components/isolated/BottomNavigation",
     target:
-      "app/_components/ui/dependent/ThemesMenu/components/ThemesMenuItemColors.tsx",
+      "app/_components/isolated/BottomNavigation/bottomNavigation.types.ts",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent/ThemesMenu->app/_components/ui/dependent/ThemesMenu/index.ts",
-    source: "app/_components/ui/dependent/ThemesMenu",
-    target: "app/_components/ui/dependent/ThemesMenu/index.ts",
+    id: "e:app/_components/isolated/BottomNavigation->app/_components/isolated/BottomNavigation/index.ts",
+    source: "app/_components/isolated/BottomNavigation",
+    target: "app/_components/isolated/BottomNavigation/index.ts",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent/ThemesMenu->app/_components/ui/dependent/ThemesMenu/themesMenu.utils.ts",
-    source: "app/_components/ui/dependent/ThemesMenu",
-    target: "app/_components/ui/dependent/ThemesMenu/themesMenu.utils.ts",
+    id: "e:app/_components/isolated->app/_components/isolated/Breadcrumbs",
+    source: "app/_components/isolated",
+    target: "app/_components/isolated/Breadcrumbs",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent->app/_components/ui/dependent/TopLoader",
-    source: "app/_components/ui/dependent",
-    target: "app/_components/ui/dependent/TopLoader",
+    id: "e:app/_components/isolated/Breadcrumbs->app/_components/isolated/Breadcrumbs/Breadcrumbs.tsx",
+    source: "app/_components/isolated/Breadcrumbs",
+    target: "app/_components/isolated/Breadcrumbs/Breadcrumbs.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent/TopLoader->app/_components/ui/dependent/TopLoader/TopLoader.tsx",
-    source: "app/_components/ui/dependent/TopLoader",
-    target: "app/_components/ui/dependent/TopLoader/TopLoader.tsx",
+    id: "e:app/_components/isolated/Breadcrumbs->app/_components/isolated/Breadcrumbs/BreadcrumbsItem.tsx",
+    source: "app/_components/isolated/Breadcrumbs",
+    target: "app/_components/isolated/Breadcrumbs/BreadcrumbsItem.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent/TopLoader->app/_components/ui/dependent/TopLoader/index.ts",
-    source: "app/_components/ui/dependent/TopLoader",
-    target: "app/_components/ui/dependent/TopLoader/index.ts",
+    id: "e:app/_components/isolated/Breadcrumbs->app/_components/isolated/Breadcrumbs/index.tsx",
+    source: "app/_components/isolated/Breadcrumbs",
+    target: "app/_components/isolated/Breadcrumbs/index.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent->app/_components/ui/dependent/UserMenu",
-    source: "app/_components/ui/dependent",
-    target: "app/_components/ui/dependent/UserMenu",
+    id: "e:app/_components/isolated->app/_components/isolated/Button",
+    source: "app/_components/isolated",
+    target: "app/_components/isolated/Button",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent/UserMenu->app/_components/ui/dependent/UserMenu/UserMenu.tsx",
-    source: "app/_components/ui/dependent/UserMenu",
-    target: "app/_components/ui/dependent/UserMenu/UserMenu.tsx",
+    id: "e:app/_components/isolated/Button->app/_components/isolated/Button/Button.tsx",
+    source: "app/_components/isolated/Button",
+    target: "app/_components/isolated/Button/Button.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent/UserMenu->app/_components/ui/dependent/UserMenu/index.ts",
-    source: "app/_components/ui/dependent/UserMenu",
-    target: "app/_components/ui/dependent/UserMenu/index.ts",
+    id: "e:app/_components/isolated/Button->app/_components/isolated/Button/button.utils.ts",
+    source: "app/_components/isolated/Button",
+    target: "app/_components/isolated/Button/button.utils.ts",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/dependent->app/_components/ui/dependent/index.ts",
-    source: "app/_components/ui/dependent",
-    target: "app/_components/ui/dependent/index.ts",
+    id: "e:app/_components/isolated/Button->app/_components/isolated/Button/index.tsx",
+    source: "app/_components/isolated/Button",
+    target: "app/_components/isolated/Button/index.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui->app/_components/ui/isolated",
-    source: "app/_components/ui",
-    target: "app/_components/ui/isolated",
+    id: "e:app/_components/isolated->app/_components/isolated/Card",
+    source: "app/_components/isolated",
+    target: "app/_components/isolated/Card",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/isolated->app/_components/ui/isolated/README.md",
-    source: "app/_components/ui/isolated",
-    target: "app/_components/ui/isolated/README.md",
+    id: "e:app/_components/isolated/Card->app/_components/isolated/Card/Card.tsx",
+    source: "app/_components/isolated/Card",
+    target: "app/_components/isolated/Card/Card.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/isolated->app/_components/ui/isolated/common",
-    source: "app/_components/ui/isolated",
-    target: "app/_components/ui/isolated/common",
+    id: "e:app/_components/isolated/Card->app/_components/isolated/Card/CardActions.tsx",
+    source: "app/_components/isolated/Card",
+    target: "app/_components/isolated/Card/CardActions.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/isolated/common->app/_components/ui/isolated/common/CopyToClipboard",
-    source: "app/_components/ui/isolated/common",
-    target: "app/_components/ui/isolated/common/CopyToClipboard",
+    id: "e:app/_components/isolated/Card->app/_components/isolated/Card/CardBody.tsx",
+    source: "app/_components/isolated/Card",
+    target: "app/_components/isolated/Card/CardBody.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/isolated/common/CopyToClipboard->app/_components/ui/isolated/common/CopyToClipboard/CopyToClipboard.tsx",
-    source: "app/_components/ui/isolated/common/CopyToClipboard",
+    id: "e:app/_components/isolated/Card->app/_components/isolated/Card/CardFigure.tsx",
+    source: "app/_components/isolated/Card",
+    target: "app/_components/isolated/Card/CardFigure.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/isolated/Card->app/_components/isolated/Card/CardTitle.tsx",
+    source: "app/_components/isolated/Card",
+    target: "app/_components/isolated/Card/CardTitle.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/isolated/Card->app/_components/isolated/Card/card.types.ts",
+    source: "app/_components/isolated/Card",
+    target: "app/_components/isolated/Card/card.types.ts",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/isolated/Card->app/_components/isolated/Card/index.tsx",
+    source: "app/_components/isolated/Card",
+    target: "app/_components/isolated/Card/index.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/isolated->app/_components/isolated/CopyToClipboard",
+    source: "app/_components/isolated",
+    target: "app/_components/isolated/CopyToClipboard",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/isolated/CopyToClipboard->app/_components/isolated/CopyToClipboard/CopyToClipboard.tsx",
+    source: "app/_components/isolated/CopyToClipboard",
+    target: "app/_components/isolated/CopyToClipboard/CopyToClipboard.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/isolated/CopyToClipboard->app/_components/isolated/CopyToClipboard/copyToClipboard.utils.ts",
+    source: "app/_components/isolated/CopyToClipboard",
+    target: "app/_components/isolated/CopyToClipboard/copyToClipboard.utils.ts",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/isolated/CopyToClipboard->app/_components/isolated/CopyToClipboard/index.ts",
+    source: "app/_components/isolated/CopyToClipboard",
+    target: "app/_components/isolated/CopyToClipboard/index.ts",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/isolated->app/_components/isolated/Dialog",
+    source: "app/_components/isolated",
+    target: "app/_components/isolated/Dialog",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/isolated/Dialog->app/_components/isolated/Dialog/Dialog.tsx",
+    source: "app/_components/isolated/Dialog",
+    target: "app/_components/isolated/Dialog/Dialog.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/isolated/Dialog->app/_components/isolated/Dialog/index.ts",
+    source: "app/_components/isolated/Dialog",
+    target: "app/_components/isolated/Dialog/index.ts",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/isolated->app/_components/isolated/Divider",
+    source: "app/_components/isolated",
+    target: "app/_components/isolated/Divider",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/isolated/Divider->app/_components/isolated/Divider/Divider.tsx",
+    source: "app/_components/isolated/Divider",
+    target: "app/_components/isolated/Divider/Divider.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/isolated/Divider->app/_components/isolated/Divider/index.ts",
+    source: "app/_components/isolated/Divider",
+    target: "app/_components/isolated/Divider/index.ts",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/isolated->app/_components/isolated/Dropdown",
+    source: "app/_components/isolated",
+    target: "app/_components/isolated/Dropdown",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/isolated/Dropdown->app/_components/isolated/Dropdown/Dropdown.tsx",
+    source: "app/_components/isolated/Dropdown",
+    target: "app/_components/isolated/Dropdown/Dropdown.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/isolated/Dropdown->app/_components/isolated/Dropdown/components",
+    source: "app/_components/isolated/Dropdown",
+    target: "app/_components/isolated/Dropdown/components",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/isolated/Dropdown/components->app/_components/isolated/Dropdown/components/DropdownItem.tsx",
+    source: "app/_components/isolated/Dropdown/components",
+    target: "app/_components/isolated/Dropdown/components/DropdownItem.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/isolated/Dropdown/components->app/_components/isolated/Dropdown/components/DropdownMenu.tsx",
+    source: "app/_components/isolated/Dropdown/components",
+    target: "app/_components/isolated/Dropdown/components/DropdownMenu.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/isolated/Dropdown/components->app/_components/isolated/Dropdown/components/DropdownToggle.tsx",
+    source: "app/_components/isolated/Dropdown/components",
+    target: "app/_components/isolated/Dropdown/components/DropdownToggle.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/isolated/Dropdown->app/_components/isolated/Dropdown/dropDown.types.ts",
+    source: "app/_components/isolated/Dropdown",
+    target: "app/_components/isolated/Dropdown/dropDown.types.ts",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/isolated/Dropdown->app/_components/isolated/Dropdown/index.tsx",
+    source: "app/_components/isolated/Dropdown",
+    target: "app/_components/isolated/Dropdown/index.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/isolated->app/_components/isolated/Flex",
+    source: "app/_components/isolated",
+    target: "app/_components/isolated/Flex",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/isolated/Flex->app/_components/isolated/Flex/Flex.tsx",
+    source: "app/_components/isolated/Flex",
+    target: "app/_components/isolated/Flex/Flex.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/isolated/Flex->app/_components/isolated/Flex/flex.types.ts",
+    source: "app/_components/isolated/Flex",
+    target: "app/_components/isolated/Flex/flex.types.ts",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/isolated/Flex->app/_components/isolated/Flex/index.ts",
+    source: "app/_components/isolated/Flex",
+    target: "app/_components/isolated/Flex/index.ts",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/isolated->app/_components/isolated/FormControl",
+    source: "app/_components/isolated",
+    target: "app/_components/isolated/FormControl",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/isolated/FormControl->app/_components/isolated/FormControl/FormControl.tsx",
+    source: "app/_components/isolated/FormControl",
+    target: "app/_components/isolated/FormControl/FormControl.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/isolated/FormControl->app/_components/isolated/FormControl/components",
+    source: "app/_components/isolated/FormControl",
+    target: "app/_components/isolated/FormControl/components",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/isolated/FormControl/components->app/_components/isolated/FormControl/components/FormControlInput.tsx",
+    source: "app/_components/isolated/FormControl/components",
     target:
-      "app/_components/ui/isolated/common/CopyToClipboard/CopyToClipboard.tsx",
+      "app/_components/isolated/FormControl/components/FormControlInput.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/isolated/common/CopyToClipboard->app/_components/ui/isolated/common/CopyToClipboard/copyToClipboard.utils.ts",
-    source: "app/_components/ui/isolated/common/CopyToClipboard",
+    id: "e:app/_components/isolated/FormControl/components->app/_components/isolated/FormControl/components/FormControlTextarea.tsx",
+    source: "app/_components/isolated/FormControl/components",
     target:
-      "app/_components/ui/isolated/common/CopyToClipboard/copyToClipboard.utils.ts",
+      "app/_components/isolated/FormControl/components/FormControlTextarea.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/isolated/common/CopyToClipboard->app/_components/ui/isolated/common/CopyToClipboard/index.ts",
-    source: "app/_components/ui/isolated/common/CopyToClipboard",
-    target: "app/_components/ui/isolated/common/CopyToClipboard/index.ts",
+    id: "e:app/_components/isolated/FormControl->app/_components/isolated/FormControl/formControl.utils.tsx",
+    source: "app/_components/isolated/FormControl",
+    target: "app/_components/isolated/FormControl/formControl.utils.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/isolated/common->app/_components/ui/isolated/common/Flex",
-    source: "app/_components/ui/isolated/common",
-    target: "app/_components/ui/isolated/common/Flex",
+    id: "e:app/_components/isolated/FormControl->app/_components/isolated/FormControl/index.ts",
+    source: "app/_components/isolated/FormControl",
+    target: "app/_components/isolated/FormControl/index.ts",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/isolated/common/Flex->app/_components/ui/isolated/common/Flex/Flex.tsx",
-    source: "app/_components/ui/isolated/common/Flex",
-    target: "app/_components/ui/isolated/common/Flex/Flex.tsx",
+    id: "e:app/_components/isolated->app/_components/isolated/Icons",
+    source: "app/_components/isolated",
+    target: "app/_components/isolated/Icons",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/isolated/common/Flex->app/_components/ui/isolated/common/Flex/flex.types.ts",
-    source: "app/_components/ui/isolated/common/Flex",
-    target: "app/_components/ui/isolated/common/Flex/flex.types.ts",
+    id: "e:app/_components/isolated/Icons->app/_components/isolated/Icons/Icons.tsx",
+    source: "app/_components/isolated/Icons",
+    target: "app/_components/isolated/Icons/Icons.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/isolated/common/Flex->app/_components/ui/isolated/common/Flex/index.ts",
-    source: "app/_components/ui/isolated/common/Flex",
-    target: "app/_components/ui/isolated/common/Flex/index.ts",
+    id: "e:app/_components/isolated/Icons->app/_components/isolated/Icons/index.tsx",
+    source: "app/_components/isolated/Icons",
+    target: "app/_components/isolated/Icons/index.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/isolated/common->app/_components/ui/isolated/common/Mdx",
-    source: "app/_components/ui/isolated/common",
-    target: "app/_components/ui/isolated/common/Mdx",
+    id: "e:app/_components/isolated->app/_components/isolated/Input",
+    source: "app/_components/isolated",
+    target: "app/_components/isolated/Input",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/isolated/common/Mdx->app/_components/ui/isolated/common/Mdx/Mdx.tsx",
-    source: "app/_components/ui/isolated/common/Mdx",
-    target: "app/_components/ui/isolated/common/Mdx/Mdx.tsx",
+    id: "e:app/_components/isolated/Input->app/_components/isolated/Input/Input.tsx",
+    source: "app/_components/isolated/Input",
+    target: "app/_components/isolated/Input/Input.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/isolated/common/Mdx->app/_components/ui/isolated/common/Mdx/index.ts",
-    source: "app/_components/ui/isolated/common/Mdx",
-    target: "app/_components/ui/isolated/common/Mdx/index.ts",
+    id: "e:app/_components/isolated/Input->app/_components/isolated/Input/Input.types.ts",
+    source: "app/_components/isolated/Input",
+    target: "app/_components/isolated/Input/Input.types.ts",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/isolated/common->app/_components/ui/isolated/common/Typography",
-    source: "app/_components/ui/isolated/common",
-    target: "app/_components/ui/isolated/common/Typography",
+    id: "e:app/_components/isolated/Input->app/_components/isolated/Input/index.tsx",
+    source: "app/_components/isolated/Input",
+    target: "app/_components/isolated/Input/index.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/isolated/common/Typography->app/_components/ui/isolated/common/Typography/Typography.tsx",
-    source: "app/_components/ui/isolated/common/Typography",
-    target: "app/_components/ui/isolated/common/Typography/Typography.tsx",
+    id: "e:app/_components/isolated->app/_components/isolated/Mdx",
+    source: "app/_components/isolated",
+    target: "app/_components/isolated/Mdx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/isolated/common/Typography->app/_components/ui/isolated/common/Typography/index.ts",
-    source: "app/_components/ui/isolated/common/Typography",
-    target: "app/_components/ui/isolated/common/Typography/index.ts",
+    id: "e:app/_components/isolated/Mdx->app/_components/isolated/Mdx/Mdx.tsx",
+    source: "app/_components/isolated/Mdx",
+    target: "app/_components/isolated/Mdx/Mdx.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/isolated/common/Typography->app/_components/ui/isolated/common/Typography/typography.utils.tsx",
-    source: "app/_components/ui/isolated/common/Typography",
-    target:
-      "app/_components/ui/isolated/common/Typography/typography.utils.tsx",
+    id: "e:app/_components/isolated/Mdx->app/_components/isolated/Mdx/index.ts",
+    source: "app/_components/isolated/Mdx",
+    target: "app/_components/isolated/Mdx/index.ts",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/isolated/common->app/_components/ui/isolated/common/index.ts",
-    source: "app/_components/ui/isolated/common",
-    target: "app/_components/ui/isolated/common/index.ts",
+    id: "e:app/_components/isolated->app/_components/isolated/Popover",
+    source: "app/_components/isolated",
+    target: "app/_components/isolated/Popover",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/isolated->app/_components/ui/isolated/wrapped",
-    source: "app/_components/ui/isolated",
-    target: "app/_components/ui/isolated/wrapped",
+    id: "e:app/_components/isolated/Popover->app/_components/isolated/Popover/Popover.tsx",
+    source: "app/_components/isolated/Popover",
+    target: "app/_components/isolated/Popover/Popover.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/isolated/wrapped->app/_components/ui/isolated/wrapped/Avatar",
-    source: "app/_components/ui/isolated/wrapped",
-    target: "app/_components/ui/isolated/wrapped/Avatar",
+    id: "e:app/_components/isolated/Popover->app/_components/isolated/Popover/index.ts",
+    source: "app/_components/isolated/Popover",
+    target: "app/_components/isolated/Popover/index.ts",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/isolated/wrapped/Avatar->app/_components/ui/isolated/wrapped/Avatar/Avatar.tsx",
-    source: "app/_components/ui/isolated/wrapped/Avatar",
-    target: "app/_components/ui/isolated/wrapped/Avatar/Avatar.tsx",
+    id: "e:app/_components/isolated->app/_components/isolated/README.md",
+    source: "app/_components/isolated",
+    target: "app/_components/isolated/README.md",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/isolated/wrapped/Avatar->app/_components/ui/isolated/wrapped/Avatar/avatar.utils.ts",
-    source: "app/_components/ui/isolated/wrapped/Avatar",
-    target: "app/_components/ui/isolated/wrapped/Avatar/avatar.utils.ts",
+    id: "e:app/_components/isolated->app/_components/isolated/ScrollArea",
+    source: "app/_components/isolated",
+    target: "app/_components/isolated/ScrollArea",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/isolated/wrapped/Avatar->app/_components/ui/isolated/wrapped/Avatar/index.ts",
-    source: "app/_components/ui/isolated/wrapped/Avatar",
-    target: "app/_components/ui/isolated/wrapped/Avatar/index.ts",
+    id: "e:app/_components/isolated/ScrollArea->app/_components/isolated/ScrollArea/ScrollArea.tsx",
+    source: "app/_components/isolated/ScrollArea",
+    target: "app/_components/isolated/ScrollArea/ScrollArea.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/isolated/wrapped->app/_components/ui/isolated/wrapped/Badge",
-    source: "app/_components/ui/isolated/wrapped",
-    target: "app/_components/ui/isolated/wrapped/Badge",
+    id: "e:app/_components/isolated/ScrollArea->app/_components/isolated/ScrollArea/index.ts",
+    source: "app/_components/isolated/ScrollArea",
+    target: "app/_components/isolated/ScrollArea/index.ts",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/isolated/wrapped/Badge->app/_components/ui/isolated/wrapped/Badge/Badge.tsx",
-    source: "app/_components/ui/isolated/wrapped/Badge",
-    target: "app/_components/ui/isolated/wrapped/Badge/Badge.tsx",
+    id: "e:app/_components/isolated->app/_components/isolated/Textarea",
+    source: "app/_components/isolated",
+    target: "app/_components/isolated/Textarea",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/isolated/wrapped/Badge->app/_components/ui/isolated/wrapped/Badge/badge.utils.ts",
-    source: "app/_components/ui/isolated/wrapped/Badge",
-    target: "app/_components/ui/isolated/wrapped/Badge/badge.utils.ts",
+    id: "e:app/_components/isolated/Textarea->app/_components/isolated/Textarea/Textarea.tsx",
+    source: "app/_components/isolated/Textarea",
+    target: "app/_components/isolated/Textarea/Textarea.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/isolated/wrapped/Badge->app/_components/ui/isolated/wrapped/Badge/index.ts",
-    source: "app/_components/ui/isolated/wrapped/Badge",
-    target: "app/_components/ui/isolated/wrapped/Badge/index.ts",
+    id: "e:app/_components/isolated/Textarea->app/_components/isolated/Textarea/Textarea.types.ts",
+    source: "app/_components/isolated/Textarea",
+    target: "app/_components/isolated/Textarea/Textarea.types.ts",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/isolated/wrapped->app/_components/ui/isolated/wrapped/BottomNavigation",
-    source: "app/_components/ui/isolated/wrapped",
-    target: "app/_components/ui/isolated/wrapped/BottomNavigation",
+    id: "e:app/_components/isolated/Textarea->app/_components/isolated/Textarea/index.tsx",
+    source: "app/_components/isolated/Textarea",
+    target: "app/_components/isolated/Textarea/index.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/isolated/wrapped/BottomNavigation->app/_components/ui/isolated/wrapped/BottomNavigation/BottomNavigation.tsx",
-    source: "app/_components/ui/isolated/wrapped/BottomNavigation",
-    target:
-      "app/_components/ui/isolated/wrapped/BottomNavigation/BottomNavigation.tsx",
+    id: "e:app/_components/isolated->app/_components/isolated/Tooltip",
+    source: "app/_components/isolated",
+    target: "app/_components/isolated/Tooltip",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/isolated/wrapped/BottomNavigation->app/_components/ui/isolated/wrapped/BottomNavigation/BottomNavigationLabel.tsx",
-    source: "app/_components/ui/isolated/wrapped/BottomNavigation",
-    target:
-      "app/_components/ui/isolated/wrapped/BottomNavigation/BottomNavigationLabel.tsx",
+    id: "e:app/_components/isolated/Tooltip->app/_components/isolated/Tooltip/Tooltip.tsx",
+    source: "app/_components/isolated/Tooltip",
+    target: "app/_components/isolated/Tooltip/Tooltip.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/isolated/wrapped/BottomNavigation->app/_components/ui/isolated/wrapped/BottomNavigation/bottomNavigation.types.ts",
-    source: "app/_components/ui/isolated/wrapped/BottomNavigation",
-    target:
-      "app/_components/ui/isolated/wrapped/BottomNavigation/bottomNavigation.types.ts",
+    id: "e:app/_components/isolated/Tooltip->app/_components/isolated/Tooltip/index.ts",
+    source: "app/_components/isolated/Tooltip",
+    target: "app/_components/isolated/Tooltip/index.ts",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/isolated/wrapped/BottomNavigation->app/_components/ui/isolated/wrapped/BottomNavigation/index.ts",
-    source: "app/_components/ui/isolated/wrapped/BottomNavigation",
-    target: "app/_components/ui/isolated/wrapped/BottomNavigation/index.ts",
+    id: "e:app/_components/isolated/Tooltip->app/_components/isolated/Tooltip/tooltip.utils.ts",
+    source: "app/_components/isolated/Tooltip",
+    target: "app/_components/isolated/Tooltip/tooltip.utils.ts",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/isolated/wrapped->app/_components/ui/isolated/wrapped/Breadcrumbs",
-    source: "app/_components/ui/isolated/wrapped",
-    target: "app/_components/ui/isolated/wrapped/Breadcrumbs",
+    id: "e:app/_components/isolated->app/_components/isolated/Typography",
+    source: "app/_components/isolated",
+    target: "app/_components/isolated/Typography",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/isolated/wrapped/Breadcrumbs->app/_components/ui/isolated/wrapped/Breadcrumbs/Breadcrumbs.tsx",
-    source: "app/_components/ui/isolated/wrapped/Breadcrumbs",
-    target: "app/_components/ui/isolated/wrapped/Breadcrumbs/Breadcrumbs.tsx",
+    id: "e:app/_components/isolated/Typography->app/_components/isolated/Typography/Typography.tsx",
+    source: "app/_components/isolated/Typography",
+    target: "app/_components/isolated/Typography/Typography.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/isolated/wrapped/Breadcrumbs->app/_components/ui/isolated/wrapped/Breadcrumbs/BreadcrumbsItem.tsx",
-    source: "app/_components/ui/isolated/wrapped/Breadcrumbs",
-    target:
-      "app/_components/ui/isolated/wrapped/Breadcrumbs/BreadcrumbsItem.tsx",
+    id: "e:app/_components/isolated/Typography->app/_components/isolated/Typography/index.ts",
+    source: "app/_components/isolated/Typography",
+    target: "app/_components/isolated/Typography/index.ts",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/isolated/wrapped/Breadcrumbs->app/_components/ui/isolated/wrapped/Breadcrumbs/index.tsx",
-    source: "app/_components/ui/isolated/wrapped/Breadcrumbs",
-    target: "app/_components/ui/isolated/wrapped/Breadcrumbs/index.tsx",
+    id: "e:app/_components/isolated/Typography->app/_components/isolated/Typography/typography.utils.tsx",
+    source: "app/_components/isolated/Typography",
+    target: "app/_components/isolated/Typography/typography.utils.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/ui/isolated/wrapped->app/_components/ui/isolated/wrapped/Button",
-    source: "app/_components/ui/isolated/wrapped",
-    target: "app/_components/ui/isolated/wrapped/Button",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped/Button->app/_components/ui/isolated/wrapped/Button/Button.tsx",
-    source: "app/_components/ui/isolated/wrapped/Button",
-    target: "app/_components/ui/isolated/wrapped/Button/Button.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped/Button->app/_components/ui/isolated/wrapped/Button/button.utils.ts",
-    source: "app/_components/ui/isolated/wrapped/Button",
-    target: "app/_components/ui/isolated/wrapped/Button/button.utils.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped/Button->app/_components/ui/isolated/wrapped/Button/index.tsx",
-    source: "app/_components/ui/isolated/wrapped/Button",
-    target: "app/_components/ui/isolated/wrapped/Button/index.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped->app/_components/ui/isolated/wrapped/Card",
-    source: "app/_components/ui/isolated/wrapped",
-    target: "app/_components/ui/isolated/wrapped/Card",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped/Card->app/_components/ui/isolated/wrapped/Card/Card.tsx",
-    source: "app/_components/ui/isolated/wrapped/Card",
-    target: "app/_components/ui/isolated/wrapped/Card/Card.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped/Card->app/_components/ui/isolated/wrapped/Card/CardActions.tsx",
-    source: "app/_components/ui/isolated/wrapped/Card",
-    target: "app/_components/ui/isolated/wrapped/Card/CardActions.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped/Card->app/_components/ui/isolated/wrapped/Card/CardBody.tsx",
-    source: "app/_components/ui/isolated/wrapped/Card",
-    target: "app/_components/ui/isolated/wrapped/Card/CardBody.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped/Card->app/_components/ui/isolated/wrapped/Card/CardFigure.tsx",
-    source: "app/_components/ui/isolated/wrapped/Card",
-    target: "app/_components/ui/isolated/wrapped/Card/CardFigure.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped/Card->app/_components/ui/isolated/wrapped/Card/CardTitle.tsx",
-    source: "app/_components/ui/isolated/wrapped/Card",
-    target: "app/_components/ui/isolated/wrapped/Card/CardTitle.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped/Card->app/_components/ui/isolated/wrapped/Card/card.types.ts",
-    source: "app/_components/ui/isolated/wrapped/Card",
-    target: "app/_components/ui/isolated/wrapped/Card/card.types.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped/Card->app/_components/ui/isolated/wrapped/Card/index.tsx",
-    source: "app/_components/ui/isolated/wrapped/Card",
-    target: "app/_components/ui/isolated/wrapped/Card/index.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped->app/_components/ui/isolated/wrapped/Dialog",
-    source: "app/_components/ui/isolated/wrapped",
-    target: "app/_components/ui/isolated/wrapped/Dialog",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped/Dialog->app/_components/ui/isolated/wrapped/Dialog/Dialog.tsx",
-    source: "app/_components/ui/isolated/wrapped/Dialog",
-    target: "app/_components/ui/isolated/wrapped/Dialog/Dialog.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped/Dialog->app/_components/ui/isolated/wrapped/Dialog/index.ts",
-    source: "app/_components/ui/isolated/wrapped/Dialog",
-    target: "app/_components/ui/isolated/wrapped/Dialog/index.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped->app/_components/ui/isolated/wrapped/Divider",
-    source: "app/_components/ui/isolated/wrapped",
-    target: "app/_components/ui/isolated/wrapped/Divider",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped/Divider->app/_components/ui/isolated/wrapped/Divider/Divider.tsx",
-    source: "app/_components/ui/isolated/wrapped/Divider",
-    target: "app/_components/ui/isolated/wrapped/Divider/Divider.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped/Divider->app/_components/ui/isolated/wrapped/Divider/index.ts",
-    source: "app/_components/ui/isolated/wrapped/Divider",
-    target: "app/_components/ui/isolated/wrapped/Divider/index.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped->app/_components/ui/isolated/wrapped/Dropdown",
-    source: "app/_components/ui/isolated/wrapped",
-    target: "app/_components/ui/isolated/wrapped/Dropdown",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped/Dropdown->app/_components/ui/isolated/wrapped/Dropdown/Dropdown.tsx",
-    source: "app/_components/ui/isolated/wrapped/Dropdown",
-    target: "app/_components/ui/isolated/wrapped/Dropdown/Dropdown.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped/Dropdown->app/_components/ui/isolated/wrapped/Dropdown/components",
-    source: "app/_components/ui/isolated/wrapped/Dropdown",
-    target: "app/_components/ui/isolated/wrapped/Dropdown/components",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped/Dropdown/components->app/_components/ui/isolated/wrapped/Dropdown/components/DropdownItem.tsx",
-    source: "app/_components/ui/isolated/wrapped/Dropdown/components",
-    target:
-      "app/_components/ui/isolated/wrapped/Dropdown/components/DropdownItem.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped/Dropdown/components->app/_components/ui/isolated/wrapped/Dropdown/components/DropdownMenu.tsx",
-    source: "app/_components/ui/isolated/wrapped/Dropdown/components",
-    target:
-      "app/_components/ui/isolated/wrapped/Dropdown/components/DropdownMenu.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped/Dropdown/components->app/_components/ui/isolated/wrapped/Dropdown/components/DropdownToggle.tsx",
-    source: "app/_components/ui/isolated/wrapped/Dropdown/components",
-    target:
-      "app/_components/ui/isolated/wrapped/Dropdown/components/DropdownToggle.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped/Dropdown->app/_components/ui/isolated/wrapped/Dropdown/dropDown.types.ts",
-    source: "app/_components/ui/isolated/wrapped/Dropdown",
-    target: "app/_components/ui/isolated/wrapped/Dropdown/dropDown.types.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped/Dropdown->app/_components/ui/isolated/wrapped/Dropdown/index.tsx",
-    source: "app/_components/ui/isolated/wrapped/Dropdown",
-    target: "app/_components/ui/isolated/wrapped/Dropdown/index.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped->app/_components/ui/isolated/wrapped/FormControl",
-    source: "app/_components/ui/isolated/wrapped",
-    target: "app/_components/ui/isolated/wrapped/FormControl",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped/FormControl->app/_components/ui/isolated/wrapped/FormControl/FormControl.tsx",
-    source: "app/_components/ui/isolated/wrapped/FormControl",
-    target: "app/_components/ui/isolated/wrapped/FormControl/FormControl.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped/FormControl->app/_components/ui/isolated/wrapped/FormControl/components",
-    source: "app/_components/ui/isolated/wrapped/FormControl",
-    target: "app/_components/ui/isolated/wrapped/FormControl/components",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped/FormControl/components->app/_components/ui/isolated/wrapped/FormControl/components/FormControlInput.tsx",
-    source: "app/_components/ui/isolated/wrapped/FormControl/components",
-    target:
-      "app/_components/ui/isolated/wrapped/FormControl/components/FormControlInput.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped/FormControl/components->app/_components/ui/isolated/wrapped/FormControl/components/FormControlTextarea.tsx",
-    source: "app/_components/ui/isolated/wrapped/FormControl/components",
-    target:
-      "app/_components/ui/isolated/wrapped/FormControl/components/FormControlTextarea.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped/FormControl->app/_components/ui/isolated/wrapped/FormControl/formControl.utils.tsx",
-    source: "app/_components/ui/isolated/wrapped/FormControl",
-    target:
-      "app/_components/ui/isolated/wrapped/FormControl/formControl.utils.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped/FormControl->app/_components/ui/isolated/wrapped/FormControl/index.ts",
-    source: "app/_components/ui/isolated/wrapped/FormControl",
-    target: "app/_components/ui/isolated/wrapped/FormControl/index.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped->app/_components/ui/isolated/wrapped/Icons",
-    source: "app/_components/ui/isolated/wrapped",
-    target: "app/_components/ui/isolated/wrapped/Icons",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped/Icons->app/_components/ui/isolated/wrapped/Icons/Icons.tsx",
-    source: "app/_components/ui/isolated/wrapped/Icons",
-    target: "app/_components/ui/isolated/wrapped/Icons/Icons.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped/Icons->app/_components/ui/isolated/wrapped/Icons/index.tsx",
-    source: "app/_components/ui/isolated/wrapped/Icons",
-    target: "app/_components/ui/isolated/wrapped/Icons/index.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped->app/_components/ui/isolated/wrapped/Input",
-    source: "app/_components/ui/isolated/wrapped",
-    target: "app/_components/ui/isolated/wrapped/Input",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped/Input->app/_components/ui/isolated/wrapped/Input/Input.tsx",
-    source: "app/_components/ui/isolated/wrapped/Input",
-    target: "app/_components/ui/isolated/wrapped/Input/Input.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped/Input->app/_components/ui/isolated/wrapped/Input/Input.types.ts",
-    source: "app/_components/ui/isolated/wrapped/Input",
-    target: "app/_components/ui/isolated/wrapped/Input/Input.types.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped/Input->app/_components/ui/isolated/wrapped/Input/index.tsx",
-    source: "app/_components/ui/isolated/wrapped/Input",
-    target: "app/_components/ui/isolated/wrapped/Input/index.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped->app/_components/ui/isolated/wrapped/Popover",
-    source: "app/_components/ui/isolated/wrapped",
-    target: "app/_components/ui/isolated/wrapped/Popover",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped/Popover->app/_components/ui/isolated/wrapped/Popover/Popover.tsx",
-    source: "app/_components/ui/isolated/wrapped/Popover",
-    target: "app/_components/ui/isolated/wrapped/Popover/Popover.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped/Popover->app/_components/ui/isolated/wrapped/Popover/index.ts",
-    source: "app/_components/ui/isolated/wrapped/Popover",
-    target: "app/_components/ui/isolated/wrapped/Popover/index.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped->app/_components/ui/isolated/wrapped/README.md",
-    source: "app/_components/ui/isolated/wrapped",
-    target: "app/_components/ui/isolated/wrapped/README.md",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped->app/_components/ui/isolated/wrapped/ScrollArea",
-    source: "app/_components/ui/isolated/wrapped",
-    target: "app/_components/ui/isolated/wrapped/ScrollArea",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped/ScrollArea->app/_components/ui/isolated/wrapped/ScrollArea/ScrollArea.tsx",
-    source: "app/_components/ui/isolated/wrapped/ScrollArea",
-    target: "app/_components/ui/isolated/wrapped/ScrollArea/ScrollArea.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped/ScrollArea->app/_components/ui/isolated/wrapped/ScrollArea/index.ts",
-    source: "app/_components/ui/isolated/wrapped/ScrollArea",
-    target: "app/_components/ui/isolated/wrapped/ScrollArea/index.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped->app/_components/ui/isolated/wrapped/Textarea",
-    source: "app/_components/ui/isolated/wrapped",
-    target: "app/_components/ui/isolated/wrapped/Textarea",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped/Textarea->app/_components/ui/isolated/wrapped/Textarea/Textarea.tsx",
-    source: "app/_components/ui/isolated/wrapped/Textarea",
-    target: "app/_components/ui/isolated/wrapped/Textarea/Textarea.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped/Textarea->app/_components/ui/isolated/wrapped/Textarea/Textarea.types.ts",
-    source: "app/_components/ui/isolated/wrapped/Textarea",
-    target: "app/_components/ui/isolated/wrapped/Textarea/Textarea.types.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped/Textarea->app/_components/ui/isolated/wrapped/Textarea/index.tsx",
-    source: "app/_components/ui/isolated/wrapped/Textarea",
-    target: "app/_components/ui/isolated/wrapped/Textarea/index.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped->app/_components/ui/isolated/wrapped/Tooltip",
-    source: "app/_components/ui/isolated/wrapped",
-    target: "app/_components/ui/isolated/wrapped/Tooltip",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped/Tooltip->app/_components/ui/isolated/wrapped/Tooltip/Tooltip.tsx",
-    source: "app/_components/ui/isolated/wrapped/Tooltip",
-    target: "app/_components/ui/isolated/wrapped/Tooltip/Tooltip.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped/Tooltip->app/_components/ui/isolated/wrapped/Tooltip/index.ts",
-    source: "app/_components/ui/isolated/wrapped/Tooltip",
-    target: "app/_components/ui/isolated/wrapped/Tooltip/index.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped/Tooltip->app/_components/ui/isolated/wrapped/Tooltip/tooltip.utils.ts",
-    source: "app/_components/ui/isolated/wrapped/Tooltip",
-    target: "app/_components/ui/isolated/wrapped/Tooltip/tooltip.utils.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/ui/isolated/wrapped->app/_components/ui/isolated/wrapped/index.ts",
-    source: "app/_components/ui/isolated/wrapped",
-    target: "app/_components/ui/isolated/wrapped/index.ts",
+    id: "e:app/_components/isolated->app/_components/isolated/index.ts",
+    source: "app/_components/isolated",
+    target: "app/_components/isolated/index.ts",
     type: "smoothstep",
   },
   {
@@ -6483,6 +6479,12 @@ export const edges: DrEdgeType[] = [
     id: "e:app/_utils->app/_utils/auth.utils.ts",
     source: "app/_utils",
     target: "app/_utils/auth.utils.ts",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_utils->app/_utils/dom.utils.ts",
+    source: "app/_utils",
+    target: "app/_utils/dom.utils.ts",
     type: "smoothstep",
   },
   {
