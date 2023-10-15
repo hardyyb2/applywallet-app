@@ -19,3 +19,4 @@ export * from "./Typography";
 export * from "./CopyToClipboard";
 export * from "./Mdx";
 export * from "./Icons";
+export * from "./BarLoader";

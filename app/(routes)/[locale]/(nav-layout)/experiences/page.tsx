@@ -5,7 +5,7 @@ import Link from "next/link";
 import { getServerSession } from "next-auth";
 
 import { LoginCard } from "@/components/dependent/LoginCard";
-import { Button, Flex, Typography } from "@/components/isolated";
+import { BarLoader, Button, Flex, Typography } from "@/components/isolated";
 import { Icons } from "@/components/isolated/Icons";
 import { authOptions } from "@/lib/auth";
 import { AppRoutes } from "@/utils/routes.utils";
@@ -43,7 +43,7 @@ const Experiences = async () => {
         <ExperienceActions />
       </Flex>
 
-      <Suspense fallback="loading...">
+      <Suspense fallback={<BarLoader />}>
         <ExperienceList />
       </Suspense>
 

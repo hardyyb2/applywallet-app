@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ConditionalMatch } from "@dx-kit/react-conditional-match";
 
 import { IconLink } from "@/components/dependent";
-import { Breadcrumbs } from "@/components/isolated";
+import { BarLoader, Breadcrumbs } from "@/components/isolated";
 import { useInterview } from "@/queries/interviews.queries";
 import { AppRoutes, UrlParams } from "@/utils/routes.utils";
 
@@ -33,7 +33,7 @@ const EditInterview = ({ params }: EditInterviewProps) => {
         </Breadcrumbs.Item>
         <Breadcrumbs.Item>edit</Breadcrumbs.Item>
       </Breadcrumbs>
-      <ConditionalMatch fallback="loading....">
+      <ConditionalMatch fallback={<BarLoader />}>
         <ConditionalMatch.Render when={!isLoading}>
           <AddEditInterviewForm type="edit" interview={data} />
         </ConditionalMatch.Render>

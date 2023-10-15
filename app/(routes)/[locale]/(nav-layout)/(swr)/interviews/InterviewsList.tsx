@@ -1,5 +1,6 @@
 "use client";
 
+import { BarLoader } from "@/components/isolated";
 import { useInterviews } from "@/queries/interviews.queries";
 import { cn } from "@/utils/styles.utils";
 
@@ -7,7 +8,7 @@ const InterviewsList = () => {
   const { data, isLoading } = useInterviews();
 
   if (isLoading) {
-    return <div>loading</div>;
+    return <BarLoader />;
   }
 
   return (

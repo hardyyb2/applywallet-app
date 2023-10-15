@@ -1,5 +1,7 @@
+import { BarLoader } from "@/components/isolated";
+
 const Loading = () => {
-  return <div>Loading...</div>;
+  return <BarLoader />;
 };
 
 export default Loading;
