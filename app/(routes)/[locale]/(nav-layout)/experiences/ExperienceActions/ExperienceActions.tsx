@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Button, Flex } from "@/components/isolated";
 import { Icons } from "@/components/isolated/Icons";
 
-import { ExperienceSettingsModal } from "./components/ExperienceSettingsModal";
+import { ExperienceSettingsModal } from "./ExperienceSettingsModal/ExperienceSettingsModal";
 
 const ExperienceActions = () => {
   return (

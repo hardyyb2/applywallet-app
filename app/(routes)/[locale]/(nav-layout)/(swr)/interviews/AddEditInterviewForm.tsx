@@ -19,7 +19,7 @@ import {
   InterviewType,
 } from "@/utils/schema-utils";
 
-import { getAddEditInterviewFormCopy } from "../interview.utils";
+import { getAddEditInterviewFormCopy } from "./interview.utils";
 
 export type AddEditInterviewFormProps =
   | {

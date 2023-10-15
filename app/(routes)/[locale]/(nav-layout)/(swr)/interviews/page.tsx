@@ -9,8 +9,8 @@ import { Icons } from "@/components/isolated/Icons";
 import { authOptions } from "@/lib/auth";
 import { AppRoutes } from "@/utils/routes.utils";
 
-import { InterviewActions } from "./components/InterviewActions";
-import { InterviewsList } from "./components/InterviewsList";
+import { InterviewActions } from "./InterviewActions/InterviewActions";
+import { InterviewsList } from "./InterviewsList";
 
 export const metadata: Metadata = {
   title: "interviews",

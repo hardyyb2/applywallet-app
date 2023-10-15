@@ -1,6 +1,6 @@
 import { Typography } from "@/components/isolated";
 
-import { ESInformationSettings } from "./components/ESInformationSettings";
+import { ESInformationSettings } from "./ESInformationSettings";
 
 const ExperienceSettings = () => {
   return (

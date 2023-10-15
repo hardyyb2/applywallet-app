@@ -9,7 +9,7 @@ import { Breadcrumbs } from "@/components/isolated";
 import { useInterview } from "@/queries/interviews.queries";
 import { AppRoutes, UrlParams } from "@/utils/routes.utils";
 
-import { AddEditInterviewForm } from "../../components/AddEditInterviewForm";
+import { AddEditInterviewForm } from "../../AddEditInterviewForm";
 
 type EditInterviewProps = {
   params: Record<string, string>;

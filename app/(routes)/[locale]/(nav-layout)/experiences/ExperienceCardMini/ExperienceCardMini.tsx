@@ -1,7 +1,7 @@
 import { Button, Flex, Typography } from "@/components/isolated";
 import { cn } from "@/utils/styles.utils";
 
-import { ExperienceCardActions } from "../ExperienceCard/components/ExperienceCardActions";
+import { ExperienceCardActions } from "../ExperienceCard/ExperienceCardActions";
 
 const ExperienceCardMini = () => {
   return (

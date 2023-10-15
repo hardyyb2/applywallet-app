@@ -3,7 +3,7 @@ import { Flex, Typography } from "@/components/isolated";
 import { ExperienceType } from "@/utils/schema-utils";
 import { cn } from "@/utils/styles.utils";
 
-import { ExperienceCardActions } from "./components/ExperienceCardActions";
+import { ExperienceCardActions } from "./ExperienceCardActions";
 
 interface ExperienceCardProps {
   experience: ExperienceType;

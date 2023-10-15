@@ -1,4 +1,4 @@
-import { AddEditInterviewFormProps } from "./components/AddEditInterviewForm";
+import { AddEditInterviewFormProps } from "./AddEditInterviewForm";
 
 export const getAddEditInterviewFormCopy = (
   operationType: AddEditInterviewFormProps["type"],

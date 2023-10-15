@@ -276,6 +276,58 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
+    id: "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/AddEditInterviewForm.tsx",
+    data: {
+      name: "AddEditInterviewForm.tsx",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/InterviewActions",
+    data: {
+      name: "InterviewActions",
+      type: "folder",
+      subType: "route-group",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/InterviewActions/InterviewActions.tsx",
+    data: {
+      name: "InterviewActions.tsx",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/InterviewsList.tsx",
+    data: {
+      name: "InterviewsList.tsx",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
     id: "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/add",
     data: {
       name: "add",
@@ -292,84 +344,6 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/add/page.tsx",
     data: {
       name: "page.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/components",
-    data: {
-      name: "components",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/components/AddEditInterviewForm.tsx",
-    data: {
-      name: "AddEditInterviewForm.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/components/InterviewActions",
-    data: {
-      name: "InterviewActions",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/components/InterviewActions/InterviewActions.tsx",
-    data: {
-      name: "InterviewActions.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/components/InterviewActions/index.ts",
-    data: {
-      name: "index.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/components/InterviewsList.tsx",
-    data: {
-      name: "InterviewsList.tsx",
       type: "file",
       subType: "page",
     },
@@ -679,9 +653,9 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/components",
+    id: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/ExperienceSettingsModal",
     data: {
-      name: "components",
+      name: "ExperienceSettingsModal",
       type: "folder",
       subType: "route-group",
     },
@@ -692,7 +666,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/components/ExperienceSettingsModal.tsx",
+    id: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/ExperienceSettingsModal/ExperienceSettingsModal.tsx",
     data: {
       name: "ExperienceSettingsModal.tsx",
       type: "file",
@@ -705,7 +679,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/components/experienceSettingsModal.module.scss",
+    id: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/ExperienceSettingsModal/experienceSettingsModal.module.scss",
     data: {
       name: "experienceSettingsModal.module.scss",
       type: "file",
@@ -757,20 +731,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCard/components",
-    data: {
-      name: "components",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCard/components/ExperienceCardActions.tsx",
+    id: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCard/ExperienceCardActions.tsx",
     data: {
       name: "ExperienceCardActions.tsx",
       type: "file",
@@ -848,9 +809,9 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings/ExperienceSettings.tsx",
+    id: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings/ESInformationSettings.tsx",
     data: {
-      name: "ExperienceSettings.tsx",
+      name: "ESInformationSettings.tsx",
       type: "file",
       subType: "page",
     },
@@ -861,22 +822,9 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings/components",
+    id: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings/ExperienceSettings.tsx",
     data: {
-      name: "components",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings/components/ESInformationSettings.tsx",
-    data: {
-      name: "ESInformationSettings.tsx",
+      name: "ExperienceSettings.tsx",
       type: "file",
       subType: "page",
     },
@@ -4464,6 +4412,35 @@ export const edges: DrEdgeType[] = [
     type: "smoothstep",
   },
   {
+    id: "e:app/(routes)/[locale]/(nav-layout)/(swr)/interviews->app/(routes)/[locale]/(nav-layout)/(swr)/interviews/AddEditInterviewForm.tsx",
+    source: "app/(routes)/[locale]/(nav-layout)/(swr)/interviews",
+    target:
+      "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/AddEditInterviewForm.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/(swr)/interviews->app/(routes)/[locale]/(nav-layout)/(swr)/interviews/InterviewActions",
+    source: "app/(routes)/[locale]/(nav-layout)/(swr)/interviews",
+    target:
+      "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/InterviewActions",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/(swr)/interviews/InterviewActions->app/(routes)/[locale]/(nav-layout)/(swr)/interviews/InterviewActions/InterviewActions.tsx",
+    source:
+      "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/InterviewActions",
+    target:
+      "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/InterviewActions/InterviewActions.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/(swr)/interviews->app/(routes)/[locale]/(nav-layout)/(swr)/interviews/InterviewsList.tsx",
+    source: "app/(routes)/[locale]/(nav-layout)/(swr)/interviews",
+    target:
+      "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/InterviewsList.tsx",
+    type: "smoothstep",
+  },
+  {
     id: "e:app/(routes)/[locale]/(nav-layout)/(swr)/interviews->app/(routes)/[locale]/(nav-layout)/(swr)/interviews/add",
     source: "app/(routes)/[locale]/(nav-layout)/(swr)/interviews",
     target: "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/add",
@@ -4473,49 +4450,6 @@ export const edges: DrEdgeType[] = [
     id: "e:app/(routes)/[locale]/(nav-layout)/(swr)/interviews/add->app/(routes)/[locale]/(nav-layout)/(swr)/interviews/add/page.tsx",
     source: "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/add",
     target: "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/add/page.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/(routes)/[locale]/(nav-layout)/(swr)/interviews->app/(routes)/[locale]/(nav-layout)/(swr)/interviews/components",
-    source: "app/(routes)/[locale]/(nav-layout)/(swr)/interviews",
-    target: "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/components",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/(routes)/[locale]/(nav-layout)/(swr)/interviews/components->app/(routes)/[locale]/(nav-layout)/(swr)/interviews/components/AddEditInterviewForm.tsx",
-    source: "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/components",
-    target:
-      "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/components/AddEditInterviewForm.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/(routes)/[locale]/(nav-layout)/(swr)/interviews/components->app/(routes)/[locale]/(nav-layout)/(swr)/interviews/components/InterviewActions",
-    source: "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/components",
-    target:
-      "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/components/InterviewActions",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/(routes)/[locale]/(nav-layout)/(swr)/interviews/components/InterviewActions->app/(routes)/[locale]/(nav-layout)/(swr)/interviews/components/InterviewActions/InterviewActions.tsx",
-    source:
-      "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/components/InterviewActions",
-    target:
-      "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/components/InterviewActions/InterviewActions.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/(routes)/[locale]/(nav-layout)/(swr)/interviews/components/InterviewActions->app/(routes)/[locale]/(nav-layout)/(swr)/interviews/components/InterviewActions/index.ts",
-    source:
-      "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/components/InterviewActions",
-    target:
-      "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/components/InterviewActions/index.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/(routes)/[locale]/(nav-layout)/(swr)/interviews/components->app/(routes)/[locale]/(nav-layout)/(swr)/interviews/components/InterviewsList.tsx",
-    source: "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/components",
-    target:
-      "app/(routes)/[locale]/(nav-layout)/(swr)/interviews/components/InterviewsList.tsx",
     type: "smoothstep",
   },
   {
@@ -4678,26 +4612,26 @@ export const edges: DrEdgeType[] = [
     type: "smoothstep",
   },
   {
-    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions->app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/components",
+    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions->app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/ExperienceSettingsModal",
     source: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions",
     target:
-      "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/components",
+      "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/ExperienceSettingsModal",
     type: "smoothstep",
   },
   {
-    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/components->app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/components/ExperienceSettingsModal.tsx",
+    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/ExperienceSettingsModal->app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/ExperienceSettingsModal/ExperienceSettingsModal.tsx",
     source:
-      "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/components",
+      "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/ExperienceSettingsModal",
     target:
-      "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/components/ExperienceSettingsModal.tsx",
+      "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/ExperienceSettingsModal/ExperienceSettingsModal.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/components->app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/components/experienceSettingsModal.module.scss",
+    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/ExperienceSettingsModal->app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/ExperienceSettingsModal/experienceSettingsModal.module.scss",
     source:
-      "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/components",
+      "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/ExperienceSettingsModal",
     target:
-      "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/components/experienceSettingsModal.module.scss",
+      "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceActions/ExperienceSettingsModal/experienceSettingsModal.module.scss",
     type: "smoothstep",
   },
   {
@@ -4721,18 +4655,10 @@ export const edges: DrEdgeType[] = [
     type: "smoothstep",
   },
   {
-    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCard->app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCard/components",
+    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCard->app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCard/ExperienceCardActions.tsx",
     source: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCard",
     target:
-      "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCard/components",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCard/components->app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCard/components/ExperienceCardActions.tsx",
-    source:
-      "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCard/components",
-    target:
-      "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCard/components/ExperienceCardActions.tsx",
+      "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceCard/ExperienceCardActions.tsx",
     type: "smoothstep",
   },
   {
@@ -4768,25 +4694,17 @@ export const edges: DrEdgeType[] = [
     type: "smoothstep",
   },
   {
+    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings->app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings/ESInformationSettings.tsx",
+    source: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings",
+    target:
+      "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings/ESInformationSettings.tsx",
+    type: "smoothstep",
+  },
+  {
     id: "e:app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings->app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings/ExperienceSettings.tsx",
     source: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings",
     target:
       "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings/ExperienceSettings.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings->app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings/components",
-    source: "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings",
-    target:
-      "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings/components",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings/components->app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings/components/ESInformationSettings.tsx",
-    source:
-      "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings/components",
-    target:
-      "app/(routes)/[locale]/(nav-layout)/experiences/ExperienceSettings/components/ESInformationSettings.tsx",
     type: "smoothstep",
   },
   {
