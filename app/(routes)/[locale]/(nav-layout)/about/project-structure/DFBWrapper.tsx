@@ -24,10 +24,7 @@ const DFBWrapper = ({ children }: PropsWithChildren) => {
   return (
     <div
       ref={containerRef}
-      className={cnMerge(
-        "relative flex-1 rounded-2xl bg-base-content/20",
-        isFullScreen && "bg-base-content",
-      )}
+      className={cnMerge("relative flex-1 rounded-2xl bg-base-content/20")}
     >
       <TooltipProvider delayDuration={600}>
         <Tooltip>
@@ -41,7 +38,7 @@ const DFBWrapper = ({ children }: PropsWithChildren) => {
                   <Icons.Minimize
                     className={cnMerge(
                       "lg:h-l lg:w-l",
-                      isFullScreen && "stroke-base-100",
+                      isFullScreen && "stroke-secondary",
                     )}
                   />
                 ) : (
