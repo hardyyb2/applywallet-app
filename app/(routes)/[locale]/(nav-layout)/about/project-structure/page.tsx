@@ -2,7 +2,7 @@ import { Flex, Typography } from "@/components/ui/isolated/common";
 
 import { DirectoryFlowBuilder } from "./components/DirectoryFlowBuilder/DirectoryFlowBuilder";
 
-const About = () => {
+const ProjectStructure = () => {
   return (
     <Flex direction="column" className="h-full w-full px-xs py-4 lg:px-s">
       <Flex justify="space-between" className="mb-xs flex-0 gap-4">
@@ -20,4 +20,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default ProjectStructure;
