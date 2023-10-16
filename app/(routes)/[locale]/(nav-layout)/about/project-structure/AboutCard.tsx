@@ -16,7 +16,7 @@ type AboutCardProps = {
 
 const AboutCard = ({ card }: AboutCardProps) => {
   const ref = useRef<ElementRef<typeof Card>>(null);
-  const isInView = useInView(ref, { margin: "50% 0px -50% 0px" });
+  const isInView = useInView(ref, { margin: "-50% 0px -50% 0px" });
   const setInViewItemId = useAboutStore((store) => store.setInViewItemId);
 
   useEffect(() => {

@@ -471,6 +471,45 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
+    id: "app/(routes)/[locale]/(nav-layout)/about/about.state.ts",
+    data: {
+      name: "about.state.ts",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/(routes)/[locale]/(nav-layout)/about/about.types.ts",
+    data: {
+      name: "about.types.ts",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/(routes)/[locale]/(nav-layout)/about/about.utils.ts",
+    data: {
+      name: "about.utils.ts",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
     id: "app/(routes)/[locale]/(nav-layout)/about/page.tsx",
     data: {
       name: "page.tsx",
@@ -500,6 +539,19 @@ export const nodes: DrNodeType[] = [
     id: "app/(routes)/[locale]/(nav-layout)/about/project-structure/AboutCard.tsx",
     data: {
       name: "AboutCard.tsx",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/(routes)/[locale]/(nav-layout)/about/project-structure/DFBWrapper.tsx",
+    data: {
+      name: "DFBWrapper.tsx",
       type: "file",
       subType: "page",
     },
@@ -2071,6 +2123,45 @@ export const nodes: DrNodeType[] = [
   },
   {
     id: "app/_components/isolated/Badge/index.ts",
+    data: {
+      name: "index.ts",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/_components/isolated/BarLoader",
+    data: {
+      name: "BarLoader",
+      type: "folder",
+      subType: "route-group",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/_components/isolated/BarLoader/BarLoader.tsx",
+    data: {
+      name: "BarLoader.tsx",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/_components/isolated/BarLoader/index.ts",
     data: {
       name: "index.ts",
       type: "file",
@@ -4513,6 +4604,24 @@ export const edges: DrEdgeType[] = [
     type: "smoothstep",
   },
   {
+    id: "e:app/(routes)/[locale]/(nav-layout)/about->app/(routes)/[locale]/(nav-layout)/about/about.state.ts",
+    source: "app/(routes)/[locale]/(nav-layout)/about",
+    target: "app/(routes)/[locale]/(nav-layout)/about/about.state.ts",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/about->app/(routes)/[locale]/(nav-layout)/about/about.types.ts",
+    source: "app/(routes)/[locale]/(nav-layout)/about",
+    target: "app/(routes)/[locale]/(nav-layout)/about/about.types.ts",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/about->app/(routes)/[locale]/(nav-layout)/about/about.utils.ts",
+    source: "app/(routes)/[locale]/(nav-layout)/about",
+    target: "app/(routes)/[locale]/(nav-layout)/about/about.utils.ts",
+    type: "smoothstep",
+  },
+  {
     id: "e:app/(routes)/[locale]/(nav-layout)/about->app/(routes)/[locale]/(nav-layout)/about/page.tsx",
     source: "app/(routes)/[locale]/(nav-layout)/about",
     target: "app/(routes)/[locale]/(nav-layout)/about/page.tsx",
@@ -4529,6 +4638,13 @@ export const edges: DrEdgeType[] = [
     source: "app/(routes)/[locale]/(nav-layout)/about/project-structure",
     target:
       "app/(routes)/[locale]/(nav-layout)/about/project-structure/AboutCard.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/about/project-structure->app/(routes)/[locale]/(nav-layout)/about/project-structure/DFBWrapper.tsx",
+    source: "app/(routes)/[locale]/(nav-layout)/about/project-structure",
+    target:
+      "app/(routes)/[locale]/(nav-layout)/about/project-structure/DFBWrapper.tsx",
     type: "smoothstep",
   },
   {
@@ -5288,6 +5404,24 @@ export const edges: DrEdgeType[] = [
     id: "e:app/_components/isolated/Badge->app/_components/isolated/Badge/index.ts",
     source: "app/_components/isolated/Badge",
     target: "app/_components/isolated/Badge/index.ts",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/isolated->app/_components/isolated/BarLoader",
+    source: "app/_components/isolated",
+    target: "app/_components/isolated/BarLoader",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/isolated/BarLoader->app/_components/isolated/BarLoader/BarLoader.tsx",
+    source: "app/_components/isolated/BarLoader",
+    target: "app/_components/isolated/BarLoader/BarLoader.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/isolated/BarLoader->app/_components/isolated/BarLoader/index.ts",
+    source: "app/_components/isolated/BarLoader",
+    target: "app/_components/isolated/BarLoader/index.ts",
     type: "smoothstep",
   },
   {
