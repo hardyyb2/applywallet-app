@@ -8,6 +8,7 @@ import { domAnimation, LazyMotion, MotionConfig } from "framer-motion";
 import { ToastContainer } from "react-toastify";
 
 import { I18nProviderClient } from "@/locales/client";
+import { Locale } from "@/utils/locale-utils";
 
 const TopLoader = dynamic(
   () =>
@@ -17,7 +18,12 @@ const TopLoader = dynamic(
   { ssr: false },
 );
 
-const Providers = ({ children }: { children: ReactNode }) => {
+type ProvidersType = {
+  children: ReactNode;
+  locale: Locale;
+};
+
+const Providers = ({ children, locale }: ProvidersType) => {
   return (
     <SessionProvider>
       <TopLoader />
@@ -25,7 +31,7 @@ const Providers = ({ children }: { children: ReactNode }) => {
         <MotionConfig
           transition={{ type: "spring", stiffness: 400, damping: 24 }}
         >
-          <I18nProviderClient>{children}</I18nProviderClient>
+          <I18nProviderClient locale={locale}>{children}</I18nProviderClient>
         </MotionConfig>
       </LazyMotion>
       <ToastContainer position="top-right" limit={4} autoClose={5000} />

@@ -1,4 +1,8 @@
+import { ReactNode } from "react";
+
+import { fonts } from "@/lib/fonts";
 import { Locale } from "@/utils/locale-utils";
+import { cn } from "@/utils/styles.utils";
 
 import { Providers } from "./providers";
 
@@ -6,11 +10,6 @@ import "@/styles/globals.scss";
 import "@/styles/overrides/toast.scss";
 import "@/styles/overrides/daisyui.scss";
 import "@/styles/mdx.scss";
-
-import { ReactNode } from "react";
-
-import { fonts } from "@/lib/fonts";
-import { cn } from "@/utils/styles.utils";
 
 type RootLayoutProps = {
   params: { locale: Locale };
@@ -34,7 +33,7 @@ const RootLayout = ({
           "mx-auto max-w-screen-4xl",
         )}
       >
-        <Providers>{children}</Providers>
+        <Providers locale={locale}>{children}</Providers>
       </body>
     </html>
   );
