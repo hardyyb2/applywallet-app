@@ -55,8 +55,8 @@ const Component = () => {
 
 ## Write more PURE functions
 
-- Writing code in multiple smaller functions helps make code more readable and intuitive.
-  For example, consider the below component with a large function that performs multiple tasks simultaneously, making it challenging to understand its purpose without thoroughly reading the code.
+Writing code in multiple smaller functions helps make code more readable and intuitive.
+For example, consider the below component with a large function that performs multiple tasks simultaneously, making it challenging to understand its purpose without thoroughly reading the code.
 
 ```tsx showLineNumbers
 const PriceCalculator = () => {
@@ -99,6 +99,183 @@ const PriceCalculator = () => {
     <button onClick={() => calculateTotalPrice(20, 20, 20)}>
       Calculate tax
     </button>
+  );
+};
+```
+
+Now, let's break the calculateTotalPrice function into smaller parts.
+
+```tsx showLineNumbers
+const PriceCalculator = () => {
+  const calculateItemPrice = (price, quantity) => {
+    let itemPrice = price * quantity;
+
+    if (itemPrice > 100) {
+      itemPrice -= itemPrice * 0.1;
+    }
+
+    return itemPrice;
+  };
+
+  const calculateSubTotal = (cart) => {
+    let subTotal = 0;
+    for (const item of cart) {
+      const itemPrice = calculateItemPrice(item.price, item.quantity);
+      subTotal += itemPrice;
+    }
+    return subTotal;
+  };
+
+  const applyTaxes = (amount, taxRate, cart) => {
+    let taxedPrice = amount;
+
+    for (const item of cart) {
+      if (item.category === "electronics") {
+        const additionalTax = item.price * taxRate * 0.1;
+        taxedPrice += additionalTax;
+      } else {
+        taxedPrice += item.price * taxRate;
+      }
+    }
+
+    return taxedPrice;
+  };
+
+  const applyDiscount = (amount, discountRate, cart) => {
+    let discountedPrice = amount;
+
+    if (cart.length > 10) {
+      const discount = amount * discountRate;
+      const additionalDiscount = discount * 0.2;
+      discountedPrice -= additionalDiscount;
+    } else {
+      discountedPrice -= amount * discountRate;
+    }
+
+    return discountedPrice;
+  };
+
+  const calculateTotalPrice = (cart, discountRate, taxRate) => {
+    const subTotal = calculateSubTotal(cart);
+    const discountedPrice = applyDiscount(subTotal, discountRate, cart);
+    const totalPrice = applyTaxes(discountedPrice, taxRate, cart);
+
+    return totalPrice;
+  };
+
+  return (
+    <button onClick={() => calculateTotalPrice(20, 20, 20)}>
+      Calculate tax
+    </button>
+  );
+};
+```
+
+- This makes code more readable. You can identify with one look at what calculateTotalPrice is doing without having to go through the code.
+- There is a separation of concerns (if you want to make changes in taxes, you just have to look at applyTaxes function and have a smaller scope of code to focus on at once).
+- Code is more reusable (if you need applyTaxes somewhere else within the file, you can use it directly).
+
+**But why PURE functions?**
+
+- One benefit that can be directly seen is since we have broken down a function and it is just dependent on its parameters, we can easily move it out of the file and into a separate utils file sayprice.utils.ts,
+  this makes your main file/component much smaller and easier to traverse.
+
+  Also, Once more functions are moved outside components and to separate files they can be used by other parts of the code as well, preventing duplication.
+
+```tsx showLineNumbers
+import { applyDiscount, applyTaxes, calculateSubTotal } from "./price.utils.ts";
+
+const PriceCalculator = () => {
+  const calculateTotalPrice = (cart, discountRate, taxRate) => {
+    const subTotal = calculateSubTotal(cart);
+    const discountedPrice = applyDiscount(subTotal, discountRate, cart);
+    const totalPrice = applyTaxes(discountedPrice, taxRate, cart);
+
+    return totalPrice;
+  };
+
+  return (
+    <button onClick={() => calculateTotalPrice(20, 20, 20)}>
+      Calculate tax
+    </button>
+  );
+};
+```
+
+- Another benefit is pure functions always produce the same output given the same input regardless of any external factors, this makes your code highly predictable.
+
+## No string literals (use enums or constants)
+
+Using string literals directly (as values) can cause several problems during the maintenance and refactoring of your application.
+For example, Say you have the following code.
+
+```tsx showLineNumbers
+const getPositionLabel = (position: string) => {
+  if (position === "left") {
+    return "left" + "index is important";
+  }
+  if (position === "center") {
+    return "center" + "index is important";
+  }
+  if (position === "right") {
+    return "right" + "index is important";
+  }
+  return "default index is important";
+};
+
+// spelling mistakes or even casing mistakes can cause issues
+getPositionLabel("centre");
+```
+
+In the above code following issues can be easily seen
+
+- **Readability** — The code becomes less readable due to the usage of repeated string literals in the conditional statement, it’s difficult to differentiate values from cosmetic (display) texts like “index is important”.
+- **Maintainability & Refactoring** — Since the strings are plain and scattered throughout the code, it’s easy to make mistakes in spelling or casing, leading to bugs that may be hard to spot. For instance, using centre instead of center could result in incorrect behavior.
+- **Consistency across the project** — If the same string is used in multiple files within the project, keeping them consistent becomes challenging. In a collaborative environment, different developers might unintentionally use slightly different variations of the same string, leading to inconsistency and potential bugs.
+
+To prevent these issues, we can use enums (or objects) —
+
+<Image
+  src="/images/blogs/use-enum.webp"
+  width="1080"
+  height="400"
+  fit
+  quality={100}
+  alt="use enums"
+  className="rounded-md"
+/>
+
+- Not only do enums increase readability, but they also increase type safety if used with TS. Now, if a wrong value is provided where a Position is expected, TS will throw an error.
+- Also if you now want to change the value of center to centre you can easily change just the value or the enum key itself (which will throw a compilation error everywhere Position.CENTER is used). This makes code easier to maintain and refactor.
+
+## Prefer Compound components over Monolithic
+
+- When you have a single component that takes in multiple props and takes multiple responsibilities for itself and its children, it’s better to just use/convert the component into a compound component.
+- Compound components provide a more modular and organized way of composing a complex UI, making it easier to manage, maintain, and extend.
+
+For example, take a monolithic <code>Layout</code> component —
+
+```tsx showLineNumbers
+const MonolithicLayout = ({ headerTitle, footerTitle, body, actions }) => {
+  // Multiple responsibilities handled within this component
+  return (
+    <div className="layout-wrapper">
+      <div className="header">{headerTitle}</div>
+      <div className="body">{body}</div>
+      <div className="footer">{footerTitle}</div>
+      {actions}
+    </div>
+  );
+};
+
+const Comp = () => {
+  return (
+    <MonolithicLayout
+      headerTitle="Company name"
+      footerTitle="Contact me"
+      body="This is body"
+      actions={<Button />}
+    />
   );
 };
 ```

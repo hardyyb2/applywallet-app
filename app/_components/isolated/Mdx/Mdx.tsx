@@ -1,12 +1,23 @@
-import { Fragment, HTMLAttributes, PropsWithChildren } from "react";
-import Image from "next/image";
+import {
+  ComponentProps,
+  Fragment,
+  HTMLAttributes,
+  PropsWithChildren,
+} from "react";
+import Image, { ImageProps } from "next/image";
 
 import { useMDXComponent } from "next-contentlayer/hooks";
 
 import { cn } from "@/utils/styles.utils";
 
-const components = {
-  Image,
+type MdxComponentsType = ComponentProps<
+  ReturnType<typeof useMDXComponent>
+>["components"];
+
+const components: MdxComponentsType = {
+  // TODO - check when just Image will work
+  // eslint-disable-next-line jsx-a11y/alt-text
+  Image: (props: ImageProps) => <Image {...props} />,
 };
 
 const Header = ({ children }: PropsWithChildren) => {
