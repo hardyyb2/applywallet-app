@@ -7,6 +7,7 @@ const { withContentlayer } = require("next-contentlayer");
 const nextConfig = {
   swcMinify: true,
   images: {
+    // TODO - remove picsum
     domains: ["lh3.googleusercontent.com", "picsum.photos"],
   },
   webpack(config) {
