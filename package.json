@@ -112,5 +112,13 @@
     "vite": "^4.5.0",
     "vitest": "^0.28.5",
     "yargs": "^17.7.2"
+  },
+  "manifest": {
+    "host_permissions": [
+      "http://localhost:3000/api/*"
+    ],
+    "permissions": [
+      "tabs"
+    ]
   }
 }
