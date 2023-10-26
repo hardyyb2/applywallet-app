@@ -82,6 +82,7 @@
     "@total-typescript/ts-reset": "^0.5.1",
     "@types/google-spreadsheet": "^3.3.2",
     "@types/negotiator": "^0.6.2",
+    "@types/chrome": "0.0.245",
     "@types/node": "^20.8.9",
     "@types/react": "^18.2.33",
     "@types/react-dom": "^18.2.14",
