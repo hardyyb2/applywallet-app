@@ -29,6 +29,9 @@ export const ApiRoutes = {
 
   SHARED: "/api/shared",
 
+  // next-auth related
+  SESSION: "/api/auth/session",
+
   CREATE_SHEET: "/api/sheet/new",
   LINK_SHEET: "/api/sheet/link",
 
