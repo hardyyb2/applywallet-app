@@ -1,14 +1,14 @@
 import {
-  ComponentType,
   forwardRef,
-  HTMLAttributes,
-  PropsWithChildren,
-  ReactNode,
+  type ComponentType,
+  type HTMLAttributes,
+  type PropsWithChildren,
+  type ReactNode,
 } from "react";
 
 import { cn } from "@/utils/styles.utils";
 
-import {
+import type {
   FlexAlignType,
   FlexDirectionType,
   FlexJustifyType,

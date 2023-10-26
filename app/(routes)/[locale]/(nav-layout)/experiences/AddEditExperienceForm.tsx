@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { useForm, type SubmitHandler } from "react-hook-form";
 import { toast } from "react-toastify";
 
 import { Button, FormControl, Typography } from "@/components/isolated";
@@ -12,8 +12,8 @@ import { useBoolean } from "@/hooks/useBoolean";
 import { ApiRoutes, AppRoutes } from "@/utils/routes.utils";
 import {
   experienceInputSchema,
-  ExperienceInputType,
-  ExperienceType,
+  type ExperienceInputType,
+  type ExperienceType,
 } from "@/utils/schema-utils";
 
 import { getAddEditExperienceFormCopy } from "./experience.utils";

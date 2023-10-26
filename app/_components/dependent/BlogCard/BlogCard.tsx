@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { Blog } from "contentlayer/generated";
+import { type Blog } from "contentlayer/generated";
 
 import { cn } from "@/utils/styles.utils";
 

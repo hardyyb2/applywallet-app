@@ -4,12 +4,12 @@ import { useEffect, useMemo, useState } from "react";
 
 import {
   Button,
-  ButtonProps,
   CopyToClipboard,
-  CopyToClipboardProps,
+  type ButtonProps,
+  type CopyToClipboardProps,
 } from "@/components/isolated";
 
-import { CopyButtonStateTypes } from "./copyButton.types";
+import { type CopyButtonStateTypes } from "./copyButton.types";
 import { copyButtonIcons } from "./copyButton.utils";
 
 /** Timeout for clearing setTimeout in case component is unmounted  */

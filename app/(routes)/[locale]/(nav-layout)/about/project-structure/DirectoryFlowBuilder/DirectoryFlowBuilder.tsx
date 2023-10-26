@@ -1,6 +1,11 @@
 "use client";
 
-import React, { ElementRef, Fragment, MouseEvent, useRef } from "react";
+import React, {
+  Fragment,
+  useRef,
+  type ElementRef,
+  type MouseEvent,
+} from "react";
 
 import {
   Background,
@@ -16,7 +21,7 @@ import {
   nodes as initialNodes,
 } from "@/bin/folderStructure";
 
-import { DrEdgeType, DrNodeType } from "@/types/flowbuilder";
+import type { DrEdgeType, DrNodeType } from "@/types/flowbuilder";
 
 import {
   collapseChildNodes,

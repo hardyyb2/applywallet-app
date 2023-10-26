@@ -1,9 +1,13 @@
 "use client";
 
-import { ComponentPropsWithoutRef, ElementRef, forwardRef } from "react";
+import {
+  forwardRef,
+  type ComponentPropsWithoutRef,
+  type ElementRef,
+} from "react";
 
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
-import { VariantProps } from "cva";
+import type { VariantProps } from "cva";
 
 import { cnMerge } from "@/utils/styles.utils";
 

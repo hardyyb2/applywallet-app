@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { type ReactNode } from "react";
 
 import { BaseLayout, Header, Navigation } from "@/components/dependent";
 import { cn } from "@/utils/styles.utils";

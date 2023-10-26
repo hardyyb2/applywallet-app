@@ -1,7 +1,7 @@
-import React, { Fragment, PropsWithChildren } from "react";
-import Link, { LinkProps } from "next/link";
+import React, { Fragment, type PropsWithChildren } from "react";
+import Link, { type LinkProps } from "next/link";
 
-import { NavItemType } from "../Navigation/navigation.types";
+import { type NavItemType } from "../Navigation/navigation.types";
 import { navItemToIconsMapping } from "../Navigation/navigation.utils";
 
 type IconLinkProps = Omit<LinkProps, "href"> & {

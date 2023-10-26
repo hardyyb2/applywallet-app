@@ -16,7 +16,7 @@ import {
 } from "@/components/isolated";
 import { Icons } from "@/components/isolated/Icons";
 import { ApiRoutes, AppRoutes, SearchParams } from "@/utils/routes.utils";
-import { ExperienceType } from "@/utils/schema-utils";
+import { type ExperienceType } from "@/utils/schema-utils";
 
 type ExperienceCardActionsProps = {
   id: ExperienceType["id"];

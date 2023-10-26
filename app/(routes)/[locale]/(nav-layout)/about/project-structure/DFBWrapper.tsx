@@ -1,6 +1,6 @@
 "use client";
 
-import { PropsWithChildren, useRef } from "react";
+import { useRef, type PropsWithChildren } from "react";
 
 import { useBoolean, useFullscreen } from "react-use";
 

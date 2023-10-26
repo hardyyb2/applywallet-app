@@ -1,6 +1,6 @@
 "use client";
 
-import { ElementRef, PropsWithChildren, useRef } from "react";
+import { useRef, type ElementRef, type PropsWithChildren } from "react";
 
 import { m, useScroll, useSpring } from "framer-motion";
 import { useBoolean, useFullscreen } from "react-use";

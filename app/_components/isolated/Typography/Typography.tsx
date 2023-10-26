@@ -1,4 +1,4 @@
-import { ComponentType, forwardRef, ReactNode } from "react";
+import { forwardRef, type ComponentType, type ReactNode } from "react";
 
 import { type VariantProps } from "cva";
 

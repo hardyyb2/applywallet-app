@@ -20,7 +20,6 @@ import {
   Info,
   Languages,
   Lock,
-  LucideProps,
   Maximize,
   Minimize,
   MoreVertical,
@@ -31,6 +30,7 @@ import {
   Plus,
   Settings,
   Trash2,
+  type LucideProps,
 } from "lucide-react";
 
 const Icons = {

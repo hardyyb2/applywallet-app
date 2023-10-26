@@ -1,9 +1,14 @@
-import { forwardRef, HTMLAttributes, ReactElement, Ref } from "react";
+import {
+  forwardRef,
+  type HTMLAttributes,
+  type ReactElement,
+  type Ref,
+} from "react";
 
 import { cn } from "@/utils/styles.utils";
 
 import { typographyVariants } from "../Typography";
-import { BreadcrumbsItem, BreadcrumbsItemProps } from "./BreadcrumbsItem";
+import { BreadcrumbsItem, type BreadcrumbsItemProps } from "./BreadcrumbsItem";
 
 export type BreadcrumbsProps = HTMLAttributes<HTMLDivElement> & {
   children?:

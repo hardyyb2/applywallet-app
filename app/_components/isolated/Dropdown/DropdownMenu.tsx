@@ -1,4 +1,4 @@
-import { HTMLAttributes } from "react";
+import { type HTMLAttributes } from "react";
 
 import { cn } from "@/utils/styles.utils";
 
@@ -10,7 +10,7 @@ const DropdownMenu = ({ className, ...props }: DropdownMenuProps) => {
       {...props}
       tabIndex={0}
       className={cn(
-        "dropdown-content menu rounded-box bg-base-100 p-2 shadow",
+        "menu dropdown-content rounded-box bg-base-100 p-2 shadow",
         className,
       )}
     />

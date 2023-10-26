@@ -1,6 +1,6 @@
 "use client";
 
-import { HTMLMotionProps, m, Variants } from "framer-motion";
+import { m, type HTMLMotionProps, type Variants } from "framer-motion";
 
 import { cnMerge } from "@/utils/styles.utils";
 

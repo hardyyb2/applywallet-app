@@ -1,16 +1,20 @@
-import { ComponentType } from "react";
+import { type ComponentType } from "react";
 
 import dagre from "dagre";
 import {
-  Edge,
   getConnectedEdges,
   getOutgoers,
-  Node,
-  NodeProps,
   Position,
+  type Edge,
+  type Node,
+  type NodeProps,
 } from "reactflow";
 
-import { DrEdgeType, DrNodeDataType, DrNodeType } from "@/types/flowbuilder";
+import type {
+  DrEdgeType,
+  DrNodeDataType,
+  DrNodeType,
+} from "@/types/flowbuilder";
 
 import { CustomNode } from "./nodes/CustomNode";
 

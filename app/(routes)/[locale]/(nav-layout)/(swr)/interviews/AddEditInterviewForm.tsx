@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { useForm, type SubmitHandler } from "react-hook-form";
 import { toast } from "react-toastify";
 
 import { Button, FormControl, Typography } from "@/components/isolated";
@@ -15,8 +15,8 @@ import {
 import { AppRoutes } from "@/utils/routes.utils";
 import {
   interviewInputSchema,
-  InterviewInputType,
-  InterviewType,
+  type InterviewInputType,
+  type InterviewType,
 } from "@/utils/schema-utils";
 
 import { getAddEditInterviewFormCopy } from "./interview.utils";

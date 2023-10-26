@@ -1,7 +1,7 @@
-import { ReactElement } from "react";
+import { type ReactElement } from "react";
 import Image from "next/image";
 
-import { Locale } from "./i18n-config";
+import { type Locale } from "./i18n-config";
 
 export const languageOptions: {
   label: string;

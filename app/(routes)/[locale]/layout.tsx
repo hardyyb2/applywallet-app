@@ -1,7 +1,7 @@
-import { ReactNode } from "react";
+import { type ReactNode } from "react";
 
 import { fonts } from "@/lib/fonts";
-import { Locale } from "@/utils/locale-utils";
+import { type Locale } from "@/utils/locale-utils";
 import { cn } from "@/utils/styles.utils";
 
 import { Providers } from "./providers";

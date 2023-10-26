@@ -2,7 +2,10 @@
 
 import { useEffect, useState } from "react";
 
-import { extractThemeColorsFromDOM, ThemeColors } from "@/utils/theme.utils";
+import {
+  extractThemeColorsFromDOM,
+  type ThemeColors,
+} from "@/utils/theme.utils";
 
 const useThemeColors = () => {
   const [themeColors, setThemeColors] = useState<ThemeColors | null>(null);

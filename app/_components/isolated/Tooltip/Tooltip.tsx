@@ -1,9 +1,13 @@
 "use client";
 
-import { ComponentPropsWithoutRef, ElementRef, forwardRef } from "react";
+import {
+  forwardRef,
+  type ComponentPropsWithoutRef,
+  type ElementRef,
+} from "react";
 
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
-import { VariantProps } from "cva";
+import { type VariantProps } from "cva";
 
 import { cnMerge } from "@/utils/styles.utils";
 

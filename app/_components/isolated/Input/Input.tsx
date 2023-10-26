@@ -1,8 +1,8 @@
-import { forwardRef, InputHTMLAttributes } from "react";
+import { forwardRef, type InputHTMLAttributes } from "react";
 
 import { cn } from "@/utils/styles.utils";
 
-import { InputColorsType, InputSizeTypes } from "./Input.types";
+import type { InputColorsType, InputSizeTypes } from "./Input.types";
 
 export type InputProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,

@@ -1,8 +1,8 @@
-import { forwardRef, HTMLAttributes } from "react";
+import { forwardRef, type HTMLAttributes } from "react";
 
 import { cn } from "@/utils/styles.utils";
 
-import { BottomNavigationSizeTypes } from "./bottomNavigation.types";
+import type { BottomNavigationSizeTypes } from "./bottomNavigation.types";
 import { BottomNavigationLabel } from "./BottomNavigationLabel";
 
 export type BottomNavigationProps = HTMLAttributes<HTMLDivElement> & {

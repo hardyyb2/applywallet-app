@@ -1,10 +1,10 @@
 import { Fragment } from "react";
 
-import { Handle, NodeProps, Position } from "reactflow";
+import { Handle, Position, type NodeProps } from "reactflow";
 
 import { Flex, Typography } from "@/components/isolated";
 
-import { DrNodeDataType } from "@/types/flowbuilder";
+import { type DrNodeDataType } from "@/types/flowbuilder";
 
 import { customNodeIcon } from "./customNode.utils";
 

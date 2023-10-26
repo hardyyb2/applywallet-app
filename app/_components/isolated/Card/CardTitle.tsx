@@ -1,6 +1,6 @@
 import { cn } from "@/utils/styles.utils";
 
-import { Typography, TypographyProps } from "../Typography";
+import { Typography, type TypographyProps } from "../Typography";
 
 export type CardTitleProps = TypographyProps;
 

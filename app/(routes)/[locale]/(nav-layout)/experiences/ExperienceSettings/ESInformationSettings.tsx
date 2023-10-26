@@ -1,13 +1,13 @@
 "use client";
 
-import { MouseEvent, useState } from "react";
+import { useState, type MouseEvent } from "react";
 
 import { Reorder, useDragControls } from "framer-motion";
 
 import { Button, Flex } from "@/components/isolated";
 import { Icons } from "@/components/isolated/Icons";
 
-import { ExperienceSettingsInfoType } from ".";
+import { type ExperienceSettingsInfoType } from ".";
 
 const ESInformationSettings = () => {
   const dragControls = useDragControls();

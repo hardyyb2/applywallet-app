@@ -11,9 +11,9 @@ import { authOptions } from "@/lib/auth";
 import { CustomError } from "@/utils/error";
 import { AppRoutes, UrlParams } from "@/utils/routes.utils";
 import {
-  ExperienceInputType,
   experienceSchema,
-  ExperienceType,
+  type ExperienceInputType,
+  type ExperienceType,
 } from "@/utils/schema-utils";
 import { SheetNames } from "@/utils/sheet.utils";
 

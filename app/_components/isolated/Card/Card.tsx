@@ -1,12 +1,15 @@
-import { forwardRef, HTMLAttributes } from "react";
+import { forwardRef, type HTMLAttributes } from "react";
 
 import { cn } from "@/utils/styles.utils";
 
-import { CardSizeTypes } from "./card.types";
-import { CardActionsProps as ActionProps, CardActions } from "./CardActions";
-import { CardBodyProps as BodyProps, CardBody } from "./CardBody";
-import { CardFigure, CardFigureProps as FigureProps } from "./CardFigure";
-import { CardTitle, CardTitleProps as TitleProps } from "./CardTitle";
+import type { CardSizeTypes } from "./card.types";
+import {
+  CardActions,
+  type CardActionsProps as ActionProps,
+} from "./CardActions";
+import { CardBody, type CardBodyProps as BodyProps } from "./CardBody";
+import { CardFigure, type CardFigureProps as FigureProps } from "./CardFigure";
+import { CardTitle, type CardTitleProps as TitleProps } from "./CardTitle";
 
 export type CardActionsProps = ActionProps;
 export type CardBodyProps = BodyProps;

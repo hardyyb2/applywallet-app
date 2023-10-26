@@ -1,6 +1,6 @@
-import { LucideIcon } from "lucide-react";
+import { type LucideIcon } from "lucide-react";
 
-import { AppRouteLinkType } from "@/utils/routes.utils";
+import { type AppRouteLinkType } from "@/utils/routes.utils";
 
 export enum NavigationCategories {
   GENERAL = "general",

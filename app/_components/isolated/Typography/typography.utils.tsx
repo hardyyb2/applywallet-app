@@ -1,4 +1,4 @@
-import { cva, VariantProps } from "cva";
+import { cva, type VariantProps } from "cva";
 
 export const TypographyVariantTypeTagMap: Record<
   Exclude<TypographyVariantType, null | undefined>,

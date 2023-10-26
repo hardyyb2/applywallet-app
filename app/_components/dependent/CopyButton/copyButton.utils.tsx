@@ -1,8 +1,8 @@
-import { Fragment, ReactElement } from "react";
+import { Fragment, type ReactElement } from "react";
 
 import { Icons } from "@/components/isolated/Icons";
 
-import { CopyButtonStateTypes } from "./copyButton.types";
+import { type CopyButtonStateTypes } from "./copyButton.types";
 
 export const copyButtonIcons: { [key in CopyButtonStateTypes]: ReactElement } =
   {

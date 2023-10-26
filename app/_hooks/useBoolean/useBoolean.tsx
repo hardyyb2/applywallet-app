@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { UseBooleanHandlerType } from "./useBoolean.types";
+import { type UseBooleanHandlerType } from "./useBoolean.types";
 
 const useBoolean: UseBooleanHandlerType<boolean> = (initialVal = false) => {
   const [value, setValue] = useState(initialVal);

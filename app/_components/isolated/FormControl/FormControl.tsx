@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode } from "react";
+import { type ReactNode } from "react";
 
 import { FormControlContext } from "./formControl.utils";
 import { FormControlInput } from "./FormControlInput";

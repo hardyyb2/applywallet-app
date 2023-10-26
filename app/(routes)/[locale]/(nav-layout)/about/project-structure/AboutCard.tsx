@@ -1,6 +1,6 @@
 "use client";
 
-import React, { ElementRef, useEffect, useRef } from "react";
+import React, { useEffect, useRef, type ElementRef } from "react";
 
 import { useInView } from "framer-motion";
 
@@ -8,7 +8,7 @@ import { Card } from "@/components/isolated";
 import { cn, cnMerge } from "@/utils/styles.utils";
 
 import { useAboutStore } from "../about.state";
-import { AboutCardType } from "../about.types";
+import { type AboutCardType } from "../about.types";
 
 type AboutCardProps = {
   card: AboutCardType;

@@ -4,13 +4,13 @@ import { useRouter } from "next/navigation";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { useForm, type SubmitHandler } from "react-hook-form";
 import { toast } from "react-toastify";
 
 import { Button, FormControl } from "@/components/isolated";
 import { CustomError } from "@/utils/error";
 import { ApiRoutes, AppRoutes } from "@/utils/routes.utils";
-import { linkSheetFormSchema, LinkSheetType } from "@/utils/schema-utils";
+import { linkSheetFormSchema, type LinkSheetType } from "@/utils/schema-utils";
 
 const LinkSheetInput = () => {
   // hooks

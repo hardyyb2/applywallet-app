@@ -1,10 +1,10 @@
 import {
-  ComponentProps,
   Fragment,
-  HTMLAttributes,
-  PropsWithChildren,
+  type ComponentProps,
+  type HTMLAttributes,
+  type PropsWithChildren,
 } from "react";
-import Image, { ImageProps } from "next/image";
+import Image, { type ImageProps } from "next/image";
 
 import { useMDXComponent } from "next-contentlayer/hooks";
 

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Blog } from "contentlayer/generated";
+import type { Blog } from "contentlayer/generated";
 import dayjs from "dayjs";
 
 import {

@@ -1,4 +1,4 @@
-import { forwardRef, LiHTMLAttributes } from "react";
+import { forwardRef, type LiHTMLAttributes } from "react";
 
 export type BreadcrumbsItemProps = LiHTMLAttributes<HTMLLIElement> & {
   href?: string;

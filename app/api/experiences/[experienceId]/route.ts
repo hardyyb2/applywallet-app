@@ -11,7 +11,7 @@ import { CustomError } from "@/utils/error";
 import { experienceInputSchema } from "@/utils/schema-utils";
 import { SheetNames } from "@/utils/sheet.utils";
 
-import { ApiRequestContextType } from "@/types/api";
+import type { ApiRequestContextType } from "@/types/api";
 
 const paramSchema = z.object({
   experienceId: z.coerce.number().nonnegative(),

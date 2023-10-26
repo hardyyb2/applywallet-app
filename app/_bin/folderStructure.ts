@@ -1,4 +1,4 @@
-import { DrEdgeType, DrNodeType } from "@/types/flowbuilder";
+import { type DrEdgeType, type DrNodeType } from "@/types/flowbuilder";
 
 export const nodes: DrNodeType[] = [
   {

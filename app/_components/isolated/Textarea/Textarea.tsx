@@ -1,8 +1,8 @@
-import { forwardRef, TextareaHTMLAttributes } from "react";
+import { forwardRef, type TextareaHTMLAttributes } from "react";
 
 import { cn } from "@/utils/styles.utils";
 
-import { TextareaColorsType } from "./Textarea.types";
+import type { TextareaColorsType } from "./Textarea.types";
 
 export type TextareaProps = Omit<
   TextareaHTMLAttributes<HTMLTextAreaElement>,

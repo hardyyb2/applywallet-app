@@ -1,6 +1,6 @@
 import fs from "fs";
 
-import {
+import type {
   DrEdgeType,
   DrFileType,
   DrFolderType,
@@ -101,7 +101,7 @@ const generateGraph = (rootFolder: string) => {
 
 const graph = generateGraph("app");
 const outputFileName = "./app/_bin/folderStructure.ts";
-const jsCode = `import { DrEdgeType, DrNodeType } from "@/types/flowbuilder";
+const jsCode = `import type { DrEdgeType, DrNodeType } from "@/types/flowbuilder";
 
 export const nodes: DrNodeType[] = ${JSON.stringify(graph.nodes, null, 2)};
 export const edges: DrEdgeType[] = ${JSON.stringify(graph.edges, null, 2)};`;

@@ -1,8 +1,8 @@
-import { Metadata } from "next";
+import { type Metadata } from "next";
 
 import { allBlogs } from "contentlayer/generated";
 
-import { Locale } from "@/utils/locale-utils";
+import { type Locale } from "@/utils/locale-utils";
 
 export const metadata: Metadata = {
   title: "home",

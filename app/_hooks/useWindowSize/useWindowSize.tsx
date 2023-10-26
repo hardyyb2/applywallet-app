@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { UseWindowSizeStateType } from "./useWindowSize.types";
+import type { UseWindowSizeStateType } from "./useWindowSize.types";
 
 const useWindowSize = (): { windowSize: UseWindowSizeStateType } => {
   const isSSR = typeof window !== "undefined";

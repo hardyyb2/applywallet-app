@@ -1,8 +1,8 @@
-import { LucideIcon } from "lucide-react";
+import { type LucideIcon } from "lucide-react";
 
 import { Icons } from "@/components/isolated/Icons";
 
-import { DrNodeDataType } from "@/types/flowbuilder";
+import { type DrNodeDataType } from "@/types/flowbuilder";
 
 type CombinedType = `${DrNodeDataType["type"]}:${DrNodeDataType["subType"]}`;
 
