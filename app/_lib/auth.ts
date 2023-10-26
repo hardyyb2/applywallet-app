@@ -1,8 +1,8 @@
-import { OAuthProviderType } from "next-auth/providers";
+import { type OAuthProviderType } from "next-auth/providers";
 import GoogleProvider from "next-auth/providers/google";
 
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
-import { NextAuthOptions } from "next-auth";
+import { type NextAuthOptions } from "next-auth";
 
 import { db } from "@/lib/prisma";
 import { envVariables } from "@/utils/env-vars.utils";
@@ -32,9 +32,7 @@ export const authOptions: NextAuthOptions = {
   session: {
     strategy: "jwt",
   },
-  pages: {
-    signIn: "/login",
-  },
+
   callbacks: {
     async session({ token, session }) {
       if (token) {
