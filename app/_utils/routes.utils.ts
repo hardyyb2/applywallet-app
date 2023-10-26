@@ -1,5 +1,5 @@
 import { i18n } from "./locale-utils";
-import { ExperienceType, InterviewType } from "./schema-utils";
+import type { ExperienceType, InterviewType } from "./schema-utils";
 
 export type AppRouteLinkType = (typeof AppRoutes)[keyof typeof AppRoutes];
 
@@ -25,6 +25,10 @@ export const AppRoutes = {
 } as const;
 
 export const ApiRoutes = {
+  API: "/api",
+
+  SHARED: "/api/shared",
+
   CREATE_SHEET: "/api/sheet/new",
   LINK_SHEET: "/api/sheet/link",
 

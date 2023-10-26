@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode } from "react";
+import { type ReactNode } from "react";
 import { SessionProvider } from "next-auth/react";
 import dynamic from "next/dynamic";
 
@@ -8,7 +8,7 @@ import { domAnimation, LazyMotion, MotionConfig } from "framer-motion";
 import { ToastContainer } from "react-toastify";
 
 import { I18nProviderClient } from "@/locales/client";
-import { Locale } from "@/utils/locale-utils";
+import { type Locale } from "@/utils/locale-utils";
 
 const TopLoader = dynamic(
   () =>

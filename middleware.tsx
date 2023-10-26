@@ -1,10 +1,11 @@
-import type { NextRequest } from "next/server";
+import { NextResponse, type NextRequest } from "next/server";
 
 import { match as matchLocale } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 import { createI18nMiddleware } from "next-international/middleware";
 
-import { i18n, Locale } from "@/utils/locale-utils";
+import { i18n, type Locale } from "@/utils/locale-utils";
+import { ApiRoutes } from "@/utils/routes.utils";
 
 const getNegotiatorHeaders = (request: NextRequest): Record<string, string> => {
   const headers: Record<string, string> = {};
@@ -29,10 +30,27 @@ const I18nMiddleware = createI18nMiddleware({
 });
 
 export function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+
+  if (pathname.startsWith(ApiRoutes.API)) {
+    const response = NextResponse.next();
+
+    //* shared routes should allow chrome extension requests to pass through
+    if (request.nextUrl.pathname.startsWith(ApiRoutes.SHARED)) {
+      response.headers.append(
+        "Access-Control-Allow-Origin",
+        `chrome-extension://${process.env.CHROME_EXTENSION_ID}`,
+      );
+      response.headers.append("Access-Control-Allow-Methods", "GET, OPTIONS");
+    }
+
+    return response;
+  }
+
   return I18nMiddleware(request);
 }
 
 export const config = {
   // Matcher ignoring these paths for middleware
-  matcher: ["/((?!api|_next/static|_next/image|favicon.ico|images).*)"],
+  matcher: ["/((?!_next/static|_next/image|favicon.ico|images).*)"],
 };
