@@ -71,6 +71,7 @@ module.exports = {
   plugins: [require("daisyui"), require("@tailwindcss/typography")],
   daisyui: {
     themes: ["night", "light", "synthwave"],
+    logs: false,
   },
   future: {
     hoverOnlyWhenSupported: true,
