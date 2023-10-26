@@ -5,9 +5,9 @@ import { usePathname } from "next/navigation";
 
 import { ConditionalMatch } from "@dx-kit/react-conditional-match";
 import { AnimatePresence, m } from "framer-motion";
+import { useBoolean } from "react-use";
 
 import { BottomNavigation, Flex } from "@/components/isolated";
-import { useBoolean } from "@/hooks/useBoolean";
 import { cn } from "@/utils/styles.utils";
 
 import { NavigationMenu } from "../NavigationMenu";
@@ -23,7 +23,7 @@ const MotionBottomNavigation = m(BottomNavigation);
 
 const BottomNav = ({ className = "" }: BottomNavProps) => {
   const pathName = usePathname();
-  const [showFullBottomNav, { toggle: toggleShowFullBottomNav }] = useBoolean();
+  const [showFullBottomNav, toggleShowFullBottomNav] = useBoolean(false);
 
   return (
     <Fragment>

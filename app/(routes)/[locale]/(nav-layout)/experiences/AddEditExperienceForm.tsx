@@ -6,9 +6,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
 import { useForm, type SubmitHandler } from "react-hook-form";
 import { toast } from "react-toastify";
+import { useBoolean } from "react-use";
 
 import { Button, FormControl, Typography } from "@/components/isolated";
-import { useBoolean } from "@/hooks/useBoolean";
 import { ApiRoutes, AppRoutes } from "@/utils/routes.utils";
 import {
   experienceInputSchema,
@@ -44,7 +44,7 @@ const AddEditExperienceForm = (props: AddEditExperienceFormProps) => {
   const router = useRouter();
 
   // states
-  const [loading, { setValue: setLoading }] = useBoolean();
+  const [loading, setLoading] = useBoolean(false);
 
   // functions
   const onSubmit: SubmitHandler<ExperienceInputType> = (data) => {

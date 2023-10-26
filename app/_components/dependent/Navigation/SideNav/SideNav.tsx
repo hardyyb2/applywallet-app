@@ -1,15 +1,15 @@
 "use client";
 
 import { m } from "framer-motion";
+import { useBoolean } from "react-use";
 
-import { useBoolean } from "@/hooks/useBoolean";
 import { cn } from "@/utils/styles.utils";
 
 import { NavigationMenu } from "../NavigationMenu";
 import { SideNavBrand } from "./SideNavBrand";
 
 const SideNav = () => {
-  const [navOpen, { toggle: toggleSideNav }] = useBoolean();
+  const [navOpen, toggleSideNav] = useBoolean(false);
 
   return (
     <m.div
