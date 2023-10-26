@@ -4,8 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:ext": "plasmo dev",
     "dev:w-cdt": "pnpm cdt && pnpm dev",
     "build": "next build",
+    "build:ext": "plasmo build",
     "build:w-cdt": "pnpm cdt && pnpm build",
     "start": "next start",
     "analyze": "ANALYZE=true next build",
@@ -46,6 +48,7 @@
     "next-contentlayer": "^0.3.4",
     "next-international": "^1.1.3",
     "nextjs-toploader": "^1.5.3",
+    "plasmo": "^0.83.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.47.0",

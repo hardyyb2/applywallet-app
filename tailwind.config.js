@@ -2,11 +2,7 @@ const { fontFamily } = require("tailwindcss/defaultTheme");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./app/**/*.{js,ts,jsx,tsx}",
-    "./mdx-components.tsx",
-    // Note the addition of the `app` directory.
-  ],
+  content: ["./app/**/*.{js,ts,jsx,tsx}", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     fontFamily: {
       primary: ["var(--font-primary)", ...fontFamily.sans],

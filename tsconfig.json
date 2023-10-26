@@ -21,7 +21,6 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "react": ["node_modules/@types/react"],
       "contentlayer/generated": ["./.contentlayer/generated"],
       "@/styles/*": ["app/_styles/*"],
       "@/components/*": ["app/_components/*"],
@@ -32,10 +31,13 @@
       "@/types/*": ["app/_types/*"],
       "@/content/*": ["app/_content/*"],
       "@/locales/*": ["app/_locales/*"],
-      "@/bin/*": ["app/_bin/*"]
+      "@/bin/*": ["app/_bin/*"],
+
+      "~/*": ["src/*"]
     }
   },
   "include": [
+    ".plasmo/index.d.ts",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",

@@ -12,7 +12,8 @@
         "loading.tsx",
         "not-found.tsx",
         "*.config.ts",
-        "./app/_locales/langs/*"
+        "./app/_locales/langs/*",
+        "./src/popup.tsx"
       ],
       "rules": {
         "import/no-default-export": "off",
