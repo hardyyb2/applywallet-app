@@ -11,7 +11,10 @@ const ExtLoginCard = () => {
   };
 
   return (
-    <Card side="lg" className="max-w-xl bg-base-200 text-base-content">
+    <Card
+      side="lg"
+      className="max-w-xl rounded-none bg-base-200 text-base-content"
+    >
       <Card.Body className="items-center">
         <Card.Title
           variant="h3"
