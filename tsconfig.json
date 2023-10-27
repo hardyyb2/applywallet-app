@@ -46,7 +46,8 @@
     "middleware.tsx",
     "./utils/locale-utils/i18n-config.ts",
     "scripts/*",
-    ".contentlayer/generated"
+    ".contentlayer/generated",
+    "./tailwind.config.ts"
   ],
   "exclude": ["node_modules"]
 }

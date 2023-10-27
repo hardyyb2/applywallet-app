@@ -1,7 +1,6 @@
-const { fontFamily } = require("tailwindcss/defaultTheme");
+import { fontFamily } from "tailwindcss/defaultTheme";
 
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+const config = {
   content: ["./app/**/*.{js,ts,jsx,tsx}", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     fontFamily: {
@@ -73,3 +72,5 @@ module.exports = {
     hoverOnlyWhenSupported: true,
   },
 };
+
+export default config;
