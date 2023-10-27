@@ -4,9 +4,12 @@ import axios from "axios";
 import type { Session } from "next-auth";
 import useSWR from "swr";
 
+// TODO - make import from "@/components/isolated" work
+import { Button } from "@/components/isolated/Button";
 import { ApiRoutes } from "@/utils/routes.utils";
 
-import "./style.scss";
+import "@/styles/overrides/daisyui.scss";
+import "./globals.ext.scss";
 
 const Popup = () => {
   const { data, isLoading, error } = useSWR(ApiRoutes.SESSION, async (key) => {
@@ -29,7 +32,17 @@ const Popup = () => {
     );
   }
 
-  return <div>login</div>;
+  const handleLoginClick = () => {
+    window.open("http://localhost:3000");
+  };
+
+  return (
+    <div>
+      <Button color="primary" onClick={handleLoginClick}>
+        login
+      </Button>
+    </div>
+  );
 };
 
 export default Popup;
