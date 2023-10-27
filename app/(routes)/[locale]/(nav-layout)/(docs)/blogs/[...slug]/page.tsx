@@ -3,11 +3,10 @@ import { notFound } from "next/navigation";
 
 import { allBlogs } from "contentlayer/generated";
 
-import { IconLink } from "@/components/dependent";
+import { IconLink, Mdx } from "@/components/dependent";
 import {
   Breadcrumbs,
   Flex,
-  Mdx,
   ScrollArea,
   ScrollAreaViewport,
   ScrollBar,

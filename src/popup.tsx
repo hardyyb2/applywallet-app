@@ -4,12 +4,15 @@ import axios from "axios";
 import type { Session } from "next-auth";
 import useSWR from "swr";
 
-// TODO - make import from "@/components/isolated" work
-import { Button } from "@/components/isolated/Button";
+import { BarLoader, Flex } from "@/components/isolated";
 import { ApiRoutes } from "@/utils/routes.utils";
+
+import { ExtLoginCard } from "./components/ExtLoginCard";
 
 import "@/styles/overrides/daisyui.scss";
 import "./globals.ext.scss";
+
+import { ExtProviders } from "./providers";
 
 const Popup = () => {
   const { data, isLoading, error } = useSWR(ApiRoutes.SESSION, async (key) => {
@@ -21,28 +24,28 @@ const Popup = () => {
   });
 
   if (isLoading) {
-    return <div>loading..</div>;
-  }
-
-  if (data?.user) {
     return (
-      <div className="w-100">
-        signed in as {data.user.name || data.user.email}
-      </div>
+      <BarLoader barClassName="h-l w-3xs" className="justify-center p-s" />
     );
   }
 
-  const handleLoginClick = () => {
-    window.open("http://localhost:3000");
-  };
+  if (data?.user) {
+    return <div>signed in as {data.user.name || data.user.email}</div>;
+  }
 
   return (
     <div>
-      <Button color="primary" onClick={handleLoginClick}>
-        login
-      </Button>
+      <ExtLoginCard />
     </div>
   );
 };
 
-export default Popup;
+const PopupWithProviders = () => {
+  return (
+    <ExtProviders>
+      <Popup />
+    </ExtProviders>
+  );
+};
+
+export default PopupWithProviders;
