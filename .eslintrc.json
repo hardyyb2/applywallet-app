@@ -13,7 +13,8 @@
         "not-found.tsx",
         "*.config.ts",
         "./app/_locales/langs/*",
-        "./src/popup.tsx"
+        "./src/popup.tsx",
+        "./tailwind.ext.config.ts"
       ],
       "rules": {
         "import/no-default-export": "off",
