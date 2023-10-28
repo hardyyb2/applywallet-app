@@ -4,18 +4,16 @@ import { useStorage } from "@plasmohq/storage/hook";
 import type { Session } from "next-auth";
 import useSWR from "swr";
 
-import { BarLoader } from "@/components/isolated";
+import { BarLoader } from "@/components/isolated/BarLoader";
+import { logger } from "@/lib/logs";
 import { ApiRoutes } from "@/utils/routes.utils";
 
 import { ExtLoginCard } from "./components/ExtLoginCard";
+import { extApi } from "./lib/extApi";
+import { ExtProviders } from "./providers";
 
 import "@/styles/overrides/daisyui.scss";
 import "./globals.ext.scss";
-
-import { logger } from "@/lib/logs";
-
-import { extApi } from "./lib/extApi";
-import { ExtProviders } from "./providers";
 
 const Popup = () => {
   // hooks
