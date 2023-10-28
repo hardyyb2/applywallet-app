@@ -12,6 +12,8 @@ import { ExtLoginCard } from "./components/ExtLoginCard";
 import "@/styles/overrides/daisyui.scss";
 import "./globals.ext.scss";
 
+import { logger } from "@/lib/logs";
+
 import { extApi } from "./lib/extApi";
 import { ExtProviders } from "./providers";
 
@@ -24,7 +26,7 @@ const Popup = () => {
 
   const [autoFillData] = useStorage("auto-fill");
 
-  console.log("autoFill", autoFillData);
+  logger.info("autoFill", {}, ["a"]);
 
   if (isLoading) {
     return (

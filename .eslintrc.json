@@ -1,7 +1,9 @@
 {
   "extends": ["prettier", "next/core-web-vitals", "next"],
   "rules": {
-    "import/no-default-export": "error"
+    "import/no-default-export": "error",
+    "curly": ["error", "all"],
+    "no-console": ["warn"]
   },
   "overrides": [
     {
@@ -17,8 +19,7 @@
         "./tailwind.ext.config.ts"
       ],
       "rules": {
-        "import/no-default-export": "off",
-        "curly": ["error", "all"]
+        "import/no-default-export": "off"
       }
     }
   ]

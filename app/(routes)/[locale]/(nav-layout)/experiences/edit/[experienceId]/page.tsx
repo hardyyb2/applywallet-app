@@ -8,6 +8,7 @@ import { z } from "zod";
 import { IconLink } from "@/components/dependent";
 import { Breadcrumbs } from "@/components/isolated";
 import { authOptions } from "@/lib/auth";
+import { logger } from "@/lib/logs";
 import { CustomError } from "@/utils/error";
 import { AppRoutes, UrlParams } from "@/utils/routes.utils";
 import {
@@ -73,7 +74,7 @@ const fetchExperience = async (
   } catch (err) {
     const message = new CustomError(err).message;
 
-    console.log("fetchExperience error", message);
+    logger.error("fetchExperience error", message);
     // TODO - error response
   }
 };

@@ -10,6 +10,7 @@
 
 // Script code goes here...
 
+const { logger } = require("@/lib/logs");
 const fs = require("fs");
 const path = require("path");
 const yargs = require("yargs");
@@ -62,7 +63,7 @@ function removeLogStatementFromFile(file) {
 const processDirectory = (dir, fileHandler) => {
   fs.readdir(dir, (err, files) => {
     if (err) {
-      console.log(`Error reading directory ${dir}: ${err}`);
+      logger.error(`Error reading directory ${dir}: ${err}`);
       return;
     }
 
@@ -70,7 +71,7 @@ const processDirectory = (dir, fileHandler) => {
       const filePath = path.join(dir, file);
       fs.stat(filePath, (err, stats) => {
         if (err) {
-          console.log(`Error reading file ${filePath}: ${err}`);
+          logger.error(`Error reading file ${filePath}: ${err}`);
           return;
         }
 

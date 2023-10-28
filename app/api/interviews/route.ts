@@ -6,6 +6,7 @@ import { getServerSession } from "next-auth";
 import { z } from "zod";
 
 import { authOptions } from "@/lib/auth";
+import { logger } from "@/lib/logs";
 import { ApiError, ApiErrorCodes, ApiResponse } from "@/utils/api";
 import { CustomError } from "@/utils/error";
 import { interviewInputSchema, interviewSchema } from "@/utils/schema-utils";
@@ -118,7 +119,7 @@ export async function GET() {
       status: 200,
     });
   } catch (err) {
-    console.log("err", err);
+    logger.error("err", err);
     // TODO - redirect to link page or login page
     if (axios.isAxiosError(err)) {
       const status = err.response?.status;
