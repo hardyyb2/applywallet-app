@@ -5,7 +5,8 @@ import Link from "next/link";
 import { ConditionalMatch } from "@dx-kit/react-conditional-match";
 
 import { IconLink } from "@/components/dependent";
-import { BarLoader, Breadcrumbs } from "@/components/isolated";
+import { BarLoader } from "@/components/isolated/BarLoader";
+import { Breadcrumbs } from "@/components/isolated/Breadcrumbs";
 import { useInterview } from "@/queries/interviews.queries";
 import { AppRoutes, UrlParams } from "@/utils/routes.utils";
 

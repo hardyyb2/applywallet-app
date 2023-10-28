@@ -1,6 +1,6 @@
 "use client";
 
-import { BarLoader } from "@/components/isolated";
+import { BarLoader } from "@/components/isolated/BarLoader";
 import { useInterviews } from "@/queries/interviews.queries";
 import { cn } from "@/utils/styles.utils";
 
@@ -24,7 +24,7 @@ const InterviewsList = () => {
             <h2 className="card-title">Card title!</h2>
             <p>If a dog chews shoes whose shoes does he choose?</p>
             <div className="card-actions justify-end">
-              <button className="btn-primary btn">Buy Now</button>
+              <button className="btn btn-primary">Buy Now</button>
             </div>
           </div>
         </div>

@@ -5,17 +5,17 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import { toast } from "react-toastify";
 
+import { Button } from "@/components/isolated/Button";
+import { Flex } from "@/components/isolated/Flex";
+import { Icons } from "@/components/isolated/Icons";
 import {
-  Button,
-  Flex,
   Popover,
   PopoverArrow,
   PopoverContent,
   PopoverPortal,
   PopoverTrigger,
-} from "@/components/isolated";
-import { Icons } from "@/components/isolated/Icons";
-import { ApiRoutes, AppRoutes, SearchParams } from "@/utils/routes.utils";
+} from "@/components/isolated/Popover";
+import { ApiRoutes, AppRoutes } from "@/utils/routes.utils";
 import { type ExperienceType } from "@/utils/schema-utils";
 
 type ExperienceCardActionsProps = {

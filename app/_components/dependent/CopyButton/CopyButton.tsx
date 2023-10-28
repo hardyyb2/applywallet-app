@@ -2,12 +2,11 @@
 
 import { useEffect, useMemo, useState } from "react";
 
+import { Button, type ButtonProps } from "@/components/isolated/Button";
 import {
-  Button,
   CopyToClipboard,
-  type ButtonProps,
   type CopyToClipboardProps,
-} from "@/components/isolated";
+} from "@/components/isolated/CopyToClipboard";
 
 import { type CopyButtonStateTypes } from "./copyButton.types";
 import { copyButtonIcons } from "./copyButton.utils";

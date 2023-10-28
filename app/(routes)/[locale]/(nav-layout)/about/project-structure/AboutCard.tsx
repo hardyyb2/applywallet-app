@@ -4,7 +4,7 @@ import React, { useEffect, useRef, type ElementRef } from "react";
 
 import { useInView } from "framer-motion";
 
-import { Card } from "@/components/isolated";
+import { Card } from "@/components/isolated/Card";
 import { cn, cnMerge } from "@/utils/styles.utils";
 
 import { useAboutStore } from "../about.state";

@@ -1,4 +1,4 @@
-import { Typography } from "@/components/isolated";
+import { Typography } from "@/components/isolated/Typography";
 
 import { ESInformationSettings } from "./ESInformationSettings";
 

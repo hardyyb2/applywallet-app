@@ -7,7 +7,8 @@ import axios from "axios";
 import { useForm, type SubmitHandler } from "react-hook-form";
 import { toast } from "react-toastify";
 
-import { Button, FormControl } from "@/components/isolated";
+import { Button } from "@/components/isolated/Button";
+import { FormControl } from "@/components/isolated/FormControl";
 import { CustomError } from "@/utils/error";
 import { ApiRoutes, AppRoutes } from "@/utils/routes.utils";
 import { linkSheetFormSchema, type LinkSheetType } from "@/utils/schema-utils";

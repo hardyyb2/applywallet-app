@@ -1,4 +1,4 @@
-import { BarLoader } from "@/components/isolated";
+import { BarLoader } from "@/components/isolated/BarLoader";
 
 const Loading = () => {
   return <BarLoader />;

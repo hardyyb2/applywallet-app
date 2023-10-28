@@ -5,7 +5,8 @@ import Image from "next/image";
 
 import { AnimatePresence, m } from "framer-motion";
 
-import { Flex, Typography } from "@/components/isolated";
+import { Flex } from "@/components/isolated/Flex";
+import { Typography } from "@/components/isolated/Typography";
 
 import { useAboutStore } from "./about.state";
 import { aboutCardsData } from "./about.utils";

@@ -1,6 +1,7 @@
 import Link from "next/link";
 
-import { Button, Flex } from "@/components/isolated";
+import { Button } from "@/components/isolated/Button";
+import { Flex } from "@/components/isolated/Flex";
 import { Icons } from "@/components/isolated/Icons";
 
 import { ExperienceSettingsModal } from "./ExperienceSettingsModal/ExperienceSettingsModal";

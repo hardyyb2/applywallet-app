@@ -1,11 +1,9 @@
 import Link from "next/link";
 
-import {
-  buttonVariants,
-  Card,
-  Divider,
-  Typography,
-} from "@/components/isolated";
+import { buttonVariants } from "@/components/isolated/Button";
+import { Card } from "@/components/isolated/Card";
+import { Divider } from "@/components/isolated/Divider";
+import { Typography } from "@/components/isolated/Typography";
 import { getI18n } from "@/locales/server";
 import { AppRoutes } from "@/utils/routes.utils";
 

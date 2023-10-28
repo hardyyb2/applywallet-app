@@ -6,12 +6,14 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-  Button,
+} from "@/components/isolated/Avatar";
+import { Button } from "@/components/isolated/Button";
+import {
   Popover,
   PopoverArrow,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/isolated";
+} from "@/components/isolated/Popover";
 import { getInitials } from "@/utils/string.utils";
 import { cn } from "@/utils/styles.utils";
 

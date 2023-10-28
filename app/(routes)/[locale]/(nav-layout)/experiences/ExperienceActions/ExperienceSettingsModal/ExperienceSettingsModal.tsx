@@ -3,7 +3,9 @@
 import { useRef, useState } from "react";
 import Link from "next/link";
 
-import { Button, Dialog, Flex } from "@/components/isolated";
+import { Button } from "@/components/isolated/Button";
+import { Dialog } from "@/components/isolated/Dialog";
+import { Flex } from "@/components/isolated/Flex";
 import { Icons } from "@/components/isolated/Icons";
 import { cn } from "@/utils/styles.utils";
 

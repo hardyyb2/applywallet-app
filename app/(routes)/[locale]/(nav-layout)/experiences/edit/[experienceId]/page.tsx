@@ -6,7 +6,7 @@ import { getServerSession } from "next-auth";
 import { z } from "zod";
 
 import { IconLink } from "@/components/dependent";
-import { Breadcrumbs } from "@/components/isolated";
+import { Breadcrumbs } from "@/components/isolated/Breadcrumbs";
 import { authOptions } from "@/lib/auth";
 import { logger } from "@/lib/logs";
 import { CustomError } from "@/utils/error";

@@ -1,4 +1,4 @@
-import { Flex } from "@/components/isolated";
+import { Flex } from "@/components/isolated/Flex";
 
 const ThemesMenuItemColors = () => {
   return (

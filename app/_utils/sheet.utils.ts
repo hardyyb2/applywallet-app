@@ -33,7 +33,9 @@ export const checkGoogleSheetValidity = async (
   sheetId: string | null | undefined,
 ) => {
   try {
-    if (!sheetId) return false;
+    if (!sheetId) {
+      return false;
+    }
 
     const doc = new GoogleSpreadsheet(sheetId, { token: accessToken });
     await doc.loadInfo();

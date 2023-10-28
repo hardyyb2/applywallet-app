@@ -11,7 +11,9 @@ const isCustomError = (error: unknown): error is CustomErrorType => {
 };
 
 const toCustomError = (maybeError: unknown): CustomErrorType => {
-  if (isCustomError(maybeError)) return maybeError;
+  if (isCustomError(maybeError)) {
+    return maybeError;
+  }
 
   try {
     return new Error(JSON.stringify(maybeError));

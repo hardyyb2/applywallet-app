@@ -4,14 +4,14 @@ import { useRef, type PropsWithChildren } from "react";
 
 import { useBoolean, useFullscreen } from "react-use";
 
+import { Button } from "@/components/isolated/Button";
+import { Icons } from "@/components/isolated/Icons";
 import {
-  Button,
-  Icons,
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/isolated";
+} from "@/components/isolated/Tooltip";
 import { cnMerge } from "@/utils/styles.utils";
 
 const DFBWrapper = ({ children }: PropsWithChildren) => {

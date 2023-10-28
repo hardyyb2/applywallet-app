@@ -4,8 +4,10 @@ import Link from "next/link";
 import { getServerSession } from "next-auth";
 
 import { LoginCard } from "@/components/dependent/LoginCard";
-import { Button, Flex, Typography } from "@/components/isolated";
+import { Button } from "@/components/isolated/Button";
+import { Flex } from "@/components/isolated/Flex";
 import { Icons } from "@/components/isolated/Icons";
+import { Typography } from "@/components/isolated/Typography";
 import { authOptions } from "@/lib/auth";
 import { AppRoutes } from "@/utils/routes.utils";
 

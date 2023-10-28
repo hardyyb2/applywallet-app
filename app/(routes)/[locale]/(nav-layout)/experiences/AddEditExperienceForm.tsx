@@ -8,7 +8,9 @@ import { useForm, type SubmitHandler } from "react-hook-form";
 import { toast } from "react-toastify";
 import { useBoolean } from "react-use";
 
-import { Button, FormControl, Typography } from "@/components/isolated";
+import { Button } from "@/components/isolated/Button";
+import { FormControl } from "@/components/isolated/FormControl";
+import { Typography } from "@/components/isolated/Typography";
 import { ApiRoutes, AppRoutes } from "@/utils/routes.utils";
 import {
   experienceInputSchema,

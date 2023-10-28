@@ -3,13 +3,13 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { Button } from "@/components/isolated/Button";
+import { Icons } from "@/components/isolated/Icons";
 import {
-  Button,
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/isolated";
-import { Icons } from "@/components/isolated/Icons";
+} from "@/components/isolated/Popover";
 import { languageOptions } from "@/utils/locale-utils/language-options";
 import { cn } from "@/utils/styles.utils";
 

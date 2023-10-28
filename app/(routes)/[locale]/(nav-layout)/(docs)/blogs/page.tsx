@@ -3,7 +3,8 @@ import Link from "next/link";
 import { allBlogs } from "contentlayer/generated";
 
 import { BlogCard } from "@/components/dependent";
-import { Flex, Typography } from "@/components/isolated";
+import { Flex } from "@/components/isolated/Flex";
+import { Typography } from "@/components/isolated/Typography";
 import { getI18n } from "@/locales/server";
 
 import { BlogCardsWrapper } from "./[...slug]/BlogCardsWrapper";

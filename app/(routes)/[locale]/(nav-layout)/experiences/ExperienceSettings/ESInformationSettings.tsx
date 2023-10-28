@@ -4,7 +4,8 @@ import { useState, type MouseEvent } from "react";
 
 import { Reorder, useDragControls } from "framer-motion";
 
-import { Button, Flex } from "@/components/isolated";
+import { Button } from "@/components/isolated/Button";
+import { Flex } from "@/components/isolated/Flex";
 import { Icons } from "@/components/isolated/Icons";
 
 import { type ExperienceSettingsInfoType } from ".";

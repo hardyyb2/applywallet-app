@@ -4,7 +4,8 @@ import { useEffect, type ReactNode } from "react";
 
 import { themeChange } from "theme-change";
 
-import { Flex, Typography } from "@/components/isolated";
+import { Flex } from "@/components/isolated/Flex";
+import { Typography } from "@/components/isolated/Typography";
 import { cn } from "@/utils/styles.utils";
 
 const HeaderClient = ({ children }: { children?: ReactNode }) => {

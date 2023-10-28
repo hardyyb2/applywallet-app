@@ -1,16 +1,16 @@
 import Link from "next/link";
 
+import { Button } from "@/components/isolated/Button";
+import { Flex } from "@/components/isolated/Flex";
+import { Icons } from "@/components/isolated/Icons";
 import {
-  Button,
-  Flex,
   Tooltip,
   TooltipArrow,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-  Typography,
-} from "@/components/isolated";
-import { Icons } from "@/components/isolated/Icons";
+} from "@/components/isolated/Tooltip";
+import { Typography } from "@/components/isolated/Typography";
 import { cn } from "@/utils/styles.utils";
 
 interface SideNavBrandProps {
@@ -37,7 +37,7 @@ const SideNavBrand = ({
         href={link}
         aria-current="page"
         aria-label="Homepage"
-        className="btn-ghost btn flex-0 px-2"
+        className="btn btn-ghost flex-0 px-2"
       >
         {navOpen ? (
           <div className="text-lg inline-flex lowercase text-primary">

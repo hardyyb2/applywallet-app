@@ -1,4 +1,6 @@
-import { Button, Dropdown, Flex } from "@/components/isolated";
+import { Button } from "@/components/isolated/Button";
+import { Dropdown } from "@/components/isolated/Dropdown";
+import { Flex } from "@/components/isolated/Flex";
 import { Icons } from "@/components/isolated/Icons";
 import { cn } from "@/utils/styles.utils";
 
