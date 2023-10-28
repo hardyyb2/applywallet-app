@@ -1,10 +1,10 @@
 import React from "react";
 
-import axios from "axios";
+import { useStorage } from "@plasmohq/storage/hook";
 import type { Session } from "next-auth";
 import useSWR from "swr";
 
-import { BarLoader, Flex } from "@/components/isolated";
+import { BarLoader } from "@/components/isolated";
 import { ApiRoutes } from "@/utils/routes.utils";
 
 import { ExtLoginCard } from "./components/ExtLoginCard";
@@ -12,20 +12,23 @@ import { ExtLoginCard } from "./components/ExtLoginCard";
 import "@/styles/overrides/daisyui.scss";
 import "./globals.ext.scss";
 
+import { extApi } from "./lib/extApi";
 import { ExtProviders } from "./providers";
 
 const Popup = () => {
+  // hooks
   const { data, isLoading, error } = useSWR(ApiRoutes.SESSION, async (key) => {
-    const URL = process.env.PLASMO_PUBLIC_API_URL;
-
-    const res = await axios.get(`${URL}${key}`);
-
+    const res = await extApi.get(key);
     return res.data as Session;
   });
 
+  const [autoFillData] = useStorage("auto-fill");
+
+  console.log("autoFill", autoFillData);
+
   if (isLoading) {
     return (
-      <BarLoader barClassName="h-l w-3xs" className="justify-center p-s" />
+      <BarLoader barClassName="h-xl w-3xs" className="justify-center p-s " />
     );
   }
 

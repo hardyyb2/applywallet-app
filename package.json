@@ -28,6 +28,7 @@
     "@formatjs/intl-localematcher": "^0.2.32",
     "@hookform/resolvers": "^2.9.11",
     "@next-auth/prisma-adapter": "^1.0.7",
+    "@plasmohq/storage": "^1.8.1",
     "@prisma/client": "^5.5.2",
     "@radix-ui/react-avatar": "^1.0.4",
     "@radix-ui/react-dialog": "^1.0.5",
@@ -80,9 +81,9 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.5.1",
     "@total-typescript/ts-reset": "^0.5.1",
+    "@types/chrome": "0.0.245",
     "@types/google-spreadsheet": "^3.3.2",
     "@types/negotiator": "^0.6.2",
-    "@types/chrome": "0.0.245",
     "@types/node": "^20.8.9",
     "@types/react": "^18.2.33",
     "@types/react-dom": "^18.2.14",
@@ -119,7 +120,8 @@
       "http://localhost:3000/api/*"
     ],
     "permissions": [
-      "tabs"
+      "tabs",
+      "storage"
     ]
   }
 }

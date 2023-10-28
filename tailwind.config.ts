@@ -1,7 +1,8 @@
 import { fontFamily } from "tailwindcss/defaultTheme";
 
 const config = {
-  content: ["./app/**/*.{js,ts,jsx,tsx}"],
+  // TODO - check how multiple configs can work without whole app content being included
+  content: ["./app/**/*.{js,ts,jsx,tsx}", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     fontFamily: {
       primary: ["var(--font-primary)", ...fontFamily.sans],
