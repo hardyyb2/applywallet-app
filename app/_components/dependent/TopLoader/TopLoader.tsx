@@ -4,7 +4,7 @@ import { memo } from "react";
 
 import NextTopLoader from "nextjs-toploader";
 
-import { extractThemeColorsFromDOM } from "@/utils/theme.utils";
+import { extractThemeColorsFromDOM } from "@/utils/theme";
 
 const TopLoader = memo(() => {
   const themeColors = extractThemeColorsFromDOM();

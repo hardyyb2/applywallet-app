@@ -12,7 +12,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/isolated/Tooltip";
-import { cnMerge } from "@/utils/styles.utils";
+import { cnMerge } from "@/utils/styles";
 
 const DFBWrapper = ({ children }: PropsWithChildren) => {
   const containerRef = useRef<any>();

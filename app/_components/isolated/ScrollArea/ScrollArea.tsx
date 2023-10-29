@@ -8,7 +8,7 @@ import {
 
 import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area";
 
-import { cnMerge } from "@/utils/styles.utils";
+import { cnMerge } from "@/utils/styles";
 
 const ScrollAreaCorner = ScrollAreaPrimitive.Corner;
 

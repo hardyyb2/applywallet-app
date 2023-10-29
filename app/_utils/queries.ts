@@ -1,4 +1,4 @@
-import { type InterviewType } from "./schema-utils";
+import type { InterviewType } from "@/lib/schema/interviews";
 
 export const QueryKeys = {
   INTERVIEWS: "interviews",

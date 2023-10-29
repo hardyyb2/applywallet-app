@@ -9,9 +9,12 @@ import { toast } from "react-toastify";
 
 import { Button } from "@/components/isolated/Button";
 import { FormControl } from "@/components/isolated/FormControl";
-import { CustomError } from "@/utils/error";
-import { ApiRoutes, AppRoutes } from "@/utils/routes.utils";
-import { linkSheetFormSchema, type LinkSheetType } from "@/utils/schema-utils";
+import {
+  linkSheetFormSchema,
+  type LinkSheetType,
+} from "@/lib/schema/link-sheet";
+import { CustomError } from "@/utils/error/custom-error";
+import { ApiRoutes, AppRoutes } from "@/utils/routes";
 
 const LinkSheetInput = () => {
   // hooks

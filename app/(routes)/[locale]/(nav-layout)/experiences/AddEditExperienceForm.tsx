@@ -11,12 +11,12 @@ import { useBoolean } from "react-use";
 import { Button } from "@/components/isolated/Button";
 import { FormControl } from "@/components/isolated/FormControl";
 import { Typography } from "@/components/isolated/Typography";
-import { ApiRoutes, AppRoutes } from "@/utils/routes.utils";
 import {
   experienceInputSchema,
   type ExperienceInputType,
   type ExperienceType,
-} from "@/utils/schema-utils";
+} from "@/lib/schema/experience";
+import { ApiRoutes, AppRoutes } from "@/utils/routes";
 
 import { getAddEditExperienceFormCopy } from "./experience.utils";
 

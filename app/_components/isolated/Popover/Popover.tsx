@@ -8,7 +8,7 @@ import {
 
 import * as PopoverPrimitive from "@radix-ui/react-popover";
 
-import { cnMerge } from "@/utils/styles.utils";
+import { cnMerge } from "@/utils/styles";
 
 const Popover = PopoverPrimitive.Root;
 

@@ -9,7 +9,7 @@ import {
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import { type VariantProps } from "cva";
 
-import { cnMerge } from "@/utils/styles.utils";
+import { cnMerge } from "@/utils/styles";
 
 import { tooltipArrowVariants, tooltipContentVariants } from "./tooltip.utils";
 

@@ -12,7 +12,7 @@ import {
   ScrollAreaViewport,
   ScrollBar,
 } from "@/components/isolated/ScrollArea";
-import { AppRoutes } from "@/utils/routes.utils";
+import { AppRoutes } from "@/utils/routes";
 
 import { BlogMetaInfo } from "./BlogMetaInfo/BlogMetaInfo";
 import { BlogScrollWrapper } from "./BlogScrollWrapper/BlogScrollWrapper";

@@ -5,7 +5,7 @@ import {
   type Ref,
 } from "react";
 
-import { cn } from "@/utils/styles.utils";
+import { cn } from "@/utils/styles";
 
 import { typographyVariants } from "../Typography";
 import { BreadcrumbsItem, type BreadcrumbsItemProps } from "./BreadcrumbsItem";

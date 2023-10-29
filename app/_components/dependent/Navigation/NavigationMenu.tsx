@@ -11,8 +11,8 @@ import {
   TooltipTrigger,
 } from "@/components/isolated/Tooltip";
 import { Typography } from "@/components/isolated/Typography";
-import { getLinkWithLocale } from "@/utils/routes.utils";
-import { cn } from "@/utils/styles.utils";
+import { getLinkWithLocale } from "@/utils/routes";
+import { cn } from "@/utils/styles";
 
 import { groupedNavItemsEntries } from "./navigation.utils";
 

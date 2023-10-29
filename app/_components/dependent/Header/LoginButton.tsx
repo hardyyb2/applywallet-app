@@ -3,7 +3,7 @@
 import { signIn } from "next-auth/react";
 
 import { Button } from "@/components/isolated/Button";
-import { AppRoutes } from "@/utils/routes.utils";
+import { AppRoutes } from "@/utils/routes";
 
 const LoginButton = () => {
   const handleLoginClick = () => {

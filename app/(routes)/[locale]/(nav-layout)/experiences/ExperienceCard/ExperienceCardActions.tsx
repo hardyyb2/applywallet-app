@@ -15,8 +15,8 @@ import {
   PopoverPortal,
   PopoverTrigger,
 } from "@/components/isolated/Popover";
-import { ApiRoutes, AppRoutes } from "@/utils/routes.utils";
-import { type ExperienceType } from "@/utils/schema-utils";
+import { type ExperienceType } from "@/lib/schema/experience";
+import { ApiRoutes, AppRoutes } from "@/utils/routes";
 
 type ExperienceCardActionsProps = {
   id: ExperienceType["id"];

@@ -5,11 +5,11 @@ import { getServerSession } from "next-auth";
 import { z } from "zod";
 
 import { authOptions } from "@/lib/auth";
-import { ApiError, ApiErrorCodes, ApiResponse } from "@/utils/api";
-import { CustomError } from "@/utils/error";
-import { experienceInputSchema } from "@/utils/schema-utils";
-import { SheetNames } from "@/utils/sheet.utils";
-import { zodKeys } from "@/utils/zod.utils";
+import { experienceInputSchema } from "@/lib/schema/experience";
+import { ApiError, ApiErrorCodes, ApiResponse } from "@/utils/api/api-response";
+import { CustomError } from "@/utils/error/custom-error";
+import { SheetNames } from "@/utils/sheet";
+import { zodKeys } from "@/utils/zod";
 
 export async function POST(request: Request) {
   try {

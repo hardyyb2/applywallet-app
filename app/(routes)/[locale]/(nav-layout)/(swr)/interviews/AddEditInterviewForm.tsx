@@ -11,15 +11,15 @@ import { Button } from "@/components/isolated/Button";
 import { FormControl } from "@/components/isolated/FormControl";
 import { Typography } from "@/components/isolated/Typography";
 import {
-  useAddInterview,
-  useUpdateInterview,
-} from "@/queries/interviews.queries";
-import { AppRoutes } from "@/utils/routes.utils";
-import {
   interviewInputSchema,
   type InterviewInputType,
   type InterviewType,
-} from "@/utils/schema-utils";
+} from "@/lib/schema/interviews";
+import {
+  useAddInterview,
+  useUpdateInterview,
+} from "@/queries/interviews.queries";
+import { AppRoutes } from "@/utils/routes";
 
 import { getAddEditInterviewFormCopy } from "./interview.utils";
 

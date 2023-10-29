@@ -2,7 +2,7 @@
 
 import { m, type HTMLMotionProps, type Variants } from "framer-motion";
 
-import { cnMerge } from "@/utils/styles.utils";
+import { cnMerge } from "@/utils/styles";
 
 interface BarLoaderProps extends HTMLMotionProps<"div"> {
   barClassName?: string;

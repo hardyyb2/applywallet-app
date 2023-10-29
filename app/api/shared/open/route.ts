@@ -3,8 +3,8 @@ import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 
 import { authOptions } from "@/lib/auth";
-import { ApiError, ApiErrorCodes } from "@/utils/api";
-import { CustomError } from "@/utils/error";
+import { ApiError, ApiErrorCodes } from "@/utils/api/api-response";
+import { CustomError } from "@/utils/error/custom-error";
 
 export async function GET() {
   try {

@@ -11,7 +11,7 @@ import {
   TooltipTrigger,
 } from "@/components/isolated/Tooltip";
 import { Typography } from "@/components/isolated/Typography";
-import { cn } from "@/utils/styles.utils";
+import { cn } from "@/utils/styles";
 
 interface SideNavBrandProps {
   link?: string;

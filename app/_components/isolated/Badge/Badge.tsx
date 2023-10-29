@@ -2,7 +2,7 @@ import { forwardRef, type HTMLAttributes } from "react";
 
 import { type VariantProps } from "cva";
 
-import { cn } from "@/utils/styles.utils";
+import { cn } from "@/utils/styles";
 
 import { badgeVariants } from "./badge.utils";
 

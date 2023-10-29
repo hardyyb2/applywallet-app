@@ -5,7 +5,7 @@ import { Card } from "@/components/isolated/Card";
 import { Divider } from "@/components/isolated/Divider";
 import { Typography } from "@/components/isolated/Typography";
 import { getI18n } from "@/locales/server";
-import { AppRoutes } from "@/utils/routes.utils";
+import { AppRoutes } from "@/utils/routes";
 
 import { LCLoginButton } from "./LCLoginButton";
 

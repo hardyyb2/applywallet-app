@@ -8,7 +8,7 @@ import Image, { type ImageProps } from "next/image";
 
 import { useMDXComponent } from "next-contentlayer/hooks";
 
-import { cn } from "@/utils/styles.utils";
+import { cn } from "@/utils/styles";
 
 type MdxComponentsType = ComponentProps<
   ReturnType<typeof useMDXComponent>

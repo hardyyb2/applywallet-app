@@ -9,14 +9,10 @@ import { IconLink } from "@/components/dependent/IconLink";
 import { Breadcrumbs } from "@/components/isolated/Breadcrumbs";
 import { authOptions } from "@/lib/auth";
 import { logger } from "@/lib/logs";
-import { CustomError } from "@/utils/error";
-import { AppRoutes, UrlParams } from "@/utils/routes.utils";
-import {
-  experienceSchema,
-  type ExperienceInputType,
-  type ExperienceType,
-} from "@/utils/schema-utils";
-import { SheetNames } from "@/utils/sheet.utils";
+import { experienceSchema, type ExperienceType } from "@/lib/schema/experience";
+import { CustomError } from "@/utils/error/custom-error";
+import { AppRoutes, UrlParams } from "@/utils/routes";
+import { SheetNames } from "@/utils/sheet";
 
 import { AddEditExperienceForm } from "../../AddEditExperienceForm";
 

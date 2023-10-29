@@ -9,7 +9,7 @@ import { useBoolean } from "react-use";
 
 import { BottomNavigation } from "@/components/isolated/BottomNavigation";
 import { Flex } from "@/components/isolated/Flex";
-import { cn } from "@/utils/styles.utils";
+import { cn } from "@/utils/styles";
 
 import { NavigationMenu } from "../NavigationMenu";
 import { BottomNavBackdrop } from "./BottomNavBackdrop";

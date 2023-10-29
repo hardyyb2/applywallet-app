@@ -11,7 +11,7 @@ import {
   PopoverTrigger,
 } from "@/components/isolated/Popover";
 import { languageOptions } from "@/utils/locale-utils/language-options";
-import { cn } from "@/utils/styles.utils";
+import { cn } from "@/utils/styles";
 
 import { redirectedPathName } from "./localeSwitcher.utils";
 

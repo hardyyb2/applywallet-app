@@ -9,7 +9,7 @@ import {
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
 import type { VariantProps } from "cva";
 
-import { cnMerge } from "@/utils/styles.utils";
+import { cnMerge } from "@/utils/styles";
 
 import { avatarVariants } from "./avatar.utils";
 

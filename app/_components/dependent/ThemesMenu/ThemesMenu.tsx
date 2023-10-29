@@ -2,7 +2,7 @@ import { Button } from "@/components/isolated/Button";
 import { Dropdown } from "@/components/isolated/Dropdown";
 import { Flex } from "@/components/isolated/Flex";
 import { Icons } from "@/components/isolated/Icons";
-import { cn } from "@/utils/styles.utils";
+import { cn } from "@/utils/styles";
 
 import { selectableThemes } from "./themesMenu.utils";
 import { ThemesMenuItemColors } from "./ThemesMenuItemColors";

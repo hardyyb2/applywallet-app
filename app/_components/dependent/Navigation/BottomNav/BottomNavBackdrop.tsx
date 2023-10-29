@@ -1,4 +1,4 @@
-import { cn } from "@/utils/styles.utils";
+import { cn } from "@/utils/styles";
 
 interface BottomNavBackdropProps {
   visible: boolean;

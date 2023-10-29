@@ -6,7 +6,7 @@ import { Button } from "@/components/isolated/Button";
 import { Icons } from "@/components/isolated/Icons";
 import { Typography } from "@/components/isolated/Typography";
 import { useI18n } from "@/locales/client";
-import { DEFAULT_AUTH_PROVIDERS } from "@/utils/auth.utils";
+import { DEFAULT_AUTH_PROVIDERS } from "@/utils/auth";
 
 const LCLoginButton = () => {
   const t = useI18n();

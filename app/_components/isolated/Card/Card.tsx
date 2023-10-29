@@ -1,6 +1,6 @@
 import { forwardRef, type HTMLAttributes } from "react";
 
-import { cn } from "@/utils/styles.utils";
+import { cn } from "@/utils/styles";
 
 import type { CardSizeTypes } from "./card.types";
 import {

@@ -9,7 +9,7 @@ import { Flex } from "@/components/isolated/Flex";
 import { Icons } from "@/components/isolated/Icons";
 import { Typography } from "@/components/isolated/Typography";
 import { authOptions } from "@/lib/auth";
-import { AppRoutes } from "@/utils/routes.utils";
+import { AppRoutes } from "@/utils/routes";
 
 import { InterviewActions } from "./InterviewActions/InterviewActions";
 import { InterviewsList } from "./InterviewsList";

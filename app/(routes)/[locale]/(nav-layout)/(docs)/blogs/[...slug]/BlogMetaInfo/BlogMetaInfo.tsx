@@ -11,7 +11,7 @@ import {
 import { Divider } from "@/components/isolated/Divider";
 import { Flex } from "@/components/isolated/Flex";
 import { typographyVariants } from "@/components/isolated/Typography";
-import { getInitials } from "@/utils/string.utils";
+import { getInitials } from "@/utils/string";
 
 import styles from "./blogMetaInfo.module.scss";
 

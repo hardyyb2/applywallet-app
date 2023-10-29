@@ -6,8 +6,8 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 import { Button } from "@/components/isolated/Button";
-import { CustomError } from "@/utils/error";
-import { ApiRoutes, AppRoutes } from "@/utils/routes.utils";
+import { CustomError } from "@/utils/error/custom-error";
+import { ApiRoutes, AppRoutes } from "@/utils/routes";
 
 const CreateNewSheetButton = () => {
   const router = useRouter();

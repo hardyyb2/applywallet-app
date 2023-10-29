@@ -14,8 +14,8 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/isolated/Popover";
-import { getInitials } from "@/utils/string.utils";
-import { cn } from "@/utils/styles.utils";
+import { getInitials } from "@/utils/string";
+import { cn } from "@/utils/styles";
 
 import { LoginButton } from "../Header/LoginButton";
 

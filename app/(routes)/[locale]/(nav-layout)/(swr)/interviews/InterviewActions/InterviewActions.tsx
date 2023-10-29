@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Button } from "@/components/isolated/Button";
 import { Flex } from "@/components/isolated/Flex";
 import { Icons } from "@/components/isolated/Icons";
-import { AppRoutes } from "@/utils/routes.utils";
+import { AppRoutes } from "@/utils/routes";
 
 const InterviewActions = () => {
   return (

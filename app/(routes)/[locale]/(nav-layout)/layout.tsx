@@ -3,7 +3,7 @@ import { type ReactNode } from "react";
 import { BaseLayout } from "@/components/dependent/BaseLayout";
 import { Header } from "@/components/dependent/Header";
 import { Navigation } from "@/components/dependent/Navigation";
-import { cn } from "@/utils/styles.utils";
+import { cn } from "@/utils/styles";
 
 const NavLayout = ({ children }: { children: ReactNode }) => {
   return (

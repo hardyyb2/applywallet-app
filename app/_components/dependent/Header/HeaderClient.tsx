@@ -6,7 +6,7 @@ import { themeChange } from "theme-change";
 
 import { Flex } from "@/components/isolated/Flex";
 import { Typography } from "@/components/isolated/Typography";
-import { cn } from "@/utils/styles.utils";
+import { cn } from "@/utils/styles";
 
 const HeaderClient = ({ children }: { children?: ReactNode }) => {
   useEffect(() => {

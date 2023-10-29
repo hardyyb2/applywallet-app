@@ -6,10 +6,10 @@ import { getServerSession } from "next-auth";
 import { z } from "zod";
 
 import { authOptions } from "@/lib/auth";
-import { ApiError, ApiErrorCodes, ApiResponse } from "@/utils/api";
-import { CustomError } from "@/utils/error";
-import { interviewInputSchema, interviewSchema } from "@/utils/schema-utils";
-import { SheetNames } from "@/utils/sheet.utils";
+import { interviewInputSchema, interviewSchema } from "@/lib/schema/interviews";
+import { ApiError, ApiErrorCodes, ApiResponse } from "@/utils/api/api-response";
+import { CustomError } from "@/utils/error/custom-error";
+import { SheetNames } from "@/utils/sheet";
 
 import type { ApiRequestContextType } from "@/types/api";
 

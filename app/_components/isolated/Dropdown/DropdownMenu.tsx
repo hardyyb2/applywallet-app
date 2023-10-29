@@ -1,6 +1,6 @@
 import { type HTMLAttributes } from "react";
 
-import { cn } from "@/utils/styles.utils";
+import { cn } from "@/utils/styles";
 
 export type DropdownMenuProps = HTMLAttributes<HTMLUListElement>;
 

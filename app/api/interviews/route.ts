@@ -7,11 +7,11 @@ import { z } from "zod";
 
 import { authOptions } from "@/lib/auth";
 import { logger } from "@/lib/logs";
-import { ApiError, ApiErrorCodes, ApiResponse } from "@/utils/api";
-import { CustomError } from "@/utils/error";
-import { interviewInputSchema, interviewSchema } from "@/utils/schema-utils";
-import { SheetNames } from "@/utils/sheet.utils";
-import { zodKeys } from "@/utils/zod.utils";
+import { interviewInputSchema, interviewSchema } from "@/lib/schema/interviews";
+import { ApiError, ApiErrorCodes, ApiResponse } from "@/utils/api/api-response";
+import { CustomError } from "@/utils/error/custom-error";
+import { SheetNames } from "@/utils/sheet";
+import { zodKeys } from "@/utils/zod";
 
 export async function POST(request: Request) {
   try {

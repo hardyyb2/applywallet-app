@@ -6,7 +6,7 @@ import useSWR from "swr";
 
 import { BarLoader } from "@/components/isolated/BarLoader";
 import { logger } from "@/lib/logs";
-import { ApiRoutes } from "@/utils/routes.utils";
+import { ApiRoutes } from "@/utils/routes";
 
 import { ExtLoginCard } from "./components/ExtLoginCard";
 import { extApi } from "./lib/extApi";

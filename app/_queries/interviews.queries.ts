@@ -2,9 +2,12 @@ import axios from "axios";
 import useSWR, { type Key } from "swr";
 import useSWRMutation from "swr/mutation";
 
-import { QueryKeys } from "@/utils/queries.utils";
-import { ApiRoutes } from "@/utils/routes.utils";
-import type { InterviewInputType, InterviewType } from "@/utils/schema-utils";
+import type {
+  InterviewInputType,
+  InterviewType,
+} from "@/lib/schema/interviews";
+import { QueryKeys } from "@/utils/queries";
+import { ApiRoutes } from "@/utils/routes";
 
 const fetchInterviews = async () => {
   return axios.get(ApiRoutes.GET_INTERVIEWS).then((res) => {

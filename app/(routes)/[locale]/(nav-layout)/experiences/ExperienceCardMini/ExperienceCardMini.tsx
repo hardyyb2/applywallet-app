@@ -1,7 +1,7 @@
 import { Button } from "@/components/isolated/Button";
 import { Flex } from "@/components/isolated/Flex";
 import { Typography } from "@/components/isolated/Typography";
-import { cn } from "@/utils/styles.utils";
+import { cn } from "@/utils/styles";
 
 import { ExperienceCardActions } from "../ExperienceCard/ExperienceCardActions";
 

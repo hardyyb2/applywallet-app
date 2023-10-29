@@ -7,7 +7,7 @@ import { Button } from "@/components/isolated/Button";
 import { Dialog } from "@/components/isolated/Dialog";
 import { Flex } from "@/components/isolated/Flex";
 import { Icons } from "@/components/isolated/Icons";
-import { cn } from "@/utils/styles.utils";
+import { cn } from "@/utils/styles";
 
 import { ExperienceSettings } from "../../ExperienceSettings";
 import styles from "./experienceSettingsModal.module.scss";

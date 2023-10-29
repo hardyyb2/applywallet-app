@@ -2,7 +2,7 @@ import { type ReactNode } from "react";
 
 import { fonts } from "@/lib/fonts";
 import { type Locale } from "@/utils/locale-utils";
-import { cn } from "@/utils/styles.utils";
+import { cn } from "@/utils/styles";
 
 import { Providers } from "./providers";
 

@@ -5,9 +5,9 @@ import { GoogleSpreadsheet } from "google-spreadsheet";
 import { getServerSession } from "next-auth";
 
 import { authOptions } from "@/lib/auth";
-import { experienceSchema, type ExperienceType } from "@/utils/schema-utils";
-import { SheetNames } from "@/utils/sheet.utils";
-import { cn } from "@/utils/styles.utils";
+import { experienceSchema, type ExperienceType } from "@/lib/schema/experience";
+import { SheetNames } from "@/utils/sheet";
+import { cn } from "@/utils/styles";
 
 import { ExperienceCard } from "./ExperienceCard";
 

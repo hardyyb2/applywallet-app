@@ -6,8 +6,8 @@ import { Button } from "@/components/isolated/Button";
 import { Flex } from "@/components/isolated/Flex";
 import { Icons } from "@/components/isolated/Icons";
 import { Typography } from "@/components/isolated/Typography";
-import { getLinkWithLocale } from "@/utils/routes.utils";
-import { cn } from "@/utils/styles.utils";
+import { getLinkWithLocale } from "@/utils/routes";
+import { cn } from "@/utils/styles";
 
 import { bottomNavDisplayOptions } from "../navigation.utils";
 

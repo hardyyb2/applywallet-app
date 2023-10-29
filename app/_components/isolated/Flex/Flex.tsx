@@ -6,7 +6,7 @@ import {
   type ReactNode,
 } from "react";
 
-import { cn } from "@/utils/styles.utils";
+import { cn } from "@/utils/styles";
 
 import type {
   FlexAlignType,

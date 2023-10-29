@@ -5,7 +5,7 @@ import Negotiator from "negotiator";
 import { createI18nMiddleware } from "next-international/middleware";
 
 import { i18n, type Locale } from "@/utils/locale-utils";
-import { ApiRoutes } from "@/utils/routes.utils";
+import { ApiRoutes } from "@/utils/routes";
 
 const getNegotiatorHeaders = (request: NextRequest): Record<string, string> => {
   const headers: Record<string, string> = {};

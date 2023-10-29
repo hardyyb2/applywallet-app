@@ -1,4 +1,4 @@
-import { cn, cnMerge } from "../styles.utils";
+import { cn, cnMerge } from "../styles";
 
 describe("cn", () => {
   it("should return conflicting classes", () => {

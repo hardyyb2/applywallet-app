@@ -1,4 +1,4 @@
-import { tailwindConfig } from "./tailwind.utils";
+import { tailwindConfig } from "./tailwind";
 
 const getThemeNames = (themes: (string | Record<string, object>)[] = []) => {
   return themes?.map((theme) => {

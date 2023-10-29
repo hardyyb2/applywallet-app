@@ -3,7 +3,7 @@
 import { m } from "framer-motion";
 import { useBoolean } from "react-use";
 
-import { cn } from "@/utils/styles.utils";
+import { cn } from "@/utils/styles";
 
 import { NavigationMenu } from "../NavigationMenu";
 import { SideNavBrand } from "./SideNavBrand";

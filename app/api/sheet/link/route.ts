@@ -5,9 +5,12 @@ import { z } from "zod";
 
 import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/prisma";
-import { ApiError, ApiErrorCodes, ApiResponse } from "@/utils/api";
-import { CustomError } from "@/utils/error";
-import { getSheetIdFromLink, linkSheetFormSchema } from "@/utils/schema-utils";
+import {
+  getSheetIdFromLink,
+  linkSheetFormSchema,
+} from "@/lib/schema/link-sheet";
+import { ApiError, ApiErrorCodes, ApiResponse } from "@/utils/api/api-response";
+import { CustomError } from "@/utils/error/custom-error";
 
 export async function POST(request: Request) {
   try {

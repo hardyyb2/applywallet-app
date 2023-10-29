@@ -2,7 +2,7 @@ import { forwardRef, type ComponentType, type ReactNode } from "react";
 
 import { type VariantProps } from "cva";
 
-import { cn } from "@/utils/styles.utils";
+import { cn } from "@/utils/styles";
 
 import {
   typographyVariants,
