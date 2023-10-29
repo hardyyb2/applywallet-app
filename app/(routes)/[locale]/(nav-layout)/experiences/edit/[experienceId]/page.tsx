@@ -5,7 +5,7 @@ import { GoogleSpreadsheet } from "google-spreadsheet";
 import { getServerSession } from "next-auth";
 import { z } from "zod";
 
-import { IconLink } from "@/components/dependent";
+import { IconLink } from "@/components/dependent/IconLink";
 import { Breadcrumbs } from "@/components/isolated/Breadcrumbs";
 import { authOptions } from "@/lib/auth";
 import { logger } from "@/lib/logs";

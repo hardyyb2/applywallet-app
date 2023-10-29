@@ -1,6 +1,8 @@
 import { type ReactNode } from "react";
 
-import { BaseLayout, Header, Navigation } from "@/components/dependent";
+import { BaseLayout } from "@/components/dependent/BaseLayout";
+import { Header } from "@/components/dependent/Header";
+import { Navigation } from "@/components/dependent/Navigation";
 import { cn } from "@/utils/styles.utils";
 
 const NavLayout = ({ children }: { children: ReactNode }) => {
