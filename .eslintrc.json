@@ -3,7 +3,18 @@
   "rules": {
     "import/no-default-export": "error",
     "curly": ["error", "all"],
-    "no-console": ["warn"]
+    "no-console": ["warn"],
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": [
+          {
+            "group": ["@radix-ui/*"],
+            "message": "Please import from '@/components' instead."
+          }
+        ]
+      }
+    ]
   },
   "overrides": [
     {
@@ -20,6 +31,12 @@
       ],
       "rules": {
         "import/no-default-export": "off"
+      }
+    },
+    {
+      "files": ["./app/_components/**/**/*.{jsx,tsx}"],
+      "rules": {
+        "no-restricted-imports": "off"
       }
     }
   ]
