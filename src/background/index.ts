@@ -1,7 +1,9 @@
 import { Storage } from "@plasmohq/storage";
 
+import { envVars } from "@/utils/env-vars";
+
 chrome.runtime.onInstalled.addListener(async () => {
-  const URL = process.env.PLASMO_PUBLIC_API_URL;
+  const URL = envVars.PLASMO_PUBLIC_API_URL;
 
   // TODO - replace with axios when it has a proper fetch adapter, "axios-fetch-adapter" does not work
 

@@ -1,10 +1,10 @@
 import { PrismaClient } from "@prisma/client";
 
-import { envVariables } from "@/utils/env-vars";
+import { envVars } from "@/utils/env-vars";
 
 let prisma: PrismaClient;
 
-if (envVariables.NODE_ENV === "production") {
+if (envVars.NODE_ENV === "production") {
   prisma = new PrismaClient();
 } else {
   if (!global.prisma) {

@@ -1,7 +1,9 @@
 import axios from "axios";
 
+import { envVars } from "@/utils/env-vars";
+
 const extApi = axios.create({
-  baseURL: process.env.PLASMO_PUBLIC_API_URL,
+  baseURL: envVars.PLASMO_PUBLIC_API_URL,
   withCredentials: true,
 });
 

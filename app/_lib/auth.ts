@@ -5,7 +5,7 @@ import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { type NextAuthOptions } from "next-auth";
 
 import { db } from "@/lib/prisma";
-import { envVariables } from "@/utils/env-vars";
+import { envVars } from "@/utils/env-vars";
 
 const scopes: { [key in OAuthProviderType]?: string[] } = {
   google: [
@@ -19,8 +19,8 @@ const scopes: { [key in OAuthProviderType]?: string[] } = {
 export const authOptions: NextAuthOptions = {
   providers: [
     GoogleProvider({
-      clientId: envVariables.GOOGLE_CLIENT_ID,
-      clientSecret: envVariables.GOOGLE_CLIENT_SECRET,
+      clientId: envVars.GOOGLE_CLIENT_ID,
+      clientSecret: envVars.GOOGLE_CLIENT_SECRET,
       authorization: {
         params: {
           scope: scopes.google?.join(" "),
