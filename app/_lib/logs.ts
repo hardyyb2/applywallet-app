@@ -1,7 +1,5 @@
 import logger from "loglevel";
 
-import { envVars } from "@/utils/env-vars";
-
 const logLevelByEnvironment = {
   development: "debug",
   production: "silent",
@@ -19,7 +17,7 @@ logger.methodFactory = function (methodName, logLevel, loggerName) {
   };
 };
 
-const environment = envVars.NODE_ENV || "development";
+const environment = process.env.NODE_ENV || "development";
 logger.setLevel(logLevelByEnvironment[environment] ?? "debug");
 
 export { logger };

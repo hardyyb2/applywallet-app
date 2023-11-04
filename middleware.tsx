@@ -4,7 +4,7 @@ import { match as matchLocale } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 import { createI18nMiddleware } from "next-international/middleware";
 
-import { envVars } from "@/utils/env-vars";
+import { envVars } from "@/utils/env";
 import { i18n, type Locale } from "@/utils/locale-utils";
 import { ApiRoutes } from "@/utils/routes";
 
