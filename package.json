@@ -1,5 +1,6 @@
 {
-  "name": "applywallet-next",
+  "name": "applywallet",
+  "displayName": "applywallet",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -117,6 +118,8 @@
     "yargs": "^17.7.2"
   },
   "manifest": {
+    "name": "applywallet",
+    "default_locale": "en",
     "host_permissions": [
       "http://localhost:3000/api/*"
     ],
