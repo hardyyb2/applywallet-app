@@ -7,6 +7,7 @@ import dynamic from "next/dynamic";
 import { domAnimation, LazyMotion, MotionConfig } from "framer-motion";
 import { ToastContainer } from "react-toastify";
 
+import { GoogleAnalytics } from "@/components/dependent/GoogleAnalytics";
 import { I18nProviderClient } from "@/locales/client";
 import { type Locale } from "@/utils/locale-utils";
 
@@ -26,6 +27,7 @@ type ProvidersType = {
 const Providers = ({ children, locale }: ProvidersType) => {
   return (
     <SessionProvider>
+      <GoogleAnalytics GA_TRACKING_ID={process.env.NEXT_PUBLIC_GA_APP_ID} />
       <TopLoader />
       <LazyMotion features={domAnimation}>
         <MotionConfig
