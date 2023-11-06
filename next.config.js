@@ -7,8 +7,17 @@ const { withContentlayer } = require("next-contentlayer");
 const nextConfig = {
   swcMinify: true,
   images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com",
+      },
+      {
+        protocol: "https",
+        hostname: "picsum.photos",
+      },
+    ],
     // TODO - remove picsum
-    domains: ["lh3.googleusercontent.com", "picsum.photos"],
   },
   webpack(config) {
     config.module.rules.push({
