@@ -37,7 +37,7 @@ module.exports = withBundleAnalyzer(
       // Suppresses source map uploading logs during build
       silent: true,
       org: "hardik-badola",
-      project: "javascript-nextjs",
+      project: "applywallet",
     },
     {
       widenClientFileUpload: true,
