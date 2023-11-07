@@ -41,3 +41,5 @@ dev.db
 .contentlayer
 
 .plasmo
+# Sentry Config File
+.sentryclirc

@@ -2,6 +2,7 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 });
 const { withContentlayer } = require("next-contentlayer");
+const { withSentryConfig } = require("@sentry/nextjs");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -29,4 +30,19 @@ const nextConfig = {
   },
 };
 
-module.exports = withBundleAnalyzer(withContentlayer(nextConfig));
+module.exports = withBundleAnalyzer(
+  withSentryConfig(
+    withContentlayer(nextConfig),
+    {
+      // Suppresses source map uploading logs during build
+      silent: true,
+      org: "hardik-badola",
+      project: "javascript-nextjs",
+    },
+    {
+      widenClientFileUpload: true,
+      hideSourceMaps: true,
+      disableLogger: true,
+    },
+  ),
+);
