@@ -20,4 +20,5 @@
 - ✅ Replace clsx with custom cn function
 - ✅ Separate side menu from root layout
 - ✅ Separate post login and sheet link page
-- SVGs to lucide-react
+- ✅ SVGs to lucide-react
+- Tunnel sentry
