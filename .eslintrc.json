@@ -11,6 +11,11 @@
           {
             "group": ["@radix-ui/*"],
             "message": "Please import from '@/components' instead."
+          },
+          {
+            "group": ["axios"],
+            "importNames": ["default"],
+            "message": "Please use 'appApi' or 'extApi' instead."
           }
         ]
       }
@@ -34,9 +39,37 @@
       }
     },
     {
-      "files": ["./app/_components/**/**/*.{jsx,tsx}"],
+      "files": ["./app/_components/**/*.{jsx,tsx}"],
       "rules": {
-        "no-restricted-imports": "off"
+        "no-restricted-imports": [
+          "off",
+          {
+            "patterns": [
+              {
+                "group": ["@radix-ui/*"]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["./src/lib/extApi.ts", "./app/_lib/appApi.ts"],
+      "rules": {
+        "no-restricted-imports": [
+          "off",
+          {
+            "patterns": [
+              {
+                "group": ["axios"],
+                "importNames": ["default"]
+              },
+              {
+                "group": ["axios/*"]
+              }
+            ]
+          }
+        ]
       }
     }
   ]
