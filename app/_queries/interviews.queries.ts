@@ -1,23 +1,24 @@
 import useSWR, { type Key } from "swr";
 import useSWRMutation from "swr/mutation";
+import { z } from "zod";
 
-import { appApi } from "@/lib/appApi";
-import type {
-  InterviewInputType,
-  InterviewType,
+import { appApi, appApiTyped } from "@/lib/appApi";
+import {
+  interviewSchema,
+  type InterviewInputType,
+  type InterviewType,
 } from "@/lib/schema/interviews";
 import { QueryKeys } from "@/utils/queries";
 import { ApiRoutes } from "@/utils/routes";
 
 const fetchInterviews = async () => {
-  return appApi.get(ApiRoutes.GET_INTERVIEWS).then((res) => {
-    // TODO - zod-type this response and also error
-    if (res.data?.success) {
-      return res.data.data;
-    }
-
-    throw new Error();
-  });
+  return appApiTyped(
+    {
+      url: ApiRoutes.GET_INTERVIEWS,
+      method: "GET",
+    },
+    z.array(interviewSchema),
+  );
 };
 
 const useInterviews = () => {
