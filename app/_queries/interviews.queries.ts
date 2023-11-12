@@ -1,7 +1,7 @@
-import axios from "axios";
 import useSWR, { type Key } from "swr";
 import useSWRMutation from "swr/mutation";
 
+import { appApi } from "@/lib/appApi";
 import type {
   InterviewInputType,
   InterviewType,
@@ -10,7 +10,7 @@ import { QueryKeys } from "@/utils/queries";
 import { ApiRoutes } from "@/utils/routes";
 
 const fetchInterviews = async () => {
-  return axios.get(ApiRoutes.GET_INTERVIEWS).then((res) => {
+  return appApi.get(ApiRoutes.GET_INTERVIEWS).then((res) => {
     // TODO - zod-type this response and also error
     if (res.data?.success) {
       return res.data.data;
@@ -25,7 +25,7 @@ const useInterviews = () => {
 };
 
 const fetchInterview = async (interviewId: InterviewType["id"]) => {
-  return axios.get(ApiRoutes.getInterview(interviewId)).then((res) => {
+  return appApi.get(ApiRoutes.getInterview(interviewId)).then((res) => {
     // TODO - zod-type this response and also error
     if (res.data?.success) {
       return res.data.data;
@@ -45,7 +45,7 @@ const addInterview = async (
   _key: string,
   data: { arg: InterviewInputType },
 ) => {
-  return axios.post(ApiRoutes.ADD_INTERVIEW, data.arg);
+  return appApi.post(ApiRoutes.ADD_INTERVIEW, data.arg);
 };
 
 const useAddInterview = () => {
@@ -57,7 +57,7 @@ const useAddInterview = () => {
 };
 
 const updateInterview = async (_key: string, data: { arg: InterviewType }) => {
-  return axios.put(ApiRoutes.editInterview(data.arg.id), data.arg);
+  return appApi.put(ApiRoutes.editInterview(data.arg.id), data.arg);
 };
 
 const useUpdateInterview = () => {

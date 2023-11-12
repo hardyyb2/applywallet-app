@@ -2,10 +2,10 @@
 
 import { useRouter } from "next/navigation";
 
-import axios from "axios";
 import { toast } from "react-toastify";
 
 import { Button } from "@/components/isolated/Button";
+import { appApi } from "@/lib/appApi";
 import { CustomError } from "@/utils/error/custom-error";
 import { ApiRoutes, AppRoutes } from "@/utils/routes";
 
@@ -13,7 +13,7 @@ const CreateNewSheetButton = () => {
   const router = useRouter();
 
   const handleCreateNewSheetClick = async () => {
-    axios
+    appApi
       .post(ApiRoutes.CREATE_SHEET)
       .then(() => {
         router.replace(AppRoutes.EXPERIENCES);

@@ -3,7 +3,6 @@
 import { useRouter } from "next/navigation";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import axios from "axios";
 import { useForm, type SubmitHandler } from "react-hook-form";
 import { toast } from "react-toastify";
 import { useBoolean } from "react-use";
@@ -11,6 +10,7 @@ import { useBoolean } from "react-use";
 import { Button } from "@/components/isolated/Button";
 import { FormControl } from "@/components/isolated/FormControl";
 import { Typography } from "@/components/isolated/Typography";
+import { appApi } from "@/lib/appApi";
 import {
   experienceInputSchema,
   type ExperienceInputType,
@@ -53,7 +53,7 @@ const AddEditExperienceForm = (props: AddEditExperienceFormProps) => {
     setLoading(true);
 
     if (isEdit) {
-      return axios
+      return appApi
         .put(ApiRoutes.editExperience(props.experience.id), data)
         .then(() => {
           toast.success("experience updated");
@@ -68,7 +68,7 @@ const AddEditExperienceForm = (props: AddEditExperienceFormProps) => {
         .finally(() => setLoading(false));
     }
 
-    return axios
+    return appApi
       .post(ApiRoutes.ADD_EXPERIENCE, data)
       .then(() => {
         toast.success("experience added");

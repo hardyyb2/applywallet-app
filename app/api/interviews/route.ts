@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import axios from "axios";
+import { isAxiosError } from "axios";
 import { GoogleSpreadsheet } from "google-spreadsheet";
 import { getServerSession } from "next-auth";
 import { z } from "zod";
@@ -121,7 +121,7 @@ export async function GET() {
   } catch (err) {
     logger.error("err", err);
     // TODO - redirect to link page or login page
-    if (axios.isAxiosError(err)) {
+    if (isAxiosError(err)) {
       const status = err.response?.status;
     }
 

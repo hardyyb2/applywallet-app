@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 
-import axios from "axios";
+import { isAxiosError } from "axios";
 import { GoogleSpreadsheet } from "google-spreadsheet";
 import { getServerSession } from "next-auth";
 
@@ -56,7 +56,7 @@ const fetchExperiences = async (): Promise<ExperienceType[]> => {
     return experienceRows;
   } catch (err) {
     // TODO - redirect to link page or login page
-    if (axios.isAxiosError(err)) {
+    if (isAxiosError(err)) {
       const status = err.response?.status;
     }
     return [];

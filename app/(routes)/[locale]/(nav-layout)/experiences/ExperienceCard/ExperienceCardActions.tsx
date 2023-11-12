@@ -2,7 +2,6 @@
 
 import { useRouter } from "next/navigation";
 
-import axios from "axios";
 import { toast } from "react-toastify";
 
 import { Button } from "@/components/isolated/Button";
@@ -15,6 +14,7 @@ import {
   PopoverPortal,
   PopoverTrigger,
 } from "@/components/isolated/Popover";
+import { appApi } from "@/lib/appApi";
 import { type ExperienceType } from "@/lib/schema/experience";
 import { ApiRoutes, AppRoutes } from "@/utils/routes";
 
@@ -32,7 +32,7 @@ const ExperienceCardActions = ({ id }: ExperienceCardActionsProps) => {
   };
 
   const handleDeleteClick = () => {
-    axios
+    appApi
       .delete(ApiRoutes.deleteExperience(id))
       .then(() => {
         // TODO - replace with revalidatePath when it works

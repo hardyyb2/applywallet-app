@@ -3,12 +3,12 @@
 import { useRouter } from "next/navigation";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import axios from "axios";
 import { useForm, type SubmitHandler } from "react-hook-form";
 import { toast } from "react-toastify";
 
 import { Button } from "@/components/isolated/Button";
 import { FormControl } from "@/components/isolated/FormControl";
+import { appApi } from "@/lib/appApi";
 import {
   linkSheetFormSchema,
   type LinkSheetType,
@@ -29,7 +29,7 @@ const LinkSheetInput = () => {
 
   // functions
   const onSubmit: SubmitHandler<LinkSheetType> = (data) => {
-    axios
+    appApi
       .post(ApiRoutes.LINK_SHEET, data)
       .then(() => {
         router.replace(AppRoutes.EXPERIENCES);
