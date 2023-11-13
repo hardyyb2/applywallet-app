@@ -5,7 +5,7 @@ import { useInterviews } from "@/queries/interviews.queries";
 import { cn } from "@/utils/styles";
 
 const InterviewsList = () => {
-  const { data, isLoading, error } = useInterviews();
+  const { data, isLoading } = useInterviews();
 
   if (isLoading) {
     return <BarLoader />;
