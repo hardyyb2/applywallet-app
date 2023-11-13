@@ -18,9 +18,7 @@ const addOptionsToContextMenu = () => {
     id: "subitem",
   });
 
-  chrome.contextMenus.onClicked.addListener((info, tab) => {
-    console.log(info, tab);
-  });
+  chrome.contextMenus.onClicked.addListener((info, tab) => {});
 };
 
 chrome.runtime.onInstalled.addListener(async () => {

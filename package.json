@@ -11,7 +11,7 @@
     "build": "concurrently  \"yarn build:app\" \"yarn build:ext\"",
     "build:app": "next build",
     "build:ext": "plasmo build",
-    "build:app:cdt": "yarn cdt && yarn build",
+    "build:cdt": "yarn cdt && yarn build",
     "start": "next start",
     "analyze": "ANALYZE=true next build",
     "lint": "next lint",

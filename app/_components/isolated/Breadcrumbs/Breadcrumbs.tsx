@@ -1,6 +1,7 @@
 import {
   forwardRef,
   type HTMLAttributes,
+  type LiHTMLAttributes,
   type ReactElement,
   type Ref,
 } from "react";
@@ -8,7 +9,24 @@ import {
 import { cn } from "@/utils/styles";
 
 import { typographyVariants } from "../Typography";
-import { BreadcrumbsItem, type BreadcrumbsItemProps } from "./BreadcrumbsItem";
+
+/** <BreadcrumbsItem> */
+export type BreadcrumbsItemProps = LiHTMLAttributes<HTMLLIElement> & {
+  href?: string;
+};
+
+const BreadcrumbsItem = forwardRef<HTMLLIElement, BreadcrumbsItemProps>(
+  ({ children, href, ...props }, ref): JSX.Element => {
+    return (
+      <li role="link" {...props} ref={ref}>
+        {children}
+      </li>
+    );
+  },
+);
+
+BreadcrumbsItem.displayName = "BreadcrumbsItem";
+/** </BreadcrumbsItem> */
 
 export type BreadcrumbsProps = HTMLAttributes<HTMLDivElement> & {
   children?:

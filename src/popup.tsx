@@ -19,7 +19,8 @@ const Popup = () => {
   // hooks
   const { data, isLoading, error } = useSWR(ApiRoutes.SESSION, async (key) => {
     const res = await extApi.get(key);
-    return res.data as Session;
+    // TODO - check for override for third party APIs
+    return res.data as unknown as Session;
   });
 
   const [autoFillData] = useStorage("auto-fill");

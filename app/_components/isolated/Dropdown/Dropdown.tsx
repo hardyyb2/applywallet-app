@@ -1,12 +1,51 @@
-import { forwardRef, type HTMLAttributes } from "react";
+import {
+  forwardRef,
+  type HTMLAttributes,
+  type LabelHTMLAttributes,
+} from "react";
 
 import { cn } from "@/utils/styles";
 
-import { DropdownItem } from "./DropdownItem";
-import { DropdownMenu } from "./DropdownMenu";
-import { DropdownToggle } from "./DropdownToggle";
+type DropdownItemProps = HTMLAttributes<HTMLLIElement>;
 
-export type DropdownProps = HTMLAttributes<HTMLDivElement> & {
+const DropdownItem = forwardRef<HTMLLIElement, DropdownItemProps>(
+  ({ ...props }, ref) => {
+    return <li {...props} ref={ref} />;
+  },
+);
+
+DropdownItem.displayName = "DropdownItem";
+
+type DropdownMenuProps = HTMLAttributes<HTMLUListElement>;
+
+const DropdownMenu = ({ className, ...props }: DropdownMenuProps) => {
+  return (
+    <ul
+      {...props}
+      tabIndex={0}
+      className={cn(
+        "menu dropdown-content rounded-box bg-base-100 p-2 shadow",
+        className,
+      )}
+    />
+  );
+};
+
+type DropdownToggleProps = Omit<LabelHTMLAttributes<HTMLLabelElement>, "color">;
+
+const DropdownToggle = ({
+  children,
+  className,
+  ...props
+}: DropdownToggleProps) => {
+  return (
+    <label className={className} {...props}>
+      {children}
+    </label>
+  );
+};
+
+type DropdownProps = HTMLAttributes<HTMLDivElement> & {
   horizontal?: "left" | "center" | "right";
   vertical?: "top" | "middle" | "end";
   hover?: boolean;
@@ -55,3 +94,4 @@ const DropdownCompound = Object.assign(Dropdown, {
 });
 
 export { DropdownCompound as Dropdown };
+export type { DropdownProps, DropdownMenuProps, DropdownItemProps };

@@ -1,20 +1,59 @@
-import { forwardRef, type HTMLAttributes } from "react";
+import { forwardRef, type HTMLAttributes, type PropsWithChildren } from "react";
 
 import { cn } from "@/utils/styles";
 
+import { Typography, type TypographyProps } from "../Typography";
 import type { CardSizeTypes } from "./card.types";
-import {
-  CardActions,
-  type CardActionsProps as ActionProps,
-} from "./CardActions";
-import { CardBody, type CardBodyProps as BodyProps } from "./CardBody";
-import { CardFigure, type CardFigureProps as FigureProps } from "./CardFigure";
-import { CardTitle, type CardTitleProps as TitleProps } from "./CardTitle";
 
-export type CardActionsProps = ActionProps;
-export type CardBodyProps = BodyProps;
-export type CardTitleProps = TitleProps;
-export type CardFigureProps = FigureProps;
+/** <CardActions > */
+type CardActionsProps = HTMLAttributes<HTMLDivElement>;
+
+const CardActions = forwardRef<HTMLDivElement, CardActionsProps>(
+  ({ className, ...props }, ref) => (
+    <div {...props} className={cn("card-actions", className)} ref={ref} />
+  ),
+);
+
+CardActions.displayName = "CardActions";
+/** </CardActions > */
+
+/** <CardBody> */
+export type CardBodyProps = HTMLAttributes<HTMLDivElement>;
+
+const CardBody = forwardRef<HTMLDivElement, CardBodyProps>(
+  ({ className, ...props }, ref) => (
+    <div {...props} className={cn("card-body", className)} ref={ref} />
+  ),
+);
+
+CardBody.displayName = "CardBody";
+/* </CardBody> */
+
+/* <CardFigure> */
+export type CardFigureProps = PropsWithChildren & HTMLAttributes<HTMLElement>;
+
+const CardFigure = forwardRef<HTMLElement, CardFigureProps>(
+  ({ children, className, ...props }, ref) => {
+    return (
+      <figure ref={ref} className={cn("relative", className)} {...props}>
+        {children}
+      </figure>
+    );
+  },
+);
+
+CardFigure.displayName = "CardFigure";
+/* </CardFigure> */
+
+/* <CardTitle> */
+export type CardTitleProps = TypographyProps;
+
+const CardTitle = ({ className, ...props }: CardTitleProps) => {
+  return <Typography {...props} className={cn("card-title", className)} />;
+};
+
+CardTitle.displayName = "CardTitle";
+/* </CardTitle> */
 
 export type CardProps = HTMLAttributes<HTMLDivElement> & {
   bordered?: boolean;

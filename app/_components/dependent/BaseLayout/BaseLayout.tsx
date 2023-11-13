@@ -2,8 +2,39 @@ import { forwardRef, type ReactNode } from "react";
 
 import { cn } from "@/utils/styles";
 
-import { BaseLayoutBody } from "./BaseLayoutBody";
-import { BaseLayoutHead } from "./BaseLayoutHead";
+/* <BaseLayoutHead> */
+interface BaseLayoutHeadProps {
+  children: ReactNode;
+  className?: string;
+}
+
+const BaseLayoutHead = forwardRef<HTMLDivElement, BaseLayoutHeadProps>(
+  ({ className, ...rest }, ref) => {
+    const classes = cn(className);
+
+    return <header {...rest} className={classes} ref={ref} />;
+  },
+);
+
+BaseLayoutHead.displayName = "BaseLayoutHead";
+/* </BaseLayoutHead> */
+
+/* <BaseLayoutBody> */
+interface BaseLayoutBodyProps {
+  children: ReactNode;
+  className?: string;
+}
+
+const BaseLayoutBody = forwardRef<HTMLDivElement, BaseLayoutBodyProps>(
+  ({ className, ...rest }, ref) => {
+    const classes = cn("h-full flex-1", className);
+
+    return <main {...rest} className={classes} ref={ref} />;
+  },
+);
+
+BaseLayoutBody.displayName = "BaseLayoutBody";
+/* </BaseLayoutBody> */
 
 export interface BaseLayoutProps {
   children: ReactNode;
