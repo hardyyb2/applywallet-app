@@ -3,7 +3,7 @@ import axios, { type AxiosRequestConfig, type AxiosResponse } from "axios";
 import { apiResponseSchema, type ApiResponseType } from "@/lib/api-response";
 
 const instance = axios.create({
-  baseURL: "/",
+  baseURL: process.env.PLASMO_PUBLIC_API_URL,
 });
 
 const extApi = async <T>(
