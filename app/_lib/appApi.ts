@@ -1,6 +1,7 @@
 import axios, { type AxiosRequestConfig, type AxiosResponse } from "axios";
 
 import { apiResponseSchema, type ApiResponseType } from "./api-response";
+import { logger } from "./logs";
 
 const instance = axios.create({
   baseURL: "/",
@@ -23,7 +24,12 @@ const appApi = async <T, U extends boolean = false>(
         res.data = parsedData.data;
         return res;
       } else {
-        throw new Error("Invalid response, parsing failed");
+        const errorMessage =
+          "Invalid response, parsing failed" +
+          JSON.stringify(parsedData.error.errors);
+
+        logger.error(errorMessage);
+        throw new Error(errorMessage);
       }
     }
 
@@ -41,7 +47,12 @@ const appApi = async <T, U extends boolean = false>(
       res.data = parsedData.data;
       return res;
     } else {
-      throw new Error("Invalid response, parsing failed");
+      const errorMessage =
+        "Invalid response, parsing failed" +
+        JSON.stringify(parsedData.error.errors);
+
+      logger.error(errorMessage);
+      throw new Error(errorMessage);
     }
   }
 
