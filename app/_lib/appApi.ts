@@ -6,25 +6,43 @@ const instance = axios.create({
   baseURL: "/",
 });
 
-const appApi = async <T>(
-  config: AxiosRequestConfig<any, T>,
-): Promise<AxiosResponse<ApiResponseType<T>>> => {
+type ConfigWithSchema<T> = AxiosRequestConfig<any, T>;
+
+const appApi = async <T, U extends boolean = false>(
+  config: ConfigWithSchema<T>,
+  external: U = false as U,
+): Promise<AxiosResponse<U extends true ? T : ApiResponseType<T>>> => {
   const res = await instance(config);
   const schema = config.schema;
+
+  if (external) {
+    if (schema) {
+      const parsedData = schema.safeParse(res.data);
+
+      if (parsedData.success) {
+        res.data = parsedData.data;
+        return res;
+      } else {
+        throw new Error("Invalid response, parsing failed");
+      }
+    }
+
+    return res;
+  }
 
   if (schema) {
     const resSchema = apiResponseSchema.extend({
       data: schema,
     });
 
-    const data = resSchema.parse(res.data);
+    const parsedData = resSchema.safeParse(res.data);
 
-    if (data.success) {
-      res.data = data;
+    if (parsedData.success) {
+      res.data = parsedData.data;
       return res;
+    } else {
+      throw new Error("Invalid response, parsing failed");
     }
-
-    throw new Error("Invalid response, parsing failed");
   }
 
   return res;
