@@ -4,7 +4,7 @@ import { getServerSession } from "next-auth";
 
 import { ApiError, ApiErrorCodes } from "@/lib/api-response";
 import { authOptions } from "@/lib/auth";
-import { CustomError } from "@/utils/error/custom-error";
+import { CustomError } from "@/lib/custom-error";
 
 export async function GET() {
   try {

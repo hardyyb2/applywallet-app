@@ -7,9 +7,9 @@ import { z } from "zod";
 
 import { ApiError, ApiErrorCodes, ApiResponse } from "@/lib/api-response";
 import { authOptions } from "@/lib/auth";
+import { CustomError } from "@/lib/custom-error";
 import { logger } from "@/lib/logs";
 import { interviewInputSchema, interviewSchema } from "@/lib/schema/interviews";
-import { CustomError } from "@/utils/error/custom-error";
 import { SheetNames } from "@/utils/sheet";
 import { zodKeys } from "@/utils/zod";
 

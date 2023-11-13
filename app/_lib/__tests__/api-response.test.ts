@@ -1,4 +1,4 @@
-import { ApiError, ApiErrorCodes, ApiResponse } from "./api-response";
+import { ApiError, ApiErrorCodes, ApiResponse } from "../api-response";
 
 describe("ApiResponse class", () => {
   it("should create an instance of ApiResponse", () => {

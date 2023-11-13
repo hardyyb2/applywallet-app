@@ -8,9 +8,9 @@ import { z } from "zod";
 import { IconLink } from "@/components/dependent/IconLink";
 import { Breadcrumbs } from "@/components/isolated/Breadcrumbs";
 import { authOptions } from "@/lib/auth";
+import { CustomError } from "@/lib/custom-error";
 import { logger } from "@/lib/logs";
 import { experienceSchema, type ExperienceType } from "@/lib/schema/experience";
-import { CustomError } from "@/utils/error/custom-error";
 import { AppRoutes, UrlParams } from "@/utils/routes";
 import { SheetNames } from "@/utils/sheet";
 

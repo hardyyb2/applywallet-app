@@ -7,8 +7,8 @@ import { z } from "zod";
 
 import { ApiError, ApiErrorCodes, ApiResponse } from "@/lib/api-response";
 import { authOptions } from "@/lib/auth";
+import { CustomError } from "@/lib/custom-error";
 import { interviewInputSchema, interviewSchema } from "@/lib/schema/interviews";
-import { CustomError } from "@/utils/error/custom-error";
 import { SheetNames } from "@/utils/sheet";
 
 import type { ApiRequestContextType } from "@/types/api";

@@ -9,11 +9,11 @@ import { toast } from "react-toastify";
 import { Button } from "@/components/isolated/Button";
 import { FormControl } from "@/components/isolated/FormControl";
 import { appApi } from "@/lib/appApi";
+import { CustomError } from "@/lib/custom-error";
 import {
   linkSheetFormSchema,
   type LinkSheetType,
 } from "@/lib/schema/link-sheet";
-import { CustomError } from "@/utils/error/custom-error";
 import { ApiRoutes, AppRoutes } from "@/utils/routes";
 
 const LinkSheetInput = () => {
