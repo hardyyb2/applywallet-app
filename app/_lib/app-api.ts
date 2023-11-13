@@ -16,47 +16,26 @@ const appApi = async <T, U extends boolean = false>(
   const res = await instance(config);
   const schema = config.schema;
 
-  if (external) {
-    if (schema) {
-      const parsedData = schema.safeParse(res.data);
-
-      if (parsedData.success) {
-        res.data = parsedData.data;
-        return res;
-      } else {
-        const errorMessage =
-          "Invalid response, parsing failed" +
-          JSON.stringify(parsedData.error.errors);
-
-        logger.error(errorMessage);
-        throw new Error(errorMessage);
-      }
-    }
-
+  if (!schema) {
     return res;
   }
 
-  if (schema) {
-    const resSchema = apiResponseSchema.extend({
-      data: schema,
-    });
+  const resSchema = external
+    ? schema
+    : apiResponseSchema.extend({ data: schema });
+  const parsedData = resSchema.safeParse(res.data);
 
-    const parsedData = resSchema.safeParse(res.data);
-
-    if (parsedData.success) {
-      res.data = parsedData.data;
-      return res;
-    } else {
-      const errorMessage =
-        "Invalid response, parsing failed" +
-        JSON.stringify(parsedData.error.errors);
-
-      logger.error(errorMessage);
-      throw new Error(errorMessage);
-    }
+  if (parsedData.success) {
+    res.data = parsedData.data;
+    return res;
   }
 
-  return res;
+  const errorMessage =
+    "Invalid response, parsing failed" +
+    JSON.stringify(parsedData.error.errors, null, 2);
+
+  logger.error(errorMessage);
+  throw new Error(errorMessage);
 };
 
 appApi.get = async <T>(url: string, config?: AxiosRequestConfig<any, T>) => {
