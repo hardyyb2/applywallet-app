@@ -7,10 +7,8 @@ export const instance = axios.create({
   baseURL: "/",
 });
 
-type ConfigWithSchema<T> = AxiosRequestConfig<any, T>;
-
 const appApi = async <T, U extends boolean = false>(
-  config: ConfigWithSchema<T>,
+  config: AxiosRequestConfig<any, T>,
   external: U = false as U,
 ): Promise<AxiosResponse<U extends true ? T : ApiResponseType<T>>> => {
   const res = await instance(config);
