@@ -30,27 +30,46 @@ const appApi = async <T>(
   return res;
 };
 
-appApi.get = async <T>(
-  url: string,
-  config?: AxiosRequestConfig<any, T>,
-): Promise<AxiosResponse<ApiResponseType<T>>> => {
-  return instance.get(url, config);
+appApi.get = async <T>(url: string, config?: AxiosRequestConfig<any, T>) => {
+  return appApi({
+    ...config,
+    method: "GET",
+    url,
+  });
 };
 
 appApi.post = async <T>(
   url: string,
   data?: any,
   config?: AxiosRequestConfig<any, T>,
-): Promise<AxiosResponse<ApiResponseType<T>>> => {
-  return instance.post(url, data, config);
+) => {
+  return appApi({
+    ...config,
+    method: "POST",
+    url,
+    data,
+  });
 };
 
 appApi.put = async <T>(
   url: string,
   data?: any,
   config?: AxiosRequestConfig<any, T>,
-): Promise<AxiosResponse<ApiResponseType<T>>> => {
-  return instance.put(url, data, config);
+) => {
+  return appApi({
+    ...config,
+    method: "PUT",
+    url,
+    data,
+  });
+};
+
+appApi.delete = async <T>(url: string, config?: AxiosRequestConfig<any, T>) => {
+  return appApi({
+    ...config,
+    method: "DELETE",
+    url,
+  });
 };
 
 export { appApi };

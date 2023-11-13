@@ -26,6 +26,10 @@ const EditInterview = ({ params }: EditInterviewProps) => {
     throw new Error();
   }
 
+  if (!data) {
+    throw new Error("No data");
+  }
+
   return (
     <div className="m-xs mt-0">
       <Breadcrumbs className="mb-2xs pt-0 [&_a]:no-underline">

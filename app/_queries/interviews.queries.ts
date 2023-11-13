@@ -14,7 +14,6 @@ import { ApiRoutes } from "@/utils/routes";
 const fetchInterviews = async () => {
   return appApi
     .get(ApiRoutes.GET_INTERVIEWS, {
-      method: "GET",
       schema: z.array(interviewSchema),
     })
     .then((res) => {
@@ -27,14 +26,18 @@ const useInterviews = () => {
 };
 
 const fetchInterview = async (interviewId: InterviewType["id"]) => {
-  return appApi.get(ApiRoutes.getInterview(interviewId)).then((res) => {
-    // TODO - zod-type this response and also error
-    if (res.data?.success) {
-      return res.data.data;
-    }
+  return appApi
+    .get(ApiRoutes.getInterview(interviewId), {
+      schema: interviewSchema,
+    })
+    .then((res) => {
+      // TODO - zod-type this response and also error
+      if (res.data?.success) {
+        return res.data.data;
+      }
 
-    throw new Error();
-  });
+      throw new Error();
+    });
 };
 
 const useInterview = (interviewId: string) => {

@@ -35,7 +35,6 @@ const ExperienceCardActions = ({ id }: ExperienceCardActionsProps) => {
     appApi
       .delete(ApiRoutes.deleteExperience(id))
       .then(() => {
-        // TODO - replace with revalidatePath when it works
         toast.success("experience deleted");
         router.refresh();
       })
