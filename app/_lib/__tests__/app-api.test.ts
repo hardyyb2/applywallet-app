@@ -54,7 +54,7 @@ describe("appApi", () => {
     const data = { foo: "bar" };
     mock.onGet("/foo").reply(200, data);
 
-    const res = await appApi({ url: "/foo" }, true);
+    const res = await appApi({ url: "/foo", external: true });
     expect(res.data).toEqual(data);
   });
 
@@ -62,13 +62,11 @@ describe("appApi", () => {
     const data = { foo: "bar" };
     mock.onGet("/foo").reply(200, data);
 
-    const res = await appApi(
-      {
-        url: "/foo",
-        schema: z.object({ foo: z.string() }),
-      },
-      true,
-    );
+    const res = await appApi({
+      url: "/foo",
+      schema: z.object({ foo: z.string() }),
+      external: true,
+    });
     expect(res.data).toEqual(data);
   });
 
@@ -77,13 +75,11 @@ describe("appApi", () => {
     mock.onGet("/foo").reply(200, data);
 
     await expect(
-      appApi(
-        {
-          url: "/foo",
-          schema: z.object({ foo: z.string() }),
-        },
-        true,
-      ),
+      appApi({
+        url: "/foo",
+        schema: z.object({ foo: z.string() }),
+        external: true,
+      }),
     ).rejects.toThrow();
   });
   /* </External calls> */

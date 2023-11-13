@@ -8,11 +8,11 @@ export const instance = axios.create({
 });
 
 const appApi = async <T, U extends boolean = false>(
-  config: AxiosRequestConfig<any, T>,
-  external: U = false as U,
+  config: AxiosRequestConfig<any, T, U>,
 ): Promise<AxiosResponse<U extends true ? T : ApiResponseType<T>>> => {
   const res = await instance(config);
   const schema = config.schema;
+  const external = config.external ?? false;
 
   if (!schema) {
     return res;
@@ -36,7 +36,10 @@ const appApi = async <T, U extends boolean = false>(
   throw new Error(errorMessage);
 };
 
-appApi.get = async <T>(url: string, config?: AxiosRequestConfig<any, T>) => {
+appApi.get = async <T, U extends boolean = false>(
+  url: string,
+  config?: AxiosRequestConfig<any, T, U>,
+) => {
   return appApi({
     ...config,
     method: "GET",
@@ -44,10 +47,10 @@ appApi.get = async <T>(url: string, config?: AxiosRequestConfig<any, T>) => {
   });
 };
 
-appApi.post = async <T>(
+appApi.post = async <T, U extends boolean = false>(
   url: string,
   data?: any,
-  config?: AxiosRequestConfig<any, T>,
+  config?: AxiosRequestConfig<any, T, U>,
 ) => {
   return appApi({
     ...config,
@@ -57,10 +60,10 @@ appApi.post = async <T>(
   });
 };
 
-appApi.put = async <T>(
+appApi.put = async <T, U extends boolean = false>(
   url: string,
   data?: any,
-  config?: AxiosRequestConfig<any, T>,
+  config?: AxiosRequestConfig<any, T, U>,
 ) => {
   return appApi({
     ...config,
@@ -70,7 +73,10 @@ appApi.put = async <T>(
   });
 };
 
-appApi.delete = async <T>(url: string, config?: AxiosRequestConfig<any, T>) => {
+appApi.delete = async <T, U extends boolean = false>(
+  url: string,
+  config?: AxiosRequestConfig<any, T, U>,
+) => {
   return appApi({
     ...config,
     method: "DELETE",
