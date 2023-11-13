@@ -18,7 +18,6 @@
     "lint-fix": "next lint --fix",
     "format": "prettier --write 'app/**/*.{ts,tsx}'",
     "format:css": "stylelint --fix '**/*.scss'",
-    "clean": "vite clean",
     "test": "vitest",
     "test:ui": "vitest --ui",
     "coverage": "vitest run --coverage",
