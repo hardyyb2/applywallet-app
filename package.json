@@ -41,6 +41,7 @@
     "@types/gtag.js": "^0.0.17",
     "@vitest/ui": "^0.34.6",
     "axios": "^1.5.1",
+    "axios-mock-adapter": "^1.22.0",
     "clsx": "^1.2.1",
     "concurrently": "^8.2.2",
     "contentlayer": "^0.3.4",
