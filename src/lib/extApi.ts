@@ -1,21 +1,75 @@
-import axios, { type AxiosRequestConfig } from "axios";
-import type { z } from "zod";
+import axios, { type AxiosRequestConfig, type AxiosResponse } from "axios";
 
-const extApi = axios.create({
-  baseURL: process.env.PLASMO_PUBLIC_API_URL,
-  withCredentials: true,
+import { apiResponseSchema, type ApiResponseType } from "@/lib/api-response";
+
+const instance = axios.create({
+  baseURL: "/",
 });
 
-const extApiTyped = async <T>(
-  config: AxiosRequestConfig,
-  schema: z.Schema<T>,
-) => {
-  const res = await extApi(config);
+const extApi = async <T>(
+  config: AxiosRequestConfig<any, T>,
+): Promise<AxiosResponse<ApiResponseType<T>>> => {
+  const res = await instance(config);
+  const schema = config.schema;
 
-  if (res.data?.success) {
-    const data = schema.parse(res.data.data);
-    return data;
+  if (schema) {
+    const resSchema = apiResponseSchema.extend({
+      data: schema,
+    });
+
+    const data = resSchema.parse(res.data);
+
+    if (data.success) {
+      res.data = data;
+      return res;
+    }
+
+    throw new Error("Invalid response, parsing failed");
   }
+
+  return res;
 };
 
-export { extApi, extApiTyped };
+extApi.get = async <T>(url: string, config?: AxiosRequestConfig<any, T>) => {
+  return extApi({
+    ...config,
+    method: "GET",
+    url,
+  });
+};
+
+extApi.post = async <T>(
+  url: string,
+  data?: any,
+  config?: AxiosRequestConfig<any, T>,
+) => {
+  return extApi({
+    ...config,
+    method: "POST",
+    url,
+    data,
+  });
+};
+
+extApi.put = async <T>(
+  url: string,
+  data?: any,
+  config?: AxiosRequestConfig<any, T>,
+) => {
+  return extApi({
+    ...config,
+    method: "PUT",
+    url,
+    data,
+  });
+};
+
+extApi.delete = async <T>(url: string, config?: AxiosRequestConfig<any, T>) => {
+  return extApi({
+    ...config,
+    method: "DELETE",
+    url,
+  });
+};
+
+export { extApi };
