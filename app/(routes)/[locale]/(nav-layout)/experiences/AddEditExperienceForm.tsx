@@ -10,7 +10,7 @@ import { useBoolean } from "react-use";
 import { Button } from "@/components/isolated/Button";
 import { FormControl } from "@/components/isolated/FormControl";
 import { Typography } from "@/components/isolated/Typography";
-import { appApi } from "@/lib/appApi";
+import { appApi } from "@/lib/app-api";
 import {
   experienceInputSchema,
   type ExperienceInputType,

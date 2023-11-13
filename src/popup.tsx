@@ -9,7 +9,7 @@ import { logger } from "@/lib/logs";
 import { ApiRoutes } from "@/utils/routes";
 
 import { ExtLoginCard } from "./components/ExtLoginCard";
-import { extApi } from "./lib/extApi";
+import { extApi } from "./lib/ext-api";
 import { ExtProviders } from "./providers";
 
 import "@/styles/overrides/daisyui.scss";

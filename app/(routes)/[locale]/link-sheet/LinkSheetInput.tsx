@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 
 import { Button } from "@/components/isolated/Button";
 import { FormControl } from "@/components/isolated/FormControl";
-import { appApi } from "@/lib/appApi";
+import { appApi } from "@/lib/app-api";
 import { CustomError } from "@/lib/custom-error";
 import {
   linkSheetFormSchema,

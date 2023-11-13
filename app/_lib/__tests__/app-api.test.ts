@@ -3,7 +3,7 @@ import MockAdapter from "axios-mock-adapter";
 import { z } from "zod";
 
 import { ApiResponse } from "../api-response";
-import { appApi, instance as axiosInstance } from "../appApi";
+import { appApi, instance as axiosInstance } from "../app-api";
 
 const mock = new MockAdapter(axiosInstance, { onNoMatch: "throwException" });
 

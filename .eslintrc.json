@@ -54,7 +54,7 @@
       }
     },
     {
-      "files": ["./src/lib/extApi.ts", "./app/_lib/appApi.ts"],
+      "files": ["./src/lib/ext-api.ts", "./app/_lib/app-api.ts"],
       "rules": {
         "no-restricted-imports": [
           "off",

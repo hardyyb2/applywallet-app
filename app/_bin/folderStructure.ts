@@ -3214,6 +3214,19 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
+    id: "app/_lib/__tests__/app-api.test.ts",
+    data: {
+      name: "app-api.test.ts",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
     id: "app/_lib/__tests__/custom-error.test.ts",
     data: {
       name: "custom-error.test.ts",
@@ -3240,9 +3253,9 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_lib/appApi.ts",
+    id: "app/_lib/app-api.ts",
     data: {
-      name: "appApi.ts",
+      name: "app-api.ts",
       type: "file",
       subType: "page",
     },
@@ -5724,6 +5737,12 @@ export const edges: DrEdgeType[] = [
     type: "smoothstep",
   },
   {
+    id: "e:app/_lib/__tests__->app/_lib/__tests__/app-api.test.ts",
+    source: "app/_lib/__tests__",
+    target: "app/_lib/__tests__/app-api.test.ts",
+    type: "smoothstep",
+  },
+  {
     id: "e:app/_lib/__tests__->app/_lib/__tests__/custom-error.test.ts",
     source: "app/_lib/__tests__",
     target: "app/_lib/__tests__/custom-error.test.ts",
@@ -5736,9 +5755,9 @@ export const edges: DrEdgeType[] = [
     type: "smoothstep",
   },
   {
-    id: "e:app/_lib->app/_lib/appApi.ts",
+    id: "e:app/_lib->app/_lib/app-api.ts",
     source: "app/_lib",
-    target: "app/_lib/appApi.ts",
+    target: "app/_lib/app-api.ts",
     type: "smoothstep",
   },
   {

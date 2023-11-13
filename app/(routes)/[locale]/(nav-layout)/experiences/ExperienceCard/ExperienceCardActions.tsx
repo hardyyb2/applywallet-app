@@ -14,7 +14,7 @@ import {
   PopoverPortal,
   PopoverTrigger,
 } from "@/components/isolated/Popover";
-import { appApi } from "@/lib/appApi";
+import { appApi } from "@/lib/app-api";
 import { type ExperienceType } from "@/lib/schema/experience";
 import { ApiRoutes, AppRoutes } from "@/utils/routes";
 

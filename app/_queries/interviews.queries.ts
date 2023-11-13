@@ -2,7 +2,7 @@ import useSWR, { type Key } from "swr";
 import useSWRMutation from "swr/mutation";
 import { z } from "zod";
 
-import { appApi } from "@/lib/appApi";
+import { appApi } from "@/lib/app-api";
 import {
   interviewSchema,
   type InterviewInputType,
@@ -17,7 +17,7 @@ const fetchInterviews = async () => {
     url: ApiRoutes.GET_INTERVIEWS,
     schema: z.array(interviewSchema),
   }).then((res) => {
-    return res.data;
+    return res.data.data;
   });
 };
 
