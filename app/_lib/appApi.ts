@@ -3,7 +3,7 @@ import axios, { type AxiosRequestConfig, type AxiosResponse } from "axios";
 import { apiResponseSchema, type ApiResponseType } from "./api-response";
 import { logger } from "./logs";
 
-const instance = axios.create({
+export const instance = axios.create({
   baseURL: "/",
 });
 
