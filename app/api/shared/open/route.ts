@@ -2,8 +2,8 @@ import { NextResponse } from "next/server";
 
 import { getServerSession } from "next-auth";
 
+import { ApiError, ApiErrorCodes } from "@/lib/api-response";
 import { authOptions } from "@/lib/auth";
-import { ApiError, ApiErrorCodes } from "@/utils/api/api-response";
 import { CustomError } from "@/utils/error/custom-error";
 
 export async function GET() {
