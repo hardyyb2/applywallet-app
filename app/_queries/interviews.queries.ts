@@ -12,15 +12,14 @@ import { QueryKeys } from "@/utils/queries";
 import { ApiRoutes } from "@/utils/routes";
 
 const fetchInterviews = async () => {
-  return appApi(
-    {
-      url: ApiRoutes.GET_INTERVIEWS,
+  return appApi
+    .get(ApiRoutes.GET_INTERVIEWS, {
       method: "GET",
-    },
-    z.array(interviewSchema),
-  ).then((res) => {
-    return res.data.data;
-  });
+      schema: z.array(interviewSchema),
+    })
+    .then((res) => {
+      return res.data.data;
+    });
 };
 
 const useInterviews = () => {

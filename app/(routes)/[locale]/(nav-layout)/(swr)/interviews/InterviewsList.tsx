@@ -18,10 +18,10 @@ const InterviewsList = () => {
         "grid-cols-[repeat(auto-fill,minmax(256px,1fr))] md:grid-cols-[repeat(auto-fill,minmax(400px,1fr))] lg:grid-cols-[repeat(auto-fill,minmax(480px,1fr))]",
       )}
     >
-      {data?.map((_interview, index: number) => (
-        <div key={index} className="card bg-base-200">
+      {data?.map((interview) => (
+        <div key={interview.id} className="card bg-base-200">
           <div className={cn("card-body")}>
-            <h2 className="card-title">Card title!</h2>
+            <h2 className="card-title">{interview.name}</h2>
             <p>If a dog chews shoes whose shoes does he choose?</p>
             <div className="card-actions justify-end">
               <button className="btn btn-primary">Buy Now</button>
