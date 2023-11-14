@@ -4,7 +4,7 @@ import { apiResponseSchema, type ApiResponseType } from "@/lib/api-response";
 import { logger } from "@/lib/logs";
 
 export const instance = axios.create({
-  baseURL: "/",
+  baseURL: process.env.PLASMO_PUBLIC_API_URL,
 });
 
 const extApi = async <T, U extends boolean = false>(
