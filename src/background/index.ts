@@ -18,7 +18,12 @@ const addOptionsToContextMenu = () => {
     id: "subitem",
   });
 
-  chrome.contextMenus.onClicked.addListener((info, tab) => {});
+  chrome.contextMenus.onClicked.addListener((info, tab) => {
+    if (tab?.id && info.menuItemId === "subitem") {
+      console.log("this was sent");
+      chrome.tabs.sendMessage(tab.id, { action: "getClickedElement" });
+    }
+  });
 };
 
 chrome.runtime.onInstalled.addListener(async () => {
@@ -27,12 +32,6 @@ chrome.runtime.onInstalled.addListener(async () => {
   // TODO - replace with axios when it has a proper fetch adapter, "axios-fetch-adapter" does not work
 
   try {
-    const res = await fetch(`${URL}/api/shared/open`, {
-      method: "GET",
-      credentials: "include",
-    });
-    const data = await res.json();
-
     // TODO - parse data using zod
     const storage = new Storage();
     await storage.set("auto-fill", {
