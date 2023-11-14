@@ -1,36 +1,45 @@
 import axios, { type AxiosRequestConfig, type AxiosResponse } from "axios";
 
 import { apiResponseSchema, type ApiResponseType } from "@/lib/api-response";
+import { logger } from "@/lib/logs";
 
-const instance = axios.create({
-  baseURL: process.env.PLASMO_PUBLIC_API_URL,
+export const instance = axios.create({
+  baseURL: "/",
 });
 
-const extApi = async <T>(
-  config: AxiosRequestConfig<any, T>,
-): Promise<AxiosResponse<ApiResponseType<T>>> => {
+const extApi = async <T, U extends boolean = false>(
+  config: AxiosRequestConfig<any, T, U>,
+): Promise<AxiosResponse<U extends true ? T : ApiResponseType<T>>> => {
   const res = await instance(config);
   const schema = config.schema;
+  const external = config.external ?? false;
 
-  if (schema) {
-    const resSchema = apiResponseSchema.extend({
-      data: schema,
-    });
-
-    const data = resSchema.parse(res.data);
-
-    if (data.success) {
-      res.data = data;
-      return res;
-    }
-
-    throw new Error("Invalid response, parsing failed");
+  if (!schema) {
+    return res;
   }
 
-  return res;
+  const resSchema = external
+    ? schema
+    : apiResponseSchema.extend({ data: schema });
+  const parsedData = resSchema.safeParse(res.data);
+
+  if (parsedData.success) {
+    res.data = parsedData.data;
+    return res;
+  }
+
+  const errorMessage =
+    "Invalid response, parsing failed" +
+    JSON.stringify(parsedData.error.errors, null, 2);
+
+  logger.error(errorMessage);
+  throw new Error(errorMessage);
 };
 
-extApi.get = async <T>(url: string, config?: AxiosRequestConfig<any, T>) => {
+extApi.get = async <T, U extends boolean = false>(
+  url: string,
+  config?: AxiosRequestConfig<any, T, U>,
+) => {
   return extApi({
     ...config,
     method: "GET",
@@ -38,10 +47,10 @@ extApi.get = async <T>(url: string, config?: AxiosRequestConfig<any, T>) => {
   });
 };
 
-extApi.post = async <T>(
+extApi.post = async <T, U extends boolean = false>(
   url: string,
   data?: any,
-  config?: AxiosRequestConfig<any, T>,
+  config?: AxiosRequestConfig<any, T, U>,
 ) => {
   return extApi({
     ...config,
@@ -51,10 +60,10 @@ extApi.post = async <T>(
   });
 };
 
-extApi.put = async <T>(
+extApi.put = async <T, U extends boolean = false>(
   url: string,
   data?: any,
-  config?: AxiosRequestConfig<any, T>,
+  config?: AxiosRequestConfig<any, T, U>,
 ) => {
   return extApi({
     ...config,
@@ -64,7 +73,10 @@ extApi.put = async <T>(
   });
 };
 
-extApi.delete = async <T>(url: string, config?: AxiosRequestConfig<any, T>) => {
+extApi.delete = async <T, U extends boolean = false>(
+  url: string,
+  config?: AxiosRequestConfig<any, T, U>,
+) => {
   return extApi({
     ...config,
     method: "DELETE",
