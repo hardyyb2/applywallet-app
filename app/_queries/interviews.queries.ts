@@ -1,5 +1,4 @@
-import useSWR, { type Key } from "swr";
-import useSWRMutation from "swr/mutation";
+import { useMutation, useQuery, type QueryKey } from "@tanstack/react-query";
 import { z } from "zod";
 
 import { appApi } from "@/lib/app-api";
@@ -22,7 +21,10 @@ const fetchInterviews = async () => {
 };
 
 const useInterviews = () => {
-  return useSWR(QueryKeys.INTERVIEWS, fetchInterviews);
+  return useQuery({
+    queryKey: [QueryKeys.INTERVIEWS],
+    queryFn: fetchInterviews,
+  });
 };
 
 const fetchInterview = async (interviewId: InterviewType["id"]) => {
@@ -41,36 +43,32 @@ const fetchInterview = async (interviewId: InterviewType["id"]) => {
 };
 
 const useInterview = (interviewId: string) => {
-  return useSWR(QueryKeys.interview(interviewId), () =>
-    fetchInterview(interviewId),
-  );
+  return useQuery({
+    queryKey: [QueryKeys.interview(interviewId)],
+    queryFn: () => fetchInterview(interviewId),
+  });
 };
 
-const addInterview = async (
-  _key: string,
-  data: { arg: InterviewInputType },
-) => {
-  return appApi.post(ApiRoutes.ADD_INTERVIEW, data.arg);
+const addInterview = async (data: InterviewInputType) => {
+  return appApi.post(ApiRoutes.ADD_INTERVIEW, data);
 };
 
 const useAddInterview = () => {
-  // TODO - replace this any
-  return useSWRMutation<any, any, Key, InterviewInputType>(
-    QueryKeys.INTERVIEWS,
-    addInterview,
-  );
+  return useMutation({
+    mutationFn: addInterview,
+    mutationKey: [QueryKeys.INTERVIEWS],
+  });
 };
 
-const updateInterview = async (_key: string, data: { arg: InterviewType }) => {
-  return appApi.put(ApiRoutes.editInterview(data.arg.id), data.arg);
+const updateInterview = async (data: InterviewType) => {
+  return appApi.put(ApiRoutes.editInterview(data.id), data);
 };
 
 const useUpdateInterview = () => {
-  // TODO - replace this any
-  return useSWRMutation<any, any, Key, InterviewType>(
-    QueryKeys.INTERVIEWS,
-    updateInterview,
-  );
+  return useMutation({
+    mutationFn: updateInterview,
+    mutationKey: [QueryKeys.INTERVIEWS],
+  });
 };
 
 export { useInterviews, useInterview, useAddInterview, useUpdateInterview };

@@ -2,7 +2,6 @@ import React from "react";
 
 import { useStorage } from "@plasmohq/storage/hook";
 import type { Session } from "next-auth";
-import useSWR from "swr";
 
 import { BarLoader } from "@/components/isolated/BarLoader";
 import { logger } from "@/lib/logs";
@@ -15,12 +14,17 @@ import { ExtProviders } from "./providers";
 import "@/styles/overrides/daisyui.scss";
 import "./globals.ext.scss";
 
+import { useQuery } from "@tanstack/react-query";
+
 const Popup = () => {
   // hooks
-  const { data, isLoading, error } = useSWR(ApiRoutes.SESSION, async (key) => {
-    const res = await extApi.get(key);
-    // TODO - check for override for third party APIs
-    return res.data as unknown as Session;
+  const { data, isLoading, error } = useQuery({
+    queryKey: [ApiRoutes.SESSION],
+    queryFn: async () => {
+      const res = await extApi.get(ApiRoutes.SESSION);
+      // TODO - check for override for third party APIs
+      return res.data as unknown as Session;
+    },
   });
 
   const [autoFillData] = useStorage("auto-fill");

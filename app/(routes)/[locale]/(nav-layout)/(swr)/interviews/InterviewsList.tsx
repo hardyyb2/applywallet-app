@@ -5,7 +5,7 @@ import { useInterviews } from "@/queries/interviews.queries";
 import { cn } from "@/utils/styles";
 
 const InterviewsList = () => {
-  const { data, isLoading } = useInterviews();
+  const { data, isLoading, isFetching } = useInterviews();
 
   if (isLoading) {
     return <BarLoader />;
@@ -29,6 +29,7 @@ const InterviewsList = () => {
           </div>
         </div>
       ))}
+      {isFetching ? "Loading new data" : null}
     </div>
   );
 };

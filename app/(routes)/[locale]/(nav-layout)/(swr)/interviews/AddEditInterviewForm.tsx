@@ -3,9 +3,9 @@
 import { useRouter } from "next/navigation";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useQueryClient } from "@tanstack/react-query";
 import { useForm, type SubmitHandler } from "react-hook-form";
 import { toast } from "react-toastify";
-import { useBoolean } from "react-use";
 
 import { Button } from "@/components/isolated/Button";
 import { FormControl } from "@/components/isolated/FormControl";
@@ -19,6 +19,7 @@ import {
   useAddInterview,
   useUpdateInterview,
 } from "@/queries/interviews.queries";
+import { QueryKeys } from "@/utils/queries";
 import { AppRoutes } from "@/utils/routes";
 
 import { getAddEditInterviewFormCopy } from "./interview.utils";
@@ -37,8 +38,9 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
   const defaultFormValues = isEdit ? props.interview : {};
 
   // hooks
-  const { trigger: triggerAddInterview } = useAddInterview();
-  const { trigger: triggerUpdateInterview } = useUpdateInterview();
+  const queryClient = useQueryClient();
+  const addMutation = useAddInterview();
+  const updateMutation = useUpdateInterview();
   const {
     register,
     handleSubmit,
@@ -49,18 +51,19 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
   });
   const router = useRouter();
 
-  // states
-  const [loading, setLoading] = useBoolean(false);
-
   // functions
   const onSubmit: SubmitHandler<InterviewInputType> = (data) => {
-    setLoading(true);
-
     if (isEdit) {
-      return triggerUpdateInterview(
+      return updateMutation.mutate(
         { ...data, id: props.interview.id },
         {
           onSuccess: () => {
+            queryClient.invalidateQueries({
+              queryKey: [
+                QueryKeys.INTERVIEWS,
+                QueryKeys.interview(props.interview.id),
+              ],
+            });
             toast.success("interview updated");
             router.replace(AppRoutes.INTERVIEWS);
           },
@@ -72,8 +75,11 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
       );
     }
 
-    return triggerAddInterview(data, {
+    return addMutation.mutate(data, {
       onSuccess: () => {
+        queryClient.invalidateQueries({
+          queryKey: [QueryKeys.INTERVIEWS],
+        });
         toast.success("interview added");
         router.replace(AppRoutes.INTERVIEWS);
       },
@@ -85,6 +91,7 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
   };
 
   // constants
+  const loading = addMutation.isPending || updateMutation.isPending;
   const { buttonText, titleText } = getAddEditInterviewFormCopy(
     props.type,
     loading,
