@@ -54,25 +54,35 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
   // functions
   const onSubmit: SubmitHandler<InterviewInputType> = (data) => {
     if (isEdit) {
-      return updateMutation.mutate(
-        { ...data, id: props.interview.id },
-        {
-          onSuccess: () => {
-            queryClient.invalidateQueries({
-              queryKey: [
-                QueryKeys.INTERVIEWS,
-                QueryKeys.interview(props.interview.id),
-              ],
-            });
-            toast.success("interview updated");
-            router.replace(AppRoutes.INTERVIEWS);
-          },
-          onError: () => {
-            // TODO - show valid error
-            toast.error("failed to update interview, please try again");
-          },
+      const updatedInterview: InterviewType = Object.assign(data, {
+        id: props.interview.id,
+      });
+
+      return updateMutation.mutate(updatedInterview, {
+        onSuccess: () => {
+          queryClient.setQueryData<InterviewType[]>(
+            [QueryKeys.INTERVIEWS],
+            (oldData) => {
+              if (oldData) {
+                return oldData.map((interview) => {
+                  if (interview.id === props.interview.id) {
+                    return updatedInterview;
+                  }
+
+                  return interview;
+                });
+              }
+            },
+          );
+
+          toast.success("interview updated");
+          router.replace(AppRoutes.INTERVIEWS);
         },
-      );
+        onError: () => {
+          // TODO - show valid error
+          toast.error("failed to update interview, please try again");
+        },
+      });
     }
 
     return addMutation.mutate(data, {
