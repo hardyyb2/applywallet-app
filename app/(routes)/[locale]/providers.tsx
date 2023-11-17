@@ -1,9 +1,11 @@
 "use client";
 
-import { type ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import { SessionProvider } from "next-auth/react";
 import dynamic from "next/dynamic";
 
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { domAnimation, LazyMotion, MotionConfig } from "framer-motion";
 import { ToastContainer } from "react-toastify";
 
@@ -25,18 +27,32 @@ type ProvidersType = {
 };
 
 const Providers = ({ children, locale }: ProvidersType) => {
+  const [queryClient] = useState(
+    () =>
+      new QueryClient({
+        defaultOptions: {
+          queries: {
+            staleTime: 10 * 60 * 1000, // 10 minutes
+          },
+        },
+      }),
+  );
+
   return (
     <SessionProvider>
-      <GoogleAnalytics GA_TRACKING_ID={process.env.NEXT_PUBLIC_GA_APP_ID} />
-      <TopLoader />
-      <LazyMotion features={domAnimation}>
-        <MotionConfig
-          transition={{ type: "spring", stiffness: 400, damping: 24 }}
-        >
-          <I18nProviderClient locale={locale}>{children}</I18nProviderClient>
-        </MotionConfig>
-      </LazyMotion>
-      <ToastContainer position="top-right" limit={4} autoClose={5000} />
+      <QueryClientProvider client={queryClient}>
+        <GoogleAnalytics GA_TRACKING_ID={process.env.NEXT_PUBLIC_GA_APP_ID} />
+        <TopLoader />
+        <LazyMotion features={domAnimation}>
+          <MotionConfig
+            transition={{ type: "spring", stiffness: 400, damping: 24 }}
+          >
+            <I18nProviderClient locale={locale}>{children}</I18nProviderClient>
+          </MotionConfig>
+        </LazyMotion>
+        <ToastContainer position="top-right" limit={4} autoClose={5000} />
+        <ReactQueryDevtools initialIsOpen={false} />
+      </QueryClientProvider>
     </SessionProvider>
   );
 };

@@ -16,6 +16,10 @@
             "group": ["axios"],
             "importNames": ["default"],
             "message": "Please use 'appApi' or 'extApi' instead."
+          },
+          {
+            "group": ["@/queries/*", "@tanstack/*"],
+            "message": "Cannot use queries outside the (swr) folder"
           }
         ]
       }
@@ -66,6 +70,26 @@
               },
               {
                 "group": ["axios/*"]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": [
+        "./app/(routes)/\\[locale\\]/(nav-layout)/(swr)/**/*.{tsx,jsx}",
+        "./app/(routes)/\\[locale\\]/providers.tsx",
+        "./app/_queries/*",
+        "./src/*"
+      ],
+      "rules": {
+        "no-restricted-imports": [
+          "off",
+          {
+            "patterns": [
+              {
+                "group": ["@/queries/*", "@tanstack/*"]
               }
             ]
           }
