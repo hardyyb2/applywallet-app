@@ -1,4 +1,7 @@
+import type { RequestOptions } from "https";
+
 import axios, { type AxiosRequestConfig, type AxiosResponse } from "axios";
+import type { z } from "zod";
 
 import { apiResponseSchema, type ApiResponseType } from "@/lib/api-response";
 import { logger } from "@/lib/logs";
@@ -82,6 +85,51 @@ extApi.delete = async <T, U extends boolean = false>(
     method: "DELETE",
     url,
   });
+};
+
+// TODO - completely remove this when we have fetch adapter for axios
+interface FetchConfig<T, U extends boolean> extends RequestOptions {
+  schema?: z.Schema<T>;
+  external?: U;
+}
+
+extApi.fetch = async <T, U extends boolean = false>(
+  url: URL | string,
+  config?: FetchConfig<T, U>,
+): Promise<U extends true ? T : ApiResponseType<T>> => {
+  /** The fetch is hijacked by next 13, and expects "RequestInit" object as second param,
+      but we are in extension so the fetch is browser native and not next's **/
+  // @ts-expect-error
+  const fetchResult = await fetch(url, config);
+
+  if (!fetchResult.ok) {
+    logger.error("Fetch failed");
+    throw new Error("Fetch failed");
+  }
+  const data = await fetchResult.json();
+
+  if (!config?.schema) {
+    return data;
+  }
+
+  const schema = config.schema;
+  const external = config.external ?? false;
+
+  const resSchema = external
+    ? schema
+    : apiResponseSchema.extend({ data: schema });
+  const parsedData = resSchema.safeParse(data);
+
+  if (parsedData.success) {
+    return parsedData.data as U extends true ? T : ApiResponseType<T>;
+  }
+
+  const errorMessage =
+    "Invalid response, parsing failed" +
+    JSON.stringify(parsedData.error.errors, null, 2);
+
+  logger.error(errorMessage);
+  throw new Error(errorMessage);
 };
 
 export { extApi };
