@@ -4,16 +4,10 @@ import { useRouter } from "next/navigation";
 
 import { toast } from "react-toastify";
 
-import { Button } from "@/components/isolated/Button";
-import { Flex } from "@/components/isolated/Flex";
-import { Icons } from "@/components/isolated/Icons";
 import {
-  Popover,
-  PopoverArrow,
-  PopoverContent,
-  PopoverPortal,
-  PopoverTrigger,
-} from "@/components/isolated/Popover";
+  BaseCardActions,
+  type BaseCardActionsProps,
+} from "@/components/dependent/BaseCardActions";
 import { appApi } from "@/lib/app-api";
 import { type ExperienceType } from "@/lib/schema/experience";
 import { ApiRoutes, AppRoutes } from "@/utils/routes";
@@ -43,40 +37,19 @@ const ExperienceCardActions = ({ id }: ExperienceCardActionsProps) => {
       });
   };
 
-  return (
-    <Popover>
-      <PopoverTrigger asChild>
-        <Button
-          color="ghost"
-          startIcon={<Icons.MoreVertical />}
-          className="p-0"
-        />
-      </PopoverTrigger>
-      <PopoverPortal>
-        <PopoverContent
-          className="rounded-lg border-2 border-primary bg-base-200 p-2"
-          collisionPadding={8}
-        >
-          <Flex direction="row" className="gap-2">
-            <Button
-              color="primary"
-              responsive
-              startIcon={<Icons.Pencil />}
-              onClick={handleEditClick}
-            />
-            <Button
-              color="error"
-              responsive
-              startIcon={<Icons.Trash2 />}
-              onClick={handleDeleteClick}
-            />
-          </Flex>
+  const handleAction: BaseCardActionsProps["handleAction"] = (action) => {
+    if (action === "edit") {
+      handleEditClick();
+      return;
+    }
 
-          <PopoverArrow className="fill-primary" />
-        </PopoverContent>
-      </PopoverPortal>
-    </Popover>
-  );
+    if (action === "delete") {
+      handleDeleteClick();
+      return;
+    }
+  };
+
+  return <BaseCardActions handleAction={handleAction} />;
 };
 
 export { ExperienceCardActions };
