@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import dynamic from "next/dynamic";
 
@@ -16,14 +18,26 @@ const BaseSelectNoSSR = dynamic(() => import("react-select"), {
 
 interface SelectProps
   extends BaseSelectProps,
-    VariantProps<typeof selectVariants> {}
+    VariantProps<typeof selectVariants> {
+  bordered?: boolean;
+  borderOffset?: boolean;
+}
 
 const Select = ({
   size = "md",
   color,
+  borderOffset = true,
+  bordered = true,
   className = "",
+  menuPortalTarget,
   ...restProps
 }: SelectProps) => {
+  const getMenuPortal = () => {
+    return typeof document !== "undefined"
+      ? document.querySelector("body")
+      : null;
+  };
+
   return (
     <BaseSelectNoSSR
       unstyled
@@ -34,6 +48,18 @@ const Select = ({
               size,
               color,
             }),
+            bordered && [
+              "border-[1px] border-base-content/20",
+              {
+                "border-primary": color === "primary",
+                "border-secondary": color === "secondary",
+                "border-accent": color === "accent",
+                "border-success": color === "success",
+                "border-warning": color === "warning",
+                "border-error": color === "error",
+                "border-info": color === "info",
+              },
+            ],
             "pr-4",
           ),
         container: (state) =>
@@ -54,7 +80,7 @@ const Select = ({
           ),
         valueContainer: () => cn("text-[1rem]"),
         placeholder: () => cn("text-[#9ca3af] opacity-75"),
-        menu: () => cn("bg-base-100 mt-2 rounded-btn p-2"),
+        menu: () => cn("bg-base-100 mt-2 rounded-btn p-2 shadow-md"),
         menuList: () => cn("space-y-2"),
         option: (state) =>
           cnMerge(
@@ -77,6 +103,7 @@ const Select = ({
           ),
       }}
       {...restProps}
+      menuPortalTarget={getMenuPortal()}
     />
   );
 };
