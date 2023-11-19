@@ -8,13 +8,13 @@ type FormControlTextareaProps = TextareaProps;
 const FormControlTextarea = forwardRef<
   HTMLTextAreaElement,
   FormControlTextareaProps
->((props, ref) => {
+>(({ color, ...props }, ref) => {
   const { error = "", htmlFor } = useFormControlContext();
 
   return (
     <Textarea
       id={htmlFor}
-      color={Boolean(error) ? "error" : "primary"}
+      color={Boolean(error) ? "error" : color}
       aria-invalid={Boolean(error) ? "true" : "false"}
       {...props}
       ref={ref}
