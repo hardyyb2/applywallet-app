@@ -4,6 +4,7 @@ import { type ReactNode } from "react";
 
 import { FormControlContext } from "./formControl.utils";
 import { FormControlInput } from "./FormControlInput";
+import { FormControlSelect } from "./FormControlSelect";
 import { FormControlTextarea } from "./FormControlTextarea";
 
 interface FormControlProps {
@@ -39,6 +40,7 @@ const FormControl = ({
 const FormControlCompound = Object.assign(FormControl, {
   Input: FormControlInput,
   Textarea: FormControlTextarea,
+  Select: FormControlSelect,
 });
 
 export { FormControlCompound as FormControl };
