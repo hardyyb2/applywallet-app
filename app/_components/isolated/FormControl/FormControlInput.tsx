@@ -6,13 +6,13 @@ import { useFormControlContext } from "./formControl.utils";
 type FormControlInputProps = InputProps;
 
 const FormControlInput = forwardRef<HTMLInputElement, FormControlInputProps>(
-  (props, ref) => {
+  ({ color, ...props }, ref) => {
     const { error = "", htmlFor } = useFormControlContext();
 
     return (
       <Input
         id={htmlFor}
-        color={Boolean(error) ? "error" : "primary"}
+        color={Boolean(error) ? "error" : color}
         aria-invalid={Boolean(error) ? "true" : "false"}
         {...props}
         ref={ref}
