@@ -5,6 +5,8 @@ import {
   BookOpen,
   Briefcase,
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
   ChevronsRight,
   ChevronUp,
   Clapperboard,
@@ -61,6 +63,8 @@ const Icons = {
   FolderOpen,
   FileText,
   ChevronUp,
+  ChevronLeft,
+  ChevronRight,
   Info,
   Hash,
   CustomHome: forwardRef<SVGSVGElement, LucideProps>(function CustomHome(
