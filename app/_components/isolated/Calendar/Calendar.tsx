@@ -25,13 +25,13 @@ const Calendar = ({
       className={cnMerge("p-2", className)}
       classNames={{
         months: "flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0",
-        month: "space-y-4",
+        month: "space-y-8",
         caption: "flex justify-center pt-1 relative items-center",
         caption_label: typographyVariants({ variant: "subtitle1" }),
         nav: "space-x-1 flex items-center",
         nav_button: cnMerge(
           buttonVariants({ variant: "outline" }),
-          "h-12 w-12 bg-transparent p-0 opacity-50 hover:opacity-100",
+          "h-12 w-12 p-0 opacity-50 hover:opacity-100",
         ),
         nav_button_previous: "absolute left-1",
         nav_button_next: "absolute right-1",
@@ -39,7 +39,7 @@ const Calendar = ({
         head_row: "flex",
         head_cell: cnMerge(
           typographyVariants({ variant: "subtitle2" }),
-          "text-base-content/50 rounded-md w-8",
+          "text-base-content/75 rounded-md w-12 text-center",
         ),
         row: "flex w-full mt-2",
         cell: cnMerge(
