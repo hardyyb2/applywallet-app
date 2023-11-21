@@ -109,21 +109,37 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
 
   return (
     <form
-      className="card m-auto max-w-[65ch] overflow-hidden"
+      className="card m-auto overflow-hidden"
       onSubmit={handleSubmit(onSubmit)}
       noValidate
     >
       <div className="card-body  bg-base-100 [&_.form-control]:mt-2">
         <Typography variant="h3">{titleText}</Typography>
         <div className="mt-s">
-          <Typography variant="subtitle1" className="underline">
+          {/* <Typography variant="subtitle1" className="underline">
             company details
-          </Typography>
-          <FormControl label="name" htmlFor="name" error={errors.name?.message}>
+          </Typography> */}
+          <FormControl
+            label="company name"
+            htmlFor="company_name"
+            error={errors.company_name?.message}
+          >
             <FormControl.Input
               autoFocus
-              placeholder="e.g. google"
-              {...register("name")}
+              placeholder="apollo.io"
+              {...register("company_name")}
+            />
+          </FormControl>
+
+          <FormControl
+            label="position"
+            htmlFor="position"
+            error={errors.position?.message}
+          >
+            <FormControl.Input
+              autoFocus
+              placeholder="frontend engineer"
+              {...register("position")}
             />
           </FormControl>
         </div>
