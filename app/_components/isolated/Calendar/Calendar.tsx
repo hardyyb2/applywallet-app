@@ -30,7 +30,7 @@ const Calendar = ({
         caption_label: typographyVariants({ variant: "subtitle1" }),
         nav: "space-x-1 flex items-center",
         nav_button: cnMerge(
-          buttonVariants({ variant: "outline" }),
+          buttonVariants({ variant: "outline", color: "ghost" }),
           "h-12 w-12 p-0 opacity-50 hover:opacity-100",
         ),
         nav_button_previous: "absolute left-1",
@@ -43,25 +43,25 @@ const Calendar = ({
         ),
         row: "flex w-full mt-2",
         cell: cnMerge(
-          "relative p-0 text-center text-sm focus-within:relative focus-within:z-20 [&:has([aria-selected])]:bg-accent [&:has([aria-selected].day-range-end)]:rounded-r-md [&:has([aria-selected].day-outside)]:bg-accent/50",
+          "text-sm relative p-0 text-center focus-within:relative focus-within:z-20 [&:has([aria-selected])]:bg-primary [&:has([aria-selected].day-outside)]:bg-primary/50 [&:has([aria-selected].day-range-end)]:rounded-r-md",
           props.mode === "range"
             ? "[&:has(>.day-range-end)]:rounded-r-md [&:has(>.day-range-start)]:rounded-l-md first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md"
             : "[&:has([aria-selected])]:rounded-md",
         ),
         day: cnMerge(
           buttonVariants({ color: "ghost" }),
-          "h-12 w-12 p-0 font-normal aria-selected:opacity-100",
+          "h-12 w-12 p-0 aria-selected:opacity-100",
         ),
         day_range_start: "day-range-start",
         day_range_end: "day-range-end",
         day_selected:
           "bg-primary text-primary-content hover:bg-primary hover:text-primary-content focus:bg-primary focus:text-primary-content",
-        day_today: "bg-secondary text-secondary-content",
+        day_today: "bg-primary/10",
         day_outside:
-          "day-outside opacity-50 aria-selected:bg-accent/50 aria-selected:opacity-30",
+          "day-outside opacity-25 aria-selected:bg-primary/20 aria-selected:opacity-30",
         day_disabled: "opacity-50",
         day_range_middle:
-          "aria-selected:bg-accent aria-selected:text-accent-content",
+          "aria-selected:bg-primary aria-selected:text-primary-content",
         day_hidden: "invisible",
         ...classNames,
       }}
