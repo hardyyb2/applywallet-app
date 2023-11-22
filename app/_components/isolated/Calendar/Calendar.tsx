@@ -1,6 +1,6 @@
 "use client";
 
-import * as React from "react";
+import type { ComponentProps } from "react";
 
 import { DayPicker } from "react-day-picker";
 
@@ -10,13 +10,18 @@ import { buttonVariants } from "../Button";
 import { Icons } from "../Icons";
 import { typographyVariants } from "../Typography";
 
-export type CalendarProps = React.ComponentProps<typeof DayPicker>;
+export type CalendarProps = ComponentProps<typeof DayPicker> & {
+  size?: "xs" | "sm" | "md";
+  responsive?: boolean;
+};
 
 const Calendar = ({
   className,
   classNames,
   showOutsideDays = true,
   components,
+  size = "md",
+  responsive = false,
   ...props
 }: CalendarProps) => {
   return (
@@ -31,7 +36,13 @@ const Calendar = ({
         nav: "space-x-1 flex items-center",
         nav_button: cnMerge(
           buttonVariants({ variant: "outline", color: "ghost" }),
-          "h-12 w-12 p-0 opacity-50 hover:opacity-100",
+          "p-0 opacity-50 hover:opacity-100",
+          {
+            "h-8 w-8": size === "xs",
+            "h-10 w-10": size === "sm",
+            "h-12 w-12": size === "md",
+          },
+          responsive && "h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12",
         ),
         nav_button_previous: "absolute left-1",
         nav_button_next: "absolute right-1",
@@ -39,9 +50,15 @@ const Calendar = ({
         head_row: "flex",
         head_cell: cnMerge(
           typographyVariants({ variant: "subtitle2" }),
-          "text-base-content/75 rounded-md w-12 text-center",
+          "text-base-content/75 rounded-md text-center",
+          {
+            "w-8": size === "xs",
+            "w-10": size === "sm",
+            "w-12": size === "md",
+          },
+          responsive && "w-8 sm:w-10 md:w-12",
         ),
-        row: "flex w-full mt-2",
+        row: "flex justify-center w-full mt-2",
         cell: cnMerge(
           "text-sm relative p-0 text-center focus-within:relative focus-within:z-20 [&:has([aria-selected])]:bg-primary [&:has([aria-selected].day-outside)]:bg-primary/50 [&:has([aria-selected].day-range-end)]:rounded-r-md",
           props.mode === "range"
@@ -50,7 +67,13 @@ const Calendar = ({
         ),
         day: cnMerge(
           buttonVariants({ color: "ghost" }),
-          "h-12 w-12 p-0 aria-selected:opacity-100",
+          "p-0 aria-selected:opacity-100",
+          {
+            "w-8 h-8": size === "xs",
+            "w-10 h-10": size === "sm",
+            "w-12 h-12": size === "md",
+          },
+          responsive && "w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12",
         ),
         day_range_start: "day-range-start",
         day_range_end: "day-range-end",
@@ -66,12 +89,8 @@ const Calendar = ({
         ...classNames,
       }}
       components={{
-        IconLeft: (props) => (
-          <Icons.ChevronLeft className="h-4 w-4" {...props} />
-        ),
-        IconRight: (props) => (
-          <Icons.ChevronRight className="h-4 w-4" {...props} />
-        ),
+        IconLeft: (props) => <Icons.ChevronLeft {...props} />,
+        IconRight: (props) => <Icons.ChevronRight {...props} />,
         ...components,
       }}
       {...props}
