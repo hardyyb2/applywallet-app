@@ -56,7 +56,7 @@ const UserMenu = () => {
         </Avatar>
       </PopoverTrigger>
       <PopoverContent collisionPadding={8}>
-        <ul role="listbox" className="menu gap-2 rounded-xl bg-base-100 p-2">
+        <ul role="listbox" className="menu gap-2 p-0">
           <li
             className={cn("rounded-lg outline-offset-2 [&_a]:w-max [&_a]:p-0")}
             role="listitem"

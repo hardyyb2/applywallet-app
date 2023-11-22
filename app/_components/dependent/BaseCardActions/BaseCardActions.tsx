@@ -35,10 +35,7 @@ const BaseCardActions = ({
         />
       </PopoverTrigger>
       <PopoverPortal>
-        <PopoverContent
-          className="rounded-lg border-2 border-primary bg-base-200 p-2"
-          collisionPadding={8}
-        >
+        <PopoverContent collisionPadding={8}>
           <Flex direction="row" className="gap-2">
             {actions.includes("edit") ? (
               <Button

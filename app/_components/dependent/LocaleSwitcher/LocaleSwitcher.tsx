@@ -33,7 +33,7 @@ const LocaleSwitcher = () => {
         </Button>
       </PopoverTrigger>
       <PopoverContent align="end">
-        <ul role="listbox" className="menu gap-2 rounded-xl bg-base-100 p-2">
+        <ul role="listbox" className="menu gap-2 p-0">
           {languageOptions.map(({ label, value, icon }) => {
             const { activeLocale, newRedirectPath } = redirectedPathName(
               pathName,

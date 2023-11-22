@@ -24,11 +24,10 @@ const PopoverContent = forwardRef<
   ElementRef<typeof PopoverPrimitive.Content>,
   ComponentPropsWithoutRef<typeof PopoverPrimitive.Content>
 >(({ className, align = "center", ...props }, ref) => (
-  // TODO - add variants
   <PopoverPrimitive.Content
     ref={ref}
     align={align}
-    className={cnMerge(className)}
+    className={cnMerge("z-50 rounded-xl bg-base-100 p-2 shadow", className)}
     {...props}
   />
 ));
