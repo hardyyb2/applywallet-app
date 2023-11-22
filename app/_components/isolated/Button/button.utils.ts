@@ -1,6 +1,6 @@
 import { cva } from "cva";
 
-export const buttonVariants = cva("btn font-secondary", {
+export const buttonVariants = cva("btn font-secondary min-h-[unset]", {
   variants: {
     size: {
       lg: "btn-lg",
