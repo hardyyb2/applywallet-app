@@ -4,6 +4,7 @@ import {
   AlignJustify,
   BookOpen,
   Briefcase,
+  Calendar,
   ChevronDown,
   ChevronLeft,
   ChevronRight,
@@ -67,6 +68,7 @@ const Icons = {
   ChevronRight,
   Info,
   Hash,
+  Calendar,
   CustomHome: forwardRef<SVGSVGElement, LucideProps>(function CustomHome(
     { ...props },
     ref,
