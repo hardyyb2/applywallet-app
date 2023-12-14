@@ -16,7 +16,18 @@ const PopoverTrigger = PopoverPrimitive.Trigger;
 
 const PopoverPortal = PopoverPrimitive.Portal;
 
-const PopoverArrow = PopoverPrimitive.Arrow;
+const PopoverArrow = forwardRef<
+  ElementRef<typeof PopoverPrimitive.Arrow>,
+  ComponentPropsWithoutRef<typeof PopoverPrimitive.Arrow>
+>(({ className, ...props }, ref) => (
+  <PopoverPrimitive.Arrow
+    ref={ref}
+    className={cnMerge("fill-current text-base-content/75", className)}
+    {...props}
+  />
+));
+
+PopoverArrow.displayName = PopoverPrimitive.Arrow.displayName;
 
 const PopoverAnchor = PopoverPrimitive.Anchor;
 
