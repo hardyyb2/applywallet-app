@@ -10,7 +10,7 @@ import { buttonVariants } from "../Button";
 import { Icons } from "../Icons";
 import { typographyVariants } from "../Typography";
 
-export type CalendarProps = ComponentProps<typeof DayPicker> & {
+type CalendarProps = ComponentProps<typeof DayPicker> & {
   size?: "xs" | "sm" | "md";
   responsive?: boolean;
 };
@@ -99,4 +99,4 @@ const Calendar = ({
 };
 Calendar.displayName = "Calendar";
 
-export { Calendar };
+export { Calendar, type CalendarProps };
