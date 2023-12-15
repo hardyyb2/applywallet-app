@@ -28,7 +28,8 @@ const DatePickerInput = ({
   return (
     <Popover>
       <Input
-        value={dayjs(date).format("DD/MM/YYYY")}
+        color={color}
+        value={date ? dayjs(date).format("DD/MM/YYYY") : undefined}
         placeholder="dd/mm/yyyy"
         endIcon={
           <PopoverTrigger asChild>

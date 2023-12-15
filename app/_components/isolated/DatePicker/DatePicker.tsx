@@ -17,13 +17,13 @@ type DatePickerProps = {
 const DatePicker = ({ date, setDate, color = "ghost" }: DatePickerProps) => {
   return (
     <Popover>
-      <PopoverTrigger asChild>
+      <PopoverTrigger className="w-full">
         <Input
           color={color}
-          value={dayjs(date).format("DD/MM/YYYY")}
+          value={date ? dayjs(date).format("DD/MM/YYYY") : undefined}
           placeholder="dd/mm/yyyy"
           role="button"
-          className="text-left"
+          className="w-full text-left"
           readOnly
           iconWrapperClassName="pointer-events-none"
           endIcon={
