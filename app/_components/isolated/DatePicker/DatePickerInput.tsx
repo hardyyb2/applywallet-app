@@ -15,8 +15,8 @@ import {
 import type { DatePickerColorType } from "./datePicker.types";
 
 type DatePickerInputProps = {
-  date: Date | undefined;
-  setDate: (date: Date | undefined) => void;
+  date: Date | string | undefined;
+  setDate: (date: DatePickerInputProps["date"]) => void;
   color?: DatePickerColorType;
 };
 
@@ -25,11 +25,14 @@ const DatePickerInput = ({
   setDate,
   color = "ghost",
 }: DatePickerInputProps) => {
+  const dateVal = typeof date === "string" ? dayjs(date).toDate() : date;
+
   return (
     <Popover>
       <Input
         color={color}
-        value={date ? dayjs(date).format("DD/MM/YYYY") : undefined}
+        defaultValue={date ? dayjs(dateVal).format("DD/MM/YYYY") : undefined}
+        onChange={(e) => setDate(e.target.value)}
         placeholder="dd/mm/yyyy"
         endIcon={
           <PopoverTrigger asChild>
@@ -67,7 +70,7 @@ const DatePickerInput = ({
         <Calendar
           mode="single"
           responsive
-          selected={date}
+          selected={dateVal}
           onSelect={setDate}
           initialFocus
         />

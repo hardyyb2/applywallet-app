@@ -1,19 +1,40 @@
-import { DatePickerInput, type DatePickerProps } from "../DatePicker";
+import {
+  Controller,
+  type Control,
+  type FieldPath,
+  type FieldValues,
+} from "react-hook-form";
+
+import { DatePickerInput, type DatePickerInputProps } from "../DatePicker";
 import { useFormFieldContext } from "./formField.utils";
 
-type FormFieldDatePickerInputProps = DatePickerProps;
+interface FormFieldDatePickerInputProps<T extends FieldValues>
+  extends Omit<DatePickerInputProps, "date" | "setDate"> {
+  name: FieldPath<T>;
+  control: Control<T>;
+}
 
-const FormFieldDatePickerInput = ({
+const FormFieldDatePickerInput = <T extends FieldValues>({
   color,
+  name,
+  control,
   ...props
-}: FormFieldDatePickerInputProps) => {
+}: FormFieldDatePickerInputProps<T>) => {
   const { error = "" } = useFormFieldContext();
 
   return (
-    <DatePickerInput
-      color={Boolean(error) ? "error" : color}
-      aria-invalid={Boolean(error) ? "true" : "false"}
-      {...props}
+    <Controller
+      name={name}
+      control={control}
+      render={({ field: { onChange, value, name } }) => (
+        <DatePickerInput
+          {...props}
+          color={Boolean(error) ? "error" : color}
+          aria-invalid={Boolean(error) ? "true" : "false"}
+          date={value}
+          setDate={onChange}
+        />
+      )}
     />
   );
 };
