@@ -15,7 +15,7 @@ import {
 import type { DatePickerColorType } from "./datePicker.types";
 
 type DatePickerInputProps = {
-  date: Date;
+  date: Date | undefined;
   setDate: (date: Date | undefined) => void;
   color?: DatePickerColorType;
 };

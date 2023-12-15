@@ -9,7 +9,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "../Popover";
 import type { DatePickerColorType } from "./datePicker.types";
 
 type DatePickerProps = {
-  date: Date;
+  date: Date | undefined;
   setDate: (date: Date | undefined) => void;
   color?: DatePickerColorType;
 };
