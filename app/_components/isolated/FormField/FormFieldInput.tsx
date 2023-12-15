@@ -1,13 +1,13 @@
 import { forwardRef } from "react";
 
 import { Input, type InputProps } from "../Input";
-import { useFormControlContext } from "./formControl.utils";
+import { useFormFieldContext } from "./FormField.utils";
 
-type FormControlInputProps = InputProps;
+type FormFieldInputProps = InputProps;
 
-const FormControlInput = forwardRef<HTMLInputElement, FormControlInputProps>(
+const FormFieldInput = forwardRef<HTMLInputElement, FormFieldInputProps>(
   ({ color, ...props }, ref) => {
-    const { error = "", htmlFor } = useFormControlContext();
+    const { error = "", htmlFor } = useFormFieldContext();
 
     return (
       <Input
@@ -21,6 +21,6 @@ const FormControlInput = forwardRef<HTMLInputElement, FormControlInputProps>(
   },
 );
 
-FormControlInput.displayName = "FormControlInput";
+FormFieldInput.displayName = "FormFieldInput";
 
-export { FormControlInput };
+export { FormFieldInput };

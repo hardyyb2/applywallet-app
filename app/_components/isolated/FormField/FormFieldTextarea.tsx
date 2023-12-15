@@ -1,15 +1,15 @@
 import { forwardRef } from "react";
 
 import { Textarea, type TextareaProps } from "../Textarea";
-import { useFormControlContext } from "./formControl.utils";
+import { useFormFieldContext } from "./FormField.utils";
 
-type FormControlTextareaProps = TextareaProps;
+type FormFieldTextareaProps = TextareaProps;
 
-const FormControlTextarea = forwardRef<
+const FormFieldTextarea = forwardRef<
   HTMLTextAreaElement,
-  FormControlTextareaProps
+  FormFieldTextareaProps
 >(({ color, ...props }, ref) => {
-  const { error = "", htmlFor } = useFormControlContext();
+  const { error = "", htmlFor } = useFormFieldContext();
 
   return (
     <Textarea
@@ -22,6 +22,6 @@ const FormControlTextarea = forwardRef<
   );
 });
 
-FormControlTextarea.displayName = "FormControlTextarea";
+FormFieldTextarea.displayName = "FormFieldTextarea";
 
-export { FormControlTextarea };
+export { FormFieldTextarea };

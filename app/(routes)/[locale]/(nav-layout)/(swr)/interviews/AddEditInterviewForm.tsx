@@ -8,7 +8,7 @@ import { useForm, type SubmitHandler } from "react-hook-form";
 import { toast } from "react-toastify";
 
 import { Button } from "@/components/isolated/Button";
-import { FormControl } from "@/components/isolated/FormControl";
+import { FormField } from "@/components/isolated/FormField";
 import { Typography } from "@/components/isolated/Typography";
 import {
   interviewInputSchema,
@@ -119,29 +119,29 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
           {/* <Typography variant="subtitle1" className="underline">
             company details
           </Typography> */}
-          <FormControl
+          <FormField
             label="company name"
             htmlFor="company_name"
             error={errors.company_name?.message}
           >
-            <FormControl.Input
+            <FormField.Input
               autoFocus
               placeholder="apollo.io"
               {...register("company_name")}
             />
-          </FormControl>
+          </FormField>
 
-          <FormControl
+          <FormField
             label="position"
             htmlFor="position"
             error={errors.position?.message}
           >
-            <FormControl.Input
+            <FormField.Input
               autoFocus
               placeholder="frontend engineer"
               {...register("position")}
             />
-          </FormControl>
+          </FormField>
         </div>
 
         <Button

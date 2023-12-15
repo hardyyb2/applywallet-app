@@ -2642,9 +2642,9 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/isolated/FormControl",
+    id: "app/_components/isolated/FormField",
     data: {
-      name: "FormControl",
+      name: "FormField",
       type: "folder",
       subType: "route-group",
     },
@@ -2655,9 +2655,9 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/isolated/FormControl/FormControl.tsx",
+    id: "app/_components/isolated/FormField/FormField.tsx",
     data: {
-      name: "FormControl.tsx",
+      name: "FormField.tsx",
       type: "file",
       subType: "page",
     },
@@ -2668,9 +2668,9 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/isolated/FormControl/FormControlInput.tsx",
+    id: "app/_components/isolated/FormField/FormFieldInput.tsx",
     data: {
-      name: "FormControlInput.tsx",
+      name: "FormFieldInput.tsx",
       type: "file",
       subType: "page",
     },
@@ -2681,9 +2681,9 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/isolated/FormControl/FormControlTextarea.tsx",
+    id: "app/_components/isolated/FormField/FormFieldTextarea.tsx",
     data: {
-      name: "FormControlTextarea.tsx",
+      name: "FormFieldTextarea.tsx",
       type: "file",
       subType: "page",
     },
@@ -2694,9 +2694,9 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/isolated/FormControl/formControl.utils.tsx",
+    id: "app/_components/isolated/FormField/FormField.utils.tsx",
     data: {
-      name: "formControl.utils.tsx",
+      name: "FormField.utils.tsx",
       type: "file",
       subType: "page",
     },
@@ -2707,7 +2707,7 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/isolated/FormControl/index.ts",
+    id: "app/_components/isolated/FormField/index.ts",
     data: {
       name: "index.ts",
       type: "file",
@@ -5473,39 +5473,39 @@ export const edges: DrEdgeType[] = [
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/isolated->app/_components/isolated/FormControl",
+    id: "e:app/_components/isolated->app/_components/isolated/FormField",
     source: "app/_components/isolated",
-    target: "app/_components/isolated/FormControl",
+    target: "app/_components/isolated/FormField",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/isolated/FormControl->app/_components/isolated/FormControl/FormControl.tsx",
-    source: "app/_components/isolated/FormControl",
-    target: "app/_components/isolated/FormControl/FormControl.tsx",
+    id: "e:app/_components/isolated/FormField->app/_components/isolated/FormField/FormField.tsx",
+    source: "app/_components/isolated/FormField",
+    target: "app/_components/isolated/FormField/FormField.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/isolated/FormControl->app/_components/isolated/FormControl/FormControlInput.tsx",
-    source: "app/_components/isolated/FormControl",
-    target: "app/_components/isolated/FormControl/FormControlInput.tsx",
+    id: "e:app/_components/isolated/FormField->app/_components/isolated/FormField/FormFieldInput.tsx",
+    source: "app/_components/isolated/FormField",
+    target: "app/_components/isolated/FormField/FormFieldInput.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/isolated/FormControl->app/_components/isolated/FormControl/FormControlTextarea.tsx",
-    source: "app/_components/isolated/FormControl",
-    target: "app/_components/isolated/FormControl/FormControlTextarea.tsx",
+    id: "e:app/_components/isolated/FormField->app/_components/isolated/FormField/FormFieldTextarea.tsx",
+    source: "app/_components/isolated/FormField",
+    target: "app/_components/isolated/FormField/FormFieldTextarea.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/isolated/FormControl->app/_components/isolated/FormControl/formControl.utils.tsx",
-    source: "app/_components/isolated/FormControl",
-    target: "app/_components/isolated/FormControl/formControl.utils.tsx",
+    id: "e:app/_components/isolated/FormField->app/_components/isolated/FormField/FormField.utils.tsx",
+    source: "app/_components/isolated/FormField",
+    target: "app/_components/isolated/FormField/FormField.utils.tsx",
     type: "smoothstep",
   },
   {
-    id: "e:app/_components/isolated/FormControl->app/_components/isolated/FormControl/index.ts",
-    source: "app/_components/isolated/FormControl",
-    target: "app/_components/isolated/FormControl/index.ts",
+    id: "e:app/_components/isolated/FormField->app/_components/isolated/FormField/index.ts",
+    source: "app/_components/isolated/FormField",
+    target: "app/_components/isolated/FormField/index.ts",
     type: "smoothstep",
   },
   {

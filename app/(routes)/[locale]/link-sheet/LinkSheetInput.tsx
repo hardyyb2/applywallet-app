@@ -7,7 +7,7 @@ import { useForm, type SubmitHandler } from "react-hook-form";
 import { toast } from "react-toastify";
 
 import { Button } from "@/components/isolated/Button";
-import { FormControl } from "@/components/isolated/FormControl";
+import { FormField } from "@/components/isolated/FormField";
 import { appApi } from "@/lib/app-api";
 import { CustomError } from "@/lib/custom-error";
 import {
@@ -43,17 +43,17 @@ const LinkSheetInput = () => {
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
-        <FormControl
+        <FormField
           label="sheet link"
           htmlFor="link"
           error={errors?.link?.message}
         >
-          <FormControl.Input
+          <FormField.Input
             autoFocus
             placeholder="e.g. google"
             {...register("link")}
           />
-        </FormControl>
+        </FormField>
         <Button type="submit" size="lg" color="primary" className="mt-4">
           link
         </Button>

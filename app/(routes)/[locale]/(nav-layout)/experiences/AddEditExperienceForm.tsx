@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 import { useBoolean } from "react-use";
 
 import { Button } from "@/components/isolated/Button";
-import { FormControl } from "@/components/isolated/FormControl";
+import { FormField } from "@/components/isolated/FormField";
 import { Typography } from "@/components/isolated/Typography";
 import { appApi } from "@/lib/app-api";
 import {
@@ -101,69 +101,69 @@ const AddEditExperienceForm = (props: AddEditExperienceFormProps) => {
           <Typography variant="subtitle1" className="underline">
             company details
           </Typography>
-          <FormControl
+          <FormField
             label="company name"
             htmlFor="company.name"
             error={errors?.company_name?.message}
           >
-            <FormControl.Input
+            <FormField.Input
               autoFocus
               placeholder="e.g. google"
               {...register("company_name")}
             />
-          </FormControl>
+          </FormField>
 
-          <FormControl
+          <FormField
             label="company description"
             htmlFor="company.description"
             error={errors?.company_description?.message}
           >
-            <FormControl.Textarea
+            <FormField.Textarea
               placeholder="e.g. google is a multinational technology company that specializes in internet-related services and products"
               {...register("company_description")}
             />
-          </FormControl>
+          </FormField>
         </div>
         <div className="mt-s">
           <Typography variant="subtitle1" className="underline">
             role details
           </Typography>
-          <FormControl
+          <FormField
             label="designation"
             htmlFor="role.name"
             error={errors?.role_name?.message}
           >
-            <FormControl.Input
+            <FormField.Input
               placeholder="e.g. sde-1 (ui)"
               {...register("role_name")}
             />
-          </FormControl>
+          </FormField>
 
-          <FormControl
+          <FormField
             label="role responsibilities"
             error={errors?.role_description?.message}
             htmlFor="role.description"
           >
-            <FormControl.Textarea
+            <FormField.Textarea
               placeholder="e.g. responsible for developing and maintaining user interfaces for web and mobile applications."
               {...register("role_description")}
             />
-          </FormControl>
+          </FormField>
         </div>
         <div className="mt-s">
           <Typography variant="subtitle1" className="underline">
             job details
           </Typography>
-          <FormControl
+          <FormField
             htmlFor="job.description"
             label="job achievements"
             error={errors?.job_description?.message}
           >
-            <FormControl.Textarea
+            <FormField.Textarea
               placeholder="e.g. successfully delivering high-quality user interfaces that meet design requirements and user needs."
               {...register("job_description")}
             />
-          </FormControl>
+          </FormField>
         </div>
         <Button
           type="submit"

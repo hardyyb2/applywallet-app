@@ -7,26 +7,26 @@ import {
 import { z } from "zod";
 
 import { Select, type SelectProps } from "../Select";
-import { useFormControlContext } from "./formControl.utils";
+import { useFormFieldContext } from "./FormField.utils";
 
 const optionSchema = z.object({
   value: z.string(),
 });
 
-interface FormControlSelectProps<T extends FieldValues>
+interface FormFieldSelectProps<T extends FieldValues>
   extends Omit<SelectProps, "name"> {
   name: FieldPath<T>;
   control: Control<T>;
 }
 
-function FormControlSelect<T extends FieldValues>({
+function FormFieldSelect<T extends FieldValues>({
   name,
   control,
   options,
   color,
   ...props
-}: FormControlSelectProps<T>) {
-  const { error = "", htmlFor } = useFormControlContext();
+}: FormFieldSelectProps<T>) {
+  const { error = "", htmlFor } = useFormFieldContext();
 
   console.log("haadn yan", error);
 
@@ -44,7 +44,7 @@ function FormControlSelect<T extends FieldValues>({
 
             if (!parsedOption.success) {
               throw new Error(
-                `FormControlSelect: option does not have a value prop - ${parsedOption.error.issues[0].message}`,
+                `FormFieldSelect: option does not have a value prop - ${parsedOption.error.issues[0].message}`,
               );
             }
 
@@ -58,7 +58,7 @@ function FormControlSelect<T extends FieldValues>({
             }
 
             throw new Error(
-              `FormControlSelect: option does not have a value prop - ${parsedOption.error.issues[0].message}`,
+              `FormFieldSelect: option does not have a value prop - ${parsedOption.error.issues[0].message}`,
             );
           }}
           id={htmlFor}
@@ -69,6 +69,6 @@ function FormControlSelect<T extends FieldValues>({
     />
   );
 }
-FormControlSelect.displayName = "FormControlSelect";
+FormFieldSelect.displayName = "FormFieldSelect";
 
-export { FormControlSelect };
+export { FormFieldSelect };
