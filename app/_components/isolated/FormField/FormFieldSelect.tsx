@@ -7,7 +7,7 @@ import {
 import { z } from "zod";
 
 import { Select, type SelectProps } from "../Select";
-import { useFormFieldContext } from "./FormField.utils";
+import { useFormFieldContext } from "./formField.utils";
 
 const optionSchema = z.object({
   value: z.string(),
@@ -27,8 +27,6 @@ function FormFieldSelect<T extends FieldValues>({
   ...props
 }: FormFieldSelectProps<T>) {
   const { error = "", htmlFor } = useFormFieldContext();
-
-  console.log("haadn yan", error);
 
   return (
     <Controller

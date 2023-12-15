@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 
 import { Textarea, type TextareaProps } from "../Textarea";
-import { useFormFieldContext } from "./FormField.utils";
+import { useFormFieldContext } from "./formField.utils";
 
 type FormFieldTextareaProps = TextareaProps;
 

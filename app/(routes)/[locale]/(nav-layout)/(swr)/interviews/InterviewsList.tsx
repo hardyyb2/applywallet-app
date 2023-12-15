@@ -21,7 +21,7 @@ const InterviewsList = () => {
       {data?.map((interview) => (
         <div key={interview.id} className="card bg-base-200">
           <div className={cn("card-body")}>
-            <h2 className="card-title">{interview.name}</h2>
+            <h2 className="card-title">{interview.company_name}</h2>
             <p>If a dog chews shoes whose shoes does he choose?</p>
             <div className="card-actions justify-end">
               <button className="btn btn-primary">Buy Now</button>
