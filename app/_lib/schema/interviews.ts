@@ -5,7 +5,7 @@ const roundSchema = z.object({
     message: "please enter a round name",
   }),
   type: z.string().optional(),
-  date: z.date().default(new Date()),
+  date: z.date(),
   result: z.string().optional(),
   notes: z.string().optional(),
 });
@@ -18,7 +18,7 @@ export const interviewSchema = z.object({
   position: z.string().min(1, {
     message: "please enter position",
   }),
-  start_date: z.date().default(new Date()),
+  start_date: z.date(),
   end_date: z.date().default(new Date()).optional(),
   result: z.string().optional(),
   rounds: z.record(roundSchema),
