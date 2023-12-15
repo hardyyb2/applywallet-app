@@ -3,6 +3,8 @@
 import { type ReactNode } from "react";
 
 import { FormControlContext } from "./formControl.utils";
+import { FormControlDatePicker } from "./FormControlDatePicker";
+import { FormControlDatePickerInput } from "./FormControlDatePickerInput";
 import { FormControlInput } from "./FormControlInput";
 import { FormControlSelect } from "./FormControlSelect";
 import { FormControlTextarea } from "./FormControlTextarea";
@@ -41,6 +43,8 @@ const FormControlCompound = Object.assign(FormControl, {
   Input: FormControlInput,
   Textarea: FormControlTextarea,
   Select: FormControlSelect,
+  DatePicker: FormControlDatePicker,
+  DatePickerInput: FormControlDatePickerInput,
 });
 
 export { FormControlCompound as FormControl };
