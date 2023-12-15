@@ -18,8 +18,13 @@ const DatePicker = ({ date, setDate }: DatePickerProps) => {
           color="ghost"
           className="w-full justify-between border border-base-content/20"
           endIcon={<Icons.Calendar />}
+          animation={false}
         >
-          {date ? dayjs(date).format("DD/MM/YYYY") : <span>dd/mm/yyyy</span>}
+          {date ? (
+            dayjs(date).format("DD/MM/YYYY")
+          ) : (
+            <span className="text-base-content/75">dd/mm/yyyy</span>
+          )}
         </Button>
       </PopoverTrigger>
 
