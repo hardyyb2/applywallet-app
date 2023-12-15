@@ -1,37 +1,53 @@
 import dayjs from "dayjs";
 
-import { Button } from "../Button";
+import { cn } from "@/utils/styles";
+
 import { Calendar } from "../Calendar";
 import { Icons } from "../Icons";
+import { Input } from "../Input";
 import { Popover, PopoverContent, PopoverTrigger } from "../Popover";
+import type { DatePickerColorType } from "./datePicker.types";
 
 type DatePickerProps = {
   date: Date;
   setDate: (date: Date | undefined) => void;
+  color?: DatePickerColorType;
 };
 
-const DatePicker = ({ date, setDate }: DatePickerProps) => {
+const DatePicker = ({ date, setDate, color = "ghost" }: DatePickerProps) => {
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <Button
-          color="ghost"
-          className="w-full justify-between border border-base-content/20"
-          endIcon={<Icons.Calendar />}
-          animation={false}
-        >
-          {date ? (
-            dayjs(date).format("DD/MM/YYYY")
-          ) : (
-            <span className="text-base-content/75">dd/mm/yyyy</span>
-          )}
-        </Button>
+        <Input
+          color={color}
+          value={dayjs(date).format("DD/MM/YYYY")}
+          placeholder="dd/mm/yyyy"
+          role="button"
+          className="text-left"
+          readOnly
+          iconWrapperClassName="pointer-events-none"
+          endIcon={
+            <Icons.Calendar
+              className={cn(
+                "cursor-pointer",
+                color === "primary" && "stroke-primary",
+                color === "secondary" && "stroke-secondary",
+                color === "accent" && "stroke-accent",
+                color === "ghost" && "stroke-base-content",
+                color === "error" && "stroke-error",
+                color === "warning" && "stroke-warning",
+                color === "success" && "stroke-success",
+                color === "info" && "stroke-info",
+              )}
+            />
+          }
+        />
       </PopoverTrigger>
 
       <PopoverContent
         className="border border-base-content/40 p-4"
         collisionPadding={16}
-        sideOffset={8}
+        sideOffset={4}
         align="end"
         alignOffset={-8}
       >
