@@ -1,5 +1,7 @@
 import dayjs from "dayjs";
 
+import { cn } from "@/utils/styles";
+
 import { Button } from "../Button";
 import { Calendar } from "../Calendar";
 import { Icons } from "../Icons";
@@ -10,13 +12,19 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "../Popover";
+import type { DatePickerColorType } from "./datePicker.types";
 
 type DatePickerInputProps = {
   date: Date;
   setDate: (date: Date | undefined) => void;
+  color?: DatePickerColorType;
 };
 
-const DatePickerInput = ({ date, setDate }: DatePickerInputProps) => {
+const DatePickerInput = ({
+  date,
+  setDate,
+  color = "ghost",
+}: DatePickerInputProps) => {
   return (
     <Popover>
       <Input
@@ -28,7 +36,21 @@ const DatePickerInput = ({ date, setDate }: DatePickerInputProps) => {
               color="ghost"
               size="sm"
               className="p-0"
-              startIcon={<Icons.Calendar />}
+              startIcon={
+                <Icons.Calendar
+                  className={cn(
+                    "cursor-pointer",
+                    color === "primary" && "stroke-primary",
+                    color === "secondary" && "stroke-secondary",
+                    color === "accent" && "stroke-accent",
+                    color === "ghost" && "stroke-base-content",
+                    color === "error" && "stroke-error",
+                    color === "warning" && "stroke-warning",
+                    color === "success" && "stroke-success",
+                    color === "info" && "stroke-info",
+                  )}
+                />
+              }
             />
           </PopoverTrigger>
         }
