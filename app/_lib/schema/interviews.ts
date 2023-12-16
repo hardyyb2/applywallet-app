@@ -23,8 +23,8 @@ export const interviewSchema = z.object({
   result: z.string().optional(),
   rounds: z.record(roundSchema),
 
-  start_date: zodDDMMYYYYDate,
-  end_date: zodDDMMYYYYDate.optional(),
+  start_date: z.union([z.date(), zodDDMMYYYYDate]),
+  end_date: z.union([z.date(), zodDDMMYYYYDate]).optional(),
 });
 
 /** does not include id */
