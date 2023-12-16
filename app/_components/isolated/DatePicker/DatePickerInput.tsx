@@ -23,9 +23,7 @@ const DatePickerInput = ({
   const dateObj =
     typeof date === "string" ? dayjs(date, "DD/MM/YYYY", true).toDate() : date;
   const dateString =
-    typeof date === "string"
-      ? date
-      : dayjs(date, "DD/MM/YYYY", true).format("DD/MM/YYYY");
+    typeof date === "string" ? date : dayjs(date).format("DD/MM/YYYY");
 
   const dateValue = date ? dateString : "";
 
@@ -77,6 +75,7 @@ const DatePickerInput = ({
           selected={dateObj}
           onSelect={setDate}
           initialFocus
+          defaultMonth={dateObj}
         />
       </PopoverContent>
     </Popover>

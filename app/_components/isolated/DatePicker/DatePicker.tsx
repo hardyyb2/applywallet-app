@@ -56,6 +56,7 @@ const DatePicker = ({ date, setDate, color = "ghost" }: DatePickerProps) => {
           responsive
           selected={date}
           onSelect={setDate}
+          defaultMonth={date}
           initialFocus
         />
       </PopoverContent>
