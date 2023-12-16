@@ -32,7 +32,9 @@ const DatePickerInput = ({
       <Input
         color={color}
         value={dateValue}
-        onChange={(e) => setDate(e.target.value)}
+        onChange={(e) => {
+          setDate(e.target.value);
+        }}
         placeholder="dd/mm/yyyy"
         iconSeparate
         iconWrapperClassName="w-full h-full"
@@ -70,6 +72,7 @@ const DatePickerInput = ({
         alignOffset={-8}
       >
         <Calendar
+          data-testid="date-picker-input-calendar"
           mode="single"
           responsive
           selected={dateObj}
