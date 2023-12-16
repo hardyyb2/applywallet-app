@@ -47,7 +47,7 @@ const DatePicker = ({ date, setDate, color = "ghost" }: DatePickerProps) => {
       <PopoverContent
         className="border border-base-content/40 p-4"
         collisionPadding={16}
-        sideOffset={4}
+        sideOffset={8}
         align="end"
         alignOffset={-8}
       >

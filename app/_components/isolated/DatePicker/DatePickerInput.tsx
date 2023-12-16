@@ -6,12 +6,7 @@ import { Button } from "../Button";
 import { Calendar } from "../Calendar";
 import { Icons } from "../Icons";
 import { Input } from "../Input";
-import {
-  Popover,
-  PopoverArrow,
-  PopoverContent,
-  PopoverTrigger,
-} from "../Popover";
+import { Popover, PopoverContent, PopoverTrigger } from "../Popover";
 import type { DatePickerColorType } from "./datePicker.types";
 
 type DatePickerInputProps = {
@@ -76,7 +71,6 @@ const DatePickerInput = ({
           onSelect={setDate}
           initialFocus
         />
-        <PopoverArrow />
       </PopoverContent>
     </Popover>
   );
