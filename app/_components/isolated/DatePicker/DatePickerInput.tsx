@@ -34,6 +34,7 @@ const DatePickerInput = ({
         defaultValue={date ? dayjs(dateVal).format("DD/MM/YYYY") : undefined}
         onChange={(e) => setDate(e.target.value)}
         placeholder="dd/mm/yyyy"
+        iconSeparate
         endIcon={
           <PopoverTrigger asChild>
             <Button
