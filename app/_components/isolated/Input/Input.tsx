@@ -64,6 +64,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     if (startIcon || endIcon) {
       return (
         <div
+          data-testid="input-wrapper"
           className={cnMerge(
             "relative flex w-full items-center",
             iconSeparate && "grid grid-cols-[1fr,auto] gap-2",
@@ -71,6 +72,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         >
           {startIcon && (
             <span
+              data-testid="start-icon"
               className={cnMerge(
                 !iconSeparate ? "absolute left-4 [&_svg]:w-5" : "[&_svg]:w-8",
                 iconWrapperClassName,
@@ -90,6 +92,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           />
           {endIcon && (
             <span
+              data-testid="end-icon"
               className={cnMerge(
                 !iconSeparate ? "absolute right-4 [&_svg]:w-5" : "[&_svg]:w-8",
                 iconWrapperClassName,
