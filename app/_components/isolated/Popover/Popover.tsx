@@ -34,14 +34,30 @@ const PopoverAnchor = PopoverPrimitive.Anchor;
 const PopoverContent = forwardRef<
   ElementRef<typeof PopoverPrimitive.Content>,
   ComponentPropsWithoutRef<typeof PopoverPrimitive.Content>
->(({ className, align = "center", ...props }, ref) => (
-  <PopoverPrimitive.Content
-    ref={ref}
-    align={align}
-    className={cnMerge("z-50 rounded-xl bg-base-100 p-2 shadow", className)}
-    {...props}
-  />
-));
+>(
+  (
+    {
+      className,
+      align = "center",
+      collisionPadding = 8,
+      sideOffset = 4,
+      ...props
+    },
+    ref,
+  ) => (
+    <PopoverPrimitive.Content
+      ref={ref}
+      align={align}
+      collisionPadding={collisionPadding}
+      sideOffset={sideOffset}
+      className={cnMerge(
+        "z-50 rounded-xl border border-base-content/40 bg-base-100 p-2 shadow",
+        className,
+      )}
+      {...props}
+    />
+  ),
+);
 
 PopoverContent.displayName = PopoverPrimitive.Content.displayName;
 
