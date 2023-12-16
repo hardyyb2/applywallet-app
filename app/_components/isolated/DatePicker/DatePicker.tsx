@@ -45,11 +45,10 @@ const DatePicker = ({ date, setDate, color = "ghost" }: DatePickerProps) => {
       </PopoverTrigger>
 
       <PopoverContent
-        className="border border-base-content/40 p-4"
+        className="p-4"
         collisionPadding={16}
         sideOffset={8}
         align="end"
-        alignOffset={-8}
       >
         <Calendar
           data-testid="date-picker-calendar"

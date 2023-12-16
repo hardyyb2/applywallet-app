@@ -20,7 +20,7 @@ const ThemesMenu = () => {
       </Dropdown.Toggle>
       <Dropdown.Menu
         role="listbox"
-        className="max-h-80 flex-col flex-nowrap gap-3 overflow-y-auto"
+        className="mt-1 max-h-80 flex-col flex-nowrap gap-3 overflow-y-auto border border-base-content/40 p-2"
       >
         {selectableThemes.map(({ value }) => (
           <Dropdown.Item

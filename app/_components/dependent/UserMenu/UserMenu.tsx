@@ -55,7 +55,7 @@ const UserMenu = () => {
           </AvatarFallback>
         </Avatar>
       </PopoverTrigger>
-      <PopoverContent collisionPadding={8}>
+      <PopoverContent align="end" sideOffset={8} alignOffset={-4}>
         <ul role="listbox" className="menu gap-2 p-0">
           <li
             className={cn("rounded-lg outline-offset-2 [&_a]:w-max [&_a]:p-0")}
@@ -70,7 +70,6 @@ const UserMenu = () => {
             </Button>
           </li>
         </ul>
-        <PopoverArrow className="fill-base-200" />
       </PopoverContent>
     </Popover>
   );
