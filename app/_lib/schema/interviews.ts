@@ -61,7 +61,7 @@ export const interviewSchema = z.object({
     )
     .transform((dateString, ctx) => {
       if (!dateString) {
-        return null;
+        return;
       }
 
       const date = new Date(dateString);
