@@ -20,7 +20,7 @@ const DatePicker = ({ date, setDate, color = "ghost" }: DatePickerProps) => {
       <PopoverTrigger className="w-full">
         <Input
           color={color}
-          value={date ? dayjs(date).format("DD/MM/YYYY") : undefined}
+          defaultValue={date ? dayjs(date).format("DD/MM/YYYY") : undefined}
           placeholder="dd/mm/yyyy"
           role="button"
           className="w-full text-left"
