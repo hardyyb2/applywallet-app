@@ -4,6 +4,7 @@
     "import/no-default-export": "error",
     "curly": ["error", "all"],
     "no-console": ["warn"],
+    "no-nested-ternary": "error",
     "no-restricted-imports": [
       "error",
       {
