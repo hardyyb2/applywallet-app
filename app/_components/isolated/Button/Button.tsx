@@ -60,7 +60,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       >
         {loading ? <span className="loading" /> : startIcon}
         {children}
-        {endIcon && endIcon}
+        {endIcon ?? null}
       </button>
     );
   },
