@@ -35,12 +35,13 @@ const DatePickerInput = ({
         onChange={(e) => setDate(e.target.value)}
         placeholder="dd/mm/yyyy"
         iconSeparate
+        iconWrapperClassName="w-full h-full"
         endIcon={
           <PopoverTrigger asChild>
             <Button
-              color="ghost"
-              size="sm"
-              className="p-0"
+              color={color}
+              variant="outline"
+              className="w-20 p-0 hover:!bg-transparent"
               startIcon={
                 <Icons.Calendar
                   className={cn(
