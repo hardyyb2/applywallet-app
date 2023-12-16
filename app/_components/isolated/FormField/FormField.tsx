@@ -2,6 +2,8 @@
 
 import { type ReactNode } from "react";
 
+import { ConditionalMatch } from "@dx-kit/react-conditional-match";
+
 import { FormFieldContext } from "./formField.utils";
 import { FormFieldDatePicker } from "./FormFieldDatePicker";
 import { FormFieldDatePickerInput } from "./FormFieldDatePickerInput";
@@ -11,7 +13,8 @@ import { FormFieldTextarea } from "./FormFieldTextarea";
 
 interface FormFieldProps {
   children: ReactNode;
-  label: string;
+  label: ReactNode;
+  description?: ReactNode;
   htmlFor: string;
   error?: string;
 }
@@ -20,21 +23,34 @@ const FormField = ({
   children,
   label,
   htmlFor,
+  description = null,
   error = "",
 }: FormFieldProps) => {
   return (
     <fieldset className="form-control">
-      <label className="label" htmlFor={htmlFor} aria-label={label}>
-        <span className="label-text-alt">{label}</span>
+      <label
+        className="label"
+        htmlFor={htmlFor}
+        aria-label={typeof label === "string" ? label : undefined}
+      >
+        <span className="label-text">{label}</span>
       </label>
       <FormFieldContext.Provider value={{ error, htmlFor }}>
         {children}
       </FormFieldContext.Provider>
-      {error && (
-        <label className="label" htmlFor={htmlFor}>
-          <span className="label-text-alt text-error">{error}</span>
-        </label>
-      )}
+
+      <ConditionalMatch fallback={null}>
+        <ConditionalMatch.Render when={error}>
+          <label className="label" htmlFor={htmlFor}>
+            <span className="label-text-alt text-error">{error}</span>
+          </label>
+        </ConditionalMatch.Render>
+        <ConditionalMatch.Render when={!error && description}>
+          <label className="label" htmlFor={htmlFor}>
+            <span className="label-text-alt">{description}</span>
+          </label>
+        </ConditionalMatch.Render>
+      </ConditionalMatch>
     </fieldset>
   );
 };
