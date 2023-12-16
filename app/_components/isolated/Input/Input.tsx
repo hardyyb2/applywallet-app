@@ -16,6 +16,7 @@ export type InputProps = Omit<
   startIcon?: ReactNode;
   endIcon?: ReactNode;
   iconWrapperClassName?: string;
+  iconSeparate?: boolean;
 };
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
@@ -30,6 +31,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       startIcon = null,
       endIcon = null,
       iconWrapperClassName = "",
+      iconSeparate = false,
       ...props
     },
     ref,
@@ -61,11 +63,16 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
 
     if (startIcon || endIcon) {
       return (
-        <div className="relative flex w-full items-center">
+        <div
+          className={cnMerge(
+            "relative flex w-full items-center",
+            iconSeparate && "grid grid-cols-[1fr,auto] gap-2",
+          )}
+        >
           {startIcon && (
             <span
               className={cnMerge(
-                "absolute left-4 [&>svg]:w-5",
+                !iconSeparate ? "absolute left-4 [&_svg]:w-5" : "[&_svg]:w-8",
                 iconWrapperClassName,
               )}
             >
@@ -84,7 +91,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           {endIcon && (
             <span
               className={cnMerge(
-                "absolute right-4 [&>svg]:w-5",
+                !iconSeparate ? "absolute right-4 [&_svg]:w-5" : "[&_svg]:w-8",
                 iconWrapperClassName,
               )}
             >
