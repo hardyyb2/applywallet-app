@@ -2,7 +2,7 @@ import { forwardRef, type InputHTMLAttributes, type ReactNode } from "react";
 
 import { cnMerge } from "@/utils/styles";
 
-import type { InputColorsType, InputSizeTypes } from "./Input.types";
+import type { InputColorsType, InputSizeTypes } from "./input.types";
 
 export type InputProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,
