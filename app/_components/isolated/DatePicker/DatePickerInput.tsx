@@ -20,9 +20,12 @@ const DatePickerInput = ({
   setDate,
   color = "ghost",
 }: DatePickerInputProps) => {
-  const dateObj = typeof date === "string" ? dayjs(date).toDate() : date;
+  const dateObj =
+    typeof date === "string" ? dayjs(date, "DD/MM/YYYY", true).toDate() : date;
   const dateString =
-    typeof date === "string" ? date : dayjs(date).format("DD/MM/YYYY");
+    typeof date === "string"
+      ? date
+      : dayjs(date, "DD/MM/YYYY", true).format("DD/MM/YYYY");
 
   const dateValue = date ? dateString : "";
 
