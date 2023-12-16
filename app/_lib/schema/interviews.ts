@@ -7,7 +7,7 @@ const roundSchema = z.object({
     message: "please enter a round name",
   }),
   type: z.string().optional(),
-  date: z.date(),
+  date: z.union([z.date(), zodDDMMYYYYDate]),
   result: z.string().optional(),
   notes: z.string().optional(),
 });
