@@ -20,13 +20,17 @@ const DatePickerInput = ({
   setDate,
   color = "ghost",
 }: DatePickerInputProps) => {
-  const dateVal = typeof date === "string" ? dayjs(date).toDate() : date;
+  const dateObj = typeof date === "string" ? dayjs(date).toDate() : date;
+  const dateString =
+    typeof date === "string" ? date : dayjs(date).format("DD/MM/YYYY");
+
+  const dateValue = date ? dateString : "";
 
   return (
     <Popover>
       <Input
         color={color}
-        defaultValue={date ? dayjs(dateVal).format("DD/MM/YYYY") : undefined}
+        value={dateValue}
         onChange={(e) => setDate(e.target.value)}
         placeholder="dd/mm/yyyy"
         iconSeparate
@@ -67,7 +71,7 @@ const DatePickerInput = ({
         <Calendar
           mode="single"
           responsive
-          selected={dateVal}
+          selected={dateObj}
           onSelect={setDate}
           initialFocus
         />
