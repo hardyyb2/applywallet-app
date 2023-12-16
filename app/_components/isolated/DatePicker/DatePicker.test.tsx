@@ -1,0 +1,71 @@
+import { act, render, screen } from "@testing-library/react";
+import dayjs from "dayjs";
+
+import { noop } from "@/utils/func";
+
+import { DatePicker } from "./DatePicker";
+
+describe("DatePicker", () => {
+  test("should render input element with role='button'", () => {
+    const { container } = render(
+      <DatePicker date={new Date()} setDate={noop} />,
+    );
+    const inputElement = container.querySelector("input[role='button']");
+    expect(inputElement).toBeInTheDocument();
+  });
+
+  test("should not render input with role='textbox'", () => {
+    render(<DatePicker date={new Date()} setDate={noop} />);
+
+    const inputElement = screen.queryByRole("textbox");
+    expect(inputElement).not.toBeInTheDocument();
+  });
+
+  test("should render popover with calendar when input it clicked", async () => {
+    render(<DatePicker date={new Date()} setDate={noop} />);
+
+    const popoverButton = screen.getAllByRole("button")[0];
+    act(() => {
+      popoverButton.focus();
+      popoverButton.click();
+    });
+
+    const popoverElem = await screen.findByRole("dialog");
+    expect(popoverElem).toBeInTheDocument();
+
+    const calendarElem = await screen.findByTestId("date-picker-calendar");
+    expect(calendarElem).toBeInTheDocument();
+  });
+
+  test("should render calendar with selected date", async () => {
+    const date = new Date();
+    render(<DatePicker date={date} setDate={noop} />);
+
+    const popoverButton = screen.getAllByRole("button")[0];
+    act(() => {
+      popoverButton.focus();
+      popoverButton.click();
+    });
+
+    const calendar = await screen.findByTestId("date-picker-calendar");
+    const selectedDateElem = calendar.querySelector(
+      "button[name='day'][aria-selected='true']",
+    );
+    expect(selectedDateElem).toBeInTheDocument();
+    expect(selectedDateElem).toHaveTextContent(date.getDate().toString());
+  });
+
+  test("should render input with selected date as dd/mm/yyyy", async () => {
+    const date = new Date();
+    const { container } = render(<DatePicker date={date} setDate={noop} />);
+
+    const popoverButton = screen.getAllByRole("button")[0];
+    act(() => {
+      popoverButton.focus();
+      popoverButton.click();
+    });
+
+    const inputElement = container.querySelector("input[role='button']");
+    expect(inputElement).toHaveValue(dayjs(date).format("DD/MM/YYYY"));
+  });
+});

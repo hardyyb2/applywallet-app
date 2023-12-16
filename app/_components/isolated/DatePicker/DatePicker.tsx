@@ -52,6 +52,7 @@ const DatePicker = ({ date, setDate, color = "ghost" }: DatePickerProps) => {
         alignOffset={-8}
       >
         <Calendar
+          data-testid="date-picker-calendar"
           mode="single"
           responsive
           selected={date}
