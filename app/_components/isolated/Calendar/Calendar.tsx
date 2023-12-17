@@ -38,11 +38,11 @@ const Calendar = ({
           buttonVariants({ variant: "outline", color: "ghost" }),
           "p-0 opacity-50 hover:opacity-100",
           {
-            "h-8 w-8": size === "xs",
+            "h-9 w-9": size === "xs",
             "h-10 w-10": size === "sm",
             "h-12 w-12": size === "md",
           },
-          responsive && "h-10 w-10 md:h-12 md:w-12",
+          responsive && "h-9 w-9 sm:h-10 sm:w-10 md:h-12 md:w-12",
         ),
         nav_button_previous: "absolute left-1",
         nav_button_next: "absolute right-1",
@@ -52,11 +52,11 @@ const Calendar = ({
           typographyVariants({ variant: "subtitle2" }),
           "text-base-content/75 rounded-md text-center",
           {
-            "w-8": size === "xs",
+            "w-9": size === "xs",
             "w-10": size === "sm",
             "w-12": size === "md",
           },
-          responsive && "w-10 md:w-12",
+          responsive && "w-9 sm:w-10 md:w-12",
         ),
         row: "flex justify-center w-full mt-2",
         cell: cnMerge(
@@ -69,11 +69,11 @@ const Calendar = ({
           buttonVariants({ color: "ghost" }),
           "p-0 aria-selected:opacity-100",
           {
-            "w-8 h-8": size === "xs",
+            "w-9 h-9": size === "xs",
             "w-10 h-10": size === "sm",
             "w-12 h-12": size === "md",
           },
-          responsive && "w-10 h-10 md:w-12 md:h-12",
+          responsive && "w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12",
         ),
         // TODO - check do these make any difference
         day_range_start: "day-range-start",
