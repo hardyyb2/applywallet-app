@@ -29,7 +29,7 @@ const AboutCard = ({ card }: AboutCardProps) => {
     <Card
       ref={ref}
       className={cn(
-        "group prose max-w-none bg-base-200 prose-headings:mt-0 prose-figure:mb-0",
+        "group dui-prose prose max-w-none bg-base-200 prose-headings:mt-0 prose-figure:mb-0",
       )}
     >
       <Card.Body>
