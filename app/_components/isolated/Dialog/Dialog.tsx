@@ -100,7 +100,7 @@ const DialogDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <DialogPrimitive.Description
     ref={ref}
-    className={cnMerge(typographyVariants({ variant: "body2" }), className)}
+    className={cnMerge(typographyVariants({ variant: "body1" }), className)}
     {...props}
   />
 ));

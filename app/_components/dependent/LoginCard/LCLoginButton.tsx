@@ -22,7 +22,7 @@ const LCLoginButton = () => {
       fullWidth
       startIcon={<Icons.Lock />}
     >
-      <Typography variant="body2" component="div">
+      <Typography variant="body1" component="div">
         {t("common.sign_in")}
       </Typography>
     </Button>

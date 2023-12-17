@@ -26,7 +26,7 @@ const ExtLoginCard = () => {
         >
           Welcome to applywallet!
         </Card.Title>
-        <Typography variant="body2" align="center">
+        <Typography variant="body1" align="center">
           sign in to access your interview toolkit
         </Typography>
 
