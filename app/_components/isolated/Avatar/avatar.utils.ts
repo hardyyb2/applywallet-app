@@ -1,6 +1,6 @@
 import { cva } from "cva";
 
-export const avatarVariants = cva("avatar overflow-hidden", {
+export const avatarVariants = cva("dui-avatar overflow-hidden", {
   variants: {
     size: {
       xl: "w-xl",

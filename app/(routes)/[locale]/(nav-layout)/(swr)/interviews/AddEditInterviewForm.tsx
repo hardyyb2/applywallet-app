@@ -108,12 +108,13 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
   );
 
   return (
+    // TODO - replace with Card component
     <form
-      className="card m-auto overflow-hidden"
+      className="dui-card m-auto overflow-hidden"
       onSubmit={handleSubmit(onSubmit)}
       noValidate
     >
-      <div className="card-body  bg-base-100 [&_.form-control]:mt-2">
+      <div className="dui-card-body bg-base-100 [&_.dui-form-control]:mt-2">
         <Typography variant="h3">{titleText}</Typography>
         <div className="mt-s">
           {/* <Typography variant="subtitle1" className="underline">

@@ -84,6 +84,7 @@ const config = {
   daisyui: {
     themes: ["night", "light", "synthwave"],
     logs: false,
+    prefix: "dui-",
   },
   future: {
     hoverOnlyWhenSupported: true,

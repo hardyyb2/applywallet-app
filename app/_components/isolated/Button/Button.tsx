@@ -58,7 +58,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         )}
         disabled={disabled ?? false}
       >
-        {loading ? <span className="loading" /> : startIcon}
+        {loading ? <span className="dui-loading" /> : startIcon}
         {children}
         {endIcon ?? null}
       </button>

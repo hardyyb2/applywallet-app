@@ -1,3 +1,4 @@
+// TODO - remove this component
 import {
   forwardRef,
   type HTMLAttributes,
@@ -24,7 +25,7 @@ const DropdownMenu = ({ className, ...props }: DropdownMenuProps) => {
       {...props}
       tabIndex={0}
       className={cn(
-        "menu dropdown-content rounded-box bg-base-100 p-2 shadow",
+        "dui-menu dui-dropdown-content rounded-box bg-base-100 p-2 shadow",
         className,
       )}
     />
@@ -63,19 +64,19 @@ const Dropdown = forwardRef<HTMLDivElement, DropdownProps>(
         {...props}
         ref={ref}
         className={cn(
-          "dropdown",
+          "dui-dropdown",
           {
-            "dropdown-left": horizontal === "left",
-            "dropdown-center": horizontal === "center",
-            "dropdown-right": horizontal === "right",
+            "dui-dropdown-left": horizontal === "left",
+            "dui-dropdown-center": horizontal === "center",
+            "dui-dropdown-right": horizontal === "right",
           },
           {
-            "dropdown-top": vertical === "top",
-            "dropdown-middle": vertical === "middle",
-            "dropdown-end": vertical === "end",
+            "dui-dropdown-top": vertical === "top",
+            "dui-dropdown-middle": vertical === "middle",
+            "dui-dropdown-end": vertical === "end",
           },
-          hover && "dropdown-hover",
-          open && "dropdown-open",
+          hover && "dui-dropdown-hover",
+          open && "dui-dropdown-open",
           className,
         )}
       >

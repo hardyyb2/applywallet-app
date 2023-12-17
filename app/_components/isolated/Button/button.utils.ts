@@ -1,46 +1,46 @@
 import { cva } from "cva";
 
-export const buttonVariants = cva("btn font-secondary min-h-[unset]", {
+export const buttonVariants = cva("dui-btn font-secondary min-h-[unset]", {
   variants: {
     size: {
-      lg: "btn-lg",
-      md: "btn-md",
-      sm: "btn-sm",
-      xs: "btn-xs",
+      lg: "dui-btn-lg",
+      md: "dui-btn-md",
+      sm: "dui-btn-sm",
+      xs: "dui-btn-xs",
     },
     color: {
-      primary: "btn-primary",
-      secondary: "btn-secondary",
-      accent: "btn-accent",
-      info: "btn-info",
-      success: "btn-success",
-      warning: "btn-warning",
-      error: "btn-error",
-      ghost: "btn-ghost",
-      neutral: "btn-neutral",
+      primary: "dui-btn-primary",
+      secondary: "dui-btn-secondary",
+      accent: "dui-btn-accent",
+      info: "dui-btn-info",
+      success: "dui-btn-success",
+      warning: "dui-btn-warning",
+      error: "dui-btn-error",
+      ghost: "dui-btn-ghost",
+      neutral: "dui-btn-neutral",
     },
     shape: {
-      circle: "btn-circle",
-      square: "btn-square",
+      circle: "dui-btn-circle",
+      square: "dui-btn-square",
     },
     variant: {
-      outline: "btn-outline",
-      link: "btn-link",
+      outline: "dui-btn-outline",
+      link: "dui-btn-link",
     },
     fullWidth: {
-      true: "btn-block",
+      true: "dui-btn-block",
     },
     responsive: {
-      true: "btn-sm lg:btn-md",
+      true: "dui-btn-sm lg:dui-btn-md",
     },
     animation: {
       false: "no-animation",
     },
     active: {
-      true: "btn-active",
+      true: "dui-btn-active",
     },
     disabled: {
-      true: "btn-disabled",
+      true: "dui-btn-disabled",
     },
   },
   defaultVariants: {

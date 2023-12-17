@@ -3,10 +3,10 @@ import { cva } from "cva";
 export const selectVariants = cva("rounded-btn", {
   variants: {
     size: {
-      lg: "select-lg",
-      md: "select-md",
-      sm: "select-sm",
-      xs: "select-xs",
+      lg: "dui-select-lg",
+      md: "dui-select-md",
+      sm: "dui-select-sm",
+      xs: "dui-select-xs",
     },
     color: {
       primary: "border border-primary",

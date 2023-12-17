@@ -31,12 +31,12 @@ const BottomNavigation = forwardRef<HTMLDivElement, BottomNavigationProps>(
       <div
         {...props}
         className={cn(
-          "btm-nav",
+          "dui-btm-nav",
           {
-            "btm-nav-xs": size === "xs",
-            "btm-nav-sm": size === "sm",
-            "btm-nav-md": size === "md",
-            "btm-nav-lg": size === "lg",
+            "dui-btm-nav-xs": size === "xs",
+            "dui-btm-nav-sm": size === "sm",
+            "dui-btm-nav-md": size === "md",
+            "dui-btm-nav-lg": size === "lg",
           },
           className,
         )}

@@ -3,7 +3,7 @@
 @import "react-toastify/dist/ReactToastify.min.css";
 
 .Toastify__toast {
-  @apply alert;
+  @apply dui-alert;
 
   grid-auto-flow: column;
 }
@@ -17,17 +17,17 @@
 }
 
 .Toastify__toast-theme--colored.Toastify__toast--info {
-  @apply alert-info;
+  @apply dui-alert-info;
 }
 
 .Toastify__toast-theme--colored.Toastify__toast--success {
-  @apply alert-success;
+  @apply dui-alert-success;
 }
 
 .Toastify__toast-theme--colored.Toastify__toast--warning {
-  @apply alert-warning;
+  @apply dui-alert-warning;
 }
 
 .Toastify__toast-theme--colored.Toastify__toast--error {
-  @apply alert-error;
+  @apply dui-alert-error;
 }

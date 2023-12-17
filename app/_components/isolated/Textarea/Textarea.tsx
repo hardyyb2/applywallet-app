@@ -19,20 +19,20 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
     ref,
   ): JSX.Element => {
     const classes = cn(
-      "textarea",
+      "dui-textarea",
       {
-        "textarea-primary": color === "primary",
-        "textarea-secondary": color === "secondary",
-        "textarea-accent": color === "accent",
-        "textarea-info": color === "info",
-        "textarea-success": color === "success",
-        "textarea-warning": color === "warning",
-        "textarea-error": color === "error",
-        "textarea-ghost": color === "ghost",
+        "dui-textarea-primary": color === "primary",
+        "dui-textarea-secondary": color === "secondary",
+        "dui-textarea-accent": color === "accent",
+        "dui-textarea-info": color === "info",
+        "dui-textarea-success": color === "success",
+        "dui-textarea-warning": color === "warning",
+        "dui-textarea-error": color === "error",
+        "dui-textarea-ghost": color === "ghost",
       },
       {
         [`focus:outline-offset-0`]: !borderOffset,
-        "textarea-bordered": bordered,
+        "dui-textarea-bordered": bordered,
       },
       className,
     );

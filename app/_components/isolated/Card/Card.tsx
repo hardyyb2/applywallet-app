@@ -10,7 +10,7 @@ type CardActionsProps = HTMLAttributes<HTMLDivElement>;
 
 const CardActions = forwardRef<HTMLDivElement, CardActionsProps>(
   ({ className, ...props }, ref) => (
-    <div {...props} className={cn("card-actions", className)} ref={ref} />
+    <div {...props} className={cn("dui-card-actions", className)} ref={ref} />
   ),
 );
 
@@ -22,7 +22,7 @@ export type CardBodyProps = HTMLAttributes<HTMLDivElement>;
 
 const CardBody = forwardRef<HTMLDivElement, CardBodyProps>(
   ({ className, ...props }, ref) => (
-    <div {...props} className={cn("card-body", className)} ref={ref} />
+    <div {...props} className={cn("dui-card-body", className)} ref={ref} />
   ),
 );
 
@@ -49,7 +49,7 @@ CardFigure.displayName = "CardFigure";
 export type CardTitleProps = TypographyProps;
 
 const CardTitle = ({ className, ...props }: CardTitleProps) => {
-  return <Typography {...props} className={cn("card-title", className)} />;
+  return <Typography {...props} className={cn("dui-card-title", className)} />;
 };
 
 CardTitle.displayName = "CardTitle";
@@ -75,25 +75,25 @@ interface ModifierMap {
 
 const DYNAMIC_MODIFIERS: ModifierMap = {
   compact: {
-    true: "card-compact",
-    xs: "xs:card-compact",
-    sm: "sm:card-compact",
-    md: "md:card-compact",
-    lg: "lg:card-compact",
+    true: "dui-card-compact",
+    xs: "xs:dui-card-compact",
+    sm: "sm:dui-card-compact",
+    md: "md:dui-card-compact",
+    lg: "lg:dui-card-compact",
   },
   normal: {
-    true: "card-normal",
-    xs: "xs:card-normal",
-    sm: "sm:card-normal",
-    md: "md:card-normal",
-    lg: "lg:card-normal",
+    true: "dui-card-normal",
+    xs: "xs:dui-card-normal",
+    sm: "sm:dui-card-normal",
+    md: "md:dui-card-normal",
+    lg: "lg:dui-card-normal",
   },
   side: {
-    true: "card-side",
-    xs: "xs:card-side",
-    sm: "sm:card-side",
-    md: "md:card-side",
-    lg: "lg:card-side",
+    true: "dui-card-side",
+    xs: "xs:dui-card-side",
+    sm: "sm:dui-card-side",
+    md: "md:dui-card-side",
+    lg: "lg:dui-card-side",
   },
 };
 
@@ -103,10 +103,10 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
     ref,
   ): JSX.Element => {
     const classes = cn(
-      "card",
+      "dui-card",
       className,
       cn({
-        "card-bordered": bordered,
+        "dui-card-bordered": bordered,
         "image-full": imageFull,
         [(compact && DYNAMIC_MODIFIERS.compact[compact.toString()]) || ""]:
           compact,

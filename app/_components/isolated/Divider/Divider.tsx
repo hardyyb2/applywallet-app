@@ -16,10 +16,10 @@ const Divider = ({
   className,
   ...props
 }: DividerProps): JSX.Element => {
-  const classes = cn("divider", className, {
-    "divider-vertical": vertical,
-    "divider-horizontal": horizontal,
-    "lg:divider-horizontal": responsive,
+  const classes = cn("dui-divider", className, {
+    "dui-divider-vertical": vertical,
+    "dui-divider-horizontal": horizontal,
+    "lg:dui-divider-horizontal": responsive,
   });
 
   return (

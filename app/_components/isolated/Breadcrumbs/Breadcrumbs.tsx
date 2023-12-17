@@ -48,7 +48,7 @@ const Breadcrumbs = forwardRef<HTMLDivElement, BreadcrumbsProps>(
         {...props}
         className={typographyVariants({
           variant: "caption",
-          className: cn("breadcrumbs", className),
+          className: cn("dui-breadcrumbs", className),
         })}
         ref={ref}
       >

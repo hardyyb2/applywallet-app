@@ -24,7 +24,10 @@ const Badge = forwardRef<HTMLDivElement, BadgeProps>(
         className={badgeVariants({
           variant,
           className: cn(
-            { "badge-xs md:badge-sm lg:badge-md xl:badge-lg": responsive },
+            {
+              "dui-badge-xs md:dui-badge-sm lg:dui-badge-md xl:dui-badge-lg":
+                responsive,
+            },
             className,
           ),
           color,

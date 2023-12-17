@@ -75,6 +75,7 @@ const Calendar = ({
           },
           responsive && "w-10 h-10 md:w-12 md:h-12",
         ),
+        // TODO - check do these make any difference
         day_range_start: "day-range-start",
         day_range_end: "day-range-end",
         day_selected:
