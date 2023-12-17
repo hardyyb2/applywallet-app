@@ -33,6 +33,7 @@ import {
   Plus,
   Settings,
   Trash2,
+  X,
   type LucideProps,
 } from "lucide-react";
 
@@ -69,6 +70,7 @@ const Icons = {
   Info,
   Hash,
   Calendar,
+  X,
   CustomHome: forwardRef<SVGSVGElement, LucideProps>(function CustomHome(
     { ...props },
     ref,

@@ -4,8 +4,6 @@ import { Button } from "@/components/isolated/Button";
 import { Flex } from "@/components/isolated/Flex";
 import { Icons } from "@/components/isolated/Icons";
 
-import { ExperienceSettingsModal } from "./ExperienceSettingsModal/ExperienceSettingsModal";
-
 const ExperienceActions = () => {
   return (
     <Flex className="gap-2 md:gap-4">
@@ -19,8 +17,6 @@ const ExperienceActions = () => {
           <span className="hidden md:inline">add experience</span>
         </Button>
       </Link>
-
-      <ExperienceSettingsModal />
     </Flex>
   );
 };
