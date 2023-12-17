@@ -80,7 +80,7 @@ const config = {
       },
     },
   },
-  plugins: [require("daisyui"), require("@tailwindcss/typography")],
+  plugins: [require("@tailwindcss/typography"), require("daisyui")],
   daisyui: {
     themes: ["night", "light", "synthwave"],
     logs: false,
