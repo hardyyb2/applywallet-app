@@ -16,7 +16,10 @@ export type InputProps = Omit<
   startIcon?: ReactNode;
   endIcon?: ReactNode;
   iconWrapperClassName?: string;
+  /** renders the icons outside of the input i.e. without absolute positioning */
   iconSeparate?: boolean;
+  /** className for 'Input' wrapper div, if 'startIcon' or 'endIcon' is provided */
+  wrapperClassName?: string;
 };
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
@@ -31,6 +34,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       startIcon = null,
       endIcon = null,
       iconWrapperClassName = "",
+      wrapperClassName = "",
       iconSeparate = false,
       ...props
     },
@@ -68,6 +72,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           className={cnMerge(
             "relative flex w-full items-center",
             iconSeparate && "grid grid-cols-[1fr,auto] gap-2",
+            wrapperClassName,
           )}
         >
           {startIcon && (
@@ -84,10 +89,14 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           <input
             ref={ref}
             size={htmlSize}
-            className={cnMerge(classNames, "w-full", {
-              "pl-12": startIcon,
-              "pr-12": endIcon,
-            })}
+            className={cnMerge(
+              "w-full",
+              {
+                "pl-12": startIcon,
+                "pr-12": endIcon,
+              },
+              classNames,
+            )}
             {...props}
           />
           {endIcon && (
