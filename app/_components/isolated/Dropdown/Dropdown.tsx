@@ -88,6 +88,7 @@ const Dropdown = forwardRef<HTMLDivElement, DropdownProps>(
 
 Dropdown.displayName = "Dropdown";
 
+/** @deprecated  Please use 'Popover' instead*/
 const DropdownCompound = Object.assign(Dropdown, {
   Menu: DropdownMenu,
   Item: DropdownItem,
