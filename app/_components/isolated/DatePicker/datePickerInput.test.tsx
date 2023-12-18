@@ -7,15 +7,17 @@ import { noop } from "@/utils/func";
 
 import { DatePickerInput } from "./DatePickerInput";
 
+const placeholder = "dd/mm/yyyy";
+
 describe("DatePickerInput", () => {
   test("should render input element with role='textbox'", () => {
-    render(<DatePickerInput date={new Date()} setDate={noop} />);
-    const inputElement = screen.queryByRole("textbox");
+    render(<DatePickerInput date={new Date().toISOString()} setDate={noop} />);
+    const inputElement = screen.queryByPlaceholderText(placeholder);
     expect(inputElement).toBeInTheDocument();
   });
 
   test("should render popover with calendar when input \"'endIcon' Button\" it clicked", async () => {
-    render(<DatePickerInput date={new Date()} setDate={noop} />);
+    render(<DatePickerInput date={new Date().toISOString()} setDate={noop} />);
 
     const popoverButton = screen.getByRole("button");
     act(() => {
@@ -33,10 +35,10 @@ describe("DatePickerInput", () => {
   });
 
   test("should not render popover with calendar when input it clicked", async () => {
-    render(<DatePickerInput date={new Date()} setDate={noop} />);
+    render(<DatePickerInput date={new Date().toISOString()} setDate={noop} />);
 
-    const inputElement = screen.getByRole("textbox");
-    inputElement.click();
+    const inputElement = screen.queryByPlaceholderText(placeholder);
+    inputElement?.click();
 
     const popoverElem = screen.queryByRole("dialog");
     expect(popoverElem).not.toBeInTheDocument();
@@ -47,7 +49,7 @@ describe("DatePickerInput", () => {
 
   test("should render calendar with selected date", async () => {
     const date = new Date();
-    render(<DatePickerInput date={date} setDate={noop} />);
+    render(<DatePickerInput date={date.toISOString()} setDate={noop} />);
 
     const popoverButton = screen.getByRole("button");
     act(() => {
@@ -65,7 +67,7 @@ describe("DatePickerInput", () => {
 
   test("should render input with selected date as dd/mm/yyyy", async () => {
     const date = new Date();
-    render(<DatePickerInput date={date} setDate={noop} />);
+    render(<DatePickerInput date={date.toISOString()} setDate={noop} />);
 
     const popoverButton = screen.getByRole("button");
     act(() => {
@@ -73,8 +75,8 @@ describe("DatePickerInput", () => {
       popoverButton.click();
     });
 
-    const inputElement = screen.queryByRole("textbox");
-    expect(inputElement).toHaveValue(dayjs(date).format("DD/MM/YYYY"));
+    const inputElement = screen.queryByPlaceholderText(placeholder);
+    expect(inputElement).toHaveValue(dayjs(date).format("YYYY-MM-DD"));
   });
 
   test("should render input with empty value when date is undefined", async () => {
@@ -86,14 +88,36 @@ describe("DatePickerInput", () => {
       popoverButton.click();
     });
 
-    const inputElement = screen.queryByRole("textbox");
+    const inputElement = screen.queryByPlaceholderText(placeholder);
     expect(inputElement).toHaveValue("");
   });
 
-  test("change input value should call setDate", async () => {
+  test("should call setDate with ISOString when a date is selected", async () => {
+    const setDate = vi.fn();
+    const date = new Date("2021-01-01");
+    render(<DatePickerInput date={date.toISOString()} setDate={setDate} />);
+
+    const popoverButton = screen.getAllByRole("button")[0];
+    act(() => {
+      popoverButton.focus();
+      popoverButton.click();
+    });
+
+    await screen.findByTestId("date-picker-input-calendar");
+    const dateToFindElem = screen.getByText("15");
+    act(() => {
+      dateToFindElem.focus();
+      dateToFindElem.click();
+    });
+
+    expect(setDate).toHaveBeenCalled();
+    expect(setDate).toHaveBeenCalledWith("2021-01-15T00:00:00.000Z");
+  });
+
+  test("change input value should call 'setDate' when date becomes valid", async () => {
     const setDate = vi.fn();
     const date = new Date();
-    render(<DatePickerInput date={date} setDate={setDate} />);
+    render(<DatePickerInput date={date.toISOString()} setDate={setDate} />);
 
     const popoverButton = screen.getByRole("button");
     act(() => {
@@ -101,11 +125,18 @@ describe("DatePickerInput", () => {
       popoverButton.click();
     });
 
-    const inputElement = screen.getByRole("textbox");
-    const dateString = dayjs(date).format("DD/MM/YYYY") + "t";
+    const inputElement = screen.queryByPlaceholderText(placeholder);
 
-    await userEvent.type(inputElement, "t");
-    expect(setDate).toHaveBeenCalledWith(dateString);
+    if (!inputElement) {
+      throw new Error("inputElement is null");
+    }
+
+    act(() => {
+      fireEvent.change(inputElement, { target: { value: "2015-12-10" } });
+    });
+
+    expect(setDate).toHaveBeenCalled();
+    expect(setDate).toHaveBeenCalledWith("2015-12-10T00:00:00.000Z");
   });
 
   test("should render input with empty value when date is undefined", async () => {
@@ -117,7 +148,7 @@ describe("DatePickerInput", () => {
       popoverButton.click();
     });
 
-    const inputElement = screen.queryByRole("textbox");
+    const inputElement = screen.queryByPlaceholderText(placeholder);
     expect(inputElement).toHaveValue("");
   });
 });
