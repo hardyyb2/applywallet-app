@@ -9,7 +9,9 @@ const roundSchema = z.object({
     .string({
       required_error: "please enter an end date",
     })
-    .datetime(),
+    .datetime({
+      message: "please enter a valid date",
+    }),
   result: z.string().optional(),
   notes: z.string().optional(),
 });
@@ -29,12 +31,16 @@ export const interviewSchema = z.object({
     .string({
       required_error: "please enter a start date",
     })
-    .datetime(),
+    .datetime({
+      message: "please enter a valid date",
+    }),
   end_date: z
     .string({
       required_error: "please enter an end date",
     })
-    .datetime()
+    .datetime({
+      message: "please enter a valid date",
+    })
     .optional(),
 });
 
