@@ -9,12 +9,17 @@ import { Popover, PopoverContent, PopoverTrigger } from "../Popover";
 import type { DatePickerColorType } from "./datePicker.types";
 
 type DatePickerProps = {
-  date: Date | undefined;
-  setDate: (date: Date | undefined) => void;
+  /** Date in ISO format */
+  date: string | undefined;
+  setDate: (date: string | undefined) => void;
   color?: DatePickerColorType;
 };
 
 const DatePicker = ({ date, setDate, color = "ghost" }: DatePickerProps) => {
+  // we do not accept date object to keep frontend and backend consistent
+  const isValidDate = typeof date === "string" && dayjs(date).isValid();
+  const dateObj = isValidDate ? dayjs(date).toDate() : undefined;
+
   return (
     <Popover>
       <PopoverTrigger className="w-full">
@@ -54,9 +59,9 @@ const DatePicker = ({ date, setDate, color = "ghost" }: DatePickerProps) => {
           data-testid="date-picker-calendar"
           mode="single"
           responsive
-          selected={date}
-          onSelect={setDate}
-          defaultMonth={date}
+          selected={dateObj}
+          onSelect={(day) => setDate(dayjs(day).toISOString())}
+          defaultMonth={dateObj}
           initialFocus
         />
       </PopoverContent>
