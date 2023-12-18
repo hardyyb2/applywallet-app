@@ -11,13 +11,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/isolated/DropdownMenu";
 import { Icons } from "@/components/isolated/Icons";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/isolated/Popover";
 import { languageOptions } from "@/utils/locale-utils/language-options";
-import { cn, cnMerge } from "@/utils/styles";
+import { cnMerge } from "@/utils/styles";
 
 import { redirectedPathName } from "./localeSwitcher.utils";
 
