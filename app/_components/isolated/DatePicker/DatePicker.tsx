@@ -11,7 +11,7 @@ import type { DatePickerColorType } from "./datePicker.types";
 type DatePickerProps = {
   /** Date in ISO format */
   date: string | undefined;
-  setDate: (date: string | undefined) => void;
+  setDate: (date: DatePickerProps["date"]) => void;
   color?: DatePickerColorType;
 };
 
