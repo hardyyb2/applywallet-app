@@ -33,7 +33,7 @@ const LocaleSwitcher = () => {
           <Icons.ChevronDown className="ml-1 hidden opacity-60 sm:inline-block" />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="flex flex-col gap-2">
+      <DropdownMenuContent align="end">
         {languageOptions.map(({ label, value, icon }) => {
           const { activeLocale, newRedirectPath } = redirectedPathName(
             pathName,
