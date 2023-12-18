@@ -1,13 +1,15 @@
 import { z } from "zod";
 
-import { zodDDMMYYYYDate } from "@/utils/zod";
-
 const roundSchema = z.object({
   name: z.string().min(1, {
     message: "please enter a round name",
   }),
   type: z.string().optional(),
-  date: z.union([z.date(), zodDDMMYYYYDate]),
+  date: z
+    .string({
+      required_error: "please enter an end date",
+    })
+    .datetime(),
   result: z.string().optional(),
   notes: z.string().optional(),
 });
@@ -23,8 +25,17 @@ export const interviewSchema = z.object({
   result: z.string().optional(),
   rounds: z.record(roundSchema),
 
-  start_date: z.union([z.date(), zodDDMMYYYYDate]),
-  end_date: z.union([z.date(), zodDDMMYYYYDate]).optional(),
+  start_date: z
+    .string({
+      required_error: "please enter a start date",
+    })
+    .datetime(),
+  end_date: z
+    .string({
+      required_error: "please enter an end date",
+    })
+    .datetime()
+    .optional(),
 });
 
 /** does not include id */
