@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import dayjs from "dayjs";
 
 import { cn } from "@/utils/styles";
@@ -10,7 +12,8 @@ import { Popover, PopoverContent, PopoverTrigger } from "../Popover";
 import type { DatePickerColorType } from "./datePicker.types";
 
 type DatePickerInputProps = {
-  date: Date | string | undefined;
+  /** Date in ISO format */
+  date: string | undefined;
   setDate: (date: DatePickerInputProps["date"]) => void;
   color?: DatePickerColorType;
 };
@@ -20,21 +23,36 @@ const DatePickerInput = ({
   setDate,
   color = "ghost",
 }: DatePickerInputProps) => {
-  const dateObj =
-    typeof date === "string" ? dayjs(date, "DD/MM/YYYY", true).toDate() : date;
-  const dateString =
-    typeof date === "string" ? date : dayjs(date).format("DD/MM/YYYY");
+  // we do not accept date object to keep frontend and backend consistent
+  const isValidDate = typeof date === "string" && dayjs(date).isValid();
+  const dateObj = isValidDate ? dayjs(date).toDate() : undefined;
 
-  const dateValue = date ? dateString : "";
+  const [dateInputValue, setDateInputValue] = useState<string | undefined>(
+    date ? dayjs(date).format("YYYY-MM-DD") : "",
+  );
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
+    setDateInputValue(value);
+
+    const date = dayjs(value);
+    if (date.isValid()) {
+      setDate(date.toISOString());
+    }
+  };
+
+  const handleDateSelect = (selectedDate: Date | undefined) => {
+    setDateInputValue(dayjs(selectedDate).format("YYYY-MM-DD"));
+    setDate(dayjs(selectedDate).toISOString());
+  };
 
   return (
     <Popover>
       <Input
         color={color}
-        value={dateValue}
-        onChange={(e) => {
-          setDate(e.target.value);
-        }}
+        type="date"
+        value={dateInputValue}
+        onChange={handleInputChange}
         placeholder="dd/mm/yyyy"
         iconSeparate
         iconWrapperClassName="w-full h-full"
@@ -75,7 +93,7 @@ const DatePickerInput = ({
           mode="single"
           responsive
           selected={dateObj}
-          onSelect={setDate}
+          onSelect={handleDateSelect}
           initialFocus
           defaultMonth={dateObj}
         />
