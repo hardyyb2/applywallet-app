@@ -22,3 +22,4 @@
 - ✅ Separate post login and sheet link page
 - ✅ SVGs to lucide-react
 - Tunnel sentry
+- Inconsitent compound components pattern, . pattern with common components, long name pattern with radix components
