@@ -22,7 +22,11 @@ export type CardBodyProps = HTMLAttributes<HTMLDivElement>;
 
 const CardBody = forwardRef<HTMLDivElement, CardBodyProps>(
   ({ className, ...props }, ref) => (
-    <div {...props} className={cn("dui-card-body", className)} ref={ref} />
+    <div
+      {...props}
+      className={cn("dui-card-body bg-base-100", className)}
+      ref={ref}
+    />
   ),
 );
 
