@@ -30,6 +30,8 @@ const Select = ({
   bordered = true,
   className = "",
   menuPortalTarget,
+  responsive = false,
+  placeholder = "select...",
   ...restProps
 }: SelectProps) => {
   const getMenuPortal = () => {
@@ -41,12 +43,14 @@ const Select = ({
   return (
     <BaseSelectNoSSR
       unstyled
+      placeholder={placeholder}
       classNames={{
         control: () =>
           cnMerge(
             selectVariants({
               size,
               color,
+              responsive,
             }),
             bordered && [
               "border-[1px] border-base-content/20",
@@ -80,7 +84,8 @@ const Select = ({
           ),
         valueContainer: () => cn("text-[1rem]"),
         placeholder: () => cn("text-[#9ca3af] opacity-75"),
-        menu: () => cn("bg-base-100 mt-2 rounded-btn p-2 shadow-md"),
+        menu: () =>
+          cn("bg-base-100 mt-2 rounded-xl p-2 border border-base-content/40"),
         menuList: () => cn("space-y-2"),
         option: (state) =>
           cnMerge(

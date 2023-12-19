@@ -18,5 +18,8 @@ export const selectVariants = cva("rounded-btn", {
       error: "border border-error",
       ghost: "border border-ghost",
     },
+    responsive: {
+      true: "dui-select-sm md:dui-select-md",
+    },
   },
 });
