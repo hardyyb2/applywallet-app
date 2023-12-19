@@ -1,47 +1,56 @@
+"use client";
+
 import { Button } from "@/components/isolated/Button";
-import { Dropdown } from "@/components/isolated/Dropdown";
-import { Flex } from "@/components/isolated/Flex";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/isolated/DropdownMenu";
 import { Icons } from "@/components/isolated/Icons";
+import { Typography } from "@/components/isolated/Typography";
+import { useTheme } from "@/hooks/useTheme";
 import { cn } from "@/utils/styles";
 
 import { selectableThemes } from "./themesMenu.utils";
 import { ThemesMenuItemColors } from "./ThemesMenuItemColors";
 
-// TODO - replace this with Popover
 const ThemesMenu = () => {
+  const { theme: activeTheme, setTheme } = useTheme();
+
   return (
-    <Dropdown vertical="end">
-      <Dropdown.Toggle>
-        <Button color="ghost" className="gap-1" responsive aria-haspopup>
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button color="ghost" className="gap-1" responsive>
           <Icons.Palette className="inline-block h-5 w-5 stroke-current md:h-6 md:w-6" />
           <span className="hidden md:inline">theme</span>
           <Icons.ChevronDown className="ml-1 hidden opacity-60 sm:inline-block" />
         </Button>
-      </Dropdown.Toggle>
-      <Dropdown.Menu
-        role="listbox"
-        className="mt-1 max-h-80 flex-col flex-nowrap gap-3 overflow-y-auto border border-base-content/40 p-2"
-      >
+      </DropdownMenuTrigger>
+      <DropdownMenuContent role="listbox" className="max-h-80 overflow-y-auto">
         {selectableThemes.map(({ value }) => (
-          <Dropdown.Item
-            tabIndex={0}
-            key={value}
-            className={cn(
-              "overflow-hidden rounded-lg bg-base-100",
-              "outline-offset-2 outline-base-content",
-            )}
-            data-theme={value}
-            data-act-class="outline"
-            data-set-theme={value}
-          >
-            <Flex align="center" justify="space-between">
-              <span className="text-base-content">{value}</span>
+          <DropdownMenuItem key={value} asChild>
+            <Button
+              data-theme={value}
+              onClick={() => setTheme(value)}
+              className={cn(
+                activeTheme === value &&
+                  "outline outline-offset-2 outline-base-content",
+                "flex justify-between gap-2",
+              )}
+              startIcon={
+                activeTheme === value ? (
+                  <Icons.Check className="h-4 w-4 stroke-current stroke-[4px]" />
+                ) : null
+              }
+            >
+              <Typography className="text-base-content">{value}</Typography>
               <ThemesMenuItemColors />
-            </Flex>
-          </Dropdown.Item>
+            </Button>
+          </DropdownMenuItem>
         ))}
-      </Dropdown.Menu>
-    </Dropdown>
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 };
 
