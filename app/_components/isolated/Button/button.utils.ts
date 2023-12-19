@@ -31,7 +31,7 @@ export const buttonVariants = cva("dui-btn font-secondary min-h-[unset]", {
       true: "dui-btn-block",
     },
     responsive: {
-      true: "dui-btn-sm lg:dui-btn-md",
+      true: "dui-btn-sm md:dui-btn-md",
     },
     animation: {
       false: "no-animation",
