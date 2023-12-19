@@ -2,7 +2,8 @@
 
 import type { ComponentProps } from "react";
 
-import { DayPicker } from "react-day-picker";
+import dayjs from "dayjs";
+import { DayPicker, type DateFormatter } from "react-day-picker";
 
 import { cnMerge } from "@/utils/styles";
 
@@ -15,6 +16,9 @@ type CalendarProps = ComponentProps<typeof DayPicker> & {
   responsive?: boolean;
 };
 
+//  Internally 'react-day-picker' uses 'date-fns' but we like 'dayjs' better :), it does mean
+// 2 date libraries are loaded but it's fine
+
 const Calendar = ({
   className,
   classNames,
@@ -22,18 +26,44 @@ const Calendar = ({
   components,
   size = "md",
   responsive = false,
+  captionLayout = "dropdown-buttons",
+  fromYear = 1950,
+  toYear = 2200,
   ...props
 }: CalendarProps) => {
+  const formatMonthCaption: DateFormatter = (month, options) => {
+    if (options?.locale) {
+      return dayjs(month)
+        .locale(options.locale as ILocale)
+        .format("MMM");
+    }
+
+    return dayjs(month).format("MMM");
+  };
+
   return (
     <DayPicker
       showOutsideDays={showOutsideDays}
       className={cnMerge("p-2", className)}
+      captionLayout={captionLayout}
+      fromYear={fromYear}
+      toYear={toYear}
       classNames={{
         months: "flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0",
         month: "space-y-8",
         caption: "flex justify-center pt-1 relative items-center",
-        caption_label: typographyVariants({ variant: "subtitle1" }),
-        nav: "space-x-1 flex items-center",
+        caption_label: typographyVariants({
+          variant:
+            captionLayout === "dropdown-buttons" || captionLayout === "dropdown"
+              ? "srOnly"
+              : "subtitle1",
+        }),
+        dropdown_month:
+          "[&>span:first-child]:sr-only [&>select]:dui-select [&>select]:dui-select-sm [&>select]:text-h6",
+        dropdown_year:
+          "[&>span:first-child]:sr-only [&>select]:dui-select [&>select]:dui-select-sm [&>select]:text-h6",
+        caption_dropdowns: "flex gap-1 items-center",
+        nav: cnMerge("space-x-1 flex items-center"),
         nav_button: cnMerge(
           buttonVariants({ variant: "outline", color: "ghost" }),
           "p-0 opacity-50 hover:opacity-100",
@@ -88,6 +118,9 @@ const Calendar = ({
           "aria-selected:bg-primary aria-selected:text-primary-content",
         day_hidden: "invisible",
         ...classNames,
+      }}
+      formatters={{
+        formatMonthCaption,
       }}
       components={{
         IconLeft: (props) => <Icons.ChevronLeft {...props} />,
