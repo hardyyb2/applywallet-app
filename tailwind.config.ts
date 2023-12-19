@@ -4,6 +4,17 @@ const config = {
   // TODO - check how multiple configs can work without whole app content being included
   content: ["./app/**/*.{js,ts,jsx,tsx}", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    screens: {
+      xs: "480px",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "3xl": "1920px",
+      "4xl": "2560px",
+      "5xl": "3840px",
+    },
+
     fontFamily: {
       primary: ["var(--font-primary)", ...fontFamily.sans],
       secondary: ["var(--font-secondary)", ...fontFamily.sans],
@@ -23,12 +34,6 @@ const config = {
     },
 
     extend: {
-      screens: {
-        "3xl": "1920px",
-        "4xl": "2560px",
-        "5xl": "3840px",
-      },
-
       spacing: {
         "3xs": "clamp(0.31rem, calc(0.30rem + 0.06vw), 0.38rem)",
         "2xs": "clamp(0.56rem, calc(0.53rem + 0.19vw), 0.75rem)",
