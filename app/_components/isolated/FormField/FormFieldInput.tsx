@@ -6,7 +6,7 @@ import { useFormFieldContext } from "./formField.utils";
 type FormFieldInputProps = InputProps;
 
 const FormFieldInput = forwardRef<HTMLInputElement, FormFieldInputProps>(
-  ({ color, ...props }, ref) => {
+  ({ color, responsive = true, ...props }, ref) => {
     const { error = "", htmlFor } = useFormFieldContext();
 
     return (
@@ -14,6 +14,7 @@ const FormFieldInput = forwardRef<HTMLInputElement, FormFieldInputProps>(
         id={htmlFor}
         color={Boolean(error) ? "error" : color}
         aria-invalid={Boolean(error) ? "true" : "false"}
+        responsive={responsive}
         {...props}
         ref={ref}
       />
