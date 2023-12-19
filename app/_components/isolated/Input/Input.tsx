@@ -15,6 +15,7 @@ export type InputProps = Omit<
   htmlSize?: number;
   startIcon?: ReactNode;
   endIcon?: ReactNode;
+  responsive?: boolean;
   iconWrapperClassName?: string;
   /** renders the icons outside of the input i.e. without absolute positioning */
   iconSeparate?: boolean;
@@ -36,6 +37,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       iconWrapperClassName = "",
       wrapperClassName = "",
       iconSeparate = false,
+      responsive = false,
       ...props
     },
     ref,
@@ -62,6 +64,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         "focus:outline-offset-0": !borderOffset,
         "dui-input-bordered": bordered,
       },
+      responsive && "dui-input-sm md:dui-input-md",
       className,
     );
 
