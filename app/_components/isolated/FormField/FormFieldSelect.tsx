@@ -24,6 +24,7 @@ function FormFieldSelect<T extends FieldValues>({
   control,
   options,
   color,
+  responsive = true,
   ...props
 }: FormFieldSelectProps<T>) {
   const { error = "", htmlFor } = useFormFieldContext();
@@ -34,6 +35,7 @@ function FormFieldSelect<T extends FieldValues>({
       control={control}
       render={({ field: { onChange, ref: _ref, ...field } }) => (
         <Select
+          responsive={responsive}
           {...props}
           {...field}
           options={options}
