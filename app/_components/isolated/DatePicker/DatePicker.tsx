@@ -30,6 +30,7 @@ const DatePicker = ({ date, setDate, color = "ghost" }: DatePickerProps) => {
           role="button"
           className="w-full text-left"
           readOnly
+          responsive
           iconWrapperClassName="pointer-events-none"
           endIcon={
             <Icons.Calendar
