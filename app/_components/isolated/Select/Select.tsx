@@ -16,7 +16,7 @@ import { Input } from "../Input";
 import { selectVariants } from "./select.utils";
 
 const BaseSelectNoSSR = dynamic(() => import("react-select"), {
-  loading: () => <Input />,
+  loading: () => <Input responsive />,
   ssr: false,
 });
 
