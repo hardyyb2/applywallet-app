@@ -1,4 +1,5 @@
 import { fontFamily } from "tailwindcss/defaultTheme";
+import plugin from "tailwindcss/plugin";
 
 const config = {
   // TODO - check how multiple configs can work without whole app content being included
@@ -90,6 +91,125 @@ const config = {
     require("@tailwindcss/typography"),
     require("daisyui"),
     require("tailwindcss-animate"),
+    plugin(({ addComponents }) => {
+      addComponents({
+        ".display-l": {
+          fontSize: "57px",
+          fontWeight: "400",
+          fontStyle: "normal",
+          lineHeight: "64px",
+          letterSpacing: "-0.25px",
+        },
+
+        ".display-m": {
+          fontSize: "45px",
+          fontWeight: "400",
+          fontStyle: "normal",
+          lineHeight: "52px",
+          letterSpacing: "0",
+        },
+
+        ".display-s": {
+          fontSize: "36px",
+          fontWeight: "400",
+          fontStyle: "normal",
+          lineHeight: "44px",
+          letterSpacing: "0",
+        },
+
+        ".headline-l": {
+          fontSize: "32px",
+          fontWeight: "400",
+          fontStyle: "normal",
+          lineHeight: "40px",
+        },
+
+        ".headline-m": {
+          fontSize: "28px",
+          fontWeight: "400",
+          fontStyle: "normal",
+          lineHeight: "36px",
+        },
+
+        ".headline-s": {
+          fontSize: "24px",
+          fontWeight: "400",
+          fontStyle: "normal",
+          lineHeight: "32px",
+        },
+
+        ".title-l": {
+          fontSize: "22px",
+          fontWeight: "400",
+          fontStyle: "normal",
+          lineHeight: "28px",
+        },
+
+        ".title-m": {
+          fontSize: "16px",
+          fontWeight: "500",
+          fontStyle: "normal",
+          lineHeight: "24px",
+          letterSpacing: "0.15px",
+        },
+
+        ".title-s": {
+          fontSize: "14px",
+          fontWeight: "500",
+          fontStyle: "normal",
+          lineHeight: "20px",
+          letterSpacing: "0.1px",
+        },
+
+        ".body-l": {
+          fontSize: "16px",
+          fontWeight: "400",
+          fontStyle: "normal",
+          lineHeight: "24px",
+          letterSpacing: "0.5px",
+        },
+
+        ".body-m": {
+          fontSize: "14px",
+          fontWeight: "400",
+          fontStyle: "normal",
+          lineHeight: "20px",
+          letterSpacing: "0.25px",
+        },
+
+        ".body-s": {
+          fontSize: "12px",
+          fontWeight: "400",
+          fontStyle: "normal",
+          lineHeight: "16px",
+          letterSpacing: "0.4px",
+        },
+
+        ".label-l": {
+          fontSize: "14px",
+          fontWeight: "500",
+          fontStyle: "normal",
+          lineHeight: "20px",
+          letterSpacing: "0.1px",
+        },
+
+        ".label-m": {
+          fontSize: "12px",
+          fontWeight: "500",
+          fontStyle: "normal",
+          lineHeight: "16px",
+          letterSpacing: "0.5px",
+        },
+
+        ".label-s": {
+          fontSize: "11px",
+          fontWeight: "500",
+          fontStyle: "normal",
+          lineHeight: "16px",
+          letterSpacing: "0.5px",
+        },
+      });
+    }),
   ],
   daisyui: {
     themes: ["night", "light", "synthwave"],
