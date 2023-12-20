@@ -98,7 +98,7 @@ const config = {
           fontWeight: "400",
           fontStyle: "normal",
           lineHeight: "64px",
-          letterSpacing: "-0.25px",
+          letterSpacing: "-0.2px",
         },
 
         ".display-m": {
@@ -106,7 +106,7 @@ const config = {
           fontWeight: "400",
           fontStyle: "normal",
           lineHeight: "52px",
-          letterSpacing: "0",
+          letterSpacing: "0px",
         },
 
         ".display-s": {
@@ -114,7 +114,6 @@ const config = {
           fontWeight: "400",
           fontStyle: "normal",
           lineHeight: "44px",
-          letterSpacing: "0",
         },
 
         ".headline-l": {
@@ -122,6 +121,7 @@ const config = {
           fontWeight: "400",
           fontStyle: "normal",
           lineHeight: "40px",
+          letterSpacing: "0.4px",
         },
 
         ".headline-m": {
@@ -129,6 +129,7 @@ const config = {
           fontWeight: "400",
           fontStyle: "normal",
           lineHeight: "36px",
+          letterSpacing: "0.4px",
         },
 
         ".headline-s": {
@@ -136,6 +137,7 @@ const config = {
           fontWeight: "400",
           fontStyle: "normal",
           lineHeight: "32px",
+          letterSpacing: "0.4px",
         },
 
         ".title-l": {
