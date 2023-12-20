@@ -1,3 +1,5 @@
+import type { BreakPointKeyType } from "@/utils/design-system";
+
 export type FlexDirectionType =
   | "row"
   | "row-reverse"
@@ -11,3 +13,5 @@ export type FlexJustifyType =
   | "space-between"
   | "space-around";
 export type FlexWrapType = "wrap" | "nowrap" | "wrap-reverse";
+
+export type FlexScreensType = BreakPointKeyType;

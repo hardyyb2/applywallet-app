@@ -12,6 +12,7 @@ import type {
   FlexAlignType,
   FlexDirectionType,
   FlexJustifyType,
+  FlexScreensType,
   FlexWrapType,
 } from "./flex.types";
 
@@ -23,6 +24,7 @@ export interface FlexProps extends HTMLAttributes<HTMLDivElement> {
   component?: keyof JSX.IntrinsicElements | ComponentType<any>;
   className?: string;
   children?: ReactNode | ReactNode[];
+  switchDirection?: FlexScreensType | false;
 }
 
 const Flex = forwardRef<
@@ -38,6 +40,7 @@ const Flex = forwardRef<
       component: Component = "div",
       className = "",
       children = null,
+      switchDirection = false,
     },
     ref,
   ) => {
@@ -51,6 +54,25 @@ const Flex = forwardRef<
             "flex-row-reverse": direction === "row-reverse",
             "flex-col": direction === "column",
             "flex-col-reverse": direction === "column-reverse",
+          },
+          {
+            // shouldn't have made this component :(
+            "sm:flex-col": direction === "row" && switchDirection === "sm",
+            "sm:flex-row": direction === "column" && switchDirection === "sm",
+            "md:flex-col": direction === "row" && switchDirection === "md",
+            "md:flex-row": direction === "column" && switchDirection === "md",
+            "lg:flex-col": direction === "row" && switchDirection === "lg",
+            "lg:flex-row": direction === "column" && switchDirection === "lg",
+            "xl:flex-col": direction === "row" && switchDirection === "xl",
+            "xl:flex-row": direction === "column" && switchDirection === "xl",
+            "2xl:flex-col": direction === "row" && switchDirection === "2xl",
+            "2xl:flex-row": direction === "column" && switchDirection === "2xl",
+            "3xl:flex-col": direction === "row" && switchDirection === "3xl",
+            "3xl:flex-row": direction === "column" && switchDirection === "3xl",
+            "4xl:flex-col": direction === "row" && switchDirection === "4xl",
+            "4xl:flex-row": direction === "column" && switchDirection === "4xl",
+            "5xl:flex-col": direction === "row" && switchDirection === "5xl",
+            "5xl:flex-row": direction === "column" && switchDirection === "5xl",
           },
           {
             "items-stretch": align === "stretch",
