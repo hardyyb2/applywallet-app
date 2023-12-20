@@ -41,7 +41,10 @@ const BlogCard = ({
           {title}
         </Card.Title>
 
-        <Typography variant="body-l" className="mb-3xs-2xs line-clamp-3">
+        <Typography
+          variant="body-l"
+          className="mb-3xs-2xs line-clamp-3 font-light"
+        >
           {description}
         </Typography>
 

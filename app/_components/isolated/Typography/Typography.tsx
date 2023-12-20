@@ -25,7 +25,7 @@ const Typography = forwardRef<
     ref,
   ) => {
     const Component =
-      component ?? TypographyVariantTypeTagMap?.[variant ?? "body1"];
+      component ?? TypographyVariantTypeTagMap?.[variant ?? "body-l"];
 
     return (
       <Component
