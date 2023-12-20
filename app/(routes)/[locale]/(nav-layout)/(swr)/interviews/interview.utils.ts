@@ -1,3 +1,7 @@
+import dayjs from "dayjs";
+
+import type { InterviewRoundType } from "@/lib/schema/interviews";
+
 import { type AddEditInterviewFormProps } from "./AddEditInterviewForm";
 
 export const getAddEditInterviewFormCopy = (
@@ -18,3 +22,14 @@ export const getAddEditInterviewFormCopy = (
     titleText: textArr[2],
   };
 };
+
+export const getDefaultInterviewRoundObject = (
+  props: Partial<InterviewRoundType> = {},
+): InterviewRoundType => ({
+  name: "",
+  date: dayjs().toISOString(),
+  notes: "",
+  result: "",
+  type: "",
+  ...props,
+});
