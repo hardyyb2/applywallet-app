@@ -52,6 +52,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             disabled,
             className: cn(
               ((startIcon && !loading) || endIcon) && "gap-2",
+              "[&_svg]:w-5 lg:[&_svg]:w-6",
               className,
             ),
           }),
