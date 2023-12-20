@@ -25,7 +25,7 @@ export const interviewSchema = z.object({
     message: "please enter position",
   }),
   result: z.string().optional(),
-  rounds: z.record(roundSchema),
+  rounds: z.array(roundSchema),
 
   start_date: z
     .string({
@@ -47,5 +47,6 @@ export const interviewSchema = z.object({
 /** does not include id */
 export const interviewInputSchema = interviewSchema.omit({ id: true });
 
+export type InterviewRoundType = z.infer<typeof roundSchema>;
 export type InterviewType = z.infer<typeof interviewSchema>;
 export type InterviewInputType = z.infer<typeof interviewInputSchema>;
