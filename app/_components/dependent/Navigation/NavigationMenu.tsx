@@ -44,7 +44,7 @@ const NavigationMenu = ({
           <Fragment key={group}>
             {navOpen && (
               <li className="dui-menu-title">
-                <Typography variant="subtitle2">{group}</Typography>
+                <Typography variant="label-l">{group}</Typography>
               </li>
             )}
 
@@ -73,7 +73,7 @@ const NavigationMenu = ({
                     {navOpen ? (
                       <Typography
                         key={item.key}
-                        variant="caption"
+                        variant="title-m"
                         className="overflow-ellipsis"
                       >
                         {item.label}
@@ -95,7 +95,7 @@ const NavigationMenu = ({
                   <Tooltip>
                     <TooltipTrigger asChild>{listItem}</TooltipTrigger>
                     <TooltipContent sideOffset={12}>
-                      <Typography variant="h6">{item.label}</Typography>
+                      <Typography variant="title-m">{item.label}</Typography>
                       <TooltipArrow />
                     </TooltipContent>
                   </Tooltip>

@@ -115,11 +115,8 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
       noValidate
     >
       <div className="dui-card-body bg-base-100 [&_.dui-form-control]:mt-2">
-        <Typography variant="h3">{titleText}</Typography>
+        <Typography variant="display-m">{titleText}</Typography>
         <div className="mt-s">
-          {/* <Typography variant="subtitle1" className="underline">
-            company details
-          </Typography> */}
           <FormField
             label="company name"
             htmlFor="company_name"

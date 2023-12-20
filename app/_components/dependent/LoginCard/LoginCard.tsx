@@ -16,13 +16,13 @@ const LoginCard = async () => {
     <Card side="lg" className="max-w-xl bg-base-200 text-base-content">
       <Card.Body className="items-center">
         <Card.Title
-          variant="h3"
+          variant="display-m"
           align="center"
           className="inline-block first-letter:capitalize"
         >
           {t("loginCard.title")}
         </Card.Title>
-        <Typography variant="body2" align="center">
+        <Typography variant="body-m" align="center">
           {t("loginCard.subtitle")}
         </Typography>
 
@@ -30,7 +30,7 @@ const LoginCard = async () => {
           <LCLoginButton />
         </Card.Actions>
         <Divider>{t("common.or")}</Divider>
-        <Typography variant="subtitle2" align="center">
+        <Typography variant="body-l" align="center">
           {t("loginCard.alt_subtitle")}
         </Typography>
         <Card.Actions className="mt-4 w-full justify-center">

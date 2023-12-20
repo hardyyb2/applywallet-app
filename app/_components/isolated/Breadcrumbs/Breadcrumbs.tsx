@@ -47,8 +47,8 @@ const Breadcrumbs = forwardRef<HTMLDivElement, BreadcrumbsProps>(
         aria-label="Breadcrumbs"
         {...props}
         className={typographyVariants({
-          variant: "caption",
-          className: cn("dui-breadcrumbs", className),
+          variant: "label-m",
+          className: cn("dui-breadcrumbs font-semibold", className),
         })}
         ref={ref}
       >

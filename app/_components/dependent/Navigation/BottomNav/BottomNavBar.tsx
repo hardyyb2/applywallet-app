@@ -53,7 +53,7 @@ const BottomNavBar = ({
           >
             <Icon />
             <BottomNavigation.Label>
-              <Typography variant="caption">{item.label}</Typography>
+              <Typography variant="label-m">{item.label}</Typography>
             </BottomNavigation.Label>
           </Link>
         );

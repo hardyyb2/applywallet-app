@@ -86,7 +86,7 @@ export const typographyVariants = cva("", {
     },
   },
   defaultVariants: {
-    variant: "body-m",
+    variant: "body-l",
     align: "left",
   },
 });

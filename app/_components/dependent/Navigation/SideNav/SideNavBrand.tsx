@@ -62,7 +62,7 @@ const SideNavBrand = ({
             </Button>
           </TooltipTrigger>
           <TooltipContent>
-            <Typography variant="h6">
+            <Typography variant="body-l">
               {navOpen ? "close nav" : "open nav"}
             </Typography>
             <TooltipArrow />
