@@ -1,5 +1,7 @@
 import { cva, type VariantProps } from "cva";
 
+import styles from "./typography.module.scss";
+
 export const TypographyVariantTypeTagMap: Record<
   Exclude<TypographyVariantType, null | undefined>,
   keyof JSX.IntrinsicElements
@@ -16,6 +18,22 @@ export const TypographyVariantTypeTagMap: Record<
   body2: "p",
   caption: "span",
   srOnly: "span",
+
+  "display-l": "div",
+  "display-m": "div",
+  "display-s": "div",
+  "headline-l": "h1",
+  "headline-m": "h2",
+  "headline-s": "h3",
+  "title-l": "h4",
+  "title-m": "h5",
+  "title-s": "h6",
+  "body-l": "p",
+  "body-m": "p",
+  "body-s": "p",
+  "label-l": "span",
+  "label-m": "span",
+  "label-s": "span",
 };
 
 type TypographyVariantType = VariantProps<typeof typographyVariants>["variant"];
@@ -23,6 +41,7 @@ type TypographyVariantType = VariantProps<typeof typographyVariants>["variant"];
 export const typographyVariants = cva("", {
   variants: {
     variant: {
+      /** deprecate these variants */
       h1: "text-h1 font-primary font-semibold leading-[1.1143] -tracking-[0.2px]",
       h2: "text-h2 font-primary font-semibold leading-[1.2222] -tracking-[0.2px]",
       h3: "text-h3 font-primary font-normal leading-[1.2222] tracking-[0.2px]",
@@ -39,6 +58,23 @@ export const typographyVariants = cva("", {
         "text-body2 font-secondary font-normal leading-[1.5] tracking-normal",
       caption:
         "text-caption font-secondary font-bold leading-[1.5] tracking-normal",
+
+      /** new material variants */
+      "display-l": styles["display-l"],
+      "display-m": styles["display-m"],
+      "display-s": styles["display-s"],
+      "headline-l": styles["headline-l"],
+      "headline-m": styles["headline-m"],
+      "headline-s": styles["headline-s"],
+      "title-l": styles["title-l"],
+      "title-m": styles["title-m"],
+      "title-s": styles["title-s"],
+      "body-l": styles["body-l"],
+      "body-m": styles["body-m"],
+      "body-s": styles["body-s"],
+      "label-l": styles["label-l"],
+      "label-m": styles["label-m"],
+      "label-s": styles["label-s"],
       srOnly: "sr-only",
     },
     display: {
