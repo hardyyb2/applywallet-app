@@ -1,6 +1,6 @@
 import { cva } from "cva";
 
-export const selectVariants = cva("rounded-btn", {
+export const selectVariants = cva("rounded-btn !min-h-[unset]", {
   variants: {
     size: {
       lg: "dui-select-lg",
