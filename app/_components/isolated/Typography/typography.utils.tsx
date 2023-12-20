@@ -1,7 +1,5 @@
 import { cva, type VariantProps } from "cva";
 
-import styles from "./typography.module.scss";
-
 export const TypographyVariantTypeTagMap: Record<
   Exclude<TypographyVariantType, null | undefined>,
   keyof JSX.IntrinsicElements
@@ -17,14 +15,13 @@ export const TypographyVariantTypeTagMap: Record<
   body1: "p",
   body2: "p",
   caption: "span",
-  srOnly: "span",
 
-  "display-l": "div",
-  "display-m": "div",
-  "display-s": "div",
-  "headline-l": "h1",
-  "headline-m": "h2",
-  "headline-s": "h3",
+  "display-l": "h1",
+  "display-m": "h2",
+  "display-s": "h3",
+  "headline-l": "h4",
+  "headline-m": "h5",
+  "headline-s": "h6",
   "title-l": "h4",
   "title-m": "h5",
   "title-s": "h6",
@@ -34,6 +31,7 @@ export const TypographyVariantTypeTagMap: Record<
   "label-l": "span",
   "label-m": "span",
   "label-s": "span",
+  srOnly: "span",
 };
 
 type TypographyVariantType = VariantProps<typeof typographyVariants>["variant"];
@@ -60,21 +58,21 @@ export const typographyVariants = cva("", {
         "text-caption font-secondary font-bold leading-[1.5] tracking-normal",
 
       /** new material variants */
-      "display-l": styles["display-l"],
-      "display-m": styles["display-m"],
-      "display-s": styles["display-s"],
-      "headline-l": styles["headline-l"],
-      "headline-m": styles["headline-m"],
-      "headline-s": styles["headline-s"],
-      "title-l": styles["title-l"],
-      "title-m": styles["title-m"],
-      "title-s": styles["title-s"],
-      "body-l": styles["body-l"],
-      "body-m": styles["body-m"],
-      "body-s": styles["body-s"],
-      "label-l": styles["label-l"],
-      "label-m": styles["label-m"],
-      "label-s": styles["label-s"],
+      "display-l": "display-l",
+      "display-m": "display-m",
+      "display-s": "display-s",
+      "headline-l": "headline-l",
+      "headline-m": "headline-m",
+      "headline-s": "headline-s",
+      "title-l": "title-l",
+      "title-m": "title-m",
+      "title-s": "title-s",
+      "body-l": "body-l",
+      "body-m": "body-m",
+      "body-s": "body-s",
+      "label-l": "label-l",
+      "label-m": "label-m",
+      "label-s": "label-s",
       srOnly: "sr-only",
     },
     display: {
@@ -88,7 +86,7 @@ export const typographyVariants = cva("", {
     },
   },
   defaultVariants: {
-    variant: "body1",
+    variant: "body-m",
     align: "left",
   },
 });
