@@ -4,11 +4,20 @@ import { useRouter } from "next/navigation";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useQueryClient } from "@tanstack/react-query";
-import { useForm, type SubmitHandler } from "react-hook-form";
+import { useFieldArray, useForm, type SubmitHandler } from "react-hook-form";
 import { toast } from "react-toastify";
 
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/isolated/Accordion";
 import { Button } from "@/components/isolated/Button";
+import { Card } from "@/components/isolated/Card";
+import { Flex } from "@/components/isolated/Flex";
 import { FormField } from "@/components/isolated/FormField";
+import { Icons } from "@/components/isolated/Icons";
 import { Typography } from "@/components/isolated/Typography";
 import {
   interviewInputSchema,
@@ -22,7 +31,10 @@ import {
 import { QueryKeys } from "@/utils/queries";
 import { AppRoutes } from "@/utils/routes";
 
-import { getAddEditInterviewFormCopy } from "./interview.utils";
+import {
+  getAddEditInterviewFormCopy,
+  getDefaultInterviewRoundObject,
+} from "./interview.utils";
 
 export type AddEditInterviewFormProps =
   | {
@@ -45,10 +57,20 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
     register,
     handleSubmit,
     formState: { errors },
+    control,
   } = useForm<InterviewInputType>({
     resolver: zodResolver(interviewInputSchema),
     defaultValues: defaultFormValues,
   });
+  const {
+    fields: rounds,
+    append: appendRound,
+    remove: removeRound,
+  } = useFieldArray({
+    control,
+    name: "rounds",
+  });
+
   const router = useRouter();
 
   // functions
@@ -100,6 +122,10 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
     });
   };
 
+  const handleAddRoundClick = () => {
+    appendRound(getDefaultInterviewRoundObject());
+  };
+
   // constants
   const loading = addMutation.isPending || updateMutation.isPending;
   const { buttonText, titleText } = getAddEditInterviewFormCopy(
@@ -108,55 +134,145 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
   );
 
   return (
-    // TODO - replace with Card component
-    <form
-      className="dui-card m-auto overflow-hidden"
-      onSubmit={handleSubmit(onSubmit)}
-      noValidate
-    >
-      <div className="dui-card-body bg-base-100 [&_.dui-form-control]:mt-2">
-        <Typography variant="h3">{titleText}</Typography>
-        <div className="mt-s">
-          {/* <Typography variant="subtitle1" className="underline">
-            company details
-          </Typography> */}
-          <FormField
-            label="company name"
-            htmlFor="company_name"
-            error={errors.company_name?.message}
-          >
-            <FormField.Input
-              autoFocus
-              placeholder="apollo.io"
-              {...register("company_name")}
-            />
-          </FormField>
+    <Card className="m-auto overflow-hidden">
+      <form onSubmit={handleSubmit(onSubmit)} noValidate>
+        <Card.Body className="[&_.dui-form-control]:mt-2">
+          <Typography variant="h3">{titleText}</Typography>
+          <div>
+            <FormField
+              label="company name"
+              htmlFor="company_name"
+              error={errors.company_name?.message}
+            >
+              <FormField.Input
+                autoFocus
+                placeholder="apollo.io"
+                {...register("company_name")}
+              />
+            </FormField>
 
-          <FormField
-            label="position"
-            htmlFor="position"
-            error={errors.position?.message}
-          >
-            <FormField.Input
-              autoFocus
-              placeholder="frontend engineer"
-              {...register("position")}
-            />
-          </FormField>
-        </div>
+            <FormField
+              label="position"
+              htmlFor="position"
+              error={errors.position?.message}
+            >
+              <FormField.Input
+                autoFocus
+                placeholder="frontend engineer"
+                {...register("position")}
+              />
+            </FormField>
 
-        <Button
-          type="submit"
-          size="lg"
-          color="primary"
-          className="mt-xs"
-          loading={loading}
-          disabled={loading}
-        >
-          {buttonText}
-        </Button>
-      </div>
-    </form>
+            <FormField
+              label="interview start date"
+              htmlFor="start_date"
+              error={errors.start_date?.message}
+            >
+              <FormField.DatePickerInput name="start_date" control={control} />
+            </FormField>
+          </div>
+
+          <Accordion type="single" className="p-0" collapsible>
+            {rounds.map((round, index) => {
+              return (
+                <AccordionItem value={String(index)} key={round.id}>
+                  <AccordionTrigger>
+                    <Typography variant="h5">
+                      {round.name || `round ${index + 1}`}
+                    </Typography>
+                  </AccordionTrigger>
+
+                  <AccordionContent>
+                    <FormField
+                      label="round name"
+                      htmlFor={`rounds.${index}.name`}
+                      error={errors.rounds?.[index]?.name?.message}
+                    >
+                      <FormField.Input
+                        autoFocus
+                        placeholder="round 1"
+                        {...register(`rounds.${index}.name`)}
+                      />
+                    </FormField>
+                    <FormField
+                      label="round type"
+                      htmlFor={`rounds.${index}.type`}
+                    >
+                      <FormField.Input
+                        autoFocus
+                        placeholder="system design"
+                        {...register(`rounds.${index}.type`)}
+                      />
+                    </FormField>
+                    <FormField
+                      label="round date"
+                      htmlFor={`rounds.${index}.date`}
+                      error={errors.rounds?.[index]?.date?.message}
+                    >
+                      <FormField.DatePickerInput
+                        name={`rounds.${index}.date`}
+                        control={control}
+                      />
+                    </FormField>
+                    <FormField
+                      label="round result"
+                      htmlFor={`rounds.${index}.result`}
+                      error={errors.rounds?.[index]?.result?.message}
+                    >
+                      <FormField.Input
+                        autoFocus
+                        placeholder="selected"
+                        {...register(`rounds.${index}.result`)}
+                      />
+                    </FormField>
+                    <FormField
+                      label="round notes"
+                      htmlFor={`rounds.${index}.notes`}
+                      error={errors.rounds?.[index]?.notes?.message}
+                    >
+                      <FormField.Input
+                        autoFocus
+                        placeholder="selected"
+                        {...register(`rounds.${index}.notes`)}
+                      />
+                    </FormField>
+                  </AccordionContent>
+                </AccordionItem>
+              );
+            })}
+          </Accordion>
+
+          <Flex
+            align="stretch"
+            direction="column"
+            switchDirection="md"
+            className="gap-2"
+          >
+            <Button
+              type="button"
+              variant="outline"
+              className="mt-xs"
+              responsive
+              startIcon={<Icons.Plus />}
+              onClick={handleAddRoundClick}
+            >
+              add round
+            </Button>
+
+            <Button
+              type="submit"
+              color="primary"
+              className="mt-3xs md:mt-xs"
+              loading={loading}
+              responsive
+              disabled={loading}
+            >
+              {buttonText}
+            </Button>
+          </Flex>
+        </Card.Body>
+      </form>
+    </Card>
   );
 };
 
