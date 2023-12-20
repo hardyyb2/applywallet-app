@@ -1,6 +1,6 @@
 import { cva } from "cva";
 
-export const buttonVariants = cva("dui-btn font-secondary min-h-[unset]", {
+export const buttonVariants = cva("dui-btn font-secondary", {
   variants: {
     size: {
       lg: "dui-btn-lg",
