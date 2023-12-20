@@ -2,11 +2,7 @@
 
 import { useMedia } from "react-use";
 
-import { tailwindConfig } from "@/utils/tailwind";
-
-const breakpoints = tailwindConfig.theme.screens;
-
-type BreakPointKeyType = keyof typeof breakpoints;
+import { breakpoints, type BreakPointKeyType } from "@/utils/design-system";
 
 const useBreakPoint = <K extends BreakPointKeyType>(breakPointKey: K) => {
   const breakPointValue = breakpoints[breakPointKey];
