@@ -4,10 +4,14 @@ import React from "react";
 import dynamic from "next/dynamic";
 
 import type { VariantProps } from "cva";
-import { type Props as BaseSelectProps } from "react-select";
+import {
+  components as Components,
+  type Props as BaseSelectProps,
+} from "react-select";
 
 import { cn, cnMerge } from "@/utils/styles";
 
+import { Icons } from "../Icons";
 import { Input } from "../Input";
 import { selectVariants } from "./select.utils";
 
@@ -32,6 +36,7 @@ const Select = ({
   menuPortalTarget,
   responsive = false,
   placeholder = "select...",
+  components,
   ...restProps
 }: SelectProps) => {
   const getMenuPortal = () => {
@@ -64,7 +69,7 @@ const Select = ({
                 "border-info": color === "info",
               },
             ],
-            "pr-4",
+            "!pr-xs-s",
           ),
         container: (state) =>
           cnMerge(
@@ -106,6 +111,27 @@ const Select = ({
               },
             ],
           ),
+      }}
+      components={{
+        DropdownIndicator: (props) => (
+          <Components.DropdownIndicator {...props}>
+            <Icons.ChevronsUpDown
+              className={cnMerge(
+                "h-4 w-4",
+                color === "primary" && "stroke-primary",
+                color === "secondary" && "stroke-secondary",
+                color === "accent" && "stroke-accent",
+                color === "ghost" && "stroke-base-content",
+                color === "error" && "stroke-error",
+                color === "warning" && "stroke-warning",
+                color === "success" && "stroke-success",
+                color === "info" && "stroke-info",
+                responsive && "h-4 w-4 md:h-6 md:w-6",
+              )}
+            />
+          </Components.DropdownIndicator>
+        ),
+        ...components,
       }}
       {...restProps}
       menuPortalTarget={getMenuPortal()}
