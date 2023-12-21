@@ -30,6 +30,9 @@ export const buttonVariants = cva("dui-btn font-secondary", {
     fullWidth: {
       true: "dui-btn-block",
     },
+    wide: {
+      true: "dui-btn-wide",
+    },
     responsive: {
       true: "dui-btn-sm md:dui-btn-md",
     },
