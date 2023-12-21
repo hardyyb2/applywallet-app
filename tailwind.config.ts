@@ -119,7 +119,7 @@ const config = {
           fontSize: "clamp(2.125rem, 2.025rem + 0.5vw, 2.625rem)", // 34px - 42px
           fontWeight: "400",
           fontStyle: "normal",
-          lineHeight: "1.2", // 48px
+          lineHeight: "1.2",
           letterSpacing: "0",
           fontFamily: theme("fontFamily.primary"),
         },
@@ -128,16 +128,16 @@ const config = {
           fontSize: "clamp(1.75rem, 1.65rem + 0.5vw, 2.25rem)", // 28px - 36px
           fontWeight: "400",
           fontStyle: "normal",
-          lineHeight: "1.2", // 43px
+          lineHeight: "1.2",
           letterSpacing: "0",
           fontFamily: theme("fontFamily.primary"),
         },
 
         ".title-l": {
-          fontSize: "clamp(1.375rem, 1.275rem + 0.5vw, 1.875rem", // 22px - 30px
+          fontSize: "clamp(1.375rem, 1.275rem + 0.5vw, 1.875rem)", // 22px - 30px
           fontWeight: "400",
           fontStyle: "normal",
-          lineHeight: "1.2", // 37px
+          lineHeight: "1.2",
           fontFamily: theme("fontFamily.secondary"),
         },
 
