@@ -23,7 +23,7 @@ export const TypographyVariantTypeTagMap: Record<
   "label-m": "span",
   "label-m-bold": "span",
   "label-s": "span",
-  srOnly: "span",
+  "sr-only": "span",
 };
 
 type TypographyVariantType = VariantProps<typeof typographyVariants>["variant"];
@@ -48,7 +48,7 @@ export const typographyVariants = cva("", {
       "label-m": "label-m",
       "label-m-bold": "label-m-bold",
       "label-s": "label-s",
-      srOnly: "sr-only",
+      "sr-only": "sr-only",
     },
     display: {
       inline: "inline",

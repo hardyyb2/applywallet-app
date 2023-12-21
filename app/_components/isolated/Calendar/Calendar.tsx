@@ -55,7 +55,7 @@ const Calendar = ({
         caption_label: typographyVariants({
           variant:
             captionLayout === "dropdown-buttons" || captionLayout === "dropdown"
-              ? "srOnly"
+              ? "sr-only"
               : "title-m",
         }),
         dropdown_month:

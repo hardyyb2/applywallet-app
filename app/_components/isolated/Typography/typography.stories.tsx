@@ -126,6 +126,6 @@ export const SrOnly: Story = {
   name: "sr-only",
   args: {
     children: "A quick brown fox jumps over the lazy dog (sr-only)",
-    variant: "srOnly",
+    variant: "sr-only",
   },
 };
