@@ -66,7 +66,7 @@ const AccordionItem = React.forwardRef<
       ref={ref}
       className={cnMerge(
         typographyVariants({ variant: "title-s" }),
-        "p-2xs-xs ",
+
         {
           "rounded-xl bg-base-200 ": variant === "primary",
           "border-b": variant === "secondary",
@@ -100,7 +100,7 @@ const AccordionTrigger = React.forwardRef<
       <AccordionPrimitive.Trigger
         ref={ref}
         className={cnMerge(
-          "flex flex-1 items-center justify-between",
+          "flex flex-1 items-center justify-between p-2xs-xs",
           className,
         )}
         {...props}
