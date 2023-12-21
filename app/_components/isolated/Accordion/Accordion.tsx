@@ -11,11 +11,11 @@ import { Icons } from "../Icons";
 import { typographyVariants } from "../Typography";
 
 type AccordionContextType = {
-  variant?: "primary" | "secondary";
+  variant?: "boxed" | "bordered-bottom" | "bordered";
 };
 
 const AccordionContext = React.createContext<AccordionContextType>({
-  variant: "primary",
+  variant: "boxed",
 });
 
 const useAccordionContext = () => {
@@ -36,7 +36,7 @@ type AccordionProps = React.ComponentPropsWithoutRef<
 const Accordion = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Root>,
   AccordionProps
->(({ variant = "primary", className, ...props }, ref) => {
+>(({ variant = "boxed", className, ...props }, ref) => {
   return (
     <AccordionContext.Provider value={{ variant }}>
       <AccordionPrimitive.Root
@@ -44,7 +44,7 @@ const Accordion = React.forwardRef<
         {...props}
         className={cnMerge(
           {
-            "space-y-1": variant === "primary",
+            "space-y-3xs": variant === "boxed" || variant === "bordered",
           },
           className,
         )}
@@ -66,10 +66,10 @@ const AccordionItem = React.forwardRef<
       ref={ref}
       className={cnMerge(
         typographyVariants({ variant: "title-s" }),
-
         {
-          "rounded-xl bg-base-200 ": variant === "primary",
-          "border-b": variant === "secondary",
+          "rounded-xl bg-base-200": variant === "boxed",
+          "border-b": variant === "bordered-bottom",
+          "rounded-xl border ": variant === "bordered",
         },
         className,
       )}
@@ -81,36 +81,19 @@ AccordionItem.displayName = "AccordionItem";
 
 const AccordionTrigger = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Trigger>,
-  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger> & {
-    icon?: LucideIcon;
-    showIcon?: boolean;
-  }
->(
-  (
-    {
-      className,
-      children,
-      icon: Icon = Icons.ChevronDown,
-      showIcon = true,
-      ...props
-    },
-    ref,
-  ) => (
-    <AccordionPrimitive.Header className="flex">
-      <AccordionPrimitive.Trigger
-        ref={ref}
-        className={cnMerge(
-          "flex flex-1 items-center justify-between p-2xs-xs",
-          className,
-        )}
-        {...props}
-      >
-        {children}
-        {showIcon ? <Icon className="h-4 w-4 lg:h-6 lg:w-6" /> : null}
-      </AccordionPrimitive.Trigger>
-    </AccordionPrimitive.Header>
-  ),
-);
+  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
+>(({ className, ...props }, ref) => (
+  <AccordionPrimitive.Header className="flex">
+    <AccordionPrimitive.Trigger
+      ref={ref}
+      className={cnMerge(
+        "flex flex-1 items-center justify-between p-2xs-xs",
+        className,
+      )}
+      {...props}
+    />
+  </AccordionPrimitive.Header>
+));
 AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName;
 
 const AccordionContent = React.forwardRef<
@@ -119,16 +102,11 @@ const AccordionContent = React.forwardRef<
     innerClassName?: string;
   }
 >(({ className, innerClassName, children, ...props }, ref) => {
-  const { variant } = useAccordionContext();
-
   return (
     <AccordionPrimitive.Content
       ref={ref}
       className={cnMerge(
-        "overflow-hidden",
-        {
-          "p-3xs-2xs": variant === "primary",
-        },
+        "overflow-hidden px-2xs-xs",
         "data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down",
         className,
       )}
