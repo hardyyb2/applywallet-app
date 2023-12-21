@@ -1,9 +1,19 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Typography } from "./Typography";
+import { TypographyVariantTypeTagMap } from "./typography.utils";
 
 const meta = {
   component: Typography,
+  tags: ["autodocs"],
+  argTypes: {
+    variant: {
+      options: Object.keys(TypographyVariantTypeTagMap),
+      control: {
+        type: "select",
+      },
+    },
+  },
 } satisfies Meta<typeof Typography>;
 
 export default meta;
