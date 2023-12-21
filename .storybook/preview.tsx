@@ -1,4 +1,8 @@
+import * as React from "react";
+
 import type { Preview } from "@storybook/react";
+
+import { fonts } from "../app/_lib/fonts";
 
 import "../app/_styles/globals.scss";
 
@@ -12,6 +16,13 @@ const preview: Preview = {
       },
     },
   },
+  decorators: [
+    (Story) => (
+      <main className={`${fonts.primary.variable} ${fonts.secondary.variable}`}>
+        <Story />
+      </main>
+    ),
+  ],
 };
 
 export default preview;
