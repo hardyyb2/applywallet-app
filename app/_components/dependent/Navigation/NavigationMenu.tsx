@@ -73,7 +73,7 @@ const NavigationMenu = ({
                     {navOpen ? (
                       <Typography
                         key={item.key}
-                        variant="title-m"
+                        variant="label-m"
                         className="overflow-ellipsis"
                       >
                         {item.label}
