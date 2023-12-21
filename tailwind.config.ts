@@ -81,42 +81,42 @@ const config = {
     plugin(({ addComponents, theme }) => {
       addComponents({
         ".display-l": {
-          fontSize: "57pt", // 76px
+          fontSize: "clamp(3.05rem, 3.68vw + 2.32rem, 5.26rem)", // 48.8px - 84.16px
           fontWeight: "400",
           fontStyle: "normal",
-          lineHeight: "1.2", // 85px
+          lineHeight: "1.2",
           letterSpacing: "-0.25pt",
           fontFamily: theme("fontFamily.primary"),
         },
 
         ".display-m": {
-          fontSize: "45pt", // 60px
+          fontSize: "clamp(2.44rem, 2.51vw + 1.94rem, 3.95rem)", // 39.04px - 63.2px
           fontWeight: "400",
           fontStyle: "normal",
-          lineHeight: "1.2", // 69px
+          lineHeight: "1.2",
           letterSpacing: "0px",
           fontFamily: theme("fontFamily.primary"),
         },
 
         ".display-s": {
-          fontSize: "36pt", // 48px
+          fontSize: "clamp(1.95rem, 1.68vw + 1.62rem, 2.96rem)", // 31.2px - 47.36px
           fontWeight: "400",
           fontStyle: "normal",
-          lineHeight: "1.2", // 59px
+          lineHeight: "1.2",
           fontFamily: theme("fontFamily.primary"),
         },
 
         ".headline-l": {
-          fontSize: "32pt", // 42px
+          fontSize: "clamp(2.5rem, 2.025rem + 0.5vw, 3.375rem)", // 40px - 54px
           fontWeight: "400",
           fontStyle: "normal",
-          lineHeight: "1.2", // 53px
+          lineHeight: "1.2",
           letterSpacing: "0",
           fontFamily: theme("fontFamily.primary"),
         },
 
         ".headline-m": {
-          fontSize: "28pt", // 37px
+          fontSize: "clamp(2.125rem, 2.025rem + 0.5vw, 2.625rem)", // 34px - 42px
           fontWeight: "400",
           fontStyle: "normal",
           lineHeight: "1.2", // 48px
@@ -125,7 +125,7 @@ const config = {
         },
 
         ".headline-s": {
-          fontSize: "24pt", // 32px
+          fontSize: "clamp(1.75rem, 1.65rem + 0.5vw, 2.25rem)", // 28px - 36px
           fontWeight: "400",
           fontStyle: "normal",
           lineHeight: "1.2", // 43px
@@ -134,7 +134,7 @@ const config = {
         },
 
         ".title-l": {
-          fontSize: "22pt", // 29px
+          fontSize: "clamp(1.375rem, 1.275rem + 0.5vw, 1.875rem", // 22px - 30px
           fontWeight: "400",
           fontStyle: "normal",
           lineHeight: "1.2", // 37px
@@ -142,10 +142,10 @@ const config = {
         },
 
         ".title-m": {
-          fontSize: "16pt", // 21px
+          fontSize: "clamp(1.125rem, 1.05rem + 0.375vw, 1.5rem)", // 18px - 24px
           fontWeight: "500",
           fontStyle: "normal",
-          lineHeight: "1.2", // 32px
+          lineHeight: "1.2",
           letterSpacing: "0.15pt",
           fontFamily: theme("fontFamily.secondary"),
         },
@@ -154,22 +154,22 @@ const config = {
           fontSize: "clamp(1rem, 0.42vw + 0.92rem, 1.25rem)", // 16px - 20px
           fontWeight: "500",
           fontStyle: "normal",
-          lineHeight: "1.2", // 27px
+          lineHeight: "1.2",
           letterSpacing: "0.1pt",
           fontFamily: theme("fontFamily.secondary"),
         },
 
         ".body-l": {
-          fontSize: "16pt", // 21px
+          fontSize: "clamp(1.125rem, 1.05rem + 0.375vw, 1.5rem)", // 18px - 24px
           fontWeight: "400",
           fontStyle: "normal",
-          lineHeight: "1.5", // 32px
+          lineHeight: "1.5",
           letterSpacing: "0.5pt",
           fontFamily: theme("fontFamily.secondary"),
         },
 
         ".body-m": {
-          fontSize: "clamp(1rem, 0.42vw + 0.92rem, 1.25rem)",
+          fontSize: "clamp(1rem, 0.42vw + 0.92rem, 1.25rem)", // 16px - 20px
           fontWeight: "400",
           fontStyle: "normal",
           lineHeight: "1.5",
@@ -178,7 +178,7 @@ const config = {
         },
 
         ".body-s": {
-          fontSize: "clamp(0.8rem, 0.23vw + 0.75rem, 1rem)",
+          fontSize: "clamp(0.8rem, 0.23vw + 0.75rem, 1rem)", // 12.8px - 16px
           fontWeight: "400",
           fontStyle: "normal",
           lineHeight: "1.5",
@@ -187,7 +187,7 @@ const config = {
         },
 
         ".label-l": {
-          fontSize: "clamp(1rem, 0.42vw + 0.92rem, 1.25rem)",
+          fontSize: "clamp(1rem, 0.42vw + 0.92rem, 1.25rem)", // 16px - 20px
           fontWeight: "500",
           fontStyle: "normal",
           lineHeight: "1.5",
@@ -196,7 +196,7 @@ const config = {
         },
 
         ".label-l-bold": {
-          fontSize: "clamp(1rem, 0.42vw + 0.92rem, 1.25rem)",
+          fontSize: "clamp(1rem, 0.42vw + 0.92rem, 1.25rem)", // 16px - 20px
           fontWeight: "700",
           fontStyle: "normal",
           lineHeight: "1.5",
@@ -205,7 +205,7 @@ const config = {
         },
 
         ".label-m": {
-          fontSize: "clamp(0.8rem, 0.23vw + 0.75rem, 1rem)",
+          fontSize: "clamp(0.8rem, 0.23vw + 0.75rem, 1rem)", // 12.8px - 16px
           fontWeight: "500",
           fontStyle: "normal",
           lineHeight: "1.5",
@@ -214,7 +214,7 @@ const config = {
         },
 
         ".label-m-bold": {
-          fontSize: "clamp(0.8rem, 0.23vw + 0.75rem, 1rem)",
+          fontSize: "clamp(0.8rem, 0.23vw + 0.75rem, 1rem)", // 12.8px - 16px
           fontWeight: "700",
           fontStyle: "normal",
           lineHeight: "1.5",
@@ -223,7 +223,7 @@ const config = {
         },
 
         ".label-s": {
-          fontSize: "clamp(0.64rem, 0.11vw + 0.62rem, 0.88rem)",
+          fontSize: "clamp(0.64rem, 0.11vw + 0.62rem, 0.88rem)", // 10.24px - 14px
           fontWeight: "500",
           fontStyle: "normal",
           lineHeight: "1.5",
