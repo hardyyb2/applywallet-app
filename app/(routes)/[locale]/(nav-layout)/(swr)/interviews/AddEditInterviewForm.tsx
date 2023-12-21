@@ -157,7 +157,6 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
               error={errors.position?.message}
             >
               <FormField.Input
-                autoFocus
                 placeholder="frontend engineer"
                 {...register("position")}
               />
@@ -172,15 +171,29 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
             </FormField>
           </div>
 
-          <Accordion type="single" className="p-0" collapsible>
+          <Accordion
+            type="single"
+            className="mt-4 p-0"
+            collapsible
+            variant="boxed"
+          >
             {rounds.map((round, index) => {
               return (
-                <AccordionItem value={String(index)} key={round.id}>
-                  <AccordionTrigger>
-                    <Typography variant="body-s">
+                <AccordionItem key={round.id} value={String(index)}>
+                  <div className="grid w-full grid-cols-[1fr_auto] items-center gap-3xs pr-2xs-xs">
+                    <AccordionTrigger className="flex-1">
                       {round.name || `round ${index + 1}`}
-                    </Typography>
-                  </AccordionTrigger>
+                      <Icons.ChevronDown className="w-4 lg:w-6" />
+                    </AccordionTrigger>
+
+                    <Icons.Trash2
+                      role="button"
+                      tabIndex={1}
+                      aria-label="delete round"
+                      className="w-4 text-error lg:w-6"
+                      onClick={() => removeRound(index)}
+                    />
+                  </div>
 
                   <AccordionContent>
                     <FormField
@@ -189,7 +202,6 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
                       error={errors.rounds?.[index]?.name?.message}
                     >
                       <FormField.Input
-                        autoFocus
                         placeholder="round 1"
                         {...register(`rounds.${index}.name`)}
                       />
@@ -199,7 +211,6 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
                       htmlFor={`rounds.${index}.type`}
                     >
                       <FormField.Input
-                        autoFocus
                         placeholder="system design"
                         {...register(`rounds.${index}.type`)}
                       />
@@ -220,7 +231,6 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
                       error={errors.rounds?.[index]?.result?.message}
                     >
                       <FormField.Input
-                        autoFocus
                         placeholder="selected"
                         {...register(`rounds.${index}.result`)}
                       />
@@ -231,7 +241,6 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
                       error={errors.rounds?.[index]?.notes?.message}
                     >
                       <FormField.Input
-                        autoFocus
                         placeholder="selected"
                         {...register(`rounds.${index}.notes`)}
                       />
