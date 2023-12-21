@@ -2,7 +2,7 @@ import { forwardRef, type ButtonHTMLAttributes, type ReactNode } from "react";
 
 import { type VariantProps } from "cva";
 
-import { cn } from "@/utils/styles";
+import { cnMerge } from "@/utils/styles";
 
 import { buttonVariants } from "./button.utils";
 
@@ -40,7 +40,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         {...rest}
         ref={ref}
-        className={cn(
+        className={cnMerge(
           buttonVariants({
             color,
             shape,
@@ -52,9 +52,10 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             active,
             disabled,
             wide,
-            className: cn(
+            className: cnMerge(
               ((startIcon && !loading) || endIcon) && "gap-2",
               "[&_svg]:w-5 lg:[&_svg]:w-6",
+              "!label-m lg:!label-l",
               className,
             ),
           }),
