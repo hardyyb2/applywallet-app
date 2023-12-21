@@ -169,64 +169,64 @@ const config = {
         },
 
         ".body-m": {
-          fontSize: "clamp(1rem, 0.42vw + 0.92rem, 1.25rem)", // 16px - 20px
+          fontSize: "clamp(1rem, 0.42vw + 0.92rem, 1.25rem)",
           fontWeight: "400",
           fontStyle: "normal",
-          lineHeight: "1.5", // 27px
+          lineHeight: "1.5",
           letterSpacing: "0.25pt",
           fontFamily: theme("fontFamily.secondary"),
         },
 
         ".body-s": {
-          fontSize: "12pt", // 16px
+          fontSize: "clamp(0.8rem, 0.23vw + 0.75rem, 1rem)",
           fontWeight: "400",
           fontStyle: "normal",
-          lineHeight: "1.5", // 21px
+          lineHeight: "1.5",
           letterSpacing: "0.4pt",
           fontFamily: theme("fontFamily.secondary"),
         },
 
         ".label-l": {
-          fontSize: "clamp(1rem, 0.42vw + 0.92rem, 1.25rem)", // 16px - 20px
+          fontSize: "clamp(1rem, 0.42vw + 0.92rem, 1.25rem)",
           fontWeight: "500",
           fontStyle: "normal",
-          lineHeight: "1.5", // 27px
+          lineHeight: "1.5",
           letterSpacing: "0.1pt",
           fontFamily: theme("fontFamily.secondary"),
         },
 
         ".label-l-bold": {
-          fontSize: "clamp(1rem, 0.42vw + 0.92rem, 1.25rem)", // 16px - 20px
+          fontSize: "clamp(1rem, 0.42vw + 0.92rem, 1.25rem)",
           fontWeight: "700",
           fontStyle: "normal",
-          lineHeight: "1.5", // 27px
+          lineHeight: "1.5",
           letterSpacing: "0.1pt",
           fontFamily: theme("fontFamily.secondary"),
         },
 
         ".label-m": {
-          fontSize: "12pt", // 16px
+          fontSize: "clamp(0.8rem, 0.23vw + 0.75rem, 1rem)",
           fontWeight: "500",
           fontStyle: "normal",
-          lineHeight: "1.5", // 21px
+          lineHeight: "1.5",
           letterSpacing: "0.5pt",
           fontFamily: theme("fontFamily.secondary"),
         },
 
         ".label-m-bold": {
-          fontSize: "12pt", // 16px
+          fontSize: "clamp(0.8rem, 0.23vw + 0.75rem, 1rem)",
           fontWeight: "700",
           fontStyle: "normal",
-          lineHeight: "1.5", // 21px
+          lineHeight: "1.5",
           letterSpacing: "0.5pt",
           fontFamily: theme("fontFamily.secondary"),
         },
 
         ".label-s": {
-          fontSize: "11pt", // 14px
+          fontSize: "clamp(0.64rem, 0.11vw + 0.62rem, 0.88rem)",
           fontWeight: "500",
           fontStyle: "normal",
-          lineHeight: "1.5", // 21px
+          lineHeight: "1.5",
           letterSpacing: "0.5pt",
           fontFamily: theme("fontFamily.secondary"),
         },
