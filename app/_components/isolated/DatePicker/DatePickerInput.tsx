@@ -3,7 +3,7 @@ import { useLayoutEffect, useState } from "react";
 import dayjs from "dayjs";
 
 import { useBreakPoint } from "@/hooks/useBreakPoint";
-import { cn } from "@/utils/styles";
+import { cn, cnMerge } from "@/utils/styles";
 
 import { Button } from "../Button";
 import { Calendar } from "../Calendar";
@@ -17,6 +17,7 @@ interface DatePickerInputProps extends InputProps {
   date: string | undefined;
   setDate: (date: DatePickerInputProps["date"]) => void;
   color?: DatePickerColorType;
+  className?: string;
 }
 
 const DatePickerInput = ({
@@ -24,6 +25,7 @@ const DatePickerInput = ({
   setDate,
   color = "ghost",
   responsive = true,
+  className,
   ...props
 }: DatePickerInputProps) => {
   // we do not accept date object to keep frontend and backend consistent
@@ -63,6 +65,7 @@ const DatePickerInput = ({
         placeholder="dd/mm/yyyy"
         responsive={responsive}
         iconWrapperClassName="w-full h-full"
+        className={cnMerge("w-full bg-base-100", className)}
         {...props}
         iconSeparate
         color={color}
@@ -76,7 +79,7 @@ const DatePickerInput = ({
                 color={color}
                 variant="outline"
                 responsive={responsive}
-                className="w-20 p-0 hover:!bg-transparent"
+                className="w-20 bg-base-100 p-0 hover:!bg-transparent"
                 startIcon={
                   <Icons.Calendar
                     className={cn(
