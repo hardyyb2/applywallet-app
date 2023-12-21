@@ -21,19 +21,6 @@ const config = {
       primary: ["var(--font-primary)", ...fontFamily.sans],
       secondary: ["var(--font-secondary)", ...fontFamily.sans],
     },
-    fontSize: {
-      h1: "clamp(2.7994rem, 2.5963rem + 1.0156vw, 3.815rem)", // 44.79px - 61.04px
-      h2: "clamp(2.3325rem, 2.1886rem + 0.7194vw, 3.0519rem)", // 37.32px - 49.03px
-      h3: "clamp(1.9438rem, 1.8443rem + 0.4975vw, 2.4413rem)", // 31.10px - 39.06px
-      h4: "clamp(1.62rem, 1.5534rem + 0.3331vw, 1.9531rem)", // 25.92px - 31.25px
-      h5: "clamp(1.35rem, 1.3075rem + 0.2125vw, 1.5625rem)", // 21.60px - 25.00px
-      h6: "clamp(1.125rem, 1.1rem + 0.125vw, 1.25rem)", // 18.00px - 20.00px
-      body1: "clamp(0.9375rem, 0.925rem + 0.0625vw, 1rem)", // 15.00px - 16.00px
-      body2: "clamp(0.7813rem, 0.7775rem + 0.0188vw, 0.8rem)", // 12.50px - 12.80px
-      subtitle1: "1.125rem", // 18.00px
-      subtitle2: "0.875rem", // 14.00px
-      caption: "clamp(0.78rem, calc(0.75rem + 0.18vw), 0.96rem)", // 12.48px - 15.36px
-    },
 
     extend: {
       spacing: {
