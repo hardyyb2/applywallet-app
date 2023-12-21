@@ -1,7 +1,5 @@
 import { cva, type VariantProps } from "cva";
 
-import { tailwindConfig } from "@/utils/tailwind";
-
 export const TypographyVariantTypeTagMap: Record<
   Exclude<TypographyVariantType, null | undefined>,
   keyof JSX.IntrinsicElements
