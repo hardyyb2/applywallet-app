@@ -42,7 +42,8 @@
         "*.config.ts",
         "./app/_locales/langs/*",
         "./src/popup.tsx",
-        "./tailwind.ext.config.ts"
+        "./tailwind.ext.config.ts",
+        "*.stories.tsx"
       ],
       "rules": {
         "import/no-default-export": "off"
