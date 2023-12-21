@@ -29,12 +29,12 @@ const AboutCard = ({ card }: AboutCardProps) => {
     <Card
       ref={ref}
       className={cn(
-        "group dui-prose prose max-w-none bg-base-200 prose-headings:mt-0 prose-figure:mb-0",
+        "group prose dui-prose max-w-none bg-base-200 prose-headings:mt-0 prose-figure:mb-0",
       )}
     >
       <Card.Body>
         <Card.Title
-          variant="h4"
+          variant="headline-m"
           className={cnMerge(
             "not-prose line-clamp-4",
             isInView ? "text-base-content" : "text-base-content/20",

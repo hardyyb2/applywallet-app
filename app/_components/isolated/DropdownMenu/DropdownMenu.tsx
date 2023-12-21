@@ -92,7 +92,7 @@ const DropdownMenuItem = React.forwardRef<
   <DropdownMenuPrimitive.Item
     ref={ref}
     className={cnMerge(
-      typographyVariants({ variant: "body1" }),
+      typographyVariants({ variant: "body-m" }),
       "relative flex cursor-pointer select-none items-center rounded-lg px-xs py-2xs outline-none transition-colors focus:bg-base-300 data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
       inset && "pl-8",
       className,
@@ -115,7 +115,7 @@ const DropdownMenuLabel = React.forwardRef<
   <DropdownMenuPrimitive.Label
     ref={ref}
     className={cnMerge(
-      typographyVariants({ variant: "h6" }),
+      typographyVariants({ variant: "label-l" }),
       "px-xs py-2xs",
       inset && "pl-m",
       className,

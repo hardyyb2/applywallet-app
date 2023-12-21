@@ -35,8 +35,8 @@ const Interviews = async () => {
     <div className="px-6 py-4 lg:px-10">
       <Flex justify="space-between" align="center" className="mb-m-l gap-4">
         <Flex direction="column">
-          <Typography variant="h3">interviews</Typography>
-          <Typography variant="subtitle2">
+          <Typography variant="display-m">interviews</Typography>
+          <Typography variant="body-l">
             your ongoing or past interviews
           </Typography>
         </Flex>

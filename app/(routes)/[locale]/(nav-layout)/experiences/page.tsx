@@ -37,8 +37,8 @@ const Experiences = async () => {
     <div className="px-6 py-4 lg:px-10">
       <Flex justify="space-between" align="center" className="mb-m-l gap-4">
         <Flex direction="column">
-          <Typography variant="h3">experiences</Typography>
-          <Typography variant="subtitle2">
+          <Typography variant="display-m">experiences</Typography>
+          <Typography variant="body-l">
             details of your previous jobs
           </Typography>
         </Flex>

@@ -21,18 +21,11 @@ const Typography = forwardRef<
   TypographyProps
 >(
   (
-    {
-      variant = "body1",
-      align = "left",
-      display,
-      component,
-      className,
-      ...rest
-    },
+    { variant, align = "left", display, component, className, ...rest },
     ref,
   ) => {
     const Component =
-      component ?? TypographyVariantTypeTagMap?.[variant ?? "body1"];
+      component ?? TypographyVariantTypeTagMap?.[variant ?? "body-l"];
 
     return (
       <Component

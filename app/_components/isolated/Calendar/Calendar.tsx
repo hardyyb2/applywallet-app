@@ -55,8 +55,8 @@ const Calendar = ({
         caption_label: typographyVariants({
           variant:
             captionLayout === "dropdown-buttons" || captionLayout === "dropdown"
-              ? "srOnly"
-              : "subtitle1",
+              ? "sr-only"
+              : "title-m",
         }),
         dropdown_month:
           "[&>span:first-child]:sr-only [&>select]:dui-select [&>select]:dui-select-sm [&>select]:text-h6",
@@ -79,7 +79,7 @@ const Calendar = ({
         table: "w-full border-collapse space-y-1",
         head_row: "flex",
         head_cell: cnMerge(
-          typographyVariants({ variant: "subtitle2" }),
+          typographyVariants({ variant: "label-m" }),
           "text-base-content/75 rounded-md text-center",
           {
             "w-9": size === "xs",

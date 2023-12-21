@@ -44,7 +44,9 @@ const ThemesMenu = () => {
                 ) : null
               }
             >
-              <Typography className="text-base-content">{value}</Typography>
+              <Typography variant="label-l" className="text-base-content">
+                {value}
+              </Typography>
               <ThemesMenuItemColors />
             </Button>
           </DropdownMenuItem>

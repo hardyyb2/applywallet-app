@@ -33,7 +33,7 @@ const BlogMetaInfo = ({ blog }: BlogMetaInfo) => {
         <div className={styles.meta}>
           <Flex
             className={typographyVariants({
-              variant: "caption",
+              variant: "label-l",
               className: "font-light",
             })}
             component="h6"

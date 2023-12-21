@@ -88,7 +88,10 @@ const DialogTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <DialogPrimitive.Title
     ref={ref}
-    className={cnMerge(typographyVariants({ variant: "h5" }), className)}
+    className={cnMerge(
+      typographyVariants({ variant: "headline-m" }),
+      className,
+    )}
     {...props}
   />
 ));
@@ -100,7 +103,7 @@ const DialogDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <DialogPrimitive.Description
     ref={ref}
-    className={cnMerge(typographyVariants({ variant: "body1" }), className)}
+    className={cnMerge(typographyVariants({ variant: "body-l" }), className)}
     {...props}
   />
 ));

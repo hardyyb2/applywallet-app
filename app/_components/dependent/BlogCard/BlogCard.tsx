@@ -20,13 +20,9 @@ const BlogCard = ({
   tags,
 }: BlogCardProps) => {
   return (
-    <Card
-      className={cn(
-        "group dui-prose prose max-w-none bg-base-200 prose-headings:mt-0 prose-figure:mb-0",
-      )}
-    >
+    <Card className={cn("group max-w-none bg-base-100")}>
       {image ? (
-        <Card.Figure className={cn("m-1 h-80")}>
+        <Card.Figure className={cn("m-3xs h-80")}>
           <div className={styles.imageMask} />
           <Image
             className="transition-all duration-500 group-hover:scale-110"
@@ -37,15 +33,20 @@ const BlogCard = ({
           />
         </Card.Figure>
       ) : null}
-      <Card.Body>
-        <Typography variant="caption" className="line-clamp-1 text-secondary">
+      <Card.Body className="rounded-t-none">
+        <Typography variant="title-s" className="line-clamp-1 text-secondary">
           {category.name}
         </Typography>
-        <Card.Title variant="h4" className="not-prose line-clamp-4">
+        <Card.Title variant="headline-l" className="mb-2xs-xs line-clamp-4">
           {title}
         </Card.Title>
 
-        <p className="line-clamp-3">{description}</p>
+        <Typography
+          variant="body-l"
+          className="mb-3xs-2xs line-clamp-3 font-light"
+        >
+          {description}
+        </Typography>
 
         {tags?.length ? (
           <Flex className="gap-2">

@@ -40,7 +40,7 @@ const SideNavBrand = ({
         className="btn btn-ghost flex-0 px-2"
       >
         {navOpen ? (
-          <div className="text-lg inline-flex lowercase text-primary">
+          <div className="inline-flex text-lg lowercase text-primary">
             <Typography>apply</Typography>
             <Typography className="text-base-content  ">wallet</Typography>
           </div>
@@ -62,7 +62,7 @@ const SideNavBrand = ({
             </Button>
           </TooltipTrigger>
           <TooltipContent>
-            <Typography variant="h6">
+            <Typography variant="body-l">
               {navOpen ? "close nav" : "open nav"}
             </Typography>
             <TooltipArrow />

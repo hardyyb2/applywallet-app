@@ -1,4 +1,5 @@
 import { fontFamily } from "tailwindcss/defaultTheme";
+import plugin from "tailwindcss/plugin";
 
 const config = {
   // TODO - check how multiple configs can work without whole app content being included
@@ -19,19 +20,6 @@ const config = {
     fontFamily: {
       primary: ["var(--font-primary)", ...fontFamily.sans],
       secondary: ["var(--font-secondary)", ...fontFamily.sans],
-    },
-    fontSize: {
-      h1: "clamp(2.7994rem, 2.5963rem + 1.0156vw, 3.815rem)",
-      h2: "clamp(2.3325rem, 2.1886rem + 0.7194vw, 3.0519rem)",
-      h3: "clamp(1.9438rem, 1.8443rem + 0.4975vw, 2.4413rem)",
-      h4: "clamp(1.62rem, 1.5534rem + 0.3331vw, 1.9531rem)",
-      h5: "clamp(1.35rem, 1.3075rem + 0.2125vw, 1.5625rem)",
-      h6: "clamp(1.125rem, 1.1rem + 0.125vw, 1.25rem)",
-      body1: "clamp(0.9375rem, 0.925rem + 0.0625vw, 1rem)",
-      body2: "clamp(0.7813rem, 0.7775rem + 0.0188vw, 0.8rem)",
-      subtitle1: "1.125rem",
-      subtitle2: "0.875rem",
-      caption: "clamp(0.78rem, calc(0.75rem + 0.18vw), 0.96rem)",
     },
 
     extend: {
@@ -90,6 +78,160 @@ const config = {
     require("@tailwindcss/typography"),
     require("daisyui"),
     require("tailwindcss-animate"),
+    plugin(({ addComponents, theme }) => {
+      addComponents({
+        ".display-l": {
+          fontSize: "clamp(3.05rem, 3.68vw + 2.32rem, 5.26rem)", // 48.8px - 84.16px
+          fontWeight: "400",
+          fontStyle: "normal",
+          lineHeight: "1.2",
+          letterSpacing: "-0.25pt",
+          fontFamily: theme("fontFamily.primary"),
+        },
+
+        ".display-m": {
+          fontSize: "clamp(2.44rem, 2.51vw + 1.94rem, 3.95rem)", // 39.04px - 63.2px
+          fontWeight: "400",
+          fontStyle: "normal",
+          lineHeight: "1.2",
+          letterSpacing: "0px",
+          fontFamily: theme("fontFamily.primary"),
+        },
+
+        ".display-s": {
+          fontSize: "clamp(1.95rem, 1.68vw + 1.62rem, 2.96rem)", // 31.2px - 47.36px
+          fontWeight: "400",
+          fontStyle: "normal",
+          lineHeight: "1.2",
+          fontFamily: theme("fontFamily.primary"),
+        },
+
+        ".headline-l": {
+          fontSize: "clamp(2.5rem, 2.025rem + 0.5vw, 3.375rem)", // 40px - 54px
+          fontWeight: "400",
+          fontStyle: "normal",
+          lineHeight: "1.2",
+          letterSpacing: "0",
+          fontFamily: theme("fontFamily.primary"),
+        },
+
+        ".headline-m": {
+          fontSize: "clamp(2.125rem, 2.025rem + 0.5vw, 2.625rem)", // 34px - 42px
+          fontWeight: "400",
+          fontStyle: "normal",
+          lineHeight: "1.2",
+          letterSpacing: "0",
+          fontFamily: theme("fontFamily.primary"),
+        },
+
+        ".headline-s": {
+          fontSize: "clamp(1.75rem, 1.65rem + 0.5vw, 2.25rem)", // 28px - 36px
+          fontWeight: "400",
+          fontStyle: "normal",
+          lineHeight: "1.2",
+          letterSpacing: "0",
+          fontFamily: theme("fontFamily.primary"),
+        },
+
+        ".title-l": {
+          fontSize: "clamp(1.375rem, 1.275rem + 0.5vw, 1.875rem)", // 22px - 30px
+          fontWeight: "400",
+          fontStyle: "normal",
+          lineHeight: "1.2",
+          fontFamily: theme("fontFamily.secondary"),
+        },
+
+        ".title-m": {
+          fontSize: "clamp(1.125rem, 1.05rem + 0.375vw, 1.5rem)", // 18px - 24px
+          fontWeight: "500",
+          fontStyle: "normal",
+          lineHeight: "1.2",
+          letterSpacing: "0.15pt",
+          fontFamily: theme("fontFamily.secondary"),
+        },
+
+        ".title-s": {
+          fontSize: "clamp(1rem, 0.42vw + 0.92rem, 1.25rem)", // 16px - 20px
+          fontWeight: "500",
+          fontStyle: "normal",
+          lineHeight: "1.2",
+          letterSpacing: "0.1pt",
+          fontFamily: theme("fontFamily.secondary"),
+        },
+
+        ".body-l": {
+          fontSize: "clamp(1.125rem, 1.05rem + 0.375vw, 1.5rem)", // 18px - 24px
+          fontWeight: "400",
+          fontStyle: "normal",
+          lineHeight: "1.5",
+          letterSpacing: "0.5pt",
+          fontFamily: theme("fontFamily.secondary"),
+        },
+
+        ".body-m": {
+          fontSize: "clamp(1rem, 0.42vw + 0.92rem, 1.25rem)", // 16px - 20px
+          fontWeight: "400",
+          fontStyle: "normal",
+          lineHeight: "1.5",
+          letterSpacing: "0.25pt",
+          fontFamily: theme("fontFamily.secondary"),
+        },
+
+        ".body-s": {
+          fontSize: "clamp(0.8rem, 0.23vw + 0.75rem, 1rem)", // 12.8px - 16px
+          fontWeight: "400",
+          fontStyle: "normal",
+          lineHeight: "1.5",
+          letterSpacing: "0.4pt",
+          fontFamily: theme("fontFamily.secondary"),
+        },
+
+        ".label-l": {
+          fontSize: "clamp(1rem, 0.42vw + 0.92rem, 1.25rem)", // 16px - 20px
+          fontWeight: "500",
+          fontStyle: "normal",
+          lineHeight: "1.5",
+          letterSpacing: "0.1pt",
+          fontFamily: theme("fontFamily.secondary"),
+        },
+
+        ".label-l-bold": {
+          fontSize: "clamp(1rem, 0.42vw + 0.92rem, 1.25rem)", // 16px - 20px
+          fontWeight: "700",
+          fontStyle: "normal",
+          lineHeight: "1.5",
+          letterSpacing: "0.1pt",
+          fontFamily: theme("fontFamily.secondary"),
+        },
+
+        ".label-m": {
+          fontSize: "clamp(0.8rem, 0.23vw + 0.75rem, 1rem)", // 12.8px - 16px
+          fontWeight: "500",
+          fontStyle: "normal",
+          lineHeight: "1.5",
+          letterSpacing: "0.5pt",
+          fontFamily: theme("fontFamily.secondary"),
+        },
+
+        ".label-m-bold": {
+          fontSize: "clamp(0.8rem, 0.23vw + 0.75rem, 1rem)", // 12.8px - 16px
+          fontWeight: "700",
+          fontStyle: "normal",
+          lineHeight: "1.5",
+          letterSpacing: "0.5pt",
+          fontFamily: theme("fontFamily.secondary"),
+        },
+
+        ".label-s": {
+          fontSize: "clamp(0.64rem, 0.11vw + 0.62rem, 0.88rem)", // 10.24px - 14px
+          fontWeight: "500",
+          fontStyle: "normal",
+          lineHeight: "1.5",
+          letterSpacing: "0.5pt",
+          fontFamily: theme("fontFamily.secondary"),
+        },
+      });
+    }),
   ],
   daisyui: {
     themes: ["night", "light", "synthwave"],

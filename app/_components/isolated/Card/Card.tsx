@@ -1,6 +1,6 @@
 import { forwardRef, type HTMLAttributes, type PropsWithChildren } from "react";
 
-import { cn } from "@/utils/styles";
+import { cn, cnMerge } from "@/utils/styles";
 
 import { Typography, type TypographyProps } from "../Typography";
 import type { CardSizeTypes } from "./card.types";
@@ -24,7 +24,7 @@ const CardBody = forwardRef<HTMLDivElement, CardBodyProps>(
   ({ className, ...props }, ref) => (
     <div
       {...props}
-      className={cn("dui-card-body bg-base-100", className)}
+      className={cnMerge("dui-card-body rounded-xl bg-base-100", className)}
       ref={ref}
     />
   ),
@@ -107,7 +107,7 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
     ref,
   ): JSX.Element => {
     const classes = cn(
-      "dui-card",
+      "dui-card ",
       className,
       cn({
         "dui-card-bordered": bordered,

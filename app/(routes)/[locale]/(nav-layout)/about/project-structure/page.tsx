@@ -9,8 +9,8 @@ const ProjectStructure = () => {
     <Flex direction="column" className="h-full w-full px-xs py-4 lg:px-s">
       <Flex justify="space-between" className="mb-xs flex-0 gap-4">
         <Flex direction="column">
-          <Typography variant="h3">project structure</Typography>
-          <Typography variant="subtitle2">
+          <Typography variant="display-m">project structure</Typography>
+          <Typography variant="body-l">
             see the entire app directory structure
           </Typography>
         </Flex>

@@ -137,7 +137,7 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
     <Card className="m-auto overflow-hidden">
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <Card.Body className="[&_.dui-form-control]:mt-2">
-          <Typography variant="h3">{titleText}</Typography>
+          <Typography variant="body-m">{titleText}</Typography>
           <div>
             <FormField
               label="company name"
@@ -177,7 +177,7 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
               return (
                 <AccordionItem value={String(index)} key={round.id}>
                   <AccordionTrigger>
-                    <Typography variant="h5">
+                    <Typography variant="body-s">
                       {round.name || `round ${index + 1}`}
                     </Typography>
                   </AccordionTrigger>

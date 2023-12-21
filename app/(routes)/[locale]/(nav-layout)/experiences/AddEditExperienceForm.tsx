@@ -97,9 +97,9 @@ const AddEditExperienceForm = (props: AddEditExperienceFormProps) => {
       noValidate
     >
       <div className="dui-card-body bg-base-100 [&_.dui-form-control]:mt-2">
-        <Typography variant="h3">{titleText}</Typography>
+        <Typography variant="headline-l">{titleText}</Typography>
         <div className="mt-s">
-          <Typography variant="subtitle1" className="underline">
+          <Typography variant="title-m" className="underline">
             company details
           </Typography>
           <FormField
@@ -126,7 +126,7 @@ const AddEditExperienceForm = (props: AddEditExperienceFormProps) => {
           </FormField>
         </div>
         <div className="mt-s">
-          <Typography variant="subtitle1" className="underline">
+          <Typography variant="title-m" className="underline">
             role details
           </Typography>
           <FormField
@@ -152,7 +152,7 @@ const AddEditExperienceForm = (props: AddEditExperienceFormProps) => {
           </FormField>
         </div>
         <div className="mt-s">
-          <Typography variant="subtitle1" className="underline">
+          <Typography variant="title-m" className="underline">
             job details
           </Typography>
           <FormField
