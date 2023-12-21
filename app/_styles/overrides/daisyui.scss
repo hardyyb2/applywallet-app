@@ -22,3 +22,7 @@ textarea::placeholder {
     @apply text-opacity-80;
   }
 }
+
+.dui-label {
+  @apply label-m py-3xs;
+}
