@@ -84,7 +84,7 @@ const config = {
           fontSize: "57pt", // 76px
           fontWeight: "400",
           fontStyle: "normal",
-          lineHeight: "64pt", // 85px
+          lineHeight: "1.2", // 85px
           letterSpacing: "-0.25pt",
           fontFamily: theme("fontFamily.primary"),
         },
@@ -93,7 +93,7 @@ const config = {
           fontSize: "45pt", // 60px
           fontWeight: "400",
           fontStyle: "normal",
-          lineHeight: "52pt", // 69px
+          lineHeight: "1.2", // 69px
           letterSpacing: "0px",
           fontFamily: theme("fontFamily.primary"),
         },
@@ -102,7 +102,7 @@ const config = {
           fontSize: "36pt", // 48px
           fontWeight: "400",
           fontStyle: "normal",
-          lineHeight: "44pt", // 59px
+          lineHeight: "1.2", // 59px
           fontFamily: theme("fontFamily.primary"),
         },
 
@@ -110,7 +110,7 @@ const config = {
           fontSize: "32pt", // 42px
           fontWeight: "400",
           fontStyle: "normal",
-          lineHeight: "40pt", // 53px
+          lineHeight: "1.2", // 53px
           letterSpacing: "0",
           fontFamily: theme("fontFamily.primary"),
         },
@@ -119,7 +119,7 @@ const config = {
           fontSize: "28pt", // 37px
           fontWeight: "400",
           fontStyle: "normal",
-          lineHeight: "36pt", // 48px
+          lineHeight: "1.2", // 48px
           letterSpacing: "0",
           fontFamily: theme("fontFamily.primary"),
         },
@@ -128,7 +128,7 @@ const config = {
           fontSize: "24pt", // 32px
           fontWeight: "400",
           fontStyle: "normal",
-          lineHeight: "32pt", // 43px
+          lineHeight: "1.2", // 43px
           letterSpacing: "0",
           fontFamily: theme("fontFamily.primary"),
         },
@@ -137,7 +137,7 @@ const config = {
           fontSize: "22pt", // 29px
           fontWeight: "400",
           fontStyle: "normal",
-          lineHeight: "28pt", // 37px
+          lineHeight: "1.2", // 37px
           fontFamily: theme("fontFamily.secondary"),
         },
 
@@ -145,7 +145,7 @@ const config = {
           fontSize: "16pt", // 21px
           fontWeight: "500",
           fontStyle: "normal",
-          lineHeight: "24pt", // 32px
+          lineHeight: "1.2", // 32px
           letterSpacing: "0.15pt",
           fontFamily: theme("fontFamily.secondary"),
         },
@@ -154,7 +154,7 @@ const config = {
           fontSize: "clamp(1rem, 0.42vw + 0.92rem, 1.25rem)", // 16px - 20px
           fontWeight: "500",
           fontStyle: "normal",
-          lineHeight: "20pt", // 27px
+          lineHeight: "1.2", // 27px
           letterSpacing: "0.1pt",
           fontFamily: theme("fontFamily.secondary"),
         },
@@ -163,7 +163,7 @@ const config = {
           fontSize: "16pt", // 21px
           fontWeight: "400",
           fontStyle: "normal",
-          lineHeight: "24pt", // 32px
+          lineHeight: "1.5", // 32px
           letterSpacing: "0.5pt",
           fontFamily: theme("fontFamily.secondary"),
         },
@@ -172,7 +172,7 @@ const config = {
           fontSize: "clamp(1rem, 0.42vw + 0.92rem, 1.25rem)", // 16px - 20px
           fontWeight: "400",
           fontStyle: "normal",
-          lineHeight: "20pt", // 27px
+          lineHeight: "1.5", // 27px
           letterSpacing: "0.25pt",
           fontFamily: theme("fontFamily.secondary"),
         },
@@ -181,7 +181,7 @@ const config = {
           fontSize: "12pt", // 16px
           fontWeight: "400",
           fontStyle: "normal",
-          lineHeight: "16pt", // 21px
+          lineHeight: "1.5", // 21px
           letterSpacing: "0.4pt",
           fontFamily: theme("fontFamily.secondary"),
         },
@@ -190,7 +190,7 @@ const config = {
           fontSize: "clamp(1rem, 0.42vw + 0.92rem, 1.25rem)", // 16px - 20px
           fontWeight: "500",
           fontStyle: "normal",
-          lineHeight: "20pt", // 27px
+          lineHeight: "1.5", // 27px
           letterSpacing: "0.1pt",
           fontFamily: theme("fontFamily.secondary"),
         },
@@ -199,7 +199,7 @@ const config = {
           fontSize: "clamp(1rem, 0.42vw + 0.92rem, 1.25rem)", // 16px - 20px
           fontWeight: "700",
           fontStyle: "normal",
-          lineHeight: "20pt", // 27px
+          lineHeight: "1.5", // 27px
           letterSpacing: "0.1pt",
           fontFamily: theme("fontFamily.secondary"),
         },
@@ -208,7 +208,7 @@ const config = {
           fontSize: "12pt", // 16px
           fontWeight: "500",
           fontStyle: "normal",
-          lineHeight: "16pt", // 21px
+          lineHeight: "1.5", // 21px
           letterSpacing: "0.5pt",
           fontFamily: theme("fontFamily.secondary"),
         },
@@ -217,7 +217,7 @@ const config = {
           fontSize: "12pt", // 16px
           fontWeight: "700",
           fontStyle: "normal",
-          lineHeight: "16pt", // 21px
+          lineHeight: "1.5", // 21px
           letterSpacing: "0.5pt",
           fontFamily: theme("fontFamily.secondary"),
         },
@@ -226,7 +226,7 @@ const config = {
           fontSize: "11pt", // 14px
           fontWeight: "500",
           fontStyle: "normal",
-          lineHeight: "16pt", // 21px
+          lineHeight: "1.5", // 21px
           letterSpacing: "0.5pt",
           fontFamily: theme("fontFamily.secondary"),
         },
