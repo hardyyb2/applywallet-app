@@ -137,7 +137,7 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
     <Card className="m-auto overflow-hidden">
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <Card.Body className="[&_.dui-form-control]:mt-2">
-          <Typography variant="body-m">{titleText}</Typography>
+          <Typography variant="headline-m">{titleText}</Typography>
           <div>
             <FormField
               label="company name"
@@ -251,7 +251,7 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
             <Button
               type="button"
               variant="outline"
-              className="mt-xs"
+              className="mt-xs flex-1"
               responsive
               startIcon={<Icons.Plus />}
               onClick={handleAddRoundClick}
@@ -262,7 +262,7 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
             <Button
               type="submit"
               color="primary"
-              className="mt-3xs md:mt-xs"
+              className="mt-3xs flex-1 md:mt-xs"
               loading={loading}
               responsive
               disabled={loading}
