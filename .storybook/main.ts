@@ -7,6 +7,40 @@ const config: StorybookConfig = {
     "@storybook/addon-essentials",
     "@storybook/addon-onboarding",
     "@storybook/addon-interactions",
+    "@storybook/addon-styling-webpack",
+    {
+      name: "@storybook/addon-styling-webpack",
+
+      options: {
+        rules: [
+          {
+            test: /\.s(a|c)ss$/,
+            sideEffects: true,
+            use: [
+              require.resolve("style-loader"),
+              {
+                loader: require.resolve("css-loader"),
+                options: {
+                  importLoaders: 1,
+                },
+              },
+              {
+                loader: require.resolve("postcss-loader"),
+                options: {
+                  implementation: require.resolve("postcss"),
+                },
+              },
+              {
+                loader: require.resolve("sass-loader"),
+                options: {
+                  implementation: require("sass"),
+                },
+              },
+            ],
+          },
+        ],
+      },
+    },
   ],
   framework: {
     name: "@storybook/nextjs",
