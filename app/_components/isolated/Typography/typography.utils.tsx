@@ -1,5 +1,7 @@
 import { cva, type VariantProps } from "cva";
 
+import { tailwindConfig } from "@/utils/tailwind";
+
 export const TypographyVariantTypeTagMap: Record<
   Exclude<TypographyVariantType, null | undefined>,
   keyof JSX.IntrinsicElements
@@ -17,7 +19,9 @@ export const TypographyVariantTypeTagMap: Record<
   "body-m": "p",
   "body-s": "p",
   "label-l": "span",
+  "label-l-bold": "span",
   "label-m": "span",
+  "label-m-bold": "span",
   "label-s": "span",
   srOnly: "span",
 };
@@ -27,21 +31,23 @@ type TypographyVariantType = VariantProps<typeof typographyVariants>["variant"];
 export const typographyVariants = cva("", {
   variants: {
     variant: {
-      "display-l": "display-l font-primary",
-      "display-m": "display-m font-primary",
-      "display-s": "display-s font-primary",
-      "headline-l": "headline-l font-primary",
-      "headline-m": "headline-m font-primary",
-      "headline-s": "headline-s font-primary",
-      "title-l": "title-l font-secondary",
-      "title-m": "title-m font-secondary",
-      "title-s": "title-s font-secondary",
-      "body-l": "body-l font-secondary",
-      "body-m": "body-m font-secondary",
-      "body-s": "body-s font-secondary",
-      "label-l": "label-l font-secondary",
-      "label-m": "label-m font-secondary",
-      "label-s": "label-s font-secondary",
+      "display-l": "display-l",
+      "display-m": "display-m",
+      "display-s": "display-s",
+      "headline-l": "headline-l",
+      "headline-m": "headline-m",
+      "headline-s": "headline-s",
+      "title-l": "title-l",
+      "title-m": "title-m",
+      "title-s": "title-s",
+      "body-l": "body-l",
+      "body-m": "body-m",
+      "body-s": "body-s",
+      "label-l": "label-l",
+      "label-l-bold": "label-l-bold",
+      "label-m": "label-m",
+      "label-m-bold": "label-m-bold",
+      "label-s": "label-s",
       srOnly: "sr-only",
     },
     display: {
@@ -55,7 +61,7 @@ export const typographyVariants = cva("", {
     },
   },
   defaultVariants: {
-    variant: "body-l",
+    variant: "body-m",
     align: "left",
   },
 });
