@@ -24,6 +24,7 @@ const config = {
 
     extend: {
       spacing: {
+        "4xs": "clamp(0.19rem, calc(0.18rem + 0.06vw), 0.25rem)",
         "3xs": "clamp(0.31rem, calc(0.30rem + 0.06vw), 0.38rem)",
         "2xs": "clamp(0.56rem, calc(0.53rem + 0.19vw), 0.75rem)",
         xs: "clamp(0.88rem, calc(0.83rem + 0.25vw), 1.13rem)",
