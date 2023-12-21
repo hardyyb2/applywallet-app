@@ -65,7 +65,7 @@ const AccordionItem = React.forwardRef<
     <AccordionPrimitive.Item
       ref={ref}
       className={cnMerge(
-        typographyVariants({ variant: "label-m" }),
+        typographyVariants({ variant: "title-s" }),
         "p-2xs-xs ",
         {
           "rounded-xl bg-base-200 ": variant === "primary",
