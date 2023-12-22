@@ -40,12 +40,17 @@ export function PlateEditor() {
       initialValue={initialValue}
       onChange={(value) => setInitialValue(value)}
     >
-      <Editor />
-      <FixedToolbar>
-        <MarkToolbarButton tooltip="Bold (⌘+B)" nodeType={MARK_BOLD}>
-          <Icons.BookOpen />
-        </MarkToolbarButton>
-      </FixedToolbar>
+      <div className="rounded-lg outline-offset-2 outline-base-content/20 focus-within:outline">
+        <FixedToolbar className="p-3xs">
+          <MarkToolbarButton tooltip="Bold (⌘+B)" nodeType={MARK_BOLD}>
+            <Icons.BookOpen />
+          </MarkToolbarButton>
+        </FixedToolbar>
+        <Editor
+          placeholder="Type your message here."
+          className="rounded-t-none"
+        />
+      </div>
     </Plate>
   );
 }

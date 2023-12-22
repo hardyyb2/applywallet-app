@@ -8,38 +8,28 @@ import { cnM } from "@/utils/styles";
 
 const editorVariants = cva(
   cnM(
-    "relative overflow-x-auto whitespace-pre-wrap break-words",
-    "min-h-[80px] w-full rounded-md px-3 py-2 text-sm focus-visible:outline-none",
-    "[&_[data-slate-placeholder]]:!opacity-100",
-    "[&_[data-slate-placeholder]]:top-[auto_!important]",
-    "[&_strong]:font-bold",
-    // Color styles below
-    "ring-offset-background placeholder:text-muted-foreground [&_[data-slate-placeholder]]:text-muted-foreground bg-background  ",
+    "relative overflow-x-auto whitespace-pre-wrap break-words min-h-[80px] w-full rounded-md px-3 py-2",
+    "[&_[data-slate-placeholder]]:!opacity-100 [&_[data-slate-placeholder]]:top-[auto_!important] [&_strong]:font-bold",
+    "placeholder:text-base-content/40 [&_[data-slate-placeholder]]:text-base-content/40 bg-base-100",
+    "focus-within:outline-none",
   ),
   {
     variants: {
+      // TODO - add variants similar to input
       variant: {
-        outline: "border",
+        outline: "border border-base-content/20",
         ghost: "",
-      },
-      focused: {
-        true: "ring-2 ring-offset-2",
       },
       disabled: {
         true: "cursor-not-allowed opacity-50",
       },
-      focusRing: {
-        true: "focus-visible:ring-2 focus-visible:ring-offset-2",
-        false: "",
-      },
       size: {
-        sm: "text-sm",
-        md: "text-base",
+        sm: "body-s",
+        md: "body-m",
       },
     },
     defaultVariants: {
       variant: "outline",
-      focusRing: true,
       size: "sm",
     },
   },
@@ -49,27 +39,13 @@ export type EditorProps = PlateContentProps &
   VariantProps<typeof editorVariants>;
 
 const Editor = React.forwardRef<HTMLDivElement, EditorProps>(
-  (
-    {
-      className,
-      disabled,
-      focused,
-      focusRing,
-      readOnly,
-      size,
-      variant,
-      ...props
-    },
-    ref,
-  ) => {
+  ({ className, disabled, readOnly, size, variant, ...props }, ref) => {
     return (
       <div ref={ref} className="relative w-full">
         <PlateContent
           className={cnM(
             editorVariants({
               disabled,
-              focused,
-              focusRing,
               size,
               variant,
             }),

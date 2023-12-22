@@ -7,12 +7,15 @@ import {
   useMarkToolbarButtonState,
 } from "@udecode/plate-common";
 
+import { cnM } from "@/utils/styles";
+
 import { ToolbarButton, type ToolbarButtonProps } from "../isolated/Toolbar";
 
 export interface MarkToolbarButtonProps
   extends Pick<ToolbarButtonProps, "tooltip" | "children"> {
   nodeType: string;
   clear?: string | string[];
+  className?: string;
 }
 
 /**
@@ -21,10 +24,13 @@ export interface MarkToolbarButtonProps
 export function MarkToolbarButton({
   clear,
   nodeType,
+  className,
   ...props
 }: MarkToolbarButtonProps) {
   const state = useMarkToolbarButtonState({ clear, nodeType });
   const { props: buttonProps } = useMarkToolbarButton(state);
 
-  return <ToolbarButton {...buttonProps} {...props} />;
+  return (
+    <ToolbarButton className={cnM(className)} {...buttonProps} {...props} />
+  );
 }

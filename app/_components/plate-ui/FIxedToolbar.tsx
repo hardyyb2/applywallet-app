@@ -10,9 +10,8 @@ const FixedToolbar = React.forwardRef<HTMLDivElement, ToolbarProps>(
       <Toolbar
         ref={ref}
         className={cnM(
-          "sticky left-0 top-[57px] z-50 w-full justify-between overflow-x-auto rounded-t-lg border-b backdrop-blur",
-          //color related
-          "supports-backdrop-blur:bg-background/60 border-b-border bg-background/95 ",
+          "sticky left-0 z-50 w-full justify-between overflow-x-auto rounded-t-lg border border-b-0 backdrop-blur",
+          "supports-backdrop-blur:bg-base-100/60 bg-base-100/95",
           className,
         )}
         {...props}
