@@ -3,19 +3,17 @@
 import React from "react";
 
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
-import { type LucideIcon } from "lucide-react";
 
 import { cnMerge } from "@/utils/styles";
 
-import { Icons } from "../Icons";
 import { typographyVariants } from "../Typography";
 
 type AccordionContextType = {
-  variant?: "boxed" | "bordered-bottom" | "bordered";
+  variant?: "box" | "lined" | "bordered";
 };
 
 const AccordionContext = React.createContext<AccordionContextType>({
-  variant: "boxed",
+  variant: "box",
 });
 
 const useAccordionContext = () => {
@@ -36,7 +34,7 @@ type AccordionProps = React.ComponentPropsWithoutRef<
 const Accordion = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Root>,
   AccordionProps
->(({ variant = "boxed", className, ...props }, ref) => {
+>(({ variant = "box", className, ...props }, ref) => {
   return (
     <AccordionContext.Provider value={{ variant }}>
       <AccordionPrimitive.Root
@@ -44,7 +42,7 @@ const Accordion = React.forwardRef<
         {...props}
         className={cnMerge(
           {
-            "space-y-3xs": variant === "boxed" || variant === "bordered",
+            "space-y-3xs": variant === "box" || variant === "bordered",
           },
           className,
         )}
@@ -67,8 +65,8 @@ const AccordionItem = React.forwardRef<
       className={cnMerge(
         typographyVariants({ variant: "title-s" }),
         {
-          "rounded-xl bg-base-200": variant === "boxed",
-          "border-b": variant === "bordered-bottom",
+          "rounded-xl bg-base-200": variant === "box",
+          "border-b": variant === "lined",
           "rounded-xl border ": variant === "bordered",
         },
         className,
@@ -106,6 +104,7 @@ const AccordionContent = React.forwardRef<
     <AccordionPrimitive.Content
       ref={ref}
       className={cnMerge(
+        typographyVariants({ variant: "body-m" }),
         "overflow-hidden px-2xs-xs",
         "data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down",
         className,
@@ -118,4 +117,10 @@ const AccordionContent = React.forwardRef<
 });
 AccordionContent.displayName = AccordionPrimitive.Content.displayName;
 
-export { Accordion, AccordionItem, AccordionTrigger, AccordionContent };
+export {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+  type AccordionProps,
+};
