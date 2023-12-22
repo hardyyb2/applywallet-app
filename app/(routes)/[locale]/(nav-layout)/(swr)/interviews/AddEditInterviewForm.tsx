@@ -180,7 +180,7 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
             </FormField>
           </div>
 
-          <Accordion type="multiple" className="mt-4 p-0" variant="boxed">
+          <Accordion type="multiple" className="mt-4 p-0" variant="box">
             {rounds.map((round, index) => {
               return (
                 <AccordionItem
