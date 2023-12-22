@@ -19,6 +19,8 @@ const Tooltip = TooltipPrimitive.Root;
 
 const TooltipTrigger = TooltipPrimitive.Trigger;
 
+const TooltipPortal = TooltipPrimitive.Portal;
+
 export interface TooltipArrowProps
   extends Omit<
       ComponentPropsWithoutRef<typeof TooltipPrimitive.Arrow>,
@@ -81,4 +83,5 @@ export {
   TooltipContent,
   TooltipProvider,
   TooltipArrow,
+  TooltipPortal,
 };

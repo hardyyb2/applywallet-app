@@ -19,6 +19,7 @@ import { Flex } from "@/components/isolated/Flex";
 import { FormField } from "@/components/isolated/FormField";
 import { Icons } from "@/components/isolated/Icons";
 import { Typography } from "@/components/isolated/Typography";
+import { PlateEditor } from "@/components/plate-ui/editors/BaseEditor";
 import {
   interviewInputSchema,
   type InterviewInputType,
@@ -144,6 +145,7 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
 
   return (
     <Card className="m-auto overflow-hidden">
+      <PlateEditor />
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <Card.Body className="[&_.dui-form-control]:mt-2">
           <Typography variant="headline-m">{titleText}</Typography>
