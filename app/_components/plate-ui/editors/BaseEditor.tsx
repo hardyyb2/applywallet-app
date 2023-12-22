@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+
 import { createBoldPlugin, MARK_BOLD } from "@udecode/plate-basic-marks";
 import {
   createPlugins,
@@ -15,6 +17,7 @@ import { Icons } from "@/components/isolated/Icons";
 
 import { Editor } from "../Editor";
 import { FixedToolbar } from "../FIxedToolbar";
+import { MarkToolbarButton } from "../MarkToolbarButton";
 
 const plugins = createPlugins([createBoldPlugin()], {
   components: {
@@ -22,32 +25,27 @@ const plugins = createPlugins([createBoldPlugin()], {
   },
 });
 
-const initialValue = [
-  {
-    id: "1",
-    type: "p",
-    children: [{ text: "Hello, World!" }],
-  },
-];
-
 export function PlateEditor() {
-  const state = useMarkToolbarButtonState({
-    nodeType: MARK_BOLD,
-  });
-  const { props: buttonProps } = useMarkToolbarButton(state);
+  const [initialValue, setInitialValue] = useState([
+    {
+      id: "1",
+      type: "p",
+      children: [{ text: "Hello, World!" }],
+    },
+  ]);
 
   return (
-    <Plate plugins={plugins} initialValue={initialValue}>
-      <FixedToolbar>
-        <Button
-          onClick={buttonProps.onClick}
-          aria-pressed={buttonProps.pressed}
-        >
-          <Icons.BookOpen />
-        </Button>
-      </FixedToolbar>
-
+    <Plate
+      plugins={plugins}
+      initialValue={initialValue}
+      onChange={(value) => setInitialValue(value)}
+    >
       <Editor />
+      <FixedToolbar>
+        <MarkToolbarButton tooltip="Bold (⌘+B)" nodeType={MARK_BOLD}>
+          <Icons.BookOpen />
+        </MarkToolbarButton>
+      </FixedToolbar>
     </Plate>
   );
 }
