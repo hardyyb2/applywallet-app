@@ -19,7 +19,7 @@ import { Flex } from "@/components/isolated/Flex";
 import { FormField } from "@/components/isolated/FormField";
 import { Icons } from "@/components/isolated/Icons";
 import { Typography } from "@/components/isolated/Typography";
-import { BaseEditor } from "@/components/plate-ui/editors/BaseEditor";
+import { RTBaseEditor } from "@/components/rich-text/editors/RTBaseEditor";
 import {
   interviewInputSchema,
   type InterviewInputType,
@@ -181,7 +181,7 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
               <FormField.DatePickerInput name="start_date" control={control} />
             </FormField>
 
-            <BaseEditor />
+            <RTBaseEditor />
           </div>
 
           <Accordion type="multiple" className="mt-4 p-0" variant="box">

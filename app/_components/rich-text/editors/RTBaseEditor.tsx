@@ -58,7 +58,7 @@ const plugins = createPlugins(
   },
 );
 
-function BaseEditor() {
+function RTBaseEditor() {
   const [initialValue, setInitialValue] = useState([
     {
       id: "1",
@@ -74,7 +74,7 @@ function BaseEditor() {
       onChange={(value) => setInitialValue(value)}
     >
       <div className="rounded-lg outline-offset-2 outline-base-content/20 focus-within:outline">
-        <FixedToolbar className="p-3xs">
+        <FixedToolbar className="lg:p-3xs">
           <FixedToolbarButtons />
         </FixedToolbar>
         <PlateEditor
@@ -86,4 +86,4 @@ function BaseEditor() {
   );
 }
 
-export { BaseEditor };
+export { RTBaseEditor };
