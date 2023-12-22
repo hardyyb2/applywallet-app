@@ -43,7 +43,7 @@ export function PlateEditor() {
       <div className="rounded-lg outline-offset-2 outline-base-content/20 focus-within:outline">
         <FixedToolbar className="p-3xs">
           <MarkToolbarButton tooltip="Bold (⌘+B)" nodeType={MARK_BOLD}>
-            <Icons.BookOpen />
+            <Icons.Bold />
           </MarkToolbarButton>
         </FixedToolbar>
         <Editor
