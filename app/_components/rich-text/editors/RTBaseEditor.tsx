@@ -1,7 +1,5 @@
 "use client";
 
-import { useState } from "react";
-
 import {
   createBoldPlugin,
   createItalicPlugin,
@@ -28,6 +26,7 @@ import {
   ELEMENT_H5,
   ELEMENT_H6,
 } from "@udecode/plate-heading";
+import { cva, type VariantProps } from "cva";
 
 import { FixedToolbar } from "../FixedToolbar";
 import { FixedToolbarButtons } from "../FixedToolbarButtons";
@@ -59,18 +58,41 @@ const plugins = createPlugins(
   },
 );
 
-interface RTBaseEditorProps extends Omit<PlateProps, "children"> {}
+const rtBaseEditorVariants = cva(
+  "rounded-lg outline-offset-2 focus-within:outline outline-base-content/20 border",
+  {
+    variants: {
+      color: {
+        primary: "border-primary",
+        secondary: "border-secondary",
+        accent: "border-accent",
+        success: "border-success",
+        warning: "border-warning",
+        error: "border-error",
+        info: "border-info",
+        ghost: "border-base-content/20",
+      },
+    },
+    defaultVariants: {
+      color: "ghost",
+    },
+  },
+);
 
-function RTBaseEditor(props: RTBaseEditorProps) {
+interface RTBaseEditorProps
+  extends Omit<PlateProps, "children">,
+    VariantProps<typeof rtBaseEditorVariants> {}
+
+function RTBaseEditor({ color, ...props }: RTBaseEditorProps) {
   return (
     <Plate {...props} plugins={plugins}>
-      <div className="rounded-lg outline-offset-2 outline-base-content/20 focus-within:outline">
-        <FixedToolbar className="lg:p-3xs">
+      <div className={rtBaseEditorVariants({ color })}>
+        <FixedToolbar className="border-none lg:p-3xs">
           <FixedToolbarButtons />
         </FixedToolbar>
         <PlateEditor
           placeholder="Type your message here."
-          className="rounded-t-none"
+          className="rounded-t-none border-none"
         />
       </div>
     </Plate>
