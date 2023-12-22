@@ -18,10 +18,19 @@ import {
   PlateLeaf,
   withProps,
 } from "@udecode/plate-common";
-import { ELEMENT_H1 } from "@udecode/plate-heading";
+import {
+  createHeadingPlugin,
+  ELEMENT_H1,
+  ELEMENT_H2,
+  ELEMENT_H3,
+  ELEMENT_H4,
+  ELEMENT_H5,
+  ELEMENT_H6,
+} from "@udecode/plate-heading";
 
 import { FixedToolbar } from "../FixedToolbar";
 import { FixedToolbarButtons } from "../FixedToolbarButtons";
+import { Heading } from "../Heading";
 import { PlateEditor } from "../PlateEditor";
 
 const plugins = createPlugins(
@@ -30,6 +39,7 @@ const plugins = createPlugins(
     createItalicPlugin(),
     createUnderlinePlugin(),
     createStrikethroughPlugin(),
+    createHeadingPlugin(),
   ],
   {
     components: {
@@ -38,9 +48,12 @@ const plugins = createPlugins(
       [MARK_STRIKETHROUGH]: withProps(PlateLeaf, { as: "s" }),
       [MARK_UNDERLINE]: withProps(PlateLeaf, { as: "u" }),
 
-      [ELEMENT_H1]: withProps((props) => <h1 {...props} />, {
-        className: "display-l",
-      }),
+      [ELEMENT_H1]: withProps(Heading, { variant: "h1" }),
+      [ELEMENT_H2]: withProps(Heading, { variant: "h2" }),
+      [ELEMENT_H3]: withProps(Heading, { variant: "h3" }),
+      [ELEMENT_H4]: withProps(Heading, { variant: "h4" }),
+      [ELEMENT_H5]: withProps(Heading, { variant: "h5" }),
+      [ELEMENT_H6]: withProps(Heading, { variant: "h6" }),
     },
   },
 );
