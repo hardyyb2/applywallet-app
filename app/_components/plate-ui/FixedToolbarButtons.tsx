@@ -2,7 +2,6 @@ import React from "react";
 
 import {
   MARK_BOLD,
-  MARK_CODE,
   MARK_ITALIC,
   MARK_STRIKETHROUGH,
   MARK_UNDERLINE,
@@ -11,6 +10,7 @@ import { useEditorReadOnly } from "@udecode/plate-common";
 
 import { Icons } from "../isolated/Icons";
 import { ToolbarGroup } from "../isolated/Toolbar";
+import { InsertDropdownMenu } from "./InsertDropdownMenu";
 import { MarkToolbarButton } from "./MarkToolbarButton";
 
 export function FixedToolbarButtons() {
@@ -19,7 +19,7 @@ export function FixedToolbarButtons() {
   return (
     <div className="w-full overflow-hidden">
       <div
-        className="flex flex-wrap"
+        className="flex flex-wrap [&_svg]:w-4 lg:[&_svg]:w-6"
         style={{
           transform: "translateX(calc(-1px))",
         }}
@@ -27,8 +27,8 @@ export function FixedToolbarButtons() {
         {!readOnly && (
           <>
             <ToolbarGroup noSeparator>
-              {/* <InsertDropdownMenu />
-              <TurnIntoDropdownMenu /> */}
+              <InsertDropdownMenu />
+              {/* <TurnIntoDropdownMenu />  */}
             </ToolbarGroup>
 
             <ToolbarGroup>
