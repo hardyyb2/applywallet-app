@@ -30,6 +30,7 @@ import {
 } from "@/queries/interviews.queries";
 import { QueryKeys } from "@/utils/queries";
 import { AppRoutes } from "@/utils/routes";
+import { cnMerge } from "@/utils/styles";
 
 import {
   getAddEditInterviewFormCopy,
@@ -50,6 +51,7 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
   const defaultFormValues = isEdit ? props.interview : {};
 
   // hooks
+  const router = useRouter();
   const queryClient = useQueryClient();
   const addMutation = useAddInterview();
   const updateMutation = useUpdateInterview();
@@ -70,8 +72,6 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
     control,
     name: "rounds",
   });
-
-  const router = useRouter();
 
   // functions
   const onSubmit: SubmitHandler<InterviewInputType> = (data) => {
@@ -132,6 +132,15 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
     props.type,
     loading,
   );
+  const roundErrorIndexes = errors.rounds?.reduce?.(
+    (map, currentError, index) => {
+      if (typeof currentError === "object") {
+        map.set(index, true);
+      }
+      return map;
+    },
+    new Map() as Map<number, boolean>,
+  );
 
   return (
     <Card className="m-auto overflow-hidden">
@@ -171,15 +180,16 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
             </FormField>
           </div>
 
-          <Accordion
-            type="single"
-            className="mt-4 p-0"
-            collapsible
-            variant="boxed"
-          >
+          <Accordion type="multiple" className="mt-4 p-0" variant="boxed">
             {rounds.map((round, index) => {
               return (
-                <AccordionItem key={round.id} value={String(index)}>
+                <AccordionItem
+                  key={round.id}
+                  value={String(index)}
+                  className={cnMerge(
+                    roundErrorIndexes?.has(index) && "border border-error",
+                  )}
+                >
                   <div className="grid w-full grid-cols-[1fr_auto] items-center gap-3xs pr-2xs-xs">
                     <AccordionTrigger className="flex-1">
                       {round.name || `round ${index + 1}`}
