@@ -13,7 +13,7 @@ const roundSchema = z.object({
       message: "please enter a valid date",
     }),
   result: z.string().optional(),
-  notes: z.string().optional(),
+  notes: z.array(z.record(z.any())).optional(),
 });
 
 export const interviewSchema = z.object({
