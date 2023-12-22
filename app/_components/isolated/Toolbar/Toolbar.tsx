@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 
 import * as ToolbarPrimitive from "@radix-ui/react-toolbar";
@@ -6,6 +8,14 @@ import { cva, type VariantProps } from "cva";
 import { cnMerge } from "@/utils/styles";
 
 import { Divider } from "../Divider";
+import { Icons } from "../Icons";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipPortal,
+  TooltipProvider,
+  TooltipTrigger,
+} from "../Tooltip";
 
 const toolbarVariants = cva(
   "relative flex select-none items-stretch gap-1 bg-base-100",
@@ -85,7 +95,98 @@ const ToolbarGroup = React.forwardRef<
 });
 ToolbarGroup.displayName = "ToolbarGroup";
 
-const ToolbarButton = ToolbarPrimitive.Button;
+export interface ToolbarButtonProps
+  extends React.ComponentPropsWithoutRef<typeof ToolbarPrimitive.Button> {
+  // VariantProps<typeof toggleVariants>,
+  // Omit<ToggleProps, "type"> {
+  buttonType?: "button" | "toggle";
+  pressed?: boolean;
+  tooltip?: React.ReactNode;
+  isDropdown?: boolean;
+}
+
+const ToolbarButton = React.forwardRef<
+  React.ElementRef<typeof ToolbarPrimitive.Button>,
+  ToolbarButtonProps
+>(
+  (
+    {
+      className,
+      // variant,
+      // size = "sm",
+      isDropdown,
+      children,
+      pressed,
+      value,
+      tooltip,
+      ...props
+    },
+    ref,
+  ) => {
+    // const [isLoaded, setIsLoaded] = React.useState(false);
+
+    // React.useEffect(() => {
+    //   setIsLoaded(true);
+    // }, []);
+
+    const content =
+      typeof pressed === "boolean" ? (
+        <ToolbarToggleGroup type="single" value="single">
+          <ToolbarToggleItem
+            ref={ref}
+            className={cnMerge(
+              // toggleVariants({
+              //   variant,
+              //   size,
+              // }),
+              isDropdown && "my-1 justify-between pr-1",
+              className,
+            )}
+            value={pressed ? "single" : ""}
+            {...props}
+          >
+            <div className="flex flex-1">{children}</div>
+            <div>
+              {isDropdown && (
+                <Icons.ChevronDown className="ml-0.5 h-4 w-4" data-icon />
+              )}
+            </div>
+          </ToolbarToggleItem>
+        </ToolbarToggleGroup>
+      ) : (
+        <ToolbarPrimitive.Button
+          ref={ref}
+          className={cnMerge(
+            // toggleVariants({
+            //   variant,
+            //   size,
+            // }),
+            isDropdown && "pr-1",
+            className,
+          )}
+          {...props}
+        >
+          {children}
+        </ToolbarPrimitive.Button>
+      );
+
+    // return isLoaded &&
+    return tooltip ? (
+      <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger asChild>{content}</TooltipTrigger>
+
+          <TooltipPortal>
+            <TooltipContent>{tooltip}</TooltipContent>
+          </TooltipPortal>
+        </Tooltip>
+      </TooltipProvider>
+    ) : (
+      <>{content}</>
+    );
+  },
+);
+ToolbarButton.displayName = ToolbarPrimitive.Button.displayName;
 
 export {
   Toolbar,

@@ -75,10 +75,13 @@ const TooltipContent = forwardRef<
 );
 TooltipContent.displayName = TooltipPrimitive.Content.displayName;
 
+const TooltipPortal = TooltipPrimitive.Portal;
+
 export {
   Tooltip,
   TooltipTrigger,
   TooltipContent,
   TooltipProvider,
   TooltipArrow,
+  TooltipPortal,
 };
