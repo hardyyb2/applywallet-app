@@ -180,8 +180,6 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
             >
               <FormField.DatePickerInput name="start_date" control={control} />
             </FormField>
-
-            <RTBaseEditor />
           </div>
 
           <Accordion type="multiple" className="mt-4 p-0" variant="box">
@@ -249,14 +247,15 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
                         {...register(`rounds.${index}.result`)}
                       />
                     </FormField>
+
                     <FormField
                       label="round notes"
                       htmlFor={`rounds.${index}.notes`}
                       error={errors.rounds?.[index]?.notes?.message}
                     >
-                      <FormField.Input
-                        placeholder="selected"
-                        {...register(`rounds.${index}.notes`)}
+                      <FormField.RTBaseEditor
+                        name={`rounds.${index}.notes`}
+                        control={control}
                       />
                     </FormField>
                   </AccordionContent>
