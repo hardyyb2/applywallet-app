@@ -10,6 +10,7 @@ import { FormFieldContext } from "./formField.utils";
 import { FormFieldDatePicker } from "./FormFieldDatePicker";
 import { FormFieldDatePickerInput } from "./FormFieldDatePickerInput";
 import { FormFieldInput } from "./FormFieldInput";
+import { FormFieldRTBaseEditor } from "./FormFieldRTBaseEditor";
 import { FormFieldSelect } from "./FormFieldSelect";
 import { FormFieldTextarea } from "./FormFieldTextarea";
 
@@ -65,6 +66,7 @@ const FormFieldCompound = Object.assign(FormField, {
   Select: FormFieldSelect,
   DatePicker: FormFieldDatePicker,
   DatePickerInput: FormFieldDatePickerInput,
+  RTBaseEditor: FormFieldRTBaseEditor,
 });
 
 export { FormFieldCompound as FormField };
