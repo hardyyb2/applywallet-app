@@ -21,6 +21,7 @@ interface FormFieldRTBaseEditorProps<T extends FieldValues>
 const FormFieldRTBaseEditor = <T extends FieldValues>({
   name,
   control,
+  color,
   ...props
 }: FormFieldRTBaseEditorProps<T>) => {
   const { error = "", htmlFor } = useFormFieldContext();
@@ -35,6 +36,8 @@ const FormFieldRTBaseEditor = <T extends FieldValues>({
           id={htmlFor}
           initialValue={field.value}
           onChange={field.onChange}
+          color={Boolean(error) ? "error" : color}
+          aria-invalid={Boolean(error) ? "true" : "false"}
         />
       )}
     />
