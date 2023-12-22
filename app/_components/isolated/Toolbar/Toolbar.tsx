@@ -195,5 +195,6 @@ export {
   ToolbarLink,
   ToolbarToggleGroup,
   ToolbarToggleItem,
+  ToolbarGroup,
   type ToolbarProps,
 };
