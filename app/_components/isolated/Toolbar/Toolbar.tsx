@@ -3,7 +3,7 @@
 import * as React from "react";
 
 import * as ToolbarPrimitive from "@radix-ui/react-toolbar";
-import { cva, type VariantProps } from "cva";
+import { type VariantProps } from "cva";
 
 import { cnM } from "@/utils/styles";
 
