@@ -4,6 +4,8 @@ import { type ReactNode } from "react";
 
 import { ConditionalMatch } from "@dx-kit/react-conditional-match";
 
+import { cnM } from "@/utils/styles";
+
 import { FormFieldContext } from "./formField.utils";
 import { FormFieldDatePicker } from "./FormFieldDatePicker";
 import { FormFieldDatePickerInput } from "./FormFieldDatePickerInput";
@@ -17,6 +19,7 @@ interface FormFieldProps {
   description?: ReactNode;
   htmlFor: string;
   error?: string;
+  className?: string;
 }
 
 const FormField = ({
@@ -25,9 +28,10 @@ const FormField = ({
   htmlFor,
   description = null,
   error = "",
+  className,
 }: FormFieldProps) => {
   return (
-    <fieldset className="dui-form-control">
+    <fieldset className={cnM("dui-form-control", className)}>
       <label
         className="dui-label"
         htmlFor={htmlFor}
