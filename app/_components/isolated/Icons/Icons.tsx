@@ -2,6 +2,7 @@ import { forwardRef } from "react";
 
 import {
   AlignJustify,
+  Bold,
   BookOpen,
   Briefcase,
   Calendar,
@@ -77,6 +78,7 @@ const Icons = {
   Check,
   Dot,
   ChevronsUpDown,
+  Bold,
   CustomHome: forwardRef<SVGSVGElement, LucideProps>(function CustomHome(
     { ...props },
     ref,
