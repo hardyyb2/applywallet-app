@@ -20,7 +20,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/isolated/Tooltip";
-import { cnMerge } from "@/utils/styles";
+import { cnM } from "@/utils/styles";
 
 const BlogScrollWrapper = ({ children }: PropsWithChildren) => {
   // hooks
@@ -43,7 +43,7 @@ const BlogScrollWrapper = ({ children }: PropsWithChildren) => {
     <ScrollArea
       type="always"
       ref={containerRef}
-      className={cnMerge("relative h-full w-full rounded-2xl bg-base-100")}
+      className={cnM("relative h-full w-full rounded-2xl bg-base-100")}
     >
       <ScrollAreaViewport
         ref={viewportRef}

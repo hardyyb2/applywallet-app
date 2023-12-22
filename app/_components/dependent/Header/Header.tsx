@@ -1,6 +1,6 @@
 import { Flex } from "@/components/isolated/Flex";
 import { Typography } from "@/components/isolated/Typography";
-import { cnMerge } from "@/utils/styles";
+import { cnM } from "@/utils/styles";
 
 import { LocaleSwitcher } from "../LocaleSwitcher";
 import { ThemesMenu } from "../ThemesMenu";
@@ -11,9 +11,9 @@ const Header = async () => {
     <Flex
       align="center"
       justify="space-between"
-      className={cnMerge("h-full w-full px-4 lg:px-10")}
+      className={cnM("h-full w-full px-4 lg:px-10")}
     >
-      <div className="text-lg inline-flex lowercase text-primary">
+      <div className="inline-flex text-lg lowercase text-primary">
         <Typography>apply</Typography>
         <Typography className="text-base-content">wallet</Typography>
       </div>

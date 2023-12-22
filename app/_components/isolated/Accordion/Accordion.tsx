@@ -4,7 +4,7 @@ import React from "react";
 
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 
-import { cnMerge } from "@/utils/styles";
+import { cnM } from "@/utils/styles";
 
 import { typographyVariants } from "../Typography";
 
@@ -40,7 +40,7 @@ const Accordion = React.forwardRef<
       <AccordionPrimitive.Root
         ref={ref}
         {...props}
-        className={cnMerge(
+        className={cnM(
           {
             "space-y-3xs": variant === "box" || variant === "bordered",
           },
@@ -62,7 +62,7 @@ const AccordionItem = React.forwardRef<
   return (
     <AccordionPrimitive.Item
       ref={ref}
-      className={cnMerge(
+      className={cnM(
         typographyVariants({ variant: "title-s" }),
         {
           "rounded-xl bg-base-200": variant === "box",
@@ -84,7 +84,7 @@ const AccordionTrigger = React.forwardRef<
   <AccordionPrimitive.Header className="flex">
     <AccordionPrimitive.Trigger
       ref={ref}
-      className={cnMerge(
+      className={cnM(
         "flex flex-1 items-center justify-between p-2xs-xs",
         className,
       )}
@@ -103,7 +103,7 @@ const AccordionContent = React.forwardRef<
   return (
     <AccordionPrimitive.Content
       ref={ref}
-      className={cnMerge(
+      className={cnM(
         typographyVariants({ variant: "body-m" }),
         "overflow-hidden px-2xs-xs",
         "data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down",
@@ -111,7 +111,7 @@ const AccordionContent = React.forwardRef<
       )}
       {...props}
     >
-      <div className={cnMerge("pb-4 pt-0", innerClassName)}>{children}</div>
+      <div className={cnM("pb-4 pt-0", innerClassName)}>{children}</div>
     </AccordionPrimitive.Content>
   );
 });

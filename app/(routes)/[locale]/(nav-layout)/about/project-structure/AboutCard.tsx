@@ -5,7 +5,7 @@ import React, { useEffect, useRef, type ElementRef } from "react";
 import { useInView } from "framer-motion";
 
 import { Card } from "@/components/isolated/Card";
-import { cn, cnMerge } from "@/utils/styles";
+import { cn, cnM } from "@/utils/styles";
 
 import { useAboutStore } from "../about.state";
 import { type AboutCardType } from "../about.types";
@@ -35,7 +35,7 @@ const AboutCard = ({ card }: AboutCardProps) => {
       <Card.Body>
         <Card.Title
           variant="headline-m"
-          className={cnMerge(
+          className={cnM(
             "not-prose line-clamp-4",
             isInView ? "text-base-content" : "text-base-content/20",
           )}

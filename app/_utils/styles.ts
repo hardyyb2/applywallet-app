@@ -15,6 +15,7 @@ const createCn = (options?: CnOptions) => {
 };
 
 const cn = createCn();
-const cnMerge = createCn({ merge: true });
+/** merge conflicting tailwind classes */
+const cnM = createCn({ merge: true });
 
-export { cn, cnMerge };
+export { cn, cnM };

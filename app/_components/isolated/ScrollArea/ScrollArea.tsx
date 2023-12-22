@@ -8,7 +8,7 @@ import {
 
 import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area";
 
-import { cnMerge } from "@/utils/styles";
+import { cnM } from "@/utils/styles";
 
 const ScrollAreaCorner = ScrollAreaPrimitive.Corner;
 
@@ -19,7 +19,7 @@ const ScrollBar = forwardRef<
   <ScrollAreaPrimitive.ScrollAreaScrollbar
     ref={ref}
     orientation={orientation}
-    className={cnMerge(
+    className={cnM(
       // TODO - add variants
       "flex bg-base-100",
       orientation === "vertical" && "h-full w-2xs-xs p-0.5",
@@ -29,7 +29,7 @@ const ScrollBar = forwardRef<
     {...props}
   >
     <ScrollAreaPrimitive.ScrollAreaThumb
-      className={cnMerge(
+      className={cnM(
         "relative rounded-full bg-base-content",
         orientation === "vertical" && "flex-1",
       )}
@@ -46,7 +46,7 @@ const ScrollAreaViewport = forwardRef<
   return (
     <ScrollAreaPrimitive.Viewport
       ref={ref}
-      className={cnMerge(" h-full w-full rounded-[inherit]", className)}
+      className={cnM(" h-full w-full rounded-[inherit]", className)}
       {...props}
     />
   );
@@ -61,7 +61,7 @@ const ScrollArea = forwardRef<
 >(({ className, ...props }, ref) => (
   <ScrollAreaPrimitive.Root
     ref={ref}
-    className={cnMerge("relative overflow-hidden", className)}
+    className={cnM("relative overflow-hidden", className)}
     {...props}
   />
 ));

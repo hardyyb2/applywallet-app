@@ -2,7 +2,7 @@
 
 import { m, type HTMLMotionProps, type Variants } from "framer-motion";
 
-import { cnMerge } from "@/utils/styles";
+import { cnM } from "@/utils/styles";
 
 interface BarLoaderProps extends HTMLMotionProps<"div"> {
   barClassName?: string;
@@ -38,27 +38,27 @@ const BarLoader = ({
       initial="initial"
       animate="animate"
       {...rest}
-      className={cnMerge("flex h-full w-full gap-1", className)}
+      className={cnM("flex h-full w-full gap-1", className)}
     >
       <m.div
         variants={variants}
-        className={cnMerge("h-2xl w-xs bg-base-content", barClassName)}
+        className={cnM("h-2xl w-xs bg-base-content", barClassName)}
       />
       <m.div
         variants={variants}
-        className={cnMerge("h-2xl w-xs bg-base-content", barClassName)}
+        className={cnM("h-2xl w-xs bg-base-content", barClassName)}
       />
       <m.div
         variants={variants}
-        className={cnMerge("h-2xl w-xs bg-base-content", barClassName)}
+        className={cnM("h-2xl w-xs bg-base-content", barClassName)}
       />
       <m.div
         variants={variants}
-        className={cnMerge("h-2xl w-xs bg-base-content", barClassName)}
+        className={cnM("h-2xl w-xs bg-base-content", barClassName)}
       />
       <m.div
         variants={variants}
-        className={cnMerge("h-2xl w-xs bg-base-content", barClassName)}
+        className={cnM("h-2xl w-xs bg-base-content", barClassName)}
       />
     </m.div>
   );

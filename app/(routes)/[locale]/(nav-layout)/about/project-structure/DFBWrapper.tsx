@@ -12,7 +12,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/isolated/Tooltip";
-import { cnMerge } from "@/utils/styles";
+import { cnM } from "@/utils/styles";
 
 const DFBWrapper = ({ children }: PropsWithChildren) => {
   const containerRef = useRef<any>();
@@ -24,7 +24,7 @@ const DFBWrapper = ({ children }: PropsWithChildren) => {
   return (
     <div
       ref={containerRef}
-      className={cnMerge("relative flex-1 rounded-2xl bg-base-content/20")}
+      className={cnM("relative flex-1 rounded-2xl bg-base-content/20")}
     >
       <TooltipProvider delayDuration={600}>
         <Tooltip>
@@ -36,7 +36,7 @@ const DFBWrapper = ({ children }: PropsWithChildren) => {
               startIcon={
                 isFullScreen ? (
                   <Icons.Minimize
-                    className={cnMerge(
+                    className={cnM(
                       "lg:h-l lg:w-l",
                       isFullScreen && "stroke-secondary",
                     )}

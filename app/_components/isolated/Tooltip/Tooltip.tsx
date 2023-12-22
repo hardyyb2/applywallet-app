@@ -9,7 +9,7 @@ import {
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import { type VariantProps } from "cva";
 
-import { cnMerge } from "@/utils/styles";
+import { cnM } from "@/utils/styles";
 
 import { tooltipArrowVariants, tooltipContentVariants } from "./tooltip.utils";
 
@@ -34,7 +34,7 @@ const TooltipArrow = forwardRef<
 >(({ className, color, ...props }, ref) => (
   <TooltipPrimitive.Arrow
     ref={ref}
-    className={cnMerge(
+    className={cnM(
       tooltipArrowVariants({
         color,
         className,
@@ -65,7 +65,7 @@ const TooltipContent = forwardRef<
       ref={ref}
       sideOffset={sideOffset}
       collisionPadding={collisionPadding}
-      className={cnMerge(
+      className={cnM(
         tooltipContentVariants({
           color,
           className,

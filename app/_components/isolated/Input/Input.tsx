@@ -1,6 +1,6 @@
 import { forwardRef, type InputHTMLAttributes, type ReactNode } from "react";
 
-import { cnMerge } from "@/utils/styles";
+import { cnM } from "@/utils/styles";
 
 import type { InputColorsType, InputSizeTypes } from "./input.types";
 
@@ -42,7 +42,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     },
     ref,
   ): JSX.Element => {
-    const classNames = cnMerge(
+    const classNames = cnM(
       "dui-input",
       {
         "dui-input-lg": size === "lg",
@@ -72,7 +72,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       return (
         <div
           data-testid="input-wrapper"
-          className={cnMerge(
+          className={cnM(
             "relative flex w-full items-center",
             iconSeparate && "grid grid-cols-[1fr,auto] gap-2",
             wrapperClassName,
@@ -81,7 +81,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           {startIcon && (
             <span
               data-testid="start-icon"
-              className={cnMerge(
+              className={cnM(
                 !iconSeparate ? "absolute left-4 [&_svg]:w-5" : "[&_svg]:w-8",
                 iconWrapperClassName,
               )}
@@ -92,7 +92,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           <input
             ref={ref}
             size={htmlSize}
-            className={cnMerge(
+            className={cnM(
               "w-full",
               {
                 "pl-12": startIcon,
@@ -105,7 +105,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           {endIcon && (
             <span
               data-testid="end-icon"
-              className={cnMerge(
+              className={cnM(
                 !iconSeparate ? "absolute right-4 [&_svg]:w-5" : "[&_svg]:w-8",
                 iconWrapperClassName,
               )}

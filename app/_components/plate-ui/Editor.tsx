@@ -4,10 +4,10 @@ import { PlateContent } from "@udecode/plate-common";
 import type { PlateContentProps } from "@udecode/plate-common";
 import { cva, type VariantProps } from "cva";
 
-import { cnMerge } from "@/utils/styles";
+import { cnM } from "@/utils/styles";
 
 const editorVariants = cva(
-  cnMerge(
+  cnM(
     "relative overflow-x-auto whitespace-pre-wrap break-words",
     "min-h-[80px] w-full rounded-md px-3 py-2 text-sm focus-visible:outline-none",
     "[&_[data-slate-placeholder]]:!opacity-100",
@@ -65,7 +65,7 @@ const Editor = React.forwardRef<HTMLDivElement, EditorProps>(
     return (
       <div ref={ref} className="relative w-full">
         <PlateContent
-          className={cnMerge(
+          className={cnM(
             editorVariants({
               disabled,
               focused,

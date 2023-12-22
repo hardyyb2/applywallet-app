@@ -5,7 +5,7 @@ import * as React from "react";
 import * as ToolbarPrimitive from "@radix-ui/react-toolbar";
 import { cva, type VariantProps } from "cva";
 
-import { cnMerge } from "@/utils/styles";
+import { cnM } from "@/utils/styles";
 
 import { Divider } from "../Divider";
 import { Icons } from "../Icons";
@@ -29,7 +29,7 @@ const Toolbar = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <ToolbarPrimitive.Root
     ref={ref}
-    className={cnMerge(
+    className={cnM(
       "relative flex select-none items-stretch gap-1 bg-base-100",
       className,
     )}
@@ -44,7 +44,7 @@ const ToolbarLink = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <ToolbarPrimitive.Link
     ref={ref}
-    className={cnMerge("font-medium underline underline-offset-4", className)}
+    className={cnM("font-medium underline underline-offset-4", className)}
     {...props}
   />
 ));
@@ -56,7 +56,7 @@ const ToolbarSeparator = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <ToolbarPrimitive.Separator
     ref={ref}
-    className={cnMerge("shrink-0", "my-1 w-[1px]", className)}
+    className={cnM("shrink-0", "my-1 w-[1px]", className)}
     {...props}
   />
 ));
@@ -81,7 +81,7 @@ const ToolbarGroup = React.forwardRef<
   }
 
   return (
-    <div ref={ref} className={cnMerge("flex", className)}>
+    <div ref={ref} className={cnM("flex", className)}>
       {!noSeparator && (
         <div className="h-full py-1">
           {/* TODO - replace with separator */}
@@ -134,7 +134,7 @@ const ToolbarButton = React.forwardRef<
         <ToolbarToggleGroup type="single" value="single">
           <ToolbarToggleItem
             ref={ref}
-            className={cnMerge(
+            className={cnM(
               toggleVariants({
                 variant,
                 size,
@@ -156,7 +156,7 @@ const ToolbarButton = React.forwardRef<
       ) : (
         <ToolbarPrimitive.Button
           ref={ref}
-          className={cnMerge(
+          className={cnM(
             toggleVariants({
               variant,
               size,

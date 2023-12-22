@@ -9,7 +9,7 @@ import {
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
 import type { VariantProps } from "cva";
 
-import { cnMerge } from "@/utils/styles";
+import { cnM } from "@/utils/styles";
 
 import { avatarVariants } from "./avatar.utils";
 
@@ -21,7 +21,7 @@ const Avatar = forwardRef<ElementRef<typeof AvatarPrimitive.Root>, AvatarProps>(
   ({ className, shape, size, color, border, ...props }, ref) => (
     <AvatarPrimitive.Root
       ref={ref}
-      className={cnMerge(
+      className={cnM(
         avatarVariants({
           color,
           border,
@@ -43,7 +43,7 @@ const AvatarImage = forwardRef<
 >(({ className, ...props }, ref) => (
   <AvatarPrimitive.Image
     ref={ref}
-    className={cnMerge("h-full w-full", className)}
+    className={cnM("h-full w-full", className)}
     {...props}
   />
 ));
@@ -56,7 +56,7 @@ const AvatarFallback = forwardRef<
 >(({ className, ...props }, ref) => (
   <AvatarPrimitive.Fallback
     ref={ref}
-    className={cnMerge(
+    className={cnM(
       "flex aspect-square h-full w-full items-center justify-center rounded-full",
       className,
     )}

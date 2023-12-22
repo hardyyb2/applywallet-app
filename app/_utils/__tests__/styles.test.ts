@@ -1,4 +1,4 @@
-import { cn, cnMerge } from "../styles";
+import { cn, cnM } from "../styles";
 
 describe("cn", () => {
   it("should return conflicting classes", () => {
@@ -7,14 +7,14 @@ describe("cn", () => {
   });
 });
 
-describe("cnMerge", () => {
+describe("cnM", () => {
   it("should not return conflicting classes", () => {
-    const classNames = cnMerge("p-0 p-1");
+    const classNames = cnM("p-0 p-1");
     expect(classNames).toBe("p-1");
   });
 
   it("should return the last conflicting class", () => {
-    const classNames = cnMerge("p-0 p-1 p-6", "p-9");
+    const classNames = cnM("p-0 p-1 p-6", "p-9");
     expect(classNames).toBe("p-9");
   });
 });

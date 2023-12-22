@@ -9,7 +9,7 @@ import {
   type Props as BaseSelectProps,
 } from "react-select";
 
-import { cn, cnMerge } from "@/utils/styles";
+import { cn, cnM } from "@/utils/styles";
 
 import { Icons } from "../Icons";
 import { Input } from "../Input";
@@ -51,7 +51,7 @@ const Select = ({
       placeholder={placeholder}
       classNames={{
         control: () =>
-          cnMerge(
+          cnM(
             selectVariants({
               size,
               color,
@@ -72,7 +72,7 @@ const Select = ({
             "!pr-xs-s",
           ),
         container: (state) =>
-          cnMerge(
+          cnM(
             "bg-base-100 rounded-btn",
             state.isFocused && [
               "outline outline-2 outline-offset-2 outline-base-content/20",
@@ -93,7 +93,7 @@ const Select = ({
           cn("bg-base-100 mt-2 rounded-xl p-2 border border-base-content/40"),
         menuList: () => cn("space-y-2"),
         option: (state) =>
-          cnMerge(
+          cnM(
             "p-2 text-base-content rounded-btn !cursor-pointer",
             !state.isSelected && "hover:bg-base-200",
             state.isFocused && "bg-base-200",
@@ -116,7 +116,7 @@ const Select = ({
         DropdownIndicator: (props) => (
           <Components.DropdownIndicator {...props}>
             <Icons.ChevronsUpDown
-              className={cnMerge(
+              className={cnM(
                 "h-4 w-4",
                 color === "primary" && "stroke-primary",
                 color === "secondary" && "stroke-secondary",

@@ -31,7 +31,7 @@ import {
 } from "@/queries/interviews.queries";
 import { QueryKeys } from "@/utils/queries";
 import { AppRoutes } from "@/utils/routes";
-import { cnMerge } from "@/utils/styles";
+import { cnM } from "@/utils/styles";
 
 import {
   getAddEditInterviewFormCopy,
@@ -188,7 +188,7 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
                 <AccordionItem
                   key={round.id}
                   value={String(index)}
-                  className={cnMerge(
+                  className={cnM(
                     roundErrorIndexes?.has(index) && "border border-error",
                   )}
                 >

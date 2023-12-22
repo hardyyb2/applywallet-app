@@ -12,7 +12,7 @@ import {
 } from "@/components/isolated/DropdownMenu";
 import { Icons } from "@/components/isolated/Icons";
 import { languageOptions } from "@/utils/locale-utils/language-options";
-import { cnMerge } from "@/utils/styles";
+import { cnM } from "@/utils/styles";
 
 import { redirectedPathName } from "./localeSwitcher.utils";
 
@@ -43,7 +43,7 @@ const LocaleSwitcher = () => {
           return (
             <Link href={newRedirectPath} key={value}>
               <DropdownMenuItem
-                className={cnMerge(
+                className={cnM(
                   "flex gap-3",
                   activeLocale === value &&
                     "bg-primary text-primary-content focus:bg-primary",

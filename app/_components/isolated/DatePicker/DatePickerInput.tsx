@@ -3,7 +3,7 @@ import { useLayoutEffect, useState } from "react";
 import dayjs from "dayjs";
 
 import { useBreakPoint } from "@/hooks/useBreakPoint";
-import { cn, cnMerge } from "@/utils/styles";
+import { cn, cnM } from "@/utils/styles";
 
 import { Button } from "../Button";
 import { Calendar } from "../Calendar";
@@ -65,7 +65,7 @@ const DatePickerInput = ({
         placeholder="dd/mm/yyyy"
         responsive={responsive}
         iconWrapperClassName="w-full h-full"
-        className={cnMerge("w-full bg-base-100", className)}
+        className={cnM("w-full bg-base-100", className)}
         {...props}
         iconSeparate
         color={color}

@@ -4,7 +4,7 @@ import * as React from "react";
 
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
 
-import { cnMerge } from "@/utils/styles";
+import { cnM } from "@/utils/styles";
 
 import { Icons } from "../Icons";
 import { typographyVariants } from "../Typography";
@@ -29,7 +29,7 @@ const DropdownMenuSubTrigger = React.forwardRef<
 >(({ className, inset, children, ...props }, ref) => (
   <DropdownMenuPrimitive.SubTrigger
     ref={ref}
-    className={cnMerge(
+    className={cnM(
       "relative flex cursor-pointer select-none items-center rounded-lg px-xs py-2xs outline-none transition-colors focus:bg-base-300 data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
       "data-[state=open]:bg-base-300",
       inset && "pl-8",
@@ -52,7 +52,7 @@ const DropdownMenuSubContent = React.forwardRef<
     sideOffset={sideOffset}
     alignOffset={alignOffset}
     ref={ref}
-    className={cnMerge(
+    className={cnM(
       "z-50 overflow-hidden rounded-xl border border-base-content/40 bg-base-100 p-2xs",
       "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
       className,
@@ -72,7 +72,7 @@ const DropdownMenuContent = React.forwardRef<
       ref={ref}
       sideOffset={sideOffset}
       align={align}
-      className={cnMerge(
+      className={cnM(
         "z-50 flex flex-col gap-2 overflow-hidden rounded-xl border border-base-content/40 bg-base-100 p-2xs",
         "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
         className,
@@ -91,7 +91,7 @@ const DropdownMenuItem = React.forwardRef<
 >(({ className, inset, ...props }, ref) => (
   <DropdownMenuPrimitive.Item
     ref={ref}
-    className={cnMerge(
+    className={cnM(
       typographyVariants({ variant: "body-m" }),
       "relative flex cursor-pointer select-none items-center rounded-lg px-xs py-2xs outline-none transition-colors focus:bg-base-300 data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
       inset && "pl-8",
@@ -114,7 +114,7 @@ const DropdownMenuLabel = React.forwardRef<
 >(({ className, inset, ...props }, ref) => (
   <DropdownMenuPrimitive.Label
     ref={ref}
-    className={cnMerge(
+    className={cnM(
       typographyVariants({ variant: "label-l" }),
       "px-xs py-2xs",
       inset && "pl-m",
@@ -131,7 +131,7 @@ const DropdownMenuSeparator = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <DropdownMenuPrimitive.Separator
     ref={ref}
-    className={cnMerge("my-2 h-px bg-base-200", className)}
+    className={cnM("my-2 h-px bg-base-200", className)}
     {...props}
   />
 ));
@@ -143,7 +143,7 @@ const DropdownMenuShortcut = ({
 }: React.HTMLAttributes<HTMLSpanElement>) => {
   return (
     <span
-      className={cnMerge("ml-auto tracking-widest opacity-60", className)}
+      className={cnM("ml-auto tracking-widest opacity-60", className)}
       {...props}
     />
   );
