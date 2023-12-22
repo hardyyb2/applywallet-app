@@ -7,17 +7,14 @@ import {
   createPlugins,
   Plate,
   PlateLeaf,
-  useMarkToolbarButton,
-  useMarkToolbarButtonState,
   withProps,
 } from "@udecode/plate-common";
 
-import { Button } from "@/components/isolated/Button";
 import { Icons } from "@/components/isolated/Icons";
 
-import { Editor } from "../Editor";
 import { FixedToolbar } from "../FIxedToolbar";
 import { MarkToolbarButton } from "../MarkToolbarButton";
+import { PlateEditor } from "../PlateEditor";
 
 const plugins = createPlugins([createBoldPlugin()], {
   components: {
@@ -25,7 +22,7 @@ const plugins = createPlugins([createBoldPlugin()], {
   },
 });
 
-export function PlateEditor() {
+function BaseEditor() {
   const [initialValue, setInitialValue] = useState([
     {
       id: "1",
@@ -46,7 +43,7 @@ export function PlateEditor() {
             <Icons.Bold />
           </MarkToolbarButton>
         </FixedToolbar>
-        <Editor
+        <PlateEditor
           placeholder="Type your message here."
           className="rounded-t-none"
         />
@@ -54,3 +51,5 @@ export function PlateEditor() {
     </Plate>
   );
 }
+
+export { BaseEditor };

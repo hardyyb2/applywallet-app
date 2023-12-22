@@ -19,7 +19,7 @@ import { Flex } from "@/components/isolated/Flex";
 import { FormField } from "@/components/isolated/FormField";
 import { Icons } from "@/components/isolated/Icons";
 import { Typography } from "@/components/isolated/Typography";
-import { PlateEditor } from "@/components/plate-ui/editors/BaseEditor";
+import { BaseEditor } from "@/components/plate-ui/editors/BaseEditor";
 import {
   interviewInputSchema,
   type InterviewInputType,
@@ -145,7 +145,6 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
 
   return (
     <Card className="m-auto overflow-hidden">
-      <PlateEditor />
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <Card.Body className="[&_.dui-form-control]:mt-2">
           <Typography variant="headline-m">{titleText}</Typography>
@@ -177,9 +176,12 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
               label="interview start date"
               htmlFor="start_date"
               error={errors.start_date?.message}
+              className="mb-4"
             >
               <FormField.DatePickerInput name="start_date" control={control} />
             </FormField>
+
+            <BaseEditor />
           </div>
 
           <Accordion type="multiple" className="mt-4 p-0" variant="box">

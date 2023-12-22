@@ -6,7 +6,7 @@ import { cva, type VariantProps } from "cva";
 
 import { cnM } from "@/utils/styles";
 
-const editorVariants = cva(
+const plateEditorVariants = cva(
   cnM(
     "relative overflow-x-auto whitespace-pre-wrap break-words min-h-[80px] w-full rounded-md px-3 py-2",
     "[&_[data-slate-placeholder]]:!opacity-100 [&_[data-slate-placeholder]]:top-[auto_!important] [&_strong]:font-bold",
@@ -35,16 +35,16 @@ const editorVariants = cva(
   },
 );
 
-export type EditorProps = PlateContentProps &
-  VariantProps<typeof editorVariants>;
+export type PlateEditorProps = PlateContentProps &
+  VariantProps<typeof plateEditorVariants>;
 
-const Editor = React.forwardRef<HTMLDivElement, EditorProps>(
+const PlateEditor = React.forwardRef<HTMLDivElement, PlateEditorProps>(
   ({ className, disabled, readOnly, size, variant, ...props }, ref) => {
     return (
       <div ref={ref} className="relative w-full">
         <PlateContent
           className={cnM(
-            editorVariants({
+            plateEditorVariants({
               disabled,
               size,
               variant,
@@ -60,6 +60,6 @@ const Editor = React.forwardRef<HTMLDivElement, EditorProps>(
     );
   },
 );
-Editor.displayName = "Editor";
+PlateEditor.displayName = "PlateEditor";
 
-export { Editor };
+export { PlateEditor };
