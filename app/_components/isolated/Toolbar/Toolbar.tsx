@@ -9,6 +9,7 @@ import { cnMerge } from "@/utils/styles";
 
 import { Divider } from "../Divider";
 import { Icons } from "../Icons";
+import { toggleVariants, type ToggleProps } from "../Toggle";
 import {
   Tooltip,
   TooltipContent,
@@ -17,21 +18,21 @@ import {
   TooltipTrigger,
 } from "../Tooltip";
 
-const toolbarVariants = cva(
-  "relative flex select-none items-stretch gap-1 bg-base-100",
-);
-const linkVariants = cva("font-medium underline underline-offset-4");
-
 const ToolbarToggleGroup = ToolbarPrimitive.ToggleGroup;
+
+interface ToolbarProps
+  extends React.ComponentPropsWithoutRef<typeof ToolbarPrimitive.Root> {}
 
 const Toolbar = React.forwardRef<
   React.ElementRef<typeof ToolbarPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof ToolbarPrimitive.Root> &
-    VariantProps<typeof toolbarVariants>
+  ToolbarProps
 >(({ className, ...props }, ref) => (
   <ToolbarPrimitive.Root
     ref={ref}
-    className={cnMerge(toolbarVariants(), className)}
+    className={cnMerge(
+      "relative flex select-none items-stretch gap-1 bg-base-100",
+      className,
+    )}
     {...props}
   />
 ));
@@ -39,12 +40,11 @@ Toolbar.displayName = ToolbarPrimitive.Root.displayName;
 
 const ToolbarLink = React.forwardRef<
   React.ElementRef<typeof ToolbarPrimitive.Link>,
-  React.ComponentPropsWithoutRef<typeof ToolbarPrimitive.Link> &
-    VariantProps<typeof linkVariants>
+  React.ComponentPropsWithoutRef<typeof ToolbarPrimitive.Link>
 >(({ className, ...props }, ref) => (
   <ToolbarPrimitive.Link
     ref={ref}
-    className={cnMerge(linkVariants(), className)}
+    className={cnMerge("font-medium underline underline-offset-4", className)}
     {...props}
   />
 ));
@@ -96,9 +96,9 @@ const ToolbarGroup = React.forwardRef<
 ToolbarGroup.displayName = "ToolbarGroup";
 
 export interface ToolbarButtonProps
-  extends React.ComponentPropsWithoutRef<typeof ToolbarPrimitive.Button> {
-  // VariantProps<typeof toggleVariants>,
-  // Omit<ToggleProps, "type"> {
+  extends React.ComponentPropsWithoutRef<typeof ToolbarPrimitive.Button>,
+    VariantProps<typeof toggleVariants>,
+    Omit<ToggleProps, "type"> {
   buttonType?: "button" | "toggle";
   pressed?: boolean;
   tooltip?: React.ReactNode;
@@ -112,8 +112,8 @@ const ToolbarButton = React.forwardRef<
   (
     {
       className,
-      // variant,
-      // size = "sm",
+      variant,
+      size = "sm",
       isDropdown,
       children,
       pressed,
@@ -135,10 +135,10 @@ const ToolbarButton = React.forwardRef<
           <ToolbarToggleItem
             ref={ref}
             className={cnMerge(
-              // toggleVariants({
-              //   variant,
-              //   size,
-              // }),
+              toggleVariants({
+                variant,
+                size,
+              }),
               isDropdown && "my-1 justify-between pr-1",
               className,
             )}
@@ -157,10 +157,10 @@ const ToolbarButton = React.forwardRef<
         <ToolbarPrimitive.Button
           ref={ref}
           className={cnMerge(
-            // toggleVariants({
-            //   variant,
-            //   size,
-            // }),
+            toggleVariants({
+              variant,
+              size,
+            }),
             isDropdown && "pr-1",
             className,
           )}
@@ -195,4 +195,5 @@ export {
   ToolbarLink,
   ToolbarToggleGroup,
   ToolbarToggleItem,
+  type ToolbarProps,
 };
