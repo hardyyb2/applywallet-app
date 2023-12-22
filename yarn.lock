@@ -7139,6 +7139,14 @@
   dependencies:
     "@udecode/plate-common" "27.0.3"
 
+"@udecode/plate-code-block@^27.0.3":
+  version "27.0.3"
+  resolved "https://registry.yarnpkg.com/@udecode/plate-code-block/-/plate-code-block-27.0.3.tgz#e2e818abea0ca6a9fb06696d9c18891209f202f6"
+  integrity sha512-RRi8vAgYdmLEfp/p+lTv82HxMIbX89lSFxS1WeZTGN2QUpjdaY3ScJWtgt2onHbsJEm3/k3ZzYedethkkn98Qw==
+  dependencies:
+    "@udecode/plate-common" "27.0.3"
+    prismjs "^1.29.0"
+
 "@udecode/plate-common@27.0.3", "@udecode/plate-common@^27.0.3":
   version "27.0.3"
   resolved "https://registry.yarnpkg.com/@udecode/plate-common/-/plate-common-27.0.3.tgz#64d59bc15237405ceae04f3458ed469d7cf1fd5c"
@@ -7170,6 +7178,13 @@
     use-deep-compare "^1.1.0"
     zustand "^4.4.7"
     zustand-x "^3.0.1"
+
+"@udecode/plate-heading@^27.0.3":
+  version "27.0.3"
+  resolved "https://registry.yarnpkg.com/@udecode/plate-heading/-/plate-heading-27.0.3.tgz#f646de7602ef88f22a8283d5cd730b38c60fa2f8"
+  integrity sha512-QtRMnGB1eKn+ABxsx1ogBIpXIHvdFl+/D8sgyglCHw8BzzZTw6+bXvJnxQXHh1LGKiY8syJG1q7FebhNcy/xog==
+  dependencies:
+    "@udecode/plate-common" "27.0.3"
 
 "@udecode/plate-utils@27.0.3":
   version "27.0.3"
@@ -15622,6 +15637,11 @@ prisma@^5.5.2:
   integrity sha512-WQtG6fevOL053yoPl6dbHV+IWgKo25IRN4/pwAGqcWmg7CrtoCzvbDbN9fXUc7QS2KK0LimHIqLsaCOX/vHl8w==
   dependencies:
     "@prisma/engines" "5.5.2"
+
+prismjs@^1.29.0:
+  version "1.29.0"
+  resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.29.0.tgz#f113555a8fa9b57c35e637bba27509dcf802dd12"
+  integrity sha512-Kx/1w86q/epKcmte75LNrEoT+lX8pBpavuAbvJWRXar7Hz8jrtF+e3vY751p0R8H9HdArwaCTNDDzHg/ScJK1Q==
 
 process-nextick-args@~2.0.0:
   version "2.0.1"
