@@ -17,6 +17,7 @@ import {
   Plate,
   PlateLeaf,
   withProps,
+  type PlateProps,
 } from "@udecode/plate-common";
 import {
   createHeadingPlugin,
@@ -58,21 +59,11 @@ const plugins = createPlugins(
   },
 );
 
-function RTBaseEditor() {
-  const [initialValue, setInitialValue] = useState([
-    {
-      id: "1",
-      type: "p",
-      children: [{ text: "Hello, World!" }],
-    },
-  ]);
+interface RTBaseEditorProps extends Omit<PlateProps, "children"> {}
 
+function RTBaseEditor(props: RTBaseEditorProps) {
   return (
-    <Plate
-      plugins={plugins}
-      initialValue={initialValue}
-      onChange={(value) => setInitialValue(value)}
-    >
+    <Plate {...props} plugins={plugins}>
       <div className="rounded-lg outline-offset-2 outline-base-content/20 focus-within:outline">
         <FixedToolbar className="lg:p-3xs">
           <FixedToolbarButtons />
@@ -86,4 +77,4 @@ function RTBaseEditor() {
   );
 }
 
-export { RTBaseEditor };
+export { RTBaseEditor, type RTBaseEditorProps };
