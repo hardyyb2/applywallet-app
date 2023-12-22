@@ -12,6 +12,7 @@ import { Icons } from "../Icons";
 import { toggleVariants, type ToggleProps } from "../Toggle";
 import {
   Tooltip,
+  TooltipArrow,
   TooltipContent,
   TooltipPortal,
   TooltipProvider,
@@ -177,7 +178,10 @@ const ToolbarButton = React.forwardRef<
           <TooltipTrigger asChild>{content}</TooltipTrigger>
 
           <TooltipPortal>
-            <TooltipContent>{tooltip}</TooltipContent>
+            <TooltipContent>
+              {tooltip}
+              <TooltipArrow />
+            </TooltipContent>
           </TooltipPortal>
         </Tooltip>
       </TooltipProvider>
