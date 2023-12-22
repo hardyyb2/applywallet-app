@@ -7186,6 +7186,13 @@
   dependencies:
     "@udecode/plate-common" "27.0.3"
 
+"@udecode/plate-paragraph@^27.0.3":
+  version "27.0.3"
+  resolved "https://registry.yarnpkg.com/@udecode/plate-paragraph/-/plate-paragraph-27.0.3.tgz#77b5f6d11b0c6e105c912f1ebcce73cf40372ba6"
+  integrity sha512-TFW4koH8hWtcMPFDR8ahcFAEiVvhIP9Fi0YCquBQPPMvYioBrS4PSembGn4ciwKSsAURA4jX3v/76BdsvG1NOg==
+  dependencies:
+    "@udecode/plate-common" "27.0.3"
+
 "@udecode/plate-utils@27.0.3":
   version "27.0.3"
   resolved "https://registry.yarnpkg.com/@udecode/plate-utils/-/plate-utils-27.0.3.tgz#cee40b182af88e51e99e4e445debe2445504f111"
