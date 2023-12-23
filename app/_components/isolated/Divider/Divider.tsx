@@ -8,6 +8,7 @@ export type DividerProps = HTMLAttributes<HTMLDivElement> & {
   responsive?: boolean;
 };
 
+/** @deprecated use `Separator` instead */
 const Divider = ({
   children,
   vertical,
