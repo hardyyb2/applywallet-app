@@ -7139,6 +7139,13 @@
   dependencies:
     "@udecode/plate-common" "27.0.3"
 
+"@udecode/plate-block-quote@^28.0.0":
+  version "28.0.0"
+  resolved "https://registry.yarnpkg.com/@udecode/plate-block-quote/-/plate-block-quote-28.0.0.tgz#432b536ec65719a296b1ede6e8d59c2474b9bb56"
+  integrity sha512-wbNaoU5q5IPSSmwJw0VHZ9n5x8FtmIBTKyW0OumRTrjCGQth6yynafGFu8KOezIKEYaJeTJyxtzVjwQgJ9sM5A==
+  dependencies:
+    "@udecode/plate-common" "28.0.0"
+
 "@udecode/plate-code-block@^27.0.3":
   version "27.0.3"
   resolved "https://registry.yarnpkg.com/@udecode/plate-code-block/-/plate-code-block-27.0.3.tgz#e2e818abea0ca6a9fb06696d9c18891209f202f6"
@@ -7159,6 +7166,18 @@
     "@udecode/slate-utils" "25.0.0"
     "@udecode/utils" "24.3.0"
 
+"@udecode/plate-common@28.0.0":
+  version "28.0.0"
+  resolved "https://registry.yarnpkg.com/@udecode/plate-common/-/plate-common-28.0.0.tgz#19be28647a5392fbb63b39ecde2d35669c714bec"
+  integrity sha512-/wn845/U5SilTborQjsBRpfoQJEz7BniONgSjF+PucFs265DqHEjo8dXYjcRMdBhY1O51r22riBTl7MNu2DlCw==
+  dependencies:
+    "@udecode/plate-core" "28.0.0"
+    "@udecode/plate-utils" "28.0.0"
+    "@udecode/slate" "25.0.0"
+    "@udecode/slate-react" "25.0.0"
+    "@udecode/slate-utils" "25.0.0"
+    "@udecode/utils" "24.3.0"
+
 "@udecode/plate-core@27.0.3":
   version "27.0.3"
   resolved "https://registry.yarnpkg.com/@udecode/plate-core/-/plate-core-27.0.3.tgz#bd817973cfda5b297939d3f59ed1290eb8806761"
@@ -7172,6 +7191,26 @@
     is-hotkey "^0.2.0"
     jotai "^2.6.0"
     jotai-x "^1.0.1"
+    lodash "^4.17.21"
+    nanoid "^3.3.6"
+    react-hotkeys-hook "^4.4.1"
+    use-deep-compare "^1.1.0"
+    zustand "^4.4.7"
+    zustand-x "^3.0.1"
+
+"@udecode/plate-core@28.0.0":
+  version "28.0.0"
+  resolved "https://registry.yarnpkg.com/@udecode/plate-core/-/plate-core-28.0.0.tgz#a7b960dfd21845f6e78c4e869f3c85c3975f1dcc"
+  integrity sha512-/SFxwQzJEYfL2LqK3irVpY7JFuq+HJrYWIsfWJxnQf45g0EEa5tJPj/XLF5VRKSMmHpWsVc9j8K1GtF7joqjvw==
+  dependencies:
+    "@udecode/slate" "25.0.0"
+    "@udecode/slate-react" "25.0.0"
+    "@udecode/slate-utils" "25.0.0"
+    "@udecode/utils" "24.3.0"
+    clsx "^1.2.1"
+    is-hotkey "^0.2.0"
+    jotai "^2.6.0"
+    jotai-x "^1.1.0"
     lodash "^4.17.21"
     nanoid "^3.3.6"
     react-hotkeys-hook "^4.4.1"
@@ -7200,6 +7239,20 @@
   dependencies:
     "@radix-ui/react-slot" "^1.0.2"
     "@udecode/plate-core" "27.0.3"
+    "@udecode/slate" "25.0.0"
+    "@udecode/slate-react" "25.0.0"
+    "@udecode/slate-utils" "25.0.0"
+    "@udecode/utils" "24.3.0"
+    clsx "^1.2.1"
+    lodash "^4.17.21"
+
+"@udecode/plate-utils@28.0.0":
+  version "28.0.0"
+  resolved "https://registry.yarnpkg.com/@udecode/plate-utils/-/plate-utils-28.0.0.tgz#2e98fb0a8c9fc931301ab0c9b745e652ed6ce487"
+  integrity sha512-yRVnvQ9xV8sQCYYrhz4S1lEr8efeEdW3Kgqcf7EMHPr2nVrkaY5rii2jLUZDjt6fdKOygie6J4+sI6SWZKYvOA==
+  dependencies:
+    "@radix-ui/react-slot" "^1.0.2"
+    "@udecode/plate-core" "28.0.0"
     "@udecode/slate" "25.0.0"
     "@udecode/slate-react" "25.0.0"
     "@udecode/slate-utils" "25.0.0"
@@ -12570,6 +12623,11 @@ jotai-x@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/jotai-x/-/jotai-x-1.0.1.tgz#17968ed8cae8707c097d0e1958212e7057072716"
   integrity sha512-Bk1GGcoRm++9p5E0xCWRF4w7EIGlYvgKEXERhwB64zpghD/p2ORyAl3rPhdrg9RJUT9MemRAyQ/OuQzsnNpEJg==
+
+jotai-x@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/jotai-x/-/jotai-x-1.1.0.tgz#d13bc4d236fd723482d7fef0f23fb984bfb21d66"
+  integrity sha512-40Tw6st20+utgffGYVELk5dga+qOaeDmx2EEQgD8f32qjV7LIC5sAihGwkwyDgUpTqmexP0KLdLGJYT+UQj3ag==
 
 jotai@^2.6.0:
   version "2.6.0"
