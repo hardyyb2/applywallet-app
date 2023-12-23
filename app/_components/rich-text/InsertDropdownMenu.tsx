@@ -3,6 +3,7 @@
 import React from "react";
 
 import { type DropdownMenuProps } from "@radix-ui/react-dropdown-menu";
+import { ELEMENT_BLOCKQUOTE } from "@udecode/plate-block-quote";
 import {
   focusEditor,
   insertEmptyElement,
@@ -76,13 +77,18 @@ const items = [
         description: "Heading 6",
         icon: Icons.Heading6,
       },
+      {
+        value: ELEMENT_BLOCKQUOTE,
+        label: "Quote",
+        description: "Quote",
+        icon: Icons.Quote,
+      },
     ],
   },
 ];
 
 export function InsertDropdownMenu(props: DropdownMenuProps) {
   const editor = useEditorState();
-  // const openState = useOpenState();
   const [open, setOpen] = useBoolean(false);
 
   return (
