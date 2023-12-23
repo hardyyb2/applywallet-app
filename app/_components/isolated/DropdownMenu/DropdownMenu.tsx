@@ -104,7 +104,37 @@ DropdownMenuItem.displayName = DropdownMenuPrimitive.Item.displayName;
 
 const DropdownMenuCheckboxItem = DropdownMenuPrimitive.CheckboxItem;
 
-const DropdownMenuRadioItem = DropdownMenuPrimitive.RadioItem;
+interface DropdownMenuRadioItemProps
+  extends React.ComponentPropsWithoutRef<
+    typeof DropdownMenuPrimitive.RadioItem
+  > {
+  showIcon?: boolean;
+}
+
+const DropdownMenuRadioItem = React.forwardRef<
+  React.ElementRef<typeof DropdownMenuPrimitive.RadioItem>,
+  DropdownMenuRadioItemProps
+>(({ className, children, showIcon = true, ...props }, ref) => (
+  <DropdownMenuPrimitive.RadioItem
+    ref={ref}
+    className={cnM(
+      "relative flex cursor-pointer select-none items-center rounded-lg px-xs py-2xs text-sm outline-none transition-colors focus:bg-base-300",
+      " data-[disabled]:pointer-events-none data-[disabled]:cursor-not-allowed data-[state=checked]:bg-base-200  data-[disabled]:opacity-50",
+      className,
+    )}
+    {...props}
+  >
+    {showIcon ? (
+      <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+        <DropdownMenuPrimitive.ItemIndicator>
+          <Icons.CircleDot className="h-4 w-4 fill-current" />
+        </DropdownMenuPrimitive.ItemIndicator>
+      </span>
+    ) : null}
+    {children}
+  </DropdownMenuPrimitive.RadioItem>
+));
+DropdownMenuRadioItem.displayName = DropdownMenuPrimitive.RadioItem.displayName;
 
 const DropdownMenuLabel = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.Label>,
