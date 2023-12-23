@@ -17,10 +17,7 @@ import {
   type LinkFloatingToolbarState,
 } from "@udecode/plate-link";
 
-import { cnM } from "@/utils/styles";
-
 import { buttonVariants } from "../isolated/Button";
-import { Divider } from "../isolated/Divider";
 import { Icons } from "../isolated/Icons";
 import { inputVariants } from "../isolated/Input/input.utils";
 import { popoverVariants } from "../isolated/Popover";
