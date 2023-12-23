@@ -28,7 +28,6 @@ export const getDefaultInterviewRoundObject = (
 ): InterviewRoundType => ({
   name: "",
   date: dayjs().toISOString(),
-  notes: [],
   result: "",
   type: "",
   ...props,
