@@ -36,6 +36,8 @@ import {
   Italic,
   Languages,
   Link2,
+  List,
+  ListOrdered,
   Lock,
   Maximize,
   Minimize,
@@ -113,6 +115,8 @@ const Icons = {
   Unlink,
   ExternalLink,
   Minus,
+  List,
+  ListOrdered,
   CustomHome: forwardRef<SVGSVGElement, LucideProps>(function CustomHome(
     { ...props },
     ref,
