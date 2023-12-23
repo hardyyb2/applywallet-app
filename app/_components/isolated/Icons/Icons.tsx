@@ -52,7 +52,7 @@ import {
   Text,
   Trash2,
   Underline,
-  Unlink2,
+  Unlink,
   X,
   type LucideProps,
 } from "lucide-react";
@@ -109,7 +109,7 @@ const Icons = {
   Quote,
   Link2,
   Text,
-  Unlink2,
+  Unlink,
   ExternalLink,
   CustomHome: forwardRef<SVGSVGElement, LucideProps>(function CustomHome(
     { ...props },
