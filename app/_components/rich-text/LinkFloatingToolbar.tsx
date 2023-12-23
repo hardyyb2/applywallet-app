@@ -22,7 +22,9 @@ import { cnM } from "@/utils/styles";
 import { buttonVariants } from "../isolated/Button";
 import { Divider } from "../isolated/Divider";
 import { Icons } from "../isolated/Icons";
+import { inputVariants } from "../isolated/Input/input.utils";
 import { popoverVariants } from "../isolated/Popover";
+import { Separator } from "../isolated/Separator";
 
 const floatingOptions: UseVirtualFloatingOptions = {
   placement: "bottom-start",
@@ -73,27 +75,35 @@ export function LinkFloatingToolbar({ state }: LinkFloatingToolbarProps) {
   }
 
   const input = (
-    <div className="flex w-[330px] flex-col">
+    <div className="flex flex-col">
       <div className="flex items-center">
-        <div className="text-muted-foreground flex items-center pl-3">
+        <div className="flex items-center px-2xs">
           <Icons.Link2 className="h-4 w-4" />
         </div>
 
         <FloatingLinkUrlInput
-          // className={inputVariants({ variant: "ghost", h: "sm" })}
-          placeholder="Paste link"
+          className={inputVariants({
+            color: "ghost",
+            bordered: false,
+            responsive: true,
+          })}
+          placeholder="paste link"
         />
       </div>
 
-      <Divider />
+      <Separator className="my-2xs" />
 
       <div className="flex items-center">
-        <div className="text-muted-foreground flex items-center pl-3">
+        <div className="flex items-center px-2xs">
           <Icons.Text className="h-4 w-4" />
         </div>
         <input
-          // className={inputVariants({ variant: "ghost", h: "sm" })}
-          placeholder="Text to display"
+          className={inputVariants({
+            color: "ghost",
+            bordered: false,
+            responsive: true,
+          })}
+          placeholder="text to display"
           {...textInputProps}
         />
       </div>
@@ -109,10 +119,10 @@ export function LinkFloatingToolbar({ state }: LinkFloatingToolbarProps) {
         className={buttonVariants({ color: "ghost", size: "sm" })}
         {...editButtonProps}
       >
-        Edit link
+        edit link
       </button>
 
-      <Divider vertical />
+      <Separator className="my-2xs" orientation="vertical" />
 
       <LinkOpenButton
         className={buttonVariants({
@@ -123,7 +133,7 @@ export function LinkFloatingToolbar({ state }: LinkFloatingToolbarProps) {
         <Icons.ExternalLink width={18} />
       </LinkOpenButton>
 
-      <Divider vertical />
+      <Separator orientation="vertical" />
 
       <button
         type="button"
@@ -133,7 +143,7 @@ export function LinkFloatingToolbar({ state }: LinkFloatingToolbarProps) {
         })}
         {...unlinkButtonProps}
       >
-        <Icons.Unlink2 width={18} />
+        <Icons.Unlink width={18} />
       </button>
     </div>
   );
@@ -142,7 +152,7 @@ export function LinkFloatingToolbar({ state }: LinkFloatingToolbarProps) {
     <>
       <div
         ref={insertRef}
-        className={popoverVariants({ className: "!z-[100] w-auto p-1" })}
+        className={popoverVariants({ className: "!z-[100] w-auto p-2xs" })}
         {...insertProps}
       >
         {input}
@@ -150,7 +160,7 @@ export function LinkFloatingToolbar({ state }: LinkFloatingToolbarProps) {
 
       <div
         ref={editRef}
-        className={popoverVariants({ className: "!z-[100] w-auto p-1" })}
+        className={popoverVariants({ className: "!z-[100] w-auto p-2xs" })}
         {...editProps}
       >
         {editContent}
