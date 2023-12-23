@@ -13,6 +13,7 @@ import {
   ChevronsRight,
   ChevronsUpDown,
   ChevronUp,
+  CircleDot,
   Clapperboard,
   ClipboardCheck,
   Code,
@@ -117,6 +118,7 @@ const Icons = {
   Minus,
   List,
   ListOrdered,
+  CircleDot,
   CustomHome: forwardRef<SVGSVGElement, LucideProps>(function CustomHome(
     { ...props },
     ref,
