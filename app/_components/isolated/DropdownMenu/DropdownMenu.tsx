@@ -115,8 +115,8 @@ const DropdownMenuLabel = React.forwardRef<
   <DropdownMenuPrimitive.Label
     ref={ref}
     className={cnM(
-      typographyVariants({ variant: "label-l" }),
-      "px-xs py-2xs",
+      typographyVariants({ variant: "label-m-bold" }),
+      "px-xs py-3xs",
       inset && "pl-m",
       className,
     )}
