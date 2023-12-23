@@ -20,6 +20,7 @@ import {
   PlateLeaf,
   withProps,
   type PlateProps,
+  type RenderAfterEditable,
 } from "@udecode/plate-common";
 import {
   createHeadingPlugin,
@@ -30,12 +31,15 @@ import {
   ELEMENT_H5,
   ELEMENT_H6,
 } from "@udecode/plate-heading";
+import { createLinkPlugin, ELEMENT_LINK } from "@udecode/plate-link";
 import { cva, type VariantProps } from "cva";
 
 import { BlockquoteElement } from "../BlockQuote";
 import { FixedToolbar } from "../FixedToolbar";
 import { FixedToolbarButtons } from "../FixedToolbarButtons";
 import { Heading } from "../Heading";
+import { LinkElement } from "../LinkElement";
+import { LinkFloatingToolbar } from "../LinkFloatingToolbar";
 import { withPlaceholders } from "../Placeholder";
 import { PlateEditor } from "../PlateEditor";
 
@@ -47,6 +51,9 @@ const plugins = createPlugins(
     createStrikethroughPlugin(),
     createBlockquotePlugin() as any,
     createHeadingPlugin(),
+    createLinkPlugin({
+      renderAfterEditable: LinkFloatingToolbar as RenderAfterEditable,
+    }),
   ],
   {
     components: withPlaceholders({
@@ -55,6 +62,7 @@ const plugins = createPlugins(
       [MARK_STRIKETHROUGH]: withProps(PlateLeaf, { as: "s" }),
       [MARK_UNDERLINE]: withProps(PlateLeaf, { as: "u" }),
       [ELEMENT_BLOCKQUOTE]: BlockquoteElement,
+      [ELEMENT_LINK]: LinkElement,
 
       [ELEMENT_H1]: withProps(Heading, { variant: "h1" }),
       [ELEMENT_H2]: withProps(Heading, { variant: "h2" }),
