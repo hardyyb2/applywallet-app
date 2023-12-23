@@ -2,6 +2,7 @@ import React from "react";
 
 import {
   MARK_BOLD,
+  MARK_CODE,
   MARK_ITALIC,
   MARK_STRIKETHROUGH,
   MARK_UNDERLINE,
@@ -54,9 +55,9 @@ export function FixedToolbarButtons() {
               >
                 <Icons.Strikethrough />
               </MarkToolbarButton>
-              {/* <MarkToolbarButton tooltip="Code (⌘+E)" nodeType={MARK_CODE}>
+              <MarkToolbarButton tooltip="Code (⌘+E)" nodeType={MARK_CODE}>
                 <Icons.Code />
-              </MarkToolbarButton> */}
+              </MarkToolbarButton>
             </ToolbarGroup>
 
             {/* <ToolbarGroup>
