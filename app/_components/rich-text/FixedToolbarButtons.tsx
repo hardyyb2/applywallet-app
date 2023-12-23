@@ -12,6 +12,7 @@ import { Icons } from "../isolated/Icons";
 import { ToolbarGroup } from "../isolated/Toolbar";
 import { InsertDropdownMenu } from "./InsertDropdownMenu";
 import { MarkToolbarButton } from "./MarkToolbarButton";
+import { ModeDropdownMenu } from "./ModeDropdownMenu";
 
 export function FixedToolbarButtons() {
   const readOnly = useEditorReadOnly();
@@ -96,10 +97,9 @@ export function FixedToolbarButtons() {
 
         <div className="grow" />
 
-        {/* <ToolbarGroup noSeparator>
-          <CommentToolbarButton />
+        <ToolbarGroup noSeparator>
           <ModeDropdownMenu />
-        </ToolbarGroup> */}
+        </ToolbarGroup>
       </div>
     </div>
   );
