@@ -91,7 +91,7 @@ export function LinkFloatingToolbar({ state }: LinkFloatingToolbarProps) {
         />
       </div>
 
-      <Separator className="my-2xs" />
+      <Separator className="my-2xs bg-base-content/20" />
 
       <div className="flex items-center">
         <div className="flex items-center px-2xs">

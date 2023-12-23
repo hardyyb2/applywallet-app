@@ -11,6 +11,7 @@ import { useEditorReadOnly } from "@udecode/plate-common";
 import { Icons } from "../isolated/Icons";
 import { ToolbarGroup } from "../isolated/Toolbar";
 import { InsertDropdownMenu } from "./InsertDropdownMenu";
+import { LinkToolbarButton } from "./LinkToolbarButton";
 import { MarkToolbarButton } from "./MarkToolbarButton";
 import { ModeDropdownMenu } from "./ModeDropdownMenu";
 
@@ -79,19 +80,19 @@ export function FixedToolbarButtons() {
 
               <OutdentToolbarButton />
               <IndentToolbarButton />
-            </ToolbarGroup>
+            </ToolbarGroup> */}
 
             <ToolbarGroup>
               <LinkToolbarButton />
 
-              <MediaToolbarButton nodeType={ELEMENT_IMAGE} />
+              {/* <MediaToolbarButton nodeType={ELEMENT_IMAGE} />
 
               <TableDropdownMenu />
 
-              <EmojiDropdownMenu />
+              <EmojiDropdownMenu /> */}
 
-              <MoreDropdownMenu />
-            </ToolbarGroup> */}
+              {/* <MoreDropdownMenu /> */}
+            </ToolbarGroup>
           </>
         )}
 
