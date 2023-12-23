@@ -2,12 +2,14 @@
 
 import {
   createBoldPlugin,
+  createCodePlugin,
   createItalicPlugin,
   createStrikethroughPlugin,
   createSubscriptPlugin,
   createSuperscriptPlugin,
   createUnderlinePlugin,
   MARK_BOLD,
+  MARK_CODE,
   MARK_ITALIC,
   MARK_STRIKETHROUGH,
   MARK_SUBSCRIPT,
@@ -55,10 +57,11 @@ import { ELEMENT_PARAGRAPH } from "@udecode/plate-paragraph";
 import { cva, type VariantProps } from "cva";
 
 import { BlockquoteElement } from "../BlockQuote";
+import { CodeLeaf } from "../CodeLeaf";
 import { FixedToolbar } from "../FixedToolbar";
 import { FixedToolbarButtons } from "../FixedToolbarButtons";
 import { Heading } from "../Heading";
-import { HighlightLeaf } from "../HightlightElement";
+import { HighlightLeaf } from "../HighlightLeaf";
 import { HrElement } from "../HrElement";
 import { LinkElement } from "../LinkElement";
 import { LinkFloatingToolbar } from "../LinkFloatingToolbar";
@@ -80,6 +83,7 @@ const plugins = createPlugins(
     createHighlightPlugin(),
     createSubscriptPlugin(),
     createSuperscriptPlugin(),
+    createCodePlugin(),
     createLinkPlugin({
       renderAfterEditable: LinkFloatingToolbar as RenderAfterEditable,
     }),
@@ -105,6 +109,7 @@ const plugins = createPlugins(
       [ELEMENT_H6]: withProps(Heading, { variant: "h6" }),
       [ELEMENT_PARAGRAPH]: ParagraphElement,
       [MARK_HIGHLIGHT]: HighlightLeaf,
+      [MARK_CODE]: CodeLeaf,
 
       [ELEMENT_UL]: withProps(ListElement, { variant: "ul" }),
       [ELEMENT_OL]: withProps(ListElement, { variant: "ol" }),
