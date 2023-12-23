@@ -14,6 +14,7 @@ import { InsertDropdownMenu } from "./InsertDropdownMenu";
 import { LinkToolbarButton } from "./LinkToolbarButton";
 import { MarkToolbarButton } from "./MarkToolbarButton";
 import { ModeDropdownMenu } from "./ModeDropdownMenu";
+import { MoreDropdownMenu } from "./MoreDropdownMenu";
 
 export function FixedToolbarButtons() {
   const readOnly = useEditorReadOnly();
@@ -28,7 +29,7 @@ export function FixedToolbarButtons() {
       >
         {!readOnly && (
           <>
-            <ToolbarGroup noSeparator>
+            <ToolbarGroup>
               <InsertDropdownMenu />
               {/* <TurnIntoDropdownMenu />  */}
             </ToolbarGroup>
@@ -91,14 +92,14 @@ export function FixedToolbarButtons() {
 
               <EmojiDropdownMenu /> */}
 
-              {/* <MoreDropdownMenu /> */}
+              <MoreDropdownMenu />
             </ToolbarGroup>
           </>
         )}
 
         <div className="grow" />
 
-        <ToolbarGroup noSeparator>
+        <ToolbarGroup>
           <ModeDropdownMenu />
         </ToolbarGroup>
       </div>
