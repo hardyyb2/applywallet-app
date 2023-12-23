@@ -11,6 +11,10 @@ import {
   MARK_UNDERLINE,
 } from "@udecode/plate-basic-marks";
 import {
+  createBlockquotePlugin,
+  ELEMENT_BLOCKQUOTE,
+} from "@udecode/plate-block-quote";
+import {
   createPlugins,
   Plate,
   PlateLeaf,
@@ -28,6 +32,7 @@ import {
 } from "@udecode/plate-heading";
 import { cva, type VariantProps } from "cva";
 
+import { BlockquoteElement } from "../BlockQuote";
 import { FixedToolbar } from "../FixedToolbar";
 import { FixedToolbarButtons } from "../FixedToolbarButtons";
 import { Heading } from "../Heading";
@@ -40,6 +45,7 @@ const plugins = createPlugins(
     createItalicPlugin(),
     createUnderlinePlugin(),
     createStrikethroughPlugin(),
+    createBlockquotePlugin() as any,
     createHeadingPlugin(),
   ],
   {
@@ -48,6 +54,7 @@ const plugins = createPlugins(
       [MARK_ITALIC]: withProps(PlateLeaf, { as: "em" }),
       [MARK_STRIKETHROUGH]: withProps(PlateLeaf, { as: "s" }),
       [MARK_UNDERLINE]: withProps(PlateLeaf, { as: "u" }),
+      [ELEMENT_BLOCKQUOTE]: BlockquoteElement,
 
       [ELEMENT_H1]: withProps(Heading, { variant: "h1" }),
       [ELEMENT_H2]: withProps(Heading, { variant: "h2" }),
