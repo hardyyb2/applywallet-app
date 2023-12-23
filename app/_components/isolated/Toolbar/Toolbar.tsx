@@ -124,12 +124,6 @@ const ToolbarButton = React.forwardRef<
     },
     ref,
   ) => {
-    // const [isLoaded, setIsLoaded] = React.useState(false);
-
-    // React.useEffect(() => {
-    //   setIsLoaded(true);
-    // }, []);
-
     const content =
       typeof pressed === "boolean" ? (
         <ToolbarToggleGroup type="single" value="single">
