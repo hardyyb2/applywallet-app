@@ -89,6 +89,18 @@ const items: {
         icon: Icons.Heading6,
       },
       {
+        value: "ul",
+        label: "bulleted list",
+        description: "bulleted list",
+        icon: Icons.List,
+      },
+      {
+        value: "ol",
+        label: "numbered list",
+        description: "numbered list",
+        icon: Icons.ListOrdered,
+      },
+      {
         value: ELEMENT_BLOCKQUOTE,
         label: "quote",
         description: "quote",
