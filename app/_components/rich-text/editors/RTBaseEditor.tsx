@@ -4,10 +4,14 @@ import {
   createBoldPlugin,
   createItalicPlugin,
   createStrikethroughPlugin,
+  createSubscriptPlugin,
+  createSuperscriptPlugin,
   createUnderlinePlugin,
   MARK_BOLD,
   MARK_ITALIC,
   MARK_STRIKETHROUGH,
+  MARK_SUBSCRIPT,
+  MARK_SUPERSCRIPT,
   MARK_UNDERLINE,
 } from "@udecode/plate-basic-marks";
 import {
@@ -33,6 +37,10 @@ import {
   ELEMENT_H6,
 } from "@udecode/plate-heading";
 import {
+  createHighlightPlugin,
+  MARK_HIGHLIGHT,
+} from "@udecode/plate-highlight";
+import {
   createHorizontalRulePlugin,
   ELEMENT_HR,
 } from "@udecode/plate-horizontal-rule";
@@ -50,6 +58,7 @@ import { BlockquoteElement } from "../BlockQuote";
 import { FixedToolbar } from "../FixedToolbar";
 import { FixedToolbarButtons } from "../FixedToolbarButtons";
 import { Heading } from "../Heading";
+import { HighlightLeaf } from "../HightlightElement";
 import { HrElement } from "../HrElement";
 import { LinkElement } from "../LinkElement";
 import { LinkFloatingToolbar } from "../LinkFloatingToolbar";
@@ -68,6 +77,9 @@ const plugins = createPlugins(
     createHeadingPlugin(),
     createHorizontalRulePlugin(),
     createListPlugin(),
+    createHighlightPlugin(),
+    createSubscriptPlugin(),
+    createSuperscriptPlugin(),
     createLinkPlugin({
       renderAfterEditable: LinkFloatingToolbar as RenderAfterEditable,
     }),
@@ -78,9 +90,12 @@ const plugins = createPlugins(
       [MARK_ITALIC]: withProps(PlateLeaf, { as: "em" }),
       [MARK_STRIKETHROUGH]: withProps(PlateLeaf, { as: "s" }),
       [MARK_UNDERLINE]: withProps(PlateLeaf, { as: "u" }),
+      [MARK_SUPERSCRIPT]: withProps(PlateLeaf, { as: "sup" }),
+      [MARK_SUBSCRIPT]: withProps(PlateLeaf, { as: "sub" }),
+
       [ELEMENT_BLOCKQUOTE]: BlockquoteElement,
-      [ELEMENT_LINK]: LinkElement,
       [ELEMENT_HR]: HrElement,
+      [ELEMENT_LINK]: LinkElement,
 
       [ELEMENT_H1]: withProps(Heading, { variant: "h1" }),
       [ELEMENT_H2]: withProps(Heading, { variant: "h2" }),
@@ -89,6 +104,7 @@ const plugins = createPlugins(
       [ELEMENT_H5]: withProps(Heading, { variant: "h5" }),
       [ELEMENT_H6]: withProps(Heading, { variant: "h6" }),
       [ELEMENT_PARAGRAPH]: ParagraphElement,
+      [MARK_HIGHLIGHT]: HighlightLeaf,
 
       [ELEMENT_UL]: withProps(ListElement, { variant: "ul" }),
       [ELEMENT_OL]: withProps(ListElement, { variant: "ol" }),
