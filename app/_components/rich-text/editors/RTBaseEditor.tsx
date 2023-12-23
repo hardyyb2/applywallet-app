@@ -31,6 +31,7 @@ import { cva, type VariantProps } from "cva";
 import { FixedToolbar } from "../FixedToolbar";
 import { FixedToolbarButtons } from "../FixedToolbarButtons";
 import { Heading } from "../Heading";
+import { withPlaceholders } from "../Placeholder";
 import { PlateEditor } from "../PlateEditor";
 
 const plugins = createPlugins(
@@ -42,7 +43,7 @@ const plugins = createPlugins(
     createHeadingPlugin(),
   ],
   {
-    components: {
+    components: withPlaceholders({
       [MARK_BOLD]: withProps(PlateLeaf, { as: "strong" }),
       [MARK_ITALIC]: withProps(PlateLeaf, { as: "em" }),
       [MARK_STRIKETHROUGH]: withProps(PlateLeaf, { as: "s" }),
@@ -54,7 +55,7 @@ const plugins = createPlugins(
       [ELEMENT_H4]: withProps(Heading, { variant: "h4" }),
       [ELEMENT_H5]: withProps(Heading, { variant: "h5" }),
       [ELEMENT_H6]: withProps(Heading, { variant: "h6" }),
-    },
+    }),
   },
 );
 
