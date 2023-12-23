@@ -49,7 +49,7 @@ const plugins = createPlugins(
     createItalicPlugin(),
     createUnderlinePlugin(),
     createStrikethroughPlugin(),
-    createBlockquotePlugin() as any,
+    createBlockquotePlugin(),
     createHeadingPlugin(),
     createLinkPlugin({
       renderAfterEditable: LinkFloatingToolbar as RenderAfterEditable,
