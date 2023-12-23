@@ -44,6 +44,7 @@ import {
   Pencil,
   Pilcrow,
   Plus,
+  Quote,
   Settings,
   Strikethrough,
   Trash2,
@@ -101,6 +102,7 @@ const Icons = {
   Heading5,
   Heading6,
   Pilcrow,
+  Quote,
   CustomHome: forwardRef<SVGSVGElement, LucideProps>(function CustomHome(
     { ...props },
     ref,
