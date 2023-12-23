@@ -1,5 +1,6 @@
 "use client";
 
+import { createAutoformatPlugin } from "@udecode/plate-autoformat";
 import {
   createBoldPlugin,
   createCodePlugin,
@@ -69,6 +70,7 @@ import { ListElement } from "../ListElement";
 import { ParagraphElement } from "../ParagraphElement";
 import { withPlaceholders } from "../Placeholder";
 import { PlateEditor } from "../PlateEditor";
+import { baseAutoformatRules } from "../utils/rtAutoFormat";
 
 const plugins = createPlugins(
   [
@@ -86,6 +88,12 @@ const plugins = createPlugins(
     createCodePlugin(),
     createLinkPlugin({
       renderAfterEditable: LinkFloatingToolbar as RenderAfterEditable,
+    }),
+    createAutoformatPlugin({
+      options: {
+        rules: baseAutoformatRules,
+        enableUndoOnDelete: true,
+      },
     }),
   ],
   {
