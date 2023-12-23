@@ -22,6 +22,7 @@ import { cnM } from "@/utils/styles";
 import { buttonVariants } from "../isolated/Button";
 import { Divider } from "../isolated/Divider";
 import { Icons } from "../isolated/Icons";
+import { popoverVariants } from "../isolated/Popover";
 
 const floatingOptions: UseVirtualFloatingOptions = {
   placement: "bottom-start",
@@ -141,10 +142,7 @@ export function LinkFloatingToolbar({ state }: LinkFloatingToolbarProps) {
     <>
       <div
         ref={insertRef}
-        className={cnM(
-          // popoverVariants(),
-          "w-auto p-1",
-        )}
+        className={popoverVariants({ className: "!z-[100] w-auto p-1" })}
         {...insertProps}
       >
         {input}
@@ -152,10 +150,7 @@ export function LinkFloatingToolbar({ state }: LinkFloatingToolbarProps) {
 
       <div
         ref={editRef}
-        className={cnM(
-          // popoverVariants(),
-          "w-auto p-1",
-        )}
+        className={popoverVariants({ className: "!z-[100] w-auto p-1" })}
         {...editProps}
       >
         {editContent}
