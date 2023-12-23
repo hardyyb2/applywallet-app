@@ -31,13 +31,19 @@ import {
   ELEMENT_H5,
   ELEMENT_H6,
 } from "@udecode/plate-heading";
+import {
+  createHorizontalRulePlugin,
+  ELEMENT_HR,
+} from "@udecode/plate-horizontal-rule";
 import { createLinkPlugin, ELEMENT_LINK } from "@udecode/plate-link";
+import { ELEMENT_PARAGRAPH } from "@udecode/plate-paragraph";
 import { cva, type VariantProps } from "cva";
 
 import { BlockquoteElement } from "../BlockQuote";
 import { FixedToolbar } from "../FixedToolbar";
 import { FixedToolbarButtons } from "../FixedToolbarButtons";
 import { Heading } from "../Heading";
+import { HrElement } from "../HrElement";
 import { LinkElement } from "../LinkElement";
 import { LinkFloatingToolbar } from "../LinkFloatingToolbar";
 import { withPlaceholders } from "../Placeholder";
@@ -51,6 +57,7 @@ const plugins = createPlugins(
     createStrikethroughPlugin(),
     createBlockquotePlugin(),
     createHeadingPlugin(),
+    createHorizontalRulePlugin(),
     createLinkPlugin({
       renderAfterEditable: LinkFloatingToolbar as RenderAfterEditable,
     }),
@@ -63,6 +70,8 @@ const plugins = createPlugins(
       [MARK_UNDERLINE]: withProps(PlateLeaf, { as: "u" }),
       [ELEMENT_BLOCKQUOTE]: BlockquoteElement,
       [ELEMENT_LINK]: LinkElement,
+      [ELEMENT_PARAGRAPH]: withProps(PlateLeaf, { as: "p" }),
+      [ELEMENT_HR]: HrElement,
 
       [ELEMENT_H1]: withProps(Heading, { variant: "h1" }),
       [ELEMENT_H2]: withProps(Heading, { variant: "h2" }),

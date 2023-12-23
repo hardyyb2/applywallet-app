@@ -17,6 +17,7 @@ import {
   ELEMENT_H5,
   ELEMENT_H6,
 } from "@udecode/plate-heading";
+import { ELEMENT_HR } from "@udecode/plate-horizontal-rule";
 import { ELEMENT_LINK, triggerFloatingLink } from "@udecode/plate-link";
 import { ELEMENT_PARAGRAPH } from "@udecode/plate-paragraph";
 import type { LucideIcon } from "lucide-react";
@@ -92,6 +93,12 @@ const items: {
         label: "quote",
         description: "quote",
         icon: Icons.Quote,
+      },
+      {
+        value: ELEMENT_HR,
+        label: "horizontal rule",
+        description: "horizontal rule",
+        icon: Icons.Minus,
       },
     ],
   },
