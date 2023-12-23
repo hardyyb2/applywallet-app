@@ -20,7 +20,7 @@ const ExtLoginCard = () => {
     >
       <Card.Body className="items-center">
         <Card.Title
-          variant="h3"
+          variant="display-m"
           align="center"
           className="inline-block first-letter:capitalize"
         >
