@@ -7225,6 +7225,13 @@
   dependencies:
     "@udecode/plate-common" "28.0.0"
 
+"@udecode/plate-horizontal-rule@^28.0.0":
+  version "28.0.0"
+  resolved "https://registry.yarnpkg.com/@udecode/plate-horizontal-rule/-/plate-horizontal-rule-28.0.0.tgz#dcdd73f725e7ea42fb57b95db120be33d842b09d"
+  integrity sha512-wPjpfnww61sY2LGF1VCYyIDZ9Ont9awqSgI0ZtdPyqv6pJz/UElWZcOTFxrCzbX2VzpZUhFKQyOWh8zTrbGHXw==
+  dependencies:
+    "@udecode/plate-common" "28.0.0"
+
 "@udecode/plate-link@^28.0.0":
   version "28.0.0"
   resolved "https://registry.yarnpkg.com/@udecode/plate-link/-/plate-link-28.0.0.tgz#c0053561581e7a59a1768168647c08543ad75a07"
