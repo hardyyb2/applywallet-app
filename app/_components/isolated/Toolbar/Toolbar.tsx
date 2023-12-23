@@ -7,8 +7,8 @@ import { type VariantProps } from "cva";
 
 import { cnM } from "@/utils/styles";
 
-import { Divider } from "../Divider";
 import { Icons } from "../Icons";
+import { Separator } from "../Separator";
 import { toggleVariants, type ToggleProps } from "../Toggle";
 import {
   Tooltip,
@@ -74,8 +74,8 @@ ToolbarToggleItem.displayName = ToolbarPrimitive.ToggleItem.displayName;
 
 const ToolbarGroup = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> & { noSeparator?: boolean }
->(({ noSeparator, className, children }, ref) => {
+  React.HTMLAttributes<HTMLDivElement> & { separator?: boolean }
+>(({ separator = false, className, children }, ref) => {
   const childArr = React.Children.map(children, (c) => c);
   if (!childArr || childArr.length === 0) {
     return null;
@@ -83,10 +83,10 @@ const ToolbarGroup = React.forwardRef<
 
   return (
     <div ref={ref} className={cnM("flex", className)}>
-      {!noSeparator && (
+      {separator && (
         <div className="h-full py-1">
           {/* TODO - replace with separator */}
-          <Divider vertical />
+          <Separator orientation="vertical" />
         </div>
       )}
 
