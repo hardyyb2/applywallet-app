@@ -46,6 +46,7 @@ import { Heading } from "../Heading";
 import { HrElement } from "../HrElement";
 import { LinkElement } from "../LinkElement";
 import { LinkFloatingToolbar } from "../LinkFloatingToolbar";
+import { ParagraphElement } from "../ParagraphElement";
 import { withPlaceholders } from "../Placeholder";
 import { PlateEditor } from "../PlateEditor";
 
@@ -70,7 +71,7 @@ const plugins = createPlugins(
       [MARK_UNDERLINE]: withProps(PlateLeaf, { as: "u" }),
       [ELEMENT_BLOCKQUOTE]: BlockquoteElement,
       [ELEMENT_LINK]: LinkElement,
-      [ELEMENT_PARAGRAPH]: withProps(PlateLeaf, { as: "p" }),
+      [ELEMENT_PARAGRAPH]: ParagraphElement,
       [ELEMENT_HR]: HrElement,
 
       [ELEMENT_H1]: withProps(Heading, { variant: "h1" }),
