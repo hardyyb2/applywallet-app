@@ -17,7 +17,9 @@ import {
   ELEMENT_H5,
   ELEMENT_H6,
 } from "@udecode/plate-heading";
+import { ELEMENT_LINK, triggerFloatingLink } from "@udecode/plate-link";
 import { ELEMENT_PARAGRAPH } from "@udecode/plate-paragraph";
+import type { LucideIcon } from "lucide-react";
 import { useBoolean } from "react-use";
 
 import {
@@ -31,57 +33,76 @@ import {
 import { Icons } from "../isolated/Icons";
 import { ToolbarButton } from "../isolated/Toolbar";
 
-const items = [
+const items: {
+  label: string;
+  items: {
+    value: string;
+    label: string;
+    description: string;
+    icon: LucideIcon;
+  }[];
+}[] = [
   {
-    label: "Basic blocks",
+    label: "basic blocks",
     items: [
       {
         value: ELEMENT_PARAGRAPH,
-        label: "Paragraph",
-        description: "Paragraph",
+        label: "paragraph",
+        description: "paragraph",
         icon: Icons.Pilcrow,
       },
       {
         value: ELEMENT_H1,
-        label: "Heading 1",
-        description: "Heading 1",
+        label: "heading 1",
+        description: "heading 1",
         icon: Icons.Heading1,
       },
       {
         value: ELEMENT_H2,
-        label: "Heading 2",
-        description: "Heading 2",
+        label: "heading 2",
+        description: "heading 2",
         icon: Icons.Heading2,
       },
       {
         value: ELEMENT_H3,
-        label: "Heading 3",
-        description: "Heading 3",
+        label: "heading 3",
+        description: "heading 3",
         icon: Icons.Heading3,
       },
       {
         value: ELEMENT_H4,
-        label: "Heading 4",
-        description: "Heading 4",
+        label: "heading 4",
+        description: "heading 4",
         icon: Icons.Heading4,
       },
       {
         value: ELEMENT_H5,
-        label: "Heading 5",
-        description: "Heading 5",
+        label: "heading 5",
+        description: "heading 5",
         icon: Icons.Heading5,
       },
       {
         value: ELEMENT_H6,
-        label: "Heading 6",
-        description: "Heading 6",
+        label: "heading 6",
+        description: "heading 6",
         icon: Icons.Heading6,
       },
       {
         value: ELEMENT_BLOCKQUOTE,
-        label: "Quote",
-        description: "Quote",
+        label: "quote",
+        description: "quote",
         icon: Icons.Quote,
+      },
+    ],
+  },
+  {
+    label: "inline",
+    items: [
+      {
+        value: ELEMENT_LINK,
+        label: "link",
+        description: "link",
+        icon: Icons.Link2,
       },
     ],
   },
@@ -115,6 +136,12 @@ export function InsertDropdownMenu(props: DropdownMenuProps) {
                   className="min-w-[180px]"
                   onSelect={async () => {
                     switch (type) {
+                      case ELEMENT_LINK: {
+                        triggerFloatingLink(editor, { focused: true });
+
+                        break;
+                      }
+
                       default: {
                         insertEmptyElement(editor, type, {
                           select: true,
