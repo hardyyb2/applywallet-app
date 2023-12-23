@@ -1,27 +1,23 @@
 import { forwardRef, type InputHTMLAttributes, type ReactNode } from "react";
 
+import type { VariantProps } from "cva";
+
 import { cnM } from "@/utils/styles";
 
-import type { InputColorsType, InputSizeTypes } from "./input.types";
+import { inputVariants } from "./input.utils";
 
-export type InputProps = Omit<
-  InputHTMLAttributes<HTMLInputElement>,
-  "size" | "color"
-> & {
-  bordered?: boolean;
-  borderOffset?: boolean;
-  size?: InputSizeTypes;
-  color?: InputColorsType;
+export interface InputProps
+  extends Omit<InputHTMLAttributes<HTMLInputElement>, "size" | "color">,
+    VariantProps<typeof inputVariants> {
   htmlSize?: number;
   startIcon?: ReactNode;
   endIcon?: ReactNode;
-  responsive?: boolean;
   iconWrapperClassName?: string;
   /** renders the icons outside of the input i.e. without absolute positioning */
   iconSeparate?: boolean;
   /** className for 'Input' wrapper div, if 'startIcon' or 'endIcon' is provided */
   wrapperClassName?: string;
-};
+}
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
   (
@@ -42,32 +38,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     },
     ref,
   ): JSX.Element => {
-    const classNames = cnM(
-      "dui-input",
-      {
-        "dui-input-lg": size === "lg",
-        "dui-input-md": size === "md",
-        "dui-input-sm": size === "sm",
-        "dui-input-xs": size === "xs",
-      },
-      {
-        "dui-input-primary": color === "primary",
-        "dui-input-secondary": color === "secondary",
-        "dui-input-accent": color === "accent",
-        "dui-input-info": color === "info",
-        "dui-input-success": color === "success",
-        "dui-input-warning": color === "warning",
-        "dui-input-error": color === "error",
-        "dui-input-ghost": color === "ghost",
-      },
-      {
-        "focus:outline-offset-0": !borderOffset,
-        "dui-input-bordered": bordered,
-      },
-      responsive && "dui-input-sm md:dui-input-md",
-      className,
-    );
-
     if (startIcon || endIcon) {
       return (
         <div
@@ -93,12 +63,18 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             ref={ref}
             size={htmlSize}
             className={cnM(
-              "w-full",
+              inputVariants({
+                bordered,
+                borderOffset,
+                size,
+                color,
+                responsive,
+                className,
+              }),
               {
                 "pl-12": startIcon,
                 "pr-12": endIcon,
               },
-              classNames,
             )}
             {...props}
           />
@@ -118,7 +94,19 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     }
 
     return (
-      <input ref={ref} size={htmlSize} className={classNames} {...props} />
+      <input
+        ref={ref}
+        size={htmlSize}
+        className={inputVariants({
+          bordered,
+          borderOffset,
+          size,
+          color,
+          responsive,
+          className,
+        })}
+        {...props}
+      />
     );
   },
 );
