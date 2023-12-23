@@ -51,6 +51,7 @@
     "@udecode/plate-code-block": "^27.0.3",
     "@udecode/plate-common": "^27.0.3",
     "@udecode/plate-heading": "^27.0.3",
+    "@udecode/plate-link": "^28.0.0",
     "@udecode/plate-paragraph": "^27.0.3",
     "@vitest/ui": "^1.0.4",
     "axios": "^1.5.1",
