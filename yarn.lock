@@ -7241,6 +7241,15 @@
     "@udecode/plate-floating" "28.0.0"
     "@udecode/plate-normalizers" "28.0.0"
 
+"@udecode/plate-list@^28.0.0":
+  version "28.0.0"
+  resolved "https://registry.yarnpkg.com/@udecode/plate-list/-/plate-list-28.0.0.tgz#a79978c07e7296df8ac8d77a065dfaad6191b76c"
+  integrity sha512-AdQUl1ibNUNPcHE4b2DmN7ySuF+B7pomGu7CtYCSgG9a0yizY6GwhNnm7dxT4XbgItuI0YKziJSAINLIXunDRg==
+  dependencies:
+    "@udecode/plate-common" "28.0.0"
+    "@udecode/plate-reset-node" "28.0.0"
+    lodash "^4.17.21"
+
 "@udecode/plate-normalizers@28.0.0":
   version "28.0.0"
   resolved "https://registry.yarnpkg.com/@udecode/plate-normalizers/-/plate-normalizers-28.0.0.tgz#1b359c2d17ae27f72f7aa00fc21be5b8978d038c"
@@ -7253,6 +7262,13 @@
   version "28.0.0"
   resolved "https://registry.yarnpkg.com/@udecode/plate-paragraph/-/plate-paragraph-28.0.0.tgz#f02665d2247a71a2e82bfb73f08f135ff642cde3"
   integrity sha512-mXHDlU8Vecb2OwgDjB2LJsWGKzkL5zxri4AC1+kUlsLhL2dbPeAPpS/qx+R3QtSg6pKDSZzc0RjCnsSTFO4GVw==
+  dependencies:
+    "@udecode/plate-common" "28.0.0"
+
+"@udecode/plate-reset-node@28.0.0":
+  version "28.0.0"
+  resolved "https://registry.yarnpkg.com/@udecode/plate-reset-node/-/plate-reset-node-28.0.0.tgz#e732e883bbb4bc15c3c2a6c434c9732d5ba27947"
+  integrity sha512-7ga+VFo6oIeVRm/YRKXt7N3m4AoaG/VWYyg+xYqEvdpw8FaLhwYWrswwJi+aOVRSDTY3rddbyGwYeS7F+p3Aaw==
   dependencies:
     "@udecode/plate-common" "28.0.0"
 
