@@ -52,7 +52,10 @@ const Providers = ({ children, locale }: ProvidersType) => {
           </MotionConfig>
         </LazyMotion>
         <ToastContainer position="top-right" limit={4} autoClose={5000} />
-        <ReactQueryDevtools initialIsOpen={false} />
+        <ReactQueryDevtools
+          initialIsOpen={false}
+          buttonPosition="bottom-left"
+        />
       </QueryClientProvider>
     </SessionProvider>
   );
