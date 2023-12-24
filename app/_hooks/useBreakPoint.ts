@@ -6,7 +6,7 @@ import { breakpoints, type BreakPointKeyType } from "@/utils/design-system";
 
 const useBreakPoint = <K extends BreakPointKeyType>(breakPointKey: K) => {
   const breakPointValue = breakpoints[breakPointKey];
-  const bool = useMedia(`(max-width: ${breakPointValue})`);
+  const bool = useMedia(`(max-width: ${breakPointValue})`, false);
 
   const capitalizedKey =
     breakPointKey[0].toUpperCase() + breakPointKey.substring(1);
