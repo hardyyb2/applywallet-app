@@ -153,8 +153,26 @@ const typographyComponentsPlugin = plugin(({ addComponents, theme }) => {
       fontFamily: theme("fontFamily.secondary"),
     },
 
+    ".caption-l": {
+      fontSize: "10pt", // 13px
+      fontWeight: "400",
+      fontStyle: "normal",
+      lineHeight: "12pt", // 16px
+      letterSpacing: "0.4pt",
+      fontFamily: theme("fontFamily.secondary"),
+    },
+
     ".caption-m": {
       fontSize: "9pt", // 12px
+      fontWeight: "400",
+      fontStyle: "normal",
+      lineHeight: "12pt", // 16px
+      letterSpacing: "0.4pt",
+      fontFamily: theme("fontFamily.secondary"),
+    },
+
+    ".caption-s": {
+      fontSize: "8pt", // 11px
       fontWeight: "400",
       fontStyle: "normal",
       lineHeight: "12pt", // 16px
