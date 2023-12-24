@@ -6,12 +6,15 @@ import * as SeparatorPrimitive from "@radix-ui/react-separator";
 
 import { cnM } from "@/utils/styles";
 
+interface SeparatorProps
+  extends React.ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root> {}
+
 const Separator = React.forwardRef<
   React.ElementRef<typeof SeparatorPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root>
+  SeparatorProps
 >(
   (
-    { className, orientation = "horizontal", decorative = true, ...props },
+    { className, orientation = "vertical", decorative = true, ...props },
     ref,
   ) => (
     <SeparatorPrimitive.Root
@@ -20,9 +23,7 @@ const Separator = React.forwardRef<
       orientation={orientation}
       className={cnM(
         "dui-divider shrink-0",
-        orientation === "horizontal"
-          ? "dui-divider-horizontal"
-          : "dui-divider-vertical",
+        orientation === "horizontal" && "dui-divider-horizontal",
         className,
       )}
       {...props}
@@ -31,4 +32,4 @@ const Separator = React.forwardRef<
 );
 Separator.displayName = SeparatorPrimitive.Root.displayName;
 
-export { Separator };
+export { Separator, type SeparatorProps };
