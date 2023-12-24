@@ -10,7 +10,7 @@ import { useBoolean } from "react-use";
 import { BottomNavigation } from "~/components/ds/BottomNavigation";
 import { Flex } from "~/components/ds/Flex";
 
-import { cn } from "@/utils/styles";
+import { cnM } from "@/utils/styles";
 
 import { NavigationMenu } from "../NavigationMenu";
 import { BottomNavBackdrop } from "./BottomNavBackdrop";
@@ -38,8 +38,8 @@ const BottomNav = ({ className = "" }: BottomNavProps) => {
         animate={{
           height: showFullBottomNav ? "66%" : "4rem",
         }}
-        className={cn(
-          "z-20 mx-auto mb-4 w-[96%] overflow-hidden rounded-box bg-opacity-60 backdrop-blur",
+        className={cnM(
+          "z-20 mx-auto mb-2xs w-[96%] overflow-hidden rounded-box bg-opacity-60 backdrop-blur",
           className,
         )}
       >
@@ -50,12 +50,12 @@ const BottomNav = ({ className = "" }: BottomNavProps) => {
                 <NavigationMenu
                   navOpen
                   onNavItemClick={toggleShowFullBottomNav}
-                  className="p-4"
+                  className="p-3xs"
                 />
                 <button
                   onClick={toggleShowFullBottomNav}
                   aria-label="close"
-                  className="border-t border-primary border-opacity-80 py-4 text-primary"
+                  className="border-t border-primary border-opacity-80 py-3 text-primary"
                 >
                   close
                 </button>
