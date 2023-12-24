@@ -1,7 +1,6 @@
 import { fontFamily } from "tailwindcss/defaultTheme";
-import plugin from "tailwindcss/plugin";
 
-import { typographyComponentsPlugin } from "./utils/tailwind";
+import { typographyComponentsPlugin } from "./common/utils/tailwind";
 
 const config = {
   // TODO - check how multiple configs can work without whole app content being included

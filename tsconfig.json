@@ -36,7 +36,7 @@
 
       "$/*": ["src/*"],
 
-      "~/*": ["./*"]
+      "~/*": ["common/*"]
     }
   },
   "include": [
@@ -46,7 +46,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "middleware.tsx",
-    "./utils/locale-utils/i18n-config.ts",
     "scripts/*",
     ".contentlayer/generated",
     "./tailwind.config.ts"

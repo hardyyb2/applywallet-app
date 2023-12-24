@@ -8,7 +8,7 @@
     "@ianvs/prettier-plugin-sort-imports",
     "prettier-plugin-tailwindcss"
   ],
-  "tailwindFunctions": ["clsx"],
+  "tailwindFunctions": ["clsx", "cn", "cnM"],
   "importOrder": [
     "^(react/(.*)$)|^(react$)",
     "^(next/(.*)$)|^(next$)|^(next-auth/(.*)$)",
