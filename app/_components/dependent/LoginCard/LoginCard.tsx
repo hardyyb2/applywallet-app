@@ -16,7 +16,7 @@ const LoginCard = async () => {
     <Card side="lg" className="max-w-xl bg-base-200 text-base-content">
       <Card.Body className="items-center">
         <Card.Title
-          variant="display-m"
+          variant="display-s"
           align="center"
           className="inline-block first-letter:capitalize"
         >
