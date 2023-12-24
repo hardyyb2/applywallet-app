@@ -34,8 +34,8 @@ const AboutCard = ({ card }: AboutCardProps) => {
     >
       <Card.Body>
         <Card.Title
-          variant="headline-m"
           className={cnM(
+            "headline-m",
             "not-prose line-clamp-4",
             isInView ? "text-base-content" : "text-base-content/20",
           )}
