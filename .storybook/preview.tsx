@@ -5,8 +5,8 @@ import type { Preview } from "@storybook/react";
 import { fonts } from "../app/_lib/fonts";
 import { appThemes } from "../app/_utils/theme";
 
-import "../app/_styles/globals.scss";
-import "../app/_styles/overrides/daisyui.scss";
+import "@/styles/globals.app.scss";
+import "~/styles/overrides/daisyui.scss";
 
 const preview: Preview = {
   parameters: {

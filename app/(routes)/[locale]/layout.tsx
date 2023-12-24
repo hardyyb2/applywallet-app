@@ -6,9 +6,9 @@ import { cn } from "@/utils/styles";
 
 import { Providers } from "./providers";
 
-import "@/styles/globals.scss";
+import "~/styles/overrides/daisyui.scss";
+import "@/styles/globals.app.scss";
 import "@/styles/overrides/toast.scss";
-import "@/styles/overrides/daisyui.scss";
 import "@/styles/mdx.scss";
 
 type RootLayoutProps = {

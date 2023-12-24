@@ -48,7 +48,8 @@
     "middleware.tsx",
     "scripts/*",
     ".contentlayer/generated",
-    "./tailwind.config.ts"
+    "./tailwind.config.ts",
+    ".storybook/**/*"
   ],
   "exclude": ["node_modules"]
 }
