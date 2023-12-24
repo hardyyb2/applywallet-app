@@ -8,7 +8,7 @@ export const buttonVariants = cva(
         lg: "dui-btn-lg",
         md: "dui-btn-md",
         sm: "dui-btn-sm",
-        xs: "dui-btn-xs",
+        xs: "dui-btn-xs lg:body-s",
       },
       color: {
         primary: "dui-btn-primary",
