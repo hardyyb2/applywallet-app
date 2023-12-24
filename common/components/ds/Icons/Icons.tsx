@@ -41,6 +41,7 @@ import {
   List,
   ListOrdered,
   Lock,
+  LogIn,
   Maximize,
   Minimize,
   Minus,
@@ -125,6 +126,7 @@ const Icons = {
   Superscript,
   Subscript,
   Highlighter,
+  LogIn,
   CustomRadio: forwardRef<
     SVGSVGElement,
     LucideProps & { innerCircleClassName?: string }
