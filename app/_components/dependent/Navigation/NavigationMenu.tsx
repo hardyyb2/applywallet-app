@@ -35,7 +35,7 @@ const NavigationMenu = ({
       wrap="nowrap"
       className={cn(
         "dui-menu-compact dui-menu max-w-none",
-        "h-full space-y-3 overflow-y-auto px-2",
+        "h-full space-y-3xs-2xs overflow-y-auto px-2",
         className,
       )}
     >

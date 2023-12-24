@@ -13,7 +13,7 @@ const LoginButton = () => {
   };
 
   return (
-    <Button color="ghost" onClick={handleLoginClick}>
+    <Button color="ghost" responsive onClick={handleLoginClick}>
       login
     </Button>
   );

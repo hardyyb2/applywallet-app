@@ -7,7 +7,7 @@ import { Flex } from "~/components/ds/Flex";
 import { Icons } from "~/components/ds/Icons";
 import { getLinkWithLocale } from "~/utils/routes";
 
-import { cn } from "@/utils/styles";
+import { cn, cnM } from "@/utils/styles";
 
 import { bottomNavDisplayOptions } from "../navigation.utils";
 
@@ -49,9 +49,12 @@ const BottomNavBar = ({
           <Link
             href={itemLinkWithLocale}
             key={item.key ?? item.link}
-            className={cn(active && "active text-primary", "bg-transparent")}
+            className={cn(
+              active && "dui-active text-secondary",
+              "bg-transparent",
+            )}
           >
-            <Icon />
+            <Icon className={cnM(active && "fill-current")} />
             <BottomNavigation.Label className="caption-s">
               {item.label}
             </BottomNavigation.Label>
@@ -62,20 +65,25 @@ const BottomNavBar = ({
       <Flex component="div">
         <Button
           color="ghost"
-          className="indicator w-[90%]"
+          className="dui-indicator w-[90%]"
           onClick={toggleBottomNav}
           aria-label="menu-button"
         >
           {menuIconHasIndicator ? (
             <span
               className={cn(
-                "badge indicator-item badge-primary badge-xs",
+                "dui-badge dui-indicator-item dui-badge-secondary dui-badge-xs",
                 "left-1/2 top-[20%]",
               )}
             />
           ) : null}
 
-          <Icons.AlignJustify className="h-5 w-5" />
+          <Icons.AlignJustify
+            className={cnM(
+              "h-5 w-5",
+              menuIconHasIndicator && "stroke-secondary",
+            )}
+          />
         </Button>
       </Flex>
     </Fragment>
