@@ -19,8 +19,10 @@ const Separator = React.forwardRef<
       decorative={decorative}
       orientation={orientation}
       className={cnM(
-        "shrink-0 bg-base-content/40",
-        orientation === "horizontal" ? "h-[1px] w-full" : "h-full w-[1px]",
+        "dui-divider shrink-0",
+        orientation === "horizontal"
+          ? "dui-divider-horizontal"
+          : "dui-divider-vertical",
         className,
       )}
       {...props}
