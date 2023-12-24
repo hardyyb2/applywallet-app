@@ -1173,6 +1173,19 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
+    id: "app/.eslintrc.json",
+    data: {
+      name: ".eslintrc.json",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
     id: "app/_bin",
     data: {
       name: "_bin",
@@ -2044,1402 +2057,37 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_components/isolated",
-    data: {
-      name: "isolated",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Accordion",
-    data: {
-      name: "Accordion",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Accordion/Accordion.tsx",
-    data: {
-      name: "Accordion.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Accordion/accordion.stories.tsx",
-    data: {
-      name: "accordion.stories.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Accordion/index.ts",
-    data: {
-      name: "index.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Avatar",
-    data: {
-      name: "Avatar",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Avatar/Avatar.tsx",
-    data: {
-      name: "Avatar.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Avatar/avatar.utils.ts",
-    data: {
-      name: "avatar.utils.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Avatar/index.ts",
-    data: {
-      name: "index.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Badge",
-    data: {
-      name: "Badge",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Badge/Badge.tsx",
-    data: {
-      name: "Badge.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Badge/badge.utils.ts",
-    data: {
-      name: "badge.utils.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Badge/index.ts",
-    data: {
-      name: "index.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/BarLoader",
-    data: {
-      name: "BarLoader",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/BarLoader/BarLoader.tsx",
-    data: {
-      name: "BarLoader.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/BarLoader/index.ts",
-    data: {
-      name: "index.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/BottomNavigation",
-    data: {
-      name: "BottomNavigation",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/BottomNavigation/BottomNavigation.tsx",
-    data: {
-      name: "BottomNavigation.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/BottomNavigation/bottomNavigation.types.ts",
-    data: {
-      name: "bottomNavigation.types.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/BottomNavigation/index.ts",
-    data: {
-      name: "index.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Breadcrumbs",
-    data: {
-      name: "Breadcrumbs",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Breadcrumbs/Breadcrumbs.tsx",
-    data: {
-      name: "Breadcrumbs.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Breadcrumbs/index.tsx",
-    data: {
-      name: "index.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Button",
-    data: {
-      name: "Button",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Button/Button.tsx",
-    data: {
-      name: "Button.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Button/button.utils.ts",
-    data: {
-      name: "button.utils.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Button/index.tsx",
-    data: {
-      name: "index.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Calendar",
-    data: {
-      name: "Calendar",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Calendar/Calendar.tsx",
-    data: {
-      name: "Calendar.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Calendar/index.ts",
-    data: {
-      name: "index.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Card",
-    data: {
-      name: "Card",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Card/Card.tsx",
-    data: {
-      name: "Card.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Card/card.types.ts",
-    data: {
-      name: "card.types.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Card/index.tsx",
-    data: {
-      name: "index.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/CopyToClipboard",
-    data: {
-      name: "CopyToClipboard",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/CopyToClipboard/CopyToClipboard.tsx",
-    data: {
-      name: "CopyToClipboard.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/CopyToClipboard/copyToClipboard.utils.ts",
-    data: {
-      name: "copyToClipboard.utils.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/CopyToClipboard/index.ts",
-    data: {
-      name: "index.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/DatePicker",
-    data: {
-      name: "DatePicker",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/DatePicker/DatePicker.test.tsx",
-    data: {
-      name: "DatePicker.test.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/DatePicker/DatePicker.tsx",
-    data: {
-      name: "DatePicker.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/DatePicker/DatePickerInput.tsx",
-    data: {
-      name: "DatePickerInput.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/DatePicker/datePicker.types.ts",
-    data: {
-      name: "datePicker.types.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/DatePicker/datePickerInput.test.tsx",
-    data: {
-      name: "datePickerInput.test.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/DatePicker/index.ts",
-    data: {
-      name: "index.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Dialog",
-    data: {
-      name: "Dialog",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Dialog/Dialog.tsx",
-    data: {
-      name: "Dialog.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Dialog/index.ts",
-    data: {
-      name: "index.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Divider",
-    data: {
-      name: "Divider",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Divider/Divider.tsx",
-    data: {
-      name: "Divider.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Divider/index.ts",
-    data: {
-      name: "index.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/DropdownMenu",
-    data: {
-      name: "DropdownMenu",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/DropdownMenu/DropdownMenu.tsx",
-    data: {
-      name: "DropdownMenu.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/DropdownMenu/index.tsx",
-    data: {
-      name: "index.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Flex",
-    data: {
-      name: "Flex",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Flex/Flex.tsx",
-    data: {
-      name: "Flex.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Flex/flex.types.ts",
-    data: {
-      name: "flex.types.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Flex/index.ts",
-    data: {
-      name: "index.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/FormField",
-    data: {
-      name: "FormField",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/FormField/FormField.tsx",
-    data: {
-      name: "FormField.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/FormField/FormFieldDatePicker.tsx",
-    data: {
-      name: "FormFieldDatePicker.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/FormField/FormFieldDatePickerInput.tsx",
-    data: {
-      name: "FormFieldDatePickerInput.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/FormField/FormFieldInput.tsx",
-    data: {
-      name: "FormFieldInput.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/FormField/FormFieldRTBaseEditor.tsx",
-    data: {
-      name: "FormFieldRTBaseEditor.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/FormField/FormFieldSelect.tsx",
-    data: {
-      name: "FormFieldSelect.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/FormField/FormFieldTextarea.tsx",
-    data: {
-      name: "FormFieldTextarea.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/FormField/formField.utils.tsx",
-    data: {
-      name: "formField.utils.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/FormField/index.ts",
-    data: {
-      name: "index.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Icons",
-    data: {
-      name: "Icons",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Icons/Icons.tsx",
-    data: {
-      name: "Icons.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Icons/index.tsx",
-    data: {
-      name: "index.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Input",
-    data: {
-      name: "Input",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Input/Input.tsx",
-    data: {
-      name: "Input.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Input/index.tsx",
-    data: {
-      name: "index.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Input/input.test.tsx",
-    data: {
-      name: "input.test.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Input/input.types.ts",
-    data: {
-      name: "input.types.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Popover",
-    data: {
-      name: "Popover",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Popover/Popover.tsx",
-    data: {
-      name: "Popover.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Popover/index.ts",
-    data: {
-      name: "index.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/README.md",
-    data: {
-      name: "README.md",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/ScrollArea",
-    data: {
-      name: "ScrollArea",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/ScrollArea/ScrollArea.tsx",
-    data: {
-      name: "ScrollArea.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/ScrollArea/index.ts",
-    data: {
-      name: "index.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Select",
-    data: {
-      name: "Select",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Select/Select.tsx",
-    data: {
-      name: "Select.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Select/index.ts",
-    data: {
-      name: "index.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Select/select.utils.ts",
-    data: {
-      name: "select.utils.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Textarea",
-    data: {
-      name: "Textarea",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Textarea/Textarea.tsx",
-    data: {
-      name: "Textarea.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Textarea/index.tsx",
-    data: {
-      name: "index.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Textarea/textarea.types.ts",
-    data: {
-      name: "textarea.types.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Toggle",
-    data: {
-      name: "Toggle",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Toggle/Toggle.tsx",
-    data: {
-      name: "Toggle.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Toggle/index.ts",
-    data: {
-      name: "index.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Toggle/toggle.stories.tsx",
-    data: {
-      name: "toggle.stories.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Toolbar",
-    data: {
-      name: "Toolbar",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Toolbar/Toolbar.tsx",
-    data: {
-      name: "Toolbar.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Toolbar/index.ts",
-    data: {
-      name: "index.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Tooltip",
-    data: {
-      name: "Tooltip",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Tooltip/Tooltip.tsx",
-    data: {
-      name: "Tooltip.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Tooltip/index.ts",
-    data: {
-      name: "index.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Tooltip/tooltip.utils.ts",
-    data: {
-      name: "tooltip.utils.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Typography",
-    data: {
-      name: "Typography",
-      type: "folder",
-      subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Typography/Typography.tsx",
-    data: {
-      name: "Typography.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Typography/index.ts",
-    data: {
-      name: "index.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Typography/typography.stories.tsx",
-    data: {
-      name: "typography.stories.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_components/isolated/Typography/typography.utils.tsx",
-    data: {
-      name: "typography.utils.tsx",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
     id: "app/_components/rich-text",
     data: {
       name: "rich-text",
       type: "folder",
       subType: "route-group",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/_components/rich-text/BlockQuote.tsx",
+    data: {
+      name: "BlockQuote.tsx",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/_components/rich-text/CodeLeaf.tsx",
+    data: {
+      name: "CodeLeaf.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3487,6 +2135,32 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
+    id: "app/_components/rich-text/HighlightLeaf.tsx",
+    data: {
+      name: "HighlightLeaf.tsx",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/_components/rich-text/HrElement.tsx",
+    data: {
+      name: "HrElement.tsx",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
     id: "app/_components/rich-text/InsertDropdownMenu.tsx",
     data: {
       name: "InsertDropdownMenu.tsx",
@@ -3500,9 +2174,113 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
+    id: "app/_components/rich-text/LinkElement.tsx",
+    data: {
+      name: "LinkElement.tsx",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/_components/rich-text/LinkFloatingToolbar.tsx",
+    data: {
+      name: "LinkFloatingToolbar.tsx",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/_components/rich-text/LinkToolbarButton.tsx",
+    data: {
+      name: "LinkToolbarButton.tsx",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/_components/rich-text/ListElement.tsx",
+    data: {
+      name: "ListElement.tsx",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
     id: "app/_components/rich-text/MarkToolbarButton.tsx",
     data: {
       name: "MarkToolbarButton.tsx",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/_components/rich-text/ModeDropdownMenu.tsx",
+    data: {
+      name: "ModeDropdownMenu.tsx",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/_components/rich-text/MoreDropdownMenu.tsx",
+    data: {
+      name: "MoreDropdownMenu.tsx",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/_components/rich-text/ParagraphElement.tsx",
+    data: {
+      name: "ParagraphElement.tsx",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/_components/rich-text/Placeholder.tsx",
+    data: {
+      name: "Placeholder.tsx",
       type: "file",
       subType: "page",
     },
@@ -3542,6 +2320,32 @@ export const nodes: DrNodeType[] = [
     id: "app/_components/rich-text/editors/RTBaseEditor.tsx",
     data: {
       name: "RTBaseEditor.tsx",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/_components/rich-text/utils",
+    data: {
+      name: "utils",
+      type: "folder",
+      subType: "route-group",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/_components/rich-text/utils/rtAutoFormat.tsx",
+    data: {
+      name: "rtAutoFormat.tsx",
       type: "file",
       subType: "page",
     },
@@ -3838,19 +2642,6 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_lib/logs.ts",
-    data: {
-      name: "logs.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
     id: "app/_lib/prisma.ts",
     data: {
       name: "prisma.ts",
@@ -4033,9 +2824,9 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_styles/globals.scss",
+    id: "app/_styles/globals.app.scss",
     data: {
-      name: "globals.scss",
+      name: "globals.app.scss",
       type: "file",
       subType: "page",
     },
@@ -4064,19 +2855,6 @@ export const nodes: DrNodeType[] = [
       name: "overrides",
       type: "folder",
       subType: "route-group",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_styles/overrides/daisyui.scss",
-    data: {
-      name: "daisyui.scss",
-      type: "file",
-      subType: "page",
     },
     position: {
       x: 0,
@@ -4387,19 +3165,6 @@ export const nodes: DrNodeType[] = [
     id: "app/_utils/queries.ts",
     data: {
       name: "queries.ts",
-      type: "file",
-      subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/_utils/routes.ts",
-    data: {
-      name: "routes.ts",
       type: "file",
       subType: "page",
     },
@@ -4753,19 +3518,6 @@ export const nodes: DrNodeType[] = [
       name: "route.ts",
       type: "file",
       subType: "page",
-    },
-    position: {
-      x: 0,
-      y: 0,
-    },
-    type: "custom",
-  },
-  {
-    id: "app/utils",
-    data: {
-      name: "utils",
-      type: "folder",
-      subType: "route-group",
     },
     position: {
       x: 0,
@@ -5363,6 +4115,12 @@ export const edges: DrEdgeType[] = [
     type: "smoothstep",
   },
   {
+    id: "e:app->app/.eslintrc.json",
+    source: "app",
+    target: "app/.eslintrc.json",
+    type: "smoothstep",
+  },
+  {
     id: "e:app->app/_bin",
     source: "app",
     target: "app/_bin",
@@ -5766,652 +4524,21 @@ export const edges: DrEdgeType[] = [
     type: "smoothstep",
   },
   {
-    id: "e:app/_components->app/_components/isolated",
-    source: "app/_components",
-    target: "app/_components/isolated",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated->app/_components/isolated/Accordion",
-    source: "app/_components/isolated",
-    target: "app/_components/isolated/Accordion",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Accordion->app/_components/isolated/Accordion/Accordion.tsx",
-    source: "app/_components/isolated/Accordion",
-    target: "app/_components/isolated/Accordion/Accordion.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Accordion->app/_components/isolated/Accordion/accordion.stories.tsx",
-    source: "app/_components/isolated/Accordion",
-    target: "app/_components/isolated/Accordion/accordion.stories.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Accordion->app/_components/isolated/Accordion/index.ts",
-    source: "app/_components/isolated/Accordion",
-    target: "app/_components/isolated/Accordion/index.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated->app/_components/isolated/Avatar",
-    source: "app/_components/isolated",
-    target: "app/_components/isolated/Avatar",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Avatar->app/_components/isolated/Avatar/Avatar.tsx",
-    source: "app/_components/isolated/Avatar",
-    target: "app/_components/isolated/Avatar/Avatar.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Avatar->app/_components/isolated/Avatar/avatar.utils.ts",
-    source: "app/_components/isolated/Avatar",
-    target: "app/_components/isolated/Avatar/avatar.utils.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Avatar->app/_components/isolated/Avatar/index.ts",
-    source: "app/_components/isolated/Avatar",
-    target: "app/_components/isolated/Avatar/index.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated->app/_components/isolated/Badge",
-    source: "app/_components/isolated",
-    target: "app/_components/isolated/Badge",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Badge->app/_components/isolated/Badge/Badge.tsx",
-    source: "app/_components/isolated/Badge",
-    target: "app/_components/isolated/Badge/Badge.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Badge->app/_components/isolated/Badge/badge.utils.ts",
-    source: "app/_components/isolated/Badge",
-    target: "app/_components/isolated/Badge/badge.utils.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Badge->app/_components/isolated/Badge/index.ts",
-    source: "app/_components/isolated/Badge",
-    target: "app/_components/isolated/Badge/index.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated->app/_components/isolated/BarLoader",
-    source: "app/_components/isolated",
-    target: "app/_components/isolated/BarLoader",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/BarLoader->app/_components/isolated/BarLoader/BarLoader.tsx",
-    source: "app/_components/isolated/BarLoader",
-    target: "app/_components/isolated/BarLoader/BarLoader.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/BarLoader->app/_components/isolated/BarLoader/index.ts",
-    source: "app/_components/isolated/BarLoader",
-    target: "app/_components/isolated/BarLoader/index.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated->app/_components/isolated/BottomNavigation",
-    source: "app/_components/isolated",
-    target: "app/_components/isolated/BottomNavigation",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/BottomNavigation->app/_components/isolated/BottomNavigation/BottomNavigation.tsx",
-    source: "app/_components/isolated/BottomNavigation",
-    target: "app/_components/isolated/BottomNavigation/BottomNavigation.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/BottomNavigation->app/_components/isolated/BottomNavigation/bottomNavigation.types.ts",
-    source: "app/_components/isolated/BottomNavigation",
-    target:
-      "app/_components/isolated/BottomNavigation/bottomNavigation.types.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/BottomNavigation->app/_components/isolated/BottomNavigation/index.ts",
-    source: "app/_components/isolated/BottomNavigation",
-    target: "app/_components/isolated/BottomNavigation/index.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated->app/_components/isolated/Breadcrumbs",
-    source: "app/_components/isolated",
-    target: "app/_components/isolated/Breadcrumbs",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Breadcrumbs->app/_components/isolated/Breadcrumbs/Breadcrumbs.tsx",
-    source: "app/_components/isolated/Breadcrumbs",
-    target: "app/_components/isolated/Breadcrumbs/Breadcrumbs.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Breadcrumbs->app/_components/isolated/Breadcrumbs/index.tsx",
-    source: "app/_components/isolated/Breadcrumbs",
-    target: "app/_components/isolated/Breadcrumbs/index.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated->app/_components/isolated/Button",
-    source: "app/_components/isolated",
-    target: "app/_components/isolated/Button",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Button->app/_components/isolated/Button/Button.tsx",
-    source: "app/_components/isolated/Button",
-    target: "app/_components/isolated/Button/Button.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Button->app/_components/isolated/Button/button.utils.ts",
-    source: "app/_components/isolated/Button",
-    target: "app/_components/isolated/Button/button.utils.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Button->app/_components/isolated/Button/index.tsx",
-    source: "app/_components/isolated/Button",
-    target: "app/_components/isolated/Button/index.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated->app/_components/isolated/Calendar",
-    source: "app/_components/isolated",
-    target: "app/_components/isolated/Calendar",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Calendar->app/_components/isolated/Calendar/Calendar.tsx",
-    source: "app/_components/isolated/Calendar",
-    target: "app/_components/isolated/Calendar/Calendar.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Calendar->app/_components/isolated/Calendar/index.ts",
-    source: "app/_components/isolated/Calendar",
-    target: "app/_components/isolated/Calendar/index.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated->app/_components/isolated/Card",
-    source: "app/_components/isolated",
-    target: "app/_components/isolated/Card",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Card->app/_components/isolated/Card/Card.tsx",
-    source: "app/_components/isolated/Card",
-    target: "app/_components/isolated/Card/Card.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Card->app/_components/isolated/Card/card.types.ts",
-    source: "app/_components/isolated/Card",
-    target: "app/_components/isolated/Card/card.types.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Card->app/_components/isolated/Card/index.tsx",
-    source: "app/_components/isolated/Card",
-    target: "app/_components/isolated/Card/index.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated->app/_components/isolated/CopyToClipboard",
-    source: "app/_components/isolated",
-    target: "app/_components/isolated/CopyToClipboard",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/CopyToClipboard->app/_components/isolated/CopyToClipboard/CopyToClipboard.tsx",
-    source: "app/_components/isolated/CopyToClipboard",
-    target: "app/_components/isolated/CopyToClipboard/CopyToClipboard.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/CopyToClipboard->app/_components/isolated/CopyToClipboard/copyToClipboard.utils.ts",
-    source: "app/_components/isolated/CopyToClipboard",
-    target: "app/_components/isolated/CopyToClipboard/copyToClipboard.utils.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/CopyToClipboard->app/_components/isolated/CopyToClipboard/index.ts",
-    source: "app/_components/isolated/CopyToClipboard",
-    target: "app/_components/isolated/CopyToClipboard/index.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated->app/_components/isolated/DatePicker",
-    source: "app/_components/isolated",
-    target: "app/_components/isolated/DatePicker",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/DatePicker->app/_components/isolated/DatePicker/DatePicker.test.tsx",
-    source: "app/_components/isolated/DatePicker",
-    target: "app/_components/isolated/DatePicker/DatePicker.test.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/DatePicker->app/_components/isolated/DatePicker/DatePicker.tsx",
-    source: "app/_components/isolated/DatePicker",
-    target: "app/_components/isolated/DatePicker/DatePicker.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/DatePicker->app/_components/isolated/DatePicker/DatePickerInput.tsx",
-    source: "app/_components/isolated/DatePicker",
-    target: "app/_components/isolated/DatePicker/DatePickerInput.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/DatePicker->app/_components/isolated/DatePicker/datePicker.types.ts",
-    source: "app/_components/isolated/DatePicker",
-    target: "app/_components/isolated/DatePicker/datePicker.types.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/DatePicker->app/_components/isolated/DatePicker/datePickerInput.test.tsx",
-    source: "app/_components/isolated/DatePicker",
-    target: "app/_components/isolated/DatePicker/datePickerInput.test.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/DatePicker->app/_components/isolated/DatePicker/index.ts",
-    source: "app/_components/isolated/DatePicker",
-    target: "app/_components/isolated/DatePicker/index.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated->app/_components/isolated/Dialog",
-    source: "app/_components/isolated",
-    target: "app/_components/isolated/Dialog",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Dialog->app/_components/isolated/Dialog/Dialog.tsx",
-    source: "app/_components/isolated/Dialog",
-    target: "app/_components/isolated/Dialog/Dialog.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Dialog->app/_components/isolated/Dialog/index.ts",
-    source: "app/_components/isolated/Dialog",
-    target: "app/_components/isolated/Dialog/index.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated->app/_components/isolated/Divider",
-    source: "app/_components/isolated",
-    target: "app/_components/isolated/Divider",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Divider->app/_components/isolated/Divider/Divider.tsx",
-    source: "app/_components/isolated/Divider",
-    target: "app/_components/isolated/Divider/Divider.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Divider->app/_components/isolated/Divider/index.ts",
-    source: "app/_components/isolated/Divider",
-    target: "app/_components/isolated/Divider/index.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated->app/_components/isolated/DropdownMenu",
-    source: "app/_components/isolated",
-    target: "app/_components/isolated/DropdownMenu",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/DropdownMenu->app/_components/isolated/DropdownMenu/DropdownMenu.tsx",
-    source: "app/_components/isolated/DropdownMenu",
-    target: "app/_components/isolated/DropdownMenu/DropdownMenu.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/DropdownMenu->app/_components/isolated/DropdownMenu/index.tsx",
-    source: "app/_components/isolated/DropdownMenu",
-    target: "app/_components/isolated/DropdownMenu/index.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated->app/_components/isolated/Flex",
-    source: "app/_components/isolated",
-    target: "app/_components/isolated/Flex",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Flex->app/_components/isolated/Flex/Flex.tsx",
-    source: "app/_components/isolated/Flex",
-    target: "app/_components/isolated/Flex/Flex.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Flex->app/_components/isolated/Flex/flex.types.ts",
-    source: "app/_components/isolated/Flex",
-    target: "app/_components/isolated/Flex/flex.types.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Flex->app/_components/isolated/Flex/index.ts",
-    source: "app/_components/isolated/Flex",
-    target: "app/_components/isolated/Flex/index.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated->app/_components/isolated/FormField",
-    source: "app/_components/isolated",
-    target: "app/_components/isolated/FormField",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/FormField->app/_components/isolated/FormField/FormField.tsx",
-    source: "app/_components/isolated/FormField",
-    target: "app/_components/isolated/FormField/FormField.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/FormField->app/_components/isolated/FormField/FormFieldDatePicker.tsx",
-    source: "app/_components/isolated/FormField",
-    target: "app/_components/isolated/FormField/FormFieldDatePicker.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/FormField->app/_components/isolated/FormField/FormFieldDatePickerInput.tsx",
-    source: "app/_components/isolated/FormField",
-    target: "app/_components/isolated/FormField/FormFieldDatePickerInput.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/FormField->app/_components/isolated/FormField/FormFieldInput.tsx",
-    source: "app/_components/isolated/FormField",
-    target: "app/_components/isolated/FormField/FormFieldInput.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/FormField->app/_components/isolated/FormField/FormFieldRTBaseEditor.tsx",
-    source: "app/_components/isolated/FormField",
-    target: "app/_components/isolated/FormField/FormFieldRTBaseEditor.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/FormField->app/_components/isolated/FormField/FormFieldSelect.tsx",
-    source: "app/_components/isolated/FormField",
-    target: "app/_components/isolated/FormField/FormFieldSelect.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/FormField->app/_components/isolated/FormField/FormFieldTextarea.tsx",
-    source: "app/_components/isolated/FormField",
-    target: "app/_components/isolated/FormField/FormFieldTextarea.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/FormField->app/_components/isolated/FormField/formField.utils.tsx",
-    source: "app/_components/isolated/FormField",
-    target: "app/_components/isolated/FormField/formField.utils.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/FormField->app/_components/isolated/FormField/index.ts",
-    source: "app/_components/isolated/FormField",
-    target: "app/_components/isolated/FormField/index.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated->app/_components/isolated/Icons",
-    source: "app/_components/isolated",
-    target: "app/_components/isolated/Icons",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Icons->app/_components/isolated/Icons/Icons.tsx",
-    source: "app/_components/isolated/Icons",
-    target: "app/_components/isolated/Icons/Icons.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Icons->app/_components/isolated/Icons/index.tsx",
-    source: "app/_components/isolated/Icons",
-    target: "app/_components/isolated/Icons/index.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated->app/_components/isolated/Input",
-    source: "app/_components/isolated",
-    target: "app/_components/isolated/Input",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Input->app/_components/isolated/Input/Input.tsx",
-    source: "app/_components/isolated/Input",
-    target: "app/_components/isolated/Input/Input.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Input->app/_components/isolated/Input/index.tsx",
-    source: "app/_components/isolated/Input",
-    target: "app/_components/isolated/Input/index.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Input->app/_components/isolated/Input/input.test.tsx",
-    source: "app/_components/isolated/Input",
-    target: "app/_components/isolated/Input/input.test.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Input->app/_components/isolated/Input/input.types.ts",
-    source: "app/_components/isolated/Input",
-    target: "app/_components/isolated/Input/input.types.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated->app/_components/isolated/Popover",
-    source: "app/_components/isolated",
-    target: "app/_components/isolated/Popover",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Popover->app/_components/isolated/Popover/Popover.tsx",
-    source: "app/_components/isolated/Popover",
-    target: "app/_components/isolated/Popover/Popover.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Popover->app/_components/isolated/Popover/index.ts",
-    source: "app/_components/isolated/Popover",
-    target: "app/_components/isolated/Popover/index.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated->app/_components/isolated/README.md",
-    source: "app/_components/isolated",
-    target: "app/_components/isolated/README.md",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated->app/_components/isolated/ScrollArea",
-    source: "app/_components/isolated",
-    target: "app/_components/isolated/ScrollArea",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/ScrollArea->app/_components/isolated/ScrollArea/ScrollArea.tsx",
-    source: "app/_components/isolated/ScrollArea",
-    target: "app/_components/isolated/ScrollArea/ScrollArea.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/ScrollArea->app/_components/isolated/ScrollArea/index.ts",
-    source: "app/_components/isolated/ScrollArea",
-    target: "app/_components/isolated/ScrollArea/index.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated->app/_components/isolated/Select",
-    source: "app/_components/isolated",
-    target: "app/_components/isolated/Select",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Select->app/_components/isolated/Select/Select.tsx",
-    source: "app/_components/isolated/Select",
-    target: "app/_components/isolated/Select/Select.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Select->app/_components/isolated/Select/index.ts",
-    source: "app/_components/isolated/Select",
-    target: "app/_components/isolated/Select/index.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Select->app/_components/isolated/Select/select.utils.ts",
-    source: "app/_components/isolated/Select",
-    target: "app/_components/isolated/Select/select.utils.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated->app/_components/isolated/Textarea",
-    source: "app/_components/isolated",
-    target: "app/_components/isolated/Textarea",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Textarea->app/_components/isolated/Textarea/Textarea.tsx",
-    source: "app/_components/isolated/Textarea",
-    target: "app/_components/isolated/Textarea/Textarea.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Textarea->app/_components/isolated/Textarea/index.tsx",
-    source: "app/_components/isolated/Textarea",
-    target: "app/_components/isolated/Textarea/index.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Textarea->app/_components/isolated/Textarea/textarea.types.ts",
-    source: "app/_components/isolated/Textarea",
-    target: "app/_components/isolated/Textarea/textarea.types.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated->app/_components/isolated/Toggle",
-    source: "app/_components/isolated",
-    target: "app/_components/isolated/Toggle",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Toggle->app/_components/isolated/Toggle/Toggle.tsx",
-    source: "app/_components/isolated/Toggle",
-    target: "app/_components/isolated/Toggle/Toggle.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Toggle->app/_components/isolated/Toggle/index.ts",
-    source: "app/_components/isolated/Toggle",
-    target: "app/_components/isolated/Toggle/index.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Toggle->app/_components/isolated/Toggle/toggle.stories.tsx",
-    source: "app/_components/isolated/Toggle",
-    target: "app/_components/isolated/Toggle/toggle.stories.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated->app/_components/isolated/Toolbar",
-    source: "app/_components/isolated",
-    target: "app/_components/isolated/Toolbar",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Toolbar->app/_components/isolated/Toolbar/Toolbar.tsx",
-    source: "app/_components/isolated/Toolbar",
-    target: "app/_components/isolated/Toolbar/Toolbar.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Toolbar->app/_components/isolated/Toolbar/index.ts",
-    source: "app/_components/isolated/Toolbar",
-    target: "app/_components/isolated/Toolbar/index.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated->app/_components/isolated/Tooltip",
-    source: "app/_components/isolated",
-    target: "app/_components/isolated/Tooltip",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Tooltip->app/_components/isolated/Tooltip/Tooltip.tsx",
-    source: "app/_components/isolated/Tooltip",
-    target: "app/_components/isolated/Tooltip/Tooltip.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Tooltip->app/_components/isolated/Tooltip/index.ts",
-    source: "app/_components/isolated/Tooltip",
-    target: "app/_components/isolated/Tooltip/index.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Tooltip->app/_components/isolated/Tooltip/tooltip.utils.ts",
-    source: "app/_components/isolated/Tooltip",
-    target: "app/_components/isolated/Tooltip/tooltip.utils.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated->app/_components/isolated/Typography",
-    source: "app/_components/isolated",
-    target: "app/_components/isolated/Typography",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Typography->app/_components/isolated/Typography/Typography.tsx",
-    source: "app/_components/isolated/Typography",
-    target: "app/_components/isolated/Typography/Typography.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Typography->app/_components/isolated/Typography/index.ts",
-    source: "app/_components/isolated/Typography",
-    target: "app/_components/isolated/Typography/index.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Typography->app/_components/isolated/Typography/typography.stories.tsx",
-    source: "app/_components/isolated/Typography",
-    target: "app/_components/isolated/Typography/typography.stories.tsx",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_components/isolated/Typography->app/_components/isolated/Typography/typography.utils.tsx",
-    source: "app/_components/isolated/Typography",
-    target: "app/_components/isolated/Typography/typography.utils.tsx",
-    type: "smoothstep",
-  },
-  {
     id: "e:app/_components->app/_components/rich-text",
     source: "app/_components",
     target: "app/_components/rich-text",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/rich-text->app/_components/rich-text/BlockQuote.tsx",
+    source: "app/_components/rich-text",
+    target: "app/_components/rich-text/BlockQuote.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/rich-text->app/_components/rich-text/CodeLeaf.tsx",
+    source: "app/_components/rich-text",
+    target: "app/_components/rich-text/CodeLeaf.tsx",
     type: "smoothstep",
   },
   {
@@ -6433,15 +4560,75 @@ export const edges: DrEdgeType[] = [
     type: "smoothstep",
   },
   {
+    id: "e:app/_components/rich-text->app/_components/rich-text/HighlightLeaf.tsx",
+    source: "app/_components/rich-text",
+    target: "app/_components/rich-text/HighlightLeaf.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/rich-text->app/_components/rich-text/HrElement.tsx",
+    source: "app/_components/rich-text",
+    target: "app/_components/rich-text/HrElement.tsx",
+    type: "smoothstep",
+  },
+  {
     id: "e:app/_components/rich-text->app/_components/rich-text/InsertDropdownMenu.tsx",
     source: "app/_components/rich-text",
     target: "app/_components/rich-text/InsertDropdownMenu.tsx",
     type: "smoothstep",
   },
   {
+    id: "e:app/_components/rich-text->app/_components/rich-text/LinkElement.tsx",
+    source: "app/_components/rich-text",
+    target: "app/_components/rich-text/LinkElement.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/rich-text->app/_components/rich-text/LinkFloatingToolbar.tsx",
+    source: "app/_components/rich-text",
+    target: "app/_components/rich-text/LinkFloatingToolbar.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/rich-text->app/_components/rich-text/LinkToolbarButton.tsx",
+    source: "app/_components/rich-text",
+    target: "app/_components/rich-text/LinkToolbarButton.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/rich-text->app/_components/rich-text/ListElement.tsx",
+    source: "app/_components/rich-text",
+    target: "app/_components/rich-text/ListElement.tsx",
+    type: "smoothstep",
+  },
+  {
     id: "e:app/_components/rich-text->app/_components/rich-text/MarkToolbarButton.tsx",
     source: "app/_components/rich-text",
     target: "app/_components/rich-text/MarkToolbarButton.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/rich-text->app/_components/rich-text/ModeDropdownMenu.tsx",
+    source: "app/_components/rich-text",
+    target: "app/_components/rich-text/ModeDropdownMenu.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/rich-text->app/_components/rich-text/MoreDropdownMenu.tsx",
+    source: "app/_components/rich-text",
+    target: "app/_components/rich-text/MoreDropdownMenu.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/rich-text->app/_components/rich-text/ParagraphElement.tsx",
+    source: "app/_components/rich-text",
+    target: "app/_components/rich-text/ParagraphElement.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/rich-text->app/_components/rich-text/Placeholder.tsx",
+    source: "app/_components/rich-text",
+    target: "app/_components/rich-text/Placeholder.tsx",
     type: "smoothstep",
   },
   {
@@ -6460,6 +4647,18 @@ export const edges: DrEdgeType[] = [
     id: "e:app/_components/rich-text/editors->app/_components/rich-text/editors/RTBaseEditor.tsx",
     source: "app/_components/rich-text/editors",
     target: "app/_components/rich-text/editors/RTBaseEditor.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/rich-text->app/_components/rich-text/utils",
+    source: "app/_components/rich-text",
+    target: "app/_components/rich-text/utils",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/_components/rich-text/utils->app/_components/rich-text/utils/rtAutoFormat.tsx",
+    source: "app/_components/rich-text/utils",
+    target: "app/_components/rich-text/utils/rtAutoFormat.tsx",
     type: "smoothstep",
   },
   {
@@ -6595,12 +4794,6 @@ export const edges: DrEdgeType[] = [
     type: "smoothstep",
   },
   {
-    id: "e:app/_lib->app/_lib/logs.ts",
-    source: "app/_lib",
-    target: "app/_lib/logs.ts",
-    type: "smoothstep",
-  },
-  {
     id: "e:app/_lib->app/_lib/prisma.ts",
     source: "app/_lib",
     target: "app/_lib/prisma.ts",
@@ -6685,9 +4878,9 @@ export const edges: DrEdgeType[] = [
     type: "smoothstep",
   },
   {
-    id: "e:app/_styles->app/_styles/globals.scss",
+    id: "e:app/_styles->app/_styles/globals.app.scss",
     source: "app/_styles",
-    target: "app/_styles/globals.scss",
+    target: "app/_styles/globals.app.scss",
     type: "smoothstep",
   },
   {
@@ -6700,12 +4893,6 @@ export const edges: DrEdgeType[] = [
     id: "e:app/_styles->app/_styles/overrides",
     source: "app/_styles",
     target: "app/_styles/overrides",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_styles/overrides->app/_styles/overrides/daisyui.scss",
-    source: "app/_styles/overrides",
-    target: "app/_styles/overrides/daisyui.scss",
     type: "smoothstep",
   },
   {
@@ -6850,12 +5037,6 @@ export const edges: DrEdgeType[] = [
     id: "e:app/_utils->app/_utils/queries.ts",
     source: "app/_utils",
     target: "app/_utils/queries.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app/_utils->app/_utils/routes.ts",
-    source: "app/_utils",
-    target: "app/_utils/routes.ts",
     type: "smoothstep",
   },
   {
@@ -7018,12 +5199,6 @@ export const edges: DrEdgeType[] = [
     id: "e:app/api/sheet/new->app/api/sheet/new/route.ts",
     source: "app/api/sheet/new",
     target: "app/api/sheet/new/route.ts",
-    type: "smoothstep",
-  },
-  {
-    id: "e:app->app/utils",
-    source: "app",
-    target: "app/utils",
     type: "smoothstep",
   },
 ];
