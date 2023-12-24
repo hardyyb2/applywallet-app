@@ -1,5 +1,5 @@
-import { Button } from "~/components/isolated/Button";
-import { Flex } from "~/components/isolated/Flex";
+import { Button } from "~/components/ds/Button";
+import { Flex } from "~/components/ds/Flex";
 
 import { cn } from "@/utils/styles";
 

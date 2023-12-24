@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 
 import { toast } from "react-toastify";
 
-import { Button } from "~/components/isolated/Button";
+import { Button } from "~/components/ds/Button";
 import { ApiRoutes, AppRoutes } from "~/utils/routes";
 
 import { appApi } from "@/lib/app-api";

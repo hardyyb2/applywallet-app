@@ -4,7 +4,7 @@ import React, { useEffect, useRef, type ElementRef } from "react";
 
 import { useInView } from "framer-motion";
 
-import { Card } from "~/components/isolated/Card";
+import { Card } from "~/components/ds/Card";
 
 import { cn, cnM } from "@/utils/styles";
 

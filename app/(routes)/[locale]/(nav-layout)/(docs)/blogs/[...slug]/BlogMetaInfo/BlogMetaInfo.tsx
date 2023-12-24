@@ -3,13 +3,9 @@ import React from "react";
 import type { Blog } from "contentlayer/generated";
 import dayjs from "dayjs";
 
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "~/components/isolated/Avatar";
-import { Divider } from "~/components/isolated/Divider";
-import { Flex } from "~/components/isolated/Flex";
+import { Avatar, AvatarFallback, AvatarImage } from "~/components/ds/Avatar";
+import { Divider } from "~/components/ds/Divider";
+import { Flex } from "~/components/ds/Flex";
 
 import { getInitials } from "@/utils/string";
 

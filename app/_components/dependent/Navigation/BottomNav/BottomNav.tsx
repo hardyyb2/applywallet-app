@@ -7,8 +7,8 @@ import { ConditionalMatch } from "@dx-kit/react-conditional-match";
 import { AnimatePresence, m } from "framer-motion";
 import { useBoolean } from "react-use";
 
-import { BottomNavigation } from "~/components/isolated/BottomNavigation";
-import { Flex } from "~/components/isolated/Flex";
+import { BottomNavigation } from "~/components/ds/BottomNavigation";
+import { Flex } from "~/components/ds/Flex";
 
 import { cn } from "@/utils/styles";
 

@@ -30,9 +30,9 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "../../../common/components/isolated/DropdownMenu";
-import { Icons } from "../../../common/components/isolated/Icons";
-import { ToolbarButton } from "../../../common/components/isolated/Toolbar";
+} from "../../../common/components/ds/DropdownMenu";
+import { Icons } from "../../../common/components/ds/Icons";
+import { ToolbarButton } from "../../../common/components/ds/Toolbar";
 
 const items: {
   label: string;

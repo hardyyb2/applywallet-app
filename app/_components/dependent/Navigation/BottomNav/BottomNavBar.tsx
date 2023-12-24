@@ -1,10 +1,10 @@
 import { Fragment, useMemo } from "react";
 import Link from "next/link";
 
-import { BottomNavigation } from "~/components/isolated/BottomNavigation";
-import { Button } from "~/components/isolated/Button";
-import { Flex } from "~/components/isolated/Flex";
-import { Icons } from "~/components/isolated/Icons";
+import { BottomNavigation } from "~/components/ds/BottomNavigation";
+import { Button } from "~/components/ds/Button";
+import { Flex } from "~/components/ds/Flex";
+import { Icons } from "~/components/ds/Icons";
 import { getLinkWithLocale } from "~/utils/routes";
 
 import { cn } from "@/utils/styles";

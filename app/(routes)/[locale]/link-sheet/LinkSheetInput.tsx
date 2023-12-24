@@ -6,8 +6,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, type SubmitHandler } from "react-hook-form";
 import { toast } from "react-toastify";
 
-import { Button } from "~/components/isolated/Button";
-import { FormField } from "~/components/isolated/FormField";
+import { Button } from "~/components/ds/Button";
+import { FormField } from "~/components/ds/FormField";
 import { ApiRoutes, AppRoutes } from "~/utils/routes";
 
 import { appApi } from "@/lib/app-api";

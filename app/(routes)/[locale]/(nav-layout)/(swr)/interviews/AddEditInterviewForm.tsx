@@ -12,12 +12,12 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "~/components/isolated/Accordion";
-import { Button } from "~/components/isolated/Button";
-import { Card } from "~/components/isolated/Card";
-import { Flex } from "~/components/isolated/Flex";
-import { FormField } from "~/components/isolated/FormField";
-import { Icons } from "~/components/isolated/Icons";
+} from "~/components/ds/Accordion";
+import { Button } from "~/components/ds/Button";
+import { Card } from "~/components/ds/Card";
+import { Flex } from "~/components/ds/Flex";
+import { FormField } from "~/components/ds/FormField";
+import { Icons } from "~/components/ds/Icons";
 import { AppRoutes } from "~/utils/routes";
 
 import { RTBaseEditor } from "@/components/rich-text/editors/RTBaseEditor";

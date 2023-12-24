@@ -3,7 +3,7 @@ import React from "react";
 import { useStorage } from "@plasmohq/storage/hook";
 import type { Session } from "next-auth";
 
-import { BarLoader } from "~/components/isolated/BarLoader";
+import { BarLoader } from "~/components/ds/BarLoader";
 import { logger } from "~/utils/logs";
 import { ApiRoutes } from "~/utils/routes";
 

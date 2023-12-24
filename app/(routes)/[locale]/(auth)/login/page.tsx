@@ -2,7 +2,7 @@
 
 import { signIn } from "next-auth/react";
 
-import { Button } from "~/components/isolated/Button";
+import { Button } from "~/components/ds/Button";
 
 const LoginPage = () => {
   return (

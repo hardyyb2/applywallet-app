@@ -5,21 +5,21 @@ import { useRef, type ElementRef, type PropsWithChildren } from "react";
 import { m, useScroll, useSpring } from "framer-motion";
 import { useBoolean, useFullscreen } from "react-use";
 
-import { Button } from "~/components/isolated/Button";
-import { Flex } from "~/components/isolated/Flex";
-import { Icons } from "~/components/isolated/Icons";
+import { Button } from "~/components/ds/Button";
+import { Flex } from "~/components/ds/Flex";
+import { Icons } from "~/components/ds/Icons";
 import {
   ScrollArea,
   ScrollAreaCorner,
   ScrollAreaViewport,
   ScrollBar,
-} from "~/components/isolated/ScrollArea";
+} from "~/components/ds/ScrollArea";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "~/components/isolated/Tooltip";
+} from "~/components/ds/Tooltip";
 
 import { cnM } from "@/utils/styles";
 

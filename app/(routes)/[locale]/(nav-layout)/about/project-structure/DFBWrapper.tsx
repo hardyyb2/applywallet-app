@@ -4,14 +4,14 @@ import { useRef, type PropsWithChildren } from "react";
 
 import { useBoolean, useFullscreen } from "react-use";
 
-import { Button } from "~/components/isolated/Button";
-import { Icons } from "~/components/isolated/Icons";
+import { Button } from "~/components/ds/Button";
+import { Icons } from "~/components/ds/Icons";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "~/components/isolated/Tooltip";
+} from "~/components/ds/Tooltip";
 
 import { cnM } from "@/utils/styles";
 

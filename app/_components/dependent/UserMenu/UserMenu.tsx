@@ -2,18 +2,14 @@
 
 import { signOut, useSession } from "next-auth/react";
 
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "~/components/isolated/Avatar";
-import { Button } from "~/components/isolated/Button";
+import { Avatar, AvatarFallback, AvatarImage } from "~/components/ds/Avatar";
+import { Button } from "~/components/ds/Button";
 import {
   Popover,
   PopoverArrow,
   PopoverContent,
   PopoverTrigger,
-} from "~/components/isolated/Popover";
+} from "~/components/ds/Popover";
 
 import { getInitials } from "@/utils/string";
 import { cn } from "@/utils/styles";

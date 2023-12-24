@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { Breadcrumbs } from "~/components/isolated/Breadcrumbs";
+import { Breadcrumbs } from "~/components/ds/Breadcrumbs";
 import { AppRoutes } from "~/utils/routes";
 
 import { IconLink } from "@/components/dependent/IconLink";

@@ -1,8 +1,8 @@
 import Link from "next/link";
 
-import { buttonVariants } from "~/components/isolated/Button";
-import { Card } from "~/components/isolated/Card";
-import { Divider } from "~/components/isolated/Divider";
+import { buttonVariants } from "~/components/ds/Button";
+import { Card } from "~/components/ds/Card";
+import { Divider } from "~/components/ds/Divider";
 import { AppRoutes } from "~/utils/routes";
 
 import { getI18n } from "@/locales/server";

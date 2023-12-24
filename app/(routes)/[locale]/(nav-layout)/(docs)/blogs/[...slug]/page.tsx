@@ -3,13 +3,13 @@ import { notFound } from "next/navigation";
 
 import { allBlogs } from "contentlayer/generated";
 
-import { Breadcrumbs } from "~/components/isolated/Breadcrumbs";
-import { Flex } from "~/components/isolated/Flex";
+import { Breadcrumbs } from "~/components/ds/Breadcrumbs";
+import { Flex } from "~/components/ds/Flex";
 import {
   ScrollArea,
   ScrollAreaViewport,
   ScrollBar,
-} from "~/components/isolated/ScrollArea";
+} from "~/components/ds/ScrollArea";
 import { AppRoutes } from "~/utils/routes";
 
 import { IconLink } from "@/components/dependent/IconLink";

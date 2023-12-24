@@ -2,14 +2,14 @@ import { Fragment } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { Flex } from "~/components/isolated/Flex";
+import { Flex } from "~/components/ds/Flex";
 import {
   Tooltip,
   TooltipArrow,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "~/components/isolated/Tooltip";
+} from "~/components/ds/Tooltip";
 import { getLinkWithLocale } from "~/utils/routes";
 
 import { cn } from "@/utils/styles";

@@ -1,6 +1,6 @@
 import { AppRoutes } from "~/utils/routes";
 
-import { Icons } from "../../../../common/components/isolated/Icons";
+import { Icons } from "../../../../common/components/ds/Icons";
 import { NavigationCategories, type NavItemType } from "./navigation.types";
 
 export const navItems: NavItemType[] = [

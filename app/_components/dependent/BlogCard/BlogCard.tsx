@@ -2,9 +2,9 @@ import Image from "next/image";
 
 import { type Blog } from "contentlayer/generated";
 
-import { Badge } from "~/components/isolated/Badge";
-import { Card } from "~/components/isolated/Card";
-import { Flex } from "~/components/isolated/Flex";
+import { Badge } from "~/components/ds/Badge";
+import { Card } from "~/components/ds/Card";
+import { Flex } from "~/components/ds/Flex";
 
 import { cn } from "@/utils/styles";
 

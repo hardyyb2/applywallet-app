@@ -1,15 +1,15 @@
 "use client";
 
-import { Button } from "~/components/isolated/Button";
-import { Flex } from "~/components/isolated/Flex";
-import { Icons } from "~/components/isolated/Icons";
+import { Button } from "~/components/ds/Button";
+import { Flex } from "~/components/ds/Flex";
+import { Icons } from "~/components/ds/Icons";
 import {
   Popover,
   PopoverArrow,
   PopoverContent,
   PopoverPortal,
   PopoverTrigger,
-} from "~/components/isolated/Popover";
+} from "~/components/ds/Popover";
 
 const baseActions = ["edit", "delete"] as const;
 type BaseCardActionsProps = {

@@ -5,7 +5,7 @@ import Image from "next/image";
 
 import { AnimatePresence, m } from "framer-motion";
 
-import { Flex } from "~/components/isolated/Flex";
+import { Flex } from "~/components/ds/Flex";
 
 import { useAboutStore } from "./about.state";
 import { aboutCardsData } from "./about.utils";

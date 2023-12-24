@@ -17,11 +17,11 @@ import {
   type LinkFloatingToolbarState,
 } from "@udecode/plate-link";
 
-import { buttonVariants } from "../../../common/components/isolated/Button";
-import { Icons } from "../../../common/components/isolated/Icons";
-import { inputVariants } from "../../../common/components/isolated/Input/input.utils";
-import { popoverVariants } from "../../../common/components/isolated/Popover";
-import { Separator } from "../../../common/components/isolated/Separator";
+import { buttonVariants } from "../../../common/components/ds/Button";
+import { Icons } from "../../../common/components/ds/Icons";
+import { inputVariants } from "../../../common/components/ds/Input/input.utils";
+import { popoverVariants } from "../../../common/components/ds/Popover";
+import { Separator } from "../../../common/components/ds/Separator";
 
 const floatingOptions: UseVirtualFloatingOptions = {
   placement: "bottom-start",
