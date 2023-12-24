@@ -28,6 +28,16 @@ textarea::placeholder {
   @apply label-xs lg:label-m;
 }
 
-.dui-divider {
-  @apply my-3xs-2xs h-[1px];
+.dui-divider,
+.dui-divider-vertical {
+  @apply mx-0 my-3xs-2xs h-[1px];
+
+  &:before,
+  &:after {
+    @apply bg-base-content/40;
+  }
+}
+
+.dui-divider-horizontal {
+  @apply mx-3xs-2xs my-0 h-auto w-[1px];
 }
