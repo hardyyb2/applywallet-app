@@ -19,27 +19,22 @@ const ExtLoginCard = () => {
       className="max-w-xl rounded-none bg-base-200 text-base-content"
     >
       <Card.Body className="items-center">
-        <Card.Title
-          variant="display-m"
-          align="center"
-          className="inline-block first-letter:capitalize"
-        >
+        <Card.Title className="headline-m inline-block text-center lg:headline-l first-letter:capitalize">
           Welcome to applywallet!
         </Card.Title>
-        <Typography variant="body-m" align="center">
+        <p className="body-s text-center lg:body-m">
           sign in to access your interview toolkit
-        </Typography>
-
+        </p>
         <Card.Actions className="mt-4 w-full justify-center">
           <Button color="primary" fullWidth onClick={handleLoginClick}>
             login
           </Button>
         </Card.Actions>
         <Divider>or</Divider>
-        <Typography variant="body-l" align="center">
+        <p className="body-m text-center lg:body-l">
           not ready to log in yet? no worries! you can still browse our public
           pages
-        </Typography>
+        </p>
         <Card.Actions className="mt-4 w-full justify-center">
           <Button
             variant="outline"

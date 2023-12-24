@@ -13,9 +13,9 @@ const Header = async () => {
       justify="space-between"
       className={cnM("h-full w-full px-4 lg:px-10")}
     >
-      <div className="inline-flex text-lg lowercase text-primary">
-        <Typography>apply</Typography>
-        <Typography className="text-base-content">wallet</Typography>
+      <div className="title-s inline-flex text-lg lowercase text-primary lg:title-m">
+        <span>apply</span>
+        <span className="text-base-content">wallet</span>
       </div>
       <Flex align="center" className="gap-1 lg:gap-2">
         <ThemesMenu />

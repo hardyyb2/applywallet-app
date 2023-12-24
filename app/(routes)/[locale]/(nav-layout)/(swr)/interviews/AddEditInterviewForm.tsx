@@ -147,7 +147,7 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
     <Card className="m-auto overflow-hidden">
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <Card.Body className="[&_.dui-form-control]:mt-2">
-          <Typography variant="headline-m">{titleText}</Typography>
+          <h1 className="headline-s lg:headline-m">{titleText}</h1>
           <div>
             <FormField
               label="company name"

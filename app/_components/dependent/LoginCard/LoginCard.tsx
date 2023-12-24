@@ -3,7 +3,6 @@ import Link from "next/link";
 import { buttonVariants } from "@/components/isolated/Button";
 import { Card } from "@/components/isolated/Card";
 import { Divider } from "@/components/isolated/Divider";
-import { Typography } from "@/components/isolated/Typography";
 import { getI18n } from "@/locales/server";
 import { AppRoutes } from "@/utils/routes";
 
@@ -15,24 +14,21 @@ const LoginCard = async () => {
   return (
     <Card side="lg" className="max-w-xl bg-base-200 text-base-content">
       <Card.Body className="items-center">
-        <Card.Title
-          variant="display-s"
-          align="center"
-          className="inline-block first-letter:capitalize"
-        >
+        <Card.Title className="headline-m inline-block text-center lg:headline-l first-letter:capitalize">
           {t("loginCard.title")}
         </Card.Title>
-        <Typography variant="body-m" align="center">
+        <p className="body-s text-center lg:body-m">
           {t("loginCard.subtitle")}
-        </Typography>
+        </p>
 
         <Card.Actions className="mt-4 w-full justify-center">
           <LCLoginButton />
         </Card.Actions>
         <Divider>{t("common.or")}</Divider>
-        <Typography variant="body-l" align="center">
+        <p className="body-m text-center lg:body-l">
           {t("loginCard.alt_subtitle")}
-        </Typography>
+        </p>
+
         <Card.Actions className="mt-4 w-full justify-center">
           <Link
             className={buttonVariants({

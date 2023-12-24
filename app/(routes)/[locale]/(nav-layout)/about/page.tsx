@@ -26,8 +26,8 @@ const AboutPage = () => {
     <Flex direction="column" className="h-full px-6 py-4 lg:px-10">
       <Flex justify="space-between" align="center" className="mb-m-l gap-4">
         <Flex direction="column">
-          <Typography variant="display-m">about</Typography>
-          <Typography variant="body-l">extra things here</Typography>
+          <h1 className="headline-s lg:headline-m">about</h1>
+          <h4 className="label-s lg:label-m">extra things here</h4>
         </Flex>
       </Flex>
       <div className="flex h-full w-full items-start gap-20 overflow-auto rounded-2xl bg-base-200">

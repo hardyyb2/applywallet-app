@@ -34,19 +34,16 @@ const BlogCard = ({
         </Card.Figure>
       ) : null}
       <Card.Body className="rounded-t-none">
-        <Typography variant="title-s" className="line-clamp-1 text-secondary">
+        <span className="label-s line-clamp-1 text-secondary lg:label-m">
           {category.name}
-        </Typography>
-        <Card.Title variant="headline-l" className="mb-2xs-xs line-clamp-4">
+        </span>
+        <Card.Title className="headline-s mb-2xs-xs line-clamp-4">
           {title}
         </Card.Title>
 
-        <Typography
-          variant="body-l"
-          className="mb-3xs-2xs line-clamp-3 font-light"
-        >
+        <span className="body-s mb-3xs-2xs line-clamp-3 font-light">
           {description}
-        </Typography>
+        </span>
 
         {tags?.length ? (
           <Flex className="gap-2">

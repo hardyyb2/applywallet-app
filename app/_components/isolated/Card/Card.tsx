@@ -50,10 +50,12 @@ CardFigure.displayName = "CardFigure";
 /* </CardFigure> */
 
 /* <CardTitle> */
-export type CardTitleProps = TypographyProps;
+export interface CardTitleProps extends HTMLAttributes<HTMLSpanElement> {
+  className?: string;
+}
 
 const CardTitle = ({ className, ...props }: CardTitleProps) => {
-  return <Typography {...props} className={cn("dui-card-title", className)} />;
+  return <span {...props} className={cn("dui-card-title", className)} />;
 };
 
 CardTitle.displayName = "CardTitle";
