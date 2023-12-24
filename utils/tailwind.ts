@@ -153,6 +153,15 @@ const typographyComponentsPlugin = plugin(({ addComponents, theme }) => {
       fontFamily: theme("fontFamily.secondary"),
     },
 
+    ".label-xs": {
+      fontSize: "9pt", // 12px
+      fontWeight: "500",
+      fontStyle: "normal",
+      lineHeight: "11pt", // 16px
+      letterSpacing: "0.5pt",
+      fontFamily: theme("fontFamily.secondary"),
+    },
+
     ".caption-l": {
       fontSize: "10pt", // 13px
       fontWeight: "400",

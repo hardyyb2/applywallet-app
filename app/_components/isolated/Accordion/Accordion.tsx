@@ -6,8 +6,6 @@ import * as AccordionPrimitive from "@radix-ui/react-accordion";
 
 import { cnM } from "@/utils/styles";
 
-import { typographyVariants } from "../Typography";
-
 type AccordionContextType = {
   variant?: "box" | "lined" | "bordered";
 };
@@ -63,7 +61,7 @@ const AccordionItem = React.forwardRef<
     <AccordionPrimitive.Item
       ref={ref}
       className={cnM(
-        typographyVariants({ variant: "title-s" }),
+        "title-s lg:title-m",
         {
           "rounded-xl bg-base-200": variant === "box",
           "border-b": variant === "lined",
@@ -104,7 +102,7 @@ const AccordionContent = React.forwardRef<
     <AccordionPrimitive.Content
       ref={ref}
       className={cnM(
-        typographyVariants({ variant: "body-m" }),
+        "body-s lg:body-m",
         "overflow-hidden px-2xs-xs",
         "data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down",
         className,

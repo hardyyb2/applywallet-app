@@ -9,7 +9,6 @@ import { cnM } from "@/utils/styles";
 
 import { buttonVariants } from "../Button";
 import { Icons } from "../Icons";
-import { typographyVariants } from "../Typography";
 
 type CalendarProps = ComponentProps<typeof DayPicker> & {
   size?: "xs" | "sm" | "md";
@@ -52,12 +51,10 @@ const Calendar = ({
         months: "flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0",
         month: "space-y-8",
         caption: "flex justify-center pt-1 relative items-center",
-        caption_label: typographyVariants({
-          variant:
-            captionLayout === "dropdown-buttons" || captionLayout === "dropdown"
-              ? "sr-only"
-              : "title-m",
-        }),
+        caption_label:
+          captionLayout === "dropdown-buttons" || captionLayout === "dropdown"
+            ? "sr-only"
+            : "title-s",
         dropdown_month:
           "[&>span:first-child]:sr-only [&>select]:dui-select [&>select]:dui-select-sm [&>select]:text-h6",
         dropdown_year:
@@ -79,7 +76,7 @@ const Calendar = ({
         table: "w-full border-collapse space-y-1",
         head_row: "flex",
         head_cell: cnM(
-          typographyVariants({ variant: "label-m" }),
+          "label-s",
           "text-base-content/75 rounded-md text-center",
           {
             "w-9": size === "xs",

@@ -7,7 +7,6 @@ import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
 import { cnM } from "@/utils/styles";
 
 import { Icons } from "../Icons";
-import { typographyVariants } from "../Typography";
 
 const DropdownMenu = DropdownMenuPrimitive.Root;
 
@@ -92,7 +91,7 @@ const DropdownMenuItem = React.forwardRef<
   <DropdownMenuPrimitive.Item
     ref={ref}
     className={cnM(
-      typographyVariants({ variant: "body-m" }),
+      "body-s lg:body-m",
       "relative flex cursor-pointer select-none items-center rounded-lg px-xs py-2xs outline-none transition-colors focus:bg-base-300 data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
       inset && "pl-8",
       className,
@@ -144,12 +143,7 @@ const DropdownMenuLabel = React.forwardRef<
 >(({ className, inset, ...props }, ref) => (
   <DropdownMenuPrimitive.Label
     ref={ref}
-    className={cnM(
-      typographyVariants({ variant: "label-m-bold" }),
-      "px-xs py-3xs",
-      inset && "pl-m",
-      className,
-    )}
+    className={cnM("label-m-bold", "px-xs py-3xs", inset && "pl-m", className)}
     {...props}
   />
 ));

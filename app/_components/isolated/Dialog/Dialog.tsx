@@ -8,7 +8,6 @@ import { cnM } from "@/utils/styles";
 
 import { Button } from "../Button";
 import { Icons } from "../Icons";
-import { typographyVariants } from "../Typography";
 
 const Dialog = DialogPrimitive.Root;
 
@@ -88,7 +87,7 @@ const DialogTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <DialogPrimitive.Title
     ref={ref}
-    className={cnM(typographyVariants({ variant: "headline-m" }), className)}
+    className={cnM("headline-m", className)}
     {...props}
   />
 ));
@@ -100,7 +99,7 @@ const DialogDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <DialogPrimitive.Description
     ref={ref}
-    className={cnM(typographyVariants({ variant: "body-l" }), className)}
+    className={cnM("body-m", className)}
     {...props}
   />
 ));

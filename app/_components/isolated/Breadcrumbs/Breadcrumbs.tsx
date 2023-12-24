@@ -8,8 +8,6 @@ import {
 
 import { cn } from "@/utils/styles";
 
-import { typographyVariants } from "../Typography";
-
 /** <BreadcrumbsItem> */
 export type BreadcrumbsItemProps = LiHTMLAttributes<HTMLLIElement> & {
   href?: string;
@@ -46,10 +44,7 @@ const Breadcrumbs = forwardRef<HTMLDivElement, BreadcrumbsProps>(
         role="navigation"
         aria-label="Breadcrumbs"
         {...props}
-        className={typographyVariants({
-          variant: "label-m",
-          className: cn("dui-breadcrumbs font-semibold", className),
-        })}
+        className="dui-breadcrumbs caption-s !font-semibold lg:caption-l"
         ref={ref}
       >
         <ul {...innerProps} ref={innerRef}>

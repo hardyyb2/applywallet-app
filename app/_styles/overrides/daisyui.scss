@@ -23,6 +23,7 @@ textarea::placeholder {
   }
 }
 
-.dui-label {
-  @apply label-m py-3xs;
+.dui-label,
+.dui-label-text {
+  @apply label-xs lg:label-m;
 }

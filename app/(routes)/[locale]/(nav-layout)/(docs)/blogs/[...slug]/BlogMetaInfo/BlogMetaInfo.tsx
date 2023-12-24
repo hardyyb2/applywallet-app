@@ -10,7 +10,6 @@ import {
 } from "@/components/isolated/Avatar";
 import { Divider } from "@/components/isolated/Divider";
 import { Flex } from "@/components/isolated/Flex";
-import { typographyVariants } from "@/components/isolated/Typography";
 import { getInitials } from "@/utils/string";
 
 import styles from "./blogMetaInfo.module.scss";
@@ -31,13 +30,7 @@ const BlogMetaInfo = ({ blog }: BlogMetaInfo) => {
       <div className={styles.details}>
         <div className={styles.name}>{blog.author.name}</div>
         <div className={styles.meta}>
-          <Flex
-            className={typographyVariants({
-              variant: "label-l",
-              className: "font-light",
-            })}
-            component="h6"
-          >
+          <Flex className="caption-l font-light lg:label-s" component="h6">
             {dayjs(blog.date).format("MMM DD, YYYY").toLowerCase()}
             <Divider horizontal />
             {blog.category.name}
