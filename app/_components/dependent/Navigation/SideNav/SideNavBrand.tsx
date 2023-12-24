@@ -40,7 +40,7 @@ const SideNavBrand = ({
         className="btn btn-ghost flex-0 px-2"
       >
         {navOpen ? (
-          <div className="title-s inline-flex text-lg lowercase text-primary lg:title-m">
+          <div className="title-s inline-flex !font-primary text-lg lowercase text-primary lg:title-m">
             <span>apply</span>
             <span className="text-base-content">wallet</span>
           </div>

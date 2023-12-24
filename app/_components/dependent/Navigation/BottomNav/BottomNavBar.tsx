@@ -52,7 +52,7 @@ const BottomNavBar = ({
             className={cn(active && "active text-primary", "bg-transparent")}
           >
             <Icon />
-            <BottomNavigation.Label className="caption-m">
+            <BottomNavigation.Label className="caption-s">
               {item.label}
             </BottomNavigation.Label>
           </Link>

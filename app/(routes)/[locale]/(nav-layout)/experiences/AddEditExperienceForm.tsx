@@ -96,8 +96,8 @@ const AddEditExperienceForm = (props: AddEditExperienceFormProps) => {
       onSubmit={handleSubmit(onSubmit)}
       noValidate
     >
-      <div className="dui-card-body bg-base-100 [&_.dui-form-control]:mt-2">
-        <Typography variant="headline-l">{titleText}</Typography>
+      {/* <div className="dui-card-body bg-base-100 [&_.dui-form-control]:mt-2">
+        <h1 className="headline-s lg:headline-m">{titleText}</h1>
         <div className="mt-s">
           <Typography variant="title-m" className="underline">
             company details
@@ -176,7 +176,7 @@ const AddEditExperienceForm = (props: AddEditExperienceFormProps) => {
         >
           {buttonText}
         </Button>
-      </div>
+      </div> */}
     </form>
   );
 };

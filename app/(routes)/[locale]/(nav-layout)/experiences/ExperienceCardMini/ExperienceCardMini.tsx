@@ -13,9 +13,9 @@ const ExperienceCardMini = () => {
     >
       <div className="grid grid-cols-[90%,10%] rounded-none bg-base-100">
         <Flex className="p-2 px-6" align="center">
-          <Typography className="line-clamp-1">
+          {/* <Typography className="line-clamp-1">
             This is a very big company name so that we can test line clamp
-          </Typography>
+          </Typography> */}
         </Flex>
         <Flex justify="center" align="center">
           {/* <ExperienceCardActions /> */}

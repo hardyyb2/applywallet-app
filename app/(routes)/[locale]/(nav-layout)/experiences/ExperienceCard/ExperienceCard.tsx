@@ -13,7 +13,7 @@ interface ExperienceCardProps {
 const ExperienceCard = ({ experience }: ExperienceCardProps) => {
   return (
     <div className={cn("card bg-base-200")}>
-      <div className="card-body max-w-none [&_p]:line-clamp-3 [&_p]:whitespace-pre-line">
+      {/* <div className="card-body max-w-none [&_p]:line-clamp-3 [&_p]:whitespace-pre-line">
         <div className="absolute right-4 top-4">
           <ExperienceCardActions id={experience.id} />
         </div>
@@ -59,7 +59,7 @@ const ExperienceCard = ({ experience }: ExperienceCardProps) => {
             </Typography>
           </strong>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
