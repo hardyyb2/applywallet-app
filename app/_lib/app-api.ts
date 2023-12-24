@@ -1,7 +1,7 @@
 import axios, { type AxiosRequestConfig, type AxiosResponse } from "axios";
 
+import { logger } from "../../common/utils/logs";
 import { apiResponseSchema, type ApiResponseType } from "./api-response";
-import { logger } from "./logs";
 
 export const instance = axios.create({
   baseURL: "/",

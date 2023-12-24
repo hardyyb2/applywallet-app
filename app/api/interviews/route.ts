@@ -5,10 +5,11 @@ import { GoogleSpreadsheet } from "google-spreadsheet";
 import { getServerSession } from "next-auth";
 import { z } from "zod";
 
+import { logger } from "~/utils/logs";
+
 import { ApiError, ApiErrorCodes, ApiResponse } from "@/lib/api-response";
 import { authOptions } from "@/lib/auth";
 import { CustomError } from "@/lib/custom-error";
-import { logger } from "@/lib/logs";
 import { interviewInputSchema, interviewSchema } from "@/lib/schema/interviews";
 import { SheetNames } from "@/utils/sheet";
 import { zodKeys } from "@/utils/zod";

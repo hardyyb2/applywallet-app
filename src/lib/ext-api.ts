@@ -3,8 +3,9 @@ import type { RequestOptions } from "https";
 import axios, { type AxiosRequestConfig, type AxiosResponse } from "axios";
 import type { z } from "zod";
 
+import { logger } from "~/utils/logs";
+
 import { apiResponseSchema, type ApiResponseType } from "@/lib/api-response";
-import { logger } from "@/lib/logs";
 
 export const instance = axios.create({
   baseURL: process.env.PLASMO_PUBLIC_API_URL,

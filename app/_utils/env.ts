@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { logger } from "@/lib/logs";
+import { logger } from "~/utils/logs";
 
 const getEnv = () => {
   const isBrowser =

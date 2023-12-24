@@ -10,7 +10,7 @@
 
 // Script code goes here...
 
-const { logger } = require("@/lib/logs");
+const { logger } = require("~/utils/logs");
 const fs = require("fs");
 const path = require("path");
 const yargs = require("yargs");
