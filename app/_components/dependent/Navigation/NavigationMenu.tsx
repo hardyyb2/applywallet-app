@@ -42,11 +42,7 @@ const NavigationMenu = ({
       {groupedNavItemsEntries.map(([group, items]) => {
         return (
           <Fragment key={group}>
-            {navOpen && (
-              <li className="dui-menu-title">
-                <Typography variant="label-l">{group}</Typography>
-              </li>
-            )}
+            {navOpen && <li className="dui-menu-title label-s">{group}</li>}
 
             {items.map((item) => {
               const itemLinkWithLocale = getLinkWithLocale({
@@ -69,15 +65,14 @@ const NavigationMenu = ({
                     })}
                     onClick={onNavItemClick}
                   >
-                    <ItemIcon />
+                    <ItemIcon className="w-5 lg:w-6" />
                     {navOpen ? (
-                      <Typography
+                      <span
                         key={item.key}
-                        variant="label-m"
-                        className="overflow-ellipsis"
+                        className="label-s overflow-ellipsis lg:label-m"
                       >
                         {item.label}
-                      </Typography>
+                      </span>
                     ) : null}
                   </Link>
                 </li>
@@ -95,7 +90,7 @@ const NavigationMenu = ({
                   <Tooltip>
                     <TooltipTrigger asChild>{listItem}</TooltipTrigger>
                     <TooltipContent sideOffset={12}>
-                      <Typography variant="title-m">{item.label}</Typography>
+                      {item.label}
                       <TooltipArrow />
                     </TooltipContent>
                   </Tooltip>
