@@ -28,8 +28,8 @@ textarea::placeholder {
 .dui-divider-vertical {
   @apply mx-0 my-3xs-2xs h-[1px];
 
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     @apply bg-base-content/40;
   }
 }
