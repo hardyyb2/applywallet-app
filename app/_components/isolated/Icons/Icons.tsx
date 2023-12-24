@@ -125,6 +125,29 @@ const Icons = {
   Superscript,
   Subscript,
   Highlighter,
+  CustomRadio: forwardRef<
+    SVGSVGElement,
+    LucideProps & { innerCircleClassName?: string }
+  >(function CustomRadio(
+    { innerCircleClassName = "fill-current", ...props },
+    ref,
+  ) {
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        width="24"
+        height="24"
+        fill="currentColor"
+        focusable="false"
+        ref={ref}
+        {...props}
+      >
+        <circle cx="12" cy="12" r="12"></circle>
+        <circle cx="12" cy="12" r="5" className={innerCircleClassName}></circle>
+      </svg>
+    );
+  }),
   CustomHome: forwardRef<SVGSVGElement, LucideProps>(function CustomHome(
     { ...props },
     ref,
