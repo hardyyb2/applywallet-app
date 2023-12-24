@@ -42,6 +42,7 @@ const config: StorybookConfig = {
         ],
       },
     },
+    "storybook-addon-data-theme-switcher",
   ],
   framework: {
     name: "@storybook/nextjs",
