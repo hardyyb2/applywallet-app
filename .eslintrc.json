@@ -33,22 +33,6 @@
   },
   "overrides": [
     {
-      "files": [
-        "layout.tsx",
-        "page.tsx",
-        "error.tsx",
-        "loading.tsx",
-        "not-found.tsx",
-        "*.config.ts",
-        "./app/_locales/langs/*",
-        "./tailwind.ext.config.ts",
-        "*.stories.tsx"
-      ],
-      "rules": {
-        "import/no-default-export": "off"
-      }
-    },
-    {
       "files": ["./app/_components/**/*.{jsx,tsx}"],
       "rules": {
         "no-restricted-imports": [
