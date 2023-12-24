@@ -27,3 +27,7 @@ textarea::placeholder {
 .dui-label-text {
   @apply label-xs lg:label-m;
 }
+
+.dui-divider {
+  @apply my-3xs-2xs h-[1px];
+}
