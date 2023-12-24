@@ -9,7 +9,6 @@ const BlogCardsWrapper = ({ children }: PropsWithChildren) => {
     <ResponsiveMasonry
       columnsCountBreakPoints={{ 300: 1, 768: 2, 1440: 3, 1920: 4 }}
     >
-      {/* @ts-expect-error some issue with types, fix it when it works */}
       <Masonry gutter="1rem">{children}</Masonry>
     </ResponsiveMasonry>
   );

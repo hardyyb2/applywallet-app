@@ -7,8 +7,9 @@ import { ConditionalMatch } from "@dx-kit/react-conditional-match";
 import { AnimatePresence, m } from "framer-motion";
 import { useBoolean } from "react-use";
 
-import { BottomNavigation } from "@/components/isolated/BottomNavigation";
-import { Flex } from "@/components/isolated/Flex";
+import { BottomNavigation } from "~/components/isolated/BottomNavigation";
+import { Flex } from "~/components/isolated/Flex";
+
 import { cn } from "@/utils/styles";
 
 import { NavigationMenu } from "../NavigationMenu";
@@ -38,7 +39,7 @@ const BottomNav = ({ className = "" }: BottomNavProps) => {
           height: showFullBottomNav ? "66%" : "4rem",
         }}
         className={cn(
-          "rounded-box z-20 mx-auto mb-4 w-[96%] overflow-hidden bg-opacity-60 backdrop-blur",
+          "z-20 mx-auto mb-4 w-[96%] overflow-hidden rounded-box bg-opacity-60 backdrop-blur",
           className,
         )}
       >

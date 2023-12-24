@@ -3,14 +3,15 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { Button } from "@/components/isolated/Button";
+import { Button } from "~/components/isolated/Button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/isolated/DropdownMenu";
-import { Icons } from "@/components/isolated/Icons";
+} from "~/components/isolated/DropdownMenu";
+import { Icons } from "~/components/isolated/Icons";
+
 import { languageOptions } from "@/utils/locale-utils/language-options";
 import { cnM } from "@/utils/styles";
 

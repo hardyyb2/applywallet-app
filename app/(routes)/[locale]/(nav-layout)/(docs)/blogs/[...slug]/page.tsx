@@ -3,17 +3,17 @@ import { notFound } from "next/navigation";
 
 import { allBlogs } from "contentlayer/generated";
 
-import { AppRoutes } from "~/utils/routes";
-
-import { IconLink } from "@/components/dependent/IconLink";
-import { Mdx } from "@/components/dependent/Mdx";
-import { Breadcrumbs } from "@/components/isolated/Breadcrumbs";
-import { Flex } from "@/components/isolated/Flex";
+import { Breadcrumbs } from "~/components/isolated/Breadcrumbs";
+import { Flex } from "~/components/isolated/Flex";
 import {
   ScrollArea,
   ScrollAreaViewport,
   ScrollBar,
-} from "@/components/isolated/ScrollArea";
+} from "~/components/isolated/ScrollArea";
+import { AppRoutes } from "~/utils/routes";
+
+import { IconLink } from "@/components/dependent/IconLink";
+import { Mdx } from "@/components/dependent/Mdx";
 
 import { BlogMetaInfo } from "./BlogMetaInfo/BlogMetaInfo";
 import { BlogScrollWrapper } from "./BlogScrollWrapper/BlogScrollWrapper";

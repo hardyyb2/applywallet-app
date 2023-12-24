@@ -33,7 +33,13 @@
   },
   "overrides": [
     {
-      "files": ["./app/_components/**/*.{jsx,tsx}"],
+      "files": ["*.stories.tsx"],
+      "rules": {
+        "import/no-default-export": "off"
+      }
+    },
+    {
+      "files": ["./common/components/**/*.{jsx,tsx}"],
       "rules": {
         "no-restricted-imports": [
           "off",

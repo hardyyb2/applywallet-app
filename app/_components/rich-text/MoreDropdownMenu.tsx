@@ -11,9 +11,9 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "../isolated/DropdownMenu";
-import { Icons } from "../isolated/Icons";
-import { ToolbarButton } from "../isolated/Toolbar";
+} from "../../../common/components/isolated/DropdownMenu";
+import { Icons } from "../../../common/components/isolated/Icons";
+import { ToolbarButton } from "../../../common/components/isolated/Toolbar";
 
 export function MoreDropdownMenu(props: DropdownMenuProps) {
   const editor = useEditorRef();

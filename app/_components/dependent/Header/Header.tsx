@@ -1,4 +1,5 @@
-import { Flex } from "@/components/isolated/Flex";
+import { Flex } from "~/components/isolated/Flex";
+
 import { cnM } from "@/utils/styles";
 
 import { LocaleSwitcher } from "../LocaleSwitcher";

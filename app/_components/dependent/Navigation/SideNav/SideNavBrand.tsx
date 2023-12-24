@@ -1,15 +1,16 @@
 import Link from "next/link";
 
-import { Button } from "@/components/isolated/Button";
-import { Flex } from "@/components/isolated/Flex";
-import { Icons } from "@/components/isolated/Icons";
+import { Button } from "~/components/isolated/Button";
+import { Flex } from "~/components/isolated/Flex";
+import { Icons } from "~/components/isolated/Icons";
 import {
   Tooltip,
   TooltipArrow,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/isolated/Tooltip";
+} from "~/components/isolated/Tooltip";
+
 import { cn } from "@/utils/styles";
 
 interface SideNavBrandProps {

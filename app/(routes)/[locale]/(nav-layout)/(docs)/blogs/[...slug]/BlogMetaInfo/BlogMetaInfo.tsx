@@ -7,9 +7,10 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/components/isolated/Avatar";
-import { Divider } from "@/components/isolated/Divider";
-import { Flex } from "@/components/isolated/Flex";
+} from "~/components/isolated/Avatar";
+import { Divider } from "~/components/isolated/Divider";
+import { Flex } from "~/components/isolated/Flex";
+
 import { getInitials } from "@/utils/string";
 
 import styles from "./blogMetaInfo.module.scss";

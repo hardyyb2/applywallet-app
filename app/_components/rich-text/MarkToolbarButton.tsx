@@ -9,7 +9,10 @@ import {
 
 import { cnM } from "@/utils/styles";
 
-import { ToolbarButton, type ToolbarButtonProps } from "../isolated/Toolbar";
+import {
+  ToolbarButton,
+  type ToolbarButtonProps,
+} from "../../../common/components/isolated/Toolbar";
 
 export interface MarkToolbarButtonProps
   extends Pick<ToolbarButtonProps, "tooltip" | "children"> {

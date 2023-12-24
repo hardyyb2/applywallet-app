@@ -73,7 +73,7 @@ const Select = ({
           ),
         container: (state) =>
           cnM(
-            "bg-base-100 rounded-btn",
+            "rounded-btn bg-base-100",
             state.isFocused && [
               "outline outline-2 outline-offset-2 outline-base-content/20",
               {
@@ -90,11 +90,11 @@ const Select = ({
         valueContainer: () => cn("text-[1rem]"),
         placeholder: () => cn("text-[#9ca3af] opacity-75"),
         menu: () =>
-          cn("bg-base-100 mt-2 rounded-xl p-2 border border-base-content/40"),
+          cn("mt-2 rounded-xl border border-base-content/40 bg-base-100 p-2"),
         menuList: () => cn("space-y-2"),
         option: (state) =>
           cnM(
-            "p-2 text-base-content rounded-btn !cursor-pointer",
+            "!cursor-pointer rounded-btn p-2 text-base-content",
             !state.isSelected && "hover:bg-base-200",
             state.isFocused && "bg-base-200",
             state.isSelected && [

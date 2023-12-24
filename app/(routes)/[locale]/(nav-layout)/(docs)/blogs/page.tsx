@@ -2,8 +2,9 @@ import Link from "next/link";
 
 import { allBlogs } from "contentlayer/generated";
 
+import { Flex } from "~/components/isolated/Flex";
+
 import { BlogCard } from "@/components/dependent/BlogCard";
-import { Flex } from "@/components/isolated/Flex";
 import { getI18n } from "@/locales/server";
 
 import { BlogCardsWrapper } from "./[...slug]/BlogCardsWrapper";

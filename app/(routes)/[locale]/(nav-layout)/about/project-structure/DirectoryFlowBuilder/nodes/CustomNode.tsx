@@ -2,7 +2,7 @@ import { Fragment } from "react";
 
 import { Handle, Position, type NodeProps } from "reactflow";
 
-import { Flex } from "@/components/isolated/Flex";
+import { Flex } from "~/components/isolated/Flex";
 
 import { type DrNodeDataType } from "@/types/flowbuilder";
 

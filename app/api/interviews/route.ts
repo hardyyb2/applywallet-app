@@ -43,7 +43,7 @@ export async function POST(request: Request) {
         headerValues: zodKeys(interviewInputSchema),
       });
     }
-    await interviewSheet.addRow(body);
+    // await interviewSheet.addRow(body);
 
     return NextResponse.json(new ApiResponse(), {
       status: 200,

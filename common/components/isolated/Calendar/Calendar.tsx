@@ -60,7 +60,7 @@ const Calendar = ({
         dropdown_year:
           "[&>span:first-child]:sr-only [&>select]:dui-select [&>select]:dui-select-sm [&>select]:text-h6",
         caption_dropdowns: "flex gap-1 items-center",
-        nav: cnM("space-x-1 flex items-center"),
+        nav: cnM("flex items-center space-x-1"),
         nav_button: cnM(
           buttonVariants({ variant: "outline", color: "ghost" }),
           "p-0 opacity-50 hover:opacity-100",
@@ -77,7 +77,7 @@ const Calendar = ({
         head_row: "flex",
         head_cell: cnM(
           "label-s",
-          "text-base-content/75 rounded-md text-center",
+          "rounded-md text-center text-base-content/75",
           {
             "w-9": size === "xs",
             "w-10": size === "sm",
@@ -87,7 +87,7 @@ const Calendar = ({
         ),
         row: "flex justify-center w-full mt-2",
         cell: cnM(
-          "text-sm relative p-0 text-center focus-within:relative focus-within:z-20 [&:has([aria-selected])]:bg-primary [&:has([aria-selected].day-outside)]:bg-primary/50 [&:has([aria-selected].day-range-end)]:rounded-r-md",
+          "relative p-0 text-center text-sm focus-within:relative focus-within:z-20 [&:has([aria-selected])]:bg-primary [&:has([aria-selected].day-outside)]:bg-primary/50 [&:has([aria-selected].day-range-end)]:rounded-r-md",
           props.mode === "range"
             ? "[&:has(>.day-range-end)]:rounded-r-md [&:has(>.day-range-start)]:rounded-l-md first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md"
             : "[&:has([aria-selected])]:rounded-md",
@@ -96,11 +96,11 @@ const Calendar = ({
           buttonVariants({ color: "ghost" }),
           "p-0 aria-selected:opacity-100",
           {
-            "w-9 h-9": size === "xs",
-            "w-10 h-10": size === "sm",
-            "w-12 h-12": size === "md",
+            "h-9 w-9": size === "xs",
+            "h-10 w-10": size === "sm",
+            "h-12 w-12": size === "md",
           },
-          responsive && "w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12",
+          responsive && "h-9 w-9 sm:h-10 sm:w-10 md:h-12 md:w-12",
         ),
         // TODO - check do these make any difference
         day_range_start: "day-range-start",

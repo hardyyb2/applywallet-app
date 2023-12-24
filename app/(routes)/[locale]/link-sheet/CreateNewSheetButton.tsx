@@ -4,9 +4,9 @@ import { useRouter } from "next/navigation";
 
 import { toast } from "react-toastify";
 
+import { Button } from "~/components/isolated/Button";
 import { ApiRoutes, AppRoutes } from "~/utils/routes";
 
-import { Button } from "@/components/isolated/Button";
 import { appApi } from "@/lib/app-api";
 import { CustomError } from "@/lib/custom-error";
 

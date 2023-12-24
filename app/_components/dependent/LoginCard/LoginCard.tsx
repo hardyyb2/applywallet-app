@@ -1,10 +1,10 @@
 import Link from "next/link";
 
+import { buttonVariants } from "~/components/isolated/Button";
+import { Card } from "~/components/isolated/Card";
+import { Divider } from "~/components/isolated/Divider";
 import { AppRoutes } from "~/utils/routes";
 
-import { buttonVariants } from "@/components/isolated/Button";
-import { Card } from "@/components/isolated/Card";
-import { Divider } from "@/components/isolated/Divider";
 import { getI18n } from "@/locales/server";
 
 import { LCLoginButton } from "./LCLoginButton";

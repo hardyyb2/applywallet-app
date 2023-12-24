@@ -1,6 +1,7 @@
 "use client";
 
-import { BarLoader } from "@/components/isolated/BarLoader";
+import { BarLoader } from "~/components/isolated/BarLoader";
+
 import { useInterviews } from "@/queries/interviews.queries";
 import { cn } from "@/utils/styles";
 

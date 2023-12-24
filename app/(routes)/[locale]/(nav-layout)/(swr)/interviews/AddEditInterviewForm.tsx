@@ -7,19 +7,19 @@ import { useQueryClient } from "@tanstack/react-query";
 import { useFieldArray, useForm, type SubmitHandler } from "react-hook-form";
 import { toast } from "react-toastify";
 
-import { AppRoutes } from "~/utils/routes";
-
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/isolated/Accordion";
-import { Button } from "@/components/isolated/Button";
-import { Card } from "@/components/isolated/Card";
-import { Flex } from "@/components/isolated/Flex";
-import { FormField } from "@/components/isolated/FormField";
-import { Icons } from "@/components/isolated/Icons";
+} from "~/components/isolated/Accordion";
+import { Button } from "~/components/isolated/Button";
+import { Card } from "~/components/isolated/Card";
+import { Flex } from "~/components/isolated/Flex";
+import { FormField } from "~/components/isolated/FormField";
+import { Icons } from "~/components/isolated/Icons";
+import { AppRoutes } from "~/utils/routes";
+
 import { RTBaseEditor } from "@/components/rich-text/editors/RTBaseEditor";
 import {
   interviewInputSchema,

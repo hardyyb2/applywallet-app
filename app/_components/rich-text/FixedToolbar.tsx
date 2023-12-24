@@ -2,7 +2,10 @@ import React from "react";
 
 import { cnM } from "@/utils/styles";
 
-import { Toolbar, type ToolbarProps } from "../isolated/Toolbar";
+import {
+  Toolbar,
+  type ToolbarProps,
+} from "../../../common/components/isolated/Toolbar";
 
 const FixedToolbar = React.forwardRef<HTMLDivElement, ToolbarProps>(
   ({ className, ...props }: ToolbarProps, ref) => {

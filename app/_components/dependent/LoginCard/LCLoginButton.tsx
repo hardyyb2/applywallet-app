@@ -2,8 +2,9 @@
 
 import { signIn } from "next-auth/react";
 
-import { Button } from "@/components/isolated/Button";
-import { Icons } from "@/components/isolated/Icons";
+import { Button } from "~/components/isolated/Button";
+import { Icons } from "~/components/isolated/Icons";
+
 import { useI18n } from "@/locales/client";
 import { DEFAULT_AUTH_PROVIDERS } from "@/utils/auth";
 

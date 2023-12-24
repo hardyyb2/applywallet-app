@@ -1,6 +1,6 @@
 import { Fragment, type ReactElement } from "react";
 
-import { Icons } from "@/components/isolated/Icons";
+import { Icons } from "~/components/isolated/Icons";
 
 import { type CopyButtonStateTypes } from "./copyButton.types";
 

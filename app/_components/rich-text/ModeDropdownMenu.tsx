@@ -11,16 +11,16 @@ import { useBoolean } from "react-use";
 
 import { cnM } from "@/utils/styles";
 
-import { buttonVariants } from "../isolated/Button";
+import { buttonVariants } from "../../../common/components/isolated/Button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
-} from "../isolated/DropdownMenu";
-import { Icons } from "../isolated/Icons";
-import { ToolbarButton } from "../isolated/Toolbar";
+} from "../../../common/components/isolated/DropdownMenu";
+import { Icons } from "../../../common/components/isolated/Icons";
+import { ToolbarButton } from "../../../common/components/isolated/Toolbar";
 
 export function ModeDropdownMenu(props: DropdownMenuProps) {
   const editor = useEditorRef();

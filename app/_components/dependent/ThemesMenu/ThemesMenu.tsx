@@ -1,13 +1,14 @@
 "use client";
 
-import { Button } from "@/components/isolated/Button";
+import { Button } from "~/components/isolated/Button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/isolated/DropdownMenu";
-import { Icons } from "@/components/isolated/Icons";
+} from "~/components/isolated/DropdownMenu";
+import { Icons } from "~/components/isolated/Icons";
+
 import { useTheme } from "@/hooks/useTheme";
 import { cn } from "@/utils/styles";
 

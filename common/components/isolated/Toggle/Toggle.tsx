@@ -9,9 +9,9 @@ import { cnM } from "@/utils/styles";
 
 const toggleVariants = cva(
   cnM(
-    "inline-flex items-center justify-center rounded-btn label-m transition-colors",
-    "opacity-75 hover:opacity-100 hover:bg-base-200  disabled:pointer-events-none disabled:opacity-50 ",
-    "data-[state=on]:opacity-100 data-[state=on]:bg-accent data-[state=on]:text-accent-content",
+    "label-m inline-flex items-center justify-center rounded-btn transition-colors",
+    "opacity-75 hover:bg-base-200 hover:opacity-100  disabled:pointer-events-none disabled:opacity-50 ",
+    "data-[state=on]:bg-accent data-[state=on]:text-accent-content data-[state=on]:opacity-100",
   ),
   {
     variants: {
