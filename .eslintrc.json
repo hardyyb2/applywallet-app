@@ -33,7 +33,7 @@
   },
   "overrides": [
     {
-      "files": ["*.stories.tsx"],
+      "files": ["*.stories.tsx", "tailwind.config.ts"],
       "rules": {
         "import/no-default-export": "off"
       }

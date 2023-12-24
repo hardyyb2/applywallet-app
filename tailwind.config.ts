@@ -4,7 +4,11 @@ import { typographyComponentsPlugin } from "./common/utils/tailwind";
 
 const config = {
   // TODO - check how multiple configs can work without whole app content being included
-  content: ["./app/**/*.{js,ts,jsx,tsx}", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./app/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./common/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     screens: {
       xs: "480px",
