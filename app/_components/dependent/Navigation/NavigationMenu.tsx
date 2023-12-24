@@ -2,6 +2,8 @@ import { Fragment } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { getLinkWithLocale } from "~/utils/routes";
+
 import { Flex } from "@/components/isolated/Flex";
 import {
   Tooltip,
@@ -10,7 +12,6 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/isolated/Tooltip";
-import { getLinkWithLocale } from "@/utils/routes";
 import { cn } from "@/utils/styles";
 
 import { groupedNavItemsEntries } from "./navigation.utils";

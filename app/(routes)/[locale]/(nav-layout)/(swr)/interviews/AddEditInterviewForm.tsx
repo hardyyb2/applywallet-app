@@ -7,6 +7,8 @@ import { useQueryClient } from "@tanstack/react-query";
 import { useFieldArray, useForm, type SubmitHandler } from "react-hook-form";
 import { toast } from "react-toastify";
 
+import { AppRoutes } from "~/utils/routes";
+
 import {
   Accordion,
   AccordionContent,
@@ -29,7 +31,6 @@ import {
   useUpdateInterview,
 } from "@/queries/interviews.queries";
 import { QueryKeys } from "@/utils/queries";
-import { AppRoutes } from "@/utils/routes";
 import { cnM } from "@/utils/styles";
 
 import {

@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 
 import { allBlogs } from "contentlayer/generated";
 
+import { AppRoutes } from "~/utils/routes";
+
 import { IconLink } from "@/components/dependent/IconLink";
 import { Mdx } from "@/components/dependent/Mdx";
 import { Breadcrumbs } from "@/components/isolated/Breadcrumbs";
@@ -12,7 +14,6 @@ import {
   ScrollAreaViewport,
   ScrollBar,
 } from "@/components/isolated/ScrollArea";
-import { AppRoutes } from "@/utils/routes";
 
 import { BlogMetaInfo } from "./BlogMetaInfo/BlogMetaInfo";
 import { BlogScrollWrapper } from "./BlogScrollWrapper/BlogScrollWrapper";
@@ -68,7 +69,7 @@ const BlogPage = async ({ params }: BlogPageProps) => {
           <ScrollBar orientation="horizontal" className="hidden h-0" />
         </ScrollArea>
         <BlogScrollWrapper>
-          <Mdx className="dui-prose prose prose-sm w-full md:prose-base lg:prose-lg xl:prose-xl">
+          <Mdx className="prose prose-sm dui-prose w-full md:prose-base lg:prose-lg xl:prose-xl">
             <Mdx.Header>
               <h1>{blog.title}</h1>
               <BlogMetaInfo blog={blog} />

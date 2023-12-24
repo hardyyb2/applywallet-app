@@ -41,7 +41,6 @@
         "not-found.tsx",
         "*.config.ts",
         "./app/_locales/langs/*",
-        "./src/popup.tsx",
         "./tailwind.ext.config.ts",
         "*.stories.tsx"
       ],

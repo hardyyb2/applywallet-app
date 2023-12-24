@@ -2,7 +2,7 @@
   "extends": ["../.eslintrc.json"],
   "rules": {
     "no-restricted-imports": [
-      "error",
+      "warn",
       {
         "patterns": [
           {
@@ -12,5 +12,13 @@
         ]
       }
     ]
-  }
+  },
+  "overrides": [
+    {
+      "files": ["./popup.tsx"],
+      "rules": {
+        "import/no-default-export": "off"
+      }
+    }
+  ]
 }

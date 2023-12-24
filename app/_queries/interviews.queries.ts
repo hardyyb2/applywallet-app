@@ -1,6 +1,8 @@
 import { useMutation, useQuery, type QueryKey } from "@tanstack/react-query";
 import { z } from "zod";
 
+import { ApiRoutes } from "~/utils/routes";
+
 import { appApi } from "@/lib/app-api";
 import {
   interviewSchema,
@@ -8,7 +10,6 @@ import {
   type InterviewType,
 } from "@/lib/schema/interviews";
 import { QueryKeys } from "@/utils/queries";
-import { ApiRoutes } from "@/utils/routes";
 
 const fetchInterviews = async () => {
   return appApi

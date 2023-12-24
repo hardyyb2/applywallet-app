@@ -1,9 +1,10 @@
 import Link from "next/link";
 
+import { AppRoutes } from "~/utils/routes";
+
 import { Button } from "@/components/isolated/Button";
 import { Flex } from "@/components/isolated/Flex";
 import { Icons } from "@/components/isolated/Icons";
-import { AppRoutes } from "@/utils/routes";
 
 const InterviewActions = () => {
   return (

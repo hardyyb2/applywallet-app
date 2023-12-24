@@ -3,9 +3,10 @@ import React from "react";
 import { useStorage } from "@plasmohq/storage/hook";
 import type { Session } from "next-auth";
 
+import { ApiRoutes } from "~/utils/routes";
+
 import { BarLoader } from "@/components/isolated/BarLoader";
 import { logger } from "@/lib/logs";
-import { ApiRoutes } from "@/utils/routes";
 
 import { ExtLoginCard } from "./components/ExtLoginCard";
 import { extApi } from "./lib/ext-api";

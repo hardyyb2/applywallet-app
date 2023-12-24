@@ -1,7 +1,7 @@
 import type { ExperienceType } from "@/lib/schema/experience";
 import type { InterviewType } from "@/lib/schema/interviews";
 
-import { i18n } from "./locale-utils";
+import { i18n } from "../../app/_utils/locale-utils";
 
 export type AppRouteLinkType = (typeof AppRoutes)[keyof typeof AppRoutes];
 

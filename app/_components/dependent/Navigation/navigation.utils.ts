@@ -1,4 +1,4 @@
-import { AppRoutes } from "@/utils/routes";
+import { AppRoutes } from "~/utils/routes";
 
 import { Icons } from "../../isolated/Icons";
 import { NavigationCategories, type NavItemType } from "./navigation.types";
