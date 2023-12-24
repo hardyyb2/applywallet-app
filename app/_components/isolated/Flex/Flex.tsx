@@ -71,8 +71,6 @@ const Flex = forwardRef<
             "3xl:flex-row": direction === "column" && switchDirection === "3xl",
             "4xl:flex-col": direction === "row" && switchDirection === "4xl",
             "4xl:flex-row": direction === "column" && switchDirection === "4xl",
-            "5xl:flex-col": direction === "row" && switchDirection === "5xl",
-            "5xl:flex-row": direction === "column" && switchDirection === "5xl",
           },
           {
             "items-stretch": align === "stretch",
