@@ -16,6 +16,7 @@ export interface TypographyProps
   className?: string;
 }
 
+/** @deprecated use tailwind classes instead */
 const Typography = forwardRef<
   keyof JSX.IntrinsicElements | ComponentType<any>,
   TypographyProps

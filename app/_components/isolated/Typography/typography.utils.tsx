@@ -28,6 +28,7 @@ export type TypographyVariantType = VariantProps<
   typeof typographyVariants
 >["variant"];
 
+/** @deprecated use tailwind classes instead */
 export const typographyVariants = cva("", {
   variants: {
     variant: {
