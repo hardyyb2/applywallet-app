@@ -37,3 +37,7 @@ textarea::placeholder {
 .dui-divider-horizontal {
   @apply mx-3xs-2xs my-0 h-auto w-[1px];
 }
+
+.dui-menu-title {
+  @apply label-m px-xs py-3xs;
+}

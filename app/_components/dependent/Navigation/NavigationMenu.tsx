@@ -42,7 +42,9 @@ const NavigationMenu = ({
       {groupedNavItemsEntries.map(([group, items]) => {
         return (
           <Fragment key={group}>
-            {navOpen && <li className="dui-menu-title label-s">{group}</li>}
+            {navOpen && (
+              <li className="dui-menu-title px-xs py-3xs">{group}</li>
+            )}
 
             {items.map((item) => {
               const itemLinkWithLocale = getLinkWithLocale({
