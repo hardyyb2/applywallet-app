@@ -6,10 +6,10 @@ import { cn } from "@/utils/styles";
 
 import { Providers } from "./providers";
 
-import "~/styles/overrides/daisyui.scss";
 import "@/styles/globals.app.scss";
 import "@/styles/overrides/toast.scss";
 import "@/styles/mdx.scss";
+import "~/styles/overrides/daisyui.scss";
 
 type RootLayoutProps = {
   params: { locale: Locale };
