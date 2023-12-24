@@ -29,7 +29,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       animation = true,
       loading,
       active,
-      disabled,
+      disabled = false,
       className,
       wide = false,
       ...rest
@@ -55,7 +55,6 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             className: cnM(
               ((startIcon && !loading) || endIcon) && "gap-2",
               "[&_svg]:w-5 lg:[&_svg]:w-6",
-              "!label-m lg:!label-l",
               className,
             ),
           }),
