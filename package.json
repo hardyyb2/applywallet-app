@@ -98,6 +98,7 @@
     "slate-history": "^0.100.0",
     "slate-hyperscript": "^0.100.0",
     "slate-react": "^0.101.5",
+    "storybook-addon-data-theme-switcher": "^0.1.7",
     "tailwind-merge": "^2.2.0",
     "zod": "^3.22.4",
     "zustand": "^4.4.4"
