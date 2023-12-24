@@ -5,7 +5,6 @@ import { type Blog } from "contentlayer/generated";
 import { Badge } from "@/components/isolated/Badge";
 import { Card } from "@/components/isolated/Card";
 import { Flex } from "@/components/isolated/Flex";
-import { Typography } from "@/components/isolated/Typography";
 import { cn } from "@/utils/styles";
 
 import styles from "./blogCard.module.scss";

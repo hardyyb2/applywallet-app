@@ -8,7 +8,6 @@ import {
   DropdownMenuTrigger,
 } from "@/components/isolated/DropdownMenu";
 import { Icons } from "@/components/isolated/Icons";
-import { Typography } from "@/components/isolated/Typography";
 import { useTheme } from "@/hooks/useTheme";
 import { cn } from "@/utils/styles";
 

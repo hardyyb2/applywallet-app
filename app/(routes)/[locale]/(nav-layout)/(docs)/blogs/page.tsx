@@ -4,7 +4,6 @@ import { allBlogs } from "contentlayer/generated";
 
 import { BlogCard } from "@/components/dependent/BlogCard";
 import { Flex } from "@/components/isolated/Flex";
-import { Typography } from "@/components/isolated/Typography";
 import { getI18n } from "@/locales/server";
 
 import { BlogCardsWrapper } from "./[...slug]/BlogCardsWrapper";

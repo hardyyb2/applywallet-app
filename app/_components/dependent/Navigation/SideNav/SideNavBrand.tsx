@@ -10,7 +10,6 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/isolated/Tooltip";
-import { Typography } from "@/components/isolated/Typography";
 import { cn } from "@/utils/styles";
 
 interface SideNavBrandProps {

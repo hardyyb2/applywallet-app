@@ -18,7 +18,6 @@ import { Card } from "@/components/isolated/Card";
 import { Flex } from "@/components/isolated/Flex";
 import { FormField } from "@/components/isolated/FormField";
 import { Icons } from "@/components/isolated/Icons";
-import { Typography } from "@/components/isolated/Typography";
 import { RTBaseEditor } from "@/components/rich-text/editors/RTBaseEditor";
 import {
   interviewInputSchema,

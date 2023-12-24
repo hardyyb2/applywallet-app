@@ -1,7 +1,6 @@
 import { Button } from "@/components/isolated/Button";
 import { Card } from "@/components/isolated/Card";
 import { Divider } from "@/components/isolated/Divider";
-import { Typography } from "@/components/isolated/Typography";
 
 const ExtLoginCard = () => {
   const handleLoginClick = () => {
