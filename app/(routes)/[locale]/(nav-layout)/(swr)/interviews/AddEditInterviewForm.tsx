@@ -144,9 +144,9 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
   );
 
   return (
-    <Card className="m-auto overflow-hidden">
+    <Card className="m-auto overflow-hidden" compact normal="lg">
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
-        <Card.Body className="[&_.dui-form-control]:mt-2">
+        <Card.Body className="[&_.dui-form-control]:mt-3xs">
           <h1 className="headline-s lg:headline-m">{titleText}</h1>
           <div>
             <FormField
@@ -182,7 +182,11 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
             </FormField>
           </div>
 
-          <Accordion type="multiple" className="mt-4 p-0" variant="box">
+          <Accordion
+            type="multiple"
+            className={cnM("p-0", !rounds.length && "hidden")}
+            variant="box"
+          >
             {rounds.map((round, index) => {
               return (
                 <AccordionItem

@@ -3,6 +3,7 @@
 import { signIn } from "next-auth/react";
 
 import { Button } from "~/components/ds/Button";
+import { Icons } from "~/components/ds/Icons";
 import { AppRoutes } from "~/utils/routes";
 
 const LoginButton = () => {
@@ -14,7 +15,8 @@ const LoginButton = () => {
 
   return (
     <Button color="ghost" responsive onClick={handleLoginClick}>
-      login
+      <Icons.LogIn className="h-4 w-4 lg:h-6 lg:w-6" />
+      <span className="hidden lg:inline">login</span>
     </Button>
   );
 };
