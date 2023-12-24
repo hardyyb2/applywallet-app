@@ -8,9 +8,9 @@ import { ApiRoutes } from "~/utils/routes";
 
 import { BarLoader } from "@/components/isolated/BarLoader";
 
-import { ExtLoginCard } from "./components/ExtLoginCard";
-import { extApi } from "./lib/ext-api";
-import { ExtProviders } from "./providers";
+import { ExtLoginCard } from "$/components/ExtLoginCard";
+import { extApi } from "$/lib/ext-api";
+import { ExtProviders } from "$/providers";
 
 import "~/styles/overrides/daisyui.scss";
 import "./globals.ext.scss";
