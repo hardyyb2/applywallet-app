@@ -22,7 +22,7 @@
     "test:ui": "TZ=UTC vitest --ui",
     "coverage": "TZ=UTC vitest run --coverage",
     "update-next": "yarn add next@latest react@latest react-dom@latest eslint-config-next@latest @next/bundle-analyzer@latest @types/react @types/react-dom",
-    "cdt": "tsx ./scripts/createDirectoryTree.ts",
+    "cdt": "tsx ./scripts/createFolderStructure.ts",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },

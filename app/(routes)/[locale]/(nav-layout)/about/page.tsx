@@ -9,7 +9,7 @@ import { Flex } from "~/components/ds/Flex";
 
 import { useAboutStore } from "./about.state";
 import { aboutCardsData } from "./about.utils";
-import { AboutCard } from "./project-structure/AboutCard";
+import { AboutCard } from "./folder-structure/AboutCard";
 
 const MotionImage = m(Image);
 
