@@ -2,7 +2,6 @@ import { forwardRef, type HTMLAttributes, type PropsWithChildren } from "react";
 
 import { cn, cnM } from "@/utils/styles";
 
-import { Typography, type TypographyProps } from "../Typography";
 import type { CardSizeTypes } from "./card.types";
 
 /** <CardActions > */
