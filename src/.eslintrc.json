@@ -1,0 +1,16 @@
+{
+  "extends": ["../.eslintrc.json"],
+  "rules": {
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": [
+          {
+            "group": ["@/*", "app/*", "*/app/*"],
+            "message": "Cannot use app content outside the (app) folder, please move common code to (common) folder"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "extends": ["../.eslintrc.json"],
+  "rules": {
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": [
+          {
+            "group": ["$/*", "src/*", "*/src/*"],
+            "message": "Cannot use extension content outside the (src) folder, please move common code to (common) folder"
+          }
+        ]
+      }
+    ]
+  }
+}
