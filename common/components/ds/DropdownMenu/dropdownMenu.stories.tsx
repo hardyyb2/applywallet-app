@@ -64,7 +64,7 @@ export const WithCheckbox: Story = {
 export const WithRadioButton: Story = {
   render: (args: DropdownMenuProps) => {
     return (
-      <DropdownMenu {...args} open>
+      <DropdownMenu {...args}>
         <DropdownMenuTrigger>with radio group menu</DropdownMenuTrigger>
         <DropdownMenuContent>
           <DropdownMenuItem>item 1</DropdownMenuItem>

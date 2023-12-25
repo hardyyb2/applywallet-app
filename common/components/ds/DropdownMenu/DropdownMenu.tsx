@@ -115,7 +115,7 @@ const DropdownMenuCheckboxItem = React.forwardRef<
       "body-s lg:body-m",
       "focus:text-accent-foreground relative flex cursor-pointer select-none items-center rounded-lg px-xs py-2xs outline-none transition-colors",
       "focus:bg-base-300 data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
-      checked && showIcon && "pl-m",
+      "data-[state=checked]:bg-secondary data-[state=checked]:pl-m data-[state=checked]:text-secondary-content",
       className,
     )}
     checked={checked}
@@ -191,7 +191,7 @@ const DropdownMenuSeparator = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <DropdownMenuPrimitive.Separator
     ref={ref}
-    className={cnM("dui-divider shrink-0", className)}
+    className={cnM("dui-divider !my-0 shrink-0", className)}
     {...props}
   />
 ));
