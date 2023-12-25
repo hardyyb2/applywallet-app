@@ -2,7 +2,6 @@ import Link from "next/link";
 
 import { buttonVariants } from "~/components/ds/Button";
 import { Card } from "~/components/ds/Card";
-import { Divider } from "~/components/ds/Divider";
 import { Separator } from "~/components/ds/Separator";
 import { AppRoutes } from "~/utils/routes";
 

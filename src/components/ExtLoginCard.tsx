@@ -1,6 +1,6 @@
 import { Button } from "~/components/ds/Button";
 import { Card } from "~/components/ds/Card";
-import { Divider } from "~/components/ds/Divider";
+import { Separator } from "~/components/ds/Separator";
 
 const ExtLoginCard = () => {
   const handleLoginClick = () => {
@@ -29,7 +29,7 @@ const ExtLoginCard = () => {
             login
           </Button>
         </Card.Actions>
-        <Divider>or</Divider>
+        <Separator className="!my-s">or</Separator>
         <p className="body-m text-center lg:body-l">
           not ready to log in yet? no worries! you can still browse our public
           pages
