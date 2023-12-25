@@ -1,11 +1,9 @@
-"server-only";
-
 import { Fragment } from "react";
 
 import { Flex } from "~/components/ds/Flex";
 
-import { BottomNav } from "./BottomNav";
 import { SideNav } from "./SideNav";
+import { SideNavMobile } from "./SideNav/SideNavMobile";
 
 const Navigation = () => {
   return (
@@ -18,9 +16,7 @@ const Navigation = () => {
         <SideNav />
       </Flex>
 
-      <Flex component="nav" className="lg:hidden">
-        <BottomNav />
-      </Flex>
+      <SideNavMobile className="lg:hidden" />
     </Fragment>
   );
 };
