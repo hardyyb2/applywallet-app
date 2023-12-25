@@ -10,7 +10,7 @@ const NavLayout = ({ children }: { children: ReactNode }) => {
     <BaseLayout className="h-full">
       <BaseLayout.Head
         className={cn(
-          "fixed left-0 top-0 z-[5] h-12 w-full text-base-content lg:h-[--header-height] ",
+          "fixed left-0 top-0 z-[5] h-14 w-full text-base-content lg:h-[--header-height] ",
           "bg-opacity-60 backdrop-blur",
         )}
       >
@@ -25,7 +25,7 @@ const NavLayout = ({ children }: { children: ReactNode }) => {
         <Navigation />
         {/* TODO - change this header height logic */}
         {/* padding top - padding bottom same as height of the header, hide padding bottom on large screens when bottom nav is not visible */}
-        <section className="h-full w-full overflow-y-auto pb-[--header-height] pt-12 lg:pb-0 lg:pt-[--header-height]">
+        <section className="h-full w-full overflow-y-auto pb-[--header-height] pt-14 lg:pb-0 lg:pt-[--header-height]">
           {children}
         </section>
       </BaseLayout.Body>
