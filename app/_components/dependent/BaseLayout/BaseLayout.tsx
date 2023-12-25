@@ -1,6 +1,6 @@
 import { forwardRef, type ReactNode } from "react";
 
-import { cn } from "@/utils/styles";
+import { cn, cnM } from "@/utils/styles";
 
 /* <BaseLayoutHead> */
 interface BaseLayoutHeadProps {
@@ -10,7 +10,7 @@ interface BaseLayoutHeadProps {
 
 const BaseLayoutHead = forwardRef<HTMLDivElement, BaseLayoutHeadProps>(
   ({ className, ...rest }, ref) => {
-    const classes = cn(className);
+    const classes = cn("flex-0", className);
 
     return <header {...rest} className={classes} ref={ref} />;
   },
@@ -27,7 +27,7 @@ interface BaseLayoutBodyProps {
 
 const BaseLayoutBody = forwardRef<HTMLDivElement, BaseLayoutBodyProps>(
   ({ className, ...rest }, ref) => {
-    const classes = cn("h-full flex-1", className);
+    const classes = cn("flex h-full flex-1", className);
 
     return <main {...rest} className={classes} ref={ref} />;
   },
@@ -43,7 +43,7 @@ export interface BaseLayoutProps {
 
 const BaseLayout = forwardRef<HTMLDivElement, BaseLayoutProps>(
   ({ children, className = "", ...rest }, ref) => {
-    const classes = cn("flex flex-col", className);
+    const classes = cnM("flex h-full flex-col", className);
 
     return (
       <div {...rest} className={classes} ref={ref}>
