@@ -2,6 +2,7 @@ import { forwardRef } from "react";
 
 import {
   AlignJustify,
+  AlignLeft,
   Bold,
   BookOpen,
   Briefcase,
@@ -127,6 +128,7 @@ const Icons = {
   Subscript,
   Highlighter,
   LogIn,
+  AlignLeft,
   CustomRadio: forwardRef<
     SVGSVGElement,
     LucideProps & { innerCircleClassName?: string }
