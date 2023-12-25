@@ -1,11 +1,9 @@
 "use client";
 
-import { useRouter, useSearchParams } from "next/navigation";
-
 import { Button } from "~/components/ds/Button";
 import { Icons } from "~/components/ds/Icons";
-import { SearchParams } from "~/utils/routes";
 
+import { useSideNavMobileStore } from "@/store/useSideNavMobile";
 import { cnM } from "@/utils/styles";
 
 type HeaderClientProps = {
@@ -13,25 +11,13 @@ type HeaderClientProps = {
 };
 
 const HeaderClient = ({ className }: HeaderClientProps) => {
-  const router = useRouter();
-  const searchParams = new URLSearchParams(useSearchParams());
-
-  const handleMenuToggle = () => {
-    const menuOpen = searchParams.get(SearchParams.MOBILE_SIDE_MENU_OPEN);
-    if (menuOpen) {
-      searchParams.delete(SearchParams.MOBILE_SIDE_MENU_OPEN);
-    } else {
-      searchParams.set(SearchParams.MOBILE_SIDE_MENU_OPEN, "true");
-    }
-
-    router.replace(`?${searchParams}`);
-  };
+  const { toggleSideNavMobileOpen } = useSideNavMobileStore();
 
   return (
     <Button
       color="ghost"
       className={cnM(className)}
-      onClick={handleMenuToggle}
+      onClick={toggleSideNavMobileOpen}
       startIcon={<Icons.AlignLeft className="!h-7 !w-7" />}
     />
   );
