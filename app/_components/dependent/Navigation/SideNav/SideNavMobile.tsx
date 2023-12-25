@@ -42,7 +42,7 @@ const SideNavMobile = ({ className }: SideNavMobileProps) => {
             }}
             initial={{ width: 0 }}
             animate={{ width: "100%" }}
-            exit={{ width: 0, opacity: 0 }}
+            exit={{ width: 0, opacity: 0, pointerEvents: "none" }}
             onDragEnd={handleDragEnd}
             className={cnM(
               "absolute inset-0 z-[100] grid h-full touch-none grid-rows-[auto_1fr_auto]",
@@ -57,7 +57,7 @@ const SideNavMobile = ({ className }: SideNavMobileProps) => {
             </div>
 
             {/* Scrollable menu items */}
-            <NavigationMenu navOpen className="mr-4 pb-8 pt-2" />
+            <NavigationMenu navOpen className="pb-8 pt-2" />
           </motion.aside>
         )}
       </AnimatePresence>
