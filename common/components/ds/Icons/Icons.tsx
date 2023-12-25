@@ -27,6 +27,7 @@ import {
   FileText,
   FolderOpen,
   GripHorizontal,
+  GripVertical,
   Hash,
   Heading1,
   Heading2,
@@ -129,6 +130,7 @@ const Icons = {
   Highlighter,
   LogIn,
   AlignLeft,
+  GripVertical,
   CustomRadio: forwardRef<
     SVGSVGElement,
     LucideProps & { innerCircleClassName?: string }

@@ -4,8 +4,10 @@ import { Fragment } from "react";
 
 import { AnimatePresence, motion, type DragHandlers } from "framer-motion";
 
+import { Icons } from "~/components/ds/Icons";
+
 import { useSideNavMobileStore } from "@/store/useSideNavMobile";
-import { cn, cnM } from "@/utils/styles";
+import { cnM } from "@/utils/styles";
 
 import { NavigationMenu } from "../NavigationMenu";
 import { SideNavBrand } from "./SideNavBrand";
@@ -43,7 +45,7 @@ const SideNavMobile = ({ className }: SideNavMobileProps) => {
             exit={{ width: 0, opacity: 0 }}
             onDragEnd={handleDragEnd}
             className={cnM(
-              "absolute inset-0 z-[100] grid h-full grid-rows-[auto_1fr_auto]",
+              "absolute inset-0 z-[100] grid h-full touch-none grid-rows-[auto_1fr_auto]",
               "bg-base-200",
               className,
             )}
@@ -55,7 +57,7 @@ const SideNavMobile = ({ className }: SideNavMobileProps) => {
             </div>
 
             {/* Scrollable menu items */}
-            <NavigationMenu navOpen className="pb-8 pt-2" />
+            <NavigationMenu navOpen className="mr-4 pb-8 pt-2" />
           </motion.aside>
         )}
       </AnimatePresence>
