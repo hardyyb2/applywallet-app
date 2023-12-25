@@ -57,7 +57,11 @@ const SideNavMobile = ({ className }: SideNavMobileProps) => {
             </div>
 
             {/* Scrollable menu items */}
-            <NavigationMenu navOpen className="pb-8 pt-2" />
+            <NavigationMenu
+              navOpen
+              className="pb-8 pt-2"
+              onNavItemClick={toggleSideNavMobileOpen}
+            />
           </motion.aside>
         )}
       </AnimatePresence>
