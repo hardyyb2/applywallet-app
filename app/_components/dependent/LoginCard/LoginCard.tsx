@@ -3,6 +3,7 @@ import Link from "next/link";
 import { buttonVariants } from "~/components/ds/Button";
 import { Card } from "~/components/ds/Card";
 import { Divider } from "~/components/ds/Divider";
+import { Separator } from "~/components/ds/Separator";
 import { AppRoutes } from "~/utils/routes";
 
 import { getI18n } from "@/locales/server";
@@ -25,7 +26,7 @@ const LoginCard = async () => {
         <Card.Actions className="mt-4 w-full justify-center">
           <LCLoginButton />
         </Card.Actions>
-        <Divider>{t("common.or")}</Divider>
+        <Separator className="!my-s">{t("common.or")}</Separator>
         <p className="body-m text-center lg:body-l">
           {t("loginCard.alt_subtitle")}
         </p>

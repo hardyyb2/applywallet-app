@@ -26,11 +26,11 @@ textarea::placeholder {
 
 .dui-divider,
 .dui-divider-vertical {
-  @apply mx-0 my-3xs-2xs h-[1px];
+  @apply mx-0 my-3xs-2xs h-[1px] text-base-content/60;
 
   &::before,
   &::after {
-    @apply bg-base-content/40;
+    @apply bg-base-content/20;
   }
 }
 
