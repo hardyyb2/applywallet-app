@@ -130,13 +130,13 @@ export const WithSubmenu: Story = {
           <DropdownMenuGroup>
             <DropdownMenuItem>sub menu</DropdownMenuItem>
             <DropdownMenuSub>
-              <DropdownMenuSubTrigger>Invite users</DropdownMenuSubTrigger>
+              <DropdownMenuSubTrigger>invite users</DropdownMenuSubTrigger>
               <DropdownMenuPortal>
                 <DropdownMenuSubContent>
-                  <DropdownMenuItem>Email</DropdownMenuItem>
-                  <DropdownMenuItem>Message</DropdownMenuItem>
+                  <DropdownMenuItem>email</DropdownMenuItem>
+                  <DropdownMenuItem>message</DropdownMenuItem>
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem>More...</DropdownMenuItem>
+                  <DropdownMenuItem>more...</DropdownMenuItem>
                 </DropdownMenuSubContent>
               </DropdownMenuPortal>
             </DropdownMenuSub>

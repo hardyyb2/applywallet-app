@@ -31,6 +31,7 @@ const DropdownMenuSubTrigger = React.forwardRef<
   <DropdownMenuPrimitive.SubTrigger
     ref={ref}
     className={cnM(
+      "body-s lg:body-m",
       "relative flex cursor-pointer select-none items-center rounded-lg px-xs py-2xs outline-none transition-colors focus:bg-base-300 data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
       "data-[state=open]:bg-secondary data-[state=open]:text-secondary-content",
       className,
@@ -38,7 +39,9 @@ const DropdownMenuSubTrigger = React.forwardRef<
     {...props}
   >
     {children}
-    {showIcon ? <Icons.ChevronRight className="ml-2xs-xs h-4 w-4 " /> : null}
+    {showIcon ? (
+      <Icons.ChevronRight className="ml-2xs-xs h-4 w-4 lg:h-6 lg:w-6" />
+    ) : null}
   </DropdownMenuPrimitive.SubTrigger>
 ));
 DropdownMenuSubTrigger.displayName =
@@ -73,7 +76,7 @@ const DropdownMenuContent = React.forwardRef<
       sideOffset={sideOffset}
       align={align}
       className={cnM(
-        "z-50 flex flex-col gap-3xs overflow-hidden rounded-xl border border-base-content/40 bg-base-100 p-3xs",
+        "z-50 flex flex-col gap-3xs overflow-hidden rounded-xl border border-base-content/40 bg-base-100 p-2xs",
         "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
         className,
       )}
