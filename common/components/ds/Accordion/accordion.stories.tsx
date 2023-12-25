@@ -9,6 +9,7 @@ import {
 } from "./Accordion";
 
 const meta = {
+  title: "Data Display/Skeleton",
   component: Accordion,
   tags: ["autodocs"],
 } satisfies Meta<typeof Accordion>;
