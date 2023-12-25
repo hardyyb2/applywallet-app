@@ -1,9 +1,8 @@
 "use client";
 
 import { Fragment } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
 
-import { AnimatePresence, m } from "framer-motion";
+import { AnimatePresence, motion, type DragHandlers } from "framer-motion";
 
 import { useSideNavMobileStore } from "@/store/useSideNavMobile";
 import { cn, cnM } from "@/utils/styles";
@@ -19,13 +18,30 @@ const SideNavMobile = ({ className }: SideNavMobileProps) => {
   const { sideNavMobileOpen, toggleSideNavMobileOpen } =
     useSideNavMobileStore();
 
+  const handleDragEnd: DragHandlers["onDragEnd"] = (_event, info) => {
+    if (info.offset.x < -100) {
+      toggleSideNavMobileOpen();
+    }
+  };
+
   return (
     <Fragment>
       <AnimatePresence>
         {sideNavMobileOpen && (
-          <m.aside
+          <motion.aside
+            drag="x"
+            dragConstraints={{
+              left: 0,
+              right: 0,
+            }}
+            dragElastic={{
+              left: 0.8,
+              right: 0,
+            }}
             initial={{ width: 0 }}
             animate={{ width: "100%" }}
+            exit={{ width: 0, opacity: 0 }}
+            onDragEnd={handleDragEnd}
             className={cnM(
               "absolute inset-0 z-[100] grid h-full grid-rows-[auto_1fr_auto]",
               "bg-base-200",
@@ -40,7 +56,7 @@ const SideNavMobile = ({ className }: SideNavMobileProps) => {
 
             {/* Scrollable menu items */}
             <NavigationMenu navOpen className="pb-8 pt-2" />
-          </m.aside>
+          </motion.aside>
         )}
       </AnimatePresence>
     </Fragment>
