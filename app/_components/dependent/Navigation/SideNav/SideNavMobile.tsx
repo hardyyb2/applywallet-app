@@ -32,9 +32,11 @@ const SideNavMobile = ({ className }: SideNavMobileProps) => {
     <Fragment>
       <AnimatePresence>
         {mobileMenuOpen && (
-          <m.div
+          <m.aside
+            initial={{ width: 0 }}
+            animate={{ width: "100%" }}
             className={cnM(
-              "fixed inset-0 z-[100] grid h-full w-full grid-rows-[auto_1fr_auto]",
+              "absolute inset-0 z-[100] grid h-full grid-rows-[auto_1fr_auto]",
               "bg-base-200",
               className,
             )}
@@ -50,7 +52,7 @@ const SideNavMobile = ({ className }: SideNavMobileProps) => {
 
             {/* Scrollable menu items */}
             <NavigationMenu navOpen={mobileMenuOpen} className="pb-8 pt-2" />
-          </m.div>
+          </m.aside>
         )}
       </AnimatePresence>
     </Fragment>

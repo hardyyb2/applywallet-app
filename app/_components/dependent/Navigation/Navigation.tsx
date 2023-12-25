@@ -1,3 +1,5 @@
+"use client";
+
 import { Fragment } from "react";
 
 import { Flex } from "~/components/ds/Flex";
@@ -11,7 +13,7 @@ const Navigation = () => {
       <Flex
         component="aside"
         justify="center"
-        className="hidden h-full overflow-hidden pt-20 lg:flex"
+        className="hidden h-full overflow-hidden lg:flex"
       >
         <SideNav />
       </Flex>

@@ -24,7 +24,7 @@ const HeaderClient = ({ className }: HeaderClientProps) => {
       searchParams.set(SearchParams.MOBILE_SIDE_MENU_OPEN, "true");
     }
 
-    router.push(`?${searchParams}`);
+    router.replace(`?${searchParams}`);
   };
 
   return (
