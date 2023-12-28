@@ -9,6 +9,7 @@ import { Icons } from "~/components/ds/Icons";
 import { useSideNavMobileStore } from "@/store/useSideNavMobile";
 import { cnM } from "@/utils/styles";
 
+import { NavBackdrop } from "../NavBackdrop";
 import { NavigationMenu } from "../NavigationMenu";
 import { SideNavBrand } from "./SideNavBrand";
 
@@ -28,6 +29,11 @@ const SideNavMobile = ({ className }: SideNavMobileProps) => {
 
   return (
     <Fragment>
+      <NavBackdrop
+        visible={sideNavMobileOpen}
+        toggleVisible={toggleSideNavMobileOpen}
+        className="z-[100]"
+      />
       <AnimatePresence>
         {sideNavMobileOpen && (
           <motion.aside
@@ -41,7 +47,7 @@ const SideNavMobile = ({ className }: SideNavMobileProps) => {
               right: 0,
             }}
             initial={{ width: 0 }}
-            animate={{ width: "100%" }}
+            animate={{ width: "80%" }}
             exit={{ width: 0, opacity: 0, pointerEvents: "none" }}
             onDragEnd={handleDragEnd}
             className={cnM(

@@ -12,8 +12,8 @@ import { Flex } from "~/components/ds/Flex";
 
 import { cnM } from "@/utils/styles";
 
+import { NavBackdrop } from "../NavBackdrop";
 import { NavigationMenu } from "../NavigationMenu";
-import { BottomNavBackdrop } from "./BottomNavBackdrop";
 import { BottomNavBar } from "./BottomNavBar";
 
 const { Render } = ConditionalMatch;
@@ -29,7 +29,7 @@ const BottomNav = ({ className = "" }: BottomNavProps) => {
 
   return (
     <Fragment>
-      <BottomNavBackdrop
+      <NavBackdrop
         visible={showFullBottomNav}
         toggleVisible={toggleShowFullBottomNav}
         className="z-10"

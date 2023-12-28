@@ -1,20 +1,20 @@
 import { cn } from "@/utils/styles";
 
-interface BottomNavBackdropProps {
+interface NavBackdropProps {
   visible: boolean;
   toggleVisible: () => void;
   className?: string;
 }
 
-const BottomNavBackdrop = ({
+const NavBackdrop = ({
   visible,
   toggleVisible,
   className = "",
-}: BottomNavBackdropProps) => {
+}: NavBackdropProps) => {
   return (
     <div
       className={cn(
-        "fixed inset-0 h-full w-full overflow-y-auto bg-primary bg-opacity-80 backdrop-blur",
+        "fixed inset-0 h-full w-full overflow-y-auto bg-neutral/80 bg-opacity-80 backdrop-blur",
         visible ? "block" : "hidden",
         className,
       )}
@@ -25,4 +25,4 @@ const BottomNavBackdrop = ({
   );
 };
 
-export { BottomNavBackdrop };
+export { NavBackdrop };
