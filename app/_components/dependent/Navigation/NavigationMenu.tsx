@@ -60,8 +60,8 @@ const NavigationMenu = ({
                 <li key={item.key ?? itemLinkWithLocale}>
                   <Link
                     href={itemLinkWithLocale}
-                    className={cn("py-2 ", {
-                      "bg-secondary text-secondary-content": active,
+                    className={cn("py-2", {
+                      "dui-active": active,
                     })}
                     onClick={onNavItemClick}
                   >

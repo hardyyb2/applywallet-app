@@ -41,3 +41,7 @@ textarea::placeholder {
 .dui-menu-title {
   @apply label-m px-xs py-3xs;
 }
+
+.dui-active {
+  @apply bg-secondary text-secondary-content #{!important};
+}
