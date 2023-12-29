@@ -1,6 +1,6 @@
 "use client";
 
-import { m } from "framer-motion";
+import { motion } from "framer-motion";
 import { useBoolean } from "react-use";
 
 import { cn } from "@/utils/styles";
@@ -12,9 +12,12 @@ const SideNav = () => {
   const [navOpen, toggleSideNav] = useBoolean(false);
 
   return (
-    <m.div
+    <motion.div
+      initial={{
+        width: 74,
+      }}
       animate={{
-        width: navOpen ? 240 : 72,
+        width: navOpen ? 240 : 74,
       }}
       className={cn(
         "grid h-[96%] grid-rows-[auto_1fr_auto]",
@@ -29,7 +32,7 @@ const SideNav = () => {
 
       {/* Scrollable menu items */}
       <NavigationMenu navOpen={navOpen} className="pb-8 pt-2" />
-    </m.div>
+    </motion.div>
   );
 };
 
