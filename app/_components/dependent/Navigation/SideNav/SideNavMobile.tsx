@@ -1,77 +1,48 @@
 "use client";
 
-import { Fragment } from "react";
+import {
+  Sheet,
+  SheetContent,
+  SheetOverlay,
+  SheetPortal,
+} from "~/components/ds/Sheet";
 
-import { AnimatePresence, motion, type DragHandlers } from "framer-motion";
-
-import { Icons } from "~/components/ds/Icons";
-
+import { useBreakPoint } from "@/hooks/useBreakPoint";
 import { useSideNavMobileStore } from "@/store/useSideNavMobile";
-import { cnM } from "@/utils/styles";
 
-import { NavBackdrop } from "../NavBackdrop";
 import { NavigationMenu } from "../NavigationMenu";
 import { SideNavBrand } from "./SideNavBrand";
 
-type SideNavMobileProps = {
-  className?: string;
-};
-
-const SideNavMobile = ({ className }: SideNavMobileProps) => {
-  const { sideNavMobileOpen, toggleSideNavMobileOpen } =
+const SideNavMobile = () => {
+  const { sideNavMobileOpen, toggleSideNavMobileOpen, setSideNavMobileOpen } =
     useSideNavMobileStore();
+  const { isAboveLg } = useBreakPoint("lg");
 
-  const handleDragEnd: DragHandlers["onDragEnd"] = (_event, info) => {
-    if (info.offset.x < -100) {
-      toggleSideNavMobileOpen();
-    }
-  };
+  if (isAboveLg) {
+    return null;
+  }
 
   return (
-    <Fragment>
-      <NavBackdrop
-        visible={sideNavMobileOpen}
-        toggleVisible={toggleSideNavMobileOpen}
-        className="z-[100]"
-      />
-      <AnimatePresence>
-        {sideNavMobileOpen && (
-          <motion.aside
-            drag="x"
-            dragConstraints={{
-              left: 0,
-              right: 0,
-            }}
-            dragElastic={{
-              left: 0.8,
-              right: 0,
-            }}
-            initial={{ width: 0 }}
-            animate={{ width: "80%" }}
-            exit={{ width: 0, opacity: 0, pointerEvents: "none" }}
-            onDragEnd={handleDragEnd}
-            className={cnM(
-              "absolute inset-0 z-[100] grid h-full touch-none grid-rows-[auto_1fr_auto]",
-              "bg-base-200",
-              className,
-            )}
-          >
-            {/* Top section */}
-            <div className="p-2">
-              <SideNavBrand navOpen onToggleClick={toggleSideNavMobileOpen} />
-              <div className="divider m-0" />
-            </div>
+    <Sheet open={sideNavMobileOpen} onOpenChange={setSideNavMobileOpen}>
+      <SheetPortal>
+        <SheetOverlay />
+        <SheetContent
+          showClose={false}
+          onOpenAutoFocus={(e) => e.preventDefault()}
+        >
+          <div className="p-2 pb-0">
+            <SideNavBrand navOpen onToggleClick={toggleSideNavMobileOpen} />
+          </div>
 
-            {/* Scrollable menu items */}
-            <NavigationMenu
-              navOpen
-              className="pb-8 pt-2"
-              onNavItemClick={toggleSideNavMobileOpen}
-            />
-          </motion.aside>
-        )}
-      </AnimatePresence>
-    </Fragment>
+          {/* Scrollable menu items */}
+          <NavigationMenu
+            navOpen
+            className="pb-8 "
+            onNavItemClick={toggleSideNavMobileOpen}
+          />
+        </SheetContent>
+      </SheetPortal>
+    </Sheet>
   );
 };
 
