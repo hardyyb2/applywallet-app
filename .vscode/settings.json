@@ -6,5 +6,9 @@
     ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
     ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
   ],
-  "cSpell.words": ["testid"]
+  "cSpell.words": ["testid"],
+  "files.associations": {
+    "*.scss": "tailwindcss",
+    "*.css": "tailwindcss"
+  }
 }
