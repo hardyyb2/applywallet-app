@@ -6,7 +6,7 @@ import { Badge } from "~/components/ds/Badge";
 import { Card } from "~/components/ds/Card";
 import { Flex } from "~/components/ds/Flex";
 
-import { cn } from "@/utils/styles";
+import { cn, cnM } from "@/utils/styles";
 
 import styles from "./blogCard.module.scss";
 
@@ -23,7 +23,12 @@ const BlogCard = ({
     <Card className={cn("group max-w-none bg-base-100")}>
       {image ? (
         <Card.Figure className={cn("m-3xs h-80")}>
-          <div className={styles.imageMask} />
+          <div
+            className={cnM(
+              "absolute bottom-0 left-0 z-10 h-1/3 w-full",
+              styles.imageMask,
+            )}
+          />
           <Image
             className="transition-all duration-500 group-hover:scale-110"
             objectFit="cover"
