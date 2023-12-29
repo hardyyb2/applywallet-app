@@ -86,7 +86,7 @@ const config = {
     typographyComponentsPlugin,
   ],
   daisyui: {
-    themes: ["light", "synthwave", "lofi", "winter"],
+    themes: ["light", "synthwave"],
     logs: false,
     prefix: "dui-",
   },
