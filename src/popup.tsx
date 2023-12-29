@@ -32,9 +32,7 @@ const Popup = () => {
   logger.info("autoFill", {}, ["a"]);
 
   if (isLoading) {
-    return (
-      <BarLoader barClassName="h-xl w-3xs" className="justify-center p-s " />
-    );
+    return <BarLoader className="h-xl w-3xs justify-center p-s" />;
   }
 
   if (data?.user) {
