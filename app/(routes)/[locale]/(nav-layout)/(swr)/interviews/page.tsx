@@ -32,7 +32,7 @@ const Interviews = async () => {
   }
 
   return (
-    <div className="px-6 py-4 lg:px-10">
+    <div className="px-5 py-4 lg:px-10">
       <Flex justify="space-between" align="center" className="mb-m-l gap-4">
         <Flex direction="column">
           <h1 className="headline-s lg:headline-m">interviews</h1>
