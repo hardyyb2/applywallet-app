@@ -18,7 +18,7 @@ const Navigation = () => {
         <SideNav />
       </Flex>
 
-      <SideNavMobile className="lg:hidden" />
+      <SideNavMobile />
     </Fragment>
   );
 };
