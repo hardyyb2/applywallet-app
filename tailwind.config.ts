@@ -1,8 +1,9 @@
+import type { Config } from "tailwindcss";
 import { fontFamily } from "tailwindcss/defaultTheme";
 
 import { typographyComponentsPlugin } from "./common/utils/tailwind";
 
-const config = {
+const config: Config = {
   // TODO - check how multiple configs can work without whole app content being included
   content: [
     "./app/**/*.{js,ts,jsx,tsx}",
