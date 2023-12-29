@@ -45,3 +45,7 @@ textarea::placeholder {
 .dui-active {
   @apply bg-secondary text-secondary-content #{!important};
 }
+
+.dui-loading-xl {
+  @apply w-16;
+}
