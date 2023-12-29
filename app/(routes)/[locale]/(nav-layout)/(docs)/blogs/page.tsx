@@ -4,10 +4,10 @@ import { allBlogs } from "contentlayer/generated";
 
 import { Flex } from "~/components/ds/Flex";
 
-import { BlogCard } from "@/components/dependent/BlogCard";
 import { getI18n } from "@/locales/server";
 
 import { BlogCardsWrapper } from "./[...slug]/BlogCardsWrapper";
+import { BlogCard } from "./BlogCard";
 
 const BlogsPage = async () => {
   const t = await getI18n();
