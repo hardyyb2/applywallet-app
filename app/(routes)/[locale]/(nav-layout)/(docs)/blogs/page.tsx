@@ -15,11 +15,9 @@ const BlogsPage = async () => {
 
   return (
     <div className="px-5 py-4 lg:px-10">
-      <Flex justify="space-between" align="center" className="mb-m-l gap-4">
-        <Flex direction="column">
-          <h1 className="headline-s lg:headline-m">{t("blogs.title")}</h1>
-          <h4 className="label-s lg:label-m">{t("blogs.subtitle")}</h4>
-        </Flex>
+      <Flex direction="column" className="mb-s-m">
+        <h1 className="headline-s lg:headline-m">{t("blogs.title")}</h1>
+        <h4 className="label-s lg:label-m">{t("blogs.subtitle")}</h4>
       </Flex>
 
       <BlogCardsWrapper>

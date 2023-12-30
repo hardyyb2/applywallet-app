@@ -12,7 +12,6 @@ type BlogCardMobileProps = Blog;
 
 const BlogCardMobile = ({
   title,
-  description,
   category,
   image,
   tags,
@@ -21,11 +20,11 @@ const BlogCardMobile = ({
     <Card className={cn("group max-w-none")}>
       <Card.Body>
         <div className="grid grid-cols-[1fr_120px] gap-xs">
-          <Flex direction="column">
+          <Flex direction="column" className="gap-3xs">
             <span className="label-xs line-clamp-1 text-secondary lg:label-m">
               {category.name}
             </span>
-            <Card.Title className="title-s mb-2xs-xs line-clamp-2 md:title-m">
+            <Card.Title className="body-s mb-2xs-xs line-clamp-2 md:body-m">
               {title}
             </Card.Title>
 
