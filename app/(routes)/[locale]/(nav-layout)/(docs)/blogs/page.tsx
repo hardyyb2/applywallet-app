@@ -7,6 +7,7 @@ import { Flex } from "~/components/ds/Flex";
 import { getI18n } from "@/locales/server";
 
 import { BlogCardsWrapper } from "./[...slug]/BlogCardsWrapper";
+import { BlogCard, BlogCardMobile } from "./BlogCard";
 import { BlogCardClient } from "./BlogCardClient";
 
 const BlogsPage = async () => {
@@ -28,7 +29,9 @@ const BlogsPage = async () => {
             key={blog._id}
             className="rounded-2xl outline-4 outline-base-content hover:outline-dashed focus-visible:outline-dashed"
           >
-            <BlogCardClient blog={blog} />
+            <BlogCardClient mobile={<BlogCardMobile {...blog} />}>
+              <BlogCard {...blog} />
+            </BlogCardClient>
           </Link>
         ))}
       </BlogCardsWrapper>

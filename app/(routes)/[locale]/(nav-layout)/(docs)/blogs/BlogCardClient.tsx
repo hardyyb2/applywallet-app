@@ -1,24 +1,20 @@
 "use client";
 
-import type { Blog } from "contentlayer/generated";
-
 import { useBreakPoint } from "@/hooks/useBreakPoint";
 
-import { BlogCard } from "./BlogCard/BlogCard";
-import { BlogCardMobile } from "./BlogCard/BlogCardMobile";
-
 type BlogCardClientProps = {
-  blog: Blog;
+  mobile: React.ReactNode;
+  children: React.ReactNode;
 };
 
-const BlogCardClient = ({ blog }: BlogCardClientProps) => {
+const BlogCardClient = ({ mobile, children }: BlogCardClientProps) => {
   const { isBelowLg } = useBreakPoint("lg");
 
   if (isBelowLg) {
-    return <BlogCardMobile {...blog} />;
+    return mobile;
   }
 
-  return <BlogCard {...blog} />;
+  return children;
 };
 
 export { BlogCardClient };
