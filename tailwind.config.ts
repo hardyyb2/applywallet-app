@@ -55,6 +55,25 @@ const config: Config = {
         DEFAULT: {
           css: {
             maxWidth: "80ch",
+            fontFamily: "var(--font-secondary)",
+            h1: {
+              fontFamily: "var(--font-primary)",
+            },
+            h2: {
+              fontFamily: "var(--font-primary)",
+            },
+            h3: {
+              fontFamily: "var(--font-primary)",
+            },
+            h4: {
+              fontFamily: "var(--font-primary)",
+            },
+            h5: {
+              fontFamily: "var(--font-primary)",
+            },
+            h6: {
+              fontFamily: "var(--font-primary)",
+            },
           },
         },
       },
