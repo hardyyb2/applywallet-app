@@ -44,7 +44,7 @@ const BlogScrollWrapper = ({ children }: PropsWithChildren) => {
     <ScrollArea
       type="always"
       ref={containerRef}
-      className={cnM("relative h-full w-full rounded-2xl bg-base-100")}
+      className={cnM("relative h-full w-full bg-base-100 lg:rounded-2xl")}
     >
       <ScrollAreaViewport
         ref={viewportRef}

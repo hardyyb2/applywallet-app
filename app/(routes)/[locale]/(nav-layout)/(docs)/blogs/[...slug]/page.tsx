@@ -55,9 +55,9 @@ const BlogPage = async ({ params }: BlogPageProps) => {
   }
 
   return (
-    <div className="h-full overflow-hidden px-s-m pb-s">
+    <div className="h-full overflow-hidden lg:px-s-m lg:pb-s">
       <Flex direction="column" className="h-full">
-        <ScrollArea>
+        <ScrollArea className="hidden lg:block">
           <ScrollAreaViewport>
             <Breadcrumbs className="mb-2xs flex-0 pt-0 [&_a]:no-underline">
               <Breadcrumbs.Item>
