@@ -1,4 +1,4 @@
-import { appThemes } from "@/utils/theme";
+import { appThemes } from "~/utils/tailwind/theme";
 
 export const selectableThemes: { label?: string; value: string }[] =
   appThemes?.map((theme) => ({

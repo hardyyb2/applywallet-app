@@ -3,10 +3,11 @@ import * as React from "react";
 import type { Preview } from "@storybook/react";
 
 import { fonts } from "../app/_lib/fonts";
-import { appThemes } from "../app/_utils/theme";
 
 import "@/styles/globals.app.scss";
 import "~/styles/overrides/daisyui.scss";
+
+import { appThemes } from "~/utils/tailwind/theme";
 
 const preview: Preview = {
   parameters: {

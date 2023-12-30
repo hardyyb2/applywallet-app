@@ -4,8 +4,9 @@ import { useEffect } from "react";
 
 import { useLocalStorage } from "react-use";
 
+import { appThemes } from "~/utils/tailwind/theme";
+
 import { LocalStorageKeys } from "@/utils/localStorage";
-import { appThemes } from "@/utils/theme";
 
 const initialTheme = appThemes[0];
 
