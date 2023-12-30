@@ -1,4 +1,4 @@
-import type { BreakPointKeyType } from "@/utils/design-system";
+import type { BreakPointKeyType } from "~/utils/tailwind/theme";
 
 export type FlexDirectionType =
   | "row"

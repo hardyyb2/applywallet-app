@@ -77,9 +77,14 @@ function extractThemeColorsFromDOM(): ThemeColors {
   };
 }
 
+const breakpoints = fullConfig.theme.screens;
+type BreakPointKeyType = keyof typeof breakpoints;
+
 export {
   fullConfig as tailwindConfig,
   appThemes,
+  breakpoints,
   extractThemeColorsFromDOM,
   type ThemeColors,
+  type BreakPointKeyType,
 };
