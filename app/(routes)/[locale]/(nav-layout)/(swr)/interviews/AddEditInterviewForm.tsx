@@ -271,8 +271,7 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
           <Flex
             align="stretch"
             direction="column"
-            switchDirection="md"
-            className="gap-2"
+            className="gap-2 md:flex-row"
           >
             <Button
               type="button"
