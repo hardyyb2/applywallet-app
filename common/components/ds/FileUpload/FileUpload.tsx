@@ -11,8 +11,15 @@ import { cnM } from "@/utils/styles";
 import { Card } from "../Card";
 import { flexVariants } from "../Flex/flex.utils";
 import { Icons } from "../Icons";
+import type { FileUploadColorType } from "./fileUpload.types";
 
-const FileUploadContext = React.createContext<DropzoneState | null>(null);
+interface FileUploadContextType extends DropzoneState {
+  color?: FileUploadColorType;
+}
+
+const FileUploadContext = React.createContext<FileUploadContextType | null>(
+  null,
+);
 
 const useFileUpload = () => {
   const context = React.useContext(FileUploadContext);
@@ -26,11 +33,13 @@ const useFileUpload = () => {
 
 interface FileUploadProviderProps extends PropsWithChildren<DropzoneOptions> {
   multiple?: boolean;
+  color?: FileUploadColorType;
 }
 
 const FileUploadProvider = ({
   children,
   multiple,
+  color = "primary",
   ...rest
 }: FileUploadProviderProps) => {
   const value = useDropzone({
@@ -39,7 +48,7 @@ const FileUploadProvider = ({
   });
 
   return (
-    <FileUploadContext.Provider value={value}>
+    <FileUploadContext.Provider value={{ ...value, color }}>
       <Card>
         <Card.Body>{children}</Card.Body>
       </Card>
@@ -50,7 +59,7 @@ const FileUploadProvider = ({
 interface FileUploadProps extends HTMLAttributes<HTMLDivElement> {}
 
 const FileUpload = ({ className, ...rest }: FileUploadProps) => {
-  const { getRootProps, isDragActive } = useFileUpload();
+  const { getRootProps, isDragActive, color } = useFileUpload();
 
   return (
     <div
@@ -62,8 +71,28 @@ const FileUpload = ({ className, ...rest }: FileUploadProps) => {
         justify: "center",
         className: cnM(
           "w-full cursor-pointer gap-2xs rounded-xl px-xs py-l outline-dashed",
-          "bg-base-100 bg-primary/10 outline-primary/40 transition-colors",
-          isDragActive && "dui-skeleton outline-primary",
+          "bg-base-100transition-colors",
+          {
+            "bg-primary/10 outline-primary/40": color === "primary",
+            "bg-secondary/10 outline-secondary/40": color === "secondary",
+            "bg-accent/10 outline-accent/40": color === "accent",
+            "bg-success/10 outline-success/40": color === "success",
+            "bg-warning/10 outline-warning/40": color === "warning",
+            "bg-error/10 outline outline-error": color === "error",
+            "bg-info/10 outline-info/40": color === "info",
+          },
+          isDragActive && [
+            "dui-skeleton",
+            {
+              "outline-primary": color === "primary",
+              "outline-secondary": color === "secondary",
+              "outline-accent": color === "accent",
+              "outline-success": color === "success",
+              "outline-warning": color === "warning",
+              "outline-error": color === "error",
+              "outline-info": color === "info",
+            },
+          ],
           className,
         ),
       })}
@@ -71,7 +100,8 @@ const FileUpload = ({ className, ...rest }: FileUploadProps) => {
   );
 };
 
-interface FileUploadInputProps {
+interface FileUploadInputProps
+  extends Omit<HTMLAttributes<HTMLInputElement>, "color"> {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   children?: React.ReactNode;
   /** show default file upload icon
@@ -84,15 +114,28 @@ const FileUploadInput = ({
   onChange,
   children,
   showIcon = true,
+  ...rest
 }: FileUploadInputProps) => {
-  const { getInputProps, isDragActive } = useFileUpload();
+  const { getInputProps, isDragActive, color } = useFileUpload();
 
   return (
     <>
-      <input {...getInputProps({ onChange })} />
+      <input {...rest} {...getInputProps({ onChange })} />
       {showIcon && (
         <Icons.FileUpload
-          className={cnM("h-20 w-20", isDragActive && "animate-bounce")}
+          className={cnM(
+            "h-20 w-20",
+            {
+              "text-primary": color === "primary",
+              "text-secondary": color === "secondary",
+              "text-accent": color === "accent",
+              "text-success": color === "success",
+              "text-warning": color === "warning",
+              "text-error": color === "error",
+              "text-info": color === "info",
+            },
+            isDragActive && "animate-bounce",
+          )}
         />
       )}
       {children}
@@ -101,16 +144,35 @@ const FileUploadInput = ({
 };
 
 const FileUploadLabel = () => {
-  const { isDragActive } = useFileUpload();
+  const { color } = useFileUpload();
 
   return (
     <p className="label-xs text-center lg:label-s">
       <span className="text-base-content/90">
         drop you files here. <br />
-        or <span className="label-m-bold text-primary">browse</span>
+        or{" "}
+        <span
+          className={cnM("label-m-bold", {
+            "text-primary": color === "primary",
+            "text-secondary": color === "secondary",
+            "text-accent": color === "accent",
+            "text-success": color === "success",
+            "text-warning": color === "warning",
+            "text-error": color === "error",
+            "text-info": color === "info",
+          })}
+        >
+          browse
+        </span>
       </span>
     </p>
   );
 };
 
-export { FileUploadProvider, FileUpload, FileUploadInput, FileUploadLabel };
+export {
+  FileUploadProvider,
+  FileUpload,
+  FileUploadInput,
+  FileUploadLabel,
+  type FileUploadProviderProps,
+};
