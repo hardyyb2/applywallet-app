@@ -4,29 +4,38 @@ import { z } from "zod";
 
 dayjs.extend(customParseFormat);
 
-export const zodKeys = <T extends z.ZodTypeAny>(schema: T): string[] => {
+export const zodKeys = <T extends z.ZodTypeAny>(
+  schema: T,
+  options: {
+    deep?: boolean;
+  } = {
+    deep: false,
+  },
+): string[] => {
   if (schema === null || schema === undefined) {
     return [];
   }
 
   if (schema instanceof z.ZodNullable || schema instanceof z.ZodOptional) {
-    return zodKeys(schema.unwrap());
+    return zodKeys(schema.unwrap(), options);
   }
 
   if (schema instanceof z.ZodArray) {
-    return zodKeys(schema.element);
+    return zodKeys(schema.element, options);
   }
 
   if (schema instanceof z.ZodObject) {
     const entries = Object.entries(schema.shape);
 
     return entries.flatMap(([key, value]) => {
-      const nested =
-        value instanceof z.ZodType
-          ? zodKeys(value).map((subKey) => `${key}.${subKey}`)
-          : [];
+      if (options.deep && value instanceof z.ZodType) {
+        const nested = zodKeys(value, options).map(
+          (subKey) => `${key}.${subKey}`,
+        );
+        return nested.length ? nested : key;
+      }
 
-      return nested.length ? nested : key;
+      return key;
     });
   }
 
