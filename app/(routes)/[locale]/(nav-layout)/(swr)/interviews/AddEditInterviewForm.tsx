@@ -291,6 +291,7 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
               loading={loading}
               responsive
               disabled={loading}
+              startIcon={<Icons.Check />}
             >
               {buttonText}
             </Button>
