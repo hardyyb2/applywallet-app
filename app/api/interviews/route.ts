@@ -10,7 +10,11 @@ import { logger } from "~/utils/logs";
 import { ApiError, ApiErrorCodes, ApiResponse } from "@/lib/api-response";
 import { authOptions } from "@/lib/auth";
 import { CustomError } from "@/lib/custom-error";
-import { interviewInputSchema, interviewSchema } from "@/lib/schema/interviews";
+import {
+  interviewInputSchema,
+  interviewSchema,
+  type InterviewType,
+} from "@/lib/schema/interviews";
 import { SheetNames } from "@/utils/sheet";
 import { zodKeys } from "@/utils/zod";
 
@@ -110,7 +114,13 @@ export async function GET() {
     // TODO - return damaged rows as well
     const interviewRows = (await interviewSheet.getRows())
       .map((ir) => {
-        const interview = { ...ir.toObject(), id: ir.rowNumber };
+        const interviewObj = ir.toObject();
+        const interview = {
+          ...interviewObj,
+          rounds: JSON.parse(interviewObj.rounds),
+          id: ir.rowNumber,
+        } as InterviewType;
+
         const parsedInterview = interviewSchema.safeParse(interview);
 
         if (parsedInterview.success) {
