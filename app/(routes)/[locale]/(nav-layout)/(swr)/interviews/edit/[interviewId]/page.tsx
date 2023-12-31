@@ -20,15 +20,19 @@ type EditInterviewProps = {
 const EditInterview = ({ params }: EditInterviewProps) => {
   const interviewId = params[UrlParams.INTERVIEW_ID];
 
-  // TODO - get type here
   const { data, isLoading, error } = useInterview(interviewId);
 
   if (error) {
     throw new Error();
   }
 
+  if (isLoading) {
+    return <BarLoader />;
+  }
+
+  // TODO - add something here
   if (!data) {
-    throw new Error("No data");
+    return null;
   }
 
   return (
