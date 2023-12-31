@@ -7,7 +7,7 @@ const roundSchema = z.object({
   type: z.string().optional(),
   date: z
     .string({
-      required_error: "please enter an end date",
+      required_error: "please enter a date",
     })
     .datetime({
       message: "please enter a valid date",
