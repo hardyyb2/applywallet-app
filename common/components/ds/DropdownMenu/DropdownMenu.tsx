@@ -154,7 +154,8 @@ const DropdownMenuRadioItem = React.forwardRef<
       "body-s lg:body-m",
       "relative flex cursor-pointer select-none items-center rounded-lg px-xs py-2xs outline-none transition-colors focus:bg-base-300",
       "data-[disabled]:pointer-events-none data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
-      "data-[state=checked]:bg-secondary data-[state=checked]:pl-m data-[state=checked]:text-secondary-content",
+      "data-[state=checked]:bg-secondary data-[state=checked]:text-secondary-content",
+      showIcon && "data-[state=checked]:pl-m",
       className,
     )}
     {...props}
