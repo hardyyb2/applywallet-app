@@ -61,8 +61,10 @@ export async function GET(
       })
     )[0];
 
+    const interviewObj = requiredRow.toObject();
     const interviewData = {
-      ...requiredRow.toObject(),
+      ...interviewObj,
+      rounds: JSON.parse(interviewObj.rounds),
       id: interviewId,
     };
     const interview = interviewSchema.parse(interviewData);
