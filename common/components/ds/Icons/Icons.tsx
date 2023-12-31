@@ -44,6 +44,7 @@ import {
   ListOrdered,
   Lock,
   LogIn,
+  LogOut,
   Maximize,
   Minimize,
   Minus,
@@ -133,6 +134,7 @@ const Icons = {
   AlignLeft,
   GripVertical,
   UploadCloud,
+  LogOut,
   CustomRadio: forwardRef<
     SVGSVGElement,
     LucideProps & { innerCircleClassName?: string }

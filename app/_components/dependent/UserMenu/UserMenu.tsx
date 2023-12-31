@@ -4,6 +4,7 @@ import { signOut, useSession } from "next-auth/react";
 
 import { Avatar, AvatarFallback, AvatarImage } from "~/components/ds/Avatar";
 import { Button } from "~/components/ds/Button";
+import { Icons } from "~/components/ds/Icons";
 import {
   Popover,
   PopoverArrow,
@@ -62,6 +63,7 @@ const UserMenu = () => {
               onClick={handleLogout}
               color="ghost"
               className="flex flex-row flex-nowrap"
+              startIcon={<Icons.LogOut />}
             >
               <span>logout</span>
             </Button>
