@@ -56,6 +56,7 @@ import {
   Pilcrow,
   Plus,
   Quote,
+  Save,
   Settings,
   Strikethrough,
   Subscript,
@@ -135,6 +136,7 @@ const Icons = {
   GripVertical,
   UploadCloud,
   LogOut,
+  Save,
   CustomRadio: forwardRef<
     SVGSVGElement,
     LucideProps & { innerCircleClassName?: string }
