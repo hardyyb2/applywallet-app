@@ -4,16 +4,20 @@ import type { HTMLAttributes } from "react";
 
 import { cnM } from "@/utils/styles";
 
+import { Flex } from "../Flex";
+
 interface BarLoaderProps extends HTMLAttributes<HTMLDivElement> {
   size?: "xs" | "sm" | "md" | "lg" | "xl";
+  fill?: boolean;
 }
 
 const BarLoader = ({
   className = "",
   size = "xl",
+  fill = true,
   ...rest
 }: BarLoaderProps) => {
-  return (
+  const content = (
     <div
       {...rest}
       className={cnM(
@@ -29,6 +33,16 @@ const BarLoader = ({
       )}
     />
   );
+
+  if (fill) {
+    return (
+      <Flex className="h-full w-full" align="center" justify="center">
+        {content}
+      </Flex>
+    );
+  }
+
+  return content;
 };
 
 export { BarLoader };
