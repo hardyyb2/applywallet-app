@@ -37,6 +37,8 @@ export async function POST(request: Request) {
 
     const allSheets = doc.sheetsByTitle;
     let interviewSheet = allSheets[SheetNames.INTERVIEWS];
+
+    // TODO - check for header row not existing
     if (!interviewSheet) {
       interviewSheet = await doc.addSheet({
         title: SheetNames.INTERVIEWS,
