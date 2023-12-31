@@ -41,7 +41,7 @@ const FileUploadProvider = ({
   return (
     <FileUploadContext.Provider value={value}>
       <Card>
-        <Card.Body className="gap-xs">{children}</Card.Body>
+        <Card.Body>{children}</Card.Body>
       </Card>
     </FileUploadContext.Provider>
   );
@@ -61,7 +61,7 @@ const FileUpload = ({ className, ...rest }: FileUploadProps) => {
         align: "center",
         justify: "center",
         className: cnM(
-          "w-full cursor-pointer gap-xs rounded-xl px-xs py-l outline-dashed",
+          "w-full cursor-pointer gap-2xs rounded-xl px-xs py-l outline-dashed",
           "bg-base-100 bg-primary/10 outline-primary/40 transition-colors",
           isDragActive && "outline-primary",
           className,
