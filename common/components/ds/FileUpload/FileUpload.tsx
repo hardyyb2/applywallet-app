@@ -63,7 +63,7 @@ const FileUpload = ({ className, ...rest }: FileUploadProps) => {
         className: cnM(
           "w-full cursor-pointer gap-2xs rounded-xl px-xs py-l outline-dashed",
           "bg-base-100 bg-primary/10 outline-primary/40 transition-colors",
-          isDragActive && "outline-primary",
+          isDragActive && "dui-skeleton outline-primary",
           className,
         ),
       })}
@@ -85,12 +85,16 @@ const FileUploadInput = ({
   children,
   showIcon = true,
 }: FileUploadInputProps) => {
-  const { getInputProps } = useFileUpload();
+  const { getInputProps, isDragActive } = useFileUpload();
 
   return (
     <>
       <input {...getInputProps({ onChange })} />
-      {showIcon && <Icons.FileUpload className="h-20 w-20" />}
+      {showIcon && (
+        <Icons.FileUpload
+          className={cnM("h-20 w-20", isDragActive && "animate-bounce")}
+        />
+      )}
       {children}
     </>
   );
@@ -101,14 +105,10 @@ const FileUploadLabel = () => {
 
   return (
     <p className="label-xs text-center lg:label-s">
-      {isDragActive ? (
-        "drop your files here"
-      ) : (
-        <span className="text-base-content/90">
-          drop you files here. <br />
-          or <span className="label-m-bold text-primary">browse</span>
-        </span>
-      )}
+      <span className="text-base-content/90">
+        drop you files here. <br />
+        or <span className="label-m-bold text-primary">browse</span>
+      </span>
     </p>
   );
 };
