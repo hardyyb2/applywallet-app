@@ -13,6 +13,7 @@ import { authOptions } from "@/lib/auth";
 
 import { InterviewActions } from "./InterviewActions/InterviewActions";
 import { InterviewsList } from "./InterviewsList";
+import { InterviewsTable } from "./InterviewsTable";
 
 export const metadata: Metadata = {
   title: "interviews",
@@ -44,7 +45,7 @@ const Interviews = async () => {
         <InterviewActions />
       </Flex>
 
-      <InterviewsList />
+      <InterviewsTable />
 
       <Link href={AppRoutes.ADD_INTERVIEW}>
         <Button
