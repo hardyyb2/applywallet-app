@@ -11,7 +11,10 @@ interface TableProps
     VariantProps<typeof tableVariants> {}
 
 const Table = React.forwardRef<HTMLTableElement, TableProps>(
-  ({ size, pinRows, pinCols, variant, className, ...props }, ref) => (
+  (
+    { size, pinRows, pinCols, variant, className, responsive, ...props },
+    ref,
+  ) => (
     <table
       ref={ref}
       className={tableVariants({
@@ -19,6 +22,7 @@ const Table = React.forwardRef<HTMLTableElement, TableProps>(
         pinRows,
         pinCols,
         variant,
+        responsive,
         className,
       })}
       {...props}
@@ -39,7 +43,11 @@ const TableBody = React.forwardRef<
   HTMLTableSectionElement,
   React.HTMLAttributes<HTMLTableSectionElement>
 >(({ className, ...props }, ref) => (
-  <tbody ref={ref} className={className} {...props} />
+  <tbody
+    ref={ref}
+    className={cnM("[&_tr:last-child]:border-0", className)}
+    {...props}
+  />
 ));
 TableBody.displayName = "TableBody";
 
@@ -51,19 +59,23 @@ const TableFooter = React.forwardRef<
 ));
 TableFooter.displayName = "TableFooter";
 
-const TableRow = React.forwardRef<
-  HTMLTableRowElement,
-  React.HTMLAttributes<HTMLTableRowElement>
->(({ className, ...props }, ref) => (
-  <tr
-    ref={ref}
-    className={cnM(
-      "dui-hover transition-colors data-[state=selected]:bg-base-100",
-      className,
-    )}
-    {...props}
-  />
-));
+interface TableRowProps extends React.HTMLAttributes<HTMLTableRowElement> {
+  hoverable?: boolean;
+}
+
+const TableRow = React.forwardRef<HTMLTableRowElement, TableRowProps>(
+  ({ className, hoverable = false, ...props }, ref) => (
+    <tr
+      ref={ref}
+      className={cnM(
+        "transition-colors data-[state=selected]:bg-base-100",
+        hoverable && "dui-hover",
+        className,
+      )}
+      {...props}
+    />
+  ),
+);
 TableRow.displayName = "TableRow";
 
 const TableHead = React.forwardRef<
