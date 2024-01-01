@@ -30,11 +30,13 @@ const Flex = forwardRef<
       component: Component = "div",
       className = "",
       children = null,
+      ...rest
     },
     ref,
   ) => {
     return (
       <Component
+        {...rest}
         ref={ref}
         className={flexVariants({
           direction,
