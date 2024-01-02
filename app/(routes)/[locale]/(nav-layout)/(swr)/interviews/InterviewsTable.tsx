@@ -73,6 +73,7 @@ const tableColumns: ColumnDef<InterviewType>[] = [
     cell: ({ row }) => {
       return row.getValue("result") || "-";
     },
+    enableSorting: false,
   },
 ];
 
