@@ -1,5 +1,12 @@
 import { z } from "zod";
 
+enum InterviewStatus {
+  IN_PROGRESS = "in_progress",
+  COMPLETED = "completed",
+  PENDING = "pending",
+  CANCELLED = "cancelled",
+}
+
 const roundSchema = z.object({
   name: z.string().min(1, {
     message: "please enter a round name",
@@ -12,10 +19,14 @@ const roundSchema = z.object({
     .datetime({
       message: "please enter a valid date",
     }),
-  result: z.string().optional(),
+  result: z
+    .string({
+      required_error: "please enter a result",
+    })
+    .optional(),
 });
 
-export const interviewSchema = z.object({
+const interviewSchema = z.object({
   id: z.union([z.string(), z.number()]),
   company_name: z.string().min(1, {
     message: "please enter company name",
@@ -25,6 +36,10 @@ export const interviewSchema = z.object({
   }),
   result: z.string().optional(),
   rounds: z.array(roundSchema),
+  notes: z.array(z.record(z.any())).optional(),
+  status: z.nativeEnum(InterviewStatus, {
+    required_error: "please select a status",
+  }),
 
   start_date: z
     .string({
@@ -41,12 +56,20 @@ export const interviewSchema = z.object({
       message: "please enter a valid date",
     })
     .optional(),
-  notes: z.array(z.record(z.any())).optional(),
 });
 
 /** does not include id */
-export const interviewInputSchema = interviewSchema.omit({ id: true });
+const interviewInputSchema = interviewSchema.omit({ id: true });
 
-export type InterviewRoundType = z.infer<typeof roundSchema>;
-export type InterviewType = z.infer<typeof interviewSchema>;
-export type InterviewInputType = z.infer<typeof interviewInputSchema>;
+type InterviewRoundType = z.infer<typeof roundSchema>;
+type InterviewType = z.infer<typeof interviewSchema>;
+type InterviewInputType = z.infer<typeof interviewInputSchema>;
+
+export {
+  type InterviewRoundType,
+  type InterviewType,
+  type InterviewInputType,
+  InterviewStatus,
+  interviewSchema,
+  interviewInputSchema,
+};
