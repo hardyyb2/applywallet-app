@@ -147,7 +147,7 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
   return (
     <Card className="m-auto overflow-hidden" compact normal="lg">
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
-        <Card.Body className="[&_.dui-form-control]:mt-3xs">
+        <Card.Body className="[&_.dui-form-control]:mt-2xs">
           <h1 className="headline-s lg:headline-m">{titleText}</h1>
           <div>
             <FormField
@@ -191,6 +191,14 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
                 control={control}
                 options={interviewStatusOptions}
                 isClearable
+                placeholder="select status"
+                formatOptionLabel={(option) => {
+                  return (
+                    <Flex className="gap-3xs" align="center">
+                      {option.icon} {option.label}
+                    </Flex>
+                  );
+                }}
               />
             </FormField>
 
