@@ -51,6 +51,11 @@ function FormFieldSelect<T extends FieldValues>({
             return parsedOption.data.value === field.value;
           })}
           onChange={(option) => {
+            if (!option) {
+              onChange();
+              return;
+            }
+
             const parsedOption = optionSchema.safeParse(option);
             if (parsedOption.success) {
               onChange(parsedOption.data.value);
