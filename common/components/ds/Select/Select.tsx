@@ -131,6 +131,24 @@ const Select = ({
             />
           </Components.DropdownIndicator>
         ),
+        ClearIndicator: (props) => (
+          <Components.ClearIndicator {...props}>
+            <Icons.X
+              className={cnM(
+                "mr-3xs h-4 w-4 cursor-pointer",
+                color === "primary" && "stroke-primary",
+                color === "secondary" && "stroke-secondary",
+                color === "accent" && "stroke-accent",
+                color === "ghost" && "stroke-base-content",
+                color === "error" && "stroke-error",
+                color === "warning" && "stroke-warning",
+                color === "success" && "stroke-success",
+                color === "info" && "stroke-info",
+                responsive && "h-4 w-4 md:h-6 md:w-6",
+              )}
+            />
+          </Components.ClearIndicator>
+        ),
         ...components,
       }}
       {...restProps}
