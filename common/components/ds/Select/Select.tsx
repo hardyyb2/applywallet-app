@@ -7,6 +7,7 @@ import type { VariantProps } from "cva";
 import {
   components as Components,
   type Props as BaseSelectProps,
+  type GroupBase,
 } from "react-select";
 
 import { cn, cnM } from "@/utils/styles";
@@ -20,14 +21,21 @@ const BaseSelectNoSSR = dynamic(() => import("react-select"), {
   ssr: false,
 });
 
-interface SelectProps
-  extends BaseSelectProps,
-    VariantProps<typeof selectVariants> {
-  bordered?: boolean;
-  borderOffset?: boolean;
-}
+type SelectProps<
+  Option,
+  IsMulti extends boolean = false,
+  Group extends GroupBase<Option> = GroupBase<Option>,
+> = BaseSelectProps<Option, IsMulti, Group> &
+  VariantProps<typeof selectVariants> & {
+    bordered?: boolean;
+    borderOffset?: boolean;
+  };
 
-const Select = ({
+const Select = <
+  Option,
+  IsMulti extends boolean = false,
+  Group extends GroupBase<Option> = GroupBase<Option>,
+>({
   size = "md",
   color,
   borderOffset = true,
@@ -37,8 +45,9 @@ const Select = ({
   responsive = false,
   placeholder = "select...",
   components,
+  classNames,
   ...restProps
-}: SelectProps) => {
+}: SelectProps<Option, IsMulti, Group>) => {
   const getMenuPortal = () => {
     return typeof document !== "undefined"
       ? document.querySelector("body")
@@ -47,9 +56,14 @@ const Select = ({
 
   return (
     <BaseSelectNoSSR
-      unstyled
       placeholder={placeholder}
+      menuPortalTarget={getMenuPortal()}
+      {...restProps}
+      unstyled
+      // TODO - check this
+      // @ts-ignore
       classNames={{
+        ...classNames,
         control: () =>
           cnM(
             selectVariants({
@@ -112,7 +126,10 @@ const Select = ({
             ],
           ),
       }}
+      // TODO - check this
+      // @ts-ignore
       components={{
+        ...components,
         DropdownIndicator: (props) => (
           <Components.DropdownIndicator {...props}>
             <Icons.ChevronsUpDown
@@ -149,10 +166,7 @@ const Select = ({
             />
           </Components.ClearIndicator>
         ),
-        ...components,
       }}
-      {...restProps}
-      menuPortalTarget={getMenuPortal()}
     />
   );
 };

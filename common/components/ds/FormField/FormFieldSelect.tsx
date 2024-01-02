@@ -4,6 +4,7 @@ import {
   type FieldPath,
   type FieldValues,
 } from "react-hook-form";
+import type { GroupBase } from "react-select";
 import { z } from "zod";
 
 import { Select, type SelectProps } from "../Select";
@@ -13,20 +14,29 @@ const optionSchema = z.object({
   value: z.string(),
 });
 
-interface FormFieldSelectProps<T extends FieldValues>
-  extends Omit<SelectProps, "name"> {
+interface FormFieldSelectProps<
+  T extends FieldValues,
+  Option,
+  IsMulti extends boolean = false,
+  Group extends GroupBase<Option> = GroupBase<Option>,
+> extends Omit<SelectProps<Option, IsMulti, Group>, "name"> {
   name: FieldPath<T>;
   control: Control<T>;
 }
 
-function FormFieldSelect<T extends FieldValues>({
+function FormFieldSelect<
+  T extends FieldValues,
+  Option,
+  IsMulti extends boolean = false,
+  Group extends GroupBase<Option> = GroupBase<Option>,
+>({
   name,
   control,
   options,
   color,
   responsive = true,
   ...props
-}: FormFieldSelectProps<T>) {
+}: FormFieldSelectProps<T, Option, IsMulti, Group>) {
   const { error = "", htmlFor } = useFormFieldContext();
 
   return (
@@ -39,6 +49,8 @@ function FormFieldSelect<T extends FieldValues>({
           {...props}
           {...field}
           options={options}
+          // TODO - check this
+          // @ts-ignore
           value={options?.find((option) => {
             const parsedOption = optionSchema.safeParse(option);
 
