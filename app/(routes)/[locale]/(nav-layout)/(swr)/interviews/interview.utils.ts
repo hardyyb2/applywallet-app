@@ -1,6 +1,9 @@
 import dayjs from "dayjs";
 
-import type { InterviewRoundType } from "@/lib/schema/interviews";
+import {
+  InterviewStatus,
+  type InterviewRoundType,
+} from "@/lib/schema/interviews";
 
 import { type AddEditInterviewFormProps } from "./AddEditInterviewForm";
 
@@ -32,3 +35,25 @@ export const getDefaultInterviewRoundObject = (
   type: "",
   ...props,
 });
+
+export const interviewStatusOptions: {
+  label: string;
+  value: InterviewStatus;
+}[] = [
+  {
+    label: "pending",
+    value: InterviewStatus.PENDING,
+  },
+  {
+    label: "cancelled",
+    value: InterviewStatus.CANCELLED,
+  },
+  {
+    label: "completed",
+    value: InterviewStatus.COMPLETED,
+  },
+  {
+    label: "in progress",
+    value: InterviewStatus.IN_PROGRESS,
+  },
+];

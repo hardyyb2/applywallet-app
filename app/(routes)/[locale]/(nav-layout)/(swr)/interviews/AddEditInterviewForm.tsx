@@ -36,6 +36,7 @@ import { cnM } from "@/utils/styles";
 import {
   getAddEditInterviewFormCopy,
   getDefaultInterviewRoundObject,
+  interviewStatusOptions,
 } from "./interview.utils";
 
 export type AddEditInterviewFormProps =
@@ -181,6 +182,19 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
             </FormField>
 
             <FormField
+              label="interview status"
+              htmlFor="status"
+              error={errors.status?.message}
+            >
+              <FormField.Select
+                name="status"
+                control={control}
+                options={interviewStatusOptions}
+                isClearable
+              />
+            </FormField>
+
+            <FormField
               label="notes"
               htmlFor="notes"
               error={errors.notes?.message}
@@ -263,6 +277,21 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
               );
             })}
           </Accordion>
+
+          <FormField
+            label="interview end date"
+            htmlFor="end_date"
+            error={errors.end_date?.message}
+          >
+            <FormField.DatePickerInput name="end_date" control={control} />
+          </FormField>
+          <FormField
+            label="result"
+            htmlFor="result"
+            error={errors.result?.message}
+          >
+            <FormField.Select name="notes" control={control} />
+          </FormField>
 
           <Flex
             align="stretch"
