@@ -176,15 +176,22 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
               label="interview start date"
               htmlFor="start_date"
               error={errors.start_date?.message}
-              className="mb-4"
             >
               <FormField.DatePickerInput name="start_date" control={control} />
+            </FormField>
+
+            <FormField
+              label="notes"
+              htmlFor="notes"
+              error={errors.notes?.message}
+            >
+              <FormField.RTBaseEditor name="notes" control={control} />
             </FormField>
           </div>
 
           <Accordion
             type="multiple"
-            className={cnM("p-0", !rounds.length && "hidden")}
+            className={cnM("mt-xs p-0", !rounds.length && "hidden")}
             variant="box"
           >
             {rounds.map((round, index) => {
@@ -249,17 +256,6 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
                       <FormField.Input
                         placeholder="selected"
                         {...register(`rounds.${index}.result`)}
-                      />
-                    </FormField>
-
-                    <FormField
-                      label="round notes"
-                      htmlFor={`rounds.${index}.notes`}
-                      error={errors.rounds?.[index]?.notes?.message}
-                    >
-                      <FormField.RTBaseEditor
-                        name={`rounds.${index}.notes`}
-                        control={control}
                       />
                     </FormField>
                   </AccordionContent>
