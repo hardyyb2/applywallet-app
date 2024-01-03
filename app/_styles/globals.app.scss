@@ -22,6 +22,11 @@ body {
   min-height: 100vh;
   min-height: 100svh;
   margin: 0;
+  padding: 0 !important;
+}
+
+body[style] {
+  margin: 0 auto !important;
 }
 
 input[type="date"]::-webkit-inner-spin-button,
