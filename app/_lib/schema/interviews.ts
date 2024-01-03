@@ -7,6 +7,19 @@ enum InterviewStatus {
   CANCELLED = "cancelled",
 }
 
+enum InterviewResult {
+  NO_OFFER = "no_offer",
+  OFFER_ACCEPTED = "offer_accepted",
+  OFFER_DECLINED = "offer_declined",
+  HIRED = "hired",
+  NOT_SELECTED = "not_selected",
+  POSITION_FILLED = "position_filled",
+  OFFER_EXPIRED = "offer_expired",
+  POSITION_CLOSED = "position_closed",
+  WITHDRAWN_BY_CANDIDATE = "withdrawn_by_candidate",
+  WITHDRAWN_BY_EMPLOYER = "withdrawn_by_employer",
+}
+
 const roundSchema = z.object({
   name: z.string().min(1, {
     message: "please enter a round name",
@@ -34,7 +47,7 @@ const interviewSchema = z.object({
   position: z.string().min(1, {
     message: "please enter position",
   }),
-  result: z.string().optional(),
+  result: z.nativeEnum(InterviewResult).optional(),
   rounds: z.array(roundSchema),
   notes: z.array(z.record(z.any())).optional(),
   status: z.nativeEnum(InterviewStatus, {
@@ -70,6 +83,7 @@ export {
   type InterviewType,
   type InterviewInputType,
   InterviewStatus,
+  InterviewResult,
   interviewSchema,
   interviewInputSchema,
 };
