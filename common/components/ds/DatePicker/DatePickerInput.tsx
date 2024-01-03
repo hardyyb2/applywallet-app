@@ -64,7 +64,6 @@ const DatePickerInput = ({
       <Input
         placeholder="dd/mm/yyyy"
         responsive={responsive}
-        iconWrapperClassName="w-full h-full"
         className={cnM("w-full bg-base-100", className)}
         {...props}
         iconSeparate
