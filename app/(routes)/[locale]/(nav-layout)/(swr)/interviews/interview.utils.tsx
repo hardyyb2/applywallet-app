@@ -77,51 +77,51 @@ export const interviewResultOptions: {
   {
     value: InterviewResult.NO_OFFER,
     label: "no offer",
-    icon: <Emoji symbol="👎" label="thumbs down" />,
+    icon: <Emoji symbol="🥲" label="cry smile face" />,
   },
   {
     value: InterviewResult.HIRED,
     label: "hired",
-    icon: <Emoji symbol="👍" label="thumbs up" />,
+    icon: <Emoji symbol="🥳" label="party face" />,
   },
   {
     value: InterviewResult.NOT_SELECTED,
     label: "not selected",
-    icon: <Emoji symbol="👎" label="thumbs down" />,
+    icon: <Emoji symbol="😢" label="crying face" />,
   },
   {
     value: InterviewResult.OFFER_ACCEPTED,
     label: "offer accepted",
-    icon: <Emoji symbol="👍" label="thumbs up" />,
+    icon: <Emoji symbol="🤝" label="handshake" />,
   },
   {
     value: InterviewResult.OFFER_DECLINED,
     label: "offer declined",
-    icon: <Emoji symbol="👎" label="thumbs down" />,
+    icon: <Emoji symbol="🙅‍♀️" label="decline" />,
   },
   {
     value: InterviewResult.OFFER_EXPIRED,
     label: "offer expired",
-    icon: <Emoji symbol="👎" label="thumbs down" />,
+    icon: <Emoji symbol="🎬" label="clapper board" />,
   },
   {
     value: InterviewResult.WITHDRAWN_BY_CANDIDATE,
     label: "withdrawn by candidate",
-    icon: <Emoji symbol="👎" label="thumbs down" />,
+    icon: <Emoji symbol="🚶" label="walking away" />,
   },
   {
     value: InterviewResult.WITHDRAWN_BY_EMPLOYER,
     label: "withdrawn by employer",
-    icon: <Emoji symbol="👎" label="thumbs down" />,
+    icon: <Emoji symbol="💼" label="briefcase" />,
   },
   {
     value: InterviewResult.POSITION_CLOSED,
     label: "position closed",
-    icon: <Emoji symbol="👎" label="thumbs down" />,
+    icon: <Emoji symbol="🔒" label="locked" />,
   },
   {
     value: InterviewResult.POSITION_FILLED,
     label: "position filled",
-    icon: <Emoji symbol="👎" label="thumbs down" />,
+    icon: <Emoji symbol="👨‍💼" label="person at desk" />,
   },
 ];
