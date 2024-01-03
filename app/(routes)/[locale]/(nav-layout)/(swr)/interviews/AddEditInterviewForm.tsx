@@ -233,7 +233,7 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
               formatOptionLabel={(option) => {
                 return (
                   <Flex className="gap-3xs" align="center">
-                    {option.label}
+                    {option.icon} {option.label}
                   </Flex>
                 );
               }}
