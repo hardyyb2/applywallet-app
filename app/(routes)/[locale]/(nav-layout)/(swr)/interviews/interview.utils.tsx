@@ -7,6 +7,7 @@ import { Icons } from "~/components/ds/Icons";
 
 import {
   InterviewResult,
+  InterviewRoundResult,
   InterviewStatus,
   type InterviewRoundType,
 } from "@/lib/schema/interviews";
@@ -37,7 +38,6 @@ export const getDefaultInterviewRoundObject = (
 ): InterviewRoundType => ({
   name: "",
   date: dayjs().toISOString(),
-  result: "",
   type: "",
   ...props,
 });
@@ -123,5 +123,47 @@ export const interviewResultOptions: {
     value: InterviewResult.POSITION_FILLED,
     label: "position filled",
     icon: <Emoji symbol="👨‍💼" label="person at desk" />,
+  },
+];
+
+export const interviewRoundResultOptions: {
+  label: string;
+  value: InterviewRoundResult;
+  icon: ReactNode;
+}[] = [
+  {
+    value: InterviewRoundResult.CANCELLED,
+    label: "cancelled",
+    icon: <Emoji symbol="🚫" label="no entry" />,
+  },
+  {
+    value: InterviewRoundResult.FAILED,
+    label: "failed",
+    icon: <Emoji symbol="😢" label="crying face" />,
+  },
+  {
+    value: InterviewRoundResult.PASSED,
+    label: "passed",
+    icon: <Emoji symbol="🥳" label="party face" />,
+  },
+  {
+    value: InterviewRoundResult.PENDING,
+    label: "pending",
+    icon: <Emoji symbol="🕒" label="clock" />,
+  },
+  {
+    value: InterviewRoundResult.SKIPPED,
+    label: "skipped",
+    icon: <Emoji symbol="🏃" label="running" />,
+  },
+  {
+    value: InterviewRoundResult.RESCHEDULED,
+    label: "rescheduled",
+    icon: <Emoji symbol="📅" label="calendar" />,
+  },
+  {
+    value: InterviewRoundResult.IN_PROGRESS,
+    label: "in progress",
+    icon: <Emoji symbol="🚀" label="rocket" />,
   },
 ];
