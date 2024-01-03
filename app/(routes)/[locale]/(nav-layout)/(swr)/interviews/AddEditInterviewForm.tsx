@@ -150,67 +150,65 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <Card.Body className="[&_.dui-form-control]:mt-2xs">
           <h1 className="headline-s lg:headline-m">{titleText}</h1>
-          <div>
-            <FormField
-              label="company name"
-              htmlFor="company_name"
-              error={errors.company_name?.message}
-            >
-              <FormField.Input
-                autoFocus
-                placeholder="apollo.io"
-                {...register("company_name")}
-              />
-            </FormField>
+          <FormField
+            label="company name"
+            htmlFor="company_name"
+            error={errors.company_name?.message}
+          >
+            <FormField.Input
+              autoFocus
+              placeholder="apollo.io"
+              {...register("company_name")}
+            />
+          </FormField>
 
-            <FormField
-              label="position"
-              htmlFor="position"
-              error={errors.position?.message}
-            >
-              <FormField.Input
-                placeholder="frontend engineer"
-                {...register("position")}
-              />
-            </FormField>
+          <FormField
+            label="position"
+            htmlFor="position"
+            error={errors.position?.message}
+          >
+            <FormField.Input
+              placeholder="frontend engineer"
+              {...register("position")}
+            />
+          </FormField>
 
-            <FormField
-              label="interview start date"
-              htmlFor="start_date"
-              error={errors.start_date?.message}
-            >
-              <FormField.DatePickerInput name="start_date" control={control} />
-            </FormField>
+          <FormField
+            label="interview start date"
+            htmlFor="start_date"
+            error={errors.start_date?.message}
+          >
+            <FormField.DatePickerInput name="start_date" control={control} />
+          </FormField>
 
-            <FormField
-              label="interview status"
-              htmlFor="status"
-              error={errors.status?.message}
-            >
-              <FormField.Select
-                name="status"
-                control={control}
-                options={interviewStatusOptions}
-                isClearable
-                placeholder="select status"
-                formatOptionLabel={(option) => {
-                  return (
-                    <Flex className="gap-3xs" align="center">
-                      {option.icon} {option.label}
-                    </Flex>
-                  );
-                }}
-              />
-            </FormField>
+          <FormField
+            label="interview status"
+            htmlFor="status"
+            error={errors.status?.message}
+          >
+            <FormField.Select
+              name="status"
+              control={control}
+              options={interviewStatusOptions}
+              isClearable
+              placeholder="select status"
+              formatOptionLabel={(option) => {
+                return (
+                  <Flex className="gap-3xs" align="center">
+                    {option.icon} {option.label}
+                  </Flex>
+                );
+              }}
+            />
+          </FormField>
 
-            <FormField
-              label="notes"
-              htmlFor="notes"
-              error={errors.notes?.message}
-            >
-              <FormField.RTBaseEditor name="notes" control={control} />
-            </FormField>
-          </div>
+          <FormField
+            label="notes"
+            htmlFor="notes"
+            error={errors.notes?.message}
+          >
+            <FormField.RTBaseEditor name="notes" control={control} />
+          </FormField>
 
           <FormField
             label="interview end date"
