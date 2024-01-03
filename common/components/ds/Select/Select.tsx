@@ -46,6 +46,7 @@ const Select = <
   placeholder = "select...",
   components,
   classNames,
+  menuPosition = "fixed",
   ...restProps
 }: SelectProps<Option, IsMulti, Group>) => {
   const getMenuPortal = () => {
@@ -58,6 +59,7 @@ const Select = <
     <BaseSelectNoSSR
       placeholder={placeholder}
       menuPortalTarget={getMenuPortal()}
+      menuPosition={menuPosition}
       {...restProps}
       unstyled
       // TODO - check this
