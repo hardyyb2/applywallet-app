@@ -211,6 +211,21 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
             </FormField>
           </div>
 
+          <FormField
+            label="interview end date"
+            htmlFor="end_date"
+            error={errors.end_date?.message}
+          >
+            <FormField.DatePickerInput name="end_date" control={control} />
+          </FormField>
+          <FormField
+            label="result"
+            htmlFor="result"
+            error={errors.result?.message}
+          >
+            <FormField.Select name="notes" control={control} />
+          </FormField>
+
           <Accordion
             type="multiple"
             className={cnM("mt-xs p-0", !rounds.length && "hidden")}
@@ -285,21 +300,6 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
               );
             })}
           </Accordion>
-
-          <FormField
-            label="interview end date"
-            htmlFor="end_date"
-            error={errors.end_date?.message}
-          >
-            <FormField.DatePickerInput name="end_date" control={control} />
-          </FormField>
-          <FormField
-            label="result"
-            htmlFor="result"
-            error={errors.result?.message}
-          >
-            <FormField.Select name="notes" control={control} />
-          </FormField>
 
           <Flex
             align="stretch"
