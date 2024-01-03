@@ -37,6 +37,7 @@ import {
   getAddEditInterviewFormCopy,
   getDefaultInterviewRoundObject,
   interviewResultOptions,
+  interviewRoundResultOptions,
   interviewStatusOptions,
 } from "./interview.utils";
 
@@ -302,9 +303,19 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
                       htmlFor={`rounds.${index}.result`}
                       error={errors.rounds?.[index]?.result?.message}
                     >
-                      <FormField.Input
-                        placeholder="selected"
-                        {...register(`rounds.${index}.result`)}
+                      <FormField.Select
+                        name={`rounds.${index}.date`}
+                        control={control}
+                        placeholder="select result"
+                        options={interviewRoundResultOptions}
+                        isClearable
+                        formatOptionLabel={(option) => {
+                          return (
+                            <Flex className="gap-3xs" align="center">
+                              {option.icon} {option.label}
+                            </Flex>
+                          );
+                        }}
                       />
                     </FormField>
                   </AccordionContent>
