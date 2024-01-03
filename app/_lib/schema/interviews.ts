@@ -20,6 +20,16 @@ enum InterviewResult {
   WITHDRAWN_BY_EMPLOYER = "withdrawn_by_employer",
 }
 
+enum InterviewRoundResult {
+  PASSED = "passed",
+  FAILED = "failed",
+  PENDING = "pending",
+  RESCHEDULED = "rescheduled",
+  CANCELLED = "cancelled",
+  IN_PROGRESS = "in_progress",
+  SKIPPED = "skipped",
+}
+
 const roundSchema = z.object({
   name: z.string().min(1, {
     message: "please enter a round name",
@@ -32,11 +42,7 @@ const roundSchema = z.object({
     .datetime({
       message: "please enter a valid date",
     }),
-  result: z
-    .string({
-      required_error: "please enter a result",
-    })
-    .optional(),
+  result: z.nativeEnum(InterviewRoundResult).optional(),
 });
 
 const interviewSchema = z.object({
@@ -84,6 +90,7 @@ export {
   type InterviewInputType,
   InterviewStatus,
   InterviewResult,
+  InterviewRoundResult,
   interviewSchema,
   interviewInputSchema,
 };
