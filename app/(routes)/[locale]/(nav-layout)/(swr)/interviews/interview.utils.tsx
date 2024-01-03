@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 
 import dayjs from "dayjs";
 
+import { Emoji } from "~/components/ds/Emoji";
 import { Icons } from "~/components/ds/Icons";
 
 import {
@@ -71,45 +72,56 @@ export const interviewStatusOptions: {
 export const interviewResultOptions: {
   label: string;
   value: InterviewResult;
+  icon: ReactNode;
 }[] = [
   {
     value: InterviewResult.NO_OFFER,
     label: "no offer",
+    icon: <Emoji symbol="👎" label="thumbs down" />,
   },
   {
     value: InterviewResult.HIRED,
     label: "hired",
+    icon: <Emoji symbol="👍" label="thumbs up" />,
   },
   {
     value: InterviewResult.NOT_SELECTED,
     label: "not selected",
+    icon: <Emoji symbol="👎" label="thumbs down" />,
   },
   {
     value: InterviewResult.OFFER_ACCEPTED,
     label: "offer accepted",
+    icon: <Emoji symbol="👍" label="thumbs up" />,
   },
   {
     value: InterviewResult.OFFER_DECLINED,
     label: "offer declined",
+    icon: <Emoji symbol="👎" label="thumbs down" />,
   },
   {
     value: InterviewResult.OFFER_EXPIRED,
     label: "offer expired",
+    icon: <Emoji symbol="👎" label="thumbs down" />,
   },
   {
     value: InterviewResult.WITHDRAWN_BY_CANDIDATE,
     label: "withdrawn by candidate",
+    icon: <Emoji symbol="👎" label="thumbs down" />,
   },
   {
     value: InterviewResult.WITHDRAWN_BY_EMPLOYER,
     label: "withdrawn by employer",
+    icon: <Emoji symbol="👎" label="thumbs down" />,
   },
   {
     value: InterviewResult.POSITION_CLOSED,
     label: "position closed",
+    icon: <Emoji symbol="👎" label="thumbs down" />,
   },
   {
     value: InterviewResult.POSITION_FILLED,
     label: "position filled",
+    icon: <Emoji symbol="👎" label="thumbs down" />,
   },
 ];
