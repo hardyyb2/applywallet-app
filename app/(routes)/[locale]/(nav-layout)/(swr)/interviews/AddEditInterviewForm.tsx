@@ -36,6 +36,7 @@ import { cnM } from "@/utils/styles";
 import {
   getAddEditInterviewFormCopy,
   getDefaultInterviewRoundObject,
+  interviewResultOptions,
   interviewStatusOptions,
 } from "./interview.utils";
 
@@ -223,7 +224,20 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
             htmlFor="result"
             error={errors.result?.message}
           >
-            <FormField.Select name="notes" control={control} />
+            <FormField.Select
+              name="result"
+              control={control}
+              options={interviewResultOptions}
+              isClearable
+              placeholder="select result"
+              formatOptionLabel={(option) => {
+                return (
+                  <Flex className="gap-3xs" align="center">
+                    {option.label}
+                  </Flex>
+                );
+              }}
+            />
           </FormField>
 
           <Accordion
