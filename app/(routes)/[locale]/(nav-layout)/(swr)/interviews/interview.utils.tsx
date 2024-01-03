@@ -5,6 +5,7 @@ import dayjs from "dayjs";
 import { Icons } from "~/components/ds/Icons";
 
 import {
+  InterviewResult,
   InterviewStatus,
   type InterviewRoundType,
 } from "@/lib/schema/interviews";
@@ -64,5 +65,51 @@ export const interviewStatusOptions: {
     label: "in progress",
     value: InterviewStatus.IN_PROGRESS,
     icon: <Icons.Circle className="w-4 fill-success lg:w-6" />,
+  },
+];
+
+export const interviewResultOptions: {
+  label: string;
+  value: InterviewResult;
+}[] = [
+  {
+    value: InterviewResult.NO_OFFER,
+    label: "no offer",
+  },
+  {
+    value: InterviewResult.HIRED,
+    label: "hired",
+  },
+  {
+    value: InterviewResult.NOT_SELECTED,
+    label: "not selected",
+  },
+  {
+    value: InterviewResult.OFFER_ACCEPTED,
+    label: "offer accepted",
+  },
+  {
+    value: InterviewResult.OFFER_DECLINED,
+    label: "offer declined",
+  },
+  {
+    value: InterviewResult.OFFER_EXPIRED,
+    label: "offer expired",
+  },
+  {
+    value: InterviewResult.WITHDRAWN_BY_CANDIDATE,
+    label: "withdrawn by candidate",
+  },
+  {
+    value: InterviewResult.WITHDRAWN_BY_EMPLOYER,
+    label: "withdrawn by employer",
+  },
+  {
+    value: InterviewResult.POSITION_CLOSED,
+    label: "position closed",
+  },
+  {
+    value: InterviewResult.POSITION_FILLED,
+    label: "position filled",
   },
 ];
