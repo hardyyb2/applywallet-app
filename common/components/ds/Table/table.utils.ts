@@ -20,7 +20,7 @@ export const tableVariants = cva(
         true: "dui-table-pin-cols",
       },
       responsive: {
-        true: "xs:dui-table-xs sm:dui-table-sm md:dui-table-md lg:dui-table-lg",
+        true: "dui-table-xs sm:dui-table-sm md:dui-table-md lg:dui-table-lg",
       },
     },
   },
