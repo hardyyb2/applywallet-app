@@ -14,6 +14,8 @@ export const AppRoutes = {
 
   INTERVIEWS: "/interviews",
   ADD_INTERVIEW: "/interviews/add",
+  editInterview: (interviewId: InterviewType["id"]) =>
+    `/interviews/edit/${interviewId}`,
 
   EXPERIENCES: "/experiences",
   ADD_EXPERIENCE: "/experiences/add",
