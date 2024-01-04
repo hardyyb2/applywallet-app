@@ -88,6 +88,7 @@ export async function GET() {
   try {
     const session = await getServerSession(authOptions);
 
+    // TODO - Check for access token validity
     if (!session || !session.accessToken || !session.user?.primarySheetId) {
       return NextResponse.json(
         new ApiError({
@@ -120,6 +121,7 @@ export async function GET() {
         const interview = {
           ...interviewObj,
           // parse the arrays back
+          // TODO - specific error in case of parsing error
           rounds: JSON.parse(interviewObj.rounds),
           notes: JSON.parse(interviewObj.notes),
           id: ir.rowNumber,
