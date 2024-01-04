@@ -52,6 +52,7 @@ import {
   Minimize,
   Minus,
   MinusCircle,
+  MoreHorizontal,
   MoreVertical,
   Palette,
   PanelLeftClose,
@@ -147,6 +148,7 @@ const Icons = {
   CheckCircle2,
   PauseCircle,
   Circle,
+  MoreHorizontal,
   CustomRadio: forwardRef<
     SVGSVGElement,
     LucideProps & { innerCircleClassName?: string }
