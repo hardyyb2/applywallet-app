@@ -304,7 +304,7 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
                       error={errors.rounds?.[index]?.result?.message}
                     >
                       <FormField.Select
-                        name={`rounds.${index}.date`}
+                        name={`rounds.${index}.result`}
                         control={control}
                         placeholder="select result"
                         options={interviewRoundResultOptions}

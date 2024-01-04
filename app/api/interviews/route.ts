@@ -52,7 +52,9 @@ export async function POST(request: Request) {
 
     await interviewSheet.addRow({
       ...body,
+      // stringify the arrays
       rounds: JSON.stringify(body.rounds),
+      notes: JSON.stringify(body.notes),
     });
     return NextResponse.json(new ApiResponse(), {
       status: 200,
@@ -117,7 +119,9 @@ export async function GET() {
         const interviewObj = ir.toObject();
         const interview = {
           ...interviewObj,
+          // parse the arrays back
           rounds: JSON.parse(interviewObj.rounds),
+          notes: JSON.parse(interviewObj.notes),
           id: ir.rowNumber,
         } as InterviewType;
 
