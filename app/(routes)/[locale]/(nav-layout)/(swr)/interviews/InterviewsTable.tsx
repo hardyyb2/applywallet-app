@@ -196,13 +196,14 @@ const InterviewsTable = (props: InterviewsTableProps) => {
                     {header.column.getCanSort() ? (
                       <Flex
                         component="button"
+                        align="center"
                         onClick={header.column.getToggleSortingHandler()}
                       >
                         {flexRender(
                           header.column.columnDef.header,
                           header.getContext(),
                         )}
-                        <Icons.ChevronsUpDown className="h-4 w-4" />
+                        <Icons.ChevronsUpDown className="h-3 w-3 lg:h-4 lg:w-4" />
                       </Flex>
                     ) : (
                       flexRender(
