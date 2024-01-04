@@ -36,7 +36,10 @@ import { AppRoutes } from "~/utils/routes";
 import type { InterviewType } from "@/lib/schema/interviews";
 import { useInterviews } from "@/queries/interviews.queries";
 
-import { interviewStatusOptionsMap } from "./interview.utils";
+import {
+  interviewResultOptionsMap,
+  interviewStatusOptionsMap,
+} from "./interview.utils";
 
 const tableColumns: ColumnDef<InterviewType>[] = [
   {
@@ -55,6 +58,14 @@ const tableColumns: ColumnDef<InterviewType>[] = [
     accessorKey: "position",
     header: "position",
     enableSorting: false,
+  },
+  {
+    accessorKey: "rounds",
+    header: "rounds",
+    cell: ({ row }) => {
+      const rounds = row.original.rounds;
+      return rounds.length;
+    },
   },
   {
     accessorKey: "start_date",
@@ -90,7 +101,18 @@ const tableColumns: ColumnDef<InterviewType>[] = [
     accessorKey: "result",
     header: "result",
     cell: ({ row }) => {
-      return row.getValue("result") || "-";
+      const result = row.original.result;
+
+      if (!result) {
+        return "-";
+      }
+
+      const option = interviewResultOptionsMap[result];
+      return (
+        <Flex className="gap-3xs" align="center">
+          {option.icon} {option.label}
+        </Flex>
+      );
     },
     enableSorting: false,
   },
