@@ -151,7 +151,7 @@ const tableColumns: ColumnDef<InterviewType>[] = [
 type InterviewsTableProps = {};
 
 const InterviewsTable = (props: InterviewsTableProps) => {
-  const { data = [], isLoading, isFetching } = useInterviews();
+  const { data = [], isLoading } = useInterviews();
   const columns = useMemo(() => tableColumns, []);
 
   const [sorting, setSorting] = useState<SortingState>([]);
@@ -167,7 +167,6 @@ const InterviewsTable = (props: InterviewsTableProps) => {
     // getPaginationRowModel: getPaginationRowModel(),
     // onColumnVisibilityChange: setColumnVisibility,
     // onRowSelectionChange: setRowSelection,
-    debugTable: true,
     state: {
       sorting,
 
