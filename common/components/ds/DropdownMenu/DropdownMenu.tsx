@@ -32,7 +32,7 @@ const DropdownMenuSubTrigger = React.forwardRef<
     ref={ref}
     className={cnM(
       "body-s lg:body-m",
-      "relative flex cursor-pointer select-none items-center rounded-lg px-xs py-2xs outline-none transition-colors focus:bg-base-300 data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
+      "relative flex cursor-pointer select-none items-center rounded-lg px-xs py-3xs outline-none transition-colors focus:bg-base-300 data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 lg:py-2xs",
       "data-[state=open]:bg-secondary data-[state=open]:text-secondary-content",
       className,
     )}
@@ -56,7 +56,7 @@ const DropdownMenuSubContent = React.forwardRef<
     alignOffset={alignOffset}
     ref={ref}
     className={cnM(
-      "z-50 overflow-hidden rounded-xl border border-base-content/40 bg-base-100 p-2xs",
+      "z-50 overflow-hidden rounded-xl border border-base-content/40 bg-base-100 p-3xs lg:p-2xs",
       "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
       className,
     )}
@@ -76,7 +76,7 @@ const DropdownMenuContent = React.forwardRef<
       sideOffset={sideOffset}
       align={align}
       className={cnM(
-        "z-50 flex flex-col gap-3xs overflow-hidden rounded-xl border border-base-content/40 bg-base-100 p-2xs",
+        "z-50 flex flex-col gap-3xs overflow-hidden rounded-xl border border-base-content/40 bg-base-100 p-3xs lg:p-2xs",
         "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
         className,
       )}
@@ -88,17 +88,14 @@ DropdownMenuContent.displayName = DropdownMenuPrimitive.Content.displayName;
 
 const DropdownMenuItem = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.Item>,
-  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Item> & {
-    inset?: boolean;
-  }
->(({ className, inset, ...props }, ref) => (
+  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Item>
+>(({ className, ...props }, ref) => (
   <DropdownMenuPrimitive.Item
     ref={ref}
     className={cnM(
       "body-s lg:body-m",
-      "relative flex cursor-pointer select-none items-center rounded-lg px-xs py-2xs outline-none transition-colors ",
+      "relative flex cursor-pointer select-none items-center rounded-lg px-xs py-3xs outline-none transition-colors lg:py-2xs ",
       "focus:bg-base-300 data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
-      inset && "pl-8",
       className,
     )}
     {...props}
@@ -116,7 +113,7 @@ const DropdownMenuCheckboxItem = React.forwardRef<
     ref={ref}
     className={cnM(
       "body-s lg:body-m",
-      "focus:text-accent-foreground relative flex cursor-pointer select-none items-center rounded-lg px-xs py-2xs outline-none transition-colors",
+      "focus:text-accent-foreground relative flex cursor-pointer select-none items-center rounded-lg px-xs py-3xs outline-none transition-colors lg:py-2xs",
       "focus:bg-base-300 data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
       "data-[state=checked]:bg-secondary data-[state=checked]:pl-m data-[state=checked]:text-secondary-content",
       className,
@@ -152,7 +149,7 @@ const DropdownMenuRadioItem = React.forwardRef<
     ref={ref}
     className={cnM(
       "body-s lg:body-m",
-      "relative flex cursor-pointer select-none items-center rounded-lg px-xs py-2xs outline-none transition-colors focus:bg-base-300",
+      "relative flex cursor-pointer select-none items-center rounded-lg px-xs py-3xs outline-none transition-colors focus:bg-base-300 lg:py-2xs",
       "data-[disabled]:pointer-events-none data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
       "data-[state=checked]:bg-secondary data-[state=checked]:text-secondary-content",
       showIcon && "data-[state=checked]:pl-m",
