@@ -86,21 +86,9 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
 
       return updateMutation.mutate(updatedInterview, {
         onSuccess: () => {
-          queryClient.setQueryData<InterviewType[]>(
-            [QueryKeys.INTERVIEWS],
-            (oldData) => {
-              if (oldData) {
-                return oldData.map((interview) => {
-                  if (interview.id === props.interview.id) {
-                    return updatedInterview;
-                  }
-
-                  return interview;
-                });
-              }
-            },
-          );
-
+          queryClient.invalidateQueries({
+            queryKey: [QueryKeys.INTERVIEWS],
+          });
           toast.success("interview updated");
           router.replace(AppRoutes.INTERVIEWS);
         },
