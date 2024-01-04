@@ -65,6 +65,7 @@ export async function GET(
     const interviewData = {
       ...interviewObj,
       rounds: JSON.parse(interviewObj.rounds),
+      notes: JSON.parse(interviewObj.notes),
       id: interviewId,
     };
     const interview = interviewSchema.parse(interviewData);
@@ -207,7 +208,11 @@ export async function PUT(
     const json = await request.json();
     const body = interviewInputSchema.parse(json);
 
-    requiredRow.assign(body);
+    requiredRow.assign({
+      ...body,
+      rounds: JSON.stringify(body.rounds),
+      notes: JSON.stringify(body.notes),
+    });
     await requiredRow.save();
 
     return NextResponse.json(new ApiResponse(), {
