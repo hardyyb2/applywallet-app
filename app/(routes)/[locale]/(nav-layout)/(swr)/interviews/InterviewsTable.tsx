@@ -27,7 +27,17 @@ import {
 import type { InterviewType } from "@/lib/schema/interviews";
 import { useInterviews } from "@/queries/interviews.queries";
 
+import { interviewStatusOptionsMap } from "./interview.utils";
+
 const tableColumns: ColumnDef<InterviewType>[] = [
+  {
+    accessorKey: "status",
+    header: "status",
+    cell: ({ row }) => {
+      const status = row.original.status;
+      return interviewStatusOptionsMap[status].icon;
+    },
+  },
   {
     accessorKey: "company_name",
     header: "company name",
