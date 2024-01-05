@@ -27,6 +27,7 @@ const RootLayout = ({
     >
       <head />
       <body
+        vaul-drawer-wrapper=""
         className={cn(
           fonts.primary.variable,
           fonts.secondary.variable,
