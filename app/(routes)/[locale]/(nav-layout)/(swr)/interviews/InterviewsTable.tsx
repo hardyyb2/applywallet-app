@@ -84,6 +84,7 @@ const InterviewsTable = (props: InterviewsTableProps) => {
         id: "select",
         header: ({ table }) => (
           <Checkbox
+            responsive
             checked={
               table.getIsAllPageRowsSelected() ||
               (table.getIsSomePageRowsSelected() && "indeterminate")
@@ -96,6 +97,7 @@ const InterviewsTable = (props: InterviewsTableProps) => {
         ),
         cell: ({ row }) => (
           <Checkbox
+            responsive
             checked={row.getIsSelected()}
             onCheckedChange={(value) => row.toggleSelected(!!value)}
             aria-label="select row"
