@@ -1,0 +1,33 @@
+"use client";
+
+import * as React from "react";
+
+import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
+import type { VariantProps } from "cva";
+
+import { cnM } from "@/utils/styles";
+
+import { checkboxVariants } from "./checkbox.utils";
+
+interface CheckboxProps
+  extends Omit<
+      React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root>,
+      "color" | "size"
+    >,
+    VariantProps<typeof checkboxVariants> {}
+
+const Checkbox = React.forwardRef<
+  React.ElementRef<typeof CheckboxPrimitive.Root>,
+  CheckboxProps
+>(({ className, children, color, size, ...props }, ref) => (
+  <CheckboxPrimitive.Root
+    ref={ref}
+    className={cnM(checkboxVariants({ color, size }), className)}
+    {...props}
+  >
+    {children}
+  </CheckboxPrimitive.Root>
+));
+Checkbox.displayName = CheckboxPrimitive.Root.displayName;
+
+export { Checkbox };
