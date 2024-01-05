@@ -20,7 +20,6 @@ import { FormField } from "~/components/ds/FormField";
 import { Icons } from "~/components/ds/Icons";
 import { AppRoutes } from "~/utils/routes";
 
-import { RTBaseEditor } from "@/components/rich-text/editors/RTBaseEditor";
 import {
   interviewInputSchema,
   type InterviewInputType,

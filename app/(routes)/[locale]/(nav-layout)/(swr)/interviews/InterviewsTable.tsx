@@ -17,6 +17,7 @@ import { toast } from "react-toastify";
 
 import { BarLoader } from "~/components/ds/BarLoader";
 import { Button } from "~/components/ds/Button";
+import { Checkbox } from "~/components/ds/Checkbox";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -79,6 +80,30 @@ const InterviewsTable = (props: InterviewsTableProps) => {
   // constants
   const columns = useMemo<ColumnDef<InterviewType>[]>(
     () => [
+      {
+        id: "select",
+        header: ({ table }) => (
+          <Checkbox
+            checked={
+              table.getIsAllPageRowsSelected() ||
+              (table.getIsSomePageRowsSelected() && "indeterminate")
+            }
+            onCheckedChange={(value) =>
+              table.toggleAllPageRowsSelected(!!value)
+            }
+            aria-label="select all"
+          />
+        ),
+        cell: ({ row }) => (
+          <Checkbox
+            checked={row.getIsSelected()}
+            onCheckedChange={(value) => row.toggleSelected(!!value)}
+            aria-label="select row"
+          />
+        ),
+        enableSorting: false,
+        enableHiding: false,
+      },
       {
         accessorKey: "status",
         header: "status",
