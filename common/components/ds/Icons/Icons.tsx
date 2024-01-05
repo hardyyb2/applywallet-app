@@ -64,6 +64,7 @@ import {
   Quote,
   Save,
   Settings,
+  SlidersHorizontal,
   Strikethrough,
   Subscript,
   Superscript,
@@ -149,6 +150,7 @@ const Icons = {
   PauseCircle,
   Circle,
   MoreHorizontal,
+  SlidersHorizontal,
   CustomRadio: forwardRef<
     SVGSVGElement,
     LucideProps & { innerCircleClassName?: string }

@@ -7,9 +7,11 @@ import { useQueryClient } from "@tanstack/react-query";
 import {
   flexRender,
   getCoreRowModel,
+  getFilteredRowModel,
   getSortedRowModel,
   useReactTable,
   type ColumnDef,
+  type ColumnFiltersState,
   type SortingState,
 } from "@tanstack/react-table";
 import dayjs from "dayjs";
@@ -26,6 +28,7 @@ import {
 } from "~/components/ds/DropdownMenu";
 import { Flex } from "~/components/ds/Flex";
 import { Icons } from "~/components/ds/Icons";
+import { Input } from "~/components/ds/Input";
 import {
   Table,
   TableBody,
@@ -58,6 +61,9 @@ const InterviewsTable = (props: InterviewsTableProps) => {
   // hooks
   const queryClient = useQueryClient();
   const { data = [], isLoading } = useInterviews();
+
+  const [sorting, setSorting] = useState<SortingState>([]);
+  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
 
   // functions
   const handleDeleteInterview = useCallback(
@@ -232,16 +238,17 @@ const InterviewsTable = (props: InterviewsTableProps) => {
     [handleDeleteInterview],
   );
 
-  const [sorting, setSorting] = useState<SortingState>([]);
-
   const table = useReactTable({
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
     onSortingChange: setSorting,
     getSortedRowModel: getSortedRowModel(),
+    onColumnFiltersChange: setColumnFilters,
+    getFilteredRowModel: getFilteredRowModel(),
     state: {
       sorting,
+      columnFilters,
     },
   });
 
@@ -250,62 +257,76 @@ const InterviewsTable = (props: InterviewsTableProps) => {
   }
 
   return (
-    <div className="overflow-auto rounded-xl">
-      <Table responsive>
-        <TableHeader>
-          {table.getHeaderGroups().map((headerGroup) => (
-            <TableRow key={headerGroup.id}>
-              {headerGroup.headers.map((header) => {
-                if (header.isPlaceholder) {
-                  return <TableHead key={header.id} />;
-                }
+    <Flex className="gap-3xs" direction="column">
+      <Flex className="gap-2xs rounded-xl bg-base-100 p-3xs" justify="flex-end">
+        <Input
+          placeholder="search company..."
+          value={
+            (table.getColumn("company_name")?.getFilterValue() as string) ?? ""
+          }
+          onChange={(event) =>
+            table.getColumn("company_name")?.setFilterValue(event.target.value)
+          }
+        />
+        <Button startIcon={<Icons.SlidersHorizontal />}>filters</Button>
+      </Flex>
+      <div className="overflow-auto rounded-xl bg-base-100">
+        <Table responsive>
+          <TableHeader>
+            {table.getHeaderGroups().map((headerGroup) => (
+              <TableRow key={headerGroup.id}>
+                {headerGroup.headers.map((header) => {
+                  if (header.isPlaceholder) {
+                    return <TableHead key={header.id} />;
+                  }
 
-                return (
-                  <TableHead key={header.id}>
-                    {header.column.getCanSort() ? (
-                      <Flex
-                        component="button"
-                        align="center"
-                        onClick={header.column.getToggleSortingHandler()}
-                      >
-                        {flexRender(
+                  return (
+                    <TableHead key={header.id}>
+                      {header.column.getCanSort() ? (
+                        <Flex
+                          component="button"
+                          align="center"
+                          onClick={header.column.getToggleSortingHandler()}
+                        >
+                          {flexRender(
+                            header.column.columnDef.header,
+                            header.getContext(),
+                          )}
+                          <Icons.ChevronsUpDown className="h-3 w-3 lg:h-4 lg:w-4" />
+                        </Flex>
+                      ) : (
+                        flexRender(
                           header.column.columnDef.header,
                           header.getContext(),
-                        )}
-                        <Icons.ChevronsUpDown className="h-3 w-3 lg:h-4 lg:w-4" />
-                      </Flex>
-                    ) : (
-                      flexRender(
-                        header.column.columnDef.header,
-                        header.getContext(),
-                      )
-                    )}
-                  </TableHead>
-                );
-              })}
-            </TableRow>
-          ))}
-        </TableHeader>
-        <TableBody>
-          {table.getRowModel().rows.map((row) => (
-            <TableRow
-              key={row.id}
-              data-state={row.getIsSelected() && "selected"}
-              hoverable
-            >
-              {row.getVisibleCells().map((cell) => (
-                <TableCell
-                  key={cell.id}
-                  className="max-w-32 overflow-hidden overflow-ellipsis whitespace-nowrap lg:max-w-60"
-                >
-                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                </TableCell>
-              ))}
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </div>
+                        )
+                      )}
+                    </TableHead>
+                  );
+                })}
+              </TableRow>
+            ))}
+          </TableHeader>
+          <TableBody>
+            {table.getRowModel().rows.map((row) => (
+              <TableRow
+                key={row.id}
+                data-state={row.getIsSelected() && "selected"}
+                hoverable
+              >
+                {row.getVisibleCells().map((cell) => (
+                  <TableCell
+                    key={cell.id}
+                    className="max-w-32 overflow-hidden overflow-ellipsis whitespace-nowrap lg:max-w-60"
+                  >
+                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                  </TableCell>
+                ))}
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </div>
+    </Flex>
   );
 };
 
