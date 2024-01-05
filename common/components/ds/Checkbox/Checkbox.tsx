@@ -19,10 +19,10 @@ interface CheckboxProps
 const Checkbox = React.forwardRef<
   React.ElementRef<typeof CheckboxPrimitive.Root>,
   CheckboxProps
->(({ className, children, color, size, ...props }, ref) => (
+>(({ className, children, color, responsive, size, ...props }, ref) => (
   <CheckboxPrimitive.Root
     ref={ref}
-    className={cnM(checkboxVariants({ color, size }), className)}
+    className={cnM(checkboxVariants({ color, size, responsive }), className)}
     {...props}
   >
     {children}
