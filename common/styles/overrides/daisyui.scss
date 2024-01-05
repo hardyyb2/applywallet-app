@@ -49,3 +49,24 @@ textarea::placeholder {
 .dui-loading-xl {
   @apply w-16;
 }
+
+/* Checkbox */
+[role="checkbox"].dui-checkbox-xs {
+  width: 1rem;
+  height: 1rem;
+}
+
+[role="checkbox"].dui-checkbox-sm {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+[role="checkbox"].dui-checkbox-md {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+[role="checkbox"].dui-checkbox-lg {
+  width: 2rem;
+  height: 2rem;
+}
