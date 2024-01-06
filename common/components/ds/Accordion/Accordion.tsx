@@ -6,6 +6,8 @@ import * as AccordionPrimitive from "@radix-ui/react-accordion";
 
 import { cnM } from "@/utils/styles";
 
+import { Icons } from "../Icons";
+
 type AccordionContextType = {
   variant?: "box" | "lined" | "bordered";
 };
@@ -61,7 +63,7 @@ const AccordionItem = React.forwardRef<
     <AccordionPrimitive.Item
       ref={ref}
       className={cnM(
-        "title-s lg:title-m",
+        "title-s lg:title-m ",
         {
           "rounded-xl bg-base-200": variant === "box",
           "border-b": variant === "lined",
@@ -77,17 +79,24 @@ AccordionItem.displayName = "AccordionItem";
 
 const AccordionTrigger = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Trigger>,
-  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
->(({ className, ...props }, ref) => (
+  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger> & {
+    showIcon?: boolean;
+  }
+>(({ className, showIcon = true, children, ...props }, ref) => (
   <AccordionPrimitive.Header className="flex">
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cnM(
-        "flex flex-1 items-center justify-between p-2xs-xs",
+        "flex flex-1 items-center justify-between p-2xs-xs transition-all [&[data-state=open]>svg]:rotate-180",
         className,
       )}
       {...props}
-    />
+    >
+      {children}
+      {showIcon ? (
+        <Icons.ChevronDown className="w-4 transition-transform duration-300 lg:w-6" />
+      ) : null}
+    </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ));
 AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName;
