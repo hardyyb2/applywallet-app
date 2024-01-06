@@ -13,10 +13,18 @@ import {
   type ColumnDef,
   type ColumnFiltersState,
   type SortingState,
+  type VisibilityState,
 } from "@tanstack/react-table";
 import dayjs from "dayjs";
+import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "~/components/ds/Accordion";
 import { BarLoader } from "~/components/ds/BarLoader";
 import { Button } from "~/components/ds/Button";
 import { Checkbox } from "~/components/ds/Checkbox";
@@ -27,8 +35,20 @@ import {
   DropdownMenuTrigger,
 } from "~/components/ds/DropdownMenu";
 import { Flex } from "~/components/ds/Flex";
+import { FormField } from "~/components/ds/FormField";
 import { Icons } from "~/components/ds/Icons";
 import { Input } from "~/components/ds/Input";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetOverlay,
+  SheetPortal,
+  SheetTitle,
+  SheetTrigger,
+} from "~/components/ds/Sheet";
 import {
   Table,
   TableBody,
@@ -53,6 +73,7 @@ import { QueryKeys } from "@/utils/queries";
 import {
   interviewResultOptionsMap,
   interviewStatusOptionsMap,
+  interviewTableColumnsMap,
 } from "./interview.utils";
 
 type InterviewsTableProps = {};
@@ -61,9 +82,11 @@ const InterviewsTable = (props: InterviewsTableProps) => {
   // hooks
   const queryClient = useQueryClient();
   const { data = [], isLoading } = useInterviews();
+  const filterForm = useForm();
 
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
+  const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
 
   // functions
   const handleDeleteInterview = useCallback(
@@ -199,6 +222,7 @@ const InterviewsTable = (props: InterviewsTableProps) => {
       },
       {
         id: "actions",
+        enableHiding: false,
         cell: ({ row }) => {
           const interview = row.original;
 
@@ -246,11 +270,17 @@ const InterviewsTable = (props: InterviewsTableProps) => {
     getSortedRowModel: getSortedRowModel(),
     onColumnFiltersChange: setColumnFilters,
     getFilteredRowModel: getFilteredRowModel(),
+    onColumnVisibilityChange: setColumnVisibility,
     state: {
       sorting,
       columnFilters,
+      columnVisibility,
     },
   });
+
+  const onFilterFormSubmit = (values: any) => {
+    // console.log(values);
+  };
 
   if (isLoading) {
     return <BarLoader />;
@@ -260,6 +290,8 @@ const InterviewsTable = (props: InterviewsTableProps) => {
     <Flex className="gap-3xs" direction="column">
       <Flex className="gap-2xs rounded-xl bg-base-100 p-3xs" justify="flex-end">
         <Input
+          bordered={false}
+          responsive
           placeholder="search company..."
           value={
             (table.getColumn("company_name")?.getFilterValue() as string) ?? ""
@@ -268,7 +300,81 @@ const InterviewsTable = (props: InterviewsTableProps) => {
             table.getColumn("company_name")?.setFilterValue(event.target.value)
           }
         />
-        <Button startIcon={<Icons.SlidersHorizontal />}>filters</Button>
+        <Sheet>
+          <SheetTrigger asChild>
+            <Button responsive startIcon={<Icons.SlidersHorizontal />}>
+              filters
+            </Button>
+          </SheetTrigger>
+          <SheetPortal>
+            <SheetOverlay />
+            <form
+              onSubmit={filterForm.handleSubmit(onFilterFormSubmit)}
+              noValidate
+            >
+              <SheetContent>
+                <SheetHeader>
+                  <SheetTitle>filters</SheetTitle>
+                  <SheetDescription>
+                    filter your interviews by status, result, etc. filter your
+                  </SheetDescription>
+                </SheetHeader>
+
+                <div className="h-full overflow-y-auto p-s pb-3xl">
+                  <Accordion type="multiple">
+                    {table
+                      .getAllColumns()
+                      .filter((column) => {
+                        return (
+                          column.getCanHide() &&
+                          !["select", "actions"].includes(column.id)
+                        );
+                      })
+                      .map((column) => {
+                        const isColumnVisible = filterForm.watch(column.id);
+
+                        return (
+                          <AccordionItem key={column.id} value={column.id}>
+                            <AccordionTrigger className="flex-1">
+                              <Flex
+                                className="flex-1 pr-3xs"
+                                justify="space-between"
+                                align="center"
+                              >
+                                {interviewTableColumnsMap[
+                                  column.id as keyof InterviewType
+                                ]?.label ?? ""}
+
+                                <Button
+                                  size="sm"
+                                  color="ghost"
+                                  type="button"
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    filterForm.setValue(
+                                      column.id,
+                                      !isColumnVisible,
+                                    );
+                                  }}
+                                >
+                                  {isColumnVisible ? (
+                                    <Icons.Eye />
+                                  ) : (
+                                    <Icons.EyeOff />
+                                  )}
+                                </Button>
+                              </Flex>
+                            </AccordionTrigger>
+                            <AccordionContent>this is filter</AccordionContent>
+                          </AccordionItem>
+                        );
+                      })}
+                  </Accordion>
+                </div>
+              </SheetContent>
+            </form>
+          </SheetPortal>
+        </Sheet>
       </Flex>
       <div className="overflow-auto rounded-xl bg-base-100">
         <Table responsive>
