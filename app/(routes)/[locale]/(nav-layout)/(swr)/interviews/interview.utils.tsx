@@ -10,6 +10,7 @@ import {
   InterviewRoundResult,
   InterviewStatus,
   type InterviewRoundType,
+  type InterviewType,
 } from "@/lib/schema/interviews";
 
 import { type AddEditInterviewFormProps } from "./AddEditInterviewForm";
@@ -191,3 +192,38 @@ export const interviewRoundResultOptionsMap: Record<
 
 export const interviewRoundResultOptions: InterviewRoundResultOptionType[] =
   Object.values(interviewRoundResultOptionsMap);
+
+export const interviewTableColumnsMap: Record<
+  keyof InterviewType,
+  {
+    label: string;
+  }
+> = {
+  id: {
+    label: "id",
+  },
+  status: {
+    label: "status",
+  },
+  company_name: {
+    label: "company name",
+  },
+  position: {
+    label: "position",
+  },
+  result: {
+    label: "result",
+  },
+  rounds: {
+    label: "rounds",
+  },
+  notes: {
+    label: "notes",
+  },
+  start_date: {
+    label: "start date",
+  },
+  end_date: {
+    label: "end date",
+  },
+};
