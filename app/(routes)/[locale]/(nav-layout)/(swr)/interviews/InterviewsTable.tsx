@@ -19,12 +19,6 @@ import dayjs from "dayjs";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "~/components/ds/Accordion";
 import { BarLoader } from "~/components/ds/BarLoader";
 import { Button } from "~/components/ds/Button";
 import { Checkbox } from "~/components/ds/Checkbox";
@@ -35,14 +29,12 @@ import {
   DropdownMenuTrigger,
 } from "~/components/ds/DropdownMenu";
 import { Flex } from "~/components/ds/Flex";
-import { FormField } from "~/components/ds/FormField";
 import { Icons } from "~/components/ds/Icons";
 import { Input } from "~/components/ds/Input";
 import {
   Sheet,
   SheetContent,
   SheetDescription,
-  SheetFooter,
   SheetHeader,
   SheetOverlay,
   SheetPortal,
@@ -73,16 +65,13 @@ import { QueryKeys } from "@/utils/queries";
 import {
   interviewResultOptionsMap,
   interviewStatusOptionsMap,
-  interviewTableColumnsMap,
 } from "./interview.utils";
+import { InterviewsFilter } from "./InterviewsFilter";
 
-type InterviewsTableProps = {};
-
-const InterviewsTable = (props: InterviewsTableProps) => {
+const InterviewsTable = () => {
   // hooks
   const queryClient = useQueryClient();
   const { data = [], isLoading } = useInterviews();
-  const filterForm = useForm();
 
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
@@ -278,7 +267,7 @@ const InterviewsTable = (props: InterviewsTableProps) => {
     },
   });
 
-  const onFilterFormSubmit = (values: any) => {
+  const onFilterFormSubmit = () => {
     // console.log(values);
   };
 
@@ -308,71 +297,19 @@ const InterviewsTable = (props: InterviewsTableProps) => {
           </SheetTrigger>
           <SheetPortal>
             <SheetOverlay />
-            <form
-              onSubmit={filterForm.handleSubmit(onFilterFormSubmit)}
-              noValidate
-            >
-              <SheetContent>
-                <SheetHeader>
-                  <SheetTitle>filters</SheetTitle>
-                  <SheetDescription>
-                    filter your interviews by status, result, etc. filter your
-                  </SheetDescription>
-                </SheetHeader>
 
-                <div className="h-full overflow-y-auto p-s pb-3xl">
-                  <Accordion type="multiple">
-                    {table
-                      .getAllColumns()
-                      .filter((column) => {
-                        return (
-                          column.getCanHide() &&
-                          !["select", "actions"].includes(column.id)
-                        );
-                      })
-                      .map((column) => {
-                        const isColumnVisible = filterForm.watch(column.id);
+            <SheetContent>
+              <SheetHeader>
+                <SheetTitle>filters</SheetTitle>
+                <SheetDescription>
+                  filter your interviews by status, result, etc. filter your
+                </SheetDescription>
+              </SheetHeader>
 
-                        return (
-                          <AccordionItem key={column.id} value={column.id}>
-                            <AccordionTrigger className="flex-1">
-                              <Flex
-                                className="flex-1 pr-3xs"
-                                justify="space-between"
-                                align="center"
-                              >
-                                {interviewTableColumnsMap[
-                                  column.id as keyof InterviewType
-                                ]?.label ?? ""}
-
-                                <Button
-                                  size="sm"
-                                  color="ghost"
-                                  type="button"
-                                  onClick={(e) => {
-                                    e.stopPropagation();
-                                    filterForm.setValue(
-                                      column.id,
-                                      !isColumnVisible,
-                                    );
-                                  }}
-                                >
-                                  {isColumnVisible ? (
-                                    <Icons.Eye />
-                                  ) : (
-                                    <Icons.EyeOff />
-                                  )}
-                                </Button>
-                              </Flex>
-                            </AccordionTrigger>
-                            <AccordionContent>this is filter</AccordionContent>
-                          </AccordionItem>
-                        );
-                      })}
-                  </Accordion>
-                </div>
-              </SheetContent>
-            </form>
+              <div className="h-full overflow-y-auto p-s pb-3xl">
+                <InterviewsFilter table={table} onSubmit={onFilterFormSubmit} />
+              </div>
+            </SheetContent>
           </SheetPortal>
         </Sheet>
       </Flex>
