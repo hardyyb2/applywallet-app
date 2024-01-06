@@ -27,6 +27,7 @@ const SideNavMobile = () => {
       <SheetPortal>
         <SheetOverlay />
         <SheetContent
+          side="left"
           showClose={false}
           onOpenAutoFocus={(e) => e.preventDefault()}
         >
