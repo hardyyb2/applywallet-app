@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useMemo, useState, type ComponentProps } from "react";
 import Link from "next/link";
 
 import { useQueryClient } from "@tanstack/react-query";
@@ -32,16 +32,6 @@ import { Flex } from "~/components/ds/Flex";
 import { Icons } from "~/components/ds/Icons";
 import { Input } from "~/components/ds/Input";
 import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetOverlay,
-  SheetPortal,
-  SheetTitle,
-  SheetTrigger,
-} from "~/components/ds/Sheet";
-import {
   Table,
   TableBody,
   TableCell,
@@ -64,6 +54,7 @@ import { QueryKeys } from "@/utils/queries";
 
 import {
   interviewResultOptionsMap,
+  INTERVIEWS_FILTER_FORM_ID,
   interviewStatusOptionsMap,
 } from "./interview.utils";
 import { InterviewsFilter } from "./InterviewsFilter";
@@ -267,8 +258,10 @@ const InterviewsTable = () => {
     },
   });
 
-  const onFilterFormSubmit = () => {
-    // console.log(values);
+  const onFilterFormSubmit: ComponentProps<
+    typeof InterviewsFilter
+  >["onSubmit"] = (values) => {
+    setColumnVisibility(values.visibility);
   };
 
   if (isLoading) {
@@ -289,29 +282,7 @@ const InterviewsTable = () => {
             table.getColumn("company_name")?.setFilterValue(event.target.value)
           }
         />
-        <Sheet>
-          <SheetTrigger asChild>
-            <Button responsive startIcon={<Icons.SlidersHorizontal />}>
-              filters
-            </Button>
-          </SheetTrigger>
-          <SheetPortal>
-            <SheetOverlay />
-
-            <SheetContent>
-              <SheetHeader>
-                <SheetTitle>filters</SheetTitle>
-                <SheetDescription>
-                  filter your interviews by status, result, etc. filter your
-                </SheetDescription>
-              </SheetHeader>
-
-              <div className="h-full overflow-y-auto p-s pb-3xl">
-                <InterviewsFilter table={table} onSubmit={onFilterFormSubmit} />
-              </div>
-            </SheetContent>
-          </SheetPortal>
-        </Sheet>
+        <InterviewsFilter table={table} onSubmit={onFilterFormSubmit} />
       </Flex>
       <div className="overflow-auto rounded-xl bg-base-100">
         <Table responsive>
