@@ -227,3 +227,5 @@ export const interviewTableColumnsMap: Record<
     label: "end date",
   },
 };
+
+export const INTERVIEWS_FILTER_FORM_ID = "interviews-filter-form";
