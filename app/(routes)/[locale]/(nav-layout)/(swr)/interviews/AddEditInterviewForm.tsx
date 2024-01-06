@@ -243,7 +243,6 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
                   <div className="grid w-full grid-cols-[1fr_auto] items-center gap-3xs pr-2xs-xs">
                     <AccordionTrigger className="flex-1">
                       {round.name || `round ${index + 1}`}
-                      <Icons.ChevronDown className="w-4 lg:w-6" />
                     </AccordionTrigger>
 
                     <Icons.Trash2
