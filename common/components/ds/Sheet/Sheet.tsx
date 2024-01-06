@@ -111,7 +111,7 @@ const SheetFooter = ({
 }: React.HTMLAttributes<HTMLDivElement>) => (
   <div
     className={cnM(
-      "absolute inset-x-0 bottom-0 flex bg-base-100 p-xs",
+      "absolute inset-x-0 bottom-0 flex gap-2xs border-t border-base-content/40 bg-base-100 p-xs",
       className,
     )}
     {...props}
