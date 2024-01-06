@@ -7,6 +7,7 @@ import { ConditionalMatch } from "@dx-kit/react-conditional-match";
 import { cnM } from "@/utils/styles";
 
 import { FormFieldContext } from "./formField.utils";
+import { FormFieldCheckbox } from "./FormFieldCheckbox";
 import { FormFieldDatePicker } from "./FormFieldDatePicker";
 import { FormFieldDatePickerInput } from "./FormFieldDatePickerInput";
 import { FormFieldInput } from "./FormFieldInput";
@@ -16,7 +17,7 @@ import { FormFieldTextarea } from "./FormFieldTextarea";
 
 interface FormFieldProps {
   children: ReactNode;
-  label: ReactNode;
+  label?: ReactNode;
   description?: ReactNode;
   htmlFor: string;
   error?: string;
@@ -67,6 +68,7 @@ const FormFieldCompound = Object.assign(FormField, {
   DatePicker: FormFieldDatePicker,
   DatePickerInput: FormFieldDatePickerInput,
   RTBaseEditor: FormFieldRTBaseEditor,
+  Checkbox: FormFieldCheckbox,
 });
 
 export { FormFieldCompound as FormField };
