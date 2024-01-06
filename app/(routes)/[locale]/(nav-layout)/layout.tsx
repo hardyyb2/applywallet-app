@@ -20,7 +20,12 @@ const NavLayout = ({ children }: { children: ReactNode }) => {
         )}
       >
         <Navigation />
-        <section className="h-full w-full overflow-y-auto">{children}</section>
+        <section
+          className="h-full w-full overflow-y-auto"
+          vaul-drawer-wrapper=""
+        >
+          {children}
+        </section>
       </BaseLayout.Body>
     </BaseLayout>
   );
