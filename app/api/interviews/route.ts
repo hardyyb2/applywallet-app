@@ -117,23 +117,27 @@ export async function GET() {
     // TODO - return damaged rows as well
     const interviewRows = (await interviewSheet.getRows())
       .map((ir) => {
-        const interviewObj = ir.toObject();
-        const interview = {
-          ...interviewObj,
-          // parse the arrays back
-          // TODO - specific error in case of parsing error
-          rounds: JSON.parse(interviewObj.rounds),
-          notes: JSON.parse(interviewObj.notes),
-          id: ir.rowNumber,
-        } as InterviewType;
+        try {
+          const interviewObj = ir.toObject();
+          const interview = {
+            ...interviewObj,
+            // TODO - specific error in case of parsing error
+            // parse the arrays back
+            rounds: JSON.parse(interviewObj.rounds),
+            notes: JSON.parse(interviewObj.notes),
+            id: ir.rowNumber,
+          } as InterviewType;
 
-        const parsedInterview = interviewSchema.safeParse(interview);
+          const parsedInterview = interviewSchema.safeParse(interview);
 
-        if (parsedInterview.success) {
-          return parsedInterview.data;
+          if (parsedInterview.success) {
+            return parsedInterview.data;
+          }
+
+          return null;
+        } catch {
+          return null;
         }
-
-        return null;
       })
       .filter(Boolean);
 
