@@ -16,7 +16,6 @@ import {
   type VisibilityState,
 } from "@tanstack/react-table";
 import dayjs from "dayjs";
-import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 
 import { BarLoader } from "~/components/ds/BarLoader";
@@ -54,7 +53,6 @@ import { QueryKeys } from "@/utils/queries";
 
 import {
   interviewResultOptionsMap,
-  INTERVIEWS_FILTER_FORM_ID,
   interviewStatusOptionsMap,
 } from "./interview.utils";
 import { InterviewsFilter } from "./InterviewsFilter";
@@ -62,7 +60,7 @@ import { InterviewsFilter } from "./InterviewsFilter";
 const InterviewsTable = () => {
   // hooks
   const queryClient = useQueryClient();
-  const { data = [], isLoading } = useInterviews();
+  const { data = [], isLoading, error } = useInterviews();
 
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
@@ -258,6 +256,13 @@ const InterviewsTable = () => {
     },
   });
 
+  const filtersApplied = useMemo(
+    () =>
+      columnFilters.length > 0 ||
+      Object.values(columnVisibility).some((val) => val === true),
+    [columnFilters, columnVisibility],
+  );
+
   const onFilterFormSubmit: ComponentProps<
     typeof InterviewsFilter
   >["onSubmit"] = (values) => {
@@ -266,6 +271,10 @@ const InterviewsTable = () => {
 
   if (isLoading) {
     return <BarLoader />;
+  }
+
+  if (error) {
+    return <div>error</div>;
   }
 
   return (
@@ -282,7 +291,11 @@ const InterviewsTable = () => {
             table.getColumn("company_name")?.setFilterValue(event.target.value)
           }
         />
-        <InterviewsFilter table={table} onSubmit={onFilterFormSubmit} />
+        <InterviewsFilter
+          table={table}
+          onSubmit={onFilterFormSubmit}
+          filtersApplied={filtersApplied}
+        />
       </Flex>
       <div className="overflow-auto rounded-xl bg-base-100">
         <Table responsive>

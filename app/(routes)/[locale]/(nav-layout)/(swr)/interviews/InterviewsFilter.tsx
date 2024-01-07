@@ -9,6 +9,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "~/components/ds/Accordion";
+import { Badge } from "~/components/ds/Badge";
 import { Button, buttonVariants } from "~/components/ds/Button";
 import {
   Drawer,
@@ -22,6 +23,7 @@ import {
 } from "~/components/ds/Drawer";
 import { Flex } from "~/components/ds/Flex";
 import { Icons } from "~/components/ds/Icons";
+import { Indicator, indicatorItemVariants } from "~/components/ds/Indicator";
 import {
   Sheet,
   SheetContent,
@@ -35,6 +37,7 @@ import {
 
 import { useBreakPoint } from "@/hooks/useBreakPoint";
 import type { InterviewType } from "@/lib/schema/interviews";
+import { cnM } from "@/utils/styles";
 
 import {
   INTERVIEWS_FILTER_FORM_ID,
@@ -48,9 +51,15 @@ type InterviewsFilterFormType = {
 type InterviewsFilterProps = {
   table: Table<InterviewType>;
   onSubmit: (values: InterviewsFilterFormType) => void;
+  filtersApplied?: boolean;
 };
 
-const InterviewsFilter = ({ table, onSubmit }: InterviewsFilterProps) => {
+const InterviewsFilter = ({
+  table,
+  onSubmit,
+  filtersApplied = false,
+}: InterviewsFilterProps) => {
+  // hooks
   const { isBelowLg } = useBreakPoint("lg");
   const { watch, setValue, handleSubmit, reset } =
     useForm<InterviewsFilterFormType>({
@@ -63,11 +72,13 @@ const InterviewsFilter = ({ table, onSubmit }: InterviewsFilterProps) => {
       },
     });
 
+  // functions
   const handleReset = () => {
     reset();
     table.resetColumnVisibility();
   };
 
+  // constants
   const content = (
     <form onSubmit={handleSubmit(onSubmit)} id={INTERVIEWS_FILTER_FORM_ID}>
       <Accordion type="multiple">
@@ -149,9 +160,11 @@ const InterviewsFilter = ({ table, onSubmit }: InterviewsFilterProps) => {
         shouldScaleBackground={false}
       >
         <DrawerTrigger asChild>
-          <Button responsive startIcon={<Icons.SlidersHorizontal />}>
-            filters
-          </Button>
+          <Button
+            responsive
+            startIcon={<Icons.SlidersHorizontal />}
+            aria-label="filters"
+          />
         </DrawerTrigger>
         <DrawerPortal>
           <DrawerOverlay />
@@ -171,10 +184,24 @@ const InterviewsFilter = ({ table, onSubmit }: InterviewsFilterProps) => {
 
   return (
     <Sheet>
-      <SheetTrigger asChild>
-        <Button responsive startIcon={<Icons.SlidersHorizontal />}>
-          filters
-        </Button>
+      <SheetTrigger>
+        <Indicator>
+          <div
+            className={buttonVariants({
+              responsive: true,
+            })}
+          >
+            {filtersApplied ? (
+              <Badge
+                size="sm"
+                color="accent"
+                className={cnM(indicatorItemVariants())}
+              />
+            ) : null}
+            <Icons.SlidersHorizontal />
+            filters
+          </div>
+        </Indicator>
       </SheetTrigger>
       <SheetPortal>
         <SheetOverlay />
