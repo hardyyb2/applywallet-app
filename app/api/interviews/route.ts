@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 import { isAxiosError } from "axios";
 import { GoogleSpreadsheet } from "google-spreadsheet";
@@ -152,6 +152,74 @@ export async function GET() {
     }
 
     const message = new CustomError(err).message;
+
+    return NextResponse.json(
+      new ApiError({
+        code: ApiErrorCodes.SERVER_ERROR,
+        message,
+      }),
+      {
+        status: 500,
+      },
+    );
+  }
+}
+
+const deleteBodySchema = z.object({
+  interviewIds: z.array(z.coerce.number()),
+});
+
+export async function DELETE(request: NextRequest) {
+  try {
+    const session = await getServerSession(authOptions);
+
+    if (!session || !session.accessToken || !session.user?.primarySheetId) {
+      return NextResponse.json(
+        new ApiError({
+          code: ApiErrorCodes.UNAUTHORIZED,
+        }),
+        { status: 401 },
+      );
+    }
+
+    const json = await request.json();
+    const body = deleteBodySchema.safeParse(json);
+
+    if (!body.success) {
+      return NextResponse.json(
+        new ApiError({
+          code: ApiErrorCodes.BAD_REQUEST,
+          data: body.error.issues,
+        }),
+        { status: 400 },
+      );
+    }
+
+    const interviewIdsToDelete = body.data.interviewIds;
+
+    const doc = new GoogleSpreadsheet(session.user.primarySheetId, {
+      token: session.accessToken,
+    });
+    await doc.loadInfo();
+    const allSheets = doc.sheetsByTitle;
+    const interviewSheet = allSheets[SheetNames.INTERVIEWS];
+
+    // sorted in descending order because deleting a row changes the row numbers
+    const sortedInterviewIdsDesc = interviewIdsToDelete.sort((a, b) => b - a);
+    for (const interviewId of sortedInterviewIdsDesc) {
+      const requiredRow = await interviewSheet.getRows({
+        offset: interviewId - 1 - 1, // extra 1 for header row
+        limit: 1,
+      });
+
+      await requiredRow[0].delete();
+    }
+
+    return NextResponse.json(new ApiResponse(), {
+      status: 200,
+    });
+  } catch (error) {
+    const message = new CustomError(error).message;
 
     return NextResponse.json(
       new ApiError({
