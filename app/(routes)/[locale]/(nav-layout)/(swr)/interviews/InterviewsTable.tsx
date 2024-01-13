@@ -68,43 +68,6 @@ const InterviewsTable = () => {
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
   const [rowSelection, setRowSelection] = useState<RowSelectionState>({});
 
-  // functions
-  const handleDeleteInterview = useCallback(
-    (id: InterviewType["id"]) => {
-      appApi
-        .delete(ApiRoutes.deleteInterview(id))
-        .then(() => {
-          toast.success("interview deleted");
-          queryClient.invalidateQueries({
-            queryKey: [QueryKeys.INTERVIEWS],
-          });
-        })
-        .catch(() => {
-          toast.error("failed to delete interview, please try again");
-        });
-    },
-    [queryClient],
-  );
-
-  const handleDeleteInterviews = () => {
-    const rowsToDelete = Object.keys(rowSelection);
-    const interviewsToDelete = rowsToDelete.map((rowId) => {
-      const row = table.getRow(rowId);
-      return row.original.id;
-    });
-
-    if (!interviewsToDelete.length) {
-      toast.error("please select interviews to delete");
-      return;
-    }
-
-    appApi.delete(ApiRoutes.DELETE_INTERVIEWS, {
-      data: {
-        interviewIds: interviewsToDelete,
-      },
-    });
-  };
-
   // constants
   const columns = useMemo<ColumnDef<InterviewType>[]>(
     () => [
@@ -225,6 +188,24 @@ const InterviewsTable = () => {
         cell: ({ row }) => {
           const interview = row.original;
 
+          const handleDeleteInterview = (id: InterviewType["id"]) => {
+            appApi
+              .delete(ApiRoutes.deleteInterview(id))
+              .then(() => {
+                toast.success("interview deleted");
+                queryClient.invalidateQueries({
+                  queryKey: [QueryKeys.INTERVIEWS],
+                });
+              })
+              .catch(() => {
+                // TODO - reload table data and clear selections
+                toast.error("failed to delete interview, please try again");
+              })
+              .finally(() => {
+                setRowSelection({});
+              });
+          };
+
           return (
             <DropdownMenu>
               <div className="w-full text-right">
@@ -258,7 +239,7 @@ const InterviewsTable = () => {
         },
       },
     ],
-    [handleDeleteInterview],
+    [queryClient],
   );
 
   const table = useReactTable({
@@ -290,6 +271,39 @@ const InterviewsTable = () => {
     typeof InterviewsFilter
   >["onSubmit"] = (values) => {
     setColumnVisibility(values.visibility);
+  };
+
+  // functions
+  const handleDeleteInterviews = () => {
+    const rowsToDelete = Object.keys(rowSelection);
+    const interviewsToDelete = rowsToDelete.map((rowId) => {
+      const row = table.getRow(rowId);
+      return row.original.id;
+    });
+
+    if (!interviewsToDelete.length) {
+      toast.error("please select interviews to delete");
+      return;
+    }
+
+    appApi
+      .delete(ApiRoutes.DELETE_INTERVIEWS, {
+        data: {
+          interviewIds: interviewsToDelete,
+        },
+      })
+      .then(() => {
+        toast.success("interviews deleted");
+        queryClient.invalidateQueries({
+          queryKey: [QueryKeys.INTERVIEWS],
+        });
+      })
+      .catch(() => {
+        toast.error("failed to delete interviews, please try again");
+      })
+      .finally(() => {
+        table.resetRowSelection();
+      });
   };
 
   if (isLoading) {
