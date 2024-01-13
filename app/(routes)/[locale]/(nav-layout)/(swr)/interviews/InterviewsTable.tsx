@@ -12,6 +12,7 @@ import {
   useReactTable,
   type ColumnDef,
   type ColumnFiltersState,
+  type RowSelectionState,
   type SortingState,
   type VisibilityState,
 } from "@tanstack/react-table";
@@ -65,6 +66,7 @@ const InterviewsTable = () => {
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
+  const [rowSelection, setRowSelection] = useState<RowSelectionState>({});
 
   // functions
   const handleDeleteInterview = useCallback(
@@ -83,6 +85,25 @@ const InterviewsTable = () => {
     },
     [queryClient],
   );
+
+  const handleDeleteInterviews = () => {
+    const rowsToDelete = Object.keys(rowSelection);
+    const interviewsToDelete = rowsToDelete.map((rowId) => {
+      const row = table.getRow(rowId);
+      return row.original.id;
+    });
+
+    if (!interviewsToDelete.length) {
+      toast.error("please select interviews to delete");
+      return;
+    }
+
+    appApi.delete(ApiRoutes.DELETE_INTERVIEWS, {
+      data: {
+        interviewIds: interviewsToDelete,
+      },
+    });
+  };
 
   // constants
   const columns = useMemo<ColumnDef<InterviewType>[]>(
@@ -249,10 +270,12 @@ const InterviewsTable = () => {
     onColumnFiltersChange: setColumnFilters,
     getFilteredRowModel: getFilteredRowModel(),
     onColumnVisibilityChange: setColumnVisibility,
+    onRowSelectionChange: setRowSelection,
     state: {
       sorting,
       columnFilters,
       columnVisibility,
+      rowSelection,
     },
   });
 
@@ -291,6 +314,13 @@ const InterviewsTable = () => {
             table.getColumn("company_name")?.setFilterValue(event.target.value)
           }
         />
+        <Button
+          color="error"
+          variant="outline"
+          onClick={handleDeleteInterviews}
+        >
+          <Icons.Trash2 className="w-4 lg:w-5" />
+        </Button>
         <InterviewsFilter
           table={table}
           onSubmit={onFilterFormSubmit}
