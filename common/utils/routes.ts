@@ -48,6 +48,7 @@ export const ApiRoutes = {
 
   ADD_INTERVIEW: "/api/interviews",
   GET_INTERVIEWS: "/api/interviews",
+  DELETE_INTERVIEWS: "/api/interviews",
   getInterview: (interviewId: InterviewType["id"]) =>
     `/api/interviews/${interviewId}`,
   deleteInterview: (interviewId: InterviewType["id"]) =>
