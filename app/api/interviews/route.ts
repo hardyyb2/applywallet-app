@@ -205,6 +205,7 @@ export async function DELETE(request: NextRequest) {
     const interviewSheet = allSheets[SheetNames.INTERVIEWS];
 
     // sorted in descending order because deleting a row changes the row numbers
+    // TODO - find more efficient way to do this
     const sortedInterviewIdsDesc = interviewIdsToDelete.sort((a, b) => b - a);
     for (const interviewId of sortedInterviewIdsDesc) {
       const requiredRow = await interviewSheet.getRows({
