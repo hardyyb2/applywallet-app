@@ -12,9 +12,13 @@ export const instance = axios.create({
   baseURL: "/",
 });
 
-const appApi = async <T, U extends boolean = false>(
-  config: AxiosRequestConfig<any, T, U>,
-): Promise<AxiosResponse<U extends true ? T : ApiResponseType<T>>> => {
+const appApi = async <ResponseData, IsExternal extends boolean = false>(
+  config: AxiosRequestConfig<any, ResponseData, IsExternal>,
+): Promise<
+  AxiosResponse<
+    IsExternal extends true ? ResponseData : ApiResponseType<ResponseData>
+  >
+> => {
   const res = await instance(config);
   const schema = config.schema;
   const external = config.external ?? false;
