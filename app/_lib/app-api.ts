@@ -1,7 +1,12 @@
 import axios, { type AxiosRequestConfig, type AxiosResponse } from "axios";
 
 import { logger } from "../../common/utils/logs";
-import { apiResponseSchema, type ApiResponseType } from "./api-response";
+import {
+  ApiError,
+  ApiErrorCodes,
+  apiResponseSchema,
+  type ApiResponseType,
+} from "./api-response";
 
 export const instance = axios.create({
   baseURL: "/",
@@ -33,7 +38,11 @@ const appApi = async <T, U extends boolean = false>(
     JSON.stringify(parsedData.error.errors, null, 2);
 
   logger.error(errorMessage);
-  throw new Error(errorMessage);
+  const error = new ApiError({
+    code: ApiErrorCodes.PARSING_FAILED,
+    message: errorMessage,
+  });
+  throw error;
 };
 
 appApi.get = async <T, U extends boolean = false>(

@@ -34,12 +34,7 @@ const fetchInterview = async (interviewId: InterviewType["id"]) => {
       schema: interviewSchema,
     })
     .then((res) => {
-      // TODO - zod-type this response and also error
-      if (res.data?.success) {
-        return res.data.data;
-      }
-
-      throw new Error();
+      return res.data.data;
     });
 };
 

@@ -2,7 +2,7 @@ import { cleanup } from "@testing-library/react";
 import MockAdapter from "axios-mock-adapter";
 import { z } from "zod";
 
-import { ApiResponse } from "../api-response";
+import { ApiError, ApiErrorCodes, ApiResponse } from "../api-response";
 import { appApi, instance as axiosInstance } from "../app-api";
 
 const mock = new MockAdapter(axiosInstance, { onNoMatch: "throwException" });
@@ -83,4 +83,24 @@ describe("appApi", () => {
     ).rejects.toThrow();
   });
   /* </External calls> */
+
+  it("should throw error if parsing failed", async () => {
+    const data = { foo: 22 };
+    mock.onGet("/foo").reply(200, data);
+
+    try {
+      await appApi({
+        url: "/foo",
+        schema: z.object({ foo: z.string() }),
+      });
+    } catch (e) {
+      if (!(e instanceof ApiError)) {
+        throw new Error("Error is not an instance of `ApiError`");
+      }
+
+      if (e.error.code !== ApiErrorCodes.PARSING_FAILED) {
+        throw new Error("Error code is not `ApiErrorCodes.PARSING_FAILED`");
+      }
+    }
+  });
 });
