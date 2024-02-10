@@ -30,6 +30,7 @@ export enum ApiErrorCodes {
   NOT_FOUND = "ERR_NOT_FOUND",
   BAD_REQUEST = "ERR_BAD_REQUEST",
   SERVER_ERROR = "ERR_SERVER_ERROR",
+  PARSING_FAILED = "ERR_PARSING_FAILED",
 }
 
 export const apiErrorSchema = z.object({
