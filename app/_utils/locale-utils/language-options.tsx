@@ -6,7 +6,7 @@ import { type Locale } from "./i18n-config";
 export const languageOptions: {
   label: string;
   value: Locale;
-  icon: ReactElement;
+  icon: ReactElement<any>;
 }[] = [
   {
     label: "english",

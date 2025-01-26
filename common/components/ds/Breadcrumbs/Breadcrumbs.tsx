@@ -1,6 +1,7 @@
 import {
   forwardRef,
   type HTMLAttributes,
+  type JSX,
   type LiHTMLAttributes,
   type ReactElement,
   type Ref,

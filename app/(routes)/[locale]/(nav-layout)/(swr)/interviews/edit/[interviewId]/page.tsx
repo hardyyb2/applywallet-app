@@ -1,5 +1,6 @@
 "use client";
 
+import { use } from "react";
 import Link from "next/link";
 
 import { ConditionalMatch } from "@dx-kit/react-conditional-match";
@@ -17,7 +18,8 @@ type EditInterviewProps = {
   params: Record<string, string>;
 };
 
-const EditInterview = ({ params }: EditInterviewProps) => {
+const EditInterview = (props: EditInterviewProps) => {
+  const params = use(props.params);
   const interviewId = params[UrlParams.INTERVIEW_ID];
 
   const { data, isLoading, error } = useInterview(interviewId);

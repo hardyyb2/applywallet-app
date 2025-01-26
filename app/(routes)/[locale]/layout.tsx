@@ -12,14 +12,17 @@ import "@/styles/mdx.scss";
 import "~/styles/overrides/daisyui.scss";
 
 type RootLayoutProps = {
-  params: { locale: Locale };
+  params: Promise<{ locale: Locale }>;
   children: ReactNode;
 };
 
-const RootLayout = ({
-  params: { locale = "en" },
-  children,
-}: RootLayoutProps) => {
+const RootLayout = async (props: RootLayoutProps) => {
+  const params = await props.params;
+
+  const { locale = "en" } = params;
+
+  const { children } = props;
+
   return (
     <html
       lang={locale}

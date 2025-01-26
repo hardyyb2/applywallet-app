@@ -2,6 +2,7 @@ import {
   forwardRef,
   type ComponentType,
   type HTMLAttributes,
+  type JSX,
   type PropsWithChildren,
   type ReactNode,
 } from "react";

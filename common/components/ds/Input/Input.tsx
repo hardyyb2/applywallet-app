@@ -1,4 +1,9 @@
-import { forwardRef, type InputHTMLAttributes, type ReactNode } from "react";
+import {
+  forwardRef,
+  type InputHTMLAttributes,
+  type JSX,
+  type ReactNode,
+} from "react";
 
 import type { VariantProps } from "cva";
 

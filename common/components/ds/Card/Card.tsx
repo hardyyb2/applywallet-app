@@ -1,4 +1,9 @@
-import { forwardRef, type HTMLAttributes, type PropsWithChildren } from "react";
+import {
+  forwardRef,
+  type HTMLAttributes,
+  type JSX,
+  type PropsWithChildren,
+} from "react";
 
 import { cn, cnM } from "@/utils/styles";
 

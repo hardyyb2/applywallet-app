@@ -80,7 +80,8 @@ type EditExperienceProps = {
   params: Record<string, string>;
 };
 
-const EditExperience = async ({ params }: EditExperienceProps) => {
+const EditExperience = async (props: EditExperienceProps) => {
+  const params = await props.params;
   const experienceId = params[UrlParams.EXPERIENCE_ID];
   const experience = await fetchExperience(experienceId);
 

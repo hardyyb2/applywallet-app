@@ -19,14 +19,15 @@ import { BlogMetaInfo } from "./BlogMetaInfo/BlogMetaInfo";
 import { BlogScrollWrapper } from "./BlogScrollWrapper/BlogScrollWrapper";
 
 type BlogPageProps = {
-  params: { slug: string[] };
+  params: Promise<{ slug: string[] }>;
 };
 
 export const generateStaticParams = async () => {
   return allBlogs.map((blog) => ({ slug: blog.slugAsParams.split("/") }));
 };
 
-export const generateMetadata = async ({ params }: BlogPageProps) => {
+export const generateMetadata = async (props: BlogPageProps) => {
+  const params = await props.params;
   const blog = await getBlogFromParams(params);
 
   if (!blog) {
@@ -36,7 +37,7 @@ export const generateMetadata = async ({ params }: BlogPageProps) => {
   return { title: blog.title, description: blog.description };
 };
 
-async function getBlogFromParams(params: BlogPageProps["params"]) {
+async function getBlogFromParams(params: { slug: string[] }) {
   const slug = params.slug?.join("/") || "";
   const blog = allBlogs.find((blog) => blog.slugAsParams === slug);
 
@@ -47,7 +48,8 @@ async function getBlogFromParams(params: BlogPageProps["params"]) {
   return blog;
 }
 
-const BlogPage = async ({ params }: BlogPageProps) => {
+const BlogPage = async (props: BlogPageProps) => {
+  const params = await props.params;
   const blog = await getBlogFromParams(params);
 
   if (!blog) {

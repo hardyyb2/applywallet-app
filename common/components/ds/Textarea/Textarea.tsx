@@ -1,4 +1,4 @@
-import { forwardRef, type TextareaHTMLAttributes } from "react";
+import { forwardRef, type JSX, type TextareaHTMLAttributes } from "react";
 
 import { cn } from "@/utils/styles";
 

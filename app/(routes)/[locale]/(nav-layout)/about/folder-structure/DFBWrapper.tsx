@@ -16,7 +16,7 @@ import {
 import { cnM } from "@/utils/styles";
 
 const DFBWrapper = ({ children }: PropsWithChildren) => {
-  const containerRef = useRef<any>();
+  const containerRef = useRef<any>(undefined);
   const [show, toggleFullScreen] = useBoolean(false);
   const isFullScreen = useFullscreen(containerRef, show, {
     onClose: () => toggleFullScreen(false),

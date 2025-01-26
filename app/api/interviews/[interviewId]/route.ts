@@ -33,7 +33,7 @@ export async function GET(
       );
     }
 
-    const parsedParams = paramSchema.safeParse(context.params);
+    const parsedParams = paramSchema.safeParse(await context.params);
 
     if (!parsedParams.success) {
       return NextResponse.json(
@@ -115,7 +115,7 @@ export async function DELETE(
       );
     }
 
-    const parsedParams = paramSchema.safeParse(context.params);
+    const parsedParams = paramSchema.safeParse(await context.params);
 
     if (!parsedParams.success) {
       return NextResponse.json(
@@ -177,7 +177,7 @@ export async function PUT(
       );
     }
 
-    const parsedParams = paramSchema.safeParse(context.params);
+    const parsedParams = paramSchema.safeParse(await context.params);
 
     if (!parsedParams.success) {
       return NextResponse.json(

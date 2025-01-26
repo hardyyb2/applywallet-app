@@ -1,4 +1,4 @@
-import { forwardRef, type HTMLAttributes } from "react";
+import { forwardRef, type HTMLAttributes, type JSX } from "react";
 
 import { type VariantProps } from "cva";
 

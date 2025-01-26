@@ -8,11 +8,11 @@ export const metadata: Metadata = {
   title: "home",
 };
 
-const Home = async ({
-  params: { lang = "en" },
-}: {
-  params: { lang: Locale };
-}) => {
+const Home = async (props: { params: Promise<{ lang: Locale }> }) => {
+  const params = await props.params;
+
+  const { lang = "en" } = params;
+
   return (
     <section className="h-full">
       {allBlogs.map((blog, index) => (

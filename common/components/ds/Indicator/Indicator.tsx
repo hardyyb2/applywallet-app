@@ -1,4 +1,4 @@
-import React from "react";
+import { forwardRef, type JSX } from "react";
 
 import { cva, type VariantProps } from "cva";
 
@@ -23,7 +23,7 @@ interface IndicatorItemProps
   extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof indicatorItemVariants> {}
 
-const IndicatorItem = React.forwardRef<HTMLDivElement, IndicatorItemProps>(
+const IndicatorItem = forwardRef<HTMLDivElement, IndicatorItemProps>(
   (
     { children, horizontal = "end", vertical = "top", className, ...props },
     ref,
@@ -44,7 +44,7 @@ IndicatorItem.displayName = "IndicatorItem";
 
 type IndicatorProps = React.HTMLAttributes<HTMLDivElement>;
 
-const Indicator = React.forwardRef<HTMLDivElement, IndicatorProps>(
+const Indicator = forwardRef<HTMLDivElement, IndicatorProps>(
   ({ children, className, ...props }, ref): JSX.Element => {
     return (
       <div {...props} className={cnM("dui-indicator", className)} ref={ref}>

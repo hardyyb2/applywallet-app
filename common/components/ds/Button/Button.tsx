@@ -1,4 +1,9 @@
-import { forwardRef, type ButtonHTMLAttributes, type ReactNode } from "react";
+import {
+  forwardRef,
+  type ButtonHTMLAttributes,
+  type JSX,
+  type ReactNode,
+} from "react";
 
 import { type VariantProps } from "cva";
 
