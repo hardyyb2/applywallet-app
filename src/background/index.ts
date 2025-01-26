@@ -20,7 +20,6 @@ const addOptionsToContextMenu = () => {
 
   chrome.contextMenus.onClicked.addListener((info, tab) => {
     if (tab?.id && info.menuItemId === "subitem") {
-      console.log("this was sent");
       chrome.tabs.sendMessage(tab.id, { action: "getClickedElement" });
     }
   });

@@ -5,7 +5,8 @@ import { GoogleSpreadsheet } from "google-spreadsheet";
 import { getServerSession } from "next-auth";
 import { z } from "zod";
 
-import { ApiError, ApiErrorCodes, ApiResponse } from "@/lib/api-response";
+import { ApiError, ApiErrorCodes, ApiResponse } from "~/lib/api-response";
+
 import { authOptions } from "@/lib/auth";
 import { CustomError } from "@/lib/custom-error";
 import { experienceInputSchema } from "@/lib/schema/experience";

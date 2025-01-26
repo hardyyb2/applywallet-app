@@ -2,7 +2,8 @@ import { NextResponse } from "next/server";
 
 import { getServerSession } from "next-auth";
 
-import { ApiError, ApiErrorCodes } from "@/lib/api-response";
+import { ApiError, ApiErrorCodes } from "~/lib/api-response";
+
 import { authOptions } from "@/lib/auth";
 import { CustomError } from "@/lib/custom-error";
 

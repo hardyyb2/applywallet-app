@@ -2,7 +2,11 @@ import { cleanup } from "@testing-library/react";
 import MockAdapter from "axios-mock-adapter";
 import { z } from "zod";
 
-import { ApiError, ApiErrorCodes, ApiResponse } from "../api-response";
+import {
+  ApiError,
+  ApiErrorCodes,
+  ApiResponse,
+} from "../../../common/lib/api-response";
 import { appApi, instance as axiosInstance } from "../app-api";
 
 const mock = new MockAdapter(axiosInstance, { onNoMatch: "throwException" });
