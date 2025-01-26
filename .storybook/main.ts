@@ -5,6 +5,7 @@ const config: StorybookConfig = {
     "../app/**/*.stories.@(js|jsx|mjs|ts|tsx|mdx)",
     "../common/**/*.stories.@(js|jsx|mjs|ts|tsx|mdx)",
   ],
+
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
@@ -46,13 +47,18 @@ const config: StorybookConfig = {
       },
     },
     "storybook-addon-data-theme-switcher",
+    "@chromatic-com/storybook",
   ],
+
   framework: {
     name: "@storybook/nextjs",
     options: {},
   },
-  docs: {
-    autodocs: "tag",
+
+  docs: {},
+
+  typescript: {
+    reactDocgen: "react-docgen-typescript",
   },
 };
 export default config;
