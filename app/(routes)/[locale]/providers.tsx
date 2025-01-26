@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import { domAnimation, LazyMotion, MotionConfig } from "framer-motion";
+import { domAnimation, LazyMotion, MotionConfig } from "motion/react";
 import { ToastContainer } from "react-toastify";
 
 import { GoogleAnalytics } from "@/components/dependent/GoogleAnalytics";

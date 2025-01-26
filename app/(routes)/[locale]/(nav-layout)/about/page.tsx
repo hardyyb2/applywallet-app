@@ -3,7 +3,7 @@
 import { useMemo } from "react";
 import Image from "next/image";
 
-import { AnimatePresence, m } from "framer-motion";
+import { AnimatePresence, m } from "motion/react";
 
 import { Flex } from "~/components/ds/Flex";
 

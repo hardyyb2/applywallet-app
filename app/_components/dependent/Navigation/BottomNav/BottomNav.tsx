@@ -4,7 +4,7 @@ import { Fragment } from "react";
 import { usePathname } from "next/navigation";
 
 import { ConditionalMatch } from "@dx-kit/react-conditional-match";
-import { AnimatePresence, m } from "framer-motion";
+import { AnimatePresence, m } from "motion/react";
 import { useBoolean } from "react-use";
 
 import { BottomNavigation } from "~/components/ds/BottomNavigation";

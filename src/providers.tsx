@@ -1,7 +1,7 @@
 import { type ReactNode } from "react";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { MotionConfig } from "framer-motion";
+import { MotionConfig } from "motion/react";
 
 type ProvidersType = {
   children: ReactNode;

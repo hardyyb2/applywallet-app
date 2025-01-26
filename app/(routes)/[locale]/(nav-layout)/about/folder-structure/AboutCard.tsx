@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, type ElementRef } from "react";
 
-import { useInView } from "framer-motion";
+import { useInView } from "motion/react";
 
 import { Card } from "~/components/ds/Card";
 

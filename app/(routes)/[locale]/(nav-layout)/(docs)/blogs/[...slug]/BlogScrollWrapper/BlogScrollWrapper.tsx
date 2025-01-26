@@ -2,7 +2,7 @@
 
 import { useRef, type ElementRef, type PropsWithChildren } from "react";
 
-import { m, useScroll, useSpring } from "framer-motion";
+import { m, useScroll, useSpring } from "motion/react";
 import { useBoolean, useFullscreen } from "react-use";
 
 import { Button } from "~/components/ds/Button";

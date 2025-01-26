@@ -2,7 +2,7 @@
 
 import { useState, type MouseEvent } from "react";
 
-import { Reorder, useDragControls } from "framer-motion";
+import { Reorder, useDragControls } from "motion/react";
 
 import { Button } from "~/components/ds/Button";
 import { Flex } from "~/components/ds/Flex";

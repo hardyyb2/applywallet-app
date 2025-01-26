@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { useBoolean } from "react-use";
 
 import { cn } from "@/utils/styles";
