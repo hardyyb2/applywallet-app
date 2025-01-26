@@ -155,10 +155,7 @@ const InterviewsFilter = ({
 
   if (isBelowLg) {
     return (
-      <Drawer
-        // TODO - update vaul when this is fixed
-        shouldScaleBackground={false}
-      >
+      <Drawer shouldScaleBackground={false}>
         <DrawerTrigger asChild>
           <Button
             responsive
