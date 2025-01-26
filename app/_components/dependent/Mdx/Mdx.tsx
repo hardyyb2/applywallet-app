@@ -6,7 +6,7 @@ import {
 } from "react";
 import Image, { type ImageProps } from "next/image";
 
-import { useMDXComponent } from "next-contentlayer/hooks";
+import { useMDXComponent } from "next-contentlayer2/hooks";
 
 import { cn } from "@/utils/styles";
 
