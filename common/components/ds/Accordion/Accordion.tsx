@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import * as AccordionPrimitive from "@radix-ui/react-accordion";
+import { Accordion as AccordionPrimitive } from "radix-ui";
 
 import { cnM } from "@/utils/styles";
 

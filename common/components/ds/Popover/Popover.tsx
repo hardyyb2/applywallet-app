@@ -6,8 +6,8 @@ import {
   type ElementRef,
 } from "react";
 
-import * as PopoverPrimitive from "@radix-ui/react-popover";
 import { cva } from "cva";
+import { Popover as PopoverPrimitive } from "radix-ui";
 
 import { cnM } from "@/utils/styles";
 

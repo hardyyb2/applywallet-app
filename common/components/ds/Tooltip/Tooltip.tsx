@@ -6,8 +6,8 @@ import {
   type ElementRef,
 } from "react";
 
-import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import { type VariantProps } from "cva";
+import { Tooltip as TooltipPrimitive } from "radix-ui";
 
 import { cnM } from "@/utils/styles";
 

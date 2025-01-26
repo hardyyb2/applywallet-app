@@ -1,6 +1,5 @@
 import React from "react";
 
-import type { DropdownMenuProps } from "@radix-ui/react-dropdown-menu";
 import {
   focusEditor,
   useEditorReadOnly,
@@ -18,6 +17,7 @@ import {
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
+  type DropdownMenuProps,
 } from "../../../common/components/ds/DropdownMenu";
 import { Icons } from "../../../common/components/ds/Icons";
 import { ToolbarButton } from "../../../common/components/ds/Toolbar";

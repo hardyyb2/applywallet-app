@@ -2,7 +2,6 @@
 
 import React from "react";
 
-import { type DropdownMenuProps } from "@radix-ui/react-dropdown-menu";
 import { ELEMENT_BLOCKQUOTE } from "@udecode/plate-block-quote";
 import {
   focusEditor,
@@ -30,6 +29,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
+  type DropdownMenuProps,
 } from "../../../common/components/ds/DropdownMenu";
 import { Icons } from "../../../common/components/ds/Icons";
 import { ToolbarButton } from "../../../common/components/ds/Toolbar";

@@ -2,8 +2,8 @@
 
 import * as React from "react";
 
-import * as ToolbarPrimitive from "@radix-ui/react-toolbar";
 import { type VariantProps } from "cva";
+import { Toolbar as ToolbarPrimitive } from "radix-ui";
 
 import { cnM } from "@/utils/styles";
 

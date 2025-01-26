@@ -15,7 +15,7 @@
       {
         "patterns": [
           {
-            "group": ["@radix-ui/*"],
+            "group": ["radix-ui"],
             "message": "Please import from '@/components' instead."
           },
           {
@@ -50,7 +50,7 @@
           {
             "patterns": [
               {
-                "group": ["@radix-ui/*"]
+                "group": ["radix-ui"]
               }
             ]
           }

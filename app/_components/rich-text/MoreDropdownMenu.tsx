@@ -1,6 +1,5 @@
 import React from "react";
 
-import type { DropdownMenuProps } from "@radix-ui/react-dropdown-menu";
 import { MARK_SUBSCRIPT, MARK_SUPERSCRIPT } from "@udecode/plate-basic-marks";
 import { focusEditor, toggleMark, useEditorRef } from "@udecode/plate-common";
 import { MARK_HIGHLIGHT } from "@udecode/plate-highlight";
@@ -11,6 +10,7 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
+  type DropdownMenuProps,
 } from "../../../common/components/ds/DropdownMenu";
 import { Icons } from "../../../common/components/ds/Icons";
 import { ToolbarButton } from "../../../common/components/ds/Toolbar";

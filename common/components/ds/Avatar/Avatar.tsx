@@ -6,8 +6,8 @@ import {
   type ElementRef,
 } from "react";
 
-import * as AvatarPrimitive from "@radix-ui/react-avatar";
 import type { VariantProps } from "cva";
+import { Avatar as AvatarPrimitive } from "radix-ui";
 
 import { cnM } from "@/utils/styles";
 

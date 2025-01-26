@@ -2,8 +2,8 @@
 
 import * as React from "react";
 
-import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
 import type { VariantProps } from "cva";
+import { Checkbox as CheckboxPrimitive } from "radix-ui";
 
 import { cnM } from "@/utils/styles";
 
