@@ -15,7 +15,9 @@ import { useInterview } from "@/queries/interviews.queries";
 import { AddEditInterviewForm } from "../../AddEditInterviewForm";
 
 type EditInterviewProps = {
-  params: Record<string, string>;
+  params: Promise<{
+    [UrlParams.INTERVIEW_ID]: string;
+  }>;
 };
 
 const EditInterview = (props: EditInterviewProps) => {

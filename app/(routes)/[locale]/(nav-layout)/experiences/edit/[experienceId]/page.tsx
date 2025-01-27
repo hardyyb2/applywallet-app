@@ -77,7 +77,9 @@ const fetchExperience = async (
 };
 
 type EditExperienceProps = {
-  params: Record<string, string>;
+  params: Promise<{
+    [UrlParams.EXPERIENCE_ID]: string;
+  }>;
 };
 
 const EditExperience = async (props: EditExperienceProps) => {

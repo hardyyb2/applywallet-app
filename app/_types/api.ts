@@ -1,3 +1,5 @@
 export type ApiRequestContextType = {
-  params: Record<string, string>;
+  params: Promise<{
+    [key: string]: string;
+  }>;
 };

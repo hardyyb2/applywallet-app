@@ -71,7 +71,9 @@ const ESInformationSettings = () => {
           key={item.title}
           value={item}
           className="pl-0"
-          onClick={(e) => handleListItemClick(e, index)}
+          onClick={(e: MouseEvent<HTMLLIElement>) =>
+            handleListItemClick(e, index)
+          }
         >
           <Flex
             align="center"
