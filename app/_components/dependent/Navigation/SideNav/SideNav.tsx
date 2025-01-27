@@ -19,10 +19,7 @@ const SideNav = () => {
       animate={{
         width: navOpen ? 240 : 74,
       }}
-      className={cn(
-        "grid h-[96%] grid-rows-[auto_1fr_auto]",
-        "my-auto ml-xs rounded-xl bg-base-200",
-      )}
+      className={cn("grid h-full grid-rows-[auto_1fr_auto]", "bg-base-100")}
     >
       {/* Top section */}
       <div className="p-2">
