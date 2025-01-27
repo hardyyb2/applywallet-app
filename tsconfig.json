@@ -11,7 +11,7 @@
     "noImplicitAny": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
@@ -51,7 +51,8 @@
     "scripts/*",
     ".contentlayer/generated",
     "./tailwind.config.ts",
-    ".storybook/**/*"
+    ".storybook/**/*",
+    "common/utils/env.ts"
   ],
   "exclude": ["node_modules"]
 }

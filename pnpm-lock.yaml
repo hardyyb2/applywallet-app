@@ -40,6 +40,9 @@ importers:
       '@sentry/nextjs':
         specifier: ^7.77.0
         version: 7.120.3(next@15.1.6(@babel/core@7.26.7)(@opentelemetry/api@1.4.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(sass@1.83.4))(react@19.0.0)(webpack@5.97.1(@swc/core@1.10.9(@swc/helpers@0.5.15))(esbuild@0.18.20))
+      '@t3-oss/env-nextjs':
+        specifier: ^0.12.0
+        version: 0.12.0(typescript@5.7.3)(zod@3.24.1)
       '@tanstack/react-query':
         specifier: ^5.8.4
         version: 5.64.2(react@19.0.0)
@@ -230,7 +233,7 @@ importers:
         specifier: ^1.1.2
         version: 1.1.2(@types/react-dom@19.0.3(@types/react@19.0.8))(@types/react@19.0.8)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       zod:
-        specifier: ^3.22.4
+        specifier: ^3.24.1
         version: 3.24.1
       zustand:
         specifier: ^4.4.4
@@ -4043,6 +4046,34 @@ packages:
   '@szmarczak/http-timer@5.0.1':
     resolution: {integrity: sha512-+PmQX0PiAYPMeVYe237LJAYvOMYW1j2rH5YROyS3b4CTVJum34HfRvKvAzozHAQG0TnHNdUfY9nCeUyRAs//cw==}
     engines: {node: '>=14.16'}
+
+  '@t3-oss/env-core@0.12.0':
+    resolution: {integrity: sha512-lOPj8d9nJJTt81mMuN9GMk8x5veOt7q9m11OSnCBJhwp1QrL/qR+M8Y467ULBSm9SunosryWNbmQQbgoiMgcdw==}
+    peerDependencies:
+      typescript: '>=5.0.0'
+      valibot: ^1.0.0-beta.7 || ^1.0.0
+      zod: ^3.24.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+      valibot:
+        optional: true
+      zod:
+        optional: true
+
+  '@t3-oss/env-nextjs@0.12.0':
+    resolution: {integrity: sha512-rFnvYk1049RnNVUPvY8iQ55AuQh1Rr+qZzQBh3t++RttCGK4COpXGNxS4+45afuQq02lu+QAOy/5955aU8hRKw==}
+    peerDependencies:
+      typescript: '>=5.0.0'
+      valibot: ^1.0.0-beta.7 || ^1.0.0
+      zod: ^3.24.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+      valibot:
+        optional: true
+      zod:
+        optional: true
 
   '@tailwindcss/typography@0.5.16':
     resolution: {integrity: sha512-0wDLwCVF5V3x3b1SGXPCDcdsbDHMBe+lkFzBRaHeLvNi+nrrnZ1lA18u+OTWO8iSWU2GxUOCvlXtDuqftc1oiA==}
@@ -14897,6 +14928,18 @@ snapshots:
   '@szmarczak/http-timer@5.0.1':
     dependencies:
       defer-to-connect: 2.0.1
+
+  '@t3-oss/env-core@0.12.0(typescript@5.7.3)(zod@3.24.1)':
+    optionalDependencies:
+      typescript: 5.7.3
+      zod: 3.24.1
+
+  '@t3-oss/env-nextjs@0.12.0(typescript@5.7.3)(zod@3.24.1)':
+    dependencies:
+      '@t3-oss/env-core': 0.12.0(typescript@5.7.3)(zod@3.24.1)
+    optionalDependencies:
+      typescript: 5.7.3
+      zod: 3.24.1
 
   '@tailwindcss/typography@0.5.16(tailwindcss@3.4.17)':
     dependencies:

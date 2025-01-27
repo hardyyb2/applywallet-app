@@ -4,9 +4,9 @@ import { match as matchLocale } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 import { createI18nMiddleware } from "next-international/middleware";
 
+import { env } from "~/utils/env";
 import { ApiRoutes } from "~/utils/routes";
 
-import { envVars } from "@/utils/env";
 import { i18n, type Locale } from "@/utils/locale-utils";
 
 const getNegotiatorHeaders = (request: NextRequest): Record<string, string> => {
@@ -41,7 +41,7 @@ export function middleware(request: NextRequest) {
     if (request.nextUrl.pathname.startsWith(ApiRoutes.SHARED)) {
       response.headers.append(
         "Access-Control-Allow-Origin",
-        `chrome-extension://${envVars.CHROME_EXTENSION_ID}`,
+        `chrome-extension://${env.NEXT_PUBLIC_CHROME_EXTENSION_ID}`,
       );
       response.headers.append("Access-Control-Allow-Methods", "GET, OPTIONS");
     }

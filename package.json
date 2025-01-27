@@ -35,6 +35,7 @@
     "@plasmohq/storage": "^1.8.1",
     "@prisma/client": "^5.5.2",
     "@sentry/nextjs": "^7.77.0",
+    "@t3-oss/env-nextjs": "^0.12.0",
     "@tanstack/react-query": "^5.8.4",
     "@tanstack/react-query-devtools": "^5.8.4",
     "@tanstack/react-table": "^8.11.2",
@@ -98,7 +99,7 @@
     "tailwind-merge": "^2.2.0",
     "type-fest": "^4.33.0",
     "vaul": "^1.1.2",
-    "zod": "^3.22.4",
+    "zod": "^3.24.1",
     "zustand": "^4.4.4"
   },
   "devDependencies": {
