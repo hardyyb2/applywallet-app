@@ -1,12 +1,13 @@
-const withBundleAnalyzer = require("@next/bundle-analyzer")({
+import withBundleAnalyzer from "@next/bundle-analyzer";
+import { withSentryConfig } from "@sentry/nextjs";
+import { withContentlayer } from "next-contentlayer2";
+
+const bundleAnalyzer = withBundleAnalyzer({
   enabled: process.env.ANALYZE === "true",
 });
-const { withContentlayer } = require("next-contentlayer2");
-const { withSentryConfig } = require("@sentry/nextjs");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  swcMinify: true,
   reactStrictMode: true,
   images: {
     remotePatterns: [
@@ -30,7 +31,7 @@ const nextConfig = {
   },
 };
 
-module.exports = withBundleAnalyzer(
+export default bundleAnalyzer(
   withSentryConfig(
     withContentlayer(nextConfig),
     {
