@@ -14,14 +14,14 @@ const NavLayout = ({ children }: { children: ReactNode }) => {
         )}
       >
         <Navigation />
-        <div className="h-full w-full overflow-y-auto">
+        <div className="grid grid-rows-[auto_1fr] overflow-auto">
           <BaseLayout.Head
             className={cn("z-[5] h-14 w-full text-base-content lg:h-16")}
           >
             <Header />
           </BaseLayout.Head>
           <section
-            className="h-full w-full overflow-y-auto"
+            className="h-full w-full overflow-auto"
             vaul-drawer-wrapper=""
           >
             {children}
