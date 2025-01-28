@@ -22,8 +22,8 @@ const ScrollBar = forwardRef<
     className={cnM(
       // TODO - add variants
       "flex bg-base-100",
-      orientation === "vertical" && "h-full w-2xs-xs p-0.5",
-      orientation === "horizontal" && "h-2xs-xs p-0.5",
+      orientation === "vertical" && "h-full w-2xs p-0.5",
+      orientation === "horizontal" && "h-2xs p-0.5",
       className,
     )}
     {...props}

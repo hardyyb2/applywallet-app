@@ -51,7 +51,7 @@ const BlogScrollWrapper = ({ children }: PropsWithChildren) => {
         className="mx-auto flex p-m-l [&>div]:!block"
       >
         <m.div
-          className="fixed inset-0 z-40 h-3xs-2xs origin-[0%] transform rounded-full bg-accent"
+          className="absolute inset-0 z-40 h-3xs origin-[0%] transform bg-secondary"
           style={{
             scaleX,
           }}
