@@ -1,24 +1,8 @@
-import {
-  Fragment,
-  type ComponentProps,
-  type HTMLAttributes,
-  type PropsWithChildren,
-} from "react";
-import Image, { type ImageProps } from "next/image";
-
-import { useMDXComponent } from "next-contentlayer2/hooks";
+import { Fragment, type HTMLAttributes, type PropsWithChildren } from "react";
 
 import { cn } from "@/utils/styles";
 
-type MdxComponentsType = ComponentProps<
-  ReturnType<typeof useMDXComponent>
->["components"];
-
-const components: MdxComponentsType = {
-  // TODO - check when just Image will work
-  // eslint-disable-next-line jsx-a11y/alt-text
-  Image: (props: ImageProps) => <Image {...props} />,
-};
+import { MdxContent } from "./MdxContent";
 
 const Header = ({ children }: PropsWithChildren) => {
   return <Fragment>{children}</Fragment>;
@@ -26,16 +10,6 @@ const Header = ({ children }: PropsWithChildren) => {
 
 const Footer = ({ children }: PropsWithChildren) => {
   return <Fragment>{children}</Fragment>;
-};
-
-type MdxContentProps = {
-  code: string;
-};
-
-const Content = ({ code }: MdxContentProps) => {
-  const Component = useMDXComponent(code);
-
-  return <Component components={components} />;
 };
 
 interface MdxProps extends HTMLAttributes<HTMLDivElement> {}
@@ -50,6 +24,6 @@ const Mdx = ({ children, className, ...rest }: MdxProps) => {
 
 Mdx.Header = Header;
 Mdx.Footer = Footer;
-Mdx.Content = Content;
+Mdx.Content = MdxContent;
 
 export { Mdx };

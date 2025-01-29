@@ -1,10 +1,8 @@
-import withBundleAnalyzer from "@next/bundle-analyzer";
-import { withSentryConfig } from "@sentry/nextjs";
-import { withContentlayer } from "next-contentlayer2";
-
-const bundleAnalyzer = withBundleAnalyzer({
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 });
+const { withSentryConfig } = require("@sentry/nextjs");
+const { withContentlayer } = require("next-contentlayer2");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -31,7 +29,7 @@ const nextConfig = {
   },
 };
 
-export default bundleAnalyzer(
+module.exports = withBundleAnalyzer(
   withSentryConfig(
     withContentlayer(nextConfig),
     {
