@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
+import { Suspense, useState, type ReactNode } from "react";
 import { SessionProvider } from "next-auth/react";
 import dynamic from "next/dynamic";
 
@@ -43,7 +43,9 @@ const Providers = ({ children, locale }: ProvidersType) => {
   return (
     <SessionProvider>
       <QueryClientProvider client={queryClient}>
-        <GoogleAnalytics GA_TRACKING_ID={process.env.NEXT_PUBLIC_GA_APP_ID} />
+        <Suspense>
+          <GoogleAnalytics GA_TRACKING_ID={process.env.NEXT_PUBLIC_GA_APP_ID} />
+        </Suspense>
         <TopLoader />
         <LazyMotion features={domAnimation}>
           <MotionConfig
