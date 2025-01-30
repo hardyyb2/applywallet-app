@@ -61,7 +61,6 @@ const BlogPage = async (props: BlogPageProps) => {
                   src={blog.image}
                   fill
                   alt={blog.title}
-                  objectFit="cover"
                   className="h-full w-full"
                 />
               </figure>
