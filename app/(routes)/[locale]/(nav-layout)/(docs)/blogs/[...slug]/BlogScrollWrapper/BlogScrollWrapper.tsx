@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, type ElementRef, type PropsWithChildren } from "react";
+import { useRef, type ComponentRef, type PropsWithChildren } from "react";
 
 import { m, useScroll, useSpring } from "motion/react";
 import { useBoolean, useFullscreen } from "react-use";
@@ -25,10 +25,11 @@ import { cnM } from "@/utils/styles";
 
 const BlogScrollWrapper = ({ children }: PropsWithChildren) => {
   // hooks
-  const containerRef = useRef<ElementRef<typeof ScrollArea>>(null);
-  const viewportRef = useRef<ElementRef<typeof ScrollAreaViewport>>(null);
+  const containerRef = useRef<ComponentRef<typeof ScrollArea>>(null);
+  const viewportRef = useRef<ComponentRef<typeof ScrollAreaViewport>>(null);
 
   const [show, toggleFullScreen] = useBoolean(false);
+  // @ts-expect-error
   const isFullScreen = useFullscreen(containerRef, show, {
     onClose: () => toggleFullScreen(false),
   });
