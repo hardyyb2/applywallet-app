@@ -24,7 +24,6 @@ const ThemesMenu = () => {
       <DropdownMenuTrigger asChild>
         <Button color="ghost" responsive>
           <Icons.Palette className="inline-block h-5 w-5 stroke-current md:h-6 md:w-6" />
-          <span className="hidden md:inline">theme</span>
           <Icons.ChevronDown className="ml-1 hidden opacity-60 sm:inline-block" />
         </Button>
       </DropdownMenuTrigger>
