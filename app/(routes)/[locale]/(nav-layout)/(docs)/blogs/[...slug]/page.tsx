@@ -6,6 +6,8 @@ import { allBlogs } from "contentlayer/generated";
 import { Flex } from "~/components/ds/Flex";
 
 import { Mdx } from "@/components/dependent/Mdx";
+import { shimmer } from "@/utils/shimmer";
+import { toBase64 } from "@/utils/string";
 
 import { BlogMetaInfo } from "./BlogMetaInfo/BlogMetaInfo";
 import { BlogScrollWrapper } from "./BlogScrollWrapper/BlogScrollWrapper";
@@ -62,6 +64,9 @@ const BlogPage = async (props: BlogPageProps) => {
                   fill
                   alt={blog.title}
                   className="h-full w-full"
+                  placeholder={`data:image/svg+xml;base64,${toBase64(
+                    shimmer(700, 475),
+                  )}`}
                 />
               </figure>
             ) : null}

@@ -14,7 +14,7 @@ const NavLayout = ({ children }: { children: ReactNode }) => {
         )}
       >
         <Navigation />
-        <div className="grid grid-rows-[auto_1fr] overflow-auto">
+        <div className="grid w-full grid-rows-[auto_1fr] overflow-auto">
           <BaseLayout.Head
             className={cn("z-[5] h-14 w-full text-base-content lg:h-16")}
           >

@@ -6,3 +6,8 @@ export const getInitials = (name: string = ""): string => {
 
   return initials.toUpperCase();
 };
+
+export const toBase64 = (str: string) =>
+  typeof window === "undefined"
+    ? Buffer.from(str).toString("base64")
+    : window.btoa(str);

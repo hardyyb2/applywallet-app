@@ -42,7 +42,6 @@ const BlogCardMobile = ({
             <Card.Figure className={cn(" aspect-square rounded-lg")}>
               <Image
                 className="transition-all duration-500 group-hover:scale-110"
-                objectFit="cover"
                 src={image}
                 alt={image}
                 fill
