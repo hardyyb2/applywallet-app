@@ -14,7 +14,7 @@ type MdxComponentsType = ComponentProps<
 >["components"];
 
 const components: MdxComponentsType = {
-  Image: Image,
+  Image: (props) => <Image {...props} />,
 };
 
 const Content = ({ code }: MdxContentProps) => {
