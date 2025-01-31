@@ -43,3 +43,6 @@ dev.db
 .plasmo
 # Sentry Config File
 .sentryclirc
+
+# Sentry Config File
+.env.sentry-build-plugin

@@ -29,19 +29,20 @@ const nextConfig = {
   },
 };
 
-module.exports = withBundleAnalyzer(
-  withSentryConfig(
-    withContentlayer(nextConfig),
-    {
-      // Suppresses source map uploading logs during build
-      silent: true,
-      org: "hardik-badola",
-      project: "applywallet",
-    },
-    {
-      widenClientFileUpload: true,
-      hideSourceMaps: true,
-      disableLogger: true,
-    },
-  ),
-);
+const contentLayerWrapper = withContentlayer(nextConfig);
+const sentryWrapper = withSentryConfig(contentLayerWrapper, {
+  org: "hardik-badola",
+  project: "applywallet",
+  silent: !process.env.CI,
+  widenClientFileUpload: true,
+  reactComponentAnnotation: {
+    enabled: true,
+  },
+  hideSourceMaps: true,
+  disableLogger: true,
+  automaticVercelMonitors: true,
+});
+const bundleAnalyzerWrapper = withBundleAnalyzer(sentryWrapper);
+
+const finalConfig = bundleAnalyzerWrapper;
+module.exports = finalConfig;
