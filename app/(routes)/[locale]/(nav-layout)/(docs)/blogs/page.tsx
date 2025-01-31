@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { allBlogs } from "contentlayer/generated";
+import { allBlogCategories, allBlogs } from "contentlayer/generated";
 
 import { Flex } from "~/components/ds/Flex";
 
@@ -19,6 +19,14 @@ const BlogsPage = async () => {
         <h1 className="headline-s lg:headline-m">{t("blogs.title")}</h1>
         <h4 className="label-s lg:label-m">{t("blogs.subtitle")}</h4>
       </Flex>
+
+      {allBlogCategories.map((category) => {
+        return (
+          <Link href={category.slug} key={category._id}>
+            {category.name}
+          </Link>
+        );
+      })}
 
       <BlogCardsWrapper>
         {allBlogs.map((blog) => (
