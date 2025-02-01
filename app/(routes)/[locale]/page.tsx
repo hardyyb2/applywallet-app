@@ -1,12 +1,6 @@
-import { type Metadata } from "next";
-
 import { allBlogs } from "contentlayer/generated";
 
 import { type Locale } from "@/utils/locale-utils";
-
-export const metadata: Metadata = {
-  title: "home",
-};
 
 const Home = async (props: { params: Promise<{ lang: Locale }> }) => {
   const params = await props.params;

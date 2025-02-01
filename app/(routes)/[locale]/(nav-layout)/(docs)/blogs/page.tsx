@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
 import { allBlogs } from "contentlayer/generated";
@@ -9,6 +10,12 @@ import { getI18n } from "@/locales/server";
 import { BlogCardsWrapper } from "./[...slug]/BlogCardsWrapper";
 import { BlogCard, BlogCardMobile } from "./BlogCard";
 import { BlogCardClient } from "./BlogCardClient";
+
+export const metadata: Metadata = {
+  title: "blogs | applywallet",
+  description:
+    "read blogs about engineering, frontend development, productivity, and more.",
+};
 
 const BlogsPage = async () => {
   const t = await getI18n();
