@@ -1,10 +1,26 @@
 "use client";
 
 import { type PropsWithChildren } from "react";
+import dynamic from "next/dynamic";
 
-import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import { BarLoader } from "~/components/ds/BarLoader";
 
 import { useBreakPoint } from "@/hooks/useBreakPoint";
+
+const ResponsiveMasonry = dynamic(
+  () => import("react-responsive-masonry").then((mod) => mod.ResponsiveMasonry),
+  {
+    loading: () => <BarLoader />,
+    ssr: false,
+  },
+);
+const Masonry = dynamic(
+  () => import("react-responsive-masonry").then((mod) => mod.default),
+  {
+    loading: () => <BarLoader />,
+    ssr: false,
+  },
+);
 
 const BlogCardsWrapper = ({ children }: PropsWithChildren) => {
   const { isBelowLg } = useBreakPoint("lg");
