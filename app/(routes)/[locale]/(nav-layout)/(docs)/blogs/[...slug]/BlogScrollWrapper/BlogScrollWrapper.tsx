@@ -21,10 +21,12 @@ import {
   TooltipTrigger,
 } from "~/components/ds/Tooltip";
 
+import { useBreakPoint } from "@/hooks/useBreakPoint";
 import { cnM } from "@/utils/styles";
 
 const BlogScrollWrapper = ({ children }: PropsWithChildren) => {
   // hooks
+  const { isAboveLg } = useBreakPoint("lg");
   const containerRef = useRef<ComponentRef<typeof ScrollArea>>(null);
   const viewportRef = useRef<ComponentRef<typeof ScrollAreaViewport>>(null);
 
@@ -49,10 +51,10 @@ const BlogScrollWrapper = ({ children }: PropsWithChildren) => {
     >
       <ScrollAreaViewport
         ref={viewportRef}
-        className="mx-auto flex p-m-l [&>div]:!block"
+        className="mx-auto flex p-m-l pt-s [&>div]:!block"
       >
         <m.div
-          className="absolute inset-0 z-40 h-3xs origin-[0%] transform bg-secondary"
+          className="absolute inset-0 z-40 h-4xs origin-[0%] transform bg-secondary"
           style={{
             scaleX,
           }}
@@ -64,8 +66,7 @@ const BlogScrollWrapper = ({ children }: PropsWithChildren) => {
               <TooltipTrigger asChild>
                 <Button
                   aria-label="toggle full screen"
-                  color="ghost"
-                  className="absolute right-xs top-0 z-40 p-0 lg:top-2xs"
+                  className="absolute bottom-2xs right-2xs z-40 "
                   startIcon={
                     isFullScreen ? (
                       <Icons.Minimize className="lg:h-l lg:w-l" />
@@ -74,7 +75,9 @@ const BlogScrollWrapper = ({ children }: PropsWithChildren) => {
                     )
                   }
                   onClick={toggleFullScreen}
-                />
+                >
+                  {isAboveLg ? "full screen" : null}
+                </Button>
               </TooltipTrigger>
               <TooltipContent sideOffset={12}>
                 {isFullScreen ? "exit full screen" : "toggle full screen"}
