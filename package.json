@@ -63,6 +63,7 @@
     "dagre": "^0.8.5",
     "dayjs": "^1.11.10",
     "google-spreadsheet": "^4.1.0",
+    "isomorphic-dompurify": "^2.20.0",
     "loglevel": "^1.8.1",
     "lucide-react": "^0.300.0",
     "motion": "^12.0.5",
