@@ -1,7 +1,13 @@
 {
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
-  "cSpell.words": ["applywallet", "contentlayer", "testid", "turbopack"],
+  "cSpell.words": [
+    "applywallet",
+    "contentlayer",
+    "opengraph",
+    "testid",
+    "turbopack"
+  ],
   "files.associations": {
     "*.scss": "tailwindcss",
     "*.css": "tailwindcss"
