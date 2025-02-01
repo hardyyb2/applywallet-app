@@ -4,14 +4,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently  \"pnpm dev:app\" \"pnpm dev:ext\"",
+    "dev": "concurrently  \"yarn dev:app\" \"yarn dev:ext\"",
     "dev:app": "next dev --turbopack",
     "dev:ext": "plasmo dev",
-    "dev:app:cdt": "pnpm cdt && pnpm dev",
-    "build": "concurrently  \"pnpm build:app\" \"pnpm build:ext\"",
+    "dev:app:cdt": "yarn cdt && yarn dev",
+    "build": "concurrently  \"yarn build:app\" \"yarn build:ext\"",
     "build:app": "next build",
     "build:ext": "plasmo build",
-    "build:cdt": "pnpm cdt && pnpm build",
+    "build:cdt": "yarn cdt && yarn build",
     "build:content": "contentlayer2 build",
     "start": "next start",
     "analyze": "ANALYZE=true next build",
@@ -22,7 +22,7 @@
     "test": "TZ=UTC vitest",
     "test:ui": "TZ=UTC vitest --ui",
     "coverage": "TZ=UTC vitest run --coverage",
-    "update-next": "pnpm add next@latest react@latest react-dom@latest eslint-config-next@latest @next/bundle-analyzer@latest @types/react @types/react-dom",
+    "update-next": "yarn add next@latest react@latest react-dom@latest eslint-config-next@latest @next/bundle-analyzer@latest @types/react @types/react-dom",
     "cdt": "tsx ./scripts/createFolderStructure.ts",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
@@ -173,5 +173,6 @@
       "storage",
       "contextMenus"
     ]
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
