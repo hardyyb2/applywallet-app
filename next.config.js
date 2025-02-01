@@ -15,7 +15,7 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "picsum.photos",
+        hostname: "fastly.picsum.photos",
       },
     ],
     // TODO - remove picsum
