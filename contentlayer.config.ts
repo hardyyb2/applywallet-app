@@ -8,8 +8,6 @@ import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 
-import Cobalt2Theme from "./public/editor-themes/cobalt2.json";
-
 const defaultComputedFields: ComputedFields = {
   slug: {
     type: "string",
@@ -127,7 +125,7 @@ export default makeSource({
         //@ts-ignore
         rehypePrettyCode,
         {
-          theme: Cobalt2Theme,
+          theme: "catppuccin-macchiato",
         },
       ],
     ],
