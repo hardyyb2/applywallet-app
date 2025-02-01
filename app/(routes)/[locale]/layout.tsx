@@ -1,7 +1,7 @@
 import { type ReactNode } from "react";
 
 import { fonts } from "@/lib/fonts";
-import { type Locale } from "@/utils/locale-utils";
+import { i18n, type Locale } from "@/utils/locale-utils";
 import { cn } from "@/utils/styles";
 
 import { Providers } from "./providers";
@@ -32,6 +32,16 @@ export const metadata: Metadata = {
     "resume storage",
     "job hunting",
   ],
+  alternates: {
+    canonical: "/",
+    languages: i18n.locales.reduce(
+      (acc, locale) => ({
+        ...acc,
+        [locale]: `/${locale}`,
+      }),
+      {},
+    ),
+  },
   openGraph: {
     title: "applywallet - your ultimate interview toolkit",
     description:
@@ -39,12 +49,26 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://applywallet.app",
     siteName: "applywallet",
+    images: [
+      {
+        url: "/images/seo/base-opengraph-image.png",
+        alt: "applywallet - your ultimate interview toolkit",
+        type: "image/png",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "applywallet - your ultimate interview toolkit",
     description:
       "organize your job search with applywallet. track interviews, store experiences, manage referral contacts, and access career insights.",
+    images: [
+      {
+        url: "/images/seo/base-twitter-image.png",
+        alt: "applywallet - your ultimate interview toolkit",
+        type: "image/png",
+      },
+    ],
   },
   applicationName: "applywallet",
   authors: [
