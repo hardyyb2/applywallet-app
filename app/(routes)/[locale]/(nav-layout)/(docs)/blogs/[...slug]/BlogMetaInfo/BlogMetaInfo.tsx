@@ -1,4 +1,4 @@
-import React from "react";
+import Link from "next/link";
 
 import type { Blog } from "contentlayer/generated";
 import dayjs from "dayjs";
@@ -30,7 +30,7 @@ const BlogMetaInfo = ({ blog }: BlogMetaInfo) => {
           <Flex className="caption-l font-light lg:label-s" component="h6">
             {dayjs(blog.date).format("MMM DD, YYYY").toLowerCase()}
             <Separator orientation="horizontal" />
-            {blog.category.name}
+            <Link href={blog.category.slug}>{blog.category.name}</Link>
           </Flex>
         </div>
       </div>
