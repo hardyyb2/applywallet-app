@@ -14,6 +14,8 @@ import { AppRoutes } from "~/utils/routes";
 
 import { IconLink } from "@/components/dependent/IconLink";
 import { Mdx } from "@/components/dependent/Mdx";
+import { getAppBaseURL } from "@/utils/app";
+import { i18n } from "@/utils/locale-utils";
 import { shimmer } from "@/utils/shimmer";
 import { toBase64 } from "@/utils/string";
 
@@ -36,7 +38,50 @@ export const generateMetadata = async (props: BlogPageProps) => {
     return {};
   }
 
-  return { title: blog.title, description: blog.description };
+  return {
+    title: blog.title,
+    description: blog.description,
+    alternates: {
+      canonical: `${blog.slug}`,
+      languages: i18n.locales.reduce(
+        (acc, locale) => ({
+          ...acc,
+          [locale]: `${locale}${blog.slug}`,
+        }),
+        {},
+      ),
+    },
+    openGraph: {
+      title: blog.title,
+      description:
+        blog.description ??
+        "read blogs about engineering, frontend development, productivity, and more.",
+      type: "website",
+      url: `${getAppBaseURL()}${blog.slug}`,
+      siteName: "applywallet",
+      images: [
+        {
+          url: blog.image,
+          alt: blog.title,
+          type: "image/png",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: blog.title,
+      description:
+        blog.description ??
+        "read blogs about engineering, frontend development, productivity, and more.",
+      images: [
+        {
+          url: blog.image,
+          alt: blog.title,
+          type: "image/png",
+        },
+      ],
+    },
+  };
 };
 
 async function getBlogFromParams(params: { slug: string[] }) {
@@ -72,7 +117,7 @@ const BlogPage = async (props: BlogPageProps) => {
         <ScrollBar orientation="horizontal" className="hidden h-0" />
       </ScrollArea>
       <BlogScrollWrapper>
-        <Mdx className="prose prose-sm dui-prose w-full md:prose-base lg:prose-lg xl:prose-xl">
+        <Mdx className="prose prose-sm dui-prose w-full pt-xs-s md:prose-base lg:prose-lg xl:prose-xl">
           <Mdx.Header>
             <h1>{blog.title}</h1>
             <BlogMetaInfo blog={blog} />

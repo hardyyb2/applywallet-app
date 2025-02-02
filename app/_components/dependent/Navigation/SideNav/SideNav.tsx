@@ -3,6 +3,8 @@
 import { motion } from "motion/react";
 import { useBoolean } from "react-use";
 
+import { Separator } from "~/components/ds/Separator";
+
 import { cn } from "@/utils/styles";
 
 import { NavigationMenu } from "../NavigationMenu";
@@ -27,7 +29,7 @@ const SideNav = () => {
       {/* Top section */}
       <div className="p-2">
         <SideNavBrand navOpen={navOpen} onToggleClick={toggleSideNav} />
-        <div className="divider m-0" />
+        <Separator />
       </div>
 
       {/* Scrollable menu items */}
