@@ -4,7 +4,7 @@ import { Fragment } from "react";
 import { usePathname } from "next/navigation";
 
 import { ConditionalMatch } from "@dx-kit/react-conditional-match";
-import { AnimatePresence, m } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { useBoolean } from "react-use";
 
 import { BottomNavigation } from "~/components/ds/BottomNavigation";
@@ -21,7 +21,7 @@ interface BottomNavProps {
   className?: string;
 }
 
-const MotionBottomNavigation = m(BottomNavigation);
+const MotionBottomNavigation = motion.create(BottomNavigation);
 
 const BottomNav = ({ className = "" }: BottomNavProps) => {
   const pathName = usePathname();

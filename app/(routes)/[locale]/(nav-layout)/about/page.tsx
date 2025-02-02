@@ -3,7 +3,7 @@
 import { useMemo } from "react";
 import Image from "next/image";
 
-import { AnimatePresence, m } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 
 import { Flex } from "~/components/ds/Flex";
 
@@ -11,7 +11,7 @@ import { useAboutStore } from "./about.state";
 import { aboutCardsData } from "./about.utils";
 import { AboutCard } from "./folder-structure/AboutCard";
 
-const MotionImage = m(Image);
+const MotionImage = motion.create(Image);
 
 const AboutPage = () => {
   const inViewItemId = useAboutStore((store) => store.inViewItemId);
