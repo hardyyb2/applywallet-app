@@ -6,6 +6,8 @@ import { Badge } from "~/components/ds/Badge";
 import { Card } from "~/components/ds/Card";
 import { Flex } from "~/components/ds/Flex";
 
+import { shimmer } from "@/utils/shimmer";
+import { toBase64 } from "@/utils/string";
 import { cn, cnM } from "@/utils/styles";
 
 import styles from "./blogCard.module.scss";
@@ -30,10 +32,13 @@ const BlogCard = ({
             )}
           />
           <Image
-            className="transition-all duration-500 group-hover:scale-110"
+            className="h-full w-full transition-all duration-500 group-hover:scale-110"
             src={image}
             alt={image}
             fill
+            placeholder={`data:image/svg+xml;base64,${toBase64(
+              shimmer(500, 320),
+            )}`}
           />
         </Card.Figure>
       ) : null}
