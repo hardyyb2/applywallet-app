@@ -92,6 +92,7 @@ export const Blog = defineDocumentType(() => ({
     },
     date: {
       type: "date",
+      required: true,
     },
     image: {
       type: "string",
@@ -121,8 +122,6 @@ export default makeSource({
         },
       ],
       [
-        // TODO - check a permafix for this
-        //@ts-ignore
         rehypePrettyCode,
         {
           theme: "catppuccin-macchiato",
