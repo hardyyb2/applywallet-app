@@ -32,7 +32,7 @@ const SideNavBrand = ({
       align="center"
       justify="space-between"
       direction={navOpen ? "row" : "column"}
-      className={cn("gap-2 py-2", className)}
+      className={cn("gap-2", className)}
     >
       <Link
         href={link}

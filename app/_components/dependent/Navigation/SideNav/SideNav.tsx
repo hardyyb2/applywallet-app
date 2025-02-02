@@ -27,7 +27,7 @@ const SideNav = () => {
       )}
     >
       {/* Top section */}
-      <div className="p-2">
+      <div className="p-3xs">
         <SideNavBrand navOpen={navOpen} onToggleClick={toggleSideNav} />
         <Separator />
       </div>

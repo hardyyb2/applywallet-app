@@ -3,9 +3,12 @@
 import {
   Sheet,
   SheetContent,
+  SheetDescription,
   SheetOverlay,
   SheetPortal,
+  SheetTitle,
 } from "~/components/ds/Sheet";
+import { VisuallyHidden } from "~/components/ds/VisuallyHidden";
 
 import { useBreakPoint } from "@/hooks/useBreakPoint";
 import { useSideNavMobileStore } from "@/store/useSideNavMobile";
@@ -31,6 +34,12 @@ const SideNavMobile = () => {
           showClose={false}
           onOpenAutoFocus={(e) => e.preventDefault()}
         >
+          <VisuallyHidden asChild>
+            <SheetTitle>applywallet sidenav</SheetTitle>
+          </VisuallyHidden>
+          <VisuallyHidden asChild>
+            <SheetDescription>navigation menu for applywallet</SheetDescription>
+          </VisuallyHidden>
           <div className="p-2 pb-0">
             <SideNavBrand navOpen onToggleClick={toggleSideNavMobileOpen} />
           </div>
