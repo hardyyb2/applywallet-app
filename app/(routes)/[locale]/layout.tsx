@@ -13,6 +13,8 @@ import "~/styles/overrides/daisyui.scss";
 
 import type { Metadata } from "next";
 
+import { getAppBaseURL } from "@/utils/app";
+
 export const metadata: Metadata = {
   title: "applywallet - your ultimate interview toolkit",
   description:
@@ -42,6 +44,7 @@ export const metadata: Metadata = {
       {},
     ),
   },
+  metadataBase: new URL(getAppBaseURL()),
   openGraph: {
     title: "applywallet - your ultimate interview toolkit",
     description:
