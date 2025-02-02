@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import type { Languages } from "next/dist/lib/metadata/types/alternative-urls-types";
 
+import { allBlogs } from "contentlayer/generated";
+
 import { AppRoutes } from "~/utils/routes";
 
 import { getAppBaseURL } from "@/utils/app";
@@ -16,6 +18,17 @@ const getAlternates = (
 });
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const blogsSiteMaps = allBlogs.map(
+    (blog) =>
+      ({
+        url: `${getAppBaseURL()}${blog.slug}`,
+        lastModified: new Date(blog.date),
+        changeFrequency: "weekly",
+        priority: 0.9,
+        alternates: getAlternates(`${blog.slug}`),
+      } as const),
+  );
+
   return [
     {
       url: getAppBaseURL(),
@@ -38,5 +51,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
       alternates: getAlternates(AppRoutes.BLOGS),
     },
+    ...blogsSiteMaps,
   ];
 }
