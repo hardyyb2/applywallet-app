@@ -37,7 +37,8 @@
         "*.stories.tsx",
         "tailwind.config.ts",
         "contentlayer.config.ts",
-        "global-error.tsx"
+        "global-error.tsx",
+        "sitemap.ts"
       ],
       "rules": {
         "import/no-default-export": "off"
