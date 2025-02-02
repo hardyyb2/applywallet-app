@@ -117,7 +117,7 @@ const BlogPage = async (props: BlogPageProps) => {
         <ScrollBar orientation="horizontal" className="hidden h-0" />
       </ScrollArea>
       <BlogScrollWrapper>
-        <Mdx className="prose prose-sm dui-prose w-full pt-xs-s md:prose-base lg:prose-lg xl:prose-xl">
+        <Mdx className="prose prose-sm dui-prose w-full py-xs-s md:prose-base lg:prose-lg xl:prose-xl">
           <Mdx.Header>
             <h1>{blog.title}</h1>
             <BlogMetaInfo blog={blog} />
