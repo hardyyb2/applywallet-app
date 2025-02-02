@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     description:
       "organize your job search with applywallet. track interviews, store experiences, manage referral contacts, and access career insights.",
     type: "website",
-    url: "https://applywallet.app",
+    url: getAppBaseURL(),
     siteName: "applywallet",
     images: [
       {

@@ -4,8 +4,11 @@ import Link from "next/link";
 import { allBlogs } from "contentlayer/generated";
 
 import { Flex } from "~/components/ds/Flex";
+import { AppRoutes } from "~/utils/routes";
 
 import { getI18n } from "@/locales/server";
+import { getAppBaseURL } from "@/utils/app";
+import { i18n } from "@/utils/locale-utils";
 
 import { BlogCardsWrapper } from "./[...slug]/BlogCardsWrapper";
 import { BlogCard, BlogCardMobile } from "./BlogCard";
@@ -15,6 +18,55 @@ export const metadata: Metadata = {
   title: "blogs | applywallet",
   description:
     "read blogs about engineering, frontend development, productivity, and more.",
+  keywords: [
+    "react",
+    "interview",
+    "blogs",
+    "engineering",
+    "productivity",
+    "frontend development",
+    "career insights",
+    "resume tips",
+  ],
+  alternates: {
+    canonical: AppRoutes.BLOGS,
+    languages: i18n.locales.reduce(
+      (acc, locale) => ({
+        ...acc,
+        [locale]: `${locale}/${AppRoutes.BLOGS}`,
+      }),
+      {},
+    ),
+  },
+  metadataBase: new URL(`${getAppBaseURL()}${AppRoutes.BLOGS}`),
+  openGraph: {
+    title: "blogs | applywallet",
+    description:
+      "read blogs about engineering, frontend development, productivity, and more.",
+    type: "website",
+    url: `${getAppBaseURL()}${AppRoutes.BLOGS}`,
+    siteName: "applywallet",
+    images: [
+      {
+        url: "/images/seo/base-opengraph-image.png",
+        alt: "blogs | applywallet",
+        type: "image/png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "blogs | applywallet",
+    description:
+      "read blogs about engineering, frontend development, productivity, and more.",
+    images: [
+      {
+        url: "/images/seo/base-twitter-image.png",
+        alt: "blogs | applywallet",
+        type: "image/png",
+      },
+    ],
+  },
 };
 
 const BlogsPage = async () => {
