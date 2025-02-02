@@ -109,7 +109,7 @@ extApi.fetch = async <T, U extends boolean = false>(
   const data = await fetchResult.json();
 
   if (!config?.schema) {
-    return data;
+    return data as U extends true ? T : ApiResponseType<T>;
   }
 
   const schema = config.schema;
