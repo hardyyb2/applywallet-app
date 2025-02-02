@@ -19,6 +19,7 @@ export const env = createEnv({
     SENTRY_PROJECT: z.string().optional(),
     SENTRY_AUTH_TOKEN: z.string().optional(),
     NODE_ENV: z.enum(["development", "production", "test"]),
+    SITE_URL: z.string().url(),
   },
   /*
    * Environment variables available on the client (and server).
@@ -31,6 +32,7 @@ export const env = createEnv({
     NEXT_PUBLIC_PLASMO_API_URL: z.string().url(),
     NEXT_PUBLIC_CHROME_EXTENSION_ID: z.string().min(1),
     NEXT_PUBLIC_NODE_ENV: z.enum(["development", "production", "test"]),
+    NEXT_PUBLIC_SITE_URL: z.string().url(),
   },
   /*
    * Due to how Next.js bundles environment variables on Edge and Client,
@@ -49,6 +51,7 @@ export const env = createEnv({
     SENTRY_ORG: process.env.SENTRY_ORG,
     SENTRY_PROJECT: process.env.SENTRY_PROJECT,
     SENTRY_AUTH_TOKEN: process.env.SENTRY_AUTH_TOKEN,
+    SITE_URL: process.env.SITE_URL,
     // Client
     NEXT_PUBLIC_GA_APP_ID: process.env.NEXT_PUBLIC_GA_APP_ID,
     NEXT_PUBLIC_PROJECT_URL: process.env.PROJECT_URL,
@@ -56,5 +59,6 @@ export const env = createEnv({
     NEXT_PUBLIC_CHROME_EXTENSION_ID: process.env.CHROME_EXTENSION_ID,
     NODE_ENV: process.env.NODE_ENV,
     NEXT_PUBLIC_NODE_ENV: process.env.NODE_ENV,
+    NEXT_PUBLIC_SITE_URL: process.env.SITE_URL,
   },
 });
