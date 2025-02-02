@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { Button } from "~/components/ds/Button";
@@ -39,16 +40,14 @@ const SideNavBrand = ({
         aria-label="Homepage"
         className="btn btn-ghost flex-0 px-2"
       >
-        {navOpen ? (
-          <div className="title-s inline-flex !font-primary text-lg lowercase text-primary lg:title-m">
-            <span>apply</span>
-            <span className="text-base-content">wallet</span>
-          </div>
-        ) : (
-          <div>
-            <Icons.CustomHome />
-          </div>
-        )}
+        <Image
+          src={"/images/logo/aw-logo.png"}
+          alt="applywallet"
+          width={40}
+          height={40}
+          priority
+          quality={100}
+        />
       </Link>
       <TooltipProvider delayDuration={600}>
         <Tooltip>
