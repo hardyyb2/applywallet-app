@@ -14,4 +14,5 @@ export type NavItemType = {
   icon: LucideIcon;
   key?: string;
   category?: NavigationCategories;
+  inactive?: boolean;
 };
