@@ -7,7 +7,6 @@ import { Button } from "~/components/ds/Button";
 import { Icons } from "~/components/ds/Icons";
 import {
   Popover,
-  PopoverArrow,
   PopoverContent,
   PopoverTrigger,
 } from "~/components/ds/Popover";

@@ -4,7 +4,6 @@ import { cnM } from "@/utils/styles";
 
 import { LocaleSwitcher } from "../LocaleSwitcher";
 import { ThemesMenu } from "../ThemesMenu";
-import { UserMenu } from "../UserMenu";
 import { HeaderClient } from "./HeaderClient";
 
 const Header = async () => {
@@ -20,7 +19,6 @@ const Header = async () => {
       <Flex align="center" className="gap-1 lg:gap-2">
         <ThemesMenu />
         <LocaleSwitcher />
-        <UserMenu />
       </Flex>
     </Flex>
   );
