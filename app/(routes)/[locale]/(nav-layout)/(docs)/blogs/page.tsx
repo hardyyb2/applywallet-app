@@ -3,9 +3,9 @@ import Link from "next/link";
 
 import { allBlogs } from "contentlayer/generated";
 
-import { Flex } from "~/components/ds/Flex";
 import { AppRoutes } from "~/utils/routes";
 
+import { BasePageHeader } from "@/components/dependent/BasePageHeader";
 import { getI18n } from "@/locales/server";
 import { getAppBaseURL } from "@/utils/app";
 import { i18n } from "@/utils/locale-utils";
@@ -74,10 +74,7 @@ const BlogsPage = async () => {
 
   return (
     <div className="px-5 py-4 lg:px-10">
-      <Flex direction="column" className="mb-s-m">
-        <h1 className="headline-s lg:headline-m">{t("blogs.title")}</h1>
-        <h4 className="label-s lg:label-m">{t("blogs.subtitle")}</h4>
-      </Flex>
+      <BasePageHeader title={t("blogs.title")} subtitle={t("blogs.subtitle")} />
 
       <BlogCardsWrapper>
         {allBlogs.map((blog) => (

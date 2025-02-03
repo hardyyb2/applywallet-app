@@ -7,6 +7,8 @@ import { AnimatePresence, motion } from "motion/react";
 
 import { Flex } from "~/components/ds/Flex";
 
+import { BasePageHeader } from "@/components/dependent/BasePageHeader";
+
 import { useAboutStore } from "./about.state";
 import { aboutCardsData } from "./about.utils";
 import { AboutCard } from "./folder-structure/AboutCard";
@@ -23,12 +25,7 @@ const AboutPage = () => {
 
   return (
     <Flex direction="column" className="h-full px-6 py-4 lg:px-10">
-      <Flex justify="space-between" align="center" className="mb-m-l gap-4">
-        <Flex direction="column">
-          <h1 className="headline-s lg:headline-m">about</h1>
-          <h4 className="label-s lg:label-m">extra things here</h4>
-        </Flex>
-      </Flex>
+      <BasePageHeader title="about" subtitle="extra things here" />
       <div className="flex h-full w-full items-start gap-20 overflow-auto rounded-2xl bg-base-200">
         <div className="w-full py-[25%]">
           <ul className="space-y-3xl">
@@ -39,7 +36,7 @@ const AboutPage = () => {
             ))}
           </ul>
         </div>
-        <div className="container  sticky top-0 flex h-full items-center">
+        <div className="container sticky top-0 flex h-full items-center">
           <div className="mr-8 flex h-1/2 w-full items-center">
             <div className="relative">
               <AnimatePresence mode="wait">
@@ -74,7 +71,7 @@ const AboutPage = () => {
                   }
                 })}
               </AnimatePresence>
-              <div className="absolute left-10 top-10 -z-10 aspect-square  w-full rounded-3xl bg-primary/50" />
+              <div className="absolute left-10 top-10 -z-10 aspect-square w-full rounded-3xl bg-primary/50" />
             </div>
           </div>
         </div>
