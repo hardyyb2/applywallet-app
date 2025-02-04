@@ -188,6 +188,112 @@ const typographyComponentsPlugin = plugin(({ addComponents, theme }) => {
       letterSpacing: "0.4pt",
       fontFamily: theme("fontFamily.secondary"),
     },
+
+    // ------------- //
+    // ! NEW HEADINGS ! //
+
+    // Display text for heroes and major features
+    ".display": {
+      fontSize: "2rem", // 32px mobile
+      lineHeight: "1.1",
+      fontWeight: "400",
+      letterSpacing: "-0.02em",
+      fontFamily: theme("fontFamily.primary"),
+      "@screen md": {
+        fontSize: "2.75rem", // 44px tablet
+      },
+      "@screen lg": {
+        fontSize: "3.5rem", // 56px desktop
+      },
+    },
+
+    // Main headings
+    ".h1": {
+      fontSize: "1.75rem", // 28px mobile
+      lineHeight: "1.2",
+      fontWeight: "400",
+      letterSpacing: "-0.01em",
+      fontFamily: theme("fontFamily.primary"),
+      "@screen md": {
+        fontSize: "2rem", // 32px tablet
+      },
+      "@screen lg": {
+        fontSize: "2.5rem", // 40px desktop
+      },
+    },
+
+    ".h2": {
+      fontSize: "1.5rem", // 24px mobile
+      lineHeight: "1.2",
+      fontWeight: "400",
+      fontFamily: theme("fontFamily.primary"),
+      "@screen md": {
+        fontSize: "1.75rem", // 28px tablet
+      },
+      "@screen lg": {
+        fontSize: "2rem", // 32px desktop
+      },
+    },
+
+    ".h3": {
+      fontSize: "1.25rem", // 20px mobile
+      lineHeight: "1.3",
+      fontWeight: "400",
+      fontFamily: theme("fontFamily.primary"),
+      "@screen md": {
+        fontSize: "1.375rem", // 22px tablet
+      },
+      "@screen lg": {
+        fontSize: "1.5rem", // 24px desktop
+      },
+    },
+
+    // Body text
+    ".body-large": {
+      fontSize: "1rem", // 16px mobile
+      lineHeight: "1.5",
+      fontWeight: "400",
+      fontFamily: theme("fontFamily.secondary"),
+      "@screen md": {
+        fontSize: "1.125rem", // 18px tablet+
+      },
+    },
+
+    ".body": {
+      fontSize: "0.9375rem", // 15px mobile
+      lineHeight: "1.5",
+      fontWeight: "400",
+      fontFamily: theme("fontFamily.secondary"),
+      "@screen md": {
+        fontSize: "1rem", // 16px tablet+
+      },
+    },
+
+    ".body-small": {
+      fontSize: "0.875rem", // 14px mobile
+      lineHeight: "1.5",
+      fontWeight: "400",
+      fontFamily: theme("fontFamily.secondary"),
+    },
+
+    // UI elements
+    ".label": {
+      fontSize: "0.8125rem", // 13px mobile
+      lineHeight: "1.4",
+      fontWeight: "500",
+      letterSpacing: "0.01em",
+      fontFamily: theme("fontFamily.secondary"),
+      "@screen md": {
+        fontSize: "0.875rem", // 14px tablet+
+      },
+    },
+
+    ".caption": {
+      fontSize: "0.75rem", // 12px all screens
+      lineHeight: "1.4",
+      fontWeight: "400",
+      fontFamily: theme("fontFamily.secondary"),
+    },
   });
 });
 
