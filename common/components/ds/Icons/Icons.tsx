@@ -1,5 +1,3 @@
-import { forwardRef } from "react";
-
 import {
   AlignJustify,
   AlignLeft,
@@ -151,13 +149,13 @@ const Icons = {
   Circle,
   MoreHorizontal,
   SlidersHorizontal,
-  CustomRadio: forwardRef<
-    SVGSVGElement,
-    LucideProps & { innerCircleClassName?: string }
-  >(function CustomRadio(
-    { innerCircleClassName = "fill-current", ...props },
+  CustomRadio: function CustomRadio({
     ref,
-  ) {
+    innerCircleClassName = "fill-current",
+    ...props
+  }: LucideProps & {
+    innerCircleClassName?: string;
+  }) {
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -173,11 +171,13 @@ const Icons = {
         <circle cx="12" cy="12" r="5" className={innerCircleClassName}></circle>
       </svg>
     );
-  }),
-  CustomHome: forwardRef<SVGSVGElement, LucideProps>(function CustomHome(
-    { ...props },
+  },
+  CustomHome: function CustomHome({
     ref,
-  ) {
+    ...props
+  }: LucideProps & {
+    ref: React.RefObject<SVGSVGElement>;
+  }) {
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -192,13 +192,15 @@ const Icons = {
         <path d="M23 9v2h-2v7a3 3 0 01-3 3h-4v-6h-4v6H6a3 3 0 01-3-3v-7H1V9l11-7 5 3.18V2h3v5.09z"></path>
       </svg>
     );
-  }),
+  },
 
   // Illustrations
-  FileUpload: forwardRef<SVGSVGElement, LucideProps>(function FileUpload(
-    { ...props },
+  FileUpload: function FileUpload({
     ref,
-  ) {
+    ...props
+  }: LucideProps & {
+    ref: React.RefObject<SVGSVGElement>;
+  }) {
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -333,7 +335,7 @@ const Icons = {
         />
       </svg>
     );
-  }),
+  },
 };
 
 export { Icons };

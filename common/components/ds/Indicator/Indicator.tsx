@@ -1,4 +1,4 @@
-import { forwardRef, type JSX } from "react";
+import { type JSX } from "react";
 
 import { cva, type VariantProps } from "cva";
 
@@ -23,36 +23,45 @@ interface IndicatorItemProps
   extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof indicatorItemVariants> {}
 
-const IndicatorItem = forwardRef<HTMLDivElement, IndicatorItemProps>(
-  (
-    { children, horizontal = "end", vertical = "top", className, ...props },
-    ref,
-  ): JSX.Element => {
-    return (
-      <div
-        aria-label="indicator"
-        {...props}
-        className={indicatorItemVariants({ horizontal, vertical, className })}
-        ref={ref}
-      >
-        {children}
-      </div>
-    );
-  },
-);
+const IndicatorItem = ({
+  ref,
+  children,
+  horizontal = "end",
+  vertical = "top",
+  className,
+  ...props
+}: IndicatorItemProps & {
+  ref: React.RefObject<HTMLDivElement>;
+}): JSX.Element => {
+  return (
+    <div
+      aria-label="indicator"
+      {...props}
+      className={indicatorItemVariants({ horizontal, vertical, className })}
+      ref={ref}
+    >
+      {children}
+    </div>
+  );
+};
 IndicatorItem.displayName = "IndicatorItem";
 
 type IndicatorProps = React.HTMLAttributes<HTMLDivElement>;
 
-const Indicator = forwardRef<HTMLDivElement, IndicatorProps>(
-  ({ children, className, ...props }, ref): JSX.Element => {
-    return (
-      <div {...props} className={cnM("dui-indicator", className)} ref={ref}>
-        {children}
-      </div>
-    );
-  },
-);
+const Indicator = ({
+  ref,
+  children,
+  className,
+  ...props
+}: IndicatorProps & {
+  ref: React.RefObject<HTMLDivElement>;
+}): JSX.Element => {
+  return (
+    <div {...props} className={cnM("dui-indicator", className)} ref={ref}>
+      {children}
+    </div>
+  );
+};
 
 Indicator.displayName = "Indicator";
 

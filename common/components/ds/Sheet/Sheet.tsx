@@ -18,10 +18,11 @@ const SheetClose = SheetPrimitive.Close;
 
 const SheetPortal = SheetPrimitive.Portal;
 
-const SheetOverlay = React.forwardRef<
-  React.ComponentRef<typeof SheetPrimitive.Overlay>,
-  React.ComponentPropsWithoutRef<typeof SheetPrimitive.Overlay>
->(({ className, ...props }, ref) => (
+const SheetOverlay = ({
+  ref,
+  className,
+  ...props
+}: React.ComponentProps<typeof SheetPrimitive.Overlay>) => (
   <SheetPrimitive.Overlay
     className={cnM(
       "fixed inset-0 z-50 bg-neutral/80",
@@ -31,7 +32,7 @@ const SheetOverlay = React.forwardRef<
     {...props}
     ref={ref}
   />
-));
+);
 SheetOverlay.displayName = SheetPrimitive.Overlay.displayName;
 
 const sheetVariants = cva(
@@ -57,37 +58,36 @@ const sheetVariants = cva(
 );
 
 interface SheetContentProps
-  extends React.ComponentPropsWithoutRef<typeof SheetPrimitive.Content>,
+  extends React.ComponentProps<typeof SheetPrimitive.Content>,
     VariantProps<typeof sheetVariants> {
   showClose?: boolean;
 }
 
-const SheetContent = React.forwardRef<
-  React.ComponentRef<typeof SheetPrimitive.Content>,
-  SheetContentProps
->(
-  (
-    { side = "right", className, children, showClose = true, ...props },
-    ref,
-  ) => (
-    <SheetPrimitive.Content
-      ref={ref}
-      className={cnM(sheetVariants({ side }), className)}
-      {...props}
-    >
-      {children}
-      {showClose ? (
-        <SheetPrimitive.Close
-          asChild
-          className="absolute right-4 top-4 opacity-70 transition-opacity hover:opacity-100 disabled:pointer-events-none"
-        >
-          <Button color="ghost" shape="square" size="md">
-            <Icons.X />
-          </Button>
-        </SheetPrimitive.Close>
-      ) : null}
-    </SheetPrimitive.Content>
-  ),
+const SheetContent = ({
+  ref,
+  side = "right",
+  className,
+  children,
+  showClose = true,
+  ...props
+}: SheetContentProps) => (
+  <SheetPrimitive.Content
+    ref={ref}
+    className={cnM(sheetVariants({ side }), className)}
+    {...props}
+  >
+    {children}
+    {showClose ? (
+      <SheetPrimitive.Close
+        asChild
+        className="absolute right-4 top-4 opacity-70 transition-opacity hover:opacity-100 disabled:pointer-events-none"
+      >
+        <Button color="ghost" shape="square" size="md">
+          <Icons.X />
+        </Button>
+      </SheetPrimitive.Close>
+    ) : null}
+  </SheetPrimitive.Content>
 );
 SheetContent.displayName = SheetPrimitive.Content.displayName;
 
@@ -119,28 +119,30 @@ const SheetFooter = ({
 );
 SheetFooter.displayName = "SheetFooter";
 
-const SheetTitle = React.forwardRef<
-  React.ComponentRef<typeof SheetPrimitive.Title>,
-  React.ComponentPropsWithoutRef<typeof SheetPrimitive.Title>
->(({ className, ...props }, ref) => (
+const SheetTitle = ({
+  ref,
+  className,
+  ...props
+}: React.ComponentProps<typeof SheetPrimitive.Title>) => (
   <SheetPrimitive.Title
     ref={ref}
     className={cnM("title-m lg:title-l", className)}
     {...props}
   />
-));
+);
 SheetTitle.displayName = SheetPrimitive.Title.displayName;
 
-const SheetDescription = React.forwardRef<
-  React.ComponentRef<typeof SheetPrimitive.Description>,
-  React.ComponentPropsWithoutRef<typeof SheetPrimitive.Description>
->(({ className, ...props }, ref) => (
+const SheetDescription = ({
+  ref,
+  className,
+  ...props
+}: React.ComponentProps<typeof SheetPrimitive.Description>) => (
   <SheetPrimitive.Description
     ref={ref}
     className={cnM("label-xs lg:label-m", className)}
     {...props}
   />
-));
+);
 SheetDescription.displayName = SheetPrimitive.Description.displayName;
 
 export {

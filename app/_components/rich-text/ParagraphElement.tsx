@@ -4,10 +4,14 @@ import { PlateElement, type PlateElementProps } from "@udecode/plate-common";
 
 import { cnM } from "@/utils/styles";
 
-const ParagraphElement = React.forwardRef<
-  React.ElementRef<typeof PlateElement>,
-  PlateElementProps
->(({ className, children, ...props }: PlateElementProps, ref) => {
+const ParagraphElement = ({
+  ref,
+  className,
+  children,
+  ...props
+}: PlateElementProps & {
+  ref: React.RefObject<React.ElementRef<typeof PlateElement>>;
+}) => {
   return (
     <PlateElement
       ref={ref}
@@ -17,7 +21,7 @@ const ParagraphElement = React.forwardRef<
       {children}
     </PlateElement>
   );
-});
+};
 ParagraphElement.displayName = "ParagraphElement";
 
 export { ParagraphElement };

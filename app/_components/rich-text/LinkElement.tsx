@@ -11,10 +11,14 @@ import { useLink, type TLinkElement } from "@udecode/plate-link";
 
 import { cnM } from "@/utils/styles";
 
-const LinkElement = React.forwardRef<
-  React.ElementRef<typeof PlateElement>,
-  PlateElementProps<Value, TLinkElement>
->(({ className, children, ...props }, ref) => {
+const LinkElement = ({
+  ref,
+  className,
+  children,
+  ...props
+}: PlateElementProps<Value, TLinkElement> & {
+  ref: React.RefObject<React.ElementRef<typeof PlateElement>>;
+}) => {
   const { props: linkProps } = useLink({ element: props.element });
 
   return (
@@ -31,7 +35,7 @@ const LinkElement = React.forwardRef<
       <a>{children}</a>
     </PlateElement>
   );
-});
+};
 LinkElement.displayName = "LinkElement";
 
 export { LinkElement };

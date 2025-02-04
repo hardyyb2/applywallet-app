@@ -1,10 +1,6 @@
 "use client";
 
-import {
-  forwardRef,
-  type ComponentPropsWithoutRef,
-  type ElementRef,
-} from "react";
+import { type ComponentPropsWithoutRef, type ElementRef } from "react";
 
 import { cva } from "cva";
 import { Popover as PopoverPrimitive } from "radix-ui";
@@ -17,16 +13,19 @@ const PopoverTrigger = PopoverPrimitive.Trigger;
 
 const PopoverPortal = PopoverPrimitive.Portal;
 
-const PopoverArrow = forwardRef<
-  ElementRef<typeof PopoverPrimitive.Arrow>,
-  ComponentPropsWithoutRef<typeof PopoverPrimitive.Arrow>
->(({ className, ...props }, ref) => (
+const PopoverArrow = ({
+  ref,
+  className,
+  ...props
+}: ComponentPropsWithoutRef<typeof PopoverPrimitive.Arrow> & {
+  ref: React.RefObject<ElementRef<typeof PopoverPrimitive.Arrow>>;
+}) => (
   <PopoverPrimitive.Arrow
     ref={ref}
     className={cnM("fill-current text-base-content/75", className)}
     {...props}
   />
-));
+);
 
 PopoverArrow.displayName = PopoverPrimitive.Arrow.displayName;
 
@@ -39,33 +38,28 @@ const popoverVariants = cva(
   ),
 );
 
-const PopoverContent = forwardRef<
-  ElementRef<typeof PopoverPrimitive.Content>,
-  ComponentPropsWithoutRef<typeof PopoverPrimitive.Content>
->(
-  (
-    {
-      className,
-      align = "center",
-      collisionPadding = 8,
-      sideOffset = 4,
-      ...props
-    },
-    ref,
-  ) => (
-    <PopoverPrimitive.Content
-      ref={ref}
-      align={align}
-      collisionPadding={collisionPadding}
-      sideOffset={sideOffset}
-      className={cnM(
-        popoverVariants({
-          className,
-        }),
-      )}
-      {...props}
-    />
-  ),
+const PopoverContent = ({
+  ref,
+  className,
+  align = "center",
+  collisionPadding = 8,
+  sideOffset = 4,
+  ...props
+}: ComponentPropsWithoutRef<typeof PopoverPrimitive.Content> & {
+  ref: React.RefObject<ElementRef<typeof PopoverPrimitive.Content>>;
+}) => (
+  <PopoverPrimitive.Content
+    ref={ref}
+    align={align}
+    collisionPadding={collisionPadding}
+    sideOffset={sideOffset}
+    className={cnM(
+      popoverVariants({
+        className,
+      }),
+    )}
+    {...props}
+  />
 );
 
 PopoverContent.displayName = PopoverPrimitive.Content.displayName;

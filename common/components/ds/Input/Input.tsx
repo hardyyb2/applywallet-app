@@ -1,9 +1,4 @@
-import {
-  forwardRef,
-  type InputHTMLAttributes,
-  type JSX,
-  type ReactNode,
-} from "react";
+import { type InputHTMLAttributes, type JSX, type ReactNode } from "react";
 
 import type { VariantProps } from "cva";
 
@@ -24,97 +19,95 @@ export interface InputProps
   wrapperClassName?: string;
 }
 
-const Input = forwardRef<HTMLInputElement, InputProps>(
-  (
-    {
-      bordered = true,
-      borderOffset = true,
-      size,
-      color,
-      className,
-      htmlSize,
-      startIcon = null,
-      endIcon = null,
-      iconWrapperClassName = "",
-      wrapperClassName = "",
-      iconSeparate = false,
-      responsive = false,
-      ...props
-    },
-    ref,
-  ): JSX.Element => {
-    if (startIcon || endIcon) {
-      return (
-        <div
-          data-testid="input-wrapper"
-          className={cnM(
-            "relative flex w-full items-center",
-            iconSeparate && "grid grid-cols-[1fr,auto] gap-2",
-            wrapperClassName,
-          )}
-        >
-          {startIcon && (
-            <span
-              data-testid="start-icon"
-              className={cnM(
-                !iconSeparate ? "absolute left-4 [&_svg]:w-5" : "[&_svg]:w-8",
-                iconWrapperClassName,
-              )}
-            >
-              {startIcon}
-            </span>
-          )}
-          <input
-            ref={ref}
-            size={htmlSize}
-            className={cnM(
-              inputVariants({
-                bordered,
-                borderOffset,
-                size,
-                color,
-                responsive,
-                className,
-              }),
-              {
-                "pl-12": startIcon,
-                "pr-12": endIcon,
-              },
-            )}
-            {...props}
-          />
-          {endIcon && (
-            <span
-              data-testid="end-icon"
-              className={cnM(
-                !iconSeparate ? "absolute right-4 [&_svg]:w-5" : "[&_svg]:w-8",
-                iconWrapperClassName,
-              )}
-            >
-              {endIcon}
-            </span>
-          )}
-        </div>
-      );
-    }
-
+const Input = ({
+  ref,
+  bordered = true,
+  borderOffset = true,
+  size,
+  color,
+  className,
+  htmlSize,
+  startIcon = null,
+  endIcon = null,
+  iconWrapperClassName = "",
+  wrapperClassName = "",
+  iconSeparate = false,
+  responsive = false,
+  ...props
+}: InputProps & {
+  ref: React.RefObject<HTMLInputElement>;
+}): JSX.Element => {
+  if (startIcon || endIcon) {
     return (
-      <input
-        ref={ref}
-        size={htmlSize}
-        className={inputVariants({
-          bordered,
-          borderOffset,
-          size,
-          color,
-          responsive,
-          className,
-        })}
-        {...props}
-      />
+      <div
+        data-testid="input-wrapper"
+        className={cnM(
+          "relative flex w-full items-center",
+          iconSeparate && "grid grid-cols-[1fr,auto] gap-2",
+          wrapperClassName,
+        )}
+      >
+        {startIcon && (
+          <span
+            data-testid="start-icon"
+            className={cnM(
+              !iconSeparate ? "absolute left-4 [&_svg]:w-5" : "[&_svg]:w-8",
+              iconWrapperClassName,
+            )}
+          >
+            {startIcon}
+          </span>
+        )}
+        <input
+          ref={ref}
+          size={htmlSize}
+          className={cnM(
+            inputVariants({
+              bordered,
+              borderOffset,
+              size,
+              color,
+              responsive,
+              className,
+            }),
+            {
+              "pl-12": startIcon,
+              "pr-12": endIcon,
+            },
+          )}
+          {...props}
+        />
+        {endIcon && (
+          <span
+            data-testid="end-icon"
+            className={cnM(
+              !iconSeparate ? "absolute right-4 [&_svg]:w-5" : "[&_svg]:w-8",
+              iconWrapperClassName,
+            )}
+          >
+            {endIcon}
+          </span>
+        )}
+      </div>
     );
-  },
-);
+  }
+
+  return (
+    <input
+      ref={ref}
+      size={htmlSize}
+      className={inputVariants({
+        bordered,
+        borderOffset,
+        size,
+        color,
+        responsive,
+        className,
+      })}
+      {...props}
+    />
+  );
+};
 
 Input.displayName = "Input";
 

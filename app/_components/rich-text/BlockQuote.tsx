@@ -6,10 +6,14 @@ import { PlateElement, type PlateElementProps } from "@udecode/plate-common";
 
 import { cnM } from "@/utils/styles";
 
-const BlockquoteElement = React.forwardRef<
-  React.ElementRef<typeof PlateElement>,
-  PlateElementProps
->(({ className, children, ...props }, ref) => {
+const BlockquoteElement = ({
+  ref,
+  className,
+  children,
+  ...props
+}: PlateElementProps & {
+  ref: React.RefObject<React.ComponentRef<typeof PlateElement>>;
+}) => {
   return (
     <PlateElement
       asChild
@@ -20,7 +24,7 @@ const BlockquoteElement = React.forwardRef<
       <blockquote>{children}</blockquote>
     </PlateElement>
   );
-});
+};
 BlockquoteElement.displayName = "BlockquoteElement";
 
 export { BlockquoteElement };

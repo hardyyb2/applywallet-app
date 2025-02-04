@@ -1,4 +1,4 @@
-import { forwardRef, type ReactNode } from "react";
+import { type ReactNode } from "react";
 
 import { cn, cnM } from "@/utils/styles";
 
@@ -6,15 +6,14 @@ import { cn, cnM } from "@/utils/styles";
 interface BaseLayoutHeadProps {
   children: ReactNode;
   className?: string;
+  ref: React.RefObject<HTMLDivElement>;
 }
 
-const BaseLayoutHead = forwardRef<HTMLDivElement, BaseLayoutHeadProps>(
-  ({ className, ...rest }, ref) => {
-    const classes = cn("flex-0", className);
+const BaseLayoutHead = ({ ref, className, ...rest }: BaseLayoutHeadProps) => {
+  const classes = cn("flex-0", className);
 
-    return <header {...rest} className={classes} ref={ref} />;
-  },
-);
+  return <header {...rest} className={classes} ref={ref} />;
+};
 
 BaseLayoutHead.displayName = "BaseLayoutHead";
 /* </BaseLayoutHead> */
@@ -25,13 +24,17 @@ interface BaseLayoutBodyProps {
   className?: string;
 }
 
-const BaseLayoutBody = forwardRef<HTMLDivElement, BaseLayoutBodyProps>(
-  ({ className, ...rest }, ref) => {
-    const classes = cn("flex h-full flex-1", className);
+const BaseLayoutBody = ({
+  ref,
+  className,
+  ...rest
+}: BaseLayoutBodyProps & {
+  ref: React.RefObject<HTMLDivElement>;
+}) => {
+  const classes = cn("flex h-full flex-1", className);
 
-    return <main {...rest} className={classes} ref={ref} />;
-  },
-);
+  return <main {...rest} className={classes} ref={ref} />;
+};
 
 BaseLayoutBody.displayName = "BaseLayoutBody";
 /* </BaseLayoutBody> */
@@ -41,17 +44,22 @@ export interface BaseLayoutProps {
   className?: string;
 }
 
-const BaseLayout = forwardRef<HTMLDivElement, BaseLayoutProps>(
-  ({ children, className = "", ...rest }, ref) => {
-    const classes = cnM("flex h-full flex-col", className);
+const BaseLayout = ({
+  ref,
+  children,
+  className = "",
+  ...rest
+}: BaseLayoutProps & {
+  ref: React.RefObject<HTMLDivElement>;
+}) => {
+  const classes = cnM("flex h-full flex-col", className);
 
-    return (
-      <div {...rest} className={classes} ref={ref}>
-        {children}
-      </div>
-    );
-  },
-);
+  return (
+    <div {...rest} className={classes} ref={ref}>
+      {children}
+    </div>
+  );
+};
 
 BaseLayout.displayName = "BaseLayout";
 

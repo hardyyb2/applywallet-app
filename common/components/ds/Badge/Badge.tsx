@@ -1,4 +1,4 @@
-import { forwardRef, type HTMLAttributes, type JSX } from "react";
+import { type HTMLAttributes, type JSX } from "react";
 
 import { type VariantProps } from "cva";
 
@@ -12,34 +12,40 @@ export interface BadgeProps
   responsive?: boolean;
 }
 
-const Badge = forwardRef<HTMLDivElement, BadgeProps>(
-  (
-    { children, variant, size, color, responsive, className, ...props },
-    ref,
-  ): JSX.Element => {
-    return (
-      <div
-        aria-label="badge"
-        {...props}
-        className={badgeVariants({
-          variant,
-          className: cn(
-            {
-              "dui-badge-xs md:dui-badge-sm lg:dui-badge-md xl:dui-badge-lg":
-                responsive,
-            },
-            className,
-          ),
-          color,
-          size,
-        })}
-        ref={ref}
-      >
-        {children}
-      </div>
-    );
-  },
-);
+const Badge = ({
+  ref,
+  children,
+  variant,
+  size,
+  color,
+  responsive,
+  className,
+  ...props
+}: BadgeProps & {
+  ref: React.RefObject<HTMLDivElement>;
+}): JSX.Element => {
+  return (
+    <div
+      aria-label="badge"
+      {...props}
+      className={badgeVariants({
+        variant,
+        className: cn(
+          {
+            "dui-badge-xs md:dui-badge-sm lg:dui-badge-md xl:dui-badge-lg":
+              responsive,
+          },
+          className,
+        ),
+        color,
+        size,
+      })}
+      ref={ref}
+    >
+      {children}
+    </div>
+  );
+};
 
 Badge.displayName = "Badge";
 

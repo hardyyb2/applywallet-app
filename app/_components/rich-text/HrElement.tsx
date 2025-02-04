@@ -5,10 +5,14 @@ import { useFocused, useSelected } from "slate-react";
 
 import { cnM } from "@/utils/styles";
 
-const HrElement = React.forwardRef<
-  React.ElementRef<typeof PlateElement>,
-  PlateElementProps
->(({ className, nodeProps, ...props }, ref) => {
+const HrElement = ({
+  ref,
+  className,
+  nodeProps,
+  ...props
+}: PlateElementProps & {
+  ref: React.RefObject<React.ElementRef<typeof PlateElement>>;
+}) => {
   const { children } = props;
 
   const selected = useSelected();
@@ -29,7 +33,7 @@ const HrElement = React.forwardRef<
       {children}
     </PlateElement>
   );
-});
+};
 HrElement.displayName = "HrElement";
 
 export { HrElement };

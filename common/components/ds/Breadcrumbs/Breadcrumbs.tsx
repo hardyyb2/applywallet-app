@@ -1,5 +1,4 @@
 import {
-  forwardRef,
   type HTMLAttributes,
   type JSX,
   type LiHTMLAttributes,
@@ -14,15 +13,20 @@ export type BreadcrumbsItemProps = LiHTMLAttributes<HTMLLIElement> & {
   href?: string;
 };
 
-const BreadcrumbsItem = forwardRef<HTMLLIElement, BreadcrumbsItemProps>(
-  ({ children, href, ...props }, ref): JSX.Element => {
-    return (
-      <li role="link" {...props} ref={ref}>
-        {children}
-      </li>
-    );
-  },
-);
+const BreadcrumbsItem = ({
+  ref,
+  children,
+  href,
+  ...props
+}: BreadcrumbsItemProps & {
+  ref: React.RefObject<HTMLLIElement>;
+}): JSX.Element => {
+  return (
+    <li role="link" {...props} ref={ref}>
+      {children}
+    </li>
+  );
+};
 
 BreadcrumbsItem.displayName = "BreadcrumbsItem";
 /** </BreadcrumbsItem> */
@@ -35,26 +39,30 @@ export type BreadcrumbsProps = HTMLAttributes<HTMLDivElement> & {
   innerProps?: HTMLAttributes<HTMLUListElement>;
 };
 
-const Breadcrumbs = forwardRef<HTMLDivElement, BreadcrumbsProps>(
-  (
-    { children, className, innerProps, innerRef, ...props },
-    ref,
-  ): JSX.Element => {
-    return (
-      <div
-        role="navigation"
-        aria-label="Breadcrumbs"
-        {...props}
-        className="dui-breadcrumbs caption-s !font-semibold lg:caption-l"
-        ref={ref}
-      >
-        <ul {...innerProps} ref={innerRef}>
-          {children}
-        </ul>
-      </div>
-    );
-  },
-);
+const Breadcrumbs = ({
+  ref,
+  children,
+  className,
+  innerProps,
+  innerRef,
+  ...props
+}: BreadcrumbsProps & {
+  ref: React.RefObject<HTMLDivElement>;
+}): JSX.Element => {
+  return (
+    <div
+      role="navigation"
+      aria-label="Breadcrumbs"
+      {...props}
+      className="dui-breadcrumbs caption-s !font-semibold lg:caption-l"
+      ref={ref}
+    >
+      <ul {...innerProps} ref={innerRef}>
+        {children}
+      </ul>
+    </div>
+  );
+};
 
 Breadcrumbs.displayName = "Breadcrumbs";
 

@@ -1,7 +1,7 @@
 "use client";
 
 import {
-  forwardRef,
+  type ComponentProps,
   type ComponentPropsWithoutRef,
   type ElementRef,
 } from "react";
@@ -14,46 +14,58 @@ import { cnM } from "@/utils/styles";
 import { avatarVariants } from "./avatar.utils";
 
 export interface AvatarProps
-  extends Omit<ComponentPropsWithoutRef<typeof AvatarPrimitive.Root>, "color">,
+  extends Omit<ComponentProps<typeof AvatarPrimitive.Root>, "color">,
     VariantProps<typeof avatarVariants> {}
 
-const Avatar = forwardRef<ElementRef<typeof AvatarPrimitive.Root>, AvatarProps>(
-  ({ className, shape, size, color, border, ...props }, ref) => (
-    <AvatarPrimitive.Root
-      ref={ref}
-      className={cnM(
-        avatarVariants({
-          color,
-          border,
-          shape,
-          size,
-          className,
-        }),
-      )}
-      {...props}
-    />
-  ),
+const Avatar = ({
+  ref,
+  className,
+  shape,
+  size,
+  color,
+  border,
+  ...props
+}: AvatarProps) => (
+  <AvatarPrimitive.Root
+    ref={ref}
+    className={cnM(
+      avatarVariants({
+        color,
+        border,
+        shape,
+        size,
+        className,
+      }),
+    )}
+    {...props}
+  />
 );
 
 Avatar.displayName = AvatarPrimitive.Root.displayName;
 
-const AvatarImage = forwardRef<
-  ElementRef<typeof AvatarPrimitive.Image>,
-  ComponentPropsWithoutRef<typeof AvatarPrimitive.Image>
->(({ className, ...props }, ref) => (
+const AvatarImage = ({
+  ref,
+  className,
+  ...props
+}: ComponentPropsWithoutRef<typeof AvatarPrimitive.Image> & {
+  ref: React.RefObject<ElementRef<typeof AvatarPrimitive.Image>>;
+}) => (
   <AvatarPrimitive.Image
     ref={ref}
     className={cnM("h-full w-full", className)}
     {...props}
   />
-));
+);
 
 AvatarImage.displayName = AvatarPrimitive.Image.displayName;
 
-const AvatarFallback = forwardRef<
-  ElementRef<typeof AvatarPrimitive.Fallback>,
-  ComponentPropsWithoutRef<typeof AvatarPrimitive.Fallback>
->(({ className, ...props }, ref) => (
+const AvatarFallback = ({
+  ref,
+  className,
+  ...props
+}: ComponentPropsWithoutRef<typeof AvatarPrimitive.Fallback> & {
+  ref: React.RefObject<ElementRef<typeof AvatarPrimitive.Fallback>>;
+}) => (
   <AvatarPrimitive.Fallback
     ref={ref}
     className={cnM(
@@ -62,7 +74,7 @@ const AvatarFallback = forwardRef<
     )}
     {...props}
   />
-));
+);
 
 AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName;
 

@@ -26,15 +26,15 @@ const useAccordionContext = () => {
   return context;
 };
 
-type AccordionProps = React.ComponentPropsWithoutRef<
-  typeof AccordionPrimitive.Root
-> &
+type AccordionProps = React.ComponentProps<typeof AccordionPrimitive.Root> &
   AccordionContextType;
 
-const Accordion = React.forwardRef<
-  React.ElementRef<typeof AccordionPrimitive.Root>,
-  AccordionProps
->(({ variant = "box", className, ...props }, ref) => {
+const Accordion = ({
+  ref,
+  variant = "box",
+  className,
+  ...props
+}: AccordionProps) => {
   return (
     <AccordionContext.Provider value={{ variant }}>
       <AccordionPrimitive.Root
@@ -49,40 +49,44 @@ const Accordion = React.forwardRef<
       />
     </AccordionContext.Provider>
   );
-});
+};
 
 Accordion.displayName = "Accordion";
 
-const AccordionItem = React.forwardRef<
-  React.ElementRef<typeof AccordionPrimitive.Item>,
-  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item>
->(({ className, ...props }, ref) => {
+const AccordionItem = ({
+  ref,
+  className,
+  ...props
+}: React.ComponentProps<typeof AccordionPrimitive.Item>) => {
   const { variant } = useAccordionContext();
 
   return (
     <AccordionPrimitive.Item
       ref={ref}
       className={cnM(
-        "title-s lg:title-m ",
+        "title-s lg:title-m",
         {
           "rounded-xl bg-base-200": variant === "box",
           "border-b": variant === "lined",
-          "rounded-xl border ": variant === "bordered",
+          "rounded-xl border": variant === "bordered",
         },
         className,
       )}
       {...props}
     />
   );
-});
+};
 AccordionItem.displayName = "AccordionItem";
 
-const AccordionTrigger = React.forwardRef<
-  React.ElementRef<typeof AccordionPrimitive.Trigger>,
-  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger> & {
-    showIcon?: boolean;
-  }
->(({ className, showIcon = true, children, ...props }, ref) => (
+const AccordionTrigger = ({
+  ref,
+  className,
+  showIcon = true,
+  children,
+  ...props
+}: React.ComponentProps<typeof AccordionPrimitive.Trigger> & {
+  showIcon?: boolean;
+}) => (
   <AccordionPrimitive.Header className="flex">
     <AccordionPrimitive.Trigger
       ref={ref}
@@ -98,15 +102,18 @@ const AccordionTrigger = React.forwardRef<
       ) : null}
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
-));
+);
 AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName;
 
-const AccordionContent = React.forwardRef<
-  React.ElementRef<typeof AccordionPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content> & {
-    innerClassName?: string;
-  }
->(({ className, innerClassName, children, ...props }, ref) => {
+const AccordionContent = ({
+  ref,
+  className,
+  innerClassName,
+  children,
+  ...props
+}: React.ComponentProps<typeof AccordionPrimitive.Content> & {
+  innerClassName?: string;
+}) => {
   return (
     <AccordionPrimitive.Content
       ref={ref}
@@ -121,7 +128,7 @@ const AccordionContent = React.forwardRef<
       <div className={cnM("pb-4 pt-0", innerClassName)}>{children}</div>
     </AccordionPrimitive.Content>
   );
-});
+};
 AccordionContent.displayName = AccordionPrimitive.Content.displayName;
 
 export {

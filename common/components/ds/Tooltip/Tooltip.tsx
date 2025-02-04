@@ -1,7 +1,7 @@
 "use client";
 
 import {
-  forwardRef,
+  type ComponentProps,
   type ComponentPropsWithoutRef,
   type ElementRef,
 } from "react";
@@ -22,16 +22,15 @@ const TooltipTrigger = TooltipPrimitive.Trigger;
 const TooltipPortal = TooltipPrimitive.Portal;
 
 export interface TooltipArrowProps
-  extends Omit<
-      ComponentPropsWithoutRef<typeof TooltipPrimitive.Arrow>,
-      "color"
-    >,
+  extends Omit<ComponentProps<typeof TooltipPrimitive.Arrow>, "color">,
     VariantProps<typeof tooltipArrowVariants> {}
 
-const TooltipArrow = forwardRef<
-  ElementRef<typeof TooltipPrimitive.Arrow>,
-  TooltipArrowProps
->(({ className, color, ...props }, ref) => (
+const TooltipArrow = ({
+  ref,
+  className,
+  color,
+  ...props
+}: TooltipArrowProps) => (
   <TooltipPrimitive.Arrow
     ref={ref}
     className={cnM(
@@ -42,38 +41,34 @@ const TooltipArrow = forwardRef<
     )}
     {...props}
   />
-));
+);
 
 TooltipArrow.displayName = TooltipPrimitive.Arrow.displayName;
 
 export interface TooltipContentProps
-  extends Omit<
-      ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>,
-      "color"
-    >,
+  extends Omit<ComponentProps<typeof TooltipPrimitive.Content>, "color">,
     VariantProps<typeof tooltipContentVariants> {}
 
-const TooltipContent = forwardRef<
-  ElementRef<typeof TooltipPrimitive.Content>,
-  TooltipContentProps
->(
-  (
-    { className, color, sideOffset = 4, collisionPadding = 8, ...props },
-    ref,
-  ) => (
-    <TooltipPrimitive.Content
-      ref={ref}
-      sideOffset={sideOffset}
-      collisionPadding={collisionPadding}
-      className={cnM(
-        tooltipContentVariants({
-          color,
-          className,
-        }),
-      )}
-      {...props}
-    />
-  ),
+const TooltipContent = ({
+  ref,
+  className,
+  color,
+  sideOffset = 4,
+  collisionPadding = 8,
+  ...props
+}: TooltipContentProps) => (
+  <TooltipPrimitive.Content
+    ref={ref}
+    sideOffset={sideOffset}
+    collisionPadding={collisionPadding}
+    className={cnM(
+      tooltipContentVariants({
+        color,
+        className,
+      }),
+    )}
+    {...props}
+  />
 );
 TooltipContent.displayName = TooltipPrimitive.Content.displayName;
 
