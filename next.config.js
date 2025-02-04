@@ -55,6 +55,9 @@ const sentryWrapper = withSentryConfig(contentLayerWrapper, {
   hideSourceMaps: true,
   disableLogger: true,
   automaticVercelMonitors: true,
+  sourcemaps: {
+    deleteSourcemapsAfterUpload: true,
+  },
 });
 const bundleAnalyzerWrapper = withBundleAnalyzer(sentryWrapper);
 
