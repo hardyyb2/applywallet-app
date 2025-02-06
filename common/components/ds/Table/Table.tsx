@@ -7,90 +7,75 @@ import { cnM } from "@/utils/styles";
 import { tableVariants } from "./table.utils";
 
 interface TableProps
-  extends React.HTMLAttributes<HTMLTableElement>,
+  extends React.ComponentProps<"table">,
     VariantProps<typeof tableVariants> {}
 
-const Table = ({
-  ref,
-  size,
-  pinRows,
-  pinCols,
-  variant,
-  className,
-  responsive,
-  ...props
-}: TableProps & {
-  ref: React.RefObject<HTMLTableElement>;
-}) => (
-  <table
-    ref={ref}
-    className={tableVariants({
-      size,
-      pinRows,
-      pinCols,
-      variant,
-      responsive,
-      className,
-    })}
-    {...props}
-  />
+const Table = React.forwardRef<HTMLTableElement, TableProps>(
+  (
+    { size, pinRows, pinCols, variant, className, responsive, ...props },
+    ref,
+  ) => (
+    <table
+      ref={ref}
+      className={tableVariants({
+        size,
+        pinRows,
+        pinCols,
+        variant,
+        responsive,
+        className,
+      })}
+      {...props}
+    />
+  ),
 );
 Table.displayName = "Table";
 
-const TableHeader = ({
-  ref,
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLTableSectionElement> & {
-  ref: React.RefObject<HTMLTableSectionElement>;
-}) => <thead ref={ref} className={className} {...props} />;
+const TableHeader = React.forwardRef<
+  HTMLTableSectionElement,
+  React.ComponentProps<"thead">
+>(({ className, ...props }, ref) => (
+  <thead ref={ref} className={className} {...props} />
+));
 TableHeader.displayName = "TableHeader";
 
-const TableBody = ({
-  ref,
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLTableSectionElement> & {
-  ref: React.RefObject<HTMLTableSectionElement>;
-}) => (
+const TableBody = React.forwardRef<
+  HTMLTableSectionElement,
+  React.ComponentProps<"tbody">
+>(({ className, ...props }, ref) => (
   <tbody
     ref={ref}
     className={cnM("[&_tr:last-child]:border-0", className)}
     {...props}
   />
-);
+));
 TableBody.displayName = "TableBody";
 
 const TableFooter = ({
   ref,
   className,
   ...props
-}: React.HTMLAttributes<HTMLTableSectionElement> & {
-  ref: React.RefObject<HTMLTableSectionElement>;
-}) => <tfoot ref={ref} className={className} {...props} />;
+}: React.ComponentProps<"tfoot">) => (
+  <tfoot ref={ref} className={className} {...props} />
+);
 TableFooter.displayName = "TableFooter";
 
-interface TableRowProps extends React.HTMLAttributes<HTMLTableRowElement> {
+interface TableRowProps extends React.ComponentProps<"tr"> {
   hoverable?: boolean;
 }
 
-const TableRow = ({
-  ref,
-  className,
-  hoverable = false,
-  ...props
-}: TableRowProps & {
-  ref: React.RefObject<HTMLTableRowElement>;
-}) => (
-  <tr
-    ref={ref}
-    className={cnM(
-      "transition-colors data-[state=selected]:bg-base-300",
-      hoverable && "dui-hover",
-      className,
-    )}
-    {...props}
-  />
+const TableRow = React.forwardRef<HTMLTableRowElement, TableRowProps>(
+  ({ className, hoverable = false, ...props }, ref) => (
+    <tr
+      ref={ref}
+      className={cnM(
+        "transition-colors data-[state=selected]:bg-base-300",
+        hoverable && "dui-hover",
+        className,
+      )}
+      {...props}
+    />
+  ),
 );
 TableRow.displayName = "TableRow";
 
@@ -98,9 +83,7 @@ const TableHead = ({
   ref,
   className,
   ...props
-}: React.ThHTMLAttributes<HTMLTableCellElement> & {
-  ref: React.RefObject<HTMLTableCellElement>;
-}) => (
+}: React.ComponentProps<"th">) => (
   <th
     ref={ref}
     className={cnM(
@@ -116,9 +99,7 @@ const TableCell = ({
   ref,
   className,
   ...props
-}: React.TdHTMLAttributes<HTMLTableCellElement> & {
-  ref: React.RefObject<HTMLTableCellElement>;
-}) => (
+}: React.ComponentProps<"td">) => (
   <td
     ref={ref}
     className={cnM(
@@ -134,9 +115,7 @@ const TableCaption = ({
   ref,
   className,
   ...props
-}: React.HTMLAttributes<HTMLTableCaptionElement> & {
-  ref: React.RefObject<HTMLTableCaptionElement>;
-}) => (
+}: React.ComponentProps<"caption">) => (
   <caption
     ref={ref}
     className={cnM("text-base-content/80", className)}

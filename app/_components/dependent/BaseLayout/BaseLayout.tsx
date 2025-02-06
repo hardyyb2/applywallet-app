@@ -6,7 +6,7 @@ import { cn, cnM } from "@/utils/styles";
 interface BaseLayoutHeadProps {
   children: ReactNode;
   className?: string;
-  ref: React.RefObject<HTMLDivElement>;
+  ref?: React.RefObject<HTMLDivElement>;
 }
 
 const BaseLayoutHead = ({ ref, className, ...rest }: BaseLayoutHeadProps) => {
@@ -29,7 +29,7 @@ const BaseLayoutBody = ({
   className,
   ...rest
 }: BaseLayoutBodyProps & {
-  ref: React.RefObject<HTMLDivElement>;
+  ref?: React.RefObject<HTMLDivElement>;
 }) => {
   const classes = cn("flex h-full flex-1", className);
 
@@ -50,7 +50,7 @@ const BaseLayout = ({
   className = "",
   ...rest
 }: BaseLayoutProps & {
-  ref: React.RefObject<HTMLDivElement>;
+  ref?: React.RefObject<HTMLDivElement>;
 }) => {
   const classes = cnM("flex h-full flex-col", className);
 

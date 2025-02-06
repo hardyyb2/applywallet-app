@@ -176,8 +176,8 @@ const Icons = {
     ref,
     ...props
   }: LucideProps & {
-    ref: React.RefObject<SVGSVGElement>;
-  }) {
+    ref?: React.RefObject<SVGSVGElement>;
+  }): JSX.Element {
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -199,7 +199,7 @@ const Icons = {
     ref,
     ...props
   }: LucideProps & {
-    ref: React.RefObject<SVGSVGElement>;
+    ref?: React.RefObject<SVGSVGElement>;
   }) {
     return (
       <svg

@@ -7,13 +7,7 @@ import {
   type ToolbarProps,
 } from "../../../common/components/ds/Toolbar";
 
-const FixedToolbar = ({
-  ref,
-  className,
-  ...props
-}: ToolbarProps & {
-  ref: React.RefObject<HTMLDivElement>;
-}) => {
+const FixedToolbar = ({ ref, className, ...props }: ToolbarProps) => {
   return (
     <Toolbar
       ref={ref}

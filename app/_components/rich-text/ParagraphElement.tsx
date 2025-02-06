@@ -10,7 +10,7 @@ const ParagraphElement = ({
   children,
   ...props
 }: PlateElementProps & {
-  ref: React.RefObject<React.ElementRef<typeof PlateElement>>;
+  ref?: React.RefObject<React.ElementRef<typeof PlateElement>>;
 }) => {
   return (
     <PlateElement

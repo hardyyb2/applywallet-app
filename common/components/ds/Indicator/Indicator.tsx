@@ -1,4 +1,4 @@
-import { type JSX } from "react";
+import { type ComponentProps, type JSX } from "react";
 
 import { cva, type VariantProps } from "cva";
 
@@ -20,7 +20,7 @@ const indicatorItemVariants = cva("dui-indicator-item", {
 });
 
 interface IndicatorItemProps
-  extends React.HTMLAttributes<HTMLDivElement>,
+  extends ComponentProps<"div">,
     VariantProps<typeof indicatorItemVariants> {}
 
 const IndicatorItem = ({
@@ -30,9 +30,7 @@ const IndicatorItem = ({
   vertical = "top",
   className,
   ...props
-}: IndicatorItemProps & {
-  ref: React.RefObject<HTMLDivElement>;
-}): JSX.Element => {
+}: IndicatorItemProps) => {
   return (
     <div
       aria-label="indicator"
@@ -46,16 +44,14 @@ const IndicatorItem = ({
 };
 IndicatorItem.displayName = "IndicatorItem";
 
-type IndicatorProps = React.HTMLAttributes<HTMLDivElement>;
+type IndicatorProps = ComponentProps<"div">;
 
 const Indicator = ({
   ref,
   children,
   className,
   ...props
-}: IndicatorProps & {
-  ref: React.RefObject<HTMLDivElement>;
-}): JSX.Element => {
+}: IndicatorProps): JSX.Element => {
   return (
     <div {...props} className={cnM("dui-indicator", className)} ref={ref}>
       {children}

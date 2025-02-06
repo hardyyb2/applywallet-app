@@ -1,19 +1,17 @@
-import { type HTMLAttributes, type JSX, type PropsWithChildren } from "react";
+import {
+  type ComponentProps,
+  type HTMLAttributes,
+  type PropsWithChildren,
+} from "react";
 
 import { cn, cnM } from "@/utils/styles";
 
 import type { CardSizeTypes } from "./card.types";
 
 /** <CardActions > */
-type CardActionsProps = HTMLAttributes<HTMLDivElement>;
+type CardActionsProps = ComponentProps<"div">;
 
-const CardActions = ({
-  ref,
-  className,
-  ...props
-}: CardActionsProps & {
-  ref: React.RefObject<HTMLDivElement>;
-}) => (
+const CardActions = ({ ref, className, ...props }: CardActionsProps) => (
   <div {...props} className={cn("dui-card-actions", className)} ref={ref} />
 );
 
@@ -21,15 +19,9 @@ CardActions.displayName = "CardActions";
 /** </CardActions > */
 
 /** <CardBody> */
-export type CardBodyProps = HTMLAttributes<HTMLDivElement>;
+export type CardBodyProps = ComponentProps<"div">;
 
-const CardBody = ({
-  ref,
-  className,
-  ...props
-}: CardBodyProps & {
-  ref: React.RefObject<HTMLDivElement>;
-}) => (
+const CardBody = ({ ref, className, ...props }: CardBodyProps) => (
   <div
     {...props}
     className={cnM("dui-card-body rounded-xl bg-base-100", className)}
@@ -41,16 +33,14 @@ CardBody.displayName = "CardBody";
 /* </CardBody> */
 
 /* <CardFigure> */
-export type CardFigureProps = PropsWithChildren & HTMLAttributes<HTMLElement>;
+export type CardFigureProps = PropsWithChildren & ComponentProps<"figure">;
 
 const CardFigure = ({
   ref,
   children,
   className,
   ...props
-}: CardFigureProps & {
-  ref: React.RefObject<HTMLElement>;
-}) => {
+}: CardFigureProps) => {
   return (
     <figure ref={ref} className={cn("relative", className)} {...props}>
       {children}
@@ -62,7 +52,7 @@ CardFigure.displayName = "CardFigure";
 /* </CardFigure> */
 
 /* <CardTitle> */
-export interface CardTitleProps extends HTMLAttributes<HTMLSpanElement> {
+export interface CardTitleProps extends ComponentProps<"span"> {
   className?: string;
 }
 
@@ -73,7 +63,7 @@ const CardTitle = ({ className, ...props }: CardTitleProps) => {
 CardTitle.displayName = "CardTitle";
 /* </CardTitle> */
 
-export type CardProps = HTMLAttributes<HTMLDivElement> & {
+export type CardProps = ComponentProps<"div"> & {
   bordered?: boolean;
   /** The image in <figure> element will be the background */
   imageFull?: boolean;
@@ -124,9 +114,7 @@ const Card = ({
   side,
   className,
   ...props
-}: CardProps & {
-  ref: React.RefObject<HTMLDivElement>;
-}): JSX.Element => {
+}: CardProps) => {
   const classes = cn(
     "dui-card",
     className,

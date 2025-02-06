@@ -7,9 +7,7 @@ const FormFieldTextarea = ({
   ref,
   color,
   ...props
-}: FormFieldTextareaProps & {
-  ref: React.RefObject<HTMLTextAreaElement>;
-}) => {
+}: FormFieldTextareaProps) => {
   const { error = "", htmlFor } = useFormFieldContext();
 
   return (

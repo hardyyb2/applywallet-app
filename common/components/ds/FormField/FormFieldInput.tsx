@@ -8,9 +8,7 @@ const FormFieldInput = ({
   color,
   responsive = true,
   ...props
-}: FormFieldInputProps & {
-  ref: React.RefObject<HTMLInputElement>;
-}) => {
+}: FormFieldInputProps) => {
   const { error = "", htmlFor } = useFormFieldContext();
 
   return (

@@ -1,4 +1,4 @@
-import { type InputHTMLAttributes, type JSX, type ReactNode } from "react";
+import { type ComponentProps, type ReactNode } from "react";
 
 import type { VariantProps } from "cva";
 
@@ -7,7 +7,7 @@ import { cnM } from "@/utils/styles";
 import { inputVariants } from "./input.utils";
 
 export interface InputProps
-  extends Omit<InputHTMLAttributes<HTMLInputElement>, "size" | "color">,
+  extends Omit<ComponentProps<"input">, "size" | "color">,
     VariantProps<typeof inputVariants> {
   htmlSize?: number;
   startIcon?: ReactNode;
@@ -34,9 +34,7 @@ const Input = ({
   iconSeparate = false,
   responsive = false,
   ...props
-}: InputProps & {
-  ref: React.RefObject<HTMLInputElement>;
-}): JSX.Element => {
+}: InputProps): JSX.Element => {
   if (startIcon || endIcon) {
     return (
       <div

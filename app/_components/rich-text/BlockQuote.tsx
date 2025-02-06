@@ -12,7 +12,7 @@ const BlockquoteElement = ({
   children,
   ...props
 }: PlateElementProps & {
-  ref: React.RefObject<React.ComponentRef<typeof PlateElement>>;
+  ref?: React.RefObject<React.ComponentRef<typeof PlateElement>>;
 }) => {
   return (
     <PlateElement

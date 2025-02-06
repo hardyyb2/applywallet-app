@@ -1,20 +1,18 @@
-import { type HTMLAttributes, type JSX } from "react";
+import { type ComponentProps, type JSX } from "react";
 
 import { cn } from "@/utils/styles";
 
 import type { BottomNavigationSizeTypes } from "./bottomNavigation.types";
 
 /** <BottomNavigationLabel> */
-export type BottomNavigationLabelProps = HTMLAttributes<HTMLSpanElement>;
+export type BottomNavigationLabelProps = ComponentProps<"span">;
 
 const BottomNavigationLabel = ({
   ref,
   children,
   className,
   ...props
-}: BottomNavigationLabelProps & {
-  ref: React.RefObject<HTMLSpanElement>;
-}): JSX.Element => {
+}: BottomNavigationLabelProps) => {
   return (
     <span {...props} className={cn(className)} ref={ref}>
       {children}
@@ -25,7 +23,7 @@ const BottomNavigationLabel = ({
 BottomNavigationLabel.displayName = "BottomNavigationLabel";
 /** </BottomNavigationLabel> */
 
-export type BottomNavigationProps = HTMLAttributes<HTMLDivElement> & {
+export type BottomNavigationProps = ComponentProps<"div"> & {
   size?: BottomNavigationSizeTypes;
 };
 
@@ -35,9 +33,7 @@ const BottomNavigation = ({
   className,
   children,
   ...props
-}: BottomNavigationProps & {
-  ref: React.RefObject<HTMLDivElement>;
-}): JSX.Element => {
+}: BottomNavigationProps): JSX.Element => {
   return (
     <div
       {...props}

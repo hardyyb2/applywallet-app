@@ -17,7 +17,7 @@ const LinkElement = ({
   children,
   ...props
 }: PlateElementProps<Value, TLinkElement> & {
-  ref: React.RefObject<React.ElementRef<typeof PlateElement>>;
+  ref?: React.RefObject<React.ElementRef<typeof PlateElement>>;
 }) => {
   const { props: linkProps } = useLink({ element: props.element });
 

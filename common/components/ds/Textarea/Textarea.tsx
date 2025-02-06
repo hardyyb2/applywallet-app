@@ -1,13 +1,10 @@
-import { type JSX, type TextareaHTMLAttributes } from "react";
+import { type ComponentProps } from "react";
 
 import { cn } from "@/utils/styles";
 
 import type { TextareaColorsType } from "./textarea.types";
 
-export type TextareaProps = Omit<
-  TextareaHTMLAttributes<HTMLTextAreaElement>,
-  "color"
-> & {
+export type TextareaProps = Omit<ComponentProps<"textarea">, "color"> & {
   color?: TextareaColorsType;
   bordered?: boolean;
   borderOffset?: boolean;
@@ -20,9 +17,7 @@ const Textarea = ({
   color,
   className,
   ...props
-}: TextareaProps & {
-  ref: React.RefObject<HTMLTextAreaElement>;
-}): JSX.Element => {
+}: TextareaProps) => {
   const classes = cn(
     "dui-textarea",
     {

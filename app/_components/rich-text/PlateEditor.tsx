@@ -47,7 +47,7 @@ const PlateEditor = ({
   variant,
   ...props
 }: PlateEditorProps & {
-  ref: React.RefObject<HTMLDivElement>;
+  ref?: React.RefObject<HTMLDivElement>;
 }) => {
   return (
     <div ref={ref} className="relative w-full">

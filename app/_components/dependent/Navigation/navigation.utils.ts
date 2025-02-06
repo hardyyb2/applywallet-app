@@ -8,6 +8,8 @@ const navItems: NavItemType[] = [
     label: "home",
     link: AppRoutes.HOME,
     category: NavigationCategories.GENERAL,
+    // TODO - fix this
+    // @ts-expect-error
     icon: Icons.CustomHome,
   },
   {
@@ -40,27 +42,33 @@ const navItems: NavItemType[] = [
 
 const activeNavItems = navItems.filter((item) => !item.inactive);
 
-export const navItemToIconsMapping = activeNavItems.reduce((acc, item) => {
-  if (item.link) {
-    acc[item.link] = { icon: item.icon, label: item.label };
-  }
+export const navItemToIconsMapping = activeNavItems.reduce(
+  (acc, item) => {
+    if (item.link) {
+      acc[item.link] = { icon: item.icon, label: item.label };
+    }
 
-  return acc;
-}, {} as { [key in NavItemType["link"]]?: Pick<NavItemType, "icon" | "label"> });
+    return acc;
+  },
+  {} as { [key in NavItemType["link"]]?: Pick<NavItemType, "icon" | "label"> },
+);
 
 /** Nav items that will be directly visible on bottom nav bar while rest will show in menu */
 export const bottomNavDisplayOptions = activeNavItems.slice(0, 3) ?? [];
 
 /** Group nav items based on categories */
 const groupedNavItems: { [key in NavigationCategories]: NavItemType[] } =
-  activeNavItems.reduce((grouped, item) => {
-    const category = item.category ?? NavigationCategories.GENERAL;
+  activeNavItems.reduce(
+    (grouped, item) => {
+      const category = item.category ?? NavigationCategories.GENERAL;
 
-    if (!grouped[category]) {
-      grouped[category] = [];
-    }
-    grouped[category].push(item);
-    return grouped;
-  }, {} as { [key in NavigationCategories]: NavItemType[] });
+      if (!grouped[category]) {
+        grouped[category] = [];
+      }
+      grouped[category].push(item);
+      return grouped;
+    },
+    {} as { [key in NavigationCategories]: NavItemType[] },
+  );
 
 export const groupedNavItemsEntries = Object.entries(groupedNavItems);

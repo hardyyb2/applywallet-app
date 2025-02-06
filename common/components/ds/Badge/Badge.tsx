@@ -1,4 +1,4 @@
-import { type HTMLAttributes, type JSX } from "react";
+import { type ComponentProps } from "react";
 
 import { type VariantProps } from "cva";
 
@@ -7,7 +7,7 @@ import { cn } from "@/utils/styles";
 import { badgeVariants } from "./badge.utils";
 
 export interface BadgeProps
-  extends Omit<HTMLAttributes<HTMLDivElement>, "color">,
+  extends Omit<ComponentProps<"div">, "color">,
     VariantProps<typeof badgeVariants> {
   responsive?: boolean;
 }
@@ -21,9 +21,7 @@ const Badge = ({
   responsive,
   className,
   ...props
-}: BadgeProps & {
-  ref: React.RefObject<HTMLDivElement>;
-}): JSX.Element => {
+}: BadgeProps) => {
   return (
     <div
       aria-label="badge"

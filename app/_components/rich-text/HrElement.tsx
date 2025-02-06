@@ -11,7 +11,7 @@ const HrElement = ({
   nodeProps,
   ...props
 }: PlateElementProps & {
-  ref: React.RefObject<React.ElementRef<typeof PlateElement>>;
+  ref?: React.RefObject<React.ElementRef<typeof PlateElement>>;
 }) => {
   const { children } = props;
 
