@@ -1,15 +1,11 @@
 import {
+  type ComponentProps,
   type HTMLAttributes,
-  type JSX,
-  type LiHTMLAttributes,
   type ReactElement,
-  type Ref,
 } from "react";
 
-import { cn } from "@/utils/styles";
-
 /** <BreadcrumbsItem> */
-export type BreadcrumbsItemProps = LiHTMLAttributes<HTMLLIElement> & {
+export type BreadcrumbsItemProps = ComponentProps<"li"> & {
   href?: string;
 };
 
@@ -18,9 +14,7 @@ const BreadcrumbsItem = ({
   children,
   href,
   ...props
-}: BreadcrumbsItemProps & {
-  ref: React.RefObject<HTMLLIElement>;
-}): JSX.Element => {
+}: BreadcrumbsItemProps) => {
   return (
     <li role="link" {...props} ref={ref}>
       {children}
@@ -31,11 +25,11 @@ const BreadcrumbsItem = ({
 BreadcrumbsItem.displayName = "BreadcrumbsItem";
 /** </BreadcrumbsItem> */
 
-export type BreadcrumbsProps = HTMLAttributes<HTMLDivElement> & {
+export type BreadcrumbsProps = ComponentProps<"div"> & {
   children?:
     | ReactElement<BreadcrumbsItemProps>
     | ReactElement<BreadcrumbsItemProps>[];
-  innerRef?: Ref<HTMLUListElement>;
+  innerRef?: React.Ref<HTMLUListElement>;
   innerProps?: HTMLAttributes<HTMLUListElement>;
 };
 
@@ -46,9 +40,7 @@ const Breadcrumbs = ({
   innerProps,
   innerRef,
   ...props
-}: BreadcrumbsProps & {
-  ref: React.RefObject<HTMLDivElement>;
-}): JSX.Element => {
+}: BreadcrumbsProps) => {
   return (
     <div
       role="navigation"
