@@ -1,6 +1,6 @@
 "use client";
 
-import { type ComponentPropsWithoutRef, type ElementRef } from "react";
+import { type ComponentProps } from "react";
 
 import { cva } from "cva";
 import { Popover as PopoverPrimitive } from "radix-ui";
@@ -17,9 +17,7 @@ const PopoverArrow = ({
   ref,
   className,
   ...props
-}: ComponentPropsWithoutRef<typeof PopoverPrimitive.Arrow> & {
-  ref: React.RefObject<ElementRef<typeof PopoverPrimitive.Arrow>>;
-}) => (
+}: ComponentProps<typeof PopoverPrimitive.Arrow>) => (
   <PopoverPrimitive.Arrow
     ref={ref}
     className={cnM("fill-current text-base-content/75", className)}
@@ -45,9 +43,7 @@ const PopoverContent = ({
   collisionPadding = 8,
   sideOffset = 4,
   ...props
-}: ComponentPropsWithoutRef<typeof PopoverPrimitive.Content> & {
-  ref: React.RefObject<ElementRef<typeof PopoverPrimitive.Content>>;
-}) => (
+}: ComponentProps<typeof PopoverPrimitive.Content>) => (
   <PopoverPrimitive.Content
     ref={ref}
     align={align}

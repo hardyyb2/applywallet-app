@@ -1,10 +1,6 @@
 "use client";
 
-import {
-  type ComponentProps,
-  type ComponentPropsWithoutRef,
-  type ElementRef,
-} from "react";
+import { type ComponentProps } from "react";
 
 import type { VariantProps } from "cva";
 import { Avatar as AvatarPrimitive } from "radix-ui";
@@ -47,9 +43,7 @@ const AvatarImage = ({
   ref,
   className,
   ...props
-}: ComponentPropsWithoutRef<typeof AvatarPrimitive.Image> & {
-  ref: React.RefObject<ElementRef<typeof AvatarPrimitive.Image>>;
-}) => (
+}: ComponentProps<typeof AvatarPrimitive.Image>) => (
   <AvatarPrimitive.Image
     ref={ref}
     className={cnM("h-full w-full", className)}
@@ -63,9 +57,7 @@ const AvatarFallback = ({
   ref,
   className,
   ...props
-}: ComponentPropsWithoutRef<typeof AvatarPrimitive.Fallback> & {
-  ref: React.RefObject<ElementRef<typeof AvatarPrimitive.Fallback>>;
-}) => (
+}: ComponentProps<typeof AvatarPrimitive.Fallback>) => (
   <AvatarPrimitive.Fallback
     ref={ref}
     className={cnM(

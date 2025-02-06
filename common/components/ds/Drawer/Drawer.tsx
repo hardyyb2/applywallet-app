@@ -27,9 +27,7 @@ const DrawerOverlay = ({
   ref,
   className,
   ...props
-}: React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Overlay> & {
-  ref: React.RefObject<React.ElementRef<typeof DrawerPrimitive.Overlay>>;
-}) => (
+}: React.ComponentProps<typeof DrawerPrimitive.Overlay>) => (
   <DrawerPrimitive.Overlay
     ref={ref}
     className={cnM("fixed inset-0 z-50 bg-neutral/80", className)}
@@ -43,9 +41,7 @@ const DrawerContent = ({
   className,
   children,
   ...props
-}: React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Content> & {
-  ref: React.RefObject<React.ElementRef<typeof DrawerPrimitive.Content>>;
-}) => (
+}: React.ComponentProps<typeof DrawerPrimitive.Content>) => (
   <DrawerPrimitive.Content
     ref={ref}
     className={cnM(
@@ -72,9 +68,7 @@ const DrawerTitle = ({
   ref,
   className,
   ...props
-}: React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Title> & {
-  ref: React.RefObject<React.ElementRef<typeof DrawerPrimitive.Title>>;
-}) => (
+}: React.ComponentProps<typeof DrawerPrimitive.Title>) => (
   <DrawerPrimitive.Title
     ref={ref}
     className={cnM("title-l", className)}
@@ -87,9 +81,7 @@ const DrawerDescription = ({
   ref,
   className,
   ...props
-}: React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Description> & {
-  ref: React.RefObject<React.ElementRef<typeof DrawerPrimitive.Description>>;
-}) => (
+}: React.ComponentProps<typeof DrawerPrimitive.Description>) => (
   <DrawerPrimitive.Description
     ref={ref}
     className={cnM("body-s lg:body-m", className)}

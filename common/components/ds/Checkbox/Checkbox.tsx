@@ -11,7 +11,7 @@ import { checkboxVariants } from "./checkbox.utils";
 
 interface CheckboxProps
   extends Omit<
-      React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root>,
+      React.ComponentProps<typeof CheckboxPrimitive.Root>,
       "color" | "size"
     >,
     VariantProps<typeof checkboxVariants> {}
@@ -24,9 +24,7 @@ const Checkbox = ({
   responsive,
   size,
   ...props
-}: CheckboxProps & {
-  ref: React.RefObject<React.ElementRef<typeof CheckboxPrimitive.Root>>;
-}) => (
+}: CheckboxProps) => (
   <CheckboxPrimitive.Root
     ref={ref}
     className={cnM(checkboxVariants({ color, size, responsive }), className)}

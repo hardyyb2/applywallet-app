@@ -1,10 +1,6 @@
 "use client";
 
-import {
-  type ComponentProps,
-  type ComponentPropsWithoutRef,
-  type ElementRef,
-} from "react";
+import { type ComponentProps } from "react";
 
 import { type VariantProps } from "cva";
 import { Tooltip as TooltipPrimitive } from "radix-ui";

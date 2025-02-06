@@ -40,9 +40,7 @@ const ToolbarLink = ({
   ref,
   className,
   ...props
-}: React.ComponentPropsWithoutRef<typeof ToolbarPrimitive.Link> & {
-  ref: React.RefObject<React.ElementRef<typeof ToolbarPrimitive.Link>>;
-}) => (
+}: React.ComponentProps<typeof ToolbarPrimitive.Link>) => (
   <ToolbarPrimitive.Link
     ref={ref}
     className={cnM("font-medium underline underline-offset-4", className)}
@@ -55,9 +53,7 @@ const ToolbarSeparator = ({
   ref,
   className,
   ...props
-}: React.ComponentPropsWithoutRef<typeof ToolbarPrimitive.Separator> & {
-  ref: React.RefObject<React.ElementRef<typeof ToolbarPrimitive.Separator>>;
-}) => (
+}: React.ComponentProps<typeof ToolbarPrimitive.Separator>) => (
   <ToolbarPrimitive.Separator
     ref={ref}
     className={cnM("shrink-0", "my-1 w-[1px]", className)}
@@ -105,7 +101,7 @@ const ToolbarGroup = ({
 ToolbarGroup.displayName = "ToolbarGroup";
 
 export interface ToolbarButtonProps
-  extends React.ComponentPropsWithoutRef<typeof ToolbarPrimitive.Button>,
+  extends React.ComponentProps<typeof ToolbarPrimitive.Button>,
     VariantProps<typeof toggleVariants>,
     Omit<ToggleProps, "type"> {
   buttonType?: "button" | "toggle";
@@ -125,9 +121,7 @@ const ToolbarButton = ({
   value,
   tooltip,
   ...props
-}: ToolbarButtonProps & {
-  ref: React.RefObject<React.ElementRef<typeof ToolbarPrimitive.Button>>;
-}) => {
+}: ToolbarButtonProps) => {
   const content =
     typeof pressed === "boolean" ? (
       <ToolbarToggleGroup type="single" value="single">

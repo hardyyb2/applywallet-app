@@ -9,8 +9,7 @@ import { cnM } from "@/utils/styles";
 import { Icons } from "../Icons";
 
 const DropdownMenu = DropdownMenuPrimitive.Root;
-interface DropdownMenuProps
-  extends React.ComponentPropsWithoutRef<typeof DropdownMenu> {}
+interface DropdownMenuProps extends React.ComponentProps<typeof DropdownMenu> {}
 
 const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger;
 
@@ -56,11 +55,7 @@ const DropdownMenuSubContent = ({
   sideOffset = 16,
   alignOffset = -8,
   ...props
-}: React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.SubContent> & {
-  ref: React.RefObject<
-    React.ElementRef<typeof DropdownMenuPrimitive.SubContent>
-  >;
-}) => (
+}: React.ComponentProps<typeof DropdownMenuPrimitive.SubContent>) => (
   <DropdownMenuPrimitive.SubContent
     sideOffset={sideOffset}
     alignOffset={alignOffset}
@@ -82,9 +77,7 @@ const DropdownMenuContent = ({
   sideOffset = 4,
   align = "end",
   ...props
-}: React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Content> & {
-  ref: React.RefObject<React.ElementRef<typeof DropdownMenuPrimitive.Content>>;
-}) => (
+}: React.ComponentProps<typeof DropdownMenuPrimitive.Content>) => (
   <DropdownMenuPrimitive.Portal>
     <DropdownMenuPrimitive.Content
       ref={ref}
@@ -105,9 +98,7 @@ const DropdownMenuItem = ({
   ref,
   className,
   ...props
-}: React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Item> & {
-  ref: React.RefObject<React.ElementRef<typeof DropdownMenuPrimitive.Item>>;
-}) => (
+}: React.ComponentProps<typeof DropdownMenuPrimitive.Item>) => (
   <DropdownMenuPrimitive.Item
     ref={ref}
     className={cnM(
@@ -157,9 +148,7 @@ DropdownMenuCheckboxItem.displayName =
   DropdownMenuPrimitive.CheckboxItem.displayName;
 
 interface DropdownMenuRadioItemProps
-  extends React.ComponentPropsWithoutRef<
-    typeof DropdownMenuPrimitive.RadioItem
-  > {
+  extends React.ComponentProps<typeof DropdownMenuPrimitive.RadioItem> {
   showIcon?: boolean;
 }
 
@@ -169,11 +158,7 @@ const DropdownMenuRadioItem = ({
   children,
   showIcon = true,
   ...props
-}: DropdownMenuRadioItemProps & {
-  ref: React.RefObject<
-    React.ElementRef<typeof DropdownMenuPrimitive.RadioItem>
-  >;
-}) => (
+}: DropdownMenuRadioItemProps) => (
   <DropdownMenuPrimitive.RadioItem
     ref={ref}
     className={cnM(
@@ -221,11 +206,7 @@ const DropdownMenuSeparator = ({
   ref,
   className,
   ...props
-}: React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Separator> & {
-  ref: React.RefObject<
-    React.ElementRef<typeof DropdownMenuPrimitive.Separator>
-  >;
-}) => (
+}: React.ComponentProps<typeof DropdownMenuPrimitive.Separator>) => (
   <DropdownMenuPrimitive.Separator
     ref={ref}
     className={cnM("dui-divider !my-0 shrink-0", className)}
