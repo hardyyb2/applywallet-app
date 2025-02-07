@@ -35,7 +35,14 @@ export const Author = defineDocumentType(() => ({
       type: "string",
     },
   },
-  computedFields: defaultComputedFields,
+  computedFields: {
+    ...defaultComputedFields,
+    slug: {
+      type: "string",
+      resolve: (doc) =>
+        `/blogs/authors/${doc._raw.flattenedPath.split("/").slice(1).join("/")}`,
+    },
+  },
 }));
 
 export const BlogCategory = defineDocumentType(() => ({
@@ -58,7 +65,19 @@ export const BlogCategory = defineDocumentType(() => ({
       type: "string",
     },
   },
-  computedFields: defaultComputedFields,
+  computedFields: {
+    ...defaultComputedFields,
+    slug: {
+      type: "string",
+      resolve: (doc) => {
+        // Ignore "blog_categories" prefix and take the rest of the path
+        return `/blogs/categories/${doc._raw.flattenedPath
+          .split("/")
+          .slice(1)
+          .join("/")}`;
+      },
+    },
+  },
 }));
 
 export const Blog = defineDocumentType(() => ({
