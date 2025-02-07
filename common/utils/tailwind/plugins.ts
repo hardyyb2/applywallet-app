@@ -190,7 +190,7 @@ const typographyComponentsPlugin = plugin(({ addComponents, theme }) => {
     },
 
     // ------------- //
-    // ! NEW HEADINGS ! //
+    // ! NEW VARIANTS ! //
 
     // Display text for heroes and major features
     ".display": {
