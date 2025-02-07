@@ -11,10 +11,10 @@
       "app/**/{icon,apple-icon}.{js,jsx,ts,tsx}",
       "app/**/{opengraph,twitter}-image.{js,jsx,ts,tsx}",
       "pages/**/*.{js,jsx,ts,tsx}",
-      "src/**/*.{js,jsx,ts,tsx}"
+      "src/**/*.{js,jsx,ts,tsx}",
+      "tailwind.config.ts"
     ]
   },
   "ignoreDependencies": ["@types/gtag.js", "type-fest"],
-  "ignoreUnresolved": ["/setupTest.ts"],
-  "ignore": ["typographyComponentsPlugin"]
+  "ignoreUnresolved": ["/setupTest.ts"]
 }
