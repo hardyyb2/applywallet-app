@@ -16,5 +16,5 @@
   },
   "ignoreDependencies": ["@types/gtag.js", "type-fest"],
   "ignoreUnresolved": ["/setupTest.ts"],
-  "ignoreUnused": ["typographyComponentsPlugin"]
+  "ignore": ["typographyComponentsPlugin"]
 }
