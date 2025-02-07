@@ -10,6 +10,7 @@ import { FormFieldContext } from "./formField.utils";
 import { FormFieldCheckbox } from "./FormFieldCheckbox";
 import { FormFieldDatePicker } from "./FormFieldDatePicker";
 import { FormFieldDatePickerInput } from "./FormFieldDatePickerInput";
+import { FormFieldFileUpload } from "./FormFieldFileUpload";
 import { FormFieldInput } from "./FormFieldInput";
 import { FormFieldRTBaseEditor } from "./FormFieldRTBaseEditor";
 import { FormFieldSelect } from "./FormFieldSelect";
@@ -69,6 +70,7 @@ const FormFieldCompound = Object.assign(FormField, {
   DatePickerInput: FormFieldDatePickerInput,
   RTBaseEditor: FormFieldRTBaseEditor,
   Checkbox: FormFieldCheckbox,
+  FileUpload: FormFieldFileUpload,
 });
 
 export { FormFieldCompound as FormField };

@@ -14,19 +14,19 @@ import {
 } from "../FileUpload";
 import { useFormFieldContext } from "./formField.utils";
 
-interface FormFieldRTBaseEditorProps<T extends FieldValues>
+interface FormFieldFileUploadProps<T extends FieldValues>
   extends FileUploadProviderProps {
   name: FieldPath<T>;
   control: Control<T>;
 }
 
-const FormFieldRTBaseEditor = <T extends FieldValues>({
+const FormFieldFileUpload = <T extends FieldValues>({
   name,
   control,
   multiple = false,
   color,
   ...props
-}: FormFieldRTBaseEditorProps<T>) => {
+}: FormFieldFileUploadProps<T>) => {
   const { error = "", htmlFor } = useFormFieldContext();
 
   return (
@@ -51,4 +51,4 @@ const FormFieldRTBaseEditor = <T extends FieldValues>({
   );
 };
 
-export { FormFieldRTBaseEditor };
+export { FormFieldFileUpload };
