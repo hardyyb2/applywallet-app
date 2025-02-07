@@ -26,7 +26,8 @@
     "cdt": "tsx ./scripts/createFolderStructure.ts",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "knip": "knip --reporter markdown > knip-output.md"
+    "knip": "knip --reporter markdown > knip-output.md",
+    "knip:fix": "knip --production --fix"
   },
   "dependencies": {
     "@dx-kit/react-conditional-match": "^3.0.0",
