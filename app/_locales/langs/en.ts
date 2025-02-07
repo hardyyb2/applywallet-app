@@ -19,4 +19,10 @@ export default {
     alt_subtitle:
       "not ready to log in yet? no worries! you can still browse our public pages",
   },
+
+  home: {
+    title: "welcome to applywallet!",
+    subtitle: "applywallet is under construction",
+    alt_subtitle: "till we get the app ready, check out our blogs",
+  },
 } as const;
