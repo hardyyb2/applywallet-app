@@ -39,6 +39,7 @@
         "contentlayer.config.ts",
         "global-error.tsx",
         "sitemap.ts",
+        "robots.ts",
         "vitest.config.ts"
       ],
       "rules": {
