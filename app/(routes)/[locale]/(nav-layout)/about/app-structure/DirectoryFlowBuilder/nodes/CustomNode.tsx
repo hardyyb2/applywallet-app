@@ -3,6 +3,7 @@ import { Fragment } from "react";
 import { Handle, Position, type NodeProps } from "reactflow";
 
 import { Flex } from "~/components/ds/Flex";
+import { Typography } from "~/components/ds/Typography";
 
 import { type DrNodeDataType } from "@/types/flowbuilder";
 
@@ -24,7 +25,9 @@ const CustomNode = ({ data, isConnectable }: NodeProps<DrNodeDataType>) => {
         className="glass gap-4 rounded-xl bg-base-100 px-m py-xs outline outline-2 outline-primary"
       >
         <NodeIcon />
-        <p className="body-m !font-bold text-base-content">{data.name}</p>
+        <Typography variant="body-m" className="!font-bold text-base-content">
+          {data.name}
+        </Typography>
       </Flex>
 
       <Handle

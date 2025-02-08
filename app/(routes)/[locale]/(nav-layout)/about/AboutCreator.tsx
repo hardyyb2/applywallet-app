@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { Card } from "~/components/ds/Card";
+import { Typography } from "~/components/ds/Typography";
 
 const AboutCreator = () => {
   return (
@@ -16,7 +17,9 @@ const AboutCreator = () => {
           />
         </Card.Figure>
 
-        <h3 className="headline-s mt-xs">hardik badola</h3>
+        <Typography variant="headline-s" className="mt-xs">
+          hardik badola
+        </Typography>
       </Card.Body>
     </Card>
   );

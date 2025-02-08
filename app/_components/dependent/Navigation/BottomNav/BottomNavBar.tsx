@@ -5,6 +5,7 @@ import { BottomNavigation } from "~/components/ds/BottomNavigation";
 import { Button } from "~/components/ds/Button";
 import { Flex } from "~/components/ds/Flex";
 import { Icons } from "~/components/ds/Icons";
+import { Typography } from "~/components/ds/Typography";
 import { getLinkWithLocale } from "~/utils/routes";
 
 import { cn, cnM } from "@/utils/styles";
@@ -55,8 +56,8 @@ const BottomNavBar = ({
             )}
           >
             <Icon className={cnM(active && "fill-current")} />
-            <BottomNavigation.Label className="caption-s">
-              {item.label}
+            <BottomNavigation.Label>
+              <Typography variant="caption-s">{item.label}</Typography>
             </BottomNavigation.Label>
           </Link>
         );

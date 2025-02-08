@@ -10,6 +10,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "~/components/ds/Tooltip";
+import { Typography } from "~/components/ds/Typography";
 import { getLinkWithLocale } from "~/utils/routes";
 
 import { cn } from "@/utils/styles";
@@ -67,12 +68,13 @@ const NavigationMenu = ({
                   >
                     <ItemIcon className="w-5 lg:w-6" />
                     {navOpen ? (
-                      <span
-                        key={item.key}
-                        className="label-s overflow-ellipsis lg:label-m"
+                      <Typography
+                        variant="label-s"
+                        lg="label-m"
+                        className="overflow-ellipsis"
                       >
                         {item.label}
-                      </span>
+                      </Typography>
                     ) : null}
                   </Link>
                 </li>

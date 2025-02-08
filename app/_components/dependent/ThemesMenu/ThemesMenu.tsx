@@ -9,6 +9,7 @@ import {
   DropdownMenuTrigger,
 } from "~/components/ds/DropdownMenu";
 import { Icons } from "~/components/ds/Icons";
+import { Typography } from "~/components/ds/Typography";
 
 import { useTheme } from "@/hooks/useTheme";
 import { cn } from "@/utils/styles";
@@ -48,9 +49,13 @@ const ThemesMenu = () => {
                   ) : null
                 }
               >
-                <span className="label-s text-base-content lg:label-m">
+                <Typography
+                  variant="label-s"
+                  lg="label-m"
+                  className="text-base-content"
+                >
                   {value}
-                </span>
+                </Typography>
                 <ThemesMenuItemColors />
               </Button>
             </DropdownMenuItem>
