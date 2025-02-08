@@ -30,7 +30,6 @@ export const env = createEnv({
   client: {
     NEXT_PUBLIC_GA_APP_ID: z.string().min(1),
     NEXT_PUBLIC_PROJECT_URL: z.string().url(),
-    NEXT_PUBLIC_PLASMO_API_URL: z.string().url(),
     NEXT_PUBLIC_CHROME_EXTENSION_ID: z.string().min(1),
     NEXT_PUBLIC_NODE_ENV: z.enum(["development", "production", "test"]),
     NEXT_PUBLIC_SITE_URL: z.string().url(),
@@ -56,11 +55,11 @@ export const env = createEnv({
     NEXT_RUNTIME: process.env.NEXT_RUNTIME,
     // Client
     NEXT_PUBLIC_GA_APP_ID: process.env.NEXT_PUBLIC_GA_APP_ID,
-    NEXT_PUBLIC_PROJECT_URL: process.env.PROJECT_URL,
-    NEXT_PUBLIC_PLASMO_API_URL: process.env.PLASMO_PUBLIC_API_URL,
-    NEXT_PUBLIC_CHROME_EXTENSION_ID: process.env.CHROME_EXTENSION_ID,
+    NEXT_PUBLIC_PROJECT_URL: process.env.NEXT_PUBLIC_PROJECT_URL,
+    NEXT_PUBLIC_CHROME_EXTENSION_ID:
+      process.env.NEXT_PUBLIC_CHROME_EXTENSION_ID,
     NODE_ENV: process.env.NODE_ENV,
     NEXT_PUBLIC_NODE_ENV: process.env.NODE_ENV,
-    NEXT_PUBLIC_SITE_URL: process.env.SITE_URL,
+    NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL,
   },
 });
