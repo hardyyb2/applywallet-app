@@ -41,10 +41,11 @@ const BlogCardMobile = ({
           {image ? (
             <Card.Figure className={cn("aspect-square rounded-lg")}>
               <Image
-                className="transition-all duration-500 group-hover:scale-110"
+                className="h-full w-full transition-all duration-500 group-hover:scale-110"
                 src={image}
                 alt={image}
-                fill
+                width={120}
+                height={120}
               />
             </Card.Figure>
           ) : null}
