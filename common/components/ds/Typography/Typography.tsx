@@ -3,15 +3,33 @@ import { type ComponentProps, type ReactNode } from "react";
 import { cnM } from "@/utils/styles";
 
 type TypographyVariant =
-  | "display"
-  | "h1"
-  | "h2"
-  | "h3"
-  | "body-large"
-  | "body"
-  | "body-small"
-  | "label"
-  | "caption";
+  // Display variants
+  | "display-l"
+  | "display-m"
+  | "display-s"
+  // Headline variants
+  | "headline-l"
+  | "headline-m"
+  | "headline-s"
+  // Title variants
+  | "title-l"
+  | "title-m"
+  | "title-s"
+  // Body variants
+  | "body-l"
+  | "body-m"
+  | "body-s"
+  // Label variants
+  | "label-l"
+  | "label-l-bold"
+  | "label-m"
+  | "label-m-bold"
+  | "label-s"
+  | "label-xs"
+  // Caption variants
+  | "caption-l"
+  | "caption-m"
+  | "caption-s";
 
 type TypographyElement =
   | "h1"
@@ -32,15 +50,33 @@ interface TypographyProps extends Omit<ComponentProps<"p">, "className"> {
 }
 
 const defaultElementMap: Record<TypographyVariant, TypographyElement> = {
-  display: "h1",
-  h1: "h1",
-  h2: "h2",
-  h3: "h3",
-  "body-large": "p",
-  body: "p",
-  "body-small": "p",
-  label: "span",
-  caption: "span",
+  // Display
+  "display-l": "h1",
+  "display-m": "h1",
+  "display-s": "h1",
+  // Headline
+  "headline-l": "h2",
+  "headline-m": "h2",
+  "headline-s": "h2",
+  // Title
+  "title-l": "h3",
+  "title-m": "h3",
+  "title-s": "h3",
+  // Body
+  "body-l": "p",
+  "body-m": "p",
+  "body-s": "p",
+  // Label
+  "label-l": "span",
+  "label-l-bold": "span",
+  "label-m": "span",
+  "label-m-bold": "span",
+  "label-s": "span",
+  "label-xs": "span",
+  // Caption
+  "caption-l": "span",
+  "caption-m": "span",
+  "caption-s": "span",
 };
 
 export const Typography = ({
