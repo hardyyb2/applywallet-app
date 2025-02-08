@@ -10,6 +10,7 @@ import { Flex } from "~/components/ds/Flex";
 import { Icons } from "~/components/ds/Icons";
 import { AppRoutes } from "~/utils/routes";
 
+import { BasePageHeader } from "@/components/dependent/BasePageHeader";
 import { LoginCard } from "@/components/dependent/LoginCard";
 import { authOptions } from "@/lib/auth";
 
@@ -35,6 +36,11 @@ const Experiences = async () => {
 
   return (
     <div className="px-5 py-4 lg:px-10">
+      <BasePageHeader
+        title="experiences"
+        subtitle="your ongoing or past experiences"
+      />
+
       <Flex justify="space-between" align="center" className="mb-m-l gap-4">
         <Flex direction="column">
           <h1 className="headline-s lg:headline-m">experiences</h1>

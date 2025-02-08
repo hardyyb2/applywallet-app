@@ -4,6 +4,9 @@ import Link from "next/link";
 import { allBlogCategories } from "contentlayer/generated";
 
 import { Flex } from "~/components/ds/Flex";
+import { Typography } from "~/components/ds/Typography";
+
+import { BasePageHeader } from "@/components/dependent/BasePageHeader";
 
 import { BlogCategoryCard } from "./BlogCategoryCard/BlogCategoryCard";
 import { BlogCategoryCardsWrapper } from "./BlogCategoryCardsWrapper";
@@ -11,10 +14,7 @@ import { BlogCategoryCardsWrapper } from "./BlogCategoryCardsWrapper";
 const BlogsCategoriesPage = () => {
   return (
     <div className="px-5 py-4 lg:px-10">
-      <Flex direction="column" className="mb-s-m">
-        <h1 className="headline-s lg:headline-m">blog categories</h1>
-        <h4 className="label-s lg:label-m">categories for blogs</h4>
-      </Flex>
+      <BasePageHeader title="blog categories" subtitle="categories for blogs" />
       <BlogCategoryCardsWrapper>
         {allBlogCategories.map((category) => {
           return (

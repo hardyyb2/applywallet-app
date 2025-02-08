@@ -18,6 +18,7 @@ import { Card } from "~/components/ds/Card";
 import { Flex } from "~/components/ds/Flex";
 import { FormField } from "~/components/ds/FormField";
 import { Icons } from "~/components/ds/Icons";
+import { Typography } from "~/components/ds/Typography";
 import { AppRoutes } from "~/utils/routes";
 
 import {
@@ -137,7 +138,9 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
     <Card className="m-auto overflow-hidden" compact normal="lg">
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <Card.Body className="[&_.dui-form-control]:mt-2xs">
-          <h1 className="headline-s lg:headline-m">{titleText}</h1>
+          <Typography variant="headline-s" lg="headline-m">
+            {titleText}
+          </Typography>
           <FormField
             label="company name"
             htmlFor="company_name"

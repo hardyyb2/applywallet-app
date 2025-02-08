@@ -9,6 +9,7 @@ import { useBoolean } from "react-use";
 
 import { Button } from "~/components/ds/Button";
 import { FormField } from "~/components/ds/FormField";
+import { Typography } from "~/components/ds/Typography";
 import { ApiRoutes, AppRoutes } from "~/utils/routes";
 
 import { appApi } from "@/lib/app-api";
@@ -90,14 +91,15 @@ const AddEditExperienceForm = (props: AddEditExperienceFormProps) => {
   );
 
   return (
-    // TODO - replace with card
     <form
       className="dui-card m-auto max-w-[65ch] overflow-hidden"
       onSubmit={handleSubmit(onSubmit)}
       noValidate
     >
-      {/* <div className="dui-card-body bg-base-100 [&_.dui-form-control]:mt-2">
-        <h1 className="headline-s lg:headline-m">{titleText}</h1>
+      <div className="dui-card-body bg-base-100 [&_.dui-form-control]:mt-2">
+        <Typography variant="headline-s" lg="headline-m">
+          {titleText}
+        </Typography>
         <div className="mt-s">
           <Typography variant="title-m" className="underline">
             company details
@@ -176,7 +178,7 @@ const AddEditExperienceForm = (props: AddEditExperienceFormProps) => {
         >
           {buttonText}
         </Button>
-      </div> */}
+      </div>
     </form>
   );
 };

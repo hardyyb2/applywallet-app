@@ -5,6 +5,7 @@ import { type Blog } from "contentlayer/generated";
 import { Badge } from "~/components/ds/Badge";
 import { Card } from "~/components/ds/Card";
 import { Flex } from "~/components/ds/Flex";
+import { Typography } from "~/components/ds/Typography";
 
 import { cn } from "@/utils/styles";
 
@@ -21,11 +22,22 @@ const BlogCardMobile = ({
       <Card.Body>
         <div className="grid grid-cols-[1fr_120px] gap-xs">
           <Flex direction="column" className="gap-3xs">
-            <span className="label-xs line-clamp-1 text-secondary lg:label-m">
+            <Typography
+              variant="label-xs"
+              lg="label-m"
+              className="line-clamp-1 text-secondary"
+            >
               {category.name}
-            </span>
-            <Card.Title className="body-s mb-2xs-xs line-clamp-3 md:body-m">
-              {title}
+            </Typography>
+
+            <Card.Title>
+              <Typography
+                variant="body-s"
+                md="body-m"
+                className="mb-2xs-xs line-clamp-3"
+              >
+                {title}
+              </Typography>
             </Card.Title>
 
             {tags?.length ? (

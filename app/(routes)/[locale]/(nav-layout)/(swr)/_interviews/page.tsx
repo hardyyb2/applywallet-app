@@ -8,6 +8,7 @@ import { Flex } from "~/components/ds/Flex";
 import { Icons } from "~/components/ds/Icons";
 import { AppRoutes } from "~/utils/routes";
 
+import { BasePageHeader } from "@/components/dependent/BasePageHeader";
 import { LoginCard } from "@/components/dependent/LoginCard";
 import { authOptions } from "@/lib/auth";
 
@@ -34,16 +35,10 @@ const Interviews = async () => {
 
   return (
     <div className="px-5 py-4 lg:px-10">
-      <Flex justify="space-between" align="center" className="mb-m-l gap-4">
-        <Flex direction="column">
-          <h1 className="headline-s lg:headline-m">interviews</h1>
-          <h4 className="label-s lg:label-m">
-            your ongoing or past interviews
-          </h4>
-        </Flex>
-
-        <InterviewActions />
-      </Flex>
+      <BasePageHeader
+        title="interviews"
+        subtitle="your ongoing or past interviews"
+      />
 
       <InterviewsTable />
 

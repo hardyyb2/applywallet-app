@@ -2,6 +2,7 @@ import type { BlogCategory } from "contentlayer/generated";
 import DOMPurify from "isomorphic-dompurify";
 
 import { Card } from "~/components/ds/Card";
+import { Typography } from "~/components/ds/Typography";
 
 import { cn } from "@/utils/styles";
 
@@ -23,7 +24,11 @@ const BlogCategoryCard = ({ category }: BlogCategoryCardProps) => {
             dangerouslySetInnerHTML={{ __html: imageHtml }}
           />
         ) : null}
-        <Card.Title className="title-m line-clamp-1">{name}</Card.Title>
+        <Card.Title>
+          <Typography variant="title-m" className="line-clamp-1">
+            {name}
+          </Typography>
+        </Card.Title>
       </Card.Body>
     </Card>
   );
