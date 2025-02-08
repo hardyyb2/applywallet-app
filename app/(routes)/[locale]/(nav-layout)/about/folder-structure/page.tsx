@@ -1,6 +1,6 @@
 import { Flex } from "~/components/ds/Flex";
 
-import { DFBWrapper } from "./DFBWrapper";
+import { DFBWrapper } from "./DirectoryFlowBuilder/DFBWrapper";
 import { DirectoryFlowBuilder } from "./DirectoryFlowBuilder/DirectoryFlowBuilder";
 
 const ProjectStructure = () => {

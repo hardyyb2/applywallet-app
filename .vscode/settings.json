@@ -4,9 +4,15 @@
   "cSpell.words": [
     "applywallet",
     "contentlayer",
+    "dagre",
     "flowbuilder",
+    "graphlib",
     "hoverable",
+    "Layouted",
     "opengraph",
+    "Outgoers",
+    "rankdir",
+    "reactflow",
     "testid",
     "turbopack"
   ],

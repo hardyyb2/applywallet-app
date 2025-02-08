@@ -3,7 +3,7 @@
 import React, {
   Fragment,
   useRef,
-  type ElementRef,
+  type ComponentRef,
   type MouseEvent,
 } from "react";
 
@@ -40,7 +40,7 @@ const {
 const FlowBuilder = () => {
   // hooks
   const { setCenter } = useReactFlow();
-  const ref = useRef<ElementRef<typeof ReactFlow>>(null);
+  const ref = useRef<ComponentRef<typeof ReactFlow>>(null);
 
   // states
   const [nodes, setNodes, onNodesChange] = useNodesState(layoutedNodes);
