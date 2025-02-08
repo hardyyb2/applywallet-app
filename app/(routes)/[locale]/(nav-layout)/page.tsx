@@ -4,6 +4,7 @@ import Link from "next/link";
 import { buttonVariants } from "~/components/ds/Button";
 import { Card } from "~/components/ds/Card";
 import { Flex } from "~/components/ds/Flex";
+import { Typography } from "~/components/ds/Typography";
 import { AppRoutes } from "~/utils/routes";
 
 import UnderConstructionImg from "public/images/illustrations/under-construction.webp";
@@ -18,9 +19,14 @@ const Home = async () => {
       <Flex justify="center">
         <Card side="lg" className="max-w-xl bg-base-200 text-base-content">
           <Card.Body className="items-center">
-            <Card.Title className="headline-m inline-block text-center lg:headline-l first-letter:capitalize">
+            <Typography
+              variant="headline-m"
+              lg="headline-l"
+              align="center"
+              className="first-letter:capitalize"
+            >
               {t("home.title")}
-            </Card.Title>
+            </Typography>
 
             <Card.Figure className="my-xs overflow-hidden rounded-lg">
               <Image
@@ -31,9 +37,9 @@ const Home = async () => {
               />
             </Card.Figure>
 
-            <p className="body-m text-center lg:body-l">
+            <Typography variant="body-m" lg="body-l" align="center">
               {t("home.alt_subtitle")}
-            </p>
+            </Typography>
 
             <Card.Actions className="mt-4 w-full justify-center">
               <Link

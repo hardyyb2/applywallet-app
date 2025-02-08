@@ -4,8 +4,8 @@ import type { Blog } from "contentlayer/generated";
 import dayjs from "dayjs";
 
 import { Avatar, AvatarFallback, AvatarImage } from "~/components/ds/Avatar";
-import { Flex } from "~/components/ds/Flex";
 import { Separator } from "~/components/ds/Separator";
+import { Typography } from "~/components/ds/Typography";
 
 import { getInitials } from "@/utils/string";
 
@@ -27,11 +27,15 @@ const BlogMetaInfo = ({ blog }: BlogMetaInfo) => {
       <div className={styles.details}>
         <div className={styles.name}>{blog.author.name}</div>
         <div className={styles.meta}>
-          <Flex className="caption-l font-light lg:label-s" component="h6">
+          <Typography
+            variant="caption-l"
+            lg="label-s"
+            className="flex font-light"
+          >
             {dayjs(blog.date).format("MMM DD, YYYY").toLowerCase()}
             <Separator orientation="horizontal" />
             <Link href={blog.category.slug}>{blog.category.name}</Link>
-          </Flex>
+          </Typography>
         </div>
       </div>
     </div>

@@ -5,6 +5,7 @@ import { type Blog } from "contentlayer/generated";
 import { Badge } from "~/components/ds/Badge";
 import { Card } from "~/components/ds/Card";
 import { Flex } from "~/components/ds/Flex";
+import { Typography } from "~/components/ds/Typography";
 
 import { shimmer } from "@/utils/shimmer";
 import { toBase64 } from "@/utils/string";
@@ -43,16 +44,26 @@ const BlogCard = ({
         </Card.Figure>
       ) : null}
       <Card.Body className="rounded-t-none">
-        <span className="label-s line-clamp-1 text-secondary lg:label-m">
+        <Typography
+          variant="label-s"
+          lg="label-m"
+          className="line-clamp-1 text-secondary"
+        >
           {category.name}
-        </span>
-        <Card.Title className="headline-s mb-2xs-xs line-clamp-4">
-          {title}
+        </Typography>
+
+        <Card.Title>
+          <Typography variant="headline-s" className="mb-2xs-xs line-clamp-4">
+            {title}
+          </Typography>
         </Card.Title>
 
-        <span className="body-s mb-3xs-2xs line-clamp-3 font-light">
+        <Typography
+          variant="body-s"
+          className="mb-3xs-2xs line-clamp-3 font-light"
+        >
           {description}
-        </span>
+        </Typography>
 
         {tags?.length ? (
           <Flex className="gap-2">
