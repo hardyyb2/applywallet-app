@@ -1,6 +1,7 @@
 import { Button } from "~/components/ds/Button";
 import { Card } from "~/components/ds/Card";
 import { Separator } from "~/components/ds/Separator";
+import { Typography } from "~/components/ds/Typography";
 
 const ExtLoginCard = () => {
   const handleLoginClick = () => {
@@ -18,22 +19,32 @@ const ExtLoginCard = () => {
       className="max-w-xl rounded-none bg-base-200 text-base-content"
     >
       <Card.Body className="items-center">
-        <Card.Title className="headline-m inline-block text-center lg:headline-l first-letter:capitalize">
+        <Typography
+          variant="headline-m"
+          lg="headline-l"
+          align="center"
+          className="first-letter:capitalize"
+        >
           Welcome to applywallet!
-        </Card.Title>
-        <p className="body-s text-center lg:body-m">
+        </Typography>
+
+        <Typography variant="body-s" lg="body-m" align="center">
           sign in to access your interview toolkit
-        </p>
+        </Typography>
+
         <Card.Actions className="mt-4 w-full justify-center">
           <Button color="primary" fullWidth onClick={handleLoginClick}>
             login
           </Button>
         </Card.Actions>
+
         <Separator className="!my-s">or</Separator>
-        <p className="body-m text-center lg:body-l">
+
+        <Typography variant="body-m" lg="body-l" align="center">
           not ready to log in yet? no worries! you can still browse our public
           pages
-        </p>
+        </Typography>
+
         <Card.Actions className="mt-4 w-full justify-center">
           <Button
             variant="outline"
