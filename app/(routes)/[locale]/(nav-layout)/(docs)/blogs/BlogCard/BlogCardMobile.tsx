@@ -24,7 +24,7 @@ const BlogCardMobile = ({
             <span className="label-xs line-clamp-1 text-secondary lg:label-m">
               {category.name}
             </span>
-            <Card.Title className="body-s mb-2xs-xs line-clamp-2 md:body-m">
+            <Card.Title className="body-s mb-2xs-xs line-clamp-3 md:body-m">
               {title}
             </Card.Title>
 
@@ -39,7 +39,7 @@ const BlogCardMobile = ({
             ) : null}
           </Flex>
           {image ? (
-            <Card.Figure className={cn(" aspect-square rounded-lg")}>
+            <Card.Figure className={cn("aspect-square rounded-lg")}>
               <Image
                 className="transition-all duration-500 group-hover:scale-110"
                 src={image}
