@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "concurrently  \"yarn dev:app\" \"yarn dev:ext\"",
     "dev:app": "next dev --turbopack",
+    "dev:app:webpack": "next dev",
     "dev:ext": "plasmo dev",
     "dev:app:cdt": "yarn cdt && yarn dev",
     "build": "concurrently  \"yarn build:app\" \"yarn build:ext\"",
