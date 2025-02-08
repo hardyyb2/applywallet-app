@@ -82,7 +82,7 @@ const FlowBuilder = () => {
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
         fitView
-        attributionPosition="bottom-right"
+        attributionPosition="bottom-left"
         nodeTypes={drReactFlowNodeTypes}
         nodesDraggable
         zoomOnPinch

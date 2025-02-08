@@ -13,10 +13,12 @@ import {
   TooltipTrigger,
 } from "~/components/ds/Tooltip";
 
+import { useBreakPoint } from "@/hooks/useBreakPoint";
 import { cnM } from "@/utils/styles";
 
 const DFBWrapper = ({ children }: PropsWithChildren) => {
   const containerRef = useRef<any>(undefined);
+  const { isAboveLg } = useBreakPoint("lg");
   const [show, toggleFullScreen] = useBoolean(false);
   const isFullScreen = useFullscreen(containerRef, show, {
     onClose: () => toggleFullScreen(false),
@@ -25,29 +27,25 @@ const DFBWrapper = ({ children }: PropsWithChildren) => {
   return (
     <div
       ref={containerRef}
-      className={cnM("relative flex-1 rounded-2xl bg-base-content/20")}
+      className={cnM("relative flex-1 bg-base-content/10")}
     >
       <TooltipProvider delayDuration={600}>
         <Tooltip>
           <TooltipTrigger asChild>
             <Button
               aria-label="toggle full screen"
-              color="ghost"
-              className="absolute right-xs top-0 z-40 p-0 lg:top-2xs"
+              className="absolute bottom-2xs right-2xs z-40"
               startIcon={
                 isFullScreen ? (
-                  <Icons.Minimize
-                    className={cnM(
-                      "lg:h-l lg:w-l",
-                      isFullScreen && "stroke-secondary",
-                    )}
-                  />
+                  <Icons.Minimize className="lg:h-l lg:w-l" />
                 ) : (
                   <Icons.Maximize className="lg:h-l lg:w-l" />
                 )
               }
               onClick={toggleFullScreen}
-            />
+            >
+              {isAboveLg ? "full screen" : null}
+            </Button>
           </TooltipTrigger>
           <TooltipContent sideOffset={12}>
             {isFullScreen ? "exit full screen" : "toggle full screen"}

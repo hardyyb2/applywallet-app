@@ -1,19 +1,32 @@
+import { Breadcrumbs } from "~/components/ds/Breadcrumbs";
 import { Flex } from "~/components/ds/Flex";
+import {
+  ScrollArea,
+  ScrollAreaViewport,
+  ScrollBar,
+} from "~/components/ds/ScrollArea";
+import { AppRoutes } from "~/utils/routes";
+
+import { IconLink } from "@/components/dependent/IconLink";
 
 import { DFBWrapper } from "./DirectoryFlowBuilder/DFBWrapper";
 import { DirectoryFlowBuilder } from "./DirectoryFlowBuilder/DirectoryFlowBuilder";
 
 const ProjectStructure = () => {
   return (
-    <Flex direction="column" className="h-full w-full px-xs py-4 lg:px-s">
-      <Flex justify="space-between" className="mb-xs flex-0 gap-4">
-        <Flex direction="column">
-          <h1 className="headline-s lg:headline-m">app structure</h1>
-          <h4 className="label-s lg:label-m">
-            see the entire directory structure
-          </h4>
-        </Flex>
-      </Flex>
+    <Flex direction="column" className="h-full bg-base-100">
+      <ScrollArea className="w-full pl-s pr-s lg:block">
+        <ScrollAreaViewport>
+          <Breadcrumbs className="mb-2xs flex-0 pt-0 [&_a]:no-underline">
+            <Breadcrumbs.Item>
+              <IconLink href={AppRoutes.ABOUT} />
+            </Breadcrumbs.Item>
+            <Breadcrumbs.Item>app structure</Breadcrumbs.Item>
+          </Breadcrumbs>
+        </ScrollAreaViewport>
+        <ScrollBar orientation="horizontal" className="hidden h-0" />
+      </ScrollArea>
+
       <DFBWrapper>
         <DirectoryFlowBuilder />
       </DFBWrapper>
