@@ -3,10 +3,12 @@
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "cSpell.words": [
     "applywallet",
+    "badola",
     "contentlayer",
     "dagre",
     "flowbuilder",
     "graphlib",
+    "hardik",
     "hoverable",
     "Layouted",
     "opengraph",
