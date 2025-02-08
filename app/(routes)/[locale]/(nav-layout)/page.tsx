@@ -6,6 +6,8 @@ import { Card } from "~/components/ds/Card";
 import { Flex } from "~/components/ds/Flex";
 import { AppRoutes } from "~/utils/routes";
 
+import UnderConstructionImg from "public/images/illustrations/under-construction.webp";
+
 import { getI18n } from "@/locales/server";
 
 const Home = async () => {
@@ -22,11 +24,10 @@ const Home = async () => {
 
             <Card.Figure className="my-xs overflow-hidden rounded-lg">
               <Image
-                src="/images/illustrations/under-construction.webp"
+                src={UnderConstructionImg}
                 alt="Under construction"
-                width={500}
-                height={400}
-                quality={80}
+                placeholder="blur"
+                blurDataURL={UnderConstructionImg.blurDataURL}
               />
             </Card.Figure>
 

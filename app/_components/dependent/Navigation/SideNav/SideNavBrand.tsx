@@ -12,6 +12,8 @@ import {
   TooltipTrigger,
 } from "~/components/ds/Tooltip";
 
+import AwLogoImg from "public/images/logo/aw-logo.png";
+
 import { cn } from "@/utils/styles";
 
 interface SideNavBrandProps {
@@ -41,12 +43,14 @@ const SideNavBrand = ({
         className="btn btn-ghost flex-0 px-2"
       >
         <Image
-          src={"/images/logo/aw-logo.png"}
+          src={AwLogoImg}
           alt="applywallet"
           width={40}
           height={40}
           priority
           quality={100}
+          placeholder="blur"
+          blurDataURL={AwLogoImg.blurDataURL}
         />
       </Link>
       <TooltipProvider delayDuration={600}>

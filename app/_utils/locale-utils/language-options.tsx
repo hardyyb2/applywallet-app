@@ -1,6 +1,9 @@
 import { type ReactElement } from "react";
 import Image from "next/image";
 
+import EnglishFlagImg from "public/images/flags/english-uk.svg";
+import SpanishFlagImg from "public/images/flags/espanol-esp.svg";
+
 import { type Locale } from "./i18n-config";
 
 export const languageOptions: {
@@ -16,7 +19,9 @@ export const languageOptions: {
         width={20}
         height={20}
         alt="english"
-        src="/images/flags/english-uk.svg"
+        src={EnglishFlagImg}
+        placeholder="blur"
+        blurDataURL={EnglishFlagImg.blurDataURL}
       />
     ),
   },
@@ -28,7 +33,9 @@ export const languageOptions: {
         width={20}
         height={20}
         alt="english"
-        src="/images/flags/espanol-esp.svg"
+        src={SpanishFlagImg}
+        placeholder="blur"
+        blurDataURL={SpanishFlagImg.blurDataURL}
       />
     ),
   },
