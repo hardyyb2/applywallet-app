@@ -42,11 +42,25 @@ type TypographyElement =
   | "span"
   | "div";
 
-interface TypographyProps extends Omit<ComponentProps<"p">, "className"> {
+type ResponsiveVariants = {
+  xs?: TypographyVariant;
+  sm?: TypographyVariant;
+  md?: TypographyVariant;
+  lg?: TypographyVariant;
+  xl?: TypographyVariant;
+  "2xl"?: TypographyVariant;
+  "3xl"?: TypographyVariant;
+  "4xl"?: TypographyVariant;
+};
+
+export interface TypographyProps
+  extends Omit<ComponentProps<"p">, "className">,
+    ResponsiveVariants {
   variant: TypographyVariant;
   as?: TypographyElement;
   children: ReactNode;
   className?: string;
+  align?: "left" | "center" | "right";
 }
 
 const defaultElementMap: Record<TypographyVariant, TypographyElement> = {
@@ -84,12 +98,40 @@ export const Typography = ({
   as,
   children,
   className,
+  align,
+  xs,
+  sm,
+  md,
+  lg,
+  xl,
+  "2xl": xl2,
+  "3xl": xl3,
+  "4xl": xl4,
   ...props
 }: TypographyProps) => {
   const Component = as || defaultElementMap[variant];
 
+  const responsiveClasses = {
+    [variant]: true,
+    [`xs:${xs}`]: xs,
+    [`sm:${sm}`]: sm,
+    [`md:${md}`]: md,
+    [`lg:${lg}`]: lg,
+    [`xl:${xl}`]: xl,
+    [`2xl:${xl2}`]: xl2,
+    [`3xl:${xl3}`]: xl3,
+    [`4xl:${xl4}`]: xl4,
+  } as const;
+
   return (
-    <Component className={cnM(variant, className)} {...props}>
+    <Component
+      className={cnM(responsiveClasses, className, {
+        "text-left": align === "left",
+        "text-center": align === "center",
+        "text-right": align === "right",
+      })}
+      {...props}
+    >
       {children}
     </Component>
   );
