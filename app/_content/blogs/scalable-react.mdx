@@ -4,7 +4,7 @@ category: blogs_categories/engineering.mdx
 author: authors/hardik_badola.mdx
 date: 2023-12-24
 description: "Scalable React: Best Practices for Writing Maintainable and Sustainable React Apps"
-image: /images/blogs/scalable-react.jpg
+image: /images/blogs/scalable-react/scalable-react.jpg
 tags:
   - react
   - frontend
@@ -16,15 +16,167 @@ While the concept of "best practices" can be subjective and vary depending on th
 
 So, let's dive in and explore these opinionated strategies to elevate your React development journey!
 
+---
+
+
+## Prefer Compound components over Monolithic
+
+- When you have a single component that takes in multiple props and takes multiple responsibilities for itself and its children, it’s better to just use/convert the component into a compound component.
+- Compound components provide a more modular and organized way of composing a complex UI, making it easier to manage, maintain, and extend.
+
+For example, take a monolithic `Layout` component —
+
+```tsx showLineNumbers
+const MonolithicLayout = ({ headerTitle, footerTitle, body, actions }) => {
+  // Multiple responsibilities handled within this component
+  return (
+    <div className="layout-wrapper">
+      <div className="header">{headerTitle}</div>
+      <div className="body">{body}</div>
+      <div className="footer">{footerTitle}</div>
+      {actions}
+    </div>
+  );
+};
+
+const Comp = () => {
+  return (
+    <MonolithicLayout
+      headerTitle="Company name"
+      footerTitle="Contact me"
+      body="This is body"
+      actions={<Button />}
+    />
+  );
+};
+```
+
+Now say you want to use this component somewhere else but do not need a "footer" there, also "actions" should be at the top, so now to make these changes, we'd do something like this -
+
+```tsx showLineNumbers
+const MonolithicLayout = ({
+  headerTitle,
+  footerTitle,
+  body,
+  actions,
+  showFooter,
+  actionPosition = 'bottom',
+}) => {
+  return (
+    <div className="layout-wrapper">
+      {actionPosition === 'top' && actions}
+      <div className="header">{headerTitle}</div>
+      <div className="body">{body}</div>
+      {showFooter && <div className="footer">{footerTitle}</div>}
+      {actionPosition === 'bottom' && actions}
+    </div>
+  );
+};
+
+const Comp = () => {
+  return (
+    <MonolithicLayout
+      headerTitle="Company name"
+      footerTitle={null}
+      showFooter={false}
+      body="This is body"
+      actions={<Button />}
+      actionPosition="top"
+    />
+  )
+}
+```
+
+
+The changes required to achieve this quickly turned the monolithic component into a mess.
+Now, let's refactor the monolithic Layout component into a compound component -
+
+```tsx showLineNumbers
+const Header = ({ title }) => {
+  return <div className="header">{title}</div>;
+};
+const Footer = ({ title }) => {
+  return <div className="footer">{title}</div>;
+};
+const Body = ({ children }) => {
+  return <div className="body">{children}</div>;
+};
+const Actions = ({ children }) => {
+  return children;
+};
+const CompoundLayout = ({ children }) => {
+  return <div className="layout-wrapper">{children}</div>;
+};
+
+const Layout = Object.assign(CompoundLayout, {
+  Header,
+  Footer,
+  Body,
+  Actions,
+});
+
+const Comp = () => {
+  return (
+    <Layout>
+      <Layout.Header title="Company name" />
+      <Layout.Body>This is body</Layout.Body>
+      <Layout.Footer title="Contact me" />
+      <Layout.Actions>
+        <Button />
+      </Layout.Actions>
+    </Layout>
+  );
+};
+
+```
+
+
+The compound component pattern may seem to have more code compared to the monolithic one, but it offers significant benefits, especially when new requirements arise or when you need to customize specific parts of the layout differently.
+Let's try to implement the same requirement (no "footer" and "actions" on top) again but with a compound Layout component -
+
+```tsx showLineNumbers
+...
+
+const Layout = Object.assign(CompoundLayout, {
+  Header,
+  Footer,
+  Body,
+  Actions,
+});
+
+const Comp = () => {
+  return (
+    <Layout>
+      <Layout.Actions>
+        <Button />
+      </Layout.Actions>
+      <Layout.Header title="Company name" />
+      <Layout.Body>This is body</Layout.Body>
+    </Layout>
+  );
+};
+```
+
+
+* With this pattern, you can easily rearrange the order of components without modifying the Layout component itself.
+* You also have a lot of control over individual components directly which makes it easier to apply styles or capture events from these elements.
+* This flexibility and separation of responsibilities make the compound component approach a more scalable and maintainable solution in the long run.
+
+> More on compound components - https://kentcdodds.com/blog/compound-components-with-react-hooks
+
+---
+
+
+
 ## Segregate parts of each component
 
 Separate the parts of the component code for improved clarity and navigation into the following (Optionally add the comments mentioned below to find sections easily with search) -
 
-- Hooks (every hook except useState and useReducer)
-- States (useState and useReducer)
+- Hooks (every hook except `useState` and `useReducer`)
+- States (`useState` and `useReducer`)
 - Functions
 - Constants
-- JSX (return statements)
+- JSX (`return` statements)
 
 ```tsx showLineNumbers
 const Component = () => {
@@ -52,6 +204,8 @@ const Component = () => {
   );
 };
 ```
+
+---
 
 ## Write more PURE functions
 
@@ -103,7 +257,7 @@ const PriceCalculator = () => {
 };
 ```
 
-Now, let's break the calculateTotalPrice function into smaller parts.
+Now, let's break the `calculateTotalPrice` function into smaller parts.
 
 ```tsx showLineNumbers
 const PriceCalculator = () => {
@@ -171,13 +325,13 @@ const PriceCalculator = () => {
 };
 ```
 
-- This makes code more readable. You can identify with one look at what calculateTotalPrice is doing without having to go through the code.
-- There is a separation of concerns (if you want to make changes in taxes, you just have to look at applyTaxes function and have a smaller scope of code to focus on at once).
-- Code is more reusable (if you need applyTaxes somewhere else within the file, you can use it directly).
+- This makes code more readable. You can identify with one look at what `calculateTotalPrice` is doing without having to go through the code.
+- There is a separation of concerns (if you want to make changes in taxes, you just have to look at `applyTaxes` function and have a smaller scope of code to focus on at once).
+- Code is more reusable (if you need `applyTaxes` somewhere else within the file, you can use it directly).
 
 **But why PURE functions?**
 
-- One benefit that can be directly seen is since we have broken down a function and it is just dependent on its parameters, we can easily move it out of the file and into a separate utils file sayprice.utils.ts,
+- One benefit that can be directly seen is since we have broken down a function and it is just dependent on its parameters, we can easily move it out of the file and into a separate utils file say `price.utils.ts`,
   this makes your main file/component much smaller and easier to traverse.
 
   Also, Once more functions are moved outside components and to separate files they can be used by other parts of the code as well, preventing duplication.
@@ -203,6 +357,8 @@ const PriceCalculator = () => {
 ```
 
 - Another benefit is pure functions always produce the same output given the same input regardless of any external factors, this makes your code highly predictable.
+
+---
 
 ## No string literals (use enums or constants)
 
@@ -236,7 +392,7 @@ In the above code following issues can be easily seen
 To prevent these issues, we can use enums (or objects) —
 
 <Image
-  src="/images/blogs/use-enum.webp"
+  src="/images/blogs/scalable-react/use-enum.webp"
   width="1080"
   height="400"
   fit="true"
@@ -248,34 +404,433 @@ To prevent these issues, we can use enums (or objects) —
 - Not only do enums increase readability, but they also increase type safety if used with TS. Now, if a wrong value is provided where a Position is expected, TS will throw an error.
 - Also if you now want to change the value of center to centre you can easily change just the value or the enum key itself (which will throw a compilation error everywhere Position.CENTER is used). This makes code easier to maintain and refactor.
 
-## Prefer Compound components over Monolithic
+---
 
-- When you have a single component that takes in multiple props and takes multiple responsibilities for itself and its children, it’s better to just use/convert the component into a compound component.
-- Compound components provide a more modular and organized way of composing a complex UI, making it easier to manage, maintain, and extend.
 
-For example, take a monolithic <code>Layout</code> component —
+## Less logic in render (use more constants)
+
+* By reducing the complex calculations and conditionals within the render, your code becomes much more readable, easier to debug, and less prone to introducing bugs.
+* The constants also provide a quick and easy-to-understand meaning to condition/s.
+
+For example, Below is a code snippet with logic inside render, which makes it harder to read and update -
 
 ```tsx showLineNumbers
-const MonolithicLayout = ({ headerTitle, footerTitle, body, actions }) => {
-  // Multiple responsibilities handled within this component
+const UserCard = ({ user, profilePic }) => {
   return (
-    <div className="layout-wrapper">
-      <div className="header">{headerTitle}</div>
-      <div className="body">{body}</div>
-      <div className="footer">{footerTitle}</div>
-      {actions}
+    <div className="user-card">
+      <h2>{user.name}</h2>
+      {user.age >= 18 ? <p>adult</p> : <p>child</p>}
+      {user.subscriptionType === 'premium' ? (
+        <p>premium subscription</p>
+      ) : (
+        <p>standard subscription</p>
+      )}
+      {user.age >= 18 && user?.showProfile && profilePic ? (
+        <img src={profilePic} alt="profile-pic" />
+      ) : (
+        'No profile'
+      )}
     </div>
   );
 };
+```
 
-const Comp = () => {
+Moving the logic outside render and into constants makes the component much simpler-
+
+```tsx showLineNumbers
+const UserCard = ({ user, profilePic }) => {
+  const isAdult = user.age >= 18;
+  const isPremiumUser = user.subscriptionType === 'premium';
+  const hasProfilePic = isAdult && user?.showProfile && profilePic;
+
   return (
-    <MonolithicLayout
-      headerTitle="Company name"
-      footerTitle="Contact me"
-      body="This is body"
-      actions={<Button />}
-    />
+    <div className="user-card">
+      <h2>{user.name}</h2>
+      {isAdult ? <p>adult</p> : <p>child</p>}
+      {isPremiumUser ? <p>premium subscription</p> : <p>standard subscription</p>}
+      {hasProfilePic ? <img src={profilePic} alt="profile-pic" /> : 'No profile'}
+    </div>
   );
 };
 ```
+
+---
+
+## No nested ternaries (+ early returns)
+
+* Avoiding nested ternaries is another important aspect of writing maintainable and readable React code.
+* Nested ternaries can quickly become difficult to follow and understand, leading to code that is harder to maintain and prone to errors.
+* Instead, you can use other techniques like conditional rendering with `if-else` or utilizing separate functions for more complex conditions.
+For example, A complex nested ternary -
+
+
+```tsx showLineNumbers
+return isLoading
+  ? "loading"
+  : error
+  ? "some error occurred"
+  : isAuthenticated
+  ? isSuperUser
+    ? "show dashboard"
+    : isNewUser
+    ? "show home page"
+    : "show last visited page"
+  : "redirect user to login page"
+```
+
+
+Now, let's replace the ternaries with if-else conditional blocks, it becomes comparatively easier to read and understand -
+
+```tsx showLineNumbers
+
+let result : string;
+
+if(isLoading) {
+  result = "loading";
+} else if (error) {
+  result = "some error occurred";
+} else if (isAuthenticated) {
+  if (isSuperUser) {
+    result = "show dashboard";
+  } else if (isNewUser) {
+    result = "show home page";
+  } else {
+    result = "show last visited page";
+  }
+} else {
+  result = "redirect user to login page";
+}
+
+return result;
+
+```
+
+Although this is more readable than nested ternaries, we can improve this further by implementing an early return pattern -
+
+```tsx showLineNumbers
+if (isLoading) {
+  return "loading";
+}
+
+if (error) {
+  return "some error occurred";
+}
+
+if (isAuthenticated) {
+  if (isSuperUser) {
+    return "show dashboard";
+  }
+
+  if (isNewUser) {
+    return "show home page";
+  }
+
+  return "show last visited page";
+}
+
+return "redirect user to login page";
+```
+
+> Read more on early return pattern - https://medium.com/swlh/return-early-pattern-3d18a41bba8.
+
+> Note - You can even up this one notch, by using libraries like @dx-kit/react-conditional-match
+
+---
+
+## Don't reinvent the wheel but also don't add unnecessary packages
+
+* **Leverage existing libraries** - When developing a project, it's wise to capitalize on existing solutions for functionalities that have already been well-addressed by reliable libraries. 
+For example, consider a portfolio site with multiple pages. In such a scenario, using an established routing solution like "react-router" would make more sense than building something of your own*
+
+* **Avoiding unnecessary packages** - On the flip side, the urge to hastily adopt libraries for tasks that can be accomplished with simpler, lightweight approaches must be resisted. 
+For example, Say again in the portfolio site you have a single "contact me" form, reaching out to libraries like "formik" and "yup" right from the start might not be a good idea.
+
+* **Incrementally adopt while considering performance and UX** - You can always add these libraries later in case your requirements evolve but avoid early addition for marginal benefits it might provide compared to the additional complexity and bundle size that it brings with it. 
+For example, say your portfolio has simple fade-in fade-out transitions, consider using lightweight solutions like CSS transitions rather than reaching out for `framer-motion` (**40Kb Gzipped**) directly for such subtle animations.
+
+
+## Non-logical code organization
+
+When writing code, organizing not only the logical aspects such as functions and components but also the non-logical components like imports and CSS is crucial for code readability and maintainability. 
+Two essential components that require effective organization are imports and styles.
+
+* **Imports organization** - Messy and disorganized imports can make it challenging to navigate through files and functions. 
+Unorganized imports can also lead to merge conflicts, a part of code that isn't logical is the last thing that should do that, so to prevent such issues we can organize imports in a consistent and systematic manner. 
+For example, one way could be the following
+
+```tsx showLineNumbers
+// React import
+import React, { useState } from 'react';
+
+// External library imports
+import { useNavigation } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+
+// Internal absolute path imports
+import { Button } from '@/components';
+import { useBoolean } from '@/utils';
+
+// Internal relative imports
+import ComponentA from '../../components';
+import ComponentB from './ComponentB';
+
+// styles imports
+import styles from './page.styles.scss';
+```
+
+Adopting this organizational style helps to differentiate between different types of imports and makes it easier to locate specific dependencies when working on the codebase.
+
+> You don't need to manually do this in each file, you can use eslint-plugin-import rule or `@ianvs/prettier-plugin-sort-imports` prettier plugin to do this automatically for you.
+>
+> https://www.npmjs.com/package/eslint-plugin-import
+> https://www.npmjs.com/package/@ianvs/prettier-plugin-sort-imports
+
+
+
+* **CSS organization** - When it comes to writing clean CSS, one aspect that often goes unnoticed but is incredibly important is the organization of your CSS properties. The proper organization not only enhances code readability but also saves valuable time spent searching for specific properties within a class.
+
+❌ Now the worst approach is to randomly write the properties you think of in order. <br />
+❌ Another common approach is to order properties by their name. But this approach doesn't help much too. <br />
+For example, Imagine you want to see the layout of a class. You check its display is set to `flex `, then you scroll down to 'f' to find the `flex-direction` property. Next, you have to search for `justify-content `, and by the end, you might have forgotten whether it had `align-items` property as well, so you have to go back to 'a' at the top. That's a lot of time wasted.
+
+✅ One better approach we can follow is to group properties in the following order - <br />
+  1. Positioning
+  2. Layout
+  3. Spacing
+  4. Typography
+  5. Colors
+  6. Others
+
+<Image
+  src="/images/blogs/scalable-react/css-layouting.png"
+  alt="css layouting"
+  width="1080"
+  height="400"
+  fit="true"
+  quality={80}
+/>
+
+> You can automate this as well using `stylelint` and `stylelint-order` -
+>
+> https://www.npmjs.com/package/stylelint
+> https://www.npmjs.com/package/stylelint-order
+
+
+---
+
+## Use useReducer instead of many useState
+
+If you have multiple co-related `useState` in a single component that you don't want to move to Redux or Context, it's better approach to use `useReducer` instead. 
+For example, consider the below code to add and remove items from a cart and simultaneously calculate tax, total, and subTotal -
+
+```tsx showLineNumbers
+import React, { useState } from 'react';
+
+const Cart = () => {
+  const [cartItems, setCartItems] = useState([]);
+  const [subtotal, setSubtotal] = useState(0);
+  const [tax, setTax] = useState(0);
+  const [total, setTotal] = useState(0);
+
+  const handleAddItem = (item) => {
+    const updatedCartItems = [...cartItems, item];
+    const updatedSubtotal = updatedCartItems.reduce((acc, item) => acc + item.price, 0);
+    const updatedTax = updatedSubtotal * 0.1;
+    const updatedTotal = updatedSubtotal + updatedTax;
+
+    setCartItems(updatedCartItems);
+    setSubtotal(updatedSubtotal);
+    setTax(updatedTax);
+    setTotal(updatedTotal);
+  };
+
+  const handleRemoveItem = (item) => {
+    const filteredCartItems = cartItems.filter((cartItem) => cartItem.id !== item.id);
+    const updatedSubtotalAfterRemove = filteredCartItems.reduce((acc, item) => acc + item.price, 0);
+    const updatedTaxAfterRemove = updatedSubtotalAfterRemove * 0.1;
+    const updatedTotalAfterRemove = updatedSubtotalAfterRemove + updatedTaxAfterRemove;
+
+    setCartItems(filteredCartItems);
+    setSubtotal(updatedSubtotalAfterRemove);
+    setTax(updatedTaxAfterRemove);
+    setTotal(updatedTotalAfterRemove);
+  };
+  ...
+}
+```
+
+
+
+In the above example, the state updates are scattered and harder to track, making the code less maintainable. 
+Now let's replace it with useReducer -
+
+```tsx showLineNumbers
+import React, { useReducer } from 'react';
+
+const initialState = {
+  cartItems: [],
+  subtotal: 0,
+  tax: 0,
+  total: 0,
+};
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'ADD_ITEM':
+      const updatedCartItems = [...state.cartItems, action.payload];
+      const updatedSubtotal = updatedCartItems.reduce((acc, item) => acc + item.price, 0);
+      const updatedTax = updatedSubtotal * 0.1;
+      const updatedTotal = updatedSubtotal + updatedTax;
+      return {
+        ...state,
+        cartItems: updatedCartItems,
+        subtotal: updatedSubtotal,
+        tax: updatedTax,
+        total: updatedTotal,
+      };
+    case 'REMOVE_ITEM':
+      const filteredCartItems = state.cartItems.filter((item) => item.id !== action.payload.id);
+      const updatedSubtotalAfterRemove = filteredCartItems.reduce((acc, item) => acc + item.price, 0);
+      const updatedTaxAfterRemove = updatedSubtotalAfterRemove * 0.1;
+      const updatedTotalAfterRemove = updatedSubtotalAfterRemove + updatedTaxAfterRemove;
+      return {
+        ...state,
+        cartItems: filteredCartItems,
+        subtotal: updatedSubtotalAfterRemove,
+        tax: updatedTaxAfterRemove,
+        total: updatedTotalAfterRemove,
+      };
+    default:
+      return state;
+  }
+};
+
+const Cart = () => {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  const handleAddItem = (item) => dispatch({ type: 'ADD_ITEM', payload: item });
+  const handleRemoveItem = (item) => dispatch({ type: 'REMOVE_ITEM', payload: item });
+
+  ...
+};
+```
+
+By using useReducer, we have centralized the state updates in a single function, making the code more structured and easier to maintain.
+Also, since the state changes only from one place now, it helps maintain clear control over how and when state transitions occur, making it easier to debug and reason about your code.
+
+
+---
+
+## Avoid passing similar props
+
+* When you have a component that takes in multiple props (usually booleans), that essentially serve as variants of each other, it's better to use a more concise and structured approach for its API.
+* Instead of cluttering the component with numerous individual props, consider passing a single prop with specific enumerated values to represent the desired options.
+
+
+For example, consider a Button component that can be styled in various colors, instead of passing separate boolean props like `isPrimary`, `isSecondary`, `isSuccess`, and `isDanger`, we can use a single prop named `variant` to define the desired button style.
+
+```tsx showLineNumbers
+const Button = ({ isPrimary, isSecondary, isSuccess, isDanger, isTop, isBottom }) => {
+  ...
+};
+
+<Button isPrimary isTop />
+<Button isSuccess isBottom />
+<Button isSecondary isBottom />
+```
+
+A better approach using variant-type props -
+
+```tsx showLineNumbers
+const Button = ({ variant, position }) => {
+  ...
+};
+
+<Button variant="primary" position="top" />
+<Button variant="success" position="bottom" />
+<Button variant="secondary" position="bottom" />
+```
+
+By adopting this approach and using more descriptive props like `variant` and `position`, we enhance the component's API and make it more user-friendly.
+Additionally, we can further enhance type safety by utilizing TypeScript enums for these props.
+
+
+---
+
+## Break code into components (single responsibility)
+
+
+Split your code into smaller components when developing your React application, each with a single responsibility. If a component exceeds a reasonable line limit, like 300 lines, it's a good indicator to break it into separate components.  <br />
+Each React component should only be responsible for one task and should not perform functionality that is not related to its responsibility <br />
+This practice enhances readability, maintainability, and code reuse. Each component can focus on specific tasks or UI elements, keeping your codebase organized and easy to understand.
+
+
+> If you follow one component per file approach (recommended), you can also enforce this using ESLint max-lines rule - https://eslint.org/docs/latest/rules/max-lines.
+
+
+---
+
+## Keep the state closest to where it's needed
+
+
+* Avoid keeping all states in the parent component. Instead, keep states closest to where they are needed (state colocation) and lift them up only when necessary.  <br />
+This approach prevents unnecessary re-renders in children and keeps parent components smaller.
+* If a state is used at several places, try to extract it into Context or Redux (or other state managers) if possible. Doing so will help efficiently share state and maintain a single source of truth for the data.
+
+
+> **Note - **Context causes its children to re-render on each state change which does not matter in most cases. However, if you still want to use context and optimise it you can check context selectors - https://www.npmjs.com/package/use-context-selector
+**> Read more on colocation here - **https://kentcdodds.com/blog/state-colocation-will-make-your-react-app-faster
+
+---
+
+## Use Typescript
+
+
+Utilize TypeScript in your project to enhance code reliability, maintainability, and catch potential errors during development. Follow these basic guidelines while working with TypeScript -
+
+
+* **Avoid "any": **Minimize the use of the any type. Instead, specify precise types to ensure type safety and enable better code understanding.
+* **Prefer "unknown" over "any": **Whenever possible, use the unknown type over any . unknown provides stricter type checking, and you'll need to perform type checks or assertions to access its values, reducing the risk of unintended type errors.
+* **Accurate types for API data: **Communicate with your backend dev to find the accurate types for your API data (+ precisely differentiate optional vs mandatory keys to prevent false positives in the front end).
+* **Feature-level types: **Create a feature-level types file and name it `featureName.types.ts` like `userProfile.types.ts`. 
+For anything more global put it in a generic folder like `types/api.types.ts`(you don't need to put .types.ts for api since it's already in the types folder, but this is a personal preference to find files more easily while file searching).
+
+> Unknown vs any - https://marketsplash.com/tutorials/typescript/typescript-unknown-vs-any/
+
+---
+
+## Do not disable ESLint warnings
+
+* Do not disable ESLint warnings, if it's a warning or an error it's most probably an issue (especially exhaustive deps for `useEffect`).
+* If you have a solid reason to ignore a warning specify with a comment above the ignore rule. 
+For example, If you are loading HTML from your own generated string you can disable the `dangersoulySetInnerHTML` warning.
+
+
+```tsx showLineNumbers
+<div
+// Calculating internally, safe HTML returned
+// eslint-disable-next-line react/no-danger
+dangerouslySetInnerHTML={{__html: "<div>Hello world</div>"} />
+```
+
+```tsx showLineNumbers
+const ErrorWrapper = (props: ComponentProps) => (
+  <ErrorBoundary>
+   {/** forwarding wrapper */}
+   {/** eslint-disable-next-line react/jsx-props-no-spreading */}
+   <Component {...props} />
+  </ErrorBoundary>
+)
+```
+
+* Don't use disable for the entire file (unless absolutely needed, provide a reason with a comment too). If you feel like you have to constantly ignore a rule, it might be better to consider removing the rule than ignoring it everywhere.
+
+---
+
+## Conclusion
+
+
+In conclusion, following these best practices for scalable and maintainable React applications can lead to a more organized and efficient codebase, enhancing developer productivity and reducing the risk of errors. 
+Embrace single responsibility components, enums, useReducer, and compound components to build cleaner and sustainable React apps.
+
+Thank you and Happy coding!
