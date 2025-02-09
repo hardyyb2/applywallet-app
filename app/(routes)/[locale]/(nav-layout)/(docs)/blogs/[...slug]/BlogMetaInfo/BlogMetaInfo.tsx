@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 import type { Blog } from "contentlayer/generated";
 import dayjs from "dayjs";
 
@@ -34,7 +32,7 @@ const BlogMetaInfo = ({ blog }: BlogMetaInfo) => {
           >
             {dayjs(blog.date).format("MMM DD, YYYY").toLowerCase()}
             <Separator orientation="horizontal" />
-            <Link href={blog.category.slug}>{blog.category.name}</Link>
+            {blog.category.name}
           </Typography>
         </div>
       </div>
