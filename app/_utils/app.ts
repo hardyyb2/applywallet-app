@@ -8,5 +8,5 @@ export const getAppBaseURL = () => {
     return "http://localhost:3000";
   }
 
-  return env.SITE_URL;
+  return env.NEXT_PUBLIC_SITE_URL;
 };
