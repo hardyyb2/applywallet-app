@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import type { LucideIcon } from "lucide-react";
+import Wave from "react-wavify";
 
 import { buttonVariants } from "~/components/ds/Button";
 import { Card } from "~/components/ds/Card";
@@ -30,7 +31,7 @@ const socials: { name: string; url: string; icon: LucideIcon }[] = [
 
 const AboutCreator = () => {
   return (
-    <Card>
+    <Card className="overflow-hidden">
       <Card.Body className="items-center gap-xs">
         <Card.Figure className="mt-xs h-32 w-32 rounded-full border-2 border-base-content lg:h-40 lg:w-40">
           <Image
@@ -38,26 +39,52 @@ const AboutCreator = () => {
             alt="hardik badola"
             width={120}
             height={120}
-            className="h-full w-full object-cover"
+            className="z-[1] h-full w-full object-cover"
           />
         </Card.Figure>
 
-        <Card.Title>
+        <Wave
+          className="absolute bottom-0 left-0 right-0 z-0 h-60 text-secondary"
+          paused={false}
+          fill="currentColor"
+          options={{
+            height: 20,
+            amplitude: 40,
+            speed: 0.25,
+            points: 5,
+          }}
+        />
+
+        <Wave
+          className="absolute bottom-0 left-0 right-0 z-0 h-60 text-primary"
+          paused={false}
+          fill="currentColor"
+          options={{
+            height: 40,
+            amplitude: 20,
+            speed: 0.25,
+            points: 5,
+          }}
+        />
+
+        <Card.Title className="z-[1] text-primary-content">
           <Typography variant="headline-s">hardik badola</Typography>
         </Card.Title>
-        <Typography variant="body-s" align="center">
+        <Typography
+          variant="body-m"
+          align="center"
+          className="z-[1] text-primary-content"
+        >
           frontend engineer
         </Typography>
 
-        <Card.Actions>
+        <Card.Actions className="z-[1]">
           {socials.map((social) => (
             <Link
               key={social.name}
               href={social.url}
               target="_blank"
-              className={buttonVariants({
-                color: "ghost",
-              })}
+              className={buttonVariants()}
             >
               <social.icon />
             </Link>
