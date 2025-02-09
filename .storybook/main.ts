@@ -35,12 +35,6 @@ const config: StorybookConfig = {
                   implementation: require.resolve("postcss"),
                 },
               },
-              {
-                loader: require.resolve("sass-loader"),
-                options: {
-                  implementation: require("sass"),
-                },
-              },
             ],
           },
         ],

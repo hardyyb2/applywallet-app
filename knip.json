@@ -20,7 +20,6 @@
     "type-fest",
     "@vitest/ui",
     "concurrently",
-    "sass-loader",
     "axios-mock-adapter"
   ],
   "ignoreUnresolved": ["/setupTest.ts"]
