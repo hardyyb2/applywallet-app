@@ -10,7 +10,7 @@
   display: grid;
   grid-area: details;
   grid-template: "name" 1fr "meta" 1fr / 1fr;
-  gap: 0;
+  gap: 2px;
 }
 
 .name {
