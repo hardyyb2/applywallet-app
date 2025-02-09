@@ -1,7 +1,28 @@
+import type { Metadata } from "next";
+
+import { AppRoutes } from "~/utils/routes";
+
 import { BasePageHeader } from "@/components/dependent/BasePageHeader";
+import { i18n } from "@/utils/locale-utils";
 
 import { AboutApp } from "./AboutApp";
 import { AboutCreator } from "./AboutCreator";
+
+export const metadata: Metadata = {
+  title: "about | applywallet",
+  description: "about the app and the creator",
+  keywords: ["about", "applywallet", "creator", "hardik badola"],
+  alternates: {
+    canonical: AppRoutes.ABOUT,
+    languages: i18n.locales.reduce(
+      (acc, locale) => ({
+        ...acc,
+        [locale]: `${locale}/${AppRoutes.ABOUT}`,
+      }),
+      {},
+    ),
+  },
+};
 
 const AboutPage = () => {
   return (
