@@ -159,9 +159,9 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/BlogCard/blogCard.module.scss",
+    id: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/BlogCard/blogCard.module.css",
     data: {
-      name: "blogCard.module.scss",
+      name: "blogCard.module.css",
       type: "file",
       subType: "page",
     },
@@ -250,9 +250,9 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogMetaInfo/blogMetaInfo.module.scss",
+    id: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogMetaInfo/blogMetaInfo.module.css",
     data: {
-      name: "blogMetaInfo.module.scss",
+      name: "blogMetaInfo.module.css",
       type: "file",
       subType: "page",
     },
@@ -692,9 +692,9 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/(routes)/[locale]/(nav-layout)/_experiences/ExperienceActions/ExperienceSettingsModal/experienceSettingsModal.module.scss",
+    id: "app/(routes)/[locale]/(nav-layout)/_experiences/ExperienceActions/ExperienceSettingsModal/experienceSettingsModal.module.css",
     data: {
-      name: "experienceSettingsModal.module.scss",
+      name: "experienceSettingsModal.module.css",
       type: "file",
       subType: "page",
     },
@@ -1009,6 +1009,19 @@ export const nodes: DrNodeType[] = [
       name: "about",
       type: "folder",
       subType: "route-group",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/(routes)/[locale]/(nav-layout)/about/AboutApp.tsx",
+    data: {
+      name: "AboutApp.tsx",
+      type: "file",
+      subType: "page",
     },
     position: {
       x: 0,
@@ -3739,10 +3752,10 @@ export const edges: DrEdgeType[] = [
     type: "smoothstep",
   },
   {
-    id: "e:app/(routes)/[locale]/(nav-layout)/(docs)/blogs/BlogCard->app/(routes)/[locale]/(nav-layout)/(docs)/blogs/BlogCard/blogCard.module.scss",
+    id: "e:app/(routes)/[locale]/(nav-layout)/(docs)/blogs/BlogCard->app/(routes)/[locale]/(nav-layout)/(docs)/blogs/BlogCard/blogCard.module.css",
     source: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/BlogCard",
     target:
-      "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/BlogCard/blogCard.module.scss",
+      "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/BlogCard/blogCard.module.css",
     type: "smoothstep",
   },
   {
@@ -3787,11 +3800,11 @@ export const edges: DrEdgeType[] = [
     type: "smoothstep",
   },
   {
-    id: "e:app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogMetaInfo->app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogMetaInfo/blogMetaInfo.module.scss",
+    id: "e:app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogMetaInfo->app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogMetaInfo/blogMetaInfo.module.css",
     source:
       "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogMetaInfo",
     target:
-      "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogMetaInfo/blogMetaInfo.module.scss",
+      "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogMetaInfo/blogMetaInfo.module.css",
     type: "smoothstep",
   },
   {
@@ -4021,11 +4034,11 @@ export const edges: DrEdgeType[] = [
     type: "smoothstep",
   },
   {
-    id: "e:app/(routes)/[locale]/(nav-layout)/_experiences/ExperienceActions/ExperienceSettingsModal->app/(routes)/[locale]/(nav-layout)/_experiences/ExperienceActions/ExperienceSettingsModal/experienceSettingsModal.module.scss",
+    id: "e:app/(routes)/[locale]/(nav-layout)/_experiences/ExperienceActions/ExperienceSettingsModal->app/(routes)/[locale]/(nav-layout)/_experiences/ExperienceActions/ExperienceSettingsModal/experienceSettingsModal.module.css",
     source:
       "app/(routes)/[locale]/(nav-layout)/_experiences/ExperienceActions/ExperienceSettingsModal",
     target:
-      "app/(routes)/[locale]/(nav-layout)/_experiences/ExperienceActions/ExperienceSettingsModal/experienceSettingsModal.module.scss",
+      "app/(routes)/[locale]/(nav-layout)/_experiences/ExperienceActions/ExperienceSettingsModal/experienceSettingsModal.module.css",
     type: "smoothstep",
   },
   {
@@ -4191,6 +4204,12 @@ export const edges: DrEdgeType[] = [
     id: "e:app/(routes)/[locale]/(nav-layout)->app/(routes)/[locale]/(nav-layout)/about",
     source: "app/(routes)/[locale]/(nav-layout)",
     target: "app/(routes)/[locale]/(nav-layout)/about",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/about->app/(routes)/[locale]/(nav-layout)/about/AboutApp.tsx",
+    source: "app/(routes)/[locale]/(nav-layout)/about",
+    target: "app/(routes)/[locale]/(nav-layout)/about/AboutApp.tsx",
     type: "smoothstep",
   },
   {
@@ -5107,9 +5126,9 @@ export const edges: DrEdgeType[] = [
     type: "smoothstep",
   },
   {
-    id: "e:app/_styles->app/_styles/mdx.scss",
+    id: "e:app/_styles->app/_styles/mdx.css",
     source: "app/_styles",
-    target: "app/_styles/mdx.scss",
+    target: "app/_styles/mdx.css",
     type: "smoothstep",
   },
   {
@@ -5125,9 +5144,9 @@ export const edges: DrEdgeType[] = [
     type: "smoothstep",
   },
   {
-    id: "e:app/_styles/overrides->app/_styles/overrides/toast.scss",
+    id: "e:app/_styles/overrides->app/_styles/overrides/toast.css",
     source: "app/_styles/overrides",
-    target: "app/_styles/overrides/toast.scss",
+    target: "app/_styles/overrides/toast.css",
     type: "smoothstep",
   },
   {
