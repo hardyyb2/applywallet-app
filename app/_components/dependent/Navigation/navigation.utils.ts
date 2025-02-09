@@ -8,8 +8,6 @@ const navItems: NavItemType[] = [
     label: "home",
     link: AppRoutes.HOME,
     category: NavigationCategories.GENERAL,
-    // TODO - fix this
-    // @ts-expect-error
     icon: Icons.CustomHome,
   },
   {

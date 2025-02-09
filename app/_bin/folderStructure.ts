@@ -1017,6 +1017,19 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
+    id: "app/(routes)/[locale]/(nav-layout)/about/AboutCreator.tsx",
+    data: {
+      name: "AboutCreator.tsx",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
     id: "app/(routes)/[locale]/(nav-layout)/about/app-structure",
     data: {
       name: "app-structure",
@@ -4178,6 +4191,12 @@ export const edges: DrEdgeType[] = [
     id: "e:app/(routes)/[locale]/(nav-layout)->app/(routes)/[locale]/(nav-layout)/about",
     source: "app/(routes)/[locale]/(nav-layout)",
     target: "app/(routes)/[locale]/(nav-layout)/about",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/about->app/(routes)/[locale]/(nav-layout)/about/AboutCreator.tsx",
+    source: "app/(routes)/[locale]/(nav-layout)/about",
+    target: "app/(routes)/[locale]/(nav-layout)/about/AboutCreator.tsx",
     type: "smoothstep",
   },
   {
