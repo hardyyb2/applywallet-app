@@ -174,10 +174,7 @@ const DropdownMenuRadioItem = ({
     {showIcon ? (
       <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
         <DropdownMenuPrimitive.ItemIndicator>
-          <Icons.CustomRadio
-            innerCircleClassName="fill-secondary"
-            className="h-4 w-4 fill-current stroke-secondary"
-          />
+          <Icons.CustomRadio className="h-4 w-4 fill-current stroke-secondary" />
         </DropdownMenuPrimitive.ItemIndicator>
       </span>
     ) : null}
