@@ -9,7 +9,7 @@ import { Typography } from "~/components/ds/Typography";
 
 import { getInitials } from "@/utils/string";
 
-import styles from "./blogMetaInfo.module.scss";
+import styles from "./blogMetaInfo.module.css";
 
 type BlogMetaInfo = {
   blog: Blog;

@@ -2993,9 +2993,9 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_styles/overrides/reactflow.scss",
+    id: "app/_styles/overrides/reactflow.css",
     data: {
-      name: "reactflow.scss",
+      name: "reactflow.css",
       type: "file",
       subType: "page",
     },
@@ -5119,9 +5119,9 @@ export const edges: DrEdgeType[] = [
     type: "smoothstep",
   },
   {
-    id: "e:app/_styles/overrides->app/_styles/overrides/reactflow.scss",
+    id: "e:app/_styles/overrides->app/_styles/overrides/reactflow.css",
     source: "app/_styles/overrides",
-    target: "app/_styles/overrides/reactflow.scss",
+    target: "app/_styles/overrides/reactflow.css",
     type: "smoothstep",
   },
   {

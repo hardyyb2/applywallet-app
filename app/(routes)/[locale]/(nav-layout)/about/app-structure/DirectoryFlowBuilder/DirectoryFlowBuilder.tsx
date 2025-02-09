@@ -29,7 +29,7 @@ import {
   getLayoutedElements,
 } from "./directoryFlowBuilder.utils";
 
-import "@/styles/overrides/reactflow.scss";
+import "@/styles/overrides/reactflow.css";
 
 const {
   nodes: layoutedNodes,
