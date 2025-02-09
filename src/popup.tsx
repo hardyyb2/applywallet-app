@@ -11,7 +11,7 @@ import { ExtLoginCard } from "$/components/ExtLoginCard";
 import { extApi } from "$/lib/ext-api";
 import { ExtProviders } from "$/providers";
 
-import "~/styles/overrides/daisyui.scss";
+import "~/styles/overrides/daisyui.css";
 import "./globals.ext.scss";
 
 import { useQuery } from "@tanstack/react-query";

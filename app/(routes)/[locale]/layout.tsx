@@ -6,10 +6,10 @@ import { cn } from "@/utils/styles";
 
 import { Providers } from "./providers";
 
-import "@/styles/globals.app.scss";
+import "@/styles/globals.app.css";
 import "@/styles/overrides/toast.css";
 import "@/styles/mdx.css";
-import "~/styles/overrides/daisyui.scss";
+import "~/styles/overrides/daisyui.css";
 
 import type { Metadata } from "next";
 

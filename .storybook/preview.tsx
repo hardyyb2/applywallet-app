@@ -4,8 +4,8 @@ import type { Preview } from "@storybook/react";
 
 import { fonts } from "../app/_lib/fonts";
 
-import "@/styles/globals.app.scss";
-import "~/styles/overrides/daisyui.scss";
+import "@/styles/globals.app.css";
+import "~/styles/overrides/daisyui.css";
 
 import { appThemes } from "~/utils/tailwind/theme";
 

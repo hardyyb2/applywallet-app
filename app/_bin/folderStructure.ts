@@ -2954,9 +2954,9 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_styles/globals.app.scss",
+    id: "app/_styles/globals.app.css",
     data: {
-      name: "globals.app.scss",
+      name: "globals.app.css",
       type: "file",
       subType: "page",
     },
@@ -5101,9 +5101,9 @@ export const edges: DrEdgeType[] = [
     type: "smoothstep",
   },
   {
-    id: "e:app/_styles->app/_styles/globals.app.scss",
+    id: "e:app/_styles->app/_styles/globals.app.css",
     source: "app/_styles",
-    target: "app/_styles/globals.app.scss",
+    target: "app/_styles/globals.app.css",
     type: "smoothstep",
   },
   {

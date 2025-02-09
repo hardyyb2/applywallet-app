@@ -9,7 +9,7 @@ const buildEslintAndPrettierCommand = (filenames) => {
     " --file ",
   )}`;
   const prettierCommand = `prettier --write ${relativeFileNames.join(" ")}`;
-  const stylelintCommand = `stylelint --fix **/*.scss`;
+  const stylelintCommand = `stylelint --fix **/*.{css,scss}`;
 
   return [eslintCommand, prettierCommand, stylelintCommand];
 };
