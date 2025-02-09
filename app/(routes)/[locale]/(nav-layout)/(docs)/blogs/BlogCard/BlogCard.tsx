@@ -11,7 +11,7 @@ import { shimmer } from "@/utils/shimmer";
 import { toBase64 } from "@/utils/string";
 import { cn, cnM } from "@/utils/styles";
 
-import styles from "./blogCard.module.scss";
+import styles from "./blogCard.module.css";
 
 type BlogCardProps = Blog;
 

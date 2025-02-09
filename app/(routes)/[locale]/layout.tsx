@@ -7,8 +7,8 @@ import { cn } from "@/utils/styles";
 import { Providers } from "./providers";
 
 import "@/styles/globals.app.scss";
-import "@/styles/overrides/toast.scss";
-import "@/styles/mdx.scss";
+import "@/styles/overrides/toast.css";
+import "@/styles/mdx.css";
 import "~/styles/overrides/daisyui.scss";
 
 import type { Metadata } from "next";

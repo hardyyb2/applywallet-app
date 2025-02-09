@@ -2967,9 +2967,9 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_styles/mdx.scss",
+    id: "app/_styles/mdx.css",
     data: {
-      name: "mdx.scss",
+      name: "mdx.css",
       type: "file",
       subType: "page",
     },
@@ -3006,9 +3006,9 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
-    id: "app/_styles/overrides/toast.scss",
+    id: "app/_styles/overrides/toast.css",
     data: {
-      name: "toast.scss",
+      name: "toast.css",
       type: "file",
       subType: "page",
     },
