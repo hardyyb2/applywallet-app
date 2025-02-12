@@ -101,15 +101,9 @@ const config: Config = {
   },
   plugins: [
     require("@tailwindcss/typography"),
-    require("daisyui"),
     require("tailwindcss-animate"),
     typographyComponentsPlugin,
   ],
-  daisyui: {
-    themes: ["synthwave", "light"],
-    logs: false,
-    prefix: "d-",
-  },
   future: {
     hoverOnlyWhenSupported: true,
   },

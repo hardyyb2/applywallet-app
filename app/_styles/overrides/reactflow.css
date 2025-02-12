@@ -1,6 +1,6 @@
 /* stylelint-disable selector-class-pattern */
 
-@import "reactflow/dist/style.css";
+@import 'reactflow/dist/style.css';
 
 .react-flow__handle {
   opacity: 0;

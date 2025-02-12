@@ -74,7 +74,7 @@ const Select = <
               responsive,
             }),
             bordered && [
-              "border-[1px] border-base-content/20",
+              "border-base-content/20 border-[1px]",
               {
                 "border-primary": color === "primary",
                 "border-secondary": color === "secondary",
@@ -85,13 +85,13 @@ const Select = <
                 "border-info": color === "info",
               },
             ],
-            "!pr-xs-s",
+            "pr-xs-s!",
           ),
         container: (state) =>
           cnM(
             "rounded-btn bg-base-100",
             state.isFocused && [
-              "outline outline-2 outline-offset-2 outline-base-content/20",
+              "outline-base-content/20 outline outline-2 outline-offset-2",
               {
                 "outline-primary": color === "primary",
                 "outline-secondary": color === "secondary",
@@ -106,15 +106,15 @@ const Select = <
         valueContainer: () => cn("text-[1rem]"),
         placeholder: () => cn("text-[#9ca3af] opacity-75"),
         menu: () =>
-          cn("mt-2 rounded-xl border border-base-content/40 bg-base-100 p-2"),
+          cn("border-base-content/40 bg-base-100 mt-2 rounded-xl border p-2"),
         menuList: () => cn("space-y-2"),
         option: (state) =>
           cnM(
-            "!cursor-pointer rounded-btn p-2 text-base-content",
+            "rounded-btn text-base-content cursor-pointer! p-2",
             !state.isSelected && "hover:bg-base-200",
             state.isFocused && "bg-base-200",
             state.isSelected && [
-              " font-semibold",
+              "font-semibold",
               {
                 "bg-primary text-primary-content":
                   color === "primary" || !color,

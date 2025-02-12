@@ -74,7 +74,7 @@ export function LinkFloatingToolbar({ state }: LinkFloatingToolbarProps) {
   const input = (
     <div className="flex flex-col">
       <div className="flex items-center">
-        <div className="flex items-center px-2xs">
+        <div className="px-2xs flex items-center">
           <Icons.Link2 className="h-4 w-4" />
         </div>
 
@@ -91,7 +91,7 @@ export function LinkFloatingToolbar({ state }: LinkFloatingToolbarProps) {
       <Separator className="my-2xs bg-base-content/20" />
 
       <div className="flex items-center">
-        <div className="flex items-center px-2xs">
+        <div className="px-2xs flex items-center">
           <Icons.Text className="h-4 w-4" />
         </div>
         <input
@@ -149,7 +149,7 @@ export function LinkFloatingToolbar({ state }: LinkFloatingToolbarProps) {
     <>
       <div
         ref={insertRef}
-        className={popoverVariants({ className: "!z-[100] w-auto p-2xs" })}
+        className={popoverVariants({ className: "p-2xs z-100! w-auto" })}
         {...insertProps}
       >
         {input}
@@ -157,7 +157,7 @@ export function LinkFloatingToolbar({ state }: LinkFloatingToolbarProps) {
 
       <div
         ref={editRef}
-        className={popoverVariants({ className: "!z-[100] w-auto p-2xs" })}
+        className={popoverVariants({ className: "p-2xs z-100! w-auto" })}
         {...editProps}
       >
         {editContent}

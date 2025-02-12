@@ -64,7 +64,7 @@ const DatePickerInput = ({
       <Input
         placeholder="dd/mm/yyyy"
         responsive={responsive}
-        className={cnM("w-full bg-base-100", className)}
+        className={cnM("bg-base-100 w-full", className)}
         {...props}
         iconSeparate
         color={color}
@@ -78,7 +78,7 @@ const DatePickerInput = ({
                 color={color}
                 variant="outline"
                 responsive={responsive}
-                className="w-20 bg-base-100 p-0 hover:!bg-transparent"
+                className="bg-base-100 w-20 p-0 hover:bg-transparent!"
                 startIcon={
                   <Icons.Calendar
                     className={cn(

@@ -38,7 +38,7 @@ const NavigationMenu = ({
       wrap="nowrap"
       className={cn(
         "d-menu-compact d-menu max-w-none",
-        "h-full space-y-3xs-2xs overflow-y-auto px-2",
+        "space-y-3xs-2xs h-full overflow-y-auto px-2",
         className,
       )}
     >
@@ -75,7 +75,7 @@ const NavigationMenu = ({
                       <Typography
                         variant="label-s"
                         lg="label-m"
-                        className="overflow-ellipsis"
+                        className="text-ellipsis"
                       >
                         {/* TODO: fix this */}
                         {/* @ts-expect-error */}

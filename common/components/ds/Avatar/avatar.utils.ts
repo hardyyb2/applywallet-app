@@ -13,7 +13,7 @@ export const avatarVariants = cva(
         lg: "w-l rounded-xl",
         md: "w-m rounded-lg",
         sm: "w-s rounded-md",
-        xs: "w-xs rounded-sm",
+        xs: "w-xs rounded-xs",
       },
       color: {
         primary: "bg-primary text-primary-content",
@@ -22,7 +22,7 @@ export const avatarVariants = cva(
         neutral: "bg-neutral text-neutral-content",
       },
       border: {
-        true: "ring ring-offset-2",
+        true: "ring-3 ring-offset-2",
       },
     },
     compoundVariants: [

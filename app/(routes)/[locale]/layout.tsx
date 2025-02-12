@@ -104,7 +104,7 @@ const RootLayout = async (props: RootLayoutProps) => {
         className={cn(
           fonts.primary.variable,
           fonts.secondary.variable,
-          "mx-auto max-w-screen-4xl",
+          "mx-auto max-w-(--breakpoint-4xl)",
         )}
       >
         <Providers locale={locale}>{children}</Providers>

@@ -8,10 +8,10 @@ import { cnM } from "@/utils/styles";
 
 const plateEditorVariants = cva(
   cnM(
-    "relative min-h-[80px] w-full overflow-x-auto whitespace-pre-wrap break-words rounded-md px-3 py-2",
-    "[&_[data-slate-placeholder]]:top-[auto_!important] [&_[data-slate-placeholder]]:!opacity-100 [&_strong]:font-bold",
-    "bg-base-100 placeholder:text-base-content/40 [&_[data-slate-placeholder]]:text-base-content/40",
-    "focus-within:outline-none",
+    "relative min-h-[80px] w-full overflow-x-auto rounded-md px-3 py-2 break-words whitespace-pre-wrap",
+    "data-slate-placeholder:**:top-[auto_!important] data-slate-placeholder:**:opacity-100! [&_strong]:font-bold",
+    "bg-base-100 placeholder:text-base-content/40 data-slate-placeholder:**:text-base-content/40",
+    "focus-within:outline-hidden",
   ),
   {
     variants: {

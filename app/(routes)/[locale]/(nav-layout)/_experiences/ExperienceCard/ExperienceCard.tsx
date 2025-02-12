@@ -22,7 +22,7 @@ const ExperienceCard = ({ experience }: ExperienceCardProps) => {
 
         <div>
           <Flex align="center" justify="space-between">
-            <Typography className="!font-light underline">
+            <Typography className="font-light! underline">
               company description
             </Typography>
             <CopyButton text={experience.company_description ?? ""} />
@@ -35,7 +35,7 @@ const ExperienceCard = ({ experience }: ExperienceCardProps) => {
         <Typography>{experience.role_name}</Typography>
         <div>
           <Flex align="center" justify="space-between">
-            <Typography className="!font-light underline">
+            <Typography className="font-light! underline">
               role description
             </Typography>
             <CopyButton text={experience.role_description ?? ""} />
@@ -47,13 +47,13 @@ const ExperienceCard = ({ experience }: ExperienceCardProps) => {
 
         <div>
           <Flex align="center" justify="space-between">
-            <Typography className="!font-light underline">
+            <Typography className="font-light! underline">
               job description
             </Typography>
             <CopyButton text={experience.job_description} />
           </Flex>
           <strong>
-            <Typography className="mb-5 mt-3xs !font-semibold">
+            <Typography className="mb-5 mt-3xs font-semibold!">
               {experience.job_description}
             </Typography>
           </strong>

@@ -227,7 +227,7 @@ const InterviewsTable = () => {
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem
-                  className="gap-2 text-error"
+                  className="text-error gap-2"
                   onClick={() => handleDeleteInterview(interview.id)}
                 >
                   <Icons.Trash2 className="w-4 lg:w-5" />
@@ -316,7 +316,7 @@ const InterviewsTable = () => {
 
   return (
     <Flex className="gap-3xs" direction="column">
-      <Flex className="gap-2xs rounded-xl bg-base-100 p-3xs" justify="flex-end">
+      <Flex className="gap-2xs bg-base-100 p-3xs rounded-xl" justify="flex-end">
         <Input
           bordered={false}
           responsive
@@ -341,7 +341,7 @@ const InterviewsTable = () => {
           filtersApplied={filtersApplied}
         />
       </Flex>
-      <div className="overflow-auto rounded-xl bg-base-100">
+      <div className="bg-base-100 overflow-auto rounded-xl">
         <Table responsive>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
@@ -387,7 +387,7 @@ const InterviewsTable = () => {
                 {row.getVisibleCells().map((cell) => (
                   <TableCell
                     key={cell.id}
-                    className="max-w-32 overflow-hidden overflow-ellipsis whitespace-nowrap lg:max-w-60"
+                    className="max-w-32 overflow-hidden text-ellipsis whitespace-nowrap lg:max-w-60"
                   >
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </TableCell>

@@ -36,19 +36,19 @@ const AboutCreator = async () => {
 
   return (
     <Card className="overflow-hidden">
-      <Card.Body className="items-center gap-xs">
-        <Card.Figure className="mt-xs h-32 w-32 rounded-full border-2 border-base-content lg:h-40 lg:w-40">
+      <Card.Body className="gap-xs items-center">
+        <Card.Figure className="mt-xs border-base-content h-32 w-32 rounded-full border-2 lg:h-40 lg:w-40">
           <Image
             src={HardikBadolaImg}
             alt="hardik badola"
             width={120}
             height={120}
-            className="z-[1] h-full w-full object-cover"
+            className="z-1 h-full w-full object-cover"
           />
         </Card.Figure>
 
         <Wave
-          className="absolute bottom-0 left-0 right-0 z-0 h-60 text-secondary"
+          className="text-secondary absolute right-0 bottom-0 left-0 z-0 h-60"
           paused={false}
           fill="currentColor"
           options={{
@@ -60,7 +60,7 @@ const AboutCreator = async () => {
         />
 
         <Wave
-          className="absolute bottom-0 left-0 right-0 z-0 h-60 text-primary"
+          className="text-primary absolute right-0 bottom-0 left-0 z-0 h-60"
           paused={false}
           fill="currentColor"
           options={{
@@ -71,18 +71,18 @@ const AboutCreator = async () => {
           }}
         />
 
-        <Card.Title className="z-[1] text-primary-content">
+        <Card.Title className="text-primary-content z-1">
           <Typography variant="headline-s">hardik badola</Typography>
         </Card.Title>
         <Typography
           variant="body-m"
           align="center"
-          className="z-[1] text-primary-content"
+          className="text-primary-content z-1"
         >
           {t("about.creator.position")}
         </Typography>
 
-        <Card.Actions className="z-[1]">
+        <Card.Actions className="z-1">
           {socials.map((social) => (
             <Link
               key={social.name}
