@@ -38,6 +38,7 @@ const contentLayerWrapper = withContentlayer(nextConfig);
 const sentryWrapper = withSentryConfig(contentLayerWrapper, {
   org: "hardik-badola",
   project: "applywallet",
+  telemetry: false,
   authToken: process.env.SENTRY_AUTH_TOKEN,
   silent: !process.env.CI,
   widenClientFileUpload: true,

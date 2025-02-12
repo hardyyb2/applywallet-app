@@ -10,7 +10,7 @@
     "dev:ext": "plasmo dev",
     "dev:app:cdt": "yarn cdt && yarn dev",
     "build": "concurrently  \"yarn build:app\" \"yarn build:ext\"",
-    "build:app": "next build",
+    "build:app": "prisma generate && next build",
     "build:app:prod": "yarn cdt && yarn build:app",
     "build:ext": "plasmo build",
     "build:content": "contentlayer2 build",
