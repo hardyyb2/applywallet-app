@@ -40,7 +40,7 @@ const ThemesMenu = () => {
                 onClick={() => setTheme(value)}
                 className={cn(
                   activeTheme === value &&
-                    "outline outline-offset-2 outline-base-content",
+                    "outline-base-content outline outline-offset-2",
                   "flex justify-between gap-2",
                 )}
                 startIcon={

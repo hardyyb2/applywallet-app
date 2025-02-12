@@ -1,24 +1,9 @@
 import tailwindConfig from "tailwind.config";
 
-// import resolveConfig from "tailwindcss/resolveConfig";
-
 const fullConfig = {};
 
-const getThemeNames = (themes: (string | Record<string, object>)[] = []) => {
-  return themes?.map((theme) => {
-    if (typeof theme === "object") {
-      const themeName = Object.keys(theme ?? {})?.[0];
-
-      return themeName;
-    }
-
-    return theme;
-  });
-};
-
-const appThemes: string[] = getThemeNames(tailwindConfig?.daisyui?.themes) ?? [
-  "light",
-];
+/* Find active themes in `global.app.css` */
+const appThemes: string[] = ["light", "synthwave"];
 
 type ThemeColors = {
   primary: string;
