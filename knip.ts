@@ -1,6 +1,6 @@
-{
-  "next": {
-    "entry": [
+const config = {
+  next: {
+    entry: [
       "next.config.{js,ts,cjs,mjs}",
       "{instrumentation,middleware}.{js,ts,jsx,tsx}",
       "app/global-error.{js,jsx,ts,tsx}",
@@ -12,15 +12,18 @@
       "app/**/{opengraph,twitter}-image.{js,jsx,ts,tsx}",
       "pages/**/*.{js,jsx,ts,tsx}",
       "src/**/*.{js,jsx,ts,tsx}",
-      "tailwind.config.ts"
-    ]
+      "tailwind.config.ts",
+    ],
   },
-  "ignoreDependencies": [
+  ignoreDependencies: [
     "@types/gtag.js",
     "type-fest",
     "@vitest/ui",
     "concurrently",
-    "axios-mock-adapter"
+    "axios-mock-adapter",
   ],
-  "ignoreUnresolved": ["/setupTest.ts"]
-}
+  ignore: ["/setupTest.ts"],
+  ignoreUnresolved: ["/setupTest.ts"],
+};
+
+export default config;

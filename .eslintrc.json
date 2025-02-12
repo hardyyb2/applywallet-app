@@ -40,7 +40,8 @@
         "global-error.tsx",
         "sitemap.ts",
         "robots.ts",
-        "vitest.config.ts"
+        "vitest.config.ts",
+        "knip.ts"
       ],
       "rules": {
         "import/no-default-export": "off"
