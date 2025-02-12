@@ -66,7 +66,7 @@ const NavigationMenu = ({
                   <Link
                     href={itemLinkWithLocale}
                     className={cn("py-2", {
-                      "d-active": active,
+                      "d-menu-active": active,
                     })}
                     onClick={onNavItemClick}
                   >

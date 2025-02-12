@@ -137,7 +137,7 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
   return (
     <Card className="m-auto overflow-hidden" compact normal="lg">
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
-        <Card.Body className="[&_.d-form-control]:mt-2xs">
+        <Card.Body className="[&_.d-fieldset]:mt-2xs">
           <Typography variant="headline-s" lg="headline-m">
             {titleText}
           </Typography>
@@ -240,10 +240,10 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
                   key={round.id}
                   value={String(index)}
                   className={cnM(
-                    roundErrorIndexes?.has(index) && "border border-error",
+                    roundErrorIndexes?.has(index) && "border-error border",
                   )}
                 >
-                  <div className="grid w-full grid-cols-[1fr_auto] items-center gap-3xs pr-2xs-xs">
+                  <div className="gap-3xs pr-2xs-xs grid w-full grid-cols-[1fr_auto] items-center">
                     <AccordionTrigger className="flex-1">
                       {round.name || `round ${index + 1}`}
                     </AccordionTrigger>
@@ -252,7 +252,7 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
                       role="button"
                       tabIndex={1}
                       aria-label="delete round"
-                      className="w-4 text-error lg:w-6"
+                      className="text-error w-4 lg:w-6"
                       onClick={() => removeRound(index)}
                     />
                   </div>
@@ -332,7 +332,7 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
             <Button
               type="submit"
               color="primary"
-              className="mt-3xs flex-1 md:mt-xs"
+              className="mt-3xs md:mt-xs flex-1"
               loading={loading}
               responsive
               disabled={loading}

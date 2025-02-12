@@ -96,7 +96,7 @@ const AddEditExperienceForm = (props: AddEditExperienceFormProps) => {
       onSubmit={handleSubmit(onSubmit)}
       noValidate
     >
-      <div className="d-card-body bg-base-100 [&_.d-form-control]:mt-2">
+      <div className="d-card-body bg-base-100 [&_.d-fieldset]:mt-2">
         <Typography variant="headline-s" lg="headline-m">
           {titleText}
         </Typography>
