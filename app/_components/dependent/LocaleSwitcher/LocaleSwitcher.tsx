@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { Button } from "~/components/ds/Button";
@@ -12,13 +11,14 @@ import {
 } from "~/components/ds/DropdownMenu";
 import { Icons } from "~/components/ds/Icons";
 
+import { useChangeLocale, useCurrentLocale } from "@/locales/client";
 import { languageOptions } from "@/utils/locale-utils/language-options";
 import { cnM } from "@/utils/styles";
 
-import { redirectedPathName } from "./localeSwitcher.utils";
-
 const LocaleSwitcher = () => {
   const pathName = usePathname();
+  const changeLocale = useChangeLocale();
+  const currentLocale = useCurrentLocale();
 
   return (
     <DropdownMenu>
@@ -36,25 +36,20 @@ const LocaleSwitcher = () => {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         {languageOptions.map(({ label, value, icon }) => {
-          const { activeLocale, newRedirectPath } = redirectedPathName(
-            pathName,
-            value,
-          );
-
           return (
-            <Link href={newRedirectPath} key={value}>
-              <DropdownMenuItem
-                className={cnM(
-                  "flex gap-3",
-                  activeLocale === value &&
-                    "bg-primary text-primary-content focus:bg-primary",
-                )}
-                aria-label={label}
-              >
-                {icon}
-                <span>{label}</span>
-              </DropdownMenuItem>
-            </Link>
+            <DropdownMenuItem
+              key={value}
+              className={cnM(
+                "flex gap-3",
+                currentLocale === value &&
+                  "bg-primary text-primary-content focus:bg-primary",
+              )}
+              aria-label={label}
+              onClick={() => changeLocale(value)}
+            >
+              {icon}
+              <span>{label}</span>
+            </DropdownMenuItem>
           );
         })}
       </DropdownMenuContent>
