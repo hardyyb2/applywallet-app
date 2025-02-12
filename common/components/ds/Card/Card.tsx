@@ -12,7 +12,7 @@ import type { CardSizeTypes } from "./card.types";
 type CardActionsProps = ComponentProps<"div">;
 
 const CardActions = ({ ref, className, ...props }: CardActionsProps) => (
-  <div {...props} className={cn("dui-card-actions", className)} ref={ref} />
+  <div {...props} className={cn("d-card-actions", className)} ref={ref} />
 );
 
 CardActions.displayName = "CardActions";
@@ -24,7 +24,7 @@ export type CardBodyProps = ComponentProps<"div">;
 const CardBody = ({ ref, className, ...props }: CardBodyProps) => (
   <div
     {...props}
-    className={cnM("dui-card-body rounded-xl bg-base-100", className)}
+    className={cnM("d-card-body rounded-xl bg-base-100", className)}
     ref={ref}
   />
 );
@@ -57,7 +57,7 @@ export interface CardTitleProps extends ComponentProps<"span"> {
 }
 
 const CardTitle = ({ className, ...props }: CardTitleProps) => {
-  return <span {...props} className={cn("dui-card-title", className)} />;
+  return <span {...props} className={cn("d-card-title", className)} />;
 };
 
 CardTitle.displayName = "CardTitle";
@@ -83,25 +83,25 @@ interface ModifierMap {
 
 const DYNAMIC_MODIFIERS: ModifierMap = {
   compact: {
-    true: "dui-card-compact",
-    xs: "xs:dui-card-compact",
-    sm: "sm:dui-card-compact",
-    md: "md:dui-card-compact",
-    lg: "lg:dui-card-compact",
+    true: "d-card-compact",
+    xs: "xs:d-card-compact",
+    sm: "sm:d-card-compact",
+    md: "md:d-card-compact",
+    lg: "lg:d-card-compact",
   },
   normal: {
-    true: "dui-card-normal",
-    xs: "xs:dui-card-normal",
-    sm: "sm:dui-card-normal",
-    md: "md:dui-card-normal",
-    lg: "lg:dui-card-normal",
+    true: "d-card-normal",
+    xs: "xs:d-card-normal",
+    sm: "sm:d-card-normal",
+    md: "md:d-card-normal",
+    lg: "lg:d-card-normal",
   },
   side: {
-    true: "dui-card-side",
-    xs: "xs:dui-card-side",
-    sm: "sm:dui-card-side",
-    md: "md:dui-card-side",
-    lg: "lg:dui-card-side",
+    true: "d-card-side",
+    xs: "xs:d-card-side",
+    sm: "sm:d-card-side",
+    md: "md:d-card-side",
+    lg: "lg:d-card-side",
   },
 };
 
@@ -116,10 +116,10 @@ const Card = ({
   ...props
 }: CardProps) => {
   const classes = cn(
-    "dui-card",
+    "d-card",
     className,
     cn({
-      "dui-card-bordered": bordered,
+      "d-card-bordered": bordered,
       "image-full": imageFull,
       [(compact && DYNAMIC_MODIFIERS.compact[compact.toString()]) || ""]:
         compact,

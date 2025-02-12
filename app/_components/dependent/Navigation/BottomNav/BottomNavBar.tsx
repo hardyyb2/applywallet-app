@@ -51,7 +51,7 @@ const BottomNavBar = ({
             href={itemLinkWithLocale}
             key={item.key ?? item.link}
             className={cn(
-              active && "dui-active text-secondary",
+              active && "d-active text-secondary",
               "bg-transparent",
             )}
           >
@@ -66,14 +66,14 @@ const BottomNavBar = ({
       <Flex component="div">
         <Button
           color="ghost"
-          className="dui-indicator w-[90%]"
+          className="d-indicator w-[90%]"
           onClick={toggleBottomNav}
           aria-label="menu-button"
         >
           {menuIconHasIndicator ? (
             <span
               className={cn(
-                "dui-badge dui-indicator-item dui-badge-secondary dui-badge-xs",
+                "d-badge d-indicator-item d-badge-secondary d-badge-xs",
                 "left-1/2 top-[20%]",
               )}
             />

@@ -1,26 +1,26 @@
 import { cva } from "cva";
 
 export const tableVariants = cva(
-  "dui-table caption-bottom bg-base-100 rounded-xl",
+  "d-table caption-bottom bg-base-100 rounded-xl",
   {
     variants: {
       size: {
-        xs: "dui-table-xs",
-        sm: "dui-table-sm",
-        md: "dui-table-md",
-        lg: "dui-table-lg",
+        xs: "d-table-xs",
+        sm: "d-table-sm",
+        md: "d-table-md",
+        lg: "d-table-lg",
       },
       variant: {
-        zebra: "dui-table-zebra",
+        zebra: "d-table-zebra",
       },
       pinRows: {
-        true: "dui-table-pin-rows",
+        true: "d-table-pin-rows",
       },
       pinCols: {
-        true: "dui-table-pin-cols",
+        true: "d-table-pin-cols",
       },
       responsive: {
-        true: "dui-table-xs sm:dui-table-sm md:dui-table-md lg:dui-table-lg",
+        true: "d-table-xs sm:d-table-sm md:d-table-md lg:d-table-lg",
       },
     },
   },

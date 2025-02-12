@@ -137,7 +137,7 @@ const AddEditInterviewForm = (props: AddEditInterviewFormProps) => {
   return (
     <Card className="m-auto overflow-hidden" compact normal="lg">
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
-        <Card.Body className="[&_.dui-form-control]:mt-2xs">
+        <Card.Body className="[&_.d-form-control]:mt-2xs">
           <Typography variant="headline-s" lg="headline-m">
             {titleText}
           </Typography>

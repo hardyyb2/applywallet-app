@@ -56,9 +56,9 @@ const Calendar = ({
             ? "sr-only"
             : "title-s",
         dropdown_month:
-          "[&>span:first-child]:sr-only [&>select]:dui-select [&>select]:dui-select-sm [&>select]:text-h6",
+          "[&>span:first-child]:sr-only [&>select]:d-select [&>select]:d-select-sm [&>select]:text-h6",
         dropdown_year:
-          "[&>span:first-child]:sr-only [&>select]:dui-select [&>select]:dui-select-sm [&>select]:text-h6",
+          "[&>span:first-child]:sr-only [&>select]:d-select [&>select]:d-select-sm [&>select]:text-h6",
         caption_dropdowns: "flex gap-1 items-center",
         nav: cnM("flex items-center space-x-1"),
         nav_button: cnM(

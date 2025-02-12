@@ -34,13 +34,13 @@ const FormField = ({
   className,
 }: FormFieldProps) => {
   return (
-    <fieldset className={cnM("dui-form-control", className)}>
+    <fieldset className={cnM("d-form-control", className)}>
       <label
-        className="dui-label"
+        className="d-label"
         htmlFor={htmlFor}
         aria-label={typeof label === "string" ? label : undefined}
       >
-        <span className="dui-label-text">{label}</span>
+        <span className="d-label-text">{label}</span>
       </label>
       <FormFieldContext.Provider value={{ error, htmlFor }}>
         {children}
@@ -48,13 +48,13 @@ const FormField = ({
 
       <ConditionalMatch fallback={null}>
         <ConditionalMatch.Render when={error}>
-          <label className="dui-label" htmlFor={htmlFor}>
-            <span className="dui-label-text-alt text-error">{error}</span>
+          <label className="d-label" htmlFor={htmlFor}>
+            <span className="d-label-text-alt text-error">{error}</span>
           </label>
         </ConditionalMatch.Render>
         <ConditionalMatch.Render when={!error && description}>
-          <label className="dui-label" htmlFor={htmlFor}>
-            <span className="dui-label-text-alt">{description}</span>
+          <label className="d-label" htmlFor={htmlFor}>
+            <span className="d-label-text-alt">{description}</span>
           </label>
         </ConditionalMatch.Render>
       </ConditionalMatch>

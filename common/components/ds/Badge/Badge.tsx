@@ -30,8 +30,7 @@ const Badge = ({
         variant,
         className: cn(
           {
-            "dui-badge-xs md:dui-badge-sm lg:dui-badge-md xl:dui-badge-lg":
-              responsive,
+            "d-badge-xs md:d-badge-sm lg:d-badge-md xl:d-badge-lg": responsive,
           },
           className,
         ),

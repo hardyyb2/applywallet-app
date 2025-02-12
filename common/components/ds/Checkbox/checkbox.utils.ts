@@ -1,15 +1,15 @@
 import { cva } from "cva";
 
-export const checkboxVariants = cva("peer dui-checkbox", {
+export const checkboxVariants = cva("peer d-checkbox", {
   variants: {
     color: {
-      primary: "dui-checkbox-primary",
-      secondary: "dui-checkbox-secondary",
-      accent: "dui-checkbox-accent",
-      success: "dui-checkbox-success",
-      warning: "dui-checkbox-warning",
-      error: "dui-checkbox-error",
-      info: "dui-checkbox-info",
+      primary: "d-checkbox-primary",
+      secondary: "d-checkbox-secondary",
+      accent: "d-checkbox-accent",
+      success: "d-checkbox-success",
+      warning: "d-checkbox-warning",
+      error: "d-checkbox-error",
+      info: "d-checkbox-info",
     },
     size: {
       xs: "h-4 w-4",

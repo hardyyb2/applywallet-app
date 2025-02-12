@@ -108,7 +108,7 @@ const config: Config = {
   daisyui: {
     themes: ["synthwave", "light"],
     logs: false,
-    prefix: "dui-",
+    prefix: "d-",
   },
   future: {
     hoverOnlyWhenSupported: true,

@@ -1,26 +1,26 @@
 import { cva } from "cva";
 
-export const badgeVariants = cva("dui-badge", {
+export const badgeVariants = cva("d-badge", {
   variants: {
     size: {
-      lg: "dui-badge-lg",
-      md: "dui-badge-md",
-      sm: "dui-badge-sm",
-      xs: "dui-badge-xs",
+      lg: "d-badge-lg",
+      md: "d-badge-md",
+      sm: "d-badge-sm",
+      xs: "d-badge-xs",
     },
     color: {
-      neutral: "dui-badge-neutral",
-      primary: "dui-badge-primary",
-      secondary: "dui-badge-secondary",
-      accent: "dui-badge-accent",
-      info: "dui-badge-info",
-      success: "dui-badge-success",
-      warning: "dui-badge-warning",
-      error: "dui-badge-error",
-      ghost: "dui-badge-ghost",
+      neutral: "d-badge-neutral",
+      primary: "d-badge-primary",
+      secondary: "d-badge-secondary",
+      accent: "d-badge-accent",
+      info: "d-badge-info",
+      success: "d-badge-success",
+      warning: "d-badge-warning",
+      error: "d-badge-error",
+      ghost: "d-badge-ghost",
     },
     variant: {
-      outline: "dui-badge-outline",
+      outline: "d-badge-outline",
     },
   },
 });

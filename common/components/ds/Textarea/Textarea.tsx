@@ -19,20 +19,20 @@ const Textarea = ({
   ...props
 }: TextareaProps) => {
   const classes = cn(
-    "dui-textarea",
+    "d-textarea",
     {
-      "dui-textarea-primary": color === "primary",
-      "dui-textarea-secondary": color === "secondary",
-      "dui-textarea-accent": color === "accent",
-      "dui-textarea-info": color === "info",
-      "dui-textarea-success": color === "success",
-      "dui-textarea-warning": color === "warning",
-      "dui-textarea-error": color === "error",
-      "dui-textarea-ghost": color === "ghost",
+      "d-textarea-primary": color === "primary",
+      "d-textarea-secondary": color === "secondary",
+      "d-textarea-accent": color === "accent",
+      "d-textarea-info": color === "info",
+      "d-textarea-success": color === "success",
+      "d-textarea-warning": color === "warning",
+      "d-textarea-error": color === "error",
+      "d-textarea-ghost": color === "ghost",
     },
     {
       [`focus:outline-offset-0`]: !borderOffset,
-      "dui-textarea-bordered": bordered,
+      "d-textarea-bordered": bordered,
     },
     className,
   );

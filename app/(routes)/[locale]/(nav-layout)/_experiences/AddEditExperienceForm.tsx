@@ -92,11 +92,11 @@ const AddEditExperienceForm = (props: AddEditExperienceFormProps) => {
 
   return (
     <form
-      className="dui-card m-auto max-w-[65ch] overflow-hidden"
+      className="d-card m-auto max-w-[65ch] overflow-hidden"
       onSubmit={handleSubmit(onSubmit)}
       noValidate
     >
-      <div className="dui-card-body bg-base-100 [&_.dui-form-control]:mt-2">
+      <div className="d-card-body bg-base-100 [&_.d-form-control]:mt-2">
         <Typography variant="headline-s" lg="headline-m">
           {titleText}
         </Typography>

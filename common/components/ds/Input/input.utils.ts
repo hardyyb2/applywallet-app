@@ -1,31 +1,31 @@
 import { cva } from "cva";
 
-const inputVariants = cva("dui-input w-full", {
+const inputVariants = cva("d-input w-full", {
   variants: {
     color: {
-      primary: "dui-input-primary",
-      secondary: "dui-input-secondary",
-      accent: "dui-input-accent",
-      info: "dui-input-info",
-      success: "dui-input-success",
-      warning: "dui-input-warning",
-      error: "dui-input-error",
-      ghost: "dui-input-ghost",
+      primary: "d-input-primary",
+      secondary: "d-input-secondary",
+      accent: "d-input-accent",
+      info: "d-input-info",
+      success: "d-input-success",
+      warning: "d-input-warning",
+      error: "d-input-error",
+      ghost: "d-input-ghost",
     },
     size: {
-      lg: "dui-input-lg",
-      md: "dui-input-md",
-      sm: "dui-input-sm",
-      xs: "dui-input-xs",
+      lg: "d-input-lg",
+      md: "d-input-md",
+      sm: "d-input-sm",
+      xs: "d-input-xs",
     },
     bordered: {
-      true: "dui-input-bordered",
+      true: "d-input-bordered",
     },
     borderOffset: {
       false: "focus:outline-offset-0",
     },
     responsive: {
-      true: "dui-input-sm md:dui-input-md",
+      true: "d-input-sm md:d-input-md",
     },
   },
   defaultVariants: {

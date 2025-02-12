@@ -21,13 +21,13 @@ const BarLoader = ({
     <div
       {...rest}
       className={cnM(
-        "dui-loading dui-loading-bars",
+        "d-loading d-loading-bars",
         {
-          "dui-loading-xs": size === "xs",
-          "dui-loading-sm": size === "sm",
-          "dui-loading-md": size === "md",
-          "dui-loading-lg": size === "lg",
-          "dui-loading-xl": size === "xl",
+          "d-loading-xs": size === "xs",
+          "d-loading-sm": size === "sm",
+          "d-loading-md": size === "md",
+          "d-loading-lg": size === "lg",
+          "d-loading-xl": size === "xl",
         },
         className,
       )}

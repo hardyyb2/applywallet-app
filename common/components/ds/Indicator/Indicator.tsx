@@ -4,17 +4,17 @@ import { cva, type VariantProps } from "cva";
 
 import { cnM } from "@/utils/styles";
 
-const indicatorItemVariants = cva("dui-indicator-item", {
+const indicatorItemVariants = cva("d-indicator-item", {
   variants: {
     horizontal: {
-      start: "dui-indicator-start",
-      center: "dui-indicator-center",
-      end: "dui-indicator-end",
+      start: "d-indicator-start",
+      center: "d-indicator-center",
+      end: "d-indicator-end",
     },
     vertical: {
-      top: "dui-indicator-top",
-      middle: "dui-indicator-middle",
-      bottom: "dui-indicator-bottom",
+      top: "d-indicator-top",
+      middle: "d-indicator-middle",
+      bottom: "d-indicator-bottom",
     },
   },
 });
@@ -53,7 +53,7 @@ const Indicator = ({
   ...props
 }: IndicatorProps): JSX.Element => {
   return (
-    <div {...props} className={cnM("dui-indicator", className)} ref={ref}>
+    <div {...props} className={cnM("d-indicator", className)} ref={ref}>
       {children}
     </div>
   );

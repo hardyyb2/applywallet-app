@@ -1,51 +1,51 @@
 import { cva } from "cva";
 
 export const buttonVariants = cva(
-  "dui-btn body-s lg:body-m font-secondary overflow-hidden",
+  "d-btn body-s lg:body-m font-secondary overflow-hidden",
   {
     variants: {
       size: {
-        lg: "dui-btn-lg",
-        md: "dui-btn-md",
-        sm: "dui-btn-sm",
-        xs: "dui-btn-xs lg:body-s",
+        lg: "d-btn-lg",
+        md: "d-btn-md",
+        sm: "d-btn-sm",
+        xs: "d-btn-xs lg:body-s",
       },
       color: {
-        primary: "dui-btn-primary",
-        secondary: "dui-btn-secondary",
-        accent: "dui-btn-accent",
-        info: "dui-btn-info",
-        success: "dui-btn-success",
-        warning: "dui-btn-warning",
-        error: "dui-btn-error",
-        ghost: "dui-btn-ghost",
-        neutral: "dui-btn-neutral",
+        primary: "d-btn-primary",
+        secondary: "d-btn-secondary",
+        accent: "d-btn-accent",
+        info: "d-btn-info",
+        success: "d-btn-success",
+        warning: "d-btn-warning",
+        error: "d-btn-error",
+        ghost: "d-btn-ghost",
+        neutral: "d-btn-neutral",
       },
       shape: {
-        circle: "dui-btn-circle",
-        square: "dui-btn-square",
+        circle: "d-btn-circle",
+        square: "d-btn-square",
       },
       variant: {
-        outline: "dui-btn-outline",
-        link: "dui-btn-link",
+        outline: "d-btn-outline",
+        link: "d-btn-link",
       },
       fullWidth: {
-        true: "dui-btn-block",
+        true: "d-btn-block",
       },
       wide: {
-        true: "dui-btn-wide",
+        true: "d-btn-wide",
       },
       responsive: {
-        true: "dui-btn-sm md:dui-btn-md",
+        true: "d-btn-sm md:d-btn-md",
       },
       animation: {
         false: "no-animation",
       },
       active: {
-        true: "dui-btn-active",
+        true: "d-btn-active",
       },
       disabled: {
-        true: "dui-btn-disabled",
+        true: "d-btn-disabled",
       },
     },
     defaultVariants: {

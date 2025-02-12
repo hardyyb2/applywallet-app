@@ -63,7 +63,7 @@ const Button = ({
       )}
       disabled={disabled ?? false}
     >
-      {loading ? <span className="dui-loading" /> : startIcon}
+      {loading ? <span className="d-loading" /> : startIcon}
       {children}
       {endIcon ?? null}
     </button>

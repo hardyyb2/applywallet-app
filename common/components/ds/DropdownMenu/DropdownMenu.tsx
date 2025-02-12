@@ -206,7 +206,7 @@ const DropdownMenuSeparator = ({
 }: React.ComponentProps<typeof DropdownMenuPrimitive.Separator>) => (
   <DropdownMenuPrimitive.Separator
     ref={ref}
-    className={cnM("dui-divider !my-0 shrink-0", className)}
+    className={cnM("d-divider !my-0 shrink-0", className)}
     {...props}
   />
 );

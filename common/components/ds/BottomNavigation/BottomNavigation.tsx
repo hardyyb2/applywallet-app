@@ -38,12 +38,12 @@ const BottomNavigation = ({
     <div
       {...props}
       className={cn(
-        "dui-btm-nav",
+        "d-btm-nav",
         {
-          "dui-btm-nav-xs": size === "xs",
-          "dui-btm-nav-sm": size === "sm",
-          "dui-btm-nav-md": size === "md",
-          "dui-btm-nav-lg": size === "lg",
+          "d-btm-nav-xs": size === "xs",
+          "d-btm-nav-sm": size === "sm",
+          "d-btm-nav-md": size === "md",
+          "d-btm-nav-lg": size === "lg",
         },
         className,
       )}

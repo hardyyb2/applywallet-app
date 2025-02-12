@@ -1,10 +1,10 @@
 /* stylelint-disable selector-class-pattern */
 
-.dui-btn {
+.d-btn {
   --btn-text-case: lowercase;
 }
 
-.dui-card-body {
+.d-card-body {
   @apply p-xs-s;
 }
 
@@ -13,40 +13,40 @@ textarea::placeholder {
   opacity: 0.75;
 }
 
-.dui-label-text-alt:not(.text-error) {
+.d-label-text-alt:not(.text-error) {
   @apply text-opacity-80;
 }
 
-.dui-label,
-.dui-label-text {
+.d-label,
+.d-label-text {
   @apply caption-m lg:caption-l;
 }
 
-.dui-divider,
-.dui-divider-vertical {
+.d-divider,
+.d-divider-vertical {
   @apply mx-0 my-3xs-2xs h-[1px] text-base-content/60;
 }
 
-.dui-divider::before,
-.dui-divider::after,
-.dui-divider-vertical::before,
-.dui-divider-vertical::after {
+.d-divider::before,
+.d-divider::after,
+.d-divider-vertical::before,
+.d-divider-vertical::after {
   @apply bg-base-content/20;
 }
 
-.dui-divider-horizontal {
+.d-divider-horizontal {
   @apply mx-3xs-2xs my-0 h-auto w-[1px];
 }
 
-.dui-menu-title {
+.d-menu-title {
   @apply label-m px-xs py-3xs;
 }
 
-.dui-active {
+.d-active {
   @apply bg-secondary text-secondary-content !important;
 }
 
-.dui-loading-xl {
+.d-loading-xl {
   @apply w-16;
 }
 

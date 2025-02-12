@@ -46,7 +46,7 @@ const Breadcrumbs = ({
       role="navigation"
       aria-label="Breadcrumbs"
       {...props}
-      className="dui-breadcrumbs caption-s !font-semibold lg:caption-l"
+      className="d-breadcrumbs caption-s !font-semibold lg:caption-l"
       ref={ref}
     >
       <ul {...innerProps} ref={innerRef}>

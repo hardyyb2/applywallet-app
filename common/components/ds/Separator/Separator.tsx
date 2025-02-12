@@ -21,8 +21,8 @@ const Separator = ({
     decorative={decorative}
     orientation={orientation}
     className={cnM(
-      "dui-divider shrink-0",
-      orientation === "horizontal" && "dui-divider-horizontal",
+      "d-divider shrink-0",
+      orientation === "horizontal" && "d-divider-horizontal",
       className,
     )}
     {...props}

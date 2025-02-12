@@ -82,7 +82,7 @@ const FileUpload = ({ className, ...rest }: FileUploadProps) => {
             "bg-info/10 outline-info/40": color === "info",
           },
           isDragActive && [
-            "dui-skeleton",
+            "d-skeleton",
             {
               "outline-primary": color === "primary",
               "outline-secondary": color === "secondary",

@@ -35,7 +35,7 @@ const NavigationMenu = ({
       component="ul"
       wrap="nowrap"
       className={cn(
-        "dui-menu-compact dui-menu max-w-none",
+        "d-menu-compact d-menu max-w-none",
         "h-full space-y-3xs-2xs overflow-y-auto px-2",
         className,
       )}
@@ -43,7 +43,7 @@ const NavigationMenu = ({
       {groupedNavItemsEntries.map(([group, items]) => {
         return (
           <Fragment key={group}>
-            {navOpen && <li className="dui-menu-title">{group}</li>}
+            {navOpen && <li className="d-menu-title">{group}</li>}
 
             {items.map((item) => {
               const itemLinkWithLocale = getLinkWithLocale({
@@ -62,7 +62,7 @@ const NavigationMenu = ({
                   <Link
                     href={itemLinkWithLocale}
                     className={cn("py-2", {
-                      "dui-active": active,
+                      "d-active": active,
                     })}
                     onClick={onNavItemClick}
                   >

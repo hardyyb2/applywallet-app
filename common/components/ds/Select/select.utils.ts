@@ -3,10 +3,10 @@ import { cva } from "cva";
 export const selectVariants = cva("rounded-btn !min-h-[unset]", {
   variants: {
     size: {
-      lg: "dui-select-lg",
-      md: "dui-select-md",
-      sm: "dui-select-sm",
-      xs: "dui-select-xs",
+      lg: "d-select-lg",
+      md: "d-select-md",
+      sm: "d-select-sm",
+      xs: "d-select-xs",
     },
     color: {
       primary: "border border-primary",
@@ -19,7 +19,7 @@ export const selectVariants = cva("rounded-btn !min-h-[unset]", {
       ghost: "border border-ghost",
     },
     responsive: {
-      true: "dui-select-sm md:dui-select-md",
+      true: "d-select-sm md:d-select-md",
     },
   },
 });

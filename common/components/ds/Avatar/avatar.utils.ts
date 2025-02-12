@@ -1,7 +1,7 @@
 import { cva } from "cva";
 
 export const avatarVariants = cva(
-  "dui-avatar overflow-hidden shrink-0 grow-0 aspect-square",
+  "d-avatar overflow-hidden shrink-0 grow-0 aspect-square",
   {
     variants: {
       shape: {
