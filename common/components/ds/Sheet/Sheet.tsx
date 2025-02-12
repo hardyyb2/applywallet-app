@@ -25,7 +25,7 @@ const SheetOverlay = ({
 }: React.ComponentProps<typeof SheetPrimitive.Overlay>) => (
   <SheetPrimitive.Overlay
     className={cnM(
-      "fixed inset-0 z-50 bg-neutral/80",
+      "bg-neutral/80 fixed inset-0 z-50",
       "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
       className,
     )}
@@ -37,8 +37,8 @@ SheetOverlay.displayName = SheetPrimitive.Overlay.displayName;
 
 const sheetVariants = cva(
   cnM(
-    "fixed z-50 gap-4 border-base-content/40 bg-base-100 transition ease-in-out",
-    "data-[state=closed]:duration-200 data-[state=open]:duration-300 data-[state=open]:animate-in data-[state=closed]:animate-out",
+    "border-base-content/40 bg-base-100 fixed z-50 gap-4 transition ease-in-out",
+    "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-200 data-[state=open]:duration-300",
   ),
   {
     variants: {
@@ -46,9 +46,9 @@ const sheetVariants = cva(
         top: "inset-x-0 top-0 border-b data-[state=closed]:slide-out-to-top data-[state=open]:slide-in-from-top",
         bottom:
           "inset-x-0 bottom-0 border-t data-[state=closed]:slide-out-to-bottom data-[state=open]:slide-in-from-bottom",
-        left: "inset-y-0 left-0 h-full w-3/4 border-r data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left md:max-w-lg",
+        left: "inset-y-0 left-0 h-full w-3/4 border-r data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left md:max-w-(--breakpoint-lg)",
         right:
-          "inset-y-0 right-0 h-full w-3/4 border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right md:max-w-lg",
+          "inset-y-0 right-0 h-full w-3/4 border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right md:max-w-(--breakpoint-lg)",
       },
     },
     defaultVariants: {
@@ -80,7 +80,7 @@ const SheetContent = ({
     {showClose ? (
       <SheetPrimitive.Close
         asChild
-        className="absolute right-4 top-4 opacity-70 transition-opacity hover:opacity-100 disabled:pointer-events-none"
+        className="absolute top-4 right-4 opacity-70 transition-opacity hover:opacity-100 disabled:pointer-events-none"
       >
         <Button color="ghost" shape="square" size="md">
           <Icons.X />
@@ -97,7 +97,7 @@ const SheetHeader = ({
 }: React.HTMLAttributes<HTMLDivElement>) => (
   <div
     className={cnM(
-      "flex flex-col gap-3xs p-s text-center sm:text-left",
+      "gap-3xs p-s flex flex-col text-center sm:text-left",
       className,
     )}
     {...props}
@@ -111,7 +111,7 @@ const SheetFooter = ({
 }: React.HTMLAttributes<HTMLDivElement>) => (
   <div
     className={cnM(
-      "absolute inset-x-0 bottom-0 flex gap-2xs border-t border-base-content/40 bg-base-100 p-xs",
+      "gap-2xs border-base-content/40 bg-base-100 p-xs absolute inset-x-0 bottom-0 flex border-t",
       className,
     )}
     {...props}

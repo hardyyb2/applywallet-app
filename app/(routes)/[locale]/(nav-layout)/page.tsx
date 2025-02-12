@@ -28,7 +28,10 @@ const Home = async ({ params }: HomeProps) => {
   return (
     <div className="px-5 py-4 lg:px-10">
       <Flex justify="center">
-        <Card side="lg" className="bg-base-200 text-base-content max-w-xl">
+        <Card
+          side="lg"
+          className="bg-base-200 text-base-content max-w-(--breakpoint-xl)"
+        >
           <Card.Body className="items-center">
             <Typography
               variant="headline-m"
