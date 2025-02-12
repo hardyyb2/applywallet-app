@@ -13,16 +13,7 @@ const nextConfig = {
         protocol: "https",
         hostname: "lh3.googleusercontent.com",
       },
-      {
-        protocol: "https",
-        hostname: "fastly.picsum.photos",
-      },
-      {
-        protocol: "https",
-        hostname: "picsum.photos",
-      },
     ],
-    // TODO - remove picsum
   },
   webpack(config) {
     config.module.rules.push({
@@ -47,6 +38,7 @@ const contentLayerWrapper = withContentlayer(nextConfig);
 const sentryWrapper = withSentryConfig(contentLayerWrapper, {
   org: "hardik-badola",
   project: "applywallet",
+  authToken: process.env.SENTRY_AUTH_TOKEN,
   silent: !process.env.CI,
   widenClientFileUpload: true,
   reactComponentAnnotation: {
