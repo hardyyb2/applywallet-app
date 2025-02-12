@@ -1,7 +1,8 @@
 import tailwindConfig from "tailwind.config";
-import resolveConfig from "tailwindcss/resolveConfig";
 
-const fullConfig = resolveConfig(tailwindConfig);
+// import resolveConfig from "tailwindcss/resolveConfig";
+
+const fullConfig = {};
 
 const getThemeNames = (themes: (string | Record<string, object>)[] = []) => {
   return themes?.map((theme) => {
@@ -77,7 +78,7 @@ function extractThemeColorsFromDOM(): ThemeColors {
   };
 }
 
-const breakpoints = fullConfig.theme.screens;
+const breakpoints = {};
 type BreakPointKeyType = keyof typeof breakpoints;
 
 export {

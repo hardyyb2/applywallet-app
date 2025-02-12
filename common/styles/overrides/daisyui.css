@@ -5,7 +5,7 @@
 }
 
 .d-card-body {
-  @apply p-xs-s;
+  /* @apply p-xs-s; */
 }
 
 input::placeholder,
@@ -14,40 +14,40 @@ textarea::placeholder {
 }
 
 .d-label-text-alt:not(.text-error) {
-  @apply text-opacity-80;
+  /* @apply text-opacity-80; */
 }
 
 .d-label,
 .d-label-text {
-  @apply caption-m lg:caption-l;
+  /* @apply caption-m lg:caption-l; */
 }
 
 .d-divider,
 .d-divider-vertical {
-  @apply mx-0 my-3xs-2xs h-[1px] text-base-content/60;
+  /* @apply mx-0 my-3xs-2xs h-[1px] text-base-content/60; */
 }
 
 .d-divider::before,
 .d-divider::after,
 .d-divider-vertical::before,
 .d-divider-vertical::after {
-  @apply bg-base-content/20;
+  /* @apply bg-base-content/20; */
 }
 
 .d-divider-horizontal {
-  @apply mx-3xs-2xs my-0 h-auto w-[1px];
+  /* @apply mx-3xs-2xs my-0 h-auto w-[1px]; */
 }
 
 .d-menu-title {
-  @apply label-m px-xs py-3xs;
+  /* @apply label-m px-xs py-3xs; */
 }
 
 .d-active {
-  @apply bg-secondary text-secondary-content !important;
+  /* @apply bg-secondary text-secondary-content !important; */
 }
 
 .d-loading-xl {
-  @apply w-16;
+  /* @apply w-16; */
 }
 
 /* Checkbox */
