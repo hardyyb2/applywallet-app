@@ -7,16 +7,12 @@ const appThemes: string[] = ["light", "synthwave"];
 
 type ThemeColors = {
   primary: string;
-  primaryFocus: string;
   primaryContent: string;
   secondary: string;
-  secondaryFocus: string;
   secondaryContent: string;
   accent: string;
-  accentFocus: string;
   accentContent: string;
   neutral: string;
-  neutralFocus: string;
   neutralContent: string;
   base100: string;
   base200: string;
@@ -36,30 +32,28 @@ function extractThemeColorsFromDOM(): ThemeColors {
   const computedStyles = getComputedStyle(document.querySelector(":root")!);
 
   return {
-    primary: `hsl(${computedStyles.getPropertyValue("--p")})`,
-    primaryFocus: `hsl(${computedStyles.getPropertyValue("--pf")})`,
-    primaryContent: `hsl(${computedStyles.getPropertyValue("--pc")})`,
-    secondary: `hsl(${computedStyles.getPropertyValue("--s")})`,
-    secondaryFocus: `hsl(${computedStyles.getPropertyValue("--sf")})`,
-    secondaryContent: `hsl(${computedStyles.getPropertyValue("--sc")})`,
-    accent: `hsl(${computedStyles.getPropertyValue("--a")})`,
-    accentFocus: `hsl(${computedStyles.getPropertyValue("--af")})`,
-    accentContent: `hsl(${computedStyles.getPropertyValue("--ac")})`,
-    neutral: `hsl(${computedStyles.getPropertyValue("--n")})`,
-    neutralFocus: `hsl(${computedStyles.getPropertyValue("--nf")})`,
-    neutralContent: `hsl(${computedStyles.getPropertyValue("--nc")})`,
-    base100: `hsl(${computedStyles.getPropertyValue("--b1")})`,
-    base200: `hsl(${computedStyles.getPropertyValue("--b2")})`,
-    base300: `hsl(${computedStyles.getPropertyValue("--b3")})`,
-    baseContent: `hsl(${computedStyles.getPropertyValue("--bc")})`,
-    info: `hsl(${computedStyles.getPropertyValue("--in")})`,
-    infoContent: `hsl(${computedStyles.getPropertyValue("--inc")})`,
-    success: `hsl(${computedStyles.getPropertyValue("--su")})`,
-    successContent: `hsl(${computedStyles.getPropertyValue("--suc")})`,
-    warning: `hsl(${computedStyles.getPropertyValue("--wa")})`,
-    warningContent: `hsl(${computedStyles.getPropertyValue("--wac")})`,
-    error: `hsl(${computedStyles.getPropertyValue("--er")})`,
-    errorContent: `hsl(${computedStyles.getPropertyValue("--erc")})`,
+    primary: computedStyles.getPropertyValue("--color-primary"),
+    primaryContent: computedStyles.getPropertyValue("--color-primary-content"),
+    secondary: computedStyles.getPropertyValue("--color-secondary"),
+    secondaryContent: computedStyles.getPropertyValue(
+      "--color-secondary-content",
+    ),
+    accent: computedStyles.getPropertyValue("--color-accent"),
+    accentContent: computedStyles.getPropertyValue("--color-accent-content"),
+    neutral: computedStyles.getPropertyValue("--color-neutral"),
+    neutralContent: computedStyles.getPropertyValue("--color-neutral-content"),
+    base100: computedStyles.getPropertyValue("--color-base-100"),
+    base200: computedStyles.getPropertyValue("--color-base-200"),
+    base300: computedStyles.getPropertyValue("--color-base-300"),
+    baseContent: computedStyles.getPropertyValue("--color-base-content"),
+    info: computedStyles.getPropertyValue("--color-info"),
+    infoContent: computedStyles.getPropertyValue("--color-info-content"),
+    success: computedStyles.getPropertyValue("--color-success"),
+    successContent: computedStyles.getPropertyValue("--color-success-content"),
+    warning: computedStyles.getPropertyValue("--color-warning"),
+    warningContent: computedStyles.getPropertyValue("--color-warning-content"),
+    error: computedStyles.getPropertyValue("--color-error"),
+    errorContent: computedStyles.getPropertyValue("--color-error-content"),
   };
 }
 
