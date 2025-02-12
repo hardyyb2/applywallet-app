@@ -5,7 +5,7 @@ import { NavigationCategories, type NavItemType } from "./navigation.types";
 
 const navItems: NavItemType[] = [
   {
-    label: "home",
+    label: "nav.home",
     link: AppRoutes.HOME,
     category: NavigationCategories.GENERAL,
     icon: Icons.CustomHome,
@@ -25,13 +25,13 @@ const navItems: NavItemType[] = [
     inactive: true,
   },
   {
-    label: "blogs",
+    label: "nav.blogs",
     link: AppRoutes.BLOGS,
     category: NavigationCategories.READ,
     icon: Icons.BookOpen,
   },
   {
-    label: "about",
+    label: "nav.about",
     link: AppRoutes.ABOUT,
     category: NavigationCategories.OTHERS,
     icon: Icons.Info,

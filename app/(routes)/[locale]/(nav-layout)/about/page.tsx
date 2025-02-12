@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { AppRoutes } from "~/utils/routes";
 
 import { BasePageHeader } from "@/components/dependent/BasePageHeader";
+import { getI18n } from "@/locales/server";
 import { i18n } from "@/utils/locale-utils";
 
 import { AboutApp } from "./AboutApp";
@@ -24,10 +25,12 @@ export const metadata: Metadata = {
   },
 };
 
-const AboutPage = () => {
+const AboutPage = async () => {
+  const t = await getI18n();
+
   return (
     <div className="h-full px-5 py-4 lg:px-10">
-      <BasePageHeader title="about" subtitle="app & creator" />
+      <BasePageHeader title={t("about.title")} subtitle={t("about.subtitle")} />
 
       <div className="grid grid-cols-1 gap-xs-s lg:grid-cols-2">
         <AboutApp />

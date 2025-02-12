@@ -13,6 +13,7 @@ import {
 import { Typography } from "~/components/ds/Typography";
 import { getLinkWithLocale } from "~/utils/routes";
 
+import { useI18n } from "@/locales/client";
 import { cn } from "@/utils/styles";
 
 import { groupedNavItemsEntries } from "./navigation.utils";
@@ -28,6 +29,7 @@ const NavigationMenu = ({
   className = "",
   onNavItemClick = () => null,
 }: NavigationMenuProps) => {
+  const t = useI18n();
   const pathName = usePathname();
 
   return (
@@ -43,7 +45,9 @@ const NavigationMenu = ({
       {groupedNavItemsEntries.map(([group, items]) => {
         return (
           <Fragment key={group}>
-            {navOpen && <li className="d-menu-title">{group}</li>}
+            {/* TODO: fix this */}
+            {/* @ts-expect-error */}
+            {navOpen && <li className="d-menu-title">{t(`nav.${group}`)}</li>}
 
             {items.map((item) => {
               const itemLinkWithLocale = getLinkWithLocale({
@@ -73,7 +77,9 @@ const NavigationMenu = ({
                         lg="label-m"
                         className="overflow-ellipsis"
                       >
-                        {item.label}
+                        {/* TODO: fix this */}
+                        {/* @ts-expect-error */}
+                        {t(item.label)}
                       </Typography>
                     ) : null}
                   </Link>
@@ -92,7 +98,9 @@ const NavigationMenu = ({
                   <Tooltip>
                     <TooltipTrigger asChild>{listItem}</TooltipTrigger>
                     <TooltipContent sideOffset={12}>
-                      {item.label}
+                      {/* TODO: fix this */}
+                      {/* @ts-expect-error */}
+                      {t(item.label)}
                       <TooltipArrow />
                     </TooltipContent>
                   </Tooltip>

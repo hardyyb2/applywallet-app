@@ -8,7 +8,11 @@ import { AppRoutes } from "~/utils/routes";
 
 import AwLogoImg from "public/images/logo/aw-logo.png";
 
-const AboutApp = () => {
+import { getI18n } from "@/locales/server";
+
+const AboutApp = async () => {
+  const t = await getI18n();
+
   return (
     <Card className="overflow-hidden">
       <Card.Body className="items-center gap-xs">
@@ -30,7 +34,7 @@ const AboutApp = () => {
           align="center"
           className="z-[1] text-base-content"
         >
-          is under construction, till then check out our blogs
+          {t("about.app.subtitle")}
         </Typography>
 
         <Card.Actions className="z-[1] w-full">

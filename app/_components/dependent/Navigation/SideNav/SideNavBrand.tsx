@@ -14,6 +14,7 @@ import {
 
 import AwLogoImg from "public/images/logo/aw-logo.png";
 
+import { useI18n } from "@/locales/client";
 import { cn } from "@/utils/styles";
 
 interface SideNavBrandProps {
@@ -29,6 +30,8 @@ const SideNavBrand = ({
   navOpen = false,
   onToggleClick,
 }: SideNavBrandProps) => {
+  const t = useI18n();
+
   return (
     <Flex
       align="center"
@@ -65,7 +68,7 @@ const SideNavBrand = ({
             </Button>
           </TooltipTrigger>
           <TooltipContent>
-            {navOpen ? "close nav" : "open nav"}
+            {navOpen ? t("nav.close_nav") : t("nav.open_nav")}
             <TooltipArrow />
           </TooltipContent>
         </Tooltip>

@@ -11,6 +11,8 @@ import { Typography } from "~/components/ds/Typography";
 
 import HardikBadolaImg from "public/images/content/authors/hardik_badola.jpeg";
 
+import { getI18n } from "@/locales/server";
+
 const socials: { name: string; url: string; icon: LucideIcon }[] = [
   {
     name: "linkedin",
@@ -29,7 +31,9 @@ const socials: { name: string; url: string; icon: LucideIcon }[] = [
   },
 ];
 
-const AboutCreator = () => {
+const AboutCreator = async () => {
+  const t = await getI18n();
+
   return (
     <Card className="overflow-hidden">
       <Card.Body className="items-center gap-xs">
@@ -75,7 +79,7 @@ const AboutCreator = () => {
           align="center"
           className="z-[1] text-primary-content"
         >
-          frontend engineer
+          {t("about.creator.position")}
         </Typography>
 
         <Card.Actions className="z-[1]">

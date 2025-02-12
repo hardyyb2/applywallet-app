@@ -1,4 +1,4 @@
-export default {
+const engLocales = {
   common: {
     or: "or",
     sign_in: "sign in",
@@ -6,6 +6,17 @@ export default {
 
   routes: {
     blogs: "blogs",
+  },
+
+  nav: {
+    general: "general",
+    home: "home",
+    blogs: "blogs",
+    about: "about",
+    read: "read",
+    others: "others",
+    open_nav: "open nav",
+    close_nav: "close nav",
   },
 
   blogs: {
@@ -25,4 +36,20 @@ export default {
     subtitle: "applywallet is under construction",
     alt_subtitle: "till we get the app ready, check out our blogs",
   },
+
+  about: {
+    title: "about",
+    subtitle: "app & creator",
+
+    app: {
+      subtitle: "is under construction, till then check out our blogs",
+    },
+
+    creator: {
+      position: "frontend engineer",
+    },
+  },
 } as const;
+
+export default engLocales;
+export type EngLocales = typeof engLocales;

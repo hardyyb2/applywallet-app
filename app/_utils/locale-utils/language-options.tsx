@@ -21,7 +21,7 @@ export const languageOptions: {
     ),
   },
   {
-    label: "spanish",
+    label: "español",
     value: "es",
     icon: (
       <Image
