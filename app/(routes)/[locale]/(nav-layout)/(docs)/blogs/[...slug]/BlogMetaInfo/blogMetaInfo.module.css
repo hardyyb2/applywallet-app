@@ -2,7 +2,7 @@
   display: grid;
   grid-auto-flow: row dense;
   grid-template: "image details" 1fr / max-content 1fr;
-  gap: theme("spacing.xs");
+  gap: var(--spacing-xs);
   align-items: center;
 }
 

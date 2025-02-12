@@ -8,6 +8,13 @@
   logs: false;
 }
 
+@plugin "daisyui/theme" {
+  name: "synthwave";
+  --depth: 1;
+  --noise: 1;
+  --color-base-content: oklch(0.979365 0.00819 301.358);
+}
+
 @config "../../tailwind.config.ts";
 
 @theme inline {

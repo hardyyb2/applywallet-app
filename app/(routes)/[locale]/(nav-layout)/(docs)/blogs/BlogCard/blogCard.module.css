@@ -2,7 +2,7 @@
   background: linear-gradient(
     to bottom,
     transparent 0%,
-    theme("colors.base-100") 80%,
-    theme("colors.base-100") 100%
+    var(--color-base-100) 80%,
+    var(--color-base-100) 100%
   );
 }

@@ -8,7 +8,7 @@ const typographyComponentsPlugin = plugin(({ addComponents, theme }) => {
       fontStyle: "normal",
       lineHeight: "64pt", // 85px
       letterSpacing: "-0.25pt",
-      fontFamily: theme("fontFamily.primary"),
+      fontFamily: "var(--font-primary)",
     },
 
     ".display-m": {
@@ -17,7 +17,7 @@ const typographyComponentsPlugin = plugin(({ addComponents, theme }) => {
       fontStyle: "normal",
       lineHeight: "52pt", // 69px
       letterSpacing: "0px",
-      fontFamily: theme("fontFamily.primary"),
+      fontFamily: "var(--font-primary)",
     },
 
     ".display-s": {
@@ -25,7 +25,7 @@ const typographyComponentsPlugin = plugin(({ addComponents, theme }) => {
       fontWeight: "400",
       fontStyle: "normal",
       lineHeight: "44pt", // 59px
-      fontFamily: theme("fontFamily.primary"),
+      fontFamily: "var(--font-primary)",
     },
 
     ".headline-l": {
@@ -34,7 +34,7 @@ const typographyComponentsPlugin = plugin(({ addComponents, theme }) => {
       fontStyle: "normal",
       lineHeight: "40pt", // 53px
       letterSpacing: "0",
-      fontFamily: theme("fontFamily.primary"),
+      fontFamily: "var(--font-primary)",
     },
 
     ".headline-m": {
@@ -43,7 +43,7 @@ const typographyComponentsPlugin = plugin(({ addComponents, theme }) => {
       fontStyle: "normal",
       lineHeight: "36pt", // 48px
       letterSpacing: "0",
-      fontFamily: theme("fontFamily.primary"),
+      fontFamily: "var(--font-primary)",
     },
 
     ".headline-s": {
@@ -52,7 +52,7 @@ const typographyComponentsPlugin = plugin(({ addComponents, theme }) => {
       fontStyle: "normal",
       lineHeight: "32pt", // 43px
       letterSpacing: "0",
-      fontFamily: theme("fontFamily.primary"),
+      fontFamily: "var(--font-primary)",
     },
 
     ".title-l": {
@@ -60,7 +60,7 @@ const typographyComponentsPlugin = plugin(({ addComponents, theme }) => {
       fontWeight: "400",
       fontStyle: "normal",
       lineHeight: "28pt", // 37px
-      fontFamily: theme("fontFamily.secondary"),
+      fontFamily: "var(--font-secondary)",
     },
 
     ".title-m": {
@@ -69,7 +69,7 @@ const typographyComponentsPlugin = plugin(({ addComponents, theme }) => {
       fontStyle: "normal",
       lineHeight: "24pt", // 32px
       letterSpacing: "0.15pt",
-      fontFamily: theme("fontFamily.secondary"),
+      fontFamily: "var(--font-secondary)",
     },
 
     ".title-s": {
@@ -78,7 +78,7 @@ const typographyComponentsPlugin = plugin(({ addComponents, theme }) => {
       fontStyle: "normal",
       lineHeight: "20pt", // 27px
       letterSpacing: "0.1pt",
-      fontFamily: theme("fontFamily.secondary"),
+      fontFamily: "var(--font-secondary)",
     },
 
     ".body-l": {
@@ -87,7 +87,7 @@ const typographyComponentsPlugin = plugin(({ addComponents, theme }) => {
       fontStyle: "normal",
       lineHeight: "24pt", // 32px
       letterSpacing: "0.5pt",
-      fontFamily: theme("fontFamily.secondary"),
+      fontFamily: "var(--font-secondary)",
     },
 
     ".body-m": {
@@ -96,7 +96,7 @@ const typographyComponentsPlugin = plugin(({ addComponents, theme }) => {
       fontStyle: "normal",
       lineHeight: "20pt", // 27px
       letterSpacing: "0.25pt",
-      fontFamily: theme("fontFamily.secondary"),
+      fontFamily: "var(--font-secondary)",
     },
 
     ".body-s": {
@@ -105,7 +105,7 @@ const typographyComponentsPlugin = plugin(({ addComponents, theme }) => {
       fontStyle: "normal",
       lineHeight: "16pt", // 21px
       letterSpacing: "0.4pt",
-      fontFamily: theme("fontFamily.secondary"),
+      fontFamily: "var(--font-secondary)",
     },
 
     ".label-l": {
@@ -114,7 +114,7 @@ const typographyComponentsPlugin = plugin(({ addComponents, theme }) => {
       fontStyle: "normal",
       lineHeight: "20pt", // 27px
       letterSpacing: "0.1pt",
-      fontFamily: theme("fontFamily.secondary"),
+      fontFamily: "var(--font-secondary)",
     },
 
     ".label-l-bold": {
@@ -123,7 +123,7 @@ const typographyComponentsPlugin = plugin(({ addComponents, theme }) => {
       fontStyle: "normal",
       lineHeight: "20pt", // 27px
       letterSpacing: "0.1pt",
-      fontFamily: theme("fontFamily.secondary"),
+      fontFamily: "var(--font-secondary)",
     },
 
     ".label-m": {
@@ -132,7 +132,7 @@ const typographyComponentsPlugin = plugin(({ addComponents, theme }) => {
       fontStyle: "normal",
       lineHeight: "16pt", // 21px
       letterSpacing: "0.5pt",
-      fontFamily: theme("fontFamily.secondary"),
+      fontFamily: "var(--font-secondary)",
     },
 
     ".label-m-bold": {
@@ -141,7 +141,7 @@ const typographyComponentsPlugin = plugin(({ addComponents, theme }) => {
       fontStyle: "normal",
       lineHeight: "16pt", // 21px
       letterSpacing: "0.5pt",
-      fontFamily: theme("fontFamily.secondary"),
+      fontFamily: "var(--font-secondary)",
     },
 
     ".label-s": {
@@ -150,7 +150,7 @@ const typographyComponentsPlugin = plugin(({ addComponents, theme }) => {
       fontStyle: "normal",
       lineHeight: "16pt", // 21px
       letterSpacing: "0.5pt",
-      fontFamily: theme("fontFamily.secondary"),
+      fontFamily: "var(--font-secondary)",
     },
 
     ".label-xs": {
@@ -159,7 +159,7 @@ const typographyComponentsPlugin = plugin(({ addComponents, theme }) => {
       fontStyle: "normal",
       lineHeight: "11pt", // 16px
       letterSpacing: "0.5pt",
-      fontFamily: theme("fontFamily.secondary"),
+      fontFamily: "var(--font-secondary)",
     },
 
     ".caption-l": {
@@ -168,7 +168,7 @@ const typographyComponentsPlugin = plugin(({ addComponents, theme }) => {
       fontStyle: "normal",
       lineHeight: "12pt", // 16px
       letterSpacing: "0.4pt",
-      fontFamily: theme("fontFamily.secondary"),
+      fontFamily: "var(--font-secondary)",
     },
 
     ".caption-m": {
@@ -177,7 +177,7 @@ const typographyComponentsPlugin = plugin(({ addComponents, theme }) => {
       fontStyle: "normal",
       lineHeight: "12pt", // 16px
       letterSpacing: "0.4pt",
-      fontFamily: theme("fontFamily.secondary"),
+      fontFamily: "var(--font-secondary)",
     },
 
     ".caption-s": {
@@ -186,7 +186,7 @@ const typographyComponentsPlugin = plugin(({ addComponents, theme }) => {
       fontStyle: "normal",
       lineHeight: "12pt", // 16px
       letterSpacing: "0.4pt",
-      fontFamily: theme("fontFamily.secondary"),
+      fontFamily: "var(--font-secondary)",
     },
   });
 });
