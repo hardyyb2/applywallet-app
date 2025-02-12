@@ -37,7 +37,7 @@ const NavigationMenu = ({
       component="ul"
       wrap="nowrap"
       className={cn(
-        "d-menu-compact d-menu max-w-none",
+        "d-menu-sm d-menu w-full max-w-none",
         "space-y-3xs-2xs h-full overflow-y-auto px-2",
         className,
       )}
@@ -67,6 +67,7 @@ const NavigationMenu = ({
                     href={itemLinkWithLocale}
                     className={cn("py-2", {
                       "d-menu-active": active,
+                      "justify-center": !navOpen,
                     })}
                     onClick={onNavItemClick}
                   >
