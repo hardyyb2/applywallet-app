@@ -32,8 +32,12 @@ const Home = async () => {
               <Image
                 src={UnderConstructionImg}
                 alt="Under construction"
+                priority
                 placeholder="blur"
                 blurDataURL={UnderConstructionImg.blurDataURL}
+                width={512}
+                height={512}
+                quality={70}
               />
             </Card.Figure>
 
