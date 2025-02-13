@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { setStaticParamsLocale } from "next-international/server";
+
 import { buttonVariants } from "~/components/ds/Button";
 import { Card } from "~/components/ds/Card";
 import { Flex } from "~/components/ds/Flex";
@@ -9,9 +11,18 @@ import { AppRoutes } from "~/utils/routes";
 
 import UnderConstructionImg from "public/images/illustrations/under-construction.webp";
 
-import { getI18n } from "@/locales/server";
+import { getI18n, getStaticParams } from "@/locales/server";
 
-const Home = async () => {
+export const generateStaticParams = () => {
+  return getStaticParams();
+};
+
+type HomeProps = {
+  params: Promise<{ locale: string }>;
+};
+
+const Home = async ({ params }: HomeProps) => {
+  setStaticParamsLocale((await params).locale);
   const t = await getI18n();
 
   return (
