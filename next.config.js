@@ -3,6 +3,7 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 });
 const { withSentryConfig } = require("@sentry/nextjs");
 const { withContentlayer } = require("next-contentlayer2");
+const webpack = require("webpack");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -20,6 +21,17 @@ const nextConfig = {
       test: /\.svg$/i,
       use: ["@svgr/webpack"],
     });
+
+    config.plugins.push(
+      new webpack.DefinePlugin({
+        __SENTRY_DEBUG__: false,
+        __SENTRY_TRACING__: false,
+        __RRWEB_EXCLUDE_IFRAME__: true,
+        __RRWEB_EXCLUDE_SHADOW_DOM__: true,
+        __SENTRY_EXCLUDE_REPLAY_WORKER__: true,
+      }),
+    );
+
     return config;
   },
   experimental: {
@@ -41,11 +53,9 @@ const sentryWrapper = withSentryConfig(contentLayerWrapper, {
   telemetry: false,
   authToken: process.env.SENTRY_AUTH_TOKEN,
   silent: !process.env.CI,
-  widenClientFileUpload: true,
   reactComponentAnnotation: {
-    enabled: true,
+    enabled: false,
   },
-  hideSourceMaps: true,
   disableLogger: true,
   automaticVercelMonitors: true,
   sourcemaps: {
