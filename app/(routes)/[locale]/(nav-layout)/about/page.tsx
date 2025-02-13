@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 
+import { setStaticParamsLocale } from "next-international/server";
+
 import { AppRoutes } from "~/utils/routes";
 
 import { BasePageHeader } from "@/components/dependent/BasePageHeader";
-import { getI18n } from "@/locales/server";
+import { getI18n, getStaticParams } from "@/locales/server";
 import { i18n } from "@/utils/locale-utils";
 
 import { AboutApp } from "./AboutApp";
@@ -25,7 +27,17 @@ export const metadata: Metadata = {
   },
 };
 
-const AboutPage = async () => {
+export const generateStaticParams = () => {
+  return getStaticParams();
+};
+
+type AboutPageProps = {
+  params: Promise<{ locale: string }>;
+};
+
+const AboutPage = async ({ params }: AboutPageProps) => {
+  setStaticParamsLocale((await params).locale);
+
   const t = await getI18n();
 
   return (
