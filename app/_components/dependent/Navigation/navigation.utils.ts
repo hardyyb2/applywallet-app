@@ -25,7 +25,7 @@ const navItems: NavItemType[] = [
     inactive: true,
   },
   {
-    label: "nav.blogs",
+    label: "blogs",
     link: AppRoutes.BLOGS,
     category: NavigationCategories.READ,
     icon: Icons.BookOpen,
