@@ -17,11 +17,7 @@ textarea::placeholder {
   opacity: 0.8;
 }
 
-/* TODO: fix this */
-/* .d-label,
-.d-label-text {
-  @apply caption-m lg:caption-l;
-} */
+/* TODO - fix label d-label here */
 
 .d-divider,
 .d-divider-vertical {
