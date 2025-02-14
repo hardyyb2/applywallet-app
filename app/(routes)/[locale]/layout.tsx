@@ -7,7 +7,6 @@ import { cn } from "@/utils/styles";
 import { Providers } from "./providers";
 
 import "@/styles/globals.app.css";
-import "@/styles/overrides/toast.css";
 import "@/styles/mdx.css";
 import "~/styles/overrides/daisyui.css";
 
