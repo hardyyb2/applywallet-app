@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { allBlogs } from "contentlayer/generated";
+import { setStaticParamsLocale } from "next-international/server";
 
 import { AppRoutes } from "~/utils/routes";
 
 import { BasePageHeader } from "@/components/dependent/BasePageHeader";
-import { getI18n } from "@/locales/server";
+import { getI18n, getStaticParams } from "@/locales/server";
 import { getAppBaseURL } from "@/utils/app";
 import { i18n } from "@/utils/locale-utils";
 
@@ -68,7 +69,19 @@ export const metadata: Metadata = {
   },
 };
 
-const BlogsPage = async () => {
+export const generateStaticParams = () => {
+  return getStaticParams();
+};
+
+type BlogsPageProps = {
+  params: Promise<{
+    locale: string;
+  }>;
+};
+
+const BlogsPage = async ({ params }: BlogsPageProps) => {
+  const { locale } = await params;
+  setStaticParamsLocale(locale);
   const t = await getI18n();
 
   return (
