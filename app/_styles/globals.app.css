@@ -2,20 +2,23 @@
 
 @import "tailwindcss";
 @import "./tailwindcss-animate.css";
+
 @plugin "@tailwindcss/typography";
+
 @plugin "daisyui" {
+  logs: false;
+  prefix: "d-";
   themes:
     synthwave --prefers-dark --default,
     light;
-  prefix: "d-";
-  logs: false;
 }
 
 @plugin "daisyui/theme" {
-  name: "synthwave";
   --depth: 1;
   --noise: 1;
   --color-base-content: oklch(0.979365 0.00819 301.358);
+
+  name: "synthwave";
 }
 
 @config "../../tailwind.config.ts";
@@ -121,9 +124,9 @@
   }
 
   * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 
     @apply selection:bg-accent selection:text-accent-content;
   }
