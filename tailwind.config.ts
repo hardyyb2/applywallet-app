@@ -10,7 +10,7 @@ const config: Config = {
     "./common/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {},
-  plugins: [require("tailwindcss-animate"), typographyComponentsPlugin],
+  plugins: [typographyComponentsPlugin],
   future: {
     hoverOnlyWhenSupported: true,
   },

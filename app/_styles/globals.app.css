@@ -1,4 +1,7 @@
+/* stylelint-disable keyframes-name-pattern */
+
 @import "tailwindcss";
+@import "./tailwindcss-animate.css";
 @plugin "@tailwindcss/typography";
 @plugin "daisyui" {
   themes:
