@@ -10,7 +10,6 @@ import { getI18n } from "@/locales/server";
 import { getAppBaseURL } from "@/utils/app";
 import { i18n } from "@/utils/locale-utils";
 
-import { BlogCardsWrapper } from "./[...slug]/BlogCardsWrapper";
 import { BlogCard, BlogCardMobile } from "./BlogCard";
 import { BlogCardClient } from "./BlogCardClient";
 
@@ -76,7 +75,7 @@ const BlogsPage = async () => {
     <div className="px-5 py-4 lg:px-10">
       <BasePageHeader title={t("blogs.title")} subtitle={t("blogs.subtitle")} />
 
-      <BlogCardsWrapper>
+      <div className="grid grid-cols-1 gap-xs-s lg:grid-cols-[repeat(auto-fill,minmax(360px,1fr))]">
         {allBlogs.map((blog) => (
           <Link
             href={blog.slug}
@@ -88,7 +87,7 @@ const BlogsPage = async () => {
             </BlogCardClient>
           </Link>
         ))}
-      </BlogCardsWrapper>
+      </div>
     </div>
   );
 };
