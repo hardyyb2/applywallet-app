@@ -17,8 +17,21 @@
   --depth: 1;
   --noise: 1;
   --color-base-content: oklch(0.979365 0.00819 301.358);
+  --radius-selector: 1rem;
+  --radius-field: 0.5rem;
+  --radius-box: 1rem;
 
   name: "synthwave";
+}
+
+@plugin "daisyui/theme" {
+  --depth: 0;
+  --noise: 1;
+  --radius-selector: 1rem;
+  --radius-field: 0.5rem;
+  --radius-box: 1rem;
+
+  name: "light";
 }
 
 @config "../../tailwind.config.ts";

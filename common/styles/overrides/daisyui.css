@@ -5,7 +5,7 @@
 }
 
 .d-card-body {
-  /* @apply p-xs-s; */
+  padding: var(--spacing-xs-s);
 }
 
 input::placeholder,
@@ -14,40 +14,41 @@ textarea::placeholder {
 }
 
 .d-label-text-alt:not(.text-error) {
-  /* @apply text-opacity-80; */
+  opacity: 0.8;
 }
 
-.d-label,
+/* TODO: fix this */
+/* .d-label,
 .d-label-text {
-  /* @apply caption-m lg:caption-l; */
-}
+  @apply caption-m lg:caption-l;
+} */
 
 .d-divider,
 .d-divider-vertical {
-  /* @apply mx-0 my-3xs-2xs h-[1px] text-base-content/60; */
-}
-
-.d-divider::before,
-.d-divider::after,
-.d-divider-vertical::before,
-.d-divider-vertical::after {
-  /* @apply bg-base-content/20; */
+  margin-block: var(--spacing-3xs-2xs);
+  margin-inline: 0;
+  height: 1px;
 }
 
 .d-divider-horizontal {
-  /* @apply mx-3xs-2xs my-0 h-auto w-[1px]; */
+  margin-inline: var(--spacing-3xs-2xs);
+  margin-block: 0;
+  height: auto;
+  width: 1px;
 }
 
 .d-menu-title {
-  /* @apply label-m px-xs py-3xs; */
+  padding-inline: var(--spacing-xs);
+  padding-block: var(--spacing-3xs);
 }
 
-.d-active {
-  /* @apply bg-secondary text-secondary-content !important; */
+.d-menu-active {
+  background-color: var(--color-secondary);
+  color: var(--color-secondary-content);
 }
 
 .d-loading-xl {
-  /* @apply w-16; */
+  width: calc(var(--spacing) * 16);
 }
 
 /* Checkbox */
