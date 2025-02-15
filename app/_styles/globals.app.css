@@ -108,7 +108,12 @@
     font-weight: 400;
     text-wrap: nowrap;
 
-    background-color: var(--color-neutral-content);
+    background-color: color-mix(
+      in oklab,
+      var(--color-neutral-content),
+      transparent
+    );
+
     &::before,
     &::after {
       display: none;
