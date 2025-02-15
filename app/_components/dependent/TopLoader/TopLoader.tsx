@@ -4,16 +4,12 @@ import { memo } from "react";
 
 import NextTopLoader from "nextjs-toploader";
 
-import { extractThemeColorsFromDOM } from "~/utils/tailwind/theme";
-
 const TopLoader = memo(() => {
-  const themeColors = extractThemeColorsFromDOM();
-
   return (
     <NextTopLoader
       height={8}
-      color={themeColors.secondary}
-      shadow={`0 0 8px ${themeColors.secondary},0 0 4px ${themeColors.secondary}`}
+      color="var(--color-secondary)"
+      shadow={`0 0 8px var(--color-secondary),0 0 4px var(--color-secondary)`}
     />
   );
 });

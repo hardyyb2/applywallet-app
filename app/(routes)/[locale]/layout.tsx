@@ -100,13 +100,7 @@ const RootLayout = async (props: RootLayoutProps) => {
       className={cn(fonts.secondary.className, "bg-base-200")}
     >
       <head />
-      <body
-        className={cn(
-          fonts.primary.variable,
-          fonts.secondary.variable,
-          "mx-auto max-w-(--breakpoint-4xl)",
-        )}
-      >
+      <body className={cn(fonts.primary.variable, fonts.secondary.variable)}>
         <Providers locale={locale}>{children}</Providers>
       </body>
     </html>
