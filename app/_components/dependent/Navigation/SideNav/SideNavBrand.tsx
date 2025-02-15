@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { Button } from "~/components/ds/Button";
+import { Button, buttonVariants } from "~/components/ds/Button";
 import { Flex } from "~/components/ds/Flex";
 import { Icons } from "~/components/ds/Icons";
 import {
@@ -43,7 +43,10 @@ const SideNavBrand = ({
         href={link}
         aria-current="page"
         aria-label="Homepage"
-        className="btn btn-ghost flex-0 px-2"
+        className={buttonVariants({
+          color: "ghost",
+          className: "mx-[0.625rem] px-0",
+        })}
       >
         <Image
           src={AwLogoImg}
