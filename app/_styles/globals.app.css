@@ -99,6 +99,32 @@
 @utility prose {
   max-width: 80ch;
   font-family: var(--font-secondary);
+
+  /* Only Inline <code /> tags */
+  :where(:not(pre) > code):not(:where([class~="not-prose"] *)) {
+    padding: 1px 8px;
+    border-radius: var(--radius-box);
+
+    font-weight: 400;
+    text-wrap: nowrap;
+
+    background-color: var(--color-neutral-content);
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+
+  blockquote {
+    font-weight: 400;
+    p {
+      &:first-of-type::before,
+      &:last-of-type::after {
+        display: none;
+      }
+    }
+  }
+
   h1 {
     font-family: var(--font-primary);
   }
