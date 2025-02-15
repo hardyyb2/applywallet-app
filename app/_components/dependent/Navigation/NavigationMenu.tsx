@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, type Ref } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -22,12 +22,14 @@ interface NavigationMenuProps {
   navOpen: boolean;
   className?: string;
   onNavItemClick?: () => void;
+  selectedItemRef?: Ref<HTMLAnchorElement> | undefined;
 }
 
 const NavigationMenu = ({
   navOpen,
   className = "",
   onNavItemClick = () => null,
+  selectedItemRef,
 }: NavigationMenuProps) => {
   const t = useI18n();
   const pathName = usePathname();
@@ -64,6 +66,7 @@ const NavigationMenu = ({
               const listItem = (
                 <li key={item.key ?? itemLinkWithLocale}>
                   <Link
+                    ref={active ? selectedItemRef : undefined}
                     href={itemLinkWithLocale}
                     className={cn("py-2", {
                       "d-menu-active": active,

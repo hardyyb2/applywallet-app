@@ -1,5 +1,7 @@
 "use client";
 
+import { useRef } from "react";
+
 import {
   Sheet,
   SheetContent,
@@ -20,6 +22,13 @@ const SideNavMobile = () => {
   const { sideNavMobileOpen, toggleSideNavMobileOpen, setSideNavMobileOpen } =
     useSideNavMobileStore();
   const { isAboveLg } = useBreakPoint("lg");
+  const selectedItemRef = useRef<HTMLAnchorElement>(null);
+
+  const handleOpenAutoFocus = (e: Event) => {
+    e?.preventDefault();
+
+    selectedItemRef.current?.focus();
+  };
 
   if (isAboveLg) {
     return null;
@@ -29,7 +38,11 @@ const SideNavMobile = () => {
     <Sheet open={sideNavMobileOpen} onOpenChange={setSideNavMobileOpen}>
       <SheetPortal>
         <SheetOverlay />
-        <SheetContent side="left" showClose={false}>
+        <SheetContent
+          side="left"
+          showClose={false}
+          onOpenAutoFocus={handleOpenAutoFocus}
+        >
           <VisuallyHidden asChild>
             <SheetTitle>applywallet sidenav</SheetTitle>
           </VisuallyHidden>
@@ -45,6 +58,7 @@ const SideNavMobile = () => {
             navOpen
             className="pb-8"
             onNavItemClick={toggleSideNavMobileOpen}
+            selectedItemRef={selectedItemRef}
           />
         </SheetContent>
       </SheetPortal>
