@@ -47,14 +47,14 @@ const BlogScrollWrapper = ({ children }: PropsWithChildren) => {
     <ScrollArea
       type="always"
       ref={containerRef}
-      className={cnM("relative h-full w-full bg-base-100")}
+      className={cnM("bg-base-100 relative h-full w-full")}
     >
       <ScrollAreaViewport
         ref={viewportRef}
-        className="mx-auto flex p-m-l pt-s [&>div]:!block"
+        className="p-m-l pt-s mx-auto flex [&>div]:block!"
       >
         <m.div
-          className="absolute inset-0 z-40 h-4xs origin-[0%] transform bg-secondary"
+          className="h-4xs bg-secondary absolute inset-0 z-40 origin-[0%] transform"
           style={{
             scaleX,
           }}
@@ -66,7 +66,7 @@ const BlogScrollWrapper = ({ children }: PropsWithChildren) => {
               <TooltipTrigger asChild>
                 <Button
                   aria-label="toggle full screen"
-                  className="absolute bottom-2xs right-2xs z-40 "
+                  className="bottom-2xs right-2xs absolute z-40"
                   startIcon={
                     isFullScreen ? (
                       <Icons.Minimize className="lg:h-l lg:w-l" />

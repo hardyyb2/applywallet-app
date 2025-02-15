@@ -22,10 +22,10 @@ const CustomNode = ({ data, isConnectable }: NodeProps<DrNodeDataType>) => {
       />
       <Flex
         align="center"
-        className="glass gap-4 rounded-xl bg-base-100 px-m py-xs outline outline-2 outline-primary"
+        className="glass bg-base-100 px-m py-xs outline-primary gap-4 rounded-xl outline outline-2"
       >
         <NodeIcon />
-        <Typography variant="body-m" className="!font-bold text-base-content">
+        <Typography variant="body-m" className="text-base-content font-bold!">
           {data.name}
         </Typography>
       </Flex>

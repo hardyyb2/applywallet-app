@@ -41,7 +41,7 @@ const Input = ({
         data-testid="input-wrapper"
         className={cnM(
           "relative flex w-full items-center",
-          iconSeparate && "grid grid-cols-[1fr,auto] gap-2",
+          iconSeparate && "grid grid-cols-[1fr_auto] gap-2",
           wrapperClassName,
         )}
       >

@@ -34,7 +34,7 @@ const FormField = ({
   className,
 }: FormFieldProps) => {
   return (
-    <fieldset className={cnM("d-form-control", className)}>
+    <fieldset className={cnM("d-fieldset", className)}>
       <label
         className="d-label"
         htmlFor={htmlFor}

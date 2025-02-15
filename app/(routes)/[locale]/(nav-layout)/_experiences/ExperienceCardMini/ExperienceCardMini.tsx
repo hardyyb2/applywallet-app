@@ -11,7 +11,7 @@ const ExperienceCardMini = () => {
       direction="column"
       className="card gap-[1px] overflow-hidden rounded-lg"
     >
-      <div className="grid grid-cols-[90%,10%] rounded-none bg-base-100">
+      <div className="bg-base-100 grid grid-cols-[90%_10%] rounded-none">
         <Flex className="p-2 px-6" align="center">
           {/* <Typography className="line-clamp-1">
             This is a very big company name so that we can test line clamp
@@ -24,7 +24,7 @@ const ExperienceCardMini = () => {
       <div
         className={cn(
           "grid grid-cols-[repeat(auto-fit,minmax(120px,1fr))] gap-[1px]",
-          "[&>button]:rounded-none [&>button]:bg-base-100",
+          "[&>button]:bg-base-100 [&>button]:rounded-none",
         )}
       >
         <Button color="ghost" size="lg">

@@ -16,7 +16,7 @@ const ExtLoginCard = () => {
   return (
     <Card
       side="lg"
-      className="max-w-xl rounded-none bg-base-200 text-base-content"
+      className="bg-base-200 text-base-content max-w-xl rounded-none"
     >
       <Card.Body className="items-center">
         <Typography
@@ -38,7 +38,7 @@ const ExtLoginCard = () => {
           </Button>
         </Card.Actions>
 
-        <Separator className="!my-s">or</Separator>
+        <Separator className="my-s!">or</Separator>
 
         <Typography variant="body-m" lg="body-l" align="center">
           not ready to log in yet? no worries! you can still browse our public

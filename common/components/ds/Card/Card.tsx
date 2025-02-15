@@ -24,7 +24,7 @@ export type CardBodyProps = ComponentProps<"div">;
 const CardBody = ({ ref, className, ...props }: CardBodyProps) => (
   <div
     {...props}
-    className={cnM("d-card-body rounded-xl bg-base-100", className)}
+    className={cnM("d-card-body bg-base-100 rounded-xl", className)}
     ref={ref}
   />
 );
@@ -83,11 +83,11 @@ interface ModifierMap {
 
 const DYNAMIC_MODIFIERS: ModifierMap = {
   compact: {
-    true: "d-card-compact",
-    xs: "xs:d-card-compact",
-    sm: "sm:d-card-compact",
-    md: "md:d-card-compact",
-    lg: "lg:d-card-compact",
+    true: "d-card-sm",
+    xs: "xs:d-card-sm",
+    sm: "sm:d-card-sm",
+    md: "md:d-card-sm",
+    lg: "lg:d-card-sm",
   },
   normal: {
     true: "d-card-normal",

@@ -7,7 +7,6 @@ import { cn } from "@/utils/styles";
 import { Providers } from "./providers";
 
 import "@/styles/globals.app.css";
-import "@/styles/overrides/toast.css";
 import "@/styles/mdx.css";
 import "~/styles/overrides/daisyui.css";
 
@@ -101,13 +100,7 @@ const RootLayout = async (props: RootLayoutProps) => {
       className={cn(fonts.secondary.className, "bg-base-200")}
     >
       <head />
-      <body
-        className={cn(
-          fonts.primary.variable,
-          fonts.secondary.variable,
-          "mx-auto max-w-screen-4xl",
-        )}
-      >
+      <body className={cn(fonts.primary.variable, fonts.secondary.variable)}>
         <Providers locale={locale}>{children}</Providers>
       </body>
     </html>

@@ -14,7 +14,7 @@ const NavBackdrop = ({
   return (
     <div
       className={cn(
-        "fixed inset-0 h-full w-full overflow-y-auto bg-neutral/80 bg-opacity-80 backdrop-blur",
+        "bg-neutral/80 bg-opacity-80 fixed inset-0 h-full w-full overflow-y-auto backdrop-blur-xs",
         visible ? "block" : "hidden",
         className,
       )}

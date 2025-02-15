@@ -93,7 +93,7 @@ const BlogsPage = async ({ params }: BlogsPageProps) => {
           <Link
             href={blog.slug}
             key={blog._id}
-            className="rounded-2xl outline-4 outline-base-content hover:outline-dashed focus-visible:outline-dashed"
+            className="outline-base-content rounded-2xl hover:outline-4 hover:outline-dashed focus-visible:outline-dashed"
           >
             <BlogCardClient mobile={<BlogCardMobile {...blog} />}>
               <BlogCard {...blog} />

@@ -16,9 +16,9 @@ const HeaderClient = ({ className }: HeaderClientProps) => {
   return (
     <Button
       color="ghost"
-      className={cnM("!pr-8", className)}
+      className={cnM("pr-8!", className)}
       onClick={toggleSideNavMobileOpen}
-      startIcon={<Icons.AlignLeft className="!h-7 !w-7" />}
+      startIcon={<Icons.AlignLeft className="h-7! w-7!" />}
     />
   );
 };

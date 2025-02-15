@@ -7,7 +7,7 @@ import { cn } from "@/utils/styles";
 
 const NavLayout = ({ children }: { children: ReactNode }) => {
   return (
-    <BaseLayout className="bg-gradient-to-br from-primary/20 to-secondary/20">
+    <BaseLayout className="from-primary/20 to-secondary/20 bg-linear-to-br">
       <BaseLayout.Body
         className={cn(
           "overflow-hidden lg:grid lg:grid-cols-[max-content_auto]",
@@ -16,7 +16,7 @@ const NavLayout = ({ children }: { children: ReactNode }) => {
         <Navigation />
         <div className="grid w-full grid-rows-[auto_1fr] overflow-auto">
           <BaseLayout.Head
-            className={cn("z-[5] h-14 w-full text-base-content lg:h-16")}
+            className={cn("text-base-content z-5 h-14 w-full lg:h-16")}
           >
             <Header />
           </BaseLayout.Head>

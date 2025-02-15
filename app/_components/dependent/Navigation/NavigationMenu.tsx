@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, type Ref } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -22,12 +22,14 @@ interface NavigationMenuProps {
   navOpen: boolean;
   className?: string;
   onNavItemClick?: () => void;
+  selectedItemRef?: Ref<HTMLAnchorElement> | undefined;
 }
 
 const NavigationMenu = ({
   navOpen,
   className = "",
   onNavItemClick = () => null,
+  selectedItemRef,
 }: NavigationMenuProps) => {
   const t = useI18n();
   const pathName = usePathname();
@@ -37,8 +39,8 @@ const NavigationMenu = ({
       component="ul"
       wrap="nowrap"
       className={cn(
-        "d-menu-compact d-menu max-w-none",
-        "h-full space-y-3xs-2xs overflow-y-auto px-2",
+        "d-menu-sm d-menu w-full max-w-none",
+        "space-y-3xs-2xs h-full overflow-y-auto px-2",
         className,
       )}
     >
@@ -64,9 +66,11 @@ const NavigationMenu = ({
               const listItem = (
                 <li key={item.key ?? itemLinkWithLocale}>
                   <Link
+                    ref={active ? selectedItemRef : undefined}
                     href={itemLinkWithLocale}
                     className={cn("py-2", {
-                      "d-active": active,
+                      "d-menu-active": active,
+                      "justify-center": !navOpen,
                     })}
                     onClick={onNavItemClick}
                   >
@@ -75,7 +79,7 @@ const NavigationMenu = ({
                       <Typography
                         variant="label-s"
                         lg="label-m"
-                        className="overflow-ellipsis"
+                        className="text-ellipsis"
                       >
                         {/* TODO: fix this */}
                         {/* @ts-expect-error */}

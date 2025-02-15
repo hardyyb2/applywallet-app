@@ -51,7 +51,7 @@ const BottomNavBar = ({
             href={itemLinkWithLocale}
             key={item.key ?? item.link}
             className={cn(
-              active && "d-active text-secondary",
+              active && "d-menu-active text-secondary",
               "bg-transparent",
             )}
           >
@@ -74,7 +74,7 @@ const BottomNavBar = ({
             <span
               className={cn(
                 "d-badge d-indicator-item d-badge-secondary d-badge-xs",
-                "left-1/2 top-[20%]",
+                "top-[20%] left-1/2",
               )}
             />
           ) : null}

@@ -3,10 +3,10 @@ import { Flex } from "~/components/ds/Flex";
 const ThemesMenuItemColors = () => {
   return (
     <Flex className="h-4 gap-1">
-      <span className="w-2 rounded bg-primary"></span>
-      <span className="w-2 rounded bg-secondary"></span>
-      <span className="w-2 rounded bg-accent"></span>
-      <span className="w-2 rounded bg-neutral"></span>
+      <span className="bg-primary w-2 rounded-xs"></span>
+      <span className="bg-secondary w-2 rounded-xs"></span>
+      <span className="bg-accent w-2 rounded-xs"></span>
+      <span className="bg-neutral w-2 rounded-xs"></span>
     </Flex>
   );
 };

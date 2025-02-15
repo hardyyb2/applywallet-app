@@ -78,17 +78,17 @@ const ESInformationSettings = () => {
           <Flex
             align="center"
             direction="row"
-            className="m-0 gap-4 rounded-xl bg-accent/5 px-4  py-2"
+            className="bg-accent/5 m-0 gap-4 rounded-xl px-4 py-2"
           >
             <Icons.GripHorizontal
-              className="flex-shrink-0 cursor-grab text-accent active:cursor-grabbing"
+              className="text-accent shrink-0 cursor-grab active:cursor-grabbing"
               onPointerDown={(event) => dragControls.start(event)}
             />
             <span className="line-clamp-1">{item.title}</span>
             <Button
               data-action="hide"
               color="ghost"
-              className="/ ml-auto text-accent hover:bg-accent/20"
+              className="/ text-accent hover:bg-accent/20 ml-auto"
               startIcon={
                 item.hidden ? (
                   <Icons.EyeOff className="pointer-events-none" />

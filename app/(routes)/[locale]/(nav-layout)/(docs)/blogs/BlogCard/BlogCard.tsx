@@ -23,7 +23,7 @@ const BlogCard = ({
   tags,
 }: BlogCardProps) => {
   return (
-    <Card className={cn("group max-w-none bg-base-100")}>
+    <Card className={cn("group bg-base-100 max-w-none")}>
       {image ? (
         <Card.Figure className={cn("m-3xs h-80")}>
           <div
@@ -37,6 +37,7 @@ const BlogCard = ({
             src={image}
             alt={image}
             fill
+            sizes="(max-width: 1024px) 120px, 420px"
             placeholder={`data:image/svg+xml;base64,${toBase64(
               shimmer(500, 320),
             )}`}
@@ -47,7 +48,7 @@ const BlogCard = ({
         <Typography
           variant="label-s"
           lg="label-m"
-          className="line-clamp-1 text-secondary"
+          className="text-secondary line-clamp-1"
         >
           {category.name}
         </Typography>

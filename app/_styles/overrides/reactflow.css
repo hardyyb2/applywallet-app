@@ -15,9 +15,12 @@
 }
 
 .react-flow__edge-path {
-  @apply stroke-2;
+  stroke-width: 2;
 }
 
 .react-flow__attribution {
-  @apply body-m bg-base-100 px-xs text-center lowercase;
+  padding-inline: var(--spacing-xs);
+  text-align: center;
+  text-transform: lowercase;
+  background-color: var(--color-base-100);
 }

@@ -135,6 +135,6 @@ describe("Input", () => {
 
     expect(inputWrapperElement).toBeInTheDocument();
     expect(inputWrapperElement).toHaveClass("grid");
-    expect(inputWrapperElement).toHaveClass("grid-cols-[1fr,auto]");
+    expect(inputWrapperElement).toHaveClass("grid-cols-[1fr_auto]");
   });
 });

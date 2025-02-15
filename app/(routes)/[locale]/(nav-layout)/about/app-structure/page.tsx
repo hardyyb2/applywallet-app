@@ -14,8 +14,8 @@ import { DirectoryFlowBuilder } from "./DirectoryFlowBuilder/DirectoryFlowBuilde
 
 const ProjectStructure = () => {
   return (
-    <Flex direction="column" className="h-full bg-base-100">
-      <ScrollArea className="w-full pl-s pr-s lg:block">
+    <Flex direction="column" className="bg-base-100 h-full">
+      <ScrollArea className="pl-s pr-s w-full lg:block">
         <ScrollAreaViewport>
           <Breadcrumbs className="mb-2xs flex-0 pt-0 [&_a]:no-underline">
             <Breadcrumbs.Item>

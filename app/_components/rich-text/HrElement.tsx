@@ -24,8 +24,8 @@ const HrElement = ({
         <hr
           {...nodeProps}
           className={cnM(
-            "h-0.5 cursor-pointer rounded-sm border-none bg-base-content bg-clip-content",
-            selected && focused && "ring-2 ring-base-content/40 ring-offset-2",
+            "bg-base-content h-0.5 cursor-pointer rounded-xs border-none bg-clip-content",
+            selected && focused && "ring-base-content/40 ring-2 ring-offset-2",
             className,
           )}
         />
