@@ -19,8 +19,8 @@
 }
 
 .react-flow__attribution {
-  background-color: var(--color-base-100);
   padding-inline: var(--spacing-xs);
   text-align: center;
   text-transform: lowercase;
+  background-color: var(--color-base-100);
 }

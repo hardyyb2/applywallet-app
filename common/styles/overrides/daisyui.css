@@ -21,26 +21,26 @@ textarea::placeholder {
 
 .d-divider,
 .d-divider-vertical {
+  height: 1px;
   margin-block: var(--spacing-3xs-2xs);
   margin-inline: 0;
-  height: 1px;
 }
 
 .d-divider-horizontal {
-  margin-inline: var(--spacing-3xs-2xs);
-  margin-block: 0;
-  height: auto;
   width: 1px;
+  height: auto;
+  margin-block: 0;
+  margin-inline: var(--spacing-3xs-2xs);
 }
 
 .d-menu-title {
-  padding-inline: var(--spacing-xs);
   padding-block: var(--spacing-3xs);
+  padding-inline: var(--spacing-xs);
 }
 
 .d-menu-active {
-  background-color: var(--color-secondary);
   color: var(--color-secondary-content);
+  background-color: var(--color-secondary);
 }
 
 .d-loading-xl {
