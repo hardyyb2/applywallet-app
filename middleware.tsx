@@ -1,6 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 
 import { match as matchLocale } from "@formatjs/intl-localematcher";
+import { captureException } from "@sentry/nextjs";
 import Negotiator from "negotiator";
 import { createI18nMiddleware } from "next-international/middleware";
 
@@ -16,12 +17,22 @@ const getNegotiatorHeaders = (request: NextRequest): Record<string, string> => {
 };
 
 const getLocale = (request: NextRequest): Locale => {
-  const negotiatorHeaders = getNegotiatorHeaders(request);
+  try {
+    const negotiatorHeaders = getNegotiatorHeaders(request);
+    const languages = new Negotiator({
+      headers: negotiatorHeaders,
+    }).languages();
 
-  /**  Use negotiator and intl-localematcher to get best locale */
-  let languages = new Negotiator({ headers: negotiatorHeaders }).languages();
-  const locales = i18n.locales.slice();
-  return matchLocale(languages, locales, i18n.defaultLocale) as Locale;
+    if (!languages?.length) {
+      return i18n.defaultLocale;
+    }
+
+    const locales = i18n.locales.slice();
+    return matchLocale(languages, locales, i18n.defaultLocale) as Locale;
+  } catch (error) {
+    captureException(error);
+    return i18n.defaultLocale;
+  }
 };
 
 const I18nMiddleware = createI18nMiddleware({
