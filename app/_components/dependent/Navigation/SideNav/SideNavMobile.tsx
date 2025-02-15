@@ -29,11 +29,7 @@ const SideNavMobile = () => {
     <Sheet open={sideNavMobileOpen} onOpenChange={setSideNavMobileOpen}>
       <SheetPortal>
         <SheetOverlay />
-        <SheetContent
-          side="left"
-          showClose={false}
-          onOpenAutoFocus={(e) => e.preventDefault()}
-        >
+        <SheetContent side="left" showClose={false}>
           <VisuallyHidden asChild>
             <SheetTitle>applywallet sidenav</SheetTitle>
           </VisuallyHidden>
@@ -47,7 +43,7 @@ const SideNavMobile = () => {
           {/* Scrollable menu items */}
           <NavigationMenu
             navOpen
-            className="pb-8 "
+            className="pb-8"
             onNavItemClick={toggleSideNavMobileOpen}
           />
         </SheetContent>

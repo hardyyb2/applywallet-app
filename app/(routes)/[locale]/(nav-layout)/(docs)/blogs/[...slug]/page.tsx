@@ -104,8 +104,8 @@ const BlogPage = async (props: BlogPageProps) => {
   }
 
   return (
-    <Flex direction="column" className="h-full bg-base-100">
-      <ScrollArea className="w-full pl-s pr-s lg:block">
+    <Flex direction="column" className="bg-base-100 h-full">
+      <ScrollArea className="pl-s pr-s w-full lg:block">
         <ScrollAreaViewport>
           <Breadcrumbs className="mb-2xs flex-0 pt-0 [&_a]:no-underline">
             <Breadcrumbs.Item>
@@ -117,7 +117,7 @@ const BlogPage = async (props: BlogPageProps) => {
         <ScrollBar orientation="horizontal" className="hidden h-0" />
       </ScrollArea>
       <BlogScrollWrapper>
-        <Mdx className="prose prose-sm d-prose w-full py-xs-s md:prose-base lg:prose-lg xl:prose-xl">
+        <Mdx className="prose prose-sm d-prose py-xs-s md:prose-base lg:prose-lg xl:prose-xl w-full">
           <Mdx.Header>
             <h1>{blog.title}</h1>
             <BlogMetaInfo blog={blog} />
@@ -126,6 +126,7 @@ const BlogPage = async (props: BlogPageProps) => {
                 <Image
                   src={blog.image}
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33.33vw"
                   alt={blog.title}
                   className="h-full w-full"
                   placeholder={`data:image/svg+xml;base64,${toBase64(
