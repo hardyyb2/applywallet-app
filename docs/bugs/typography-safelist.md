@@ -10,12 +10,13 @@ We've implemented a manual solution in `typography.utils.ts` by explicitly defin
 
 ## Impact
 
-- Increased bundle size due to including all possible typography variants
+- Increased bundle size due to including all possible typography variants (27.1kb to 27.7kb)
 - More verbose variant definitions in the utils file
 - Manual maintenance required when adding new typography variants
 
 ## Future Considerations
 
+- No need mostly, not much increase in bundle size (0.6kb only)
 - Monitor Tailwind updates for potential reintroduction of safelist feature
 - Explore alternative solutions that don't require manual variant definitions
 - Consider build-time analysis tools to automatically detect and include used variants
