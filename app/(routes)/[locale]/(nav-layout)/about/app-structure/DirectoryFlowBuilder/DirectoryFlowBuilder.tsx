@@ -94,6 +94,7 @@ const FlowBuilder = () => {
         onInit={onInit}
         elevateEdgesOnSelect
         onEdgeClick={handleEdgeClick}
+        onlyRenderVisibleElements
       >
         <Background gap={16} />
       </ReactFlow>

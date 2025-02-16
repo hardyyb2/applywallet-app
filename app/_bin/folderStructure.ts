@@ -432,6 +432,97 @@ export const nodes: DrNodeType[] = [
     type: "custom",
   },
   {
+    id: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]",
+    data: {
+      name: "[...slug]",
+      type: "folder",
+      subType: "route-group",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogMetaInfo",
+    data: {
+      name: "BlogMetaInfo",
+      type: "folder",
+      subType: "route-group",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogMetaInfo/BlogMetaInfo.tsx",
+    data: {
+      name: "BlogMetaInfo.tsx",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogMetaInfo/blogMetaInfo.module.css",
+    data: {
+      name: "blogMetaInfo.module.css",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogScrollWrapper",
+    data: {
+      name: "BlogScrollWrapper",
+      type: "folder",
+      subType: "route-group",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogScrollWrapper/BlogScrollWrapper.tsx",
+    data: {
+      name: "BlogScrollWrapper.tsx",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
+    id: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/page.tsx",
+    data: {
+      name: "page.tsx",
+      type: "file",
+      subType: "page",
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    type: "custom",
+  },
+  {
     id: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/not-found.tsx",
     data: {
       name: "not-found.tsx",
@@ -3837,6 +3928,57 @@ export const edges: DrEdgeType[] = [
     id: "e:app/(routes)/[locale]/(nav-layout)/(docs)/blogs->app/(routes)/[locale]/(nav-layout)/(docs)/blogs/BlogsWrapper.tsx",
     source: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs",
     target: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/BlogsWrapper.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/(docs)/blogs->app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]",
+    source: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs",
+    target: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]->app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogMetaInfo",
+    source: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]",
+    target:
+      "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogMetaInfo",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogMetaInfo->app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogMetaInfo/BlogMetaInfo.tsx",
+    source:
+      "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogMetaInfo",
+    target:
+      "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogMetaInfo/BlogMetaInfo.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogMetaInfo->app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogMetaInfo/blogMetaInfo.module.css",
+    source:
+      "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogMetaInfo",
+    target:
+      "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogMetaInfo/blogMetaInfo.module.css",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]->app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogScrollWrapper",
+    source: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]",
+    target:
+      "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogScrollWrapper",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogScrollWrapper->app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogScrollWrapper/BlogScrollWrapper.tsx",
+    source:
+      "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogScrollWrapper",
+    target:
+      "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/BlogScrollWrapper/BlogScrollWrapper.tsx",
+    type: "smoothstep",
+  },
+  {
+    id: "e:app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]->app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/page.tsx",
+    source: "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]",
+    target:
+      "app/(routes)/[locale]/(nav-layout)/(docs)/blogs/[...slug]/page.tsx",
     type: "smoothstep",
   },
   {

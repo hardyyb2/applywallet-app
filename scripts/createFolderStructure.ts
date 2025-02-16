@@ -27,9 +27,13 @@ const ignoreFolders = [
 ];
 
 const isPathSafe = (itemPath: string): boolean => {
-  // Prevent traversal outside root directory
   const normalizedPath = path.normalize(itemPath);
-  if (normalizedPath.includes("..")) {
+
+  // Allow [...slug] patterns but prevent directory traversal
+  const hasValidDoubleDots = normalizedPath.includes("[...]");
+  const hasInvalidDoubleDots = normalizedPath.split(path.sep).includes("..");
+
+  if (hasInvalidDoubleDots && !hasValidDoubleDots) {
     return false;
   }
 
