@@ -1,9 +1,20 @@
+import { setStaticParamsLocale } from "next-international/server";
+
 import { BasePageHeader } from "@/components/dependent/BasePageHeader";
-import { getI18n } from "@/locales/server";
+import { getI18n, getStaticParams } from "@/locales/server";
 
 import { TechStack } from "./TechStack";
 
-const TechnologiesPage = async () => {
+export const generateStaticParams = () => {
+  return getStaticParams();
+};
+
+type TechnologiesPageProps = {
+  params: Promise<{ locale: string }>;
+};
+
+const TechnologiesPage = async ({ params }: TechnologiesPageProps) => {
+  setStaticParamsLocale((await params).locale);
   const t = await getI18n();
 
   return (
