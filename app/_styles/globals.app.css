@@ -9,7 +9,7 @@
   logs: false;
   prefix: "d-";
   themes:
-    synthwave --prefers-dark --default,
+    synthwave --default --prefers-dark,
     light;
 }
 
