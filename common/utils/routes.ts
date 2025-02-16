@@ -25,7 +25,7 @@ export const AppRoutes = {
   BLOGS: "/blogs",
 
   ABOUT: "/about",
-  PROJECT_STRUCTURE: "/about/project-structure",
+  APP_STRUCTURE: "/about/app-structure",
 } as const;
 
 export const ApiRoutes = {

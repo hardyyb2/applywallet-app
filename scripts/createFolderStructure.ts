@@ -60,7 +60,7 @@ const getNodeSubType = (
     return { type, subType } as DrFileType;
   }
 
-  return { type: "folder", subType: "route-group" } as DrFolderType;
+  return { type: "folder", subType: "route-group" } satisfies DrFolderType;
 };
 
 const scanFolder = ({
@@ -111,14 +111,14 @@ const scanFolder = ({
         },
         position: nodePosition,
         type: "custom",
-      });
+      } satisfies DrNodeType);
 
       edges.push({
         id: edgeId,
         source: parentId,
         target: nodeId,
         type: "smoothstep",
-      });
+      } satisfies DrEdgeType);
 
       if (isDirectory) {
         scanFolder({
@@ -152,7 +152,7 @@ const generateGraph = async (rootFolder: string) => {
     data: { name: rootFolder, root: true, type: "folder", subType: "root" },
     position: { x: 0, y: 0 },
     type: "custom",
-  });
+  } satisfies DrNodeType);
 
   scanFolder({
     parentFolder: absoluteRootPath,
