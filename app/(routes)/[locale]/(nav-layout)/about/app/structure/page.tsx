@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+
 import { setStaticParamsLocale } from "next-international/server";
 
 import { Breadcrumbs } from "~/components/ds/Breadcrumbs";
@@ -11,9 +13,31 @@ import { AppRoutes } from "~/utils/routes";
 
 import { IconLink } from "@/components/dependent/IconLink";
 import { getI18n, getStaticParams } from "@/locales/server";
+import { i18n } from "@/utils/locale-utils";
 
 import { DFBWrapper } from "./DirectoryFlowBuilder/DFBWrapper";
 import { DirectoryFlowBuilder } from "./DirectoryFlowBuilder/DirectoryFlowBuilder";
+
+export const metadata: Metadata = {
+  title: "app structure | applywallet",
+  description: "directory flow builder structure of applywallet",
+  keywords: [
+    "app structure",
+    "applywallet",
+    "structure",
+    "directory flow builder",
+  ],
+  alternates: {
+    canonical: AppRoutes.APP_STRUCTURE,
+    languages: i18n.locales.reduce(
+      (acc, locale) => ({
+        ...acc,
+        [locale]: `${locale}/${AppRoutes.APP_STRUCTURE}`,
+      }),
+      {},
+    ),
+  },
+};
 
 export const generateStaticParams = async () => {
   return getStaticParams();
