@@ -41,15 +41,15 @@ const AboutPage = async ({ params }: AboutPageProps) => {
   const t = await getI18n();
 
   return (
-    <div className="h-full px-5 py-4 lg:px-10">
+    <main className="h-full px-5 py-4 lg:px-10">
       <BasePageHeader title={t("about.title")} subtitle={t("about.subtitle")} />
 
-      <div className="grid grid-cols-1 gap-xs-s lg:grid-cols-2">
+      <div className="gap-xs-s grid grid-cols-1 lg:grid-cols-2">
         <AboutApp />
 
         <AboutCreator />
       </div>
-    </div>
+    </main>
   );
 };
 

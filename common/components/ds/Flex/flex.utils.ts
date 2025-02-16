@@ -22,6 +22,7 @@ const flexVariants = cva("flex", {
       "space-around": "justify-around",
     },
     wrap: {
+      true: "flex-wrap",
       wrap: "flex-wrap",
       nowrap: "flex-nowrap",
       "wrap-reverse": "flex-wrap-reverse",

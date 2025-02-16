@@ -46,6 +46,10 @@ const engLocales = {
 
     app: {
       subtitle: "is under construction, till then check out our blogs",
+      technologies: {
+        title: "technologies",
+        subtitle: "tools and frameworks powering applywallet",
+      },
     },
 
     creator: {
