@@ -11,10 +11,10 @@ type BasePageHeaderProps = {
 const BasePageHeader = ({ title, subtitle }: BasePageHeaderProps) => {
   return (
     <Flex direction="column" className="mb-s-m">
-      <Typography variant="title-l" lg="headline-m">
+      <Typography variant="title-m" md="title-l" lg="headline-m" as="h1">
         {title}
       </Typography>
-      <Typography variant="label-xs" lg="label-m">
+      <Typography variant="label-xs" lg="label-m" as="h2">
         {subtitle}
       </Typography>
     </Flex>
