@@ -1,5 +1,7 @@
 import { AppRoutes } from "~/utils/routes";
 
+import type { LocaleKeys } from "@/locales/langs/en";
+
 import { Icons } from "../../../../common/components/ds/Icons";
 import { NavigationCategories, type NavItemType } from "./navigation.types";
 
@@ -11,14 +13,14 @@ const navItems: NavItemType[] = [
     icon: Icons.CustomHome,
   },
   {
-    label: "experiences",
+    label: "nav.experiences",
     link: AppRoutes.EXPERIENCES,
     category: NavigationCategories.GENERAL,
     icon: Icons.Briefcase,
     inactive: true,
   },
   {
-    label: "interviews",
+    label: "nav.interviews",
     link: AppRoutes.INTERVIEWS,
     category: NavigationCategories.GENERAL,
     icon: Icons.Clapperboard,
@@ -69,4 +71,13 @@ const groupedNavItems: { [key in NavigationCategories]: NavItemType[] } =
     {} as { [key in NavigationCategories]: NavItemType[] },
   );
 
-export const groupedNavItemsEntries = Object.entries(groupedNavItems);
+export const groupedNavItemsEntries = Object.entries(groupedNavItems) as [
+  NavigationCategories,
+  NavItemType[],
+][];
+
+export const categoryLabelMapping = {
+  [NavigationCategories.GENERAL]: "nav.general",
+  [NavigationCategories.READ]: "nav.read",
+  [NavigationCategories.OTHERS]: "nav.others",
+} as const satisfies Record<NavigationCategories, LocaleKeys>;

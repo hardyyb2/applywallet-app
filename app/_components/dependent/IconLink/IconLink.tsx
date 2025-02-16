@@ -18,9 +18,8 @@ const IconLink = ({
   ...linkProps
 }: PropsWithChildren<IconLinkProps>) => {
   const Icon = navItemToIconsMapping[href]?.icon;
-  // TODO: fix this
-  // @ts-expect-error
-  const title = translate(navItemToIconsMapping[href]?.label) ?? href;
+  const label = navItemToIconsMapping[href]?.label;
+  const title = label ? translate(label) : href;
 
   return (
     <Fragment>

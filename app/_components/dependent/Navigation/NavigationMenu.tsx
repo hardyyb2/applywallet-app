@@ -16,7 +16,10 @@ import { getLinkWithLocale } from "~/utils/routes";
 import { useI18n } from "@/locales/client";
 import { cn } from "@/utils/styles";
 
-import { groupedNavItemsEntries } from "./navigation.utils";
+import {
+  categoryLabelMapping,
+  groupedNavItemsEntries,
+} from "./navigation.utils";
 
 interface NavigationMenuProps {
   navOpen: boolean;
@@ -47,9 +50,9 @@ const NavigationMenu = ({
       {groupedNavItemsEntries.map(([group, items]) => {
         return (
           <Fragment key={group}>
-            {/* TODO: fix this */}
-            {/* @ts-expect-error */}
-            {navOpen && <li className="d-menu-title">{t(`nav.${group}`)}</li>}
+            {navOpen && (
+              <li className="d-menu-title">{t(categoryLabelMapping[group])}</li>
+            )}
 
             {items.map((item) => {
               const itemLinkWithLocale = getLinkWithLocale({
@@ -81,8 +84,6 @@ const NavigationMenu = ({
                         lg="label-m"
                         className="text-ellipsis"
                       >
-                        {/* TODO: fix this */}
-                        {/* @ts-expect-error */}
                         {t(item.label)}
                       </Typography>
                     ) : null}
@@ -101,11 +102,9 @@ const NavigationMenu = ({
                 >
                   <Tooltip>
                     <TooltipTrigger asChild>{listItem}</TooltipTrigger>
-                    <TooltipContent sideOffset={12}>
-                      {/* TODO: fix this */}
-                      {/* @ts-expect-error */}
+                    <TooltipContent sideOffset={12} color="neutral">
                       {t(item.label)}
-                      <TooltipArrow />
+                      <TooltipArrow color="neutral" />
                     </TooltipContent>
                   </Tooltip>
                 </TooltipProvider>

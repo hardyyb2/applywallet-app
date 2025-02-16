@@ -1,3 +1,5 @@
+import type { Paths } from "type-fest";
+
 const engLocales = {
   common: {
     or: "or",
@@ -21,6 +23,8 @@ const engLocales = {
     others: "others",
     open_nav: "open nav",
     close_nav: "close nav",
+    experiences: "experiences",
+    interviews: "interviews",
   },
 
   blogs: {
@@ -60,4 +64,4 @@ const engLocales = {
 } as const;
 
 export default engLocales;
-export type EngLocales = typeof engLocales;
+export type LocaleKeys = Paths<typeof engLocales, { leavesOnly: true }>;

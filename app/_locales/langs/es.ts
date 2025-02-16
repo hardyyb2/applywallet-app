@@ -21,6 +21,8 @@ export default {
     others: "otros",
     open_nav: "abrir menú",
     close_nav: "cerrar menú",
+    experiences: "experiencias",
+    interviews: "entrevistas",
   },
 
   blogs: {
