@@ -4,6 +4,7 @@ const engLocales = {
     sign_in: "sign in",
     app_structure: "app structure",
     blogs: "blogs",
+    technologies: "technologies",
   },
 
   routes: {

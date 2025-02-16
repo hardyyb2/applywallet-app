@@ -4,6 +4,7 @@ export default {
     sign_in: "inicia sesión",
     app_structure: "estructura de la app",
     blogs: "blogs",
+    technologies: "tecnologías",
   },
 
   routes: {

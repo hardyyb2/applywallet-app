@@ -37,20 +37,32 @@ const AboutApp = async () => {
           {t("about.app.subtitle")}
         </Typography>
 
-        <Card.Actions className="z-1 grid w-full grid-cols-2">
-          <Link
-            href={AppRoutes.APP_STRUCTURE}
-            className={buttonVariants({
-              color: "secondary",
-              variant: "outline",
-            })}
-          >
-            {t("common.app_structure")}
-          </Link>
+        <Card.Actions className="z-1 grid w-full">
+          <div className="gap-3xs grid grid-cols-2">
+            <Link
+              href={AppRoutes.APP_STRUCTURE}
+              className={buttonVariants({
+                color: "secondary",
+                variant: "outline",
+              })}
+            >
+              {t("common.app_structure")}
+            </Link>
+            <Link
+              href={AppRoutes.TECHNOLOGIES}
+              className={buttonVariants({
+                color: "secondary",
+                variant: "outline",
+              })}
+            >
+              {t("common.technologies")}
+            </Link>
+          </div>
           <Link
             href={AppRoutes.BLOGS}
             className={buttonVariants({
               color: "primary",
+              fullWidth: true,
             })}
           >
             {t("common.blogs")}

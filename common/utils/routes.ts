@@ -25,7 +25,8 @@ export const AppRoutes = {
   BLOGS: "/blogs",
 
   ABOUT: "/about",
-  APP_STRUCTURE: "/about/app-structure",
+  APP_STRUCTURE: "/about/app/structure",
+  TECHNOLOGIES: "/about/app/technologies",
 } as const;
 
 export const ApiRoutes = {
