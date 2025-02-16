@@ -50,7 +50,7 @@ const AboutCreator = async () => {
         </Card.Figure>
 
         <Wave
-          className="text-secondary absolute right-0 bottom-0 left-0 z-0 h-60"
+          className="text-secondary absolute right-0 bottom-0 left-0 z-0 h-68"
           paused={false}
           fill="currentColor"
           options={{
@@ -62,7 +62,7 @@ const AboutCreator = async () => {
         />
 
         <Wave
-          className="text-primary absolute right-0 bottom-0 left-0 z-0 h-60"
+          className="text-primary absolute right-0 bottom-0 left-0 z-0 h-68"
           paused={false}
           fill="currentColor"
           options={{
@@ -90,7 +90,10 @@ const AboutCreator = async () => {
               key={social.name}
               href={social.url}
               target="_blank"
-              className={buttonVariants()}
+              className={buttonVariants({
+                variant: "soft",
+                color: "primary",
+              })}
             >
               <social.icon />
             </Link>

@@ -46,6 +46,7 @@ const AboutApp = async () => {
               href={AppRoutes.APP_STRUCTURE}
               className={buttonVariants({
                 color: "secondary",
+                variant: "soft",
               })}
             >
               {t("common.app_structure")}
@@ -54,6 +55,7 @@ const AboutApp = async () => {
               href={AppRoutes.TECHNOLOGIES}
               className={buttonVariants({
                 color: "secondary",
+                variant: "soft",
               })}
             >
               {t("common.technologies")}
