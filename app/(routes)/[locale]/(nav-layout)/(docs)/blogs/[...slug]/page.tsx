@@ -2,6 +2,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 
 import { allBlogs } from "contentlayer/generated";
+import { setStaticParamsLocale } from "next-international/server";
 
 import { Breadcrumbs } from "~/components/ds/Breadcrumbs";
 import { Flex } from "~/components/ds/Flex";
@@ -14,7 +15,7 @@ import { AppRoutes } from "~/utils/routes";
 
 import { IconLink } from "@/components/dependent/IconLink";
 import { Mdx } from "@/components/dependent/Mdx";
-import { getI18n } from "@/locales/server";
+import { getI18n, getStaticParams } from "@/locales/server";
 import { getAppBaseURL } from "@/utils/app";
 import { i18n } from "@/utils/locale-utils";
 import { shimmer } from "@/utils/shimmer";
@@ -24,11 +25,18 @@ import { BlogMetaInfo } from "./BlogMetaInfo/BlogMetaInfo";
 import { BlogScrollWrapper } from "./BlogScrollWrapper/BlogScrollWrapper";
 
 type BlogPageProps = {
-  params: Promise<{ slug: string[] }>;
+  params: Promise<{ slug: string[]; locale: string }>;
 };
 
 export const generateStaticParams = async () => {
-  return allBlogs.map((blog) => ({ slug: blog.slugAsParams.split("/") }));
+  const params = [
+    ...allBlogs.map((blog) => ({
+      slug: blog.slugAsParams.split("/"),
+    })),
+    ...getStaticParams(),
+  ];
+
+  return params;
 };
 
 export const generateMetadata = async (props: BlogPageProps) => {
@@ -98,6 +106,7 @@ async function getBlogFromParams(params: { slug: string[] }) {
 
 const BlogPage = async (props: BlogPageProps) => {
   const params = await props.params;
+  setStaticParamsLocale(params.locale);
   const blog = await getBlogFromParams(params);
   const t = await getI18n();
 
