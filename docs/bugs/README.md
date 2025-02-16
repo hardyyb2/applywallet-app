@@ -21,3 +21,8 @@ Each bug document should include:
 - Solution implemented
 - Prevention measures
 - Related code changes
+
+## Recent Issues
+
+1. [Robots.txt Middleware Issue](./robots-middleware.md)
+   - LinkedIn featured section was unable to add the website link due to robots.txt being redirected by middleware. The issue was discovered through Sentry error logs while attempting to add the website to LinkedIn's featured section.
