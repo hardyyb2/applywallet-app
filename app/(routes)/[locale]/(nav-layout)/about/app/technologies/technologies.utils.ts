@@ -259,4 +259,11 @@ export const technologies: Technology[] = [
     url: "https://knip.dev/",
     category: "utilities",
   },
+  {
+    name: "React Flow",
+    description: "Flow chart library",
+    logo: "/images/technologies/reactflow.png",
+    url: "https://xyflow.com/",
+    category: "ui",
+  },
 ];
