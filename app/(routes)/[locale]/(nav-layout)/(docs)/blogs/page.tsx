@@ -11,8 +11,9 @@ import { getI18n, getStaticParams } from "@/locales/server";
 import { getAppBaseURL } from "@/utils/app";
 import { i18n } from "@/utils/locale-utils";
 
-import { BlogCard, BlogCardMobile } from "./BlogCard";
-import { BlogCardClient } from "./BlogCardClient";
+import { BlogCard } from "./BlogCard";
+import { BlogsListMobile } from "./BlogsListMobile";
+import { BlogsWrapper } from "./BlogsWrapper";
 
 export const metadata: Metadata = {
   title: "blogs | applywallet",
@@ -88,19 +89,19 @@ const BlogsPage = async ({ params }: BlogsPageProps) => {
     <div className="px-5 py-4 lg:px-10">
       <BasePageHeader title={t("blogs.title")} subtitle={t("blogs.subtitle")} />
 
-      <div className="grid grid-cols-1 gap-xs-s lg:grid-cols-[repeat(auto-fill,minmax(360px,1fr))]">
-        {allBlogs.map((blog) => (
-          <Link
-            href={blog.slug}
-            key={blog._id}
-            className="outline-base-content rounded-2xl hover:outline-4 hover:outline-dashed focus-visible:outline-dashed"
-          >
-            <BlogCardClient mobile={<BlogCardMobile {...blog} />}>
+      <BlogsWrapper mobile={<BlogsListMobile />}>
+        <div className="gap-xs-s hidden grid-cols-1 lg:grid lg:grid-cols-[repeat(auto-fill,minmax(360px,1fr))]">
+          {allBlogs.map((blog) => (
+            <Link
+              href={blog.slug}
+              key={blog._id}
+              className="outline-base-content rounded-2xl hover:outline-4 hover:outline-dashed focus-visible:outline-dashed"
+            >
               <BlogCard {...blog} />
-            </BlogCardClient>
-          </Link>
-        ))}
-      </div>
+            </Link>
+          ))}
+        </div>
+      </BlogsWrapper>
     </div>
   );
 };

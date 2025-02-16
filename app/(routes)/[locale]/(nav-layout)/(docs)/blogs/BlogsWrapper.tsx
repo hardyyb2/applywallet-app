@@ -2,12 +2,12 @@
 
 import { useBreakPoint } from "@/hooks/useBreakPoint";
 
-type BlogCardClientProps = {
+type BlogsWrapperProps = {
   mobile: React.ReactNode;
   children: React.ReactNode;
 };
 
-const BlogCardClient = ({ mobile, children }: BlogCardClientProps) => {
+const BlogsWrapper = ({ mobile, children }: BlogsWrapperProps) => {
   const { isBelowLg } = useBreakPoint("lg");
 
   if (isBelowLg) {
@@ -17,4 +17,4 @@ const BlogCardClient = ({ mobile, children }: BlogCardClientProps) => {
   return children;
 };
 
-export { BlogCardClient };
+export { BlogsWrapper };
