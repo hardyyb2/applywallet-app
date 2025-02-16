@@ -28,6 +28,7 @@ export const buttonVariants = cva(
       variant: {
         outline: "d-btn-outline",
         link: "d-btn-link",
+        soft: "d-btn-soft",
       },
       fullWidth: {
         true: "d-btn-block",
