@@ -14,6 +14,7 @@ import { AppRoutes } from "~/utils/routes";
 
 import { IconLink } from "@/components/dependent/IconLink";
 import { Mdx } from "@/components/dependent/Mdx";
+import { getI18n } from "@/locales/server";
 import { getAppBaseURL } from "@/utils/app";
 import { i18n } from "@/utils/locale-utils";
 import { shimmer } from "@/utils/shimmer";
@@ -98,6 +99,7 @@ async function getBlogFromParams(params: { slug: string[] }) {
 const BlogPage = async (props: BlogPageProps) => {
   const params = await props.params;
   const blog = await getBlogFromParams(params);
+  const t = await getI18n();
 
   if (!blog) {
     notFound();
@@ -109,7 +111,7 @@ const BlogPage = async (props: BlogPageProps) => {
         <ScrollAreaViewport>
           <Breadcrumbs className="mb-2xs flex-0 pt-0 [&_a]:no-underline">
             <Breadcrumbs.Item>
-              <IconLink href={AppRoutes.BLOGS} />
+              <IconLink href={AppRoutes.BLOGS} translate={t} />
             </Breadcrumbs.Item>
             <Breadcrumbs.Item>{blog.title}</Breadcrumbs.Item>
           </Breadcrumbs>

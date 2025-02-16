@@ -10,6 +10,7 @@ import { Breadcrumbs } from "~/components/ds/Breadcrumbs";
 import { AppRoutes, UrlParams } from "~/utils/routes";
 
 import { IconLink } from "@/components/dependent/IconLink";
+import { useI18n } from "@/locales/client";
 import { useInterview } from "@/queries/interviews.queries";
 
 import { AddEditInterviewForm } from "../../AddEditInterviewForm";
@@ -23,6 +24,7 @@ type EditInterviewProps = {
 const EditInterview = (props: EditInterviewProps) => {
   const params = use(props.params);
   const interviewId = params[UrlParams.INTERVIEW_ID];
+  const t = useI18n();
 
   const { data, isLoading, error } = useInterview(interviewId);
 
@@ -43,7 +45,7 @@ const EditInterview = (props: EditInterviewProps) => {
     <div className="m-xs mt-0">
       <Breadcrumbs className="mb-2xs pt-0 [&_a]:no-underline">
         <Breadcrumbs.Item>
-          <IconLink href={AppRoutes.INTERVIEWS} />
+          <IconLink href={AppRoutes.INTERVIEWS} translate={t} />
         </Breadcrumbs.Item>
         <Breadcrumbs.Item>edit</Breadcrumbs.Item>
       </Breadcrumbs>

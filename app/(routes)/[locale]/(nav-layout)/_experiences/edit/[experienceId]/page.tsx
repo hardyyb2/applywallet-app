@@ -13,6 +13,7 @@ import { IconLink } from "@/components/dependent/IconLink";
 import { authOptions } from "@/lib/auth";
 import { CustomError } from "@/lib/custom-error";
 import { experienceSchema, type ExperienceType } from "@/lib/schema/experience";
+import { getI18n } from "@/locales/server";
 import { SheetNames } from "@/utils/sheet";
 
 import { AddEditExperienceForm } from "../../AddEditExperienceForm";
@@ -86,6 +87,7 @@ const EditExperience = async (props: EditExperienceProps) => {
   const params = await props.params;
   const experienceId = params[UrlParams.EXPERIENCE_ID];
   const experience = await fetchExperience(experienceId);
+  const t = await getI18n();
 
   if (!experience) {
     notFound();
@@ -95,7 +97,7 @@ const EditExperience = async (props: EditExperienceProps) => {
     <div className="m-xs mt-0">
       <Breadcrumbs className="mb-2xs pt-0 [&_a]:no-underline">
         <Breadcrumbs.Item>
-          <IconLink href={AppRoutes.EXPERIENCES} />
+          <IconLink href={AppRoutes.EXPERIENCES} translate={t} />
         </Breadcrumbs.Item>
         <Breadcrumbs.Item>edit</Breadcrumbs.Item>
       </Breadcrumbs>
