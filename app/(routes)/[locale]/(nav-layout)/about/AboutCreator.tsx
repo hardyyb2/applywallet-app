@@ -44,6 +44,8 @@ const AboutCreator = async () => {
             width={120}
             height={120}
             className="z-1 h-full w-full object-cover"
+            placeholder="blur"
+            blurDataURL={HardikBadolaImg.blurDataURL}
           />
         </Card.Figure>
 

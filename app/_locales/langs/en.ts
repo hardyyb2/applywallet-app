@@ -46,7 +46,7 @@ const engLocales = {
     subtitle: "app & creator",
 
     app: {
-      subtitle: "is under construction, till then check out our blogs",
+      subtitle: "is under construction, till then check out",
       technologies: {
         title: "technologies",
         subtitle: "tools and frameworks powering applywallet",

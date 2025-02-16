@@ -49,7 +49,7 @@ export default {
 
     app: {
       subtitle:
-        "está en construcción, hasta que tengamos la app lista, echa un vistazo a nuestros blogs",
+        "está en construcción, hasta que tengamos la app lista, echa un vistazo a",
       technologies: {
         title: "tecnologías",
         subtitle: "herramientas y frameworks que impulsan applywallet",

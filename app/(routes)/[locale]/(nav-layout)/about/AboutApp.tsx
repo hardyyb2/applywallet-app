@@ -23,6 +23,8 @@ const AboutApp = async () => {
             width={120}
             height={120}
             className="z-1 h-full w-full object-cover"
+            placeholder="blur"
+            blurDataURL={AwLogoImg.blurDataURL}
           />
         </Card.Figure>
 
@@ -30,7 +32,8 @@ const AboutApp = async () => {
           <Typography variant="headline-s">applywallet</Typography>
         </Card.Title>
         <Typography
-          variant="body-m"
+          variant="body-s"
+          lg="body-m"
           align="center"
           className="text-base-content z-1"
         >
@@ -43,7 +46,6 @@ const AboutApp = async () => {
               href={AppRoutes.APP_STRUCTURE}
               className={buttonVariants({
                 color: "secondary",
-                variant: "outline",
               })}
             >
               {t("common.app_structure")}
@@ -52,7 +54,6 @@ const AboutApp = async () => {
               href={AppRoutes.TECHNOLOGIES}
               className={buttonVariants({
                 color: "secondary",
-                variant: "outline",
               })}
             >
               {t("common.technologies")}
