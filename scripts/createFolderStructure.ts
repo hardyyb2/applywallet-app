@@ -1,4 +1,7 @@
 import fs from "fs";
+import path from "path";
+
+import prettier from "prettier";
 
 import type {
   DrEdgeType,
@@ -6,6 +9,37 @@ import type {
   DrFolderType,
   DrNodeType,
 } from "@/types/flowbuilder";
+
+const ignoreFolders = [
+  "node_modules",
+  "src",
+  ".contentlayer",
+  ".next",
+  ".git",
+  ".env",
+  ".env.local",
+  ".env.development",
+  ".env.production",
+  ".env.test",
+  ".env.*", // catch any other .env variants
+  "secrets",
+  "config",
+];
+
+const isPathSafe = (itemPath: string): boolean => {
+  // Prevent traversal outside root directory
+  const normalizedPath = path.normalize(itemPath);
+  if (normalizedPath.includes("..")) {
+    return false;
+  }
+
+  // Check if path contains any ignored folders
+  if (ignoreFolders.some((folder) => normalizedPath.includes(folder))) {
+    return false;
+  }
+
+  return true;
+};
 
 const getNodeSubType = (
   type: DrNodeType["data"]["type"],
@@ -30,58 +64,80 @@ const scanFolder = ({
   parentId,
   nodes,
   edges,
+  rootDir,
 }: {
   parentFolder: string;
   parentId: string;
   nodes: DrNodeType[];
   edges: DrEdgeType[];
+  rootDir: string;
 }) => {
-  const filesAndFolders = fs.readdirSync(parentFolder);
+  if (!isPathSafe(parentFolder)) {
+    return;
+  }
 
-  filesAndFolders.forEach((item) => {
-    const itemPath = `${parentFolder}/${item}`;
-    const isDirectory = fs.statSync(itemPath).isDirectory();
+  try {
+    const filesAndFolders = fs.readdirSync(parentFolder);
 
-    const [nodeId, edgeId] = [itemPath, `e:${parentId}->${itemPath}`];
+    filesAndFolders.forEach((item) => {
+      const itemPath = path.join(parentFolder, item);
 
-    // we will use "dagre" to position nodes
-    const nodePosition = {
-      x: 0,
-      y: 0,
-    };
+      // Convert absolute paths to relative paths for output
+      const relativePath = path.relative(rootDir, itemPath);
+      const nodeId = relativePath;
 
-    const fileOrFolderType = isDirectory ? "folder" : "file";
-    nodes.push({
-      id: nodeId,
-      data: {
-        name: item,
-        ...getNodeSubType(fileOrFolderType, item),
-      },
-      position: nodePosition,
-      type: "custom",
-    });
+      if (!isPathSafe(itemPath)) {
+        return;
+      }
 
-    edges.push({
-      id: edgeId,
-      source: parentId,
-      target: nodeId,
-      type: "smoothstep",
-    });
+      const isDirectory = fs.statSync(itemPath).isDirectory();
+      if (isDirectory && item.startsWith("_")) {
+        return;
+      }
 
-    if (isDirectory) {
-      // Recursively scan all folders
-      scanFolder({
-        parentFolder: itemPath,
-        parentId: nodeId,
-        nodes,
-        edges,
+      const edgeId = `e:${parentId}->${nodeId}`;
+      const nodePosition = { x: 0, y: 0 };
+
+      const fileOrFolderType = isDirectory ? "folder" : "file";
+      nodes.push({
+        id: nodeId,
+        data: {
+          name: item,
+          ...getNodeSubType(fileOrFolderType, item),
+        },
+        position: nodePosition,
+        type: "custom",
       });
-    }
-  });
+
+      edges.push({
+        id: edgeId,
+        source: parentId,
+        target: nodeId,
+        type: "smoothstep",
+      });
+
+      if (isDirectory) {
+        scanFolder({
+          parentFolder: itemPath,
+          parentId: nodeId,
+          nodes,
+          edges,
+          rootDir,
+        });
+      }
+    });
+  } catch (error) {
+    console.error(`Error scanning folder ${parentFolder}:`, error);
+  }
 };
 
 /** Create "reactflow" nodes and edges for our entire directory */
-const generateGraph = (rootFolder: string) => {
+const generateGraph = async (rootFolder: string) => {
+  if (!isPathSafe(rootFolder)) {
+    throw new Error("Invalid root folder path");
+  }
+
+  const absoluteRootPath = path.resolve(rootFolder);
   const nodes: DrNodeType[] = [];
   const edges: DrEdgeType[] = [];
 
@@ -94,16 +150,36 @@ const generateGraph = (rootFolder: string) => {
     type: "custom",
   });
 
-  scanFolder({ parentFolder: rootFolder, parentId: rootId, nodes, edges });
-  // TODO - test with zod for data
+  scanFolder({
+    parentFolder: absoluteRootPath,
+    parentId: rootId,
+    nodes,
+    edges,
+    rootDir: absoluteRootPath,
+  });
+
   return { nodes, edges };
 };
 
-const graph = generateGraph("app");
-const outputFileName = "./app/_bin/folderStructure.ts";
-const jsCode = `import type { DrEdgeType, DrNodeType } from "@/types/flowbuilder";
+(async () => {
+  try {
+    const graph = await generateGraph(".");
+    const outputFileName = "./app/_bin/folderStructure.ts";
+
+    const unformattedCode = `import type { DrEdgeType, DrNodeType } from "@/types/flowbuilder";
 
 export const nodes: DrNodeType[] = ${JSON.stringify(graph.nodes, null, 2)};
 export const edges: DrEdgeType[] = ${JSON.stringify(graph.edges, null, 2)};`;
 
-fs.writeFileSync(outputFileName, jsCode);
+    const formattedCode = await prettier.format(unformattedCode, {
+      parser: "typescript",
+      semi: true,
+      singleQuote: false,
+    });
+
+    fs.writeFileSync(outputFileName, formattedCode);
+  } catch (error) {
+    console.error("Failed to generate folder structure:", error);
+    process.exit(1);
+  }
+})();
