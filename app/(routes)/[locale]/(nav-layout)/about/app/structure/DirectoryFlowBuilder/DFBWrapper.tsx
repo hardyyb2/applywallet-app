@@ -27,14 +27,14 @@ const DFBWrapper = ({ children }: PropsWithChildren) => {
   return (
     <div
       ref={containerRef}
-      className={cnM("relative flex-1 bg-base-content/10")}
+      className={cnM("bg-base-content/10 relative flex-1")}
     >
       <TooltipProvider delayDuration={600}>
         <Tooltip>
           <TooltipTrigger asChild>
             <Button
               aria-label="toggle full screen"
-              className="absolute bottom-2xs right-2xs z-40"
+              className="bottom-2xs right-2xs absolute z-40"
               startIcon={
                 isFullScreen ? (
                   <Icons.Minimize className="lg:h-l lg:w-l" />
