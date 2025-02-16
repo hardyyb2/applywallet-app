@@ -45,7 +45,7 @@ const AboutApp = async () => {
               variant: "outline",
             })}
           >
-            app structure
+            {t("common.app_structure")}
           </Link>
           <Link
             href={AppRoutes.BLOGS}
@@ -53,7 +53,7 @@ const AboutApp = async () => {
               color: "primary",
             })}
           >
-            blogs
+            {t("common.blogs")}
           </Link>
         </Card.Actions>
       </Card.Body>

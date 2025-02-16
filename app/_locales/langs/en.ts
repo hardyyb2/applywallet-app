@@ -2,10 +2,13 @@ const engLocales = {
   common: {
     or: "or",
     sign_in: "sign in",
+    app_structure: "app structure",
+    blogs: "blogs",
   },
 
   routes: {
     blogs: "blogs",
+    app_structure: "app structure",
   },
 
   nav: {

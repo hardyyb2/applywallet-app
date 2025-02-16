@@ -2,10 +2,13 @@ export default {
   common: {
     or: "o",
     sign_in: "inicia sesión",
+    app_structure: "estructura de la app",
+    blogs: "blogs",
   },
 
   routes: {
     blogs: "blogs",
+    app_structure: "estructura de la app",
   },
 
   nav: {

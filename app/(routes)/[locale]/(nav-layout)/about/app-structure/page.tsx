@@ -35,7 +35,7 @@ const AppStructure = async ({ params }: AppStructureProps) => {
             <Breadcrumbs.Item>
               <IconLink href={AppRoutes.ABOUT} translate={t} />
             </Breadcrumbs.Item>
-            <Breadcrumbs.Item>app structure</Breadcrumbs.Item>
+            <Breadcrumbs.Item>{t("common.app_structure")}</Breadcrumbs.Item>
           </Breadcrumbs>
         </ScrollAreaViewport>
         <ScrollBar orientation="horizontal" className="hidden h-0" />
