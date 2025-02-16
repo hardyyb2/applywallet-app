@@ -4,6 +4,7 @@ import { Suspense, useState, type ReactNode } from "react";
 import { SessionProvider } from "next-auth/react";
 import dynamic from "next/dynamic";
 
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { domAnimation, LazyMotion, MotionConfig } from "motion/react";
@@ -11,7 +12,6 @@ import { ToastContainer } from "react-toastify";
 
 import { env } from "~/utils/env";
 
-import { GoogleAnalytics } from "@/components/dependent/GoogleAnalytics";
 import { I18nProviderClient } from "@/locales/client";
 import { type Locale } from "@/utils/locale-utils";
 
@@ -46,7 +46,7 @@ const Providers = ({ children, locale }: ProvidersType) => {
     <SessionProvider>
       <QueryClientProvider client={queryClient}>
         <Suspense>
-          <GoogleAnalytics GA_TRACKING_ID={env.NEXT_PUBLIC_GA_APP_ID} />
+          <GoogleAnalytics gaId={env.NEXT_PUBLIC_GA_APP_ID} />
         </Suspense>
         <TopLoader />
         <LazyMotion features={domAnimation}>
