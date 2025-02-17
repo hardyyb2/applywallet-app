@@ -2,7 +2,7 @@ import { Fragment, type Ref } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { Flex } from "~/components/ds/Flex";
+import { Menu, MenuItem, MenuTitle } from "~/components/ds/Menu/Menu";
 import {
   Tooltip,
   TooltipArrow,
@@ -38,21 +38,11 @@ const NavigationMenu = ({
   const pathName = usePathname();
 
   return (
-    <Flex
-      component="ul"
-      wrap="nowrap"
-      className={cn(
-        "d-menu-sm d-menu w-full max-w-none",
-        "space-y-3xs-2xs h-full overflow-y-auto px-2",
-        className,
-      )}
-    >
+    <Menu className="w-full" size="sm">
       {groupedNavItemsEntries.map(([group, items]) => {
         return (
           <Fragment key={group}>
-            {navOpen && (
-              <li className="d-menu-title">{t(categoryLabelMapping[group])}</li>
-            )}
+            {navOpen && <MenuTitle>{t(categoryLabelMapping[group])}</MenuTitle>}
 
             {items.map((item) => {
               const itemLinkWithLocale = getLinkWithLocale({
@@ -67,7 +57,7 @@ const NavigationMenu = ({
               const ItemIcon = item.icon;
 
               const listItem = (
-                <li key={item.key ?? itemLinkWithLocale}>
+                <MenuItem key={item.key ?? itemLinkWithLocale}>
                   <Link
                     ref={active ? selectedItemRef : undefined}
                     href={itemLinkWithLocale}
@@ -77,7 +67,7 @@ const NavigationMenu = ({
                     })}
                     onClick={onNavItemClick}
                   >
-                    <ItemIcon className="w-5 lg:w-6" />
+                    <ItemIcon />
                     {navOpen ? (
                       <Typography
                         variant="label-s"
@@ -88,7 +78,7 @@ const NavigationMenu = ({
                       </Typography>
                     ) : null}
                   </Link>
-                </li>
+                </MenuItem>
               );
 
               if (navOpen) {
@@ -113,7 +103,7 @@ const NavigationMenu = ({
           </Fragment>
         );
       })}
-    </Flex>
+    </Menu>
   );
 };
 
