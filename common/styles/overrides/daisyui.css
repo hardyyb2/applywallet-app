@@ -33,11 +33,6 @@ textarea::placeholder {
   margin-inline: var(--spacing-3xs-2xs);
 }
 
-.d-menu-title {
-  padding-block: var(--spacing-3xs);
-  padding-inline: var(--spacing-xs);
-}
-
 .d-menu-active {
   color: var(--color-secondary-content);
   background-color: var(--color-secondary);
