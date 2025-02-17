@@ -33,10 +33,22 @@ const navItems: NavItemType[] = [
     icon: Icons.BookOpen,
   },
   {
-    label: "nav.about",
+    label: "common.app",
     link: AppRoutes.ABOUT,
-    category: NavigationCategories.OTHERS,
-    icon: Icons.Info,
+    category: NavigationCategories.ABOUT,
+    icon: Icons.AppWindow,
+  },
+  {
+    label: "common.app_structure",
+    link: AppRoutes.APP_STRUCTURE,
+    category: NavigationCategories.ABOUT,
+    icon: Icons.FolderOpen,
+  },
+  {
+    label: "common.technologies",
+    link: AppRoutes.TECHNOLOGIES,
+    category: NavigationCategories.ABOUT,
+    icon: Icons.Hammer,
   },
 ];
 
@@ -79,5 +91,5 @@ export const groupedNavItemsEntries = Object.entries(groupedNavItems) as [
 export const categoryLabelMapping = {
   [NavigationCategories.GENERAL]: "nav.general",
   [NavigationCategories.READ]: "nav.read",
-  [NavigationCategories.OTHERS]: "nav.others",
+  [NavigationCategories.ABOUT]: "nav.about",
 } as const satisfies Record<NavigationCategories, LocaleKeys>;

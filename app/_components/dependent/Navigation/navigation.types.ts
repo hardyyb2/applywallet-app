@@ -7,7 +7,7 @@ import type { LocaleKeys } from "@/locales/langs/en";
 export enum NavigationCategories {
   GENERAL = "general",
   READ = "read",
-  OTHERS = "others",
+  ABOUT = "about",
 }
 
 export type NavItemType = {

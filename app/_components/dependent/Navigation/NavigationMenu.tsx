@@ -50,9 +50,8 @@ const NavigationMenu = ({
                 pathName,
               });
 
-              const active =
-                itemLinkWithLocale === pathName ||
-                (item.link && pathName.includes(item.link));
+              // TODO: Figure out for nested routes
+              const active = itemLinkWithLocale === pathName;
 
               const ItemIcon = item.icon;
 
@@ -72,7 +71,7 @@ const NavigationMenu = ({
                       <Typography
                         variant="label-s"
                         lg="label-m"
-                        className="text-ellipsis"
+                        className="line-clamp-1 text-ellipsis"
                       >
                         {t(item.label)}
                       </Typography>

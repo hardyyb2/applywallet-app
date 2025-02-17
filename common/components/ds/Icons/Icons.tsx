@@ -1,6 +1,7 @@
 import {
   AlignJustify,
   AlignLeft,
+  AppWindow,
   Bold,
   BookOpen,
   Briefcase,
@@ -151,6 +152,7 @@ const Icons = {
   MoreHorizontal,
   SlidersHorizontal,
   Hammer,
+  AppWindow,
   CustomRadio: createLucideIcon("CustomRadio", [
     [
       "circle",
