@@ -30,6 +30,7 @@ import {
   FolderOpen,
   GripHorizontal,
   GripVertical,
+  Hammer,
   Hash,
   Heading1,
   Heading2,
@@ -73,7 +74,6 @@ import {
   Unlink,
   UploadCloud,
   X,
-  type LucideProps,
 } from "lucide-react";
 
 const Icons = {
@@ -150,6 +150,7 @@ const Icons = {
   Circle,
   MoreHorizontal,
   SlidersHorizontal,
+  Hammer,
   CustomRadio: createLucideIcon("CustomRadio", [
     [
       "circle",
