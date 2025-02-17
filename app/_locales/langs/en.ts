@@ -7,6 +7,7 @@ const engLocales = {
     app_structure: "app structure",
     blogs: "blogs",
     technologies: "technologies",
+    app: "app",
   },
 
   routes: {

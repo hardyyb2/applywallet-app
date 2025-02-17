@@ -5,6 +5,7 @@ export default {
     app_structure: "estructura de la app",
     blogs: "blogs",
     technologies: "tecnologías",
+    app: "app",
   },
 
   routes: {
