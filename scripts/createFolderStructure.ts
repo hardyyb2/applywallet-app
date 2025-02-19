@@ -95,7 +95,11 @@ const scanFolder = ({
       }
 
       const isDirectory = fs.statSync(itemPath).isDirectory();
-      if (isDirectory && item.startsWith("_")) {
+      if (
+        isDirectory &&
+        item.startsWith("_") &&
+        itemPath.includes("app/(routes)")
+      ) {
         return;
       }
 
