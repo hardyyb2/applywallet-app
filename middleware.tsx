@@ -19,12 +19,12 @@ const getNegotiatorHeaders = (request: NextRequest): Record<string, string> => {
 const getLocale = (request: NextRequest): Locale => {
   try {
     const negotiatorHeaders = getNegotiatorHeaders(request);
-    const languages = new Negotiator({
+    let languages = new Negotiator({
       headers: negotiatorHeaders,
     }).languages();
 
-    if (!languages?.length) {
-      return i18n.defaultLocale;
+    if (!languages.length || (languages.length === 1 && languages[0] === "*")) {
+      languages = [i18n.defaultLocale];
     }
 
     const locales = i18n.locales.slice();
