@@ -11,6 +11,7 @@ const navItems: NavItemType[] = [
     link: AppRoutes.HOME,
     category: NavigationCategories.GENERAL,
     icon: Icons.CustomHome,
+    isActive: (pathname, locale) => pathname === `/${locale}${AppRoutes.HOME}`,
   },
   {
     label: "nav.experiences",
@@ -18,6 +19,8 @@ const navItems: NavItemType[] = [
     category: NavigationCategories.GENERAL,
     icon: Icons.Briefcase,
     inactive: true,
+    isActive: (pathname, locale) =>
+      pathname === `/${locale}${AppRoutes.EXPERIENCES}`,
   },
   {
     label: "nav.interviews",
@@ -25,30 +28,39 @@ const navItems: NavItemType[] = [
     category: NavigationCategories.GENERAL,
     icon: Icons.Clapperboard,
     inactive: true,
+    isActive: (pathname, locale) =>
+      pathname === `/${locale}${AppRoutes.INTERVIEWS}`,
   },
   {
     label: "nav.blogs",
     link: AppRoutes.BLOGS,
     category: NavigationCategories.READ,
     icon: Icons.BookOpen,
+    isActive: (pathname, locale) =>
+      pathname.startsWith(`/${locale}${AppRoutes.BLOGS}`),
   },
   {
     label: "common.app",
     link: AppRoutes.ABOUT,
     category: NavigationCategories.ABOUT,
     icon: Icons.AppWindow,
+    isActive: (pathname, locale) => pathname === `/${locale}${AppRoutes.ABOUT}`,
   },
   {
     label: "common.app_structure",
     link: AppRoutes.APP_STRUCTURE,
     category: NavigationCategories.ABOUT,
     icon: Icons.FolderOpen,
+    isActive: (pathname, locale) =>
+      pathname === `/${locale}${AppRoutes.APP_STRUCTURE}`,
   },
   {
     label: "common.technologies",
     link: AppRoutes.TECHNOLOGIES,
     category: NavigationCategories.ABOUT,
     icon: Icons.Hammer,
+    isActive: (pathname, locale) =>
+      pathname === `/${locale}${AppRoutes.TECHNOLOGIES}`,
   },
 ];
 

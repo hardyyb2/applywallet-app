@@ -11,9 +11,8 @@ import {
   TooltipTrigger,
 } from "~/components/ds/Tooltip";
 import { Typography } from "~/components/ds/Typography";
-import { getLinkWithLocale } from "~/utils/routes";
 
-import { useI18n } from "@/locales/client";
+import { useCurrentLocale, useI18n } from "@/locales/client";
 import { cn } from "@/utils/styles";
 
 import {
@@ -36,6 +35,7 @@ const NavigationMenu = ({
 }: NavigationMenuProps) => {
   const t = useI18n();
   const pathName = usePathname();
+  const activeLocale = useCurrentLocale();
 
   return (
     <Menu className="w-full" size="sm">
@@ -45,13 +45,8 @@ const NavigationMenu = ({
             {navOpen && <MenuTitle>{t(categoryLabelMapping[group])}</MenuTitle>}
 
             {items.map((item) => {
-              const itemLinkWithLocale = getLinkWithLocale({
-                link: item.link,
-                pathName,
-              });
-
-              // TODO: Figure out for nested routes
-              const active = itemLinkWithLocale === pathName;
+              const itemLinkWithLocale = `/${activeLocale}${item.link}`;
+              const active = item.isActive(pathName, activeLocale);
 
               const ItemIcon = item.icon;
 
