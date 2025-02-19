@@ -1,3 +1,5 @@
+import type { LocaleKeys } from "@/locales/langs/en";
+
 export type Technology = {
   name: string;
   description: string;
@@ -13,6 +15,20 @@ export type Technology = {
     | "styling"
     | "utilities"
     | "content";
+};
+
+export const technologyCategoryLabelMap: Record<
+  Technology["category"],
+  LocaleKeys
+> = {
+  core: "common.core",
+  ui: "common.ui",
+  state: "common.state",
+  form: "common.form",
+  testing: "common.testing",
+  styling: "common.styling",
+  utilities: "common.utilities",
+  content: "common.content",
 };
 
 export const technologies: Technology[] = [

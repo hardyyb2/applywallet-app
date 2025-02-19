@@ -8,6 +8,14 @@ const engLocales = {
     blogs: "blogs",
     technologies: "technologies",
     app: "app",
+    core: "core",
+    ui: "ui",
+    state: "state",
+    form: "form",
+    testing: "testing",
+    styling: "styling",
+    utilities: "utilities",
+    content: "content",
   },
 
   routes: {

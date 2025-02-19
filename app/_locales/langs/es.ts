@@ -6,6 +6,14 @@ export default {
     blogs: "blogs",
     technologies: "tecnologías",
     app: "app",
+    core: "núcleo",
+    ui: "ui",
+    state: "estado",
+    form: "formulario",
+    testing: "pruebas",
+    styling: "estilización",
+    utilities: "utilidades",
+    content: "contenido",
   },
 
   routes: {
