@@ -6,6 +6,9 @@ const meta = {
   title: "Actions/Button",
   component: Button,
   tags: ["autodocs"],
+  parameters: {
+    layout: "centered",
+  },
 } satisfies Meta<typeof Button>;
 
 export default meta;
@@ -15,7 +18,7 @@ type Story = StoryObj<typeof Button>;
 export const Default: Story = {
   render(args: ButtonProps) {
     return (
-      <div className="flex w-max flex-col gap-4">
+      <div className="flex h-max w-max flex-col gap-4">
         <Button {...args}> default </Button>
         <Button {...args} variant="outline">
           default outline
@@ -214,6 +217,9 @@ export const Variants: Story = {
         <Button {...args} variant="link">
           Link
         </Button>
+        <Button {...args} variant="soft">
+          Soft
+        </Button>
       </div>
     );
   },
@@ -255,6 +261,9 @@ export const Sizes: Story = {
         </Button>
         <Button {...args} size="lg">
           lg button
+        </Button>
+        <Button {...args} size="xl">
+          xl button
         </Button>
       </div>
     );

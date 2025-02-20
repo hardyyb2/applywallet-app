@@ -9,7 +9,7 @@ import {
 } from "./Accordion";
 
 const meta = {
-  title: "Data Display/Skeleton",
+  title: "Data Display/Accordion",
   component: Accordion,
   tags: ["autodocs"],
 } satisfies Meta<typeof Accordion>;

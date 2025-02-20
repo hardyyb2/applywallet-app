@@ -19,7 +19,7 @@ const config: StorybookConfig = {
       options: {
         rules: [
           {
-            test: /\.s(a|c)ss$/,
+            test: /\.css$/,
             sideEffects: true,
             use: [
               require.resolve("style-loader"),
