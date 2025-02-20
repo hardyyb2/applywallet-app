@@ -60,6 +60,7 @@ import {
   PanelLeftOpen,
   PauseCircle,
   Pencil,
+  Phone,
   Pilcrow,
   Plus,
   Quote,
@@ -74,6 +75,7 @@ import {
   Underline,
   Unlink,
   UploadCloud,
+  UserCircle2,
   X,
 } from "lucide-react";
 
@@ -153,6 +155,8 @@ const Icons = {
   SlidersHorizontal,
   Hammer,
   AppWindow,
+  UserCircle2,
+  Phone,
   CustomRadio: createLucideIcon("CustomRadio", [
     [
       "circle",

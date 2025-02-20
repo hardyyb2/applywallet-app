@@ -16,6 +16,7 @@ const engLocales = {
     styling: "styling",
     utilities: "utilities",
     content: "content",
+    creator: "creator",
   },
 
   routes: {

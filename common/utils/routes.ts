@@ -27,6 +27,7 @@ export const AppRoutes = {
   ABOUT: "/about",
   APP_STRUCTURE: "/about/app/structure",
   TECHNOLOGIES: "/about/app/technologies",
+  CREATOR: "/hardik-badola",
 } as const;
 
 export const ApiRoutes = {

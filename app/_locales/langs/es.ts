@@ -14,6 +14,7 @@ export default {
     styling: "estilización",
     utilities: "utilidades",
     content: "contenido",
+    creator: "creador",
   },
 
   routes: {

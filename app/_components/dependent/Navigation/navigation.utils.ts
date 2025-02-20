@@ -62,6 +62,14 @@ const navItems: NavItemType[] = [
     isActive: (pathname, locale) =>
       pathname === `/${locale}${AppRoutes.TECHNOLOGIES}`,
   },
+  {
+    label: "common.creator",
+    link: AppRoutes.CREATOR,
+    category: NavigationCategories.ABOUT,
+    icon: Icons.UserCircle2,
+    isActive: (pathname, locale) =>
+      pathname === `/${locale}${AppRoutes.CREATOR}`,
+  },
 ];
 
 const activeNavItems = navItems.filter((item) => !item.inactive);
