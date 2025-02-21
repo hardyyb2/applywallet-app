@@ -5,8 +5,12 @@ import { Button } from "~/components/ds/Button";
 import { Icons } from "~/components/ds/Icons";
 import { NavBar } from "~/components/ds/NavBar";
 import { Typography } from "~/components/ds/Typography";
+import { AppRoutes } from "~/utils/routes";
 
-import HardikBadolaImg from "public/images/content/authors/hardik_badola.jpeg";
+import HardikBadolaImg from "public/images/logo/hb-logo.jpeg";
+
+import { LocaleSwitcher } from "@/components/dependent/LocaleSwitcher";
+import { ThemesMenu } from "@/components/dependent/ThemesMenu";
 
 const links: { label: string; href: string }[] = [
   {
@@ -25,42 +29,35 @@ const links: { label: string; href: string }[] = [
 
 const HBNavbar = () => {
   return (
-    <NavBar className="p-3xs md:p-2xs lg:p-xs pl-xs md:pl-s lg:pl-l bg-secondary">
+    <NavBar className="p-3xs md:p-2xs lg:p-xs pl-xs md:pl-s lg:pl-l">
       <NavBar.Start className="gap-m pr-m flex">
-        <figure className="relative h-12 w-12">
-          <Image
-            src={HardikBadolaImg}
-            alt="Hardik Badola"
-            fill
-            placeholder="blur"
-            blurDataURL={HardikBadolaImg.blurDataURL}
-            className="h-full w-full rounded-full"
-          />
-        </figure>
-
-        <Typography
-          variant="headline-m"
-          className="text-primary-content hidden lg:block"
-        >
-          hardik badola
-        </Typography>
+        <Link href={AppRoutes.CREATOR}>
+          <figure className="relative h-12 w-12">
+            <Image
+              src={HardikBadolaImg}
+              alt="Hardik Badola"
+              fill
+              placeholder="blur"
+              blurDataURL={HardikBadolaImg.blurDataURL}
+              className="h-full w-full rounded-full"
+            />
+          </figure>
+        </Link>
       </NavBar.Start>
       <NavBar.Center className="gap-l hidden lg:flex">
         {links.map((link) => (
           <Link key={link.href} href={link.href} className="">
-            <Typography variant="title-m" className="text-primary-content">
+            <Typography variant="title-s" className="text-base-content">
               {link.label}
             </Typography>
           </Link>
         ))}
       </NavBar.Center>
-      <NavBar.End>
-        <Button
-          size="lg"
-          className="hidden lg:flex"
-          startIcon={<Icons.Phone />}
-        >
-          contact me
+      <NavBar.End className="gap-1 lg:gap-2">
+        <ThemesMenu />
+        <LocaleSwitcher />
+        <Button color="ghost" responsive>
+          <Icons.Phone className="inline-block h-5 w-5 stroke-current md:h-6 md:w-6" />
         </Button>
       </NavBar.End>
     </NavBar>
