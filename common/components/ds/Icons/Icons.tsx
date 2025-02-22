@@ -49,6 +49,7 @@ import {
   Lock,
   LogIn,
   LogOut,
+  Mail,
   Maximize,
   Minimize,
   Minus,
@@ -157,6 +158,7 @@ const Icons = {
   AppWindow,
   UserCircle2,
   Phone,
+  Mail,
   CustomRadio: createLucideIcon("CustomRadio", [
     [
       "circle",

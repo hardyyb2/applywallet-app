@@ -1,11 +1,39 @@
+import Link from "next/link";
+
+import type { LucideIcon } from "lucide-react";
+
 import { Flex } from "~/components/ds/Flex";
+import { Icons } from "~/components/ds/Icons";
 import { Typography } from "~/components/ds/Typography";
 
 import { cnM } from "@/utils/styles";
 
 import { HBHomeStripes } from "./HBHomeStripes";
 
-const MainContent = () => {
+const socials: { name: string; url: string; icon: LucideIcon }[] = [
+  {
+    name: "linkedin",
+    url: "https://www.linkedin.com/in/hardik-badola/",
+    icon: Icons.Linkedin,
+  },
+  {
+    name: "github",
+    url: "https://github.com/hardyyb2",
+    icon: Icons.Github,
+  },
+  {
+    name: "mail",
+    url: "mailto:hardikb3732@gmail.com",
+    icon: Icons.Mail,
+  },
+  {
+    name: "instagram",
+    url: "https://www.instagram.com/hardikbadola/",
+    icon: Icons.Instagram,
+  },
+];
+
+const MainContent = ({ color = "primary" }: { color?: "primary" | "base" }) => {
   return (
     <Flex
       align="center"
@@ -24,6 +52,20 @@ const MainContent = () => {
       <Typography variant="label-l" md="title-l" lg="headline-l" font="primary">
         a software engineer
       </Typography>
+
+      <Flex className="gap-s-m mt-m-l">
+        {socials.map((social) => (
+          <Link key={social.name} href={social.url} target="_blank">
+            <social.icon
+              className={cnM(
+                "size-6 hover:fill-current md:size-8 lg:size-12",
+                "hover:fill-current",
+                color === "primary" && "hover:stroke-primary hover:scale-[1.2]",
+              )}
+            />
+          </Link>
+        ))}
+      </Flex>
     </Flex>
   );
 };
@@ -35,14 +77,14 @@ const HBHome = () => {
         className="absolute top-0 left-0 flex h-screen w-screen"
         style={{ clipPath: `inset(0 50% 0 0)` }}
       >
-        <MainContent />
+        <MainContent color="base" />
       </div>
 
       <div
         className="bg-primary text-primary-content absolute top-0 left-0 flex h-screen w-screen"
         style={{ clipPath: `inset(0 0 0 50%)` }}
       >
-        <MainContent />
+        <MainContent color="primary" />
       </div>
       <HBHomeStripes />
     </main>

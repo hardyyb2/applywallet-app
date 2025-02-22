@@ -95,6 +95,7 @@
     }
   }
 }
+
 @utility animation-pause {
   animation-play-state: paused;
 }
