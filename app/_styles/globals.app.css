@@ -76,7 +76,7 @@
 
   --accordion-down: accordion-down 0.2s ease-out;
   --accordion-up: accordion-up 0.2s ease-out;
-  --loop-scroll-x: loop-scroll-x 10s linear infinite;
+  --loop-scroll-x: loop-scroll-x 20s linear infinite;
   --loop-scroll-x-reverse: loop-scroll-x-reverse 20s linear infinite;
 
   @keyframes accordion-down {

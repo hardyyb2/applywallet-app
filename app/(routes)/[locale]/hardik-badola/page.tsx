@@ -1,7 +1,8 @@
 import { BaseLayout } from "@/components/dependent/BaseLayout";
 import { cn } from "@/utils/styles";
 
-import { HBNavbar } from "./HBNavbar";
+import { HBHome } from "./home/HBHome";
+import { HBNavbar } from "./nav/HBNavbar";
 
 const HardikBadola = () => {
   return (
@@ -18,7 +19,7 @@ const HardikBadola = () => {
             className="h-full w-full overflow-auto"
             vaul-drawer-wrapper=""
           >
-            hi
+            <HBHome />
           </section>
         </div>
       </BaseLayout.Body>
