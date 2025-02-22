@@ -72,16 +72,16 @@ const MainContent = ({ color = "primary" }: { color?: "primary" | "base" }) => {
 
 const HBHome = () => {
   return (
-    <main className={cnM("relative h-full w-full overflow-x-hidden")}>
+    <main className={cnM("relative h-full w-full overflow-hidden")}>
       <div
-        className="absolute top-0 left-0 flex h-screen w-screen"
+        className="absolute top-0 left-0 flex h-full w-full"
         style={{ clipPath: `inset(0 50% 0 0)` }}
       >
         <MainContent color="base" />
       </div>
 
       <div
-        className="bg-primary text-primary-content absolute top-0 left-0 flex h-screen w-screen"
+        className="bg-primary text-primary-content absolute top-0 left-0 flex h-full w-full"
         style={{ clipPath: `inset(0 0 0 50%)` }}
       >
         <MainContent color="primary" />

@@ -44,15 +44,7 @@ const HBNavbar = () => {
           </figure>
         </Link>
       </NavBar.Start>
-      <NavBar.Center className="gap-l hidden lg:flex">
-        {links.map((link) => (
-          <Link key={link.href} href={link.href} className="">
-            <Typography variant="title-s" className="text-base-content">
-              {link.label}
-            </Typography>
-          </Link>
-        ))}
-      </NavBar.Center>
+
       <NavBar.End className="gap-1 lg:gap-2">
         <ThemesMenu />
         <LocaleSwitcher />
