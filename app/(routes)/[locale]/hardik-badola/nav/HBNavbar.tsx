@@ -1,10 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { Button } from "~/components/ds/Button";
-import { Icons } from "~/components/ds/Icons";
 import { NavBar } from "~/components/ds/NavBar";
-import { Typography } from "~/components/ds/Typography";
 import { AppRoutes } from "~/utils/routes";
 
 import HardikBadolaImg from "public/images/logo/hb-logo.jpeg";
@@ -48,9 +45,6 @@ const HBNavbar = () => {
       <NavBar.End className="gap-1 lg:gap-2">
         <ThemesMenu />
         <LocaleSwitcher />
-        <Button color="ghost" responsive>
-          <Icons.Phone className="inline-block h-5 w-5 stroke-current md:h-6 md:w-6" />
-        </Button>
       </NavBar.End>
     </NavBar>
   );
