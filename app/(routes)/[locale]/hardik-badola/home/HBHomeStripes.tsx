@@ -51,10 +51,10 @@ const StripeItem = ({ label, logo }: { label: string; logo: string }) => {
 
 const Stripes = ({ direction = "left" }: { direction?: "left" | "right" }) => {
   return (
-    <Flex className="gap-l-xl bg-base-100 py-xs-s border-base-content w-full border-y-2">
+    <Flex className="group gap-l-xl bg-base-100 py-xs-s border-base-content w-full border-y-2">
       <Flex
         className={cnM(
-          "gap-l-xl",
+          "gap-l-xl group-hover:animation-pause!",
           direction === "right" && styles.stripesAnimation,
           direction === "left" && styles.stripesAnimationReverse,
         )}
@@ -65,7 +65,7 @@ const Stripes = ({ direction = "left" }: { direction?: "left" | "right" }) => {
       </Flex>
       <Flex
         className={cnM(
-          "gap-l-xl",
+          "gap-l-xl group-hover:animation-pause!",
           direction === "right" && styles.stripesAnimation,
           direction === "left" && styles.stripesAnimationReverse,
         )}

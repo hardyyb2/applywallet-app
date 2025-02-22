@@ -95,6 +95,13 @@
     }
   }
 }
+@utility animation-pause {
+  animation-play-state: paused;
+}
+
+@utility animation-play {
+  animation-play-state: running;
+}
 
 @utility prose {
   max-width: 80ch;
