@@ -1,9 +1,9 @@
 .stripesAnimation {
-  animation: loopScrollX 20s linear infinite;
+  animation: loopScrollX 30s linear infinite;
 }
 
 .stripesAnimationReverse {
-  animation: loopScrollXReverse 20s linear infinite;
+  animation: loopScrollXReverse 30s linear infinite;
 }
 
 @keyframes loopScrollX {

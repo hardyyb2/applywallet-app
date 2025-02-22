@@ -81,7 +81,7 @@ const Stripes = ({ direction = "left" }: { direction?: "left" | "right" }) => {
 
 const HBHomeStripes = () => {
   return (
-    <Flex className="absolute bottom-0 w-full" direction="column">
+    <Flex className="absolute bottom-0 w-full -rotate-1" direction="column">
       <Stripes direction="right" />
       <Stripes direction="left" />
     </Flex>
