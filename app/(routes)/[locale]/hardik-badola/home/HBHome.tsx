@@ -53,7 +53,7 @@ const MainContent = ({ color = "primary" }: { color?: "primary" | "base" }) => {
         a software engineer
       </Typography>
 
-      <Flex className="gap-s-m mt-xs">
+      <Flex className="gap-s-m mt-m">
         {socials.map((social) => (
           <Link key={social.name} href={social.url} target="_blank">
             <social.icon
