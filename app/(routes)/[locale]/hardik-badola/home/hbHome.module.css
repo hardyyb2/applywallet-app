@@ -1,0 +1,27 @@
+.stripesAnimation {
+  animation: loopScrollX 20s linear infinite;
+}
+
+.stripesAnimationReverse {
+  animation: loopScrollXReverse 20s linear infinite;
+}
+
+@keyframes loopScrollX {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* To address the gap between the stripes */
+    transform: translateX(calc(-100% - var(--spacing-l-xl)));
+  }
+}
+
+@keyframes loopScrollXReverse {
+  from {
+    /* To address the gap between the stripes */
+    transform: translateX(calc(-100% - var(--spacing-l-xl)));
+  }
+  to {
+    transform: translateX(0);
+  }
+}

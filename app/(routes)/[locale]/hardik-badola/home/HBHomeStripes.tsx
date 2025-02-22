@@ -7,12 +7,14 @@ import { shimmer } from "@/utils/shimmer";
 import { toBase64 } from "@/utils/string";
 import { cnM } from "@/utils/styles";
 
+import styles from "./hbHome.module.css";
+
 const stripesList1: { label: string; logo: string }[] = [
   { label: "React", logo: "/images/technologies/react.svg" },
   { label: "Next.js", logo: "/images/technologies/nextjs.svg" },
   { label: "Tailwind CSS", logo: "/images/technologies/tailwindcss.svg" },
   { label: "TypeScript", logo: "/images/technologies/typescript.svg" },
-  { label: "Node.js", logo: "/images/technologies/nodejs.svg" },
+  { label: "Node.js", logo: "/images/technologies/node.svg" },
   { label: "Express", logo: "/images/technologies/express.svg" },
   { label: "MongoDB", logo: "/images/technologies/mongodb.svg" },
   { label: "HTML", logo: "/images/technologies/html.svg" },
@@ -22,7 +24,7 @@ const stripesList1: { label: string; logo: string }[] = [
 
 const StripeItem = ({ label, logo }: { label: string; logo: string }) => {
   return (
-    <Flex className="gap-s" align="center">
+    <Flex className="gap-xs-s" align="center">
       <figure className="h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12">
         <Image
           src={logo}
@@ -49,12 +51,12 @@ const StripeItem = ({ label, logo }: { label: string; logo: string }) => {
 
 const Stripes = ({ direction = "left" }: { direction?: "left" | "right" }) => {
   return (
-    // TODO - prevent jerk due to gap-xl
-    <Flex className="gap-xl bg-base-100 py-xs-s border-base-content w-full border-y-2">
+    <Flex className="gap-l-xl bg-base-100 py-xs-s border-base-content w-full border-y-2">
       <Flex
         className={cnM(
-          "gap-xl animate-(--loop-scroll-x)",
-          direction === "left" && "animate-(--loop-scroll-x-reverse)",
+          "gap-l-xl",
+          direction === "right" && styles.stripesAnimation,
+          direction === "left" && styles.stripesAnimationReverse,
         )}
       >
         {stripesList1.map((stripe) => (
@@ -63,8 +65,9 @@ const Stripes = ({ direction = "left" }: { direction?: "left" | "right" }) => {
       </Flex>
       <Flex
         className={cnM(
-          "gap-xl animate-(--loop-scroll-x)",
-          direction === "left" && "animate-(--loop-scroll-x-reverse)",
+          "gap-l-xl",
+          direction === "right" && styles.stripesAnimation,
+          direction === "left" && styles.stripesAnimationReverse,
         )}
         aria-hidden="true"
       >
