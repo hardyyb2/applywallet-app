@@ -2,7 +2,7 @@
 
 import { useRef, type ComponentRef, type PropsWithChildren } from "react";
 
-import { m, useScroll, useSpring } from "motion/react";
+import { motion, useScroll, useSpring } from "motion/react";
 import { useBoolean, useFullscreen } from "react-use";
 
 import { Button } from "~/components/ds/Button";
@@ -53,7 +53,7 @@ const BlogScrollWrapper = ({ children }: PropsWithChildren) => {
         ref={viewportRef}
         className="p-m-l pt-s mx-auto flex [&>div]:block!"
       >
-        <m.div
+        <motion.div
           className="h-4xs bg-secondary absolute inset-0 z-40 origin-[0%] transform"
           style={{
             scaleX,

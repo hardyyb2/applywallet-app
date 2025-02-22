@@ -7,7 +7,7 @@ import dynamic from "next/dynamic";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import { domAnimation, LazyMotion, MotionConfig } from "motion/react";
+import { MotionConfig } from "motion/react";
 import { ToastContainer } from "react-toastify";
 
 import { env } from "~/utils/env";
@@ -49,13 +49,11 @@ const Providers = ({ children, locale }: ProvidersType) => {
           <GoogleAnalytics gaId={env.NEXT_PUBLIC_GA_APP_ID} />
         </Suspense>
         <TopLoader />
-        <LazyMotion features={domAnimation}>
-          <MotionConfig
-            transition={{ type: "spring", stiffness: 400, damping: 24 }}
-          >
-            <I18nProviderClient locale={locale}>{children}</I18nProviderClient>
-          </MotionConfig>
-        </LazyMotion>
+        <MotionConfig
+          transition={{ type: "spring", stiffness: 400, damping: 24 }}
+        >
+          <I18nProviderClient locale={locale}>{children}</I18nProviderClient>
+        </MotionConfig>
         <ToastContainer position="top-right" limit={4} autoClose={5000} />
         <ReactQueryDevtools
           initialIsOpen={false}
