@@ -10,9 +10,7 @@ const HardikBadola = () => {
       <BaseLayout.Body className={cn("overflow-hidden")}>
         <div className="hidden">Side nav</div>
         <div className="grid w-full grid-rows-[auto_1fr] overflow-auto">
-          <BaseLayout.Head
-            className={cn("text-base-content z-5 h-12 w-full lg:h-16")}
-          >
+          <BaseLayout.Head className={cn("text-base-content z-5 w-full")}>
             <HBNavbar />
           </BaseLayout.Head>
           <section
