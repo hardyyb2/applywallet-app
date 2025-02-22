@@ -35,6 +35,10 @@ export const typographyVariants = cva("", {
       center: "text-center",
       right: "text-right",
     },
+    font: {
+      primary: "font-primary!",
+      secondary: "font-secondary!",
+    },
     // ENOUGH TILL "lg"
     // Why needed ?
     // Because f it thats why 😑. Tailwind has removed `safelist` from v4 and don't want to use the config file.

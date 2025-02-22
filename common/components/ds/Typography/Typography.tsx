@@ -67,6 +67,7 @@ export const Typography = ({
   sm,
   md,
   lg,
+  font,
   ...props
 }: TypographyProps) => {
   const Component = as || defaultElementMap[variant ?? "body-m"];
@@ -80,6 +81,7 @@ export const Typography = ({
         sm,
         md,
         lg,
+        font,
         className,
       })}
       {...props}
