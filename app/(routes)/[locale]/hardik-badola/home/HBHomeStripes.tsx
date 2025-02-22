@@ -25,7 +25,7 @@ const stripesList1: { label: string; logo: string }[] = [
 const StripeItem = ({ label, logo }: { label: string; logo: string }) => {
   return (
     <Flex className="gap-xs-s" align="center">
-      <figure className="h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12">
+      <figure className="h-8 w-8 md:h-10 md:w-10">
         <Image
           src={logo}
           alt={label}
@@ -39,7 +39,7 @@ const StripeItem = ({ label, logo }: { label: string; logo: string }) => {
       </figure>
       <Typography
         variant="label-l"
-        lg="headline-l"
+        md="body-l"
         className="text-nowrap"
         key={`label-${label}`}
       >
@@ -51,7 +51,7 @@ const StripeItem = ({ label, logo }: { label: string; logo: string }) => {
 
 const Stripes = ({ direction = "left" }: { direction?: "left" | "right" }) => {
   return (
-    <Flex className="group gap-l-xl bg-base-100 py-xs-s border-base-content w-full border-y-2">
+    <Flex className="group gap-l-xl bg-base-100 py-xs border-base-content w-full border-y-2">
       <Flex
         className={cnM(
           "gap-l-xl group-hover:animation-pause!",

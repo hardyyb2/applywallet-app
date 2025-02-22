@@ -43,17 +43,17 @@ const MainContent = ({ color = "primary" }: { color?: "primary" | "base" }) => {
     >
       <Typography
         variant="headline-l"
-        lg="display-l"
+        lg="display-m"
         align="center"
         className="font-bold!"
       >
         hello, I&apos;m hardik badola
       </Typography>
-      <Typography variant="label-l" md="title-l" lg="headline-l" font="primary">
+      <Typography variant="label-l" md="title-l" lg="headline-m" font="primary">
         a software engineer
       </Typography>
 
-      <Flex className="gap-s-m mt-m-l">
+      <Flex className="gap-s-m mt-xs">
         {socials.map((social) => (
           <Link key={social.name} href={social.url} target="_blank">
             <social.icon
