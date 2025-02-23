@@ -2,6 +2,7 @@ import {
   AlignJustify,
   AlignLeft,
   AppWindow,
+  ArrowLeft,
   Bold,
   BookOpen,
   Briefcase,
@@ -159,6 +160,7 @@ const Icons = {
   UserCircle2,
   Phone,
   Mail,
+  ArrowLeft,
   CustomRadio: createLucideIcon("CustomRadio", [
     [
       "circle",

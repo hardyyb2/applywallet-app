@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import type { LucideIcon } from "lucide-react";
@@ -5,6 +6,8 @@ import type { LucideIcon } from "lucide-react";
 import { Flex } from "~/components/ds/Flex";
 import { Icons } from "~/components/ds/Icons";
 import { Typography } from "~/components/ds/Typography";
+
+import HardikBadolaImage from "public/images/content/authors/hardik_badola.jpeg";
 
 import { getI18n } from "@/locales/server";
 import { cnM } from "@/utils/styles";
@@ -48,6 +51,31 @@ const MainContent = async ({
       justify="center"
       className="gap-3xs h-full w-full"
     >
+      <figure
+        className={cnM(
+          "mb-xs relative z-10 size-32 rounded-full lg:size-48",
+          color === "primary" && "border-base-100",
+          color === "base" && "border-primary",
+        )}
+      >
+        <div
+          className={cnM(
+            "absolute top-1/2 left-1/2 -z-10 size-[102%] -translate-x-1/2 -translate-y-1/2",
+            "animate-spin rounded-full bg-linear-to-r",
+            color === "primary" && "from-primary to-base-100",
+            color === "base" && "from-base-100 to-primary",
+          )}
+        />
+        <Image
+          src={HardikBadolaImage}
+          alt="Hardik Badola"
+          width={200}
+          height={200}
+          className="size-full rounded-full"
+          placeholder="blur"
+          blurDataURL={HardikBadolaImage.blurDataURL}
+        />
+      </figure>
       <Typography
         variant="headline-l"
         lg="display-m"
