@@ -1,8 +1,6 @@
 import { BaseLayout } from "@/components/dependent/BaseLayout";
 import { cn } from "@/utils/styles";
 
-import { HBExperience } from "./experience/HBExperience";
-import { HBExperienceWrapper } from "./experience/HBExperienceWrapper";
 import { HBHome } from "./home/HBHome";
 import { HBNavbar } from "./nav/HBNavbar";
 
@@ -17,10 +15,6 @@ const HardikBadola = () => {
           </BaseLayout.Head>
           <section className="w-full snap-y snap-mandatory overflow-auto">
             <HBHome className="min-h-[calc(100vh-4rem)] snap-start" />
-
-            <HBExperienceWrapper className="snap-start">
-              <HBExperience />
-            </HBExperienceWrapper>
           </section>
         </div>
       </BaseLayout.Body>
