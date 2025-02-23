@@ -6,7 +6,7 @@ import { i18n } from "../../app/_utils/locale-utils";
 export type AppRouteLinkType = (typeof AppRoutes)[keyof typeof AppRoutes];
 
 export const AppRoutes = {
-  HOME: "",
+  HOME: "/",
 
   LOGIN: "/login",
   POST_LOGIN: "/post-login",

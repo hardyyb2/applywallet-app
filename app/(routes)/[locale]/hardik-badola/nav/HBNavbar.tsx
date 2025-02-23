@@ -8,21 +8,6 @@ import HardikBadolaImg from "public/images/logo/HB.svg";
 import { LocaleSwitcher } from "@/components/dependent/LocaleSwitcher";
 import { ThemesMenu } from "@/components/dependent/ThemesMenu";
 
-const links: { label: string; href: string }[] = [
-  {
-    label: "projects",
-    href: "#projects",
-  },
-  {
-    label: "skills",
-    href: "#skills",
-  },
-  {
-    label: "experience",
-    href: "#experience",
-  },
-];
-
 const HBNavbar = () => {
   return (
     <NavBar className="pl-xs md:pl-s lg:pl-l bg-base-100">
