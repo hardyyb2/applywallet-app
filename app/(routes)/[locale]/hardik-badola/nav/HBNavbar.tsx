@@ -26,7 +26,7 @@ const links: { label: string; href: string }[] = [
 
 const HBNavbar = () => {
   return (
-    <NavBar className="p-3xs md:p-2xs lg:p-xs pl-xs md:pl-s lg:pl-l bg-base-100">
+    <NavBar className="pl-xs md:pl-s lg:pl-l bg-base-100">
       <NavBar.Start className="gap-m pr-m flex">
         <Link href={AppRoutes.CREATOR}>
           <figure className="relative h-12 w-12">
