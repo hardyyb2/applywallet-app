@@ -11,7 +11,7 @@ const navItems: NavItemType[] = [
     link: AppRoutes.HOME,
     category: NavigationCategories.GENERAL,
     icon: Icons.CustomHome,
-    isActive: (pathname, locale) => pathname === `/${locale}${AppRoutes.HOME}`,
+    isActive: (pathname, locale) => pathname === `/${locale}`,
   },
   {
     label: "nav.experiences",
