@@ -6,6 +6,7 @@ import { Flex } from "~/components/ds/Flex";
 import { Icons } from "~/components/ds/Icons";
 import { Typography } from "~/components/ds/Typography";
 
+import { getI18n } from "@/locales/server";
 import { cnM } from "@/utils/styles";
 
 import { HBHomeStripes } from "./HBHomeStripes";
@@ -33,7 +34,13 @@ const socials: { name: string; url: string; icon: LucideIcon }[] = [
   },
 ];
 
-const MainContent = ({ color = "primary" }: { color?: "primary" | "base" }) => {
+const MainContent = async ({
+  color = "primary",
+}: {
+  color?: "primary" | "base";
+}) => {
+  const t = await getI18n();
+
   return (
     <Flex
       align="center"
@@ -47,10 +54,10 @@ const MainContent = ({ color = "primary" }: { color?: "primary" | "base" }) => {
         align="center"
         className="font-bold!"
       >
-        hello, I&apos;m hardik badola
+        {t("hardikBadola.title")}
       </Typography>
       <Typography variant="label-l" md="title-l" lg="headline-m" font="primary">
-        a software engineer
+        {t("hardikBadola.subtitle")}
       </Typography>
 
       <Flex className="gap-s-m mt-m">

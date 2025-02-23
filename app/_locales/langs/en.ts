@@ -71,6 +71,11 @@ const engLocales = {
       position: "frontend engineer",
     },
   },
+
+  hardikBadola: {
+    title: "hello, i'm hardik badola",
+    subtitle: "a software engineer",
+  },
 } as const;
 
 export default engLocales;

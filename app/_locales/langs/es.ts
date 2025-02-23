@@ -72,4 +72,9 @@ export default {
       position: "ingeniero frontend",
     },
   },
+
+  hardikBadola: {
+    title: "¡hola, soy hardik badola!",
+    subtitle: "ingeniero de software",
+  },
 } as const;
