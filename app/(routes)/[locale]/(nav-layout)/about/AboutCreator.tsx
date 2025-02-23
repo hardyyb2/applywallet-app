@@ -8,12 +8,18 @@ import { buttonVariants } from "~/components/ds/Button";
 import { Card } from "~/components/ds/Card";
 import { Icons } from "~/components/ds/Icons";
 import { Typography } from "~/components/ds/Typography";
+import { AppRoutes } from "~/utils/routes";
 
 import HardikBadolaImg from "public/images/content/authors/hardik_badola.jpeg";
 
 import { getI18n } from "@/locales/server";
 
 const socials: { name: string; url: string; icon: LucideIcon }[] = [
+  {
+    name: "portfolio",
+    url: AppRoutes.CREATOR,
+    icon: Icons.UserCircle2,
+  },
   {
     name: "linkedin",
     url: "https://www.linkedin.com/in/hardik-badola/",
